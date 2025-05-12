@@ -1,28 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>My Blog</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Name - Academic CV</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header>
-            <h1>My Blog</h1>
             <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                <div class="social-icons">
+                    <a href="path-to-your-cv.pdf" target="_blank" title="CV"><i class="fas fa-file-alt"></i></a>
+                    <a href="https://scholar.google.com/your-profile" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/your-profile" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://youtube.com/your-channel" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://instagram.com/your-profile" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://soundcloud.com/your-profile" target="_blank" title="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="blog.html">Blog</a>
+                </div>
             </nav>
         </header>
         <main>
-            <a href="blogposts/David_Silver.html">David Silver RL Lecture</a>
-            <article>
-                <!-- <h2>My First Blog Post</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, velit vel bibendum bibendum, elit elit bibendum sapien, vel bibendum sapien sapien vel sapien. </p> -->
-            </article>
+            <section id="about" class="section">
+                <h2>About</h2>
+                <div class="content">
+                    <p>Your brief introduction and research interests go here.</p>
+                </div>
+            </section>
+
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <div class="content">
+                    <div class="entry">
+                        <h3>PhD in Computer Science</h3>
+                        <p class="institution">Your University</p>
+                        <p class="date">2020 - Present</p>
+                    </div>
+                    <!-- Add more education entries as needed -->
+                </div>
+            </section>
+
+            <section id="career" class="section">
+                <h2>Career</h2>
+                <div class="content">
+                    <div class="entry">
+                        <h3>Research Assistant</h3>
+                        <p class="institution">Your Department</p>
+                        <p class="date">2020 - Present</p>
+                        <p class="description">Description of your responsibilities and achievements.</p>
+                    </div>
+                    <!-- Add more career entries as needed -->
+                </div>
+            </section>
+
+            <section id="publications" class="section">
+                <h2>Publications</h2>
+                <div class="content">
+                    <div class="entry">
+                        <h3>Paper Title</h3>
+                        <p class="authors">Authors</p>
+                        <p class="venue">Conference/Journal Name</p>
+                        <p class="year">2023</p>
+                        <p class="links">
+                            <a href="#" target="_blank">[PDF]</a>
+                            <a href="#" target="_blank">[DOI]</a>
+                        </p>
+                    </div>
+                    <!-- Add more publications as needed -->
+                </div>
+            </section>
         </main>
         <footer>
-            <p>&copy; 2021 My Blog</p>
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
         </footer>
     </body>
 </html>
