@@ -1,10 +1,12 @@
 /* Global Styles */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --text-color: #333;
-    --background-color: #f8f9fa;
+    --primary-color: #000000;
+    --secondary-color: #333333;
+    --text-color: #1a1a1a;
+    --background-color: #ffffff;
     --section-padding: 2rem;
+    --border-color: #e0e0e0;
+    --hover-color: #666666;
 }
 
 * {
@@ -23,7 +25,7 @@ body {
 /* Header and Navigation */
 header {
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-bottom: 1px solid var(--border-color);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -41,17 +43,17 @@ nav {
 
 .social-icons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .social-icons a {
     color: var(--primary-color);
     font-size: 1.2rem;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 .social-icons a:hover {
-    color: var(--secondary-color);
+    color: var(--hover-color);
 }
 
 .nav-links {
@@ -63,11 +65,12 @@ nav {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
+    letter-spacing: 0.5px;
 }
 
 .nav-links a:hover {
-    color: var(--secondary-color);
+    color: var(--hover-color);
 }
 
 /* Main Content */
@@ -79,30 +82,33 @@ main {
 
 .section {
     background: white;
-    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
     padding: var(--section-padding);
     margin-bottom: 2rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .section h2 {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--secondary-color);
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 /* Blog Styles */
 .blog-section {
     background: white;
-    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
     padding: var(--section-padding);
 }
 
 .blog-post {
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .blog-post:last-child {
@@ -110,7 +116,7 @@ main {
 }
 
 .post-meta {
-    color: #666;
+    color: var(--secondary-color);
     font-size: 0.9rem;
     margin: 0.5rem 0;
 }
@@ -121,14 +127,17 @@ main {
 
 .read-more {
     display: inline-block;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-decoration: none;
     margin-top: 1rem;
     font-weight: 500;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 2px;
 }
 
 .read-more:hover {
-    text-decoration: underline;
+    color: var(--hover-color);
+    border-bottom-color: var(--hover-color);
 }
 
 /* Entry Styles */
@@ -139,6 +148,7 @@ main {
 .entry h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+    font-weight: 600;
 }
 
 .institution {
@@ -147,12 +157,13 @@ main {
 }
 
 .date {
-    color: #666;
+    color: var(--secondary-color);
     font-size: 0.9rem;
 }
 
 .description {
     margin-top: 0.5rem;
+    color: var(--text-color);
 }
 
 /* Publications */
@@ -161,13 +172,16 @@ main {
 }
 
 .links a {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-decoration: none;
     margin-right: 1rem;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 2px;
 }
 
 .links a:hover {
-    text-decoration: underline;
+    color: var(--hover-color);
+    border-bottom-color: var(--hover-color);
 }
 
 /* Footer */
@@ -176,7 +190,8 @@ footer {
     padding: 2rem;
     background: white;
     margin-top: 2rem;
-    color: #666;
+    color: var(--secondary-color);
+    border-top: 1px solid var(--border-color);
 }
 
 /* Responsive Design */
@@ -201,4 +216,4 @@ footer {
     .section {
         padding: 1.5rem;
     }
-} 
+}
