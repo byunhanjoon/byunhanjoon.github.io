@@ -1,12 +1,12 @@
 /* Global Styles */
 :root {
     --primary-color: #000000;
-    --secondary-color: #333333;
-    --text-color: #1a1a1a;
+    --secondary-color: #666666;
+    --text-color: #333333;
     --background-color: #ffffff;
-    --section-padding: 2rem;
-    --border-color: #e0e0e0;
+    --section-spacing: 4rem;
     --hover-color: #666666;
+    --max-width: 800px;
 }
 
 * {
@@ -16,7 +16,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--background-color);
@@ -25,15 +25,15 @@ body {
 /* Header and Navigation */
 header {
     background-color: white;
-    border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 nav {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -49,11 +49,11 @@ nav {
 .social-icons a {
     color: var(--primary-color);
     font-size: 1.2rem;
-    transition: color 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 .social-icons a:hover {
-    color: var(--hover-color);
+    opacity: 0.7;
 }
 
 .nav-links {
@@ -65,54 +65,40 @@ nav {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.2s ease;
+    transition: opacity 0.2s ease;
     letter-spacing: 0.5px;
 }
 
 .nav-links a:hover {
-    color: var(--hover-color);
+    opacity: 0.7;
 }
 
 /* Main Content */
 main {
-    max-width: 1200px;
+    max-width: var(--max-width);
     margin: 0 auto;
     padding: 2rem;
 }
 
-.section {
-    background: white;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: var(--section-padding);
-    margin-bottom: 2rem;
+section {
+    margin-bottom: var(--section-spacing);
 }
 
-.section h2 {
+section h2 {
     color: var(--primary-color);
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    font-size: 1.8rem;
+    letter-spacing: -0.5px;
 }
 
 /* Blog Styles */
-.blog-section {
-    background: white;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: var(--section-padding);
-}
-
 .blog-post {
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 3rem;
 }
 
 .blog-post:last-child {
-    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .post-meta {
@@ -133,22 +119,23 @@ main {
     font-weight: 500;
     border-bottom: 1px solid var(--primary-color);
     padding-bottom: 2px;
+    transition: opacity 0.2s ease;
 }
 
 .read-more:hover {
-    color: var(--hover-color);
-    border-bottom-color: var(--hover-color);
+    opacity: 0.7;
 }
 
 /* Entry Styles */
 .entry {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .entry h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
     font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .institution {
@@ -177,21 +164,20 @@ main {
     margin-right: 1rem;
     border-bottom: 1px solid var(--primary-color);
     padding-bottom: 2px;
+    transition: opacity 0.2s ease;
 }
 
 .links a:hover {
-    color: var(--hover-color);
-    border-bottom-color: var(--hover-color);
+    opacity: 0.7;
 }
 
 /* Footer */
 footer {
     text-align: center;
     padding: 2rem;
-    background: white;
-    margin-top: 2rem;
+    margin-top: 4rem;
     color: var(--secondary-color);
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive Design */
@@ -213,7 +199,7 @@ footer {
         padding: 1rem;
     }
 
-    .section {
-        padding: 1.5rem;
+    section {
+        margin-bottom: 3rem;
     }
 }
