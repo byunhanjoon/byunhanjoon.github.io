@@ -8,6 +8,7 @@
     --hover-color: #666666;
     --link-accent: rgba(216, 199, 163, 0.55);
     --link-accent-muted: rgba(216, 199, 163, 0.45);
+    --link-accent-strong: rgba(150, 108, 50, 0.42);
     --max-width: 800px;
 }
 
@@ -95,13 +96,17 @@ section h2 {
 }
 
 section h2 a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     color: var(--primary-color);
     text-decoration: none;
     background-image: linear-gradient(to top, var(--link-accent) 38%, transparent 38%);
     background-position: 0 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    transition: background-size 0.2s ease, opacity 0.2s ease;
+    border-bottom: 2px solid var(--link-accent-strong);
+    transition: background-size 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
 }
 
 section h2 a:visited {
@@ -109,22 +114,29 @@ section h2 a:visited {
 }
 
 section h2 a:hover {
-    background-size: 100% 78%;
-    opacity: 0.85;
+    background-size: 100% 82%;
+    border-bottom-color: var(--primary-color);
+    opacity: 0.9;
 }
 
 section h2 a::after,
 .blog-post h2 a::after {
-    content: " ->";
-    color: var(--secondary-color);
-    font-size: 0.72em;
+    content: "open ->";
+    color: var(--primary-color);
+    font-size: 0.55em;
     font-weight: 500;
-    opacity: 0;
-    transition: opacity 0.2s ease;
+    line-height: 1;
+    padding: 0.28rem 0.42rem;
+    border: 1px solid var(--link-accent-strong);
+    border-radius: 999px;
+    background-color: rgba(216, 199, 163, 0.18);
+    opacity: 0.72;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
 section h2 a:hover::after,
 .blog-post h2 a:hover::after {
+    background-color: var(--link-accent-muted);
     opacity: 1;
 }
 
@@ -138,13 +150,17 @@ section h2 a:hover::after,
 }
 
 .blog-post h2 a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     color: var(--primary-color);
     text-decoration: none;
     background-image: linear-gradient(to top, var(--link-accent-muted) 32%, transparent 32%);
     background-position: 0 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    transition: background-size 0.2s ease, opacity 0.2s ease;
+    border-bottom: 2px solid var(--link-accent-strong);
+    transition: background-size 0.2s ease, opacity 0.2s ease, border-color 0.2s ease;
 }
 
 .blog-post h2 a:visited {
@@ -153,7 +169,8 @@ section h2 a:hover::after,
 
 .blog-post h2 a:hover {
     background-size: 100% 80%;
-    opacity: 0.85;
+    border-bottom-color: var(--primary-color);
+    opacity: 0.9;
 }
 
 .post-meta {
