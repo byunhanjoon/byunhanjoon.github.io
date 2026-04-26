@@ -6,6 +6,8 @@
     --background-color: #ffffff;
     --section-spacing: 4rem;
     --hover-color: #666666;
+    --link-accent: rgba(216, 199, 163, 0.55);
+    --link-accent-muted: rgba(216, 199, 163, 0.45);
     --max-width: 800px;
 }
 
@@ -93,15 +95,37 @@ section h2 {
 }
 
 section h2 a {
-    color: inherit;
+    color: var(--primary-color);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease, opacity 0.2s ease;
+    background-image: linear-gradient(to top, var(--link-accent) 38%, transparent 38%);
+    background-position: 0 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease, opacity 0.2s ease;
+}
+
+section h2 a:visited {
+    color: var(--primary-color);
 }
 
 section h2 a:hover {
-    border-bottom-color: var(--primary-color);
-    opacity: 0.75;
+    background-size: 100% 78%;
+    opacity: 0.85;
+}
+
+section h2 a::after,
+.blog-post h2 a::after {
+    content: " ->";
+    color: var(--secondary-color);
+    font-size: 0.72em;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+section h2 a:hover::after,
+.blog-post h2 a:hover::after {
+    opacity: 1;
 }
 
 /* Blog Styles */
@@ -116,11 +140,20 @@ section h2 a:hover {
 .blog-post h2 a {
     color: var(--primary-color);
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    background-image: linear-gradient(to top, var(--link-accent-muted) 32%, transparent 32%);
+    background-position: 0 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s ease, opacity 0.2s ease;
+}
+
+.blog-post h2 a:visited {
+    color: var(--primary-color);
 }
 
 .blog-post h2 a:hover {
-    opacity: 0.75;
+    background-size: 100% 80%;
+    opacity: 0.85;
 }
 
 .post-meta {
