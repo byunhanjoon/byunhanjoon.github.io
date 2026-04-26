@@ -92,6 +92,18 @@ section h2 {
     letter-spacing: -0.5px;
 }
 
+section h2 a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+section h2 a:hover {
+    border-bottom-color: var(--primary-color);
+    opacity: 0.75;
+}
+
 /* Blog Styles */
 .blog-post {
     margin-bottom: 3rem;
