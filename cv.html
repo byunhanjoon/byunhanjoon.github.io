@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Han Joon Byun — Curriculum Vitae</title>
+    <style>
+        :root {
+            --ink: #17202a;
+            --muted: #56616d;
+            --accent: #173f5f;
+            --rule: #cfd7de;
+            --soft: #eef3f6;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #e6e9ec;
+            color: var(--ink);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 9.4pt;
+            line-height: 1.34;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .cv {
+            max-width: 182mm;
+            margin: 0 auto;
+        }
+
+        .page {
+            position: relative;
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto 8mm;
+            padding: 12mm 14mm 13mm;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        header {
+            padding-bottom: 4.5mm;
+            border-bottom: 1.5pt solid var(--accent);
+        }
+
+        h1 {
+            margin: 0 0 1mm;
+            color: var(--accent);
+            font-size: 25pt;
+            font-weight: 700;
+            letter-spacing: -0.5pt;
+        }
+
+        .headline {
+            margin: 0 0 2.8mm;
+            color: var(--muted);
+            font-size: 11.2pt;
+            font-weight: 500;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2mm 4mm;
+            color: var(--muted);
+            font-size: 8.8pt;
+        }
+
+        .contact a {
+            border-bottom: 0.5pt solid #a7b1ba;
+        }
+
+        section {
+            margin-top: 4.4mm;
+        }
+
+        h2 {
+            margin: 0 0 2.3mm;
+            padding-bottom: 0.8mm;
+            color: var(--accent);
+            border-bottom: 0.7pt solid var(--rule);
+            font-size: 11.4pt;
+            font-weight: 700;
+            letter-spacing: 0.8pt;
+            text-transform: uppercase;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .profile {
+            color: #26323d;
+        }
+
+        .focus {
+            margin-top: 2.4mm;
+            color: var(--muted);
+            font-size: 8.8pt;
+        }
+
+        .focus strong {
+            color: var(--ink);
+        }
+
+        .item {
+            margin-bottom: 3mm;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-head {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            column-gap: 6mm;
+            align-items: baseline;
+        }
+
+        .title {
+            font-weight: 700;
+        }
+
+        .date {
+            color: var(--muted);
+            font-size: 8.7pt;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .institution {
+            margin-top: 0.3mm;
+            color: var(--muted);
+            font-size: 8.8pt;
+            font-style: italic;
+        }
+
+        ul {
+            margin: 1.2mm 0 0 4.5mm;
+            padding: 0;
+        }
+
+        li {
+            margin: 0 0 0.8mm;
+            padding-left: 0.8mm;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.2mm;
+        }
+
+        .teaching-summary {
+            margin-top: 2.1mm;
+            color: #26323d;
+        }
+
+        .publication {
+            display: grid;
+            grid-template-columns: 5mm 1fr;
+            column-gap: 1.5mm;
+            margin-bottom: 4mm;
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        .publication:last-child {
+            margin-bottom: 0;
+        }
+
+        .pub-number {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .pub-title {
+            font-weight: 700;
+        }
+
+        .authors {
+            margin-top: 0.8mm;
+            color: #303b45;
+        }
+
+        .me {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .venue {
+            margin-top: 0.8mm;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        .pub-link {
+            display: inline-block;
+            margin-top: 0.8mm;
+            color: var(--accent);
+            font-size: 8.5pt;
+            font-weight: 600;
+            border-bottom: 0.5pt solid #8fa4b4;
+        }
+
+        .trajectory {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3mm;
+        }
+
+        .trajectory-step {
+            padding: 2.7mm 3mm;
+            background: var(--soft);
+            border-top: 1.4pt solid var(--accent);
+            break-inside: avoid;
+        }
+
+        .trajectory-step strong {
+            display: block;
+            margin-bottom: 0.8mm;
+            color: var(--accent);
+            font-size: 9pt;
+        }
+
+        .trajectory-step span {
+            color: #34414d;
+            font-size: 8.6pt;
+        }
+
+        footer {
+            position: absolute;
+            right: 14mm;
+            bottom: 5mm;
+            left: 14mm;
+            color: #78838d;
+            font-size: 7.5pt;
+            text-align: center;
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+            }
+
+            .page {
+                margin: 0;
+                break-after: page;
+                page-break-after: always;
+            }
+
+            .page:last-child {
+                break-after: auto;
+                page-break-after: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="cv">
+            <header>
+                <h1>Han Joon Byun</h1>
+                <p class="headline">Researcher in Machine Learning, Optimization, and Finance</p>
+                <div class="contact">
+                    <a href="mailto:byunhanjoon@snu.ac.kr">byunhanjoon@snu.ac.kr</a>
+                    <a href="https://byunhanjoon.github.io">byunhanjoon.github.io</a>
+                    <a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ">Google Scholar</a>
+                    <a href="https://github.com/byunhanjoon">GitHub</a>
+                    <a href="https://linkedin.com/in/byunhanjoon">LinkedIn</a>
+                </div>
+            </header>
+
+            <section>
+                <h2>Research Profile</h2>
+                <p class="profile">Researcher working at the intersection of machine learning, mathematical optimization, and finance, with a focus on tabular data and time-series modeling. Current research combines evolutionary computation and Transformer architectures to improve predictive performance, computational efficiency, and interpretability. Brings rigorous mathematical training and applied experience spanning financial factors, credit-risk prediction, and interpretable AI.</p>
+                <p class="focus"><strong>Research areas:</strong> Tabular machine learning · Time series · Evolutionary computation · Transformer models · Financial AI · Interpretable machine learning</p>
+            </section>
+
+            <section>
+                <h2>Education</h2>
+                <div class="education-grid">
+                <div class="item">
+                    <div class="item-head">
+                        <span class="title">Ph.D. in Computer Science and Engineering</span>
+                        <span class="date">Expected 2027</span>
+                    </div>
+                    <p class="institution">Seoul National University · Optimization Lab</p>
+                </div>
+                <div class="item">
+                    <div class="item-head">
+                        <span class="title">M.S. in Computer Science and Engineering</span>
+                        <span class="date">2024</span>
+                    </div>
+                    <p class="institution">Seoul National University · Optimization Lab</p>
+                </div>
+                <div class="item">
+                    <div class="item-head">
+                        <span class="title">B.S. in Mathematics</span>
+                        <span class="date">2018</span>
+                    </div>
+                    <p class="institution">New York University</p>
+                    <p class="institution">Advanced study included Probability Theory, Statistics, and Stochastic Calculus.</p>
+                </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Research &amp; Applied Experience</h2>
+            <div class="item">
+                <div class="item-head">
+                    <span class="title">Agency for Defense Development · Joint Research Project</span>
+                    <span class="date">2026</span>
+                </div>
+                <ul>
+                    <li>Contributed to research on interpretable modeling, emphasizing methods that make model behavior easier to understand.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-head">
+                    <span class="title">PFCT · Joint Research Project</span>
+                    <span class="date">2025</span>
+                </div>
+                <ul>
+                    <li>Developed a default-prediction model using tabular Transformer architectures for structured financial data.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-head">
+                    <span class="title">Think Pool · Joint Research Project</span>
+                    <span class="date">2022–2024</span>
+                </div>
+                <ul>
+                    <li>Developed AI-driven financial factors, applying machine-learning methods to quantitative finance.</li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="item-head">
+                    <span class="title">Republic of Korea Air Force · Interpretation Officer</span>
+                    <span class="date">2019–2022</span>
+                </div>
+                <ul>
+                    <li>Served as an interpretation officer and established a long-term career direction at the intersection of computer science and finance.</li>
+                </ul>
+            </div>
+            </section>
+
+            <section>
+                <h2>Teaching Experience</h2>
+            <div class="item">
+                <div class="item-head">
+                    <span class="title">Head Teaching Assistant · Data Structures</span>
+                    <span class="date">Spring 2023 · Fall 2024 · Fall 2025</span>
+                </div>
+                <p class="institution">Seoul National University</p>
+            </div>
+            <div class="item">
+                <div class="item-head">
+                    <span class="title">Head Teaching Assistant · Algorithms</span>
+                    <span class="date">Fall 2023 · Spring 2025 · Spring 2026</span>
+                </div>
+                <p class="institution">Seoul National University</p>
+            </div>
+                <p class="teaching-summary">Prepared course content, coordinated teaching support, answered student questions, and graded assignments and examinations. Maintained an approachable, hands-on presence to help students build confidence in core problem-solving concepts.</p>
+            </section>
+        </div>
+        <footer>Han Joon Byun · Curriculum Vitae · Updated July 2026 · 1 / 2</footer>
+    </div>
+
+    <div class="page">
+        <div class="cv">
+            <section>
+                <h2>Research Trajectory</h2>
+                <div class="trajectory">
+                <div class="trajectory-step">
+                    <strong>Neural Network Foundations</strong>
+                    <span>Studied CNN and ANN pruning and transfer learning to understand model learning and efficiency.</span>
+                </div>
+                <div class="trajectory-step">
+                    <strong>Combinatorial Optimization</strong>
+                    <span>Helped develop a bespoke Transformer that frames the Traveling Salesperson Problem through language modeling.</span>
+                </div>
+                <div class="trajectory-step">
+                    <strong>Financial &amp; Tabular AI</strong>
+                    <span>Applies optimization and neural methods to improve performance, efficiency, and interpretability.</span>
+                </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Publications</h2>
+            <div class="publication">
+                <span class="pub-number">1.</span>
+                <div>
+                    <p class="pub-title">Multi-Objective Evolution of Patch Tokens for Tabular Transformers</p>
+                    <p class="authors"><span class="me">Han Joon Byun</span>, Joon Huh, Jieun Yook, and Byung-ro Moon</p>
+                    <p class="venue">Proceedings of the Genetic and Evolutionary Computation Conference (GECCO ’26), 2026</p>
+                    <a class="pub-link" href="https://doi.org/10.1145/3795095.3805076">doi.org/10.1145/3795095.3805076</a>
+                </div>
+            </div>
+            <div class="publication">
+                <span class="pub-number">2.</span>
+                <div>
+                    <p class="pub-title">Evolutionary Feature Construction for Tabular Transformers via Gradient-Enhanced Attention Rollout</p>
+                    <p class="authors"><span class="me">Han Joon Byun</span>, Jieun Yook, Hanbin Koo, and Byung-ro Moon</p>
+                    <p class="venue">Proceedings of the Genetic and Evolutionary Computation Conference Companion (GECCO ’26 Companion), 2026</p>
+                    <a class="pub-link" href="https://doi.org/10.1145/3795101.3805282">doi.org/10.1145/3795101.3805282</a>
+                </div>
+            </div>
+            <div class="publication">
+                <span class="pub-number">3.</span>
+                <div>
+                    <p class="pub-title">CycleFormer: TSP Solver Based on Language Modeling</p>
+                    <p class="authors">Jieun Yook, Junpyo Seo, Joon Huh, <span class="me">Han Joon Byun</span>, and Byung-ro Moon</p>
+                    <p class="venue">arXiv preprint, 2024</p>
+                    <a class="pub-link" href="https://arxiv.org/abs/2405.20042">arxiv.org/abs/2405.20042</a>
+                </div>
+            </div>
+            <div class="publication">
+                <span class="pub-number">4.</span>
+                <div>
+                    <p class="pub-title">Evolutionary Pruning of Deep Convolutional Networks by a Memetic GA with Sped-Up Local Optimization and GLCM Energy Z-Score</p>
+                    <p class="authors">Ha Hyun Cho, <span class="me">Han Joon Byun</span>, Min Kee Kim, Joon Huh, and Byung-Ro Moon</p>
+                    <p class="venue">Proceedings of the Genetic and Evolutionary Computation Conference Companion (GECCO ’23 Companion), 2023</p>
+                    <a class="pub-link" href="https://doi.org/10.1145/3583133.3590604">doi.org/10.1145/3583133.3590604</a>
+                </div>
+            </div>
+            </section>
+        </div>
+        <footer>Han Joon Byun · Curriculum Vitae · Updated July 2026 · 2 / 2</footer>
+    </div>
+</body>
+</html>
