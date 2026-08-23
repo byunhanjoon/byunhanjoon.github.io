@@ -238,6 +238,12 @@ section h2 a:hover::after,
     color: var(--text-color);
 }
 
+.contribution-note {
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
 /* Publications */
 .links {
     margin-top: 0.35rem;
