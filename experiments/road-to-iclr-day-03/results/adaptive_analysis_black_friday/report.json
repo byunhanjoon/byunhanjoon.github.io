@@ -1,0 +1,23 @@
+{
+  "adaptive_dataset_bootstrap_95ci": [
+    0.12944176308403677,
+    0.12944176308403677
+  ],
+  "adaptive_dataset_mean_gain": 0.12944176308403677,
+  "datasets": [
+    "black-friday"
+  ],
+  "diagnostic_to_test_gain_correlation": NaN,
+  "gain_over_matched_random_bootstrap_95ci": [
+    0.9313469067293321,
+    0.9313469067293321
+  ],
+  "gain_over_matched_random_mean": 0.9313469067293321,
+  "logical_rows": 36,
+  "maximum_parameter_ratio_deviation": 0.002132346408252328,
+  "models": [
+    "mlp",
+    "resnet",
+    "tabm"
+  ]
+}

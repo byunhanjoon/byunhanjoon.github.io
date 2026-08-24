@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "beats_matched_random": false,
+    "enough_nonempty_datasets": false,
+    "full_downstream_screen": false,
+    "positive_mean_gain": false,
+    "safe_abstention": false
+  },
+  "gate_passed": false,
+  "observed": {
+    "datasets_selecting_nonempty_structure": 1,
+    "downstream_datasets_evaluated": [
+      "miami_housing"
+    ],
+    "fraction_selected_runs_beating_matched_random": 1.0,
+    "full_downstream_screen_completed": false,
+    "maximum_absolute_mean_abstention_gain_pct": 0.0,
+    "mean_gain_pct_on_evaluated_datasets": 1.6944411414987426,
+    "selected_datasets": [
+      "miami_housing"
+    ]
+  },
+  "protocol_frozen_at": "2026-08-25T00:00:00+09:00",
+  "thresholds": {
+    "maximum_mean_abstention_regression_pct": 0.25,
+    "minimum_datasets_selecting_nonempty_structure": 2,
+    "minimum_fraction_selected_runs_beating_matched_random": 0.6,
+    "minimum_mean_gain_pct": 0.0
+  }
+}

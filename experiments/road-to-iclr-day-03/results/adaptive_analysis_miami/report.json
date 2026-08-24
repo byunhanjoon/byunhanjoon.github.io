@@ -1,0 +1,22 @@
+{
+  "adaptive_dataset_bootstrap_95ci": [
+    1.6944411414987426,
+    1.6944411414987426
+  ],
+  "adaptive_dataset_mean_gain": 1.6944411414987426,
+  "datasets": [
+    "miami_housing"
+  ],
+  "diagnostic_to_test_gain_correlation": NaN,
+  "gain_over_matched_random_bootstrap_95ci": [
+    2.672396879422755,
+    2.672396879422755
+  ],
+  "gain_over_matched_random_mean": 2.672396879422755,
+  "logical_rows": 10,
+  "maximum_parameter_ratio_deviation": 0.0018001141786707642,
+  "models": [
+    "mlp",
+    "resnet"
+  ]
+}
