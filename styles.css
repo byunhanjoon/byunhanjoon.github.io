@@ -96,12 +96,6 @@ main {
     letter-spacing: -0.75px;
 }
 
-.profile-intro p {
-    max-width: 680px;
-    color: var(--secondary-color);
-    font-size: 1.05rem;
-}
-
 section {
     margin-bottom: var(--section-spacing);
 }
