@@ -15,7 +15,7 @@
         "Blog Posts": "블로그 글",
         "Posts coming soon.": "게시물이 곧 공개됩니다.",
         "Manuscripts Under Review": "심사 중인 원고",
-        "Byun, Han Joon is a researcher at Seoul National University working on tabular data, time series, finance, machine learning, and optimization.": "Byun, Han Joon은 서울대학교에서 테이블 데이터, 시계열, 금융, 머신러닝, 최적화를 연구하고 있습니다.",
+        "Byun, Han Joon is a researcher at Seoul National University working on tabular data, time series, finance, machine learning, and optimization.": "변한준은 정형 데이터, 시계열, 금융, 머신러닝, 최적화를 연구하는 서울대학교 연구자입니다.",
         "I am a researcher working on tabular data, time series, and finance.": "저는 테이블 데이터, 시계열, 금융을 연구하고 있습니다.",
         "PhD in Computer Science and Engineering": "컴퓨터공학 박사",
         "MS in Computer Science and Engineering": "컴퓨터공학 석사",
