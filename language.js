@@ -14,6 +14,11 @@
         "Research Profile": "연구 소개",
         "Blog Posts": "블로그 글",
         "Posts coming soon.": "게시물이 곧 공개됩니다.",
+        "When “Numerical” and “Categorical” Aren’t Types": "“수치형”과 “범주형”이 타입이 아닐 때",
+        "Road to ICLR · Day 1 / 30": "Road to ICLR · 1일차 / 30",
+        "August 24, 2026": "2026년 8월 24일",
+        "A column’s storage type is not its learning semantics. A visual hypothesis about multi-view preprocessing for mixed tabular features.": "열의 저장 타입은 학습 의미론이 아닙니다. 혼합형 정형 특성을 위한 다중 관점 전처리에 관한 시각적 가설입니다.",
+        "Read Day 1 →": "1일차 읽기 →",
         "Manuscripts Under Review": "심사 중인 원고",
         "Byun, Han Joon is a researcher at Seoul National University working on tabular data, time series, finance, machine learning, and optimization.": "변한준은 정형 데이터, 시계열, 금융, 머신러닝, 최적화를 연구하는 서울대학교 연구자입니다.",
         "I am a researcher working on tabular data, time series, and finance.": "저는 테이블 데이터, 시계열, 금융을 연구하고 있습니다.",
@@ -57,6 +62,7 @@
     };
 
     const originalTitle = document.title;
+    const sourceLanguage = (document.documentElement.lang || "en").slice(0, 2);
     const translatedNodes = [];
 
     function preserveWhitespace(original, replacement) {
@@ -83,6 +89,21 @@
 
     function setLanguage(language, remember) {
         const useKorean = language === "ko";
+        const alternate = document.querySelector(
+            'link[rel="alternate"][hreflang="' + language + '"]'
+        );
+
+        if (language !== sourceLanguage && alternate) {
+            if (remember) {
+                try {
+                    window.localStorage.setItem(storageKey, language);
+                } catch (error) {
+                    // Continue to the localized page without persistence.
+                }
+            }
+            window.location.assign(alternate.href);
+            return;
+        }
 
         translatedNodes.forEach(function (item) {
             item.node.nodeValue = useKorean
@@ -118,6 +139,10 @@
             }
         } catch (error) {
             // Fall through to location-based detection.
+        }
+
+        if (sourceLanguage === "ko") {
+            return "ko";
         }
 
         try {

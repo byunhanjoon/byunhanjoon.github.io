@@ -78,6 +78,25 @@ body {
     line-height: 1.78;
 }
 
+html[lang="ko"] .essay-header h1,
+html[lang="ko"] .essay-deck,
+html[lang="ko"] .essay-body {
+    font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    word-break: keep-all;
+}
+
+html[lang="ko"] .essay-body {
+    line-height: 1.85;
+}
+
+html[lang="ko"] .essay-body > p:first-child::first-letter {
+    float: none;
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
 .essay-body > p:first-child::first-letter {
     float: left;
     margin: 0.08em 0.1em 0 0;
@@ -217,6 +236,14 @@ body {
 .semantic-track::after {
     right: 0;
     content: "metric-like";
+}
+
+html[lang="ko"] .semantic-track::before {
+    content: "식별자 성격";
+}
+
+html[lang="ko"] .semantic-track::after {
+    content: "수치적 성격";
 }
 
 .semantic-marker {
