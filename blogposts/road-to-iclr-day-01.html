@@ -16,9 +16,9 @@
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-01.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260824-2">
     <script src="../language.js" defer></script>
-    <script src="road-to-iclr-day-01.js" defer></script>
+    <script src="road-to-iclr-day-01.js?v=20260824-2" defer></script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -72,7 +72,7 @@
 
                 <p>But a dtype is a storage convention, not a semantic law. ZIP codes are numbers with almost no metric meaning. Star ratings are categories with a strong order. Month, dosage band, education level, room count, and discretized age all live somewhere between identity and magnitude.</p>
 
-                <div class="thesis"><strong>Day 1 hypothesis.</strong> For mixed tabular data, preprocessing should be treated as a small hypothesis class—not a single irreversible choice. Giving each ambiguous feature several structured views may reduce the amount of semantic repair we ask the neural backbone to discover from scratch.</div>
+                <div class="thesis"><strong>Starting hypothesis.</strong> For mixed tabular data, preprocessing should be treated as a small hypothesis class—not a single irreversible choice. The experiments below will reject this broad version and reveal a narrower, more useful one.</div>
 
                 <div class="deadline-note">
                     <strong>30-post sprint</strong><span>This series follows the path from an intuition to an ICLR-ready experiment.</span>
@@ -111,6 +111,9 @@
                     </div>
                     <figcaption><strong>Figure 1.</strong> Feature identity is often better described as a continuum. The bars are illustrative, not learned weights; the research question is whether such weights can be estimated reliably.</figcaption>
                 </figure>
+
+                <details class="lab-notes">
+                    <summary><span>Experiment log</span><strong>How the broad multi-view idea failed—and narrowed the question</strong><small>Open the synthetic sanity check, model design, dataset protocol, and two intermediate real-data passes.</small></summary>
 
                 <h2>Where the split enters the model</h2>
 
@@ -165,7 +168,7 @@
                             <text x="802" y="192" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#4d73a5">BACKBONE</text>
                         </svg>
                     </div>
-                    <figcaption><strong>Figure 2.</strong> A candidate front end: offer several views, then learn a sparse or regularized mixture before the shared backbone. The target-aware route must be leakage-safe.</figcaption>
+                    <figcaption><strong>Figure S1.</strong> The original candidate front end: offer several views, then learn a sparse or regularized mixture before the shared backbone. The target-aware route must be leakage-safe.</figcaption>
                 </figure>
 
                 <h2>The candidate: preprocess uncertainty</h2>
@@ -227,7 +230,7 @@
                             </g>
                         </svg>
                     </div>
-                    <figcaption><strong>Figure 3.</strong> Mean test RMSE over 20 seeds. The multi-view encoder nearly reaches the semantic oracle, while the schema-only representation cannot recover the hidden nonlinearity. Exact values and standard deviations are in the <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-01/results.csv">results file</a>.</figcaption>
+                    <figcaption><strong>Figure S2.</strong> Mean test RMSE over 20 seeds. The multi-view encoder nearly reaches the semantic oracle, while the schema-only representation cannot recover the hidden nonlinearity. Exact values and standard deviations are in the <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-01/results.csv">results file</a>.</figcaption>
                 </figure>
 
                 <div class="result-callout"><strong>0.701 RMSE</strong><span>Multi-view at 2,500 rows, versus 1.173 for schema-only and 0.698 for the semantic oracle.</span></div>
@@ -302,8 +305,8 @@
                     <table class="benchmark-table results-table">
                         <thead><tr><th>Dataset</th><th>Bins</th><th>Schema + PLE</th><th>Gated PLE</th><th>Sparse gate</th><th>Late fusion</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>Diamond</strong></td><td>64</td><td>0.13709 ± .00157</td><td>0.13602 ± .00118</td><td><strong>0.13588 ± .00068</strong></td><td>0.13642 ± .00131</td></tr>
-                            <tr><td><strong>Black Friday</strong></td><td>128</td><td>0.69257 ± .00111</td><td>0.69371 ± .00149</td><td>0.69298 ± .00132</td><td><strong>0.68864 ± .00031</strong></td></tr>
+                            <tr><td><strong>Diamond</strong></td><td>64</td><td>0.1371 ± .0016</td><td>0.1360 ± .0012</td><td><strong>0.1359 ± .0007</strong></td><td>0.1364 ± .0013</td></tr>
+                            <tr><td><strong>Black Friday</strong></td><td>128</td><td>0.6926 ± .0011</td><td>0.6937 ± .0015</td><td>0.6930 ± .0013</td><td><strong>0.6886 ± .0003</strong></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -313,55 +316,53 @@
                 <p>Black Friday tells a different story. Late fusion improves RMSE by 0.57% and wins all five paired seeds. Its greedy ensemble repeatedly retains the PLE and numerical-identity models, often adding the individually weak residual model for complementary errors. This is useful performance, but it costs two or three models and therefore is not parameter matched. A three-member PLE-only deep ensemble is now the required control.</p>
 
                 <div class="thesis"><strong>Updated reading.</strong> Multi-view concatenation remains unsupported. Separate view projection is a better MLP front end on Diamond, and selective late fusion is a robust improvement on Black Friday. Neither result yet establishes that learned numerical–categorical semantics—not ordinary architectural or ensemble diversity—caused the gain. The full 150-run record is in <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-01/expanded_results.csv">expanded_results.csv</a>.</div>
+                </details>
 
-                <h3>A broader search finally finds a narrow signal</h3>
+                <h2>The narrow signal: some numbers contain atoms</h2>
 
-                <p>The failed broad search suggested a more precise question. PLE and identity encoding do not merely offer two implementations of the same idea. They make different assumptions: <strong>PLE asks what nearby values should share; an identity view asks what an exact value should remember.</strong></p>
+                <p>The failed routes in the experiment log suggest a more precise question. PLE and identity encoding do not merely offer two implementations of the same idea. They make different assumptions: <strong>PLE asks what nearby values should share; an identity view asks what an exact value should remember.</strong></p>
 
                 <figure class="wide-figure">
-                    <div class="insight-figure">
-                        <svg viewBox="0 0 960 330" role="img" aria-labelledby="dual-view-title dual-view-desc">
-                            <title id="dual-view-title">Three ways to represent a numerical feature</title>
-                            <desc id="dual-view-desc">PLE models a smooth relationship between nearby values. Identity encoding gives each exact value an independent effect. Combining the two preserves the smooth trend and exact-value exceptions.</desc>
-                            <rect class="viz-panel" x="10" y="10" width="300" height="300" rx="18" />
-                            <rect class="viz-panel" x="330" y="10" width="300" height="300" rx="18" />
-                            <rect class="viz-panel" x="650" y="10" width="300" height="300" rx="18" />
-
-                            <text class="viz-title" x="35" y="48">PLE view</text>
-                            <text class="viz-label" x="35" y="72">Nearby values share structure</text>
-                            <path class="viz-axis" d="M55 245 H275 M55 245 V100" />
-                            <path class="viz-ple" d="M65 225 C105 217 128 195 155 177 S205 145 265 112" />
-                            <circle cx="135" cy="190" r="5" fill="var(--essay-teal)" />
-                            <circle cx="165" cy="171" r="5" fill="var(--essay-teal)" />
-                            <circle cx="195" cy="153" r="5" fill="var(--essay-teal)" />
-                            <text class="viz-note" x="55" y="278">39</text>
-                            <text class="viz-note" x="153" y="278">40</text>
-                            <text class="viz-note" x="255" y="278">41</text>
-
-                            <text class="viz-title" x="355" y="48">Identity view</text>
-                            <text class="viz-label" x="355" y="72">Exact values stay distinct</text>
-                            <path class="viz-axis" d="M375 245 H595 M375 245 V100" />
-                            <rect class="viz-identity" x="400" y="200" width="42" height="45" rx="5" opacity=".58" />
-                            <rect class="viz-identity" x="464" y="112" width="42" height="133" rx="5" />
-                            <rect class="viz-identity" x="528" y="184" width="42" height="61" rx="5" opacity=".7" />
-                            <text class="viz-note" x="412" y="278">39</text>
-                            <text class="viz-note" x="476" y="278">40</text>
-                            <text class="viz-note" x="540" y="278">41</text>
-
-                            <text class="viz-title" x="675" y="48">Both views</text>
-                            <text class="viz-label" x="675" y="72">Smooth trend + exceptions</text>
-                            <path class="viz-axis" d="M695 245 H915 M695 245 V100" />
-                            <path class="viz-ple" d="M705 225 C745 217 768 195 795 177 S845 145 905 112" opacity=".48" />
-                            <circle class="viz-combined" cx="775" cy="190" r="8" />
-                            <circle class="viz-combined" cx="805" cy="118" r="11" />
-                            <circle class="viz-combined" cx="835" cy="153" r="8" />
-                            <path d="M805 164 V132" stroke="var(--essay-coral)" stroke-width="3" stroke-dasharray="4 4" />
-                            <text class="viz-note" x="695" y="278">39</text>
-                            <text class="viz-note" x="793" y="278">40</text>
-                            <text class="viz-note" x="895" y="278">41</text>
-                        </svg>
+                    <div class="encoder-demo" data-encoder-demo>
+                        <div class="encoder-demo-toolbar">
+                            <span>Try an exact value</span>
+                            <div class="encoder-value-switcher" aria-label="Choose an example value">
+                                <button class="encoder-value-button" type="button" data-value="39" data-ple="1,0.5,0,0" data-identity="1,0,0" data-note="39 and 40 activate overlapping PLE bins, while identity keeps 39 distinct." aria-pressed="false">39</button>
+                                <button class="encoder-value-button" type="button" data-value="40" data-ple="1,1,0.5,0" data-identity="0,1,0" data-note="40 shares a smooth neighborhood and can still receive its own exact-value effect." aria-pressed="true">40</button>
+                                <button class="encoder-value-button" type="button" data-value="41" data-ple="1,1,1,0.5" data-identity="0,0,1" data-note="40 and 41 activate overlapping PLE bins, while identity keeps 41 distinct." aria-pressed="false">41</button>
+                            </div>
+                        </div>
+                        <div class="encoder-demo-flow">
+                            <div class="raw-value-token"><span>raw value</span><output data-raw-value>40</output></div>
+                            <span class="demo-arrow" aria-hidden="true">→</span>
+                            <div class="encoding-lenses">
+                                <section class="encoding-lens ple-lens">
+                                    <header><span class="lens-swatch"></span><strong>PLE</strong><small>nearby values share</small></header>
+                                    <div class="encoding-vector" aria-label="Piecewise-linear encoding vector">
+                                        <span class="encoding-cell" data-ple-cell><i></i><b>1</b></span>
+                                        <span class="encoding-cell" data-ple-cell><i></i><b>1</b></span>
+                                        <span class="encoding-cell" data-ple-cell><i></i><b>.5</b></span>
+                                        <span class="encoding-cell" data-ple-cell><i></i><b>0</b></span>
+                                    </div>
+                                    <code data-ple-code>[1, 1, .5, 0]</code>
+                                </section>
+                                <span class="lens-plus" aria-hidden="true">+</span>
+                                <section class="encoding-lens identity-lens">
+                                    <header><span class="lens-swatch"></span><strong>Identity</strong><small>exact values stay distinct</small></header>
+                                    <div class="encoding-vector" aria-label="Identity encoding vector">
+                                        <span class="encoding-cell" data-identity-cell><i></i><b>0</b></span>
+                                        <span class="encoding-cell" data-identity-cell><i></i><b>1</b></span>
+                                        <span class="encoding-cell" data-identity-cell><i></i><b>0</b></span>
+                                    </div>
+                                    <code data-identity-code>[0, 1, 0]</code>
+                                </section>
+                            </div>
+                            <span class="demo-arrow" aria-hidden="true">→</span>
+                            <div class="backbone-token"><span>same</span><strong>backbone</strong></div>
+                        </div>
+                        <p class="encoder-demo-note" data-encoder-note>40 shares a smooth neighborhood and can still receive its own exact-value effect.</p>
                     </div>
-                    <figcaption><strong>Figure 4.</strong> A numerical value can carry two useful geometries. PLE shares evidence locally; identity encoding allows exact-value exceptions such as a spike at 40. The combined representation does not force the model to choose one interpretation in advance.</figcaption>
+                    <figcaption><strong>Figure 2.</strong> Click 39, 40, and 41. PLE represents proximity through overlapping activations; identity encoding adds a separate slot for each exact value. The vectors are schematic, but the distinction is the one tested in the experiment.</figcaption>
                 </figure>
 
                 <p>This matters for integers that are only partly metric. Forty hours per week is close to 39 and 41, but it may also identify a qualitatively different population. A product code of 2 may not be meaningfully “between” codes 1 and 3 at all. Treating every such column as continuous is as dogmatic as treating every number as a category.</p>
@@ -370,89 +371,75 @@
 
                 <div class="diagnostic-question"><strong>?</strong><span>After the smooth model has made its best prediction, do its errors still line up by exact value?<small>If exact-value groups explain at least 0.1% of the remaining residual variance, the column receives an additional identity view. The view itself is target-free; only this training-only selection rule uses labels.</small></span></div>
 
-                <p>With that mechanism fixed, I expanded the study to 397 model fits across the four datasets. The screen covers PLE resolution, MLP and ResNet backbones, optimization, identity thresholds, residual routes, and gates. It freezes every seed-0 validation choice before five-seed test confirmation; screening files contain no test scores. Full configurations belong in the <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-01">experiment README</a>, not in the main argument here.</p>
+                <p>With that mechanism fixed, I ran 397 fits across four datasets. The search tuned PLE resolution and the backbone, compared identity, residual, and gated routes, froze every seed-0 validation choice, and only then confirmed the selected models over five test seeds. Full configurations are in the <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-01">experiment README</a>.</p>
 
                 <div class="benchmark-table-wrap" role="region" aria-label="Broad five-seed signal search results" tabindex="0">
                     <table class="benchmark-table results-table">
-                        <thead><tr><th>Dataset</th><th>Fixed PLE</th><th>Tuned backbone</th><th>Semantic candidate</th><th>HP ensemble</th></tr></thead>
+                        <thead><tr><th>Dataset</th><th>Tuned PLE</th><th>Selected identity route</th><th>Paired outcome</th></tr></thead>
                         <tbody>
-                            <tr><td><strong>Adult accuracy ↑</strong></td><td>0.85623 ± .00103</td><td>0.85948 ± .00169</td><td><strong>0.87259 ± .00108</strong></td><td><strong>0.87299 ± .00072</strong></td></tr>
-                            <tr><td><strong>Diamond RMSE ↓</strong></td><td>0.14078 ± .00076</td><td>0.13567 ± .00123</td><td>0.13525 ± .00079<sup>†</sup></td><td><strong>0.13229 ± .00043</strong></td></tr>
-                            <tr><td><strong>Black Friday RMSE ↓</strong></td><td>0.69436 ± .00025</td><td>0.69267 ± .00064</td><td><strong>0.69119 ± .00051</strong></td><td><strong>0.68515 ± .00027</strong></td></tr>
-                            <tr><td><strong>California RMSE ↓</strong></td><td>0.49501 ± .00499</td><td>0.47926 ± .00524</td><td>0.47804 ± .00399<sup>†</sup></td><td><strong>0.45618 ± .00150</strong></td></tr>
+                            <tr><td><strong>Adult accuracy ↑</strong></td><td>0.8595 ± .0017</td><td><strong>0.8714 ± .0014</strong></td><td class="better">+1.19 pp · 5/5</td></tr>
+                            <tr><td><strong>Diamond RMSE ↓</strong></td><td>0.1357 ± .0012</td><td>—</td><td>No column selected</td></tr>
+                            <tr><td><strong>Black Friday RMSE ↓</strong></td><td>0.6927 ± .0006</td><td><strong>0.6912 ± .0005</strong></td><td class="better">−0.21% · 5/5</td></tr>
+                            <tr><td><strong>California RMSE ↓</strong></td><td>0.4793 ± .0052</td><td>—</td><td>No column selected</td></tr>
                         </tbody>
                     </table>
                 </div>
 
-                <p><sup>†</sup> These validation-selected routes add no identity feature at their chosen threshold. They are repeat fits of the same representation, so I count Diamond and California as semantic nulls despite the numerical difference.</p>
-
                 <p>The most surprising contrast is not between model families; it is between datasets. Diamond's explicitly ordered categories looked like the easiest semantic win, yet none survived the controls. Adult and Black Friday improve instead when columns stored as numerical receive identity views. The schema's consequential mistake was not calling an ordered variable “categorical.” It was assuming that every number must obey numerical geometry.</p>
 
-                <p>Adult is the clean positive result. The residual diagnostic selects numerical columns 3, 4, and 5 in every seed. The full route improves over the tuned backbone by 1.31 accuracy points and wins every paired seed. More importantly, the identity-only control reaches 0.87143 ± .00139, so most of the improvement remains after removing residual categorical target encoding.</p>
+                <p>Adult makes the signal tangible. The diagnostic selects capital gain, capital loss, and hours per week. These are not ordinary smooth measurements: each distribution contains an <em>atom</em>—a value occupied by an unusually large fraction of the dataset.</p>
 
                 <figure class="wide-figure">
-                    <div class="insight-figure">
-                        <svg viewBox="0 0 820 350" role="img" aria-labelledby="adult-ladder-title adult-ladder-desc">
-                            <title id="adult-ladder-title">Adult accuracy control ladder</title>
-                            <desc id="adult-ladder-desc">The fixed PLE MLP scores 0.85623, the tuned PLE ResNet scores 0.85948, adding selected identity views scores 0.87143, adding categorical residual views scores 0.87259, and the hyperparameter ensemble scores 0.87299.</desc>
-                            <line class="viz-grid" x1="280" y1="42" x2="280" y2="292" />
-                            <line class="viz-grid" x1="420" y1="42" x2="420" y2="292" />
-                            <line class="viz-grid" x1="560" y1="42" x2="560" y2="292" />
-                            <line class="viz-grid" x1="700" y1="42" x2="700" y2="292" />
-
-                            <text class="viz-label" x="24" y="72">Fixed PLE MLP</text>
-                            <text class="viz-label" x="24" y="122">Tuned PLE ResNet</text>
-                            <text class="viz-label" x="24" y="172">+ identity views</text>
-                            <text class="viz-label" x="24" y="222">+ residual cat views</text>
-                            <text class="viz-label" x="24" y="272">HP ensemble</text>
-
-                            <line class="ladder-bar" x1="280" y1="67" x2="367" y2="67" />
-                            <line class="ladder-bar tuned" x1="280" y1="117" x2="413" y2="117" />
-                            <line class="ladder-bar semantic" x1="280" y1="167" x2="580" y2="167" />
-                            <line class="ladder-bar semantic" x1="280" y1="217" x2="597" y2="217" />
-                            <line class="ladder-bar ensemble" x1="280" y1="267" x2="602" y2="267" />
-
-                            <circle class="ladder-dot" cx="367" cy="67" r="8" />
-                            <circle class="ladder-dot tuned" cx="413" cy="117" r="8" />
-                            <circle class="ladder-dot semantic" cx="580" cy="167" r="9" />
-                            <circle class="ladder-dot semantic" cx="597" cy="217" r="9" />
-                            <circle class="ladder-dot ensemble" cx="602" cy="267" r="9" />
-
-                            <text class="viz-value" x="382" y="72">0.85623</text>
-                            <text class="viz-value" x="428" y="122">0.85948</text>
-                            <text class="viz-value" x="595" y="172">0.87143</text>
-                            <text class="viz-value" x="612" y="222">0.87259</text>
-                            <text class="viz-value" x="617" y="272">0.87299</text>
-
-                            <text class="viz-note" x="266" y="325">.850</text>
-                            <text class="viz-note" x="406" y="325">.860</text>
-                            <text class="viz-note" x="546" y="325">.870</text>
-                            <text class="viz-note" x="686" y="325">.880</text>
-                            <text class="viz-note" x="24" y="325">Accuracy; axis begins at .850</text>
-                        </svg>
+                    <div class="point-mass-figure" role="img" aria-label="Dominant exact values in the three selected Adult numerical columns">
+                        <div class="point-mass-card" style="--mass: 91.7%;"><span>capital gain</span><strong>0</strong><div><i></i></div><small>91.7% exactly zero</small></div>
+                        <div class="point-mass-card" style="--mass: 95.3%;"><span>capital loss</span><strong>0</strong><div><i></i></div><small>95.3% exactly zero</small></div>
+                        <div class="point-mass-card" style="--mass: 46.7%;"><span>hours per week</span><strong>40</strong><div><i></i></div><small>46.7% exactly forty</small></div>
                     </div>
-                    <figcaption><strong>Figure 5.</strong> Adult's control ladder separates four effects. Backbone tuning helps modestly; selected numerical identity views produce the large jump; residual categorical views and ensembling add little afterward. All values are five-seed test means.</figcaption>
+                    <figcaption><strong>Figure 3.</strong> The three Adult columns selected by the residual diagnostic all have dominant exact values. This suggests a sharper mechanism: identity encoding may be correcting point masses that a smooth basis finds awkward to express.</figcaption>
+                </figure>
+
+                <p>The identity-only control reaches 0.8714 ± .0014, 1.19 accuracy points above the tuned PLE backbone, and wins every paired seed. That removes residual categorical target encoding from the explanation. It does not yet tell us whether full identity encoding is necessary—or whether three simple indicators for gain = 0, loss = 0, and hours = 40 would recover the same gain.</p>
+
+                <figure class="wide-figure">
+                    <div class="control-ladder" role="img" aria-label="Adult accuracy rises from 0.8562 with a fixed PLE MLP to 0.8730 with a hyperparameter ensemble. Most of the gain comes from selected identity views.">
+                        <div class="ladder-axis"><span>.850</span><span>.860</span><span>.870</span><span>.880</span></div>
+                        <div class="control-row neutral" style="--score: 20.7%;">
+                            <span class="control-label">Fixed PLE MLP</span><span class="control-track"><i></i></span><strong>0.8562</strong><small>starting point</small>
+                        </div>
+                        <div class="control-row tuned" style="--score: 31.7%;">
+                            <span class="control-label">Tuned PLE ResNet</span><span class="control-track"><i></i></span><strong>0.8595</strong><small>+0.33 pp tuning</small>
+                        </div>
+                        <div class="control-row semantic" style="--score: 71.3%;">
+                            <span class="control-label">+ identity views</span><span class="control-track"><i></i></span><strong>0.8714</strong><small>+1.19 pp identity</small>
+                        </div>
+                        <div class="control-row residual" style="--score: 75.3%;">
+                            <span class="control-label">+ residual cat views</span><span class="control-track"><i></i></span><strong>0.8726</strong><small>+0.12 pp</small>
+                        </div>
+                        <div class="control-row ensemble" style="--score: 76.7%;">
+                            <span class="control-label">HP ensemble</span><span class="control-track"><i></i></span><strong>0.8730</strong><small>+0.04 pp</small>
+                        </div>
+                        <p class="ladder-takeaway"><strong>The visible jump is the result.</strong> Tuning moves the baseline a little; the selected identity route does most of the work.</p>
+                    </div>
+                    <figcaption><strong>Figure 4.</strong> Adult's control ladder separates four effects. The axis begins at .850 so the increments remain visible. All values are five-seed test means, rounded to four decimal places.</figcaption>
                 </figure>
 
                 <p>Black Friday shows the same pattern at smaller scale: identity views for all four numerical columns reduce RMSE by 0.21% and win all five paired seeds. Categorical target and residual routes, despite being more elaborate, never provide the reliable cross-dataset gain.</p>
 
-                <p>The ensembles answer a different question. They reduce RMSE by 2.49% on Diamond, 1.09% on Black Friday, and 4.82% on California relative to each tuned single model. That is strong evidence for hyperparameter diversity, but it is not evidence for feature semantics: several selected members are ordinary schema + PLE models.</p>
+                <p>TabPack-style hyperparameter ensembles are strong—especially on Diamond and California—but answer a different question. Their gains establish useful model diversity, not feature semantics, because several selected members are ordinary schema + PLE models.</p>
 
-                <div class="thesis"><strong>Current reading.</strong> The universal multi-view hypothesis is still false, but a narrower claim now has support: some columns stored as numerical benefit from an additional identity route. The effect is large on Adult, small on Black Friday, and absent on Diamond and California. Categorical target and residual views remain unsupported. Full screening, frozen selections, and five-seed results are in <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-01/signal_search">signal_search/</a>.</div>
+                <div class="thesis"><strong>Day 1 conclusion.</strong> The universal multi-view hypothesis is false. A narrower idea survives: a numerical feature can have a smooth background and a few important atoms, so it may need both PLE and a sparse exact-value correction. The signal is large on Adult, small on Black Friday, and absent on Diamond and California. Full screening and frozen five-seed results are in <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-01/signal_search">signal_search/</a>.</div>
 
                 <h2>What would falsify the idea?</h2>
 
                 <p>The next step is not to add more machinery. It is to find the smallest set of tests capable of killing the hypothesis.</p>
 
                 <ol class="research-questions">
-                    <li><span><strong>Attribution test.</strong> Which of Adult's three selected columns causes the gain, and do their exact-value residual plots show the predicted spikes?</span></li>
-                    <li><span><strong>Split-stability test.</strong> Does the residual diagnostic select the same columns under new data splits—not merely new initialization seeds on one split?</span></li>
-                    <li><span><strong>Backbone test.</strong> Do the selected identity views still help matched MLP, ResNet, and FT-Transformer baselines?</span></li>
-                    <li><span><strong>Generalization test.</strong> How should an identity route handle rare or unseen values without memorizing the training table?</span></li>
-                    <li><span><strong>Simplicity test.</strong> Can a simple dual view remain competitive with learned gates after accounting for parameters, latency, and variance?</span></li>
+                    <li><span><strong>Mechanism test.</strong> Which selected column causes the gain, and can simple mode indicators match a full identity view?</span></li>
+                    <li><span><strong>Split-stability test.</strong> Does the diagnostic select the same columns under new data splits—not merely new initialization seeds on one split?</span></li>
+                    <li><span><strong>Generalization test.</strong> Does the correction survive matched MLP, ResNet, and Transformer backbones while handling rare or unseen values?</span></li>
                 </ol>
 
-                <p>If the answer to these questions is mostly “no,” the binary split may be a useful inductive bias rather than a bottleneck. If the answer is “yes,” then preprocessing is not merely cleanup. It is the first learned theory of what a table means.</p>
+                <p>If the indicators explain everything, the useful object is not a generic identity view but a compact point-mass basis. If the result disappears across splits, Day 1 found a split-specific curiosity. Either outcome sharpens the next experiment.</p>
 
                 <h2>References</h2>
 
@@ -465,7 +452,7 @@
                     <li id="ref-6">Gorishniy, Kotelnikov, Rubachev, and Babenko. <a href="https://arxiv.org/abs/2607.05380">TabPack: Efficient Hyperparameter Ensembles for Tabular Deep Learning</a>. ICML 2026.</li>
                 </ol>
 
-                <p class="next-post"><strong>Next:</strong> Day 2 will turn “feature ambiguity” into measurable diagnostics: cardinality, local smoothness, monotonic evidence, and target-conditional instability.</p>
+                <p class="next-post"><strong>Next:</strong> Day 2 asks whether Adult's gain comes from full identity encoding or just three exact-value spikes—and whether either result survives new data splits.</p>
             </div>
         </article>
     </main>
