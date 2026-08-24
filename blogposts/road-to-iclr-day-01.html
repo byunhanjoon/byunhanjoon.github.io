@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When “Numerical” and “Categorical” Aren’t Types — Road to ICLR Day 1</title>
+    <meta name="description" content="Day 1 of Road to ICLR: treating numerical and categorical feature identity as a continuum, and testing whether multi-view preprocessing can do more of the representation work.">
+    <meta name="author" content="Han Joon Byun">
+    <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-01.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="When Numerical and Categorical Aren’t Types">
+    <meta property="og:description" content="Road to ICLR, Day 1/30 — a visual hypothesis about feature semantics and preprocessing for tabular neural networks.">
+    <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-01.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="road-to-iclr.css">
+    <script src="../language.js" defer></script>
+    <script src="road-to-iclr-day-01.js" defer></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "When Numerical and Categorical Aren't Types",
+      "description": "Day 1 of Road to ICLR: treating numerical and categorical feature identity as a continuum.",
+      "datePublished": "2026-08-24",
+      "dateModified": "2026-08-24",
+      "author": {
+        "@type": "Person",
+        "name": "Han Joon Byun",
+        "url": "https://byunhanjoon.github.io/"
+      },
+      "mainEntityOfPage": "https://byunhanjoon.github.io/blogposts/road-to-iclr-day-01.html"
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="social-icons">
+                <a href="../Han_Joon_Byun_CV.pdf" target="_blank" title="CV"><i class="fas fa-file-alt"></i></a>
+                <a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                <a href="https://linkedin.com/in/byunhanjoon" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/byunhanjoon" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:byunhanjoon@snu.ac.kr" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../blog.html">Blog</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="essay">
+        <article>
+            <div class="essay-header">
+                <p class="series-kicker">Road to ICLR · Day 1 / 30</p>
+                <h1>When “numerical” and “categorical” aren’t types</h1>
+                <p class="essay-deck">A column’s storage type is not its learning semantics. What if a tabular model began with several plausible views of every feature—and let the data decide which ones matter?</p>
+                <div class="essay-meta">
+                    <span>August 24, 2026</span>
+                    <span>Han Joon Byun</span>
+                    <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-01">Code &amp; results on GitHub ↗</a>
+                </div>
+            </div>
+
+            <div class="essay-body">
+                <p>Most tabular pipelines begin with a deceptively small decision: every column is declared <em>numerical</em> or <em>categorical</em>. That decision controls almost everything that follows. A number may be standardized and projected; a category may be mapped through a lookup table. From that point on, the backbone is expected to repair whatever the schema got wrong.</p>
+
+                <p>But a dtype is a storage convention, not a semantic law. ZIP codes are numbers with almost no metric meaning. Star ratings are categories with a strong order. Month, dosage band, education level, room count, and discretized age all live somewhere between identity and magnitude.</p>
+
+                <div class="thesis"><strong>Day 1 hypothesis.</strong> For mixed tabular data, preprocessing should be treated as a small hypothesis class—not a single irreversible choice. Giving each ambiguous feature several structured views may reduce the amount of semantic repair we ask the neural backbone to discover from scratch.</div>
+
+                <div class="deadline-note">
+                    <strong>30-post sprint</strong><span>This series follows the path from an intuition to an ICLR-ready experiment.</span>
+                    <strong>Sep 18</strong><span>ICLR 2027 abstract deadline, 11:59 PM AoE.</span>
+                    <strong>Sep 25</strong><span>ICLR 2027 full-paper deadline, AoE.<sup><a href="#ref-1">[1]</a></sup></span>
+                </div>
+
+                <h2>A continuum hiding inside a checkbox</h2>
+
+                <p>The usual binary schema is useful, but it bundles together several different questions. Does distance between values mean anything? Is there an order? Do neighboring values behave similarly? Is the feature mostly an identifier? Does its meaning change in the presence of another feature?</p>
+
+                <p>Those questions do not produce a clean partition. They produce a <em>semantic profile</em>. Try the examples below.</p>
+
+                <figure class="wide-figure">
+                    <div class="semantic-viz" aria-label="Interactive continuum from identity-like to metric-like feature behavior">
+                        <div class="feature-tabs" role="tablist" aria-label="Feature examples">
+                            <button class="feature-tab" type="button" data-position="8" data-title="ZIP code" data-note="Arithmetic is legal but largely meaningless. Nearby codes are not guaranteed to describe nearby behavior.">ZIP code</button>
+                            <button class="feature-tab" type="button" data-position="28" data-title="Month" data-note="There is order and cyclic proximity, but December and January expose the limits of a simple numerical line.">Month</button>
+                            <button class="feature-tab" type="button" data-position="55" data-title="Star rating" data-note="The levels are discrete and ordered. Distances may be useful, but they need not be uniform.">Star rating</button>
+                            <button class="feature-tab" type="button" data-position="68" data-title="Room count" data-note="A count has metric structure, yet low-cardinality values can carry category-specific effects.">Room count</button>
+                            <button class="feature-tab" type="button" data-position="94" data-title="Temperature" data-note="Magnitude and local distance are meaningful, making a numerical view the natural starting point.">Temperature</button>
+                        </div>
+                        <div class="semantic-track">
+                            <span class="semantic-marker" aria-hidden="true"></span>
+                        </div>
+                        <div class="semantic-readout">
+                            <div>
+                                <h3 class="semantic-title">ZIP code</h3>
+                                <p class="semantic-note"></p>
+                            </div>
+                            <div class="view-mix" aria-label="Illustrative encoding mixture">
+                                <div class="view-row"><span>identity view</span><div class="view-bar"><span class="identity-weight"></span></div></div>
+                                <div class="view-row"><span>metric view</span><div class="view-bar"><span class="metric-weight"></span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <figcaption><strong>Figure 1.</strong> Feature identity is often better described as a continuum. The bars are illustrative, not learned weights; the research question is whether such weights can be estimated reliably.</figcaption>
+                </figure>
+
+                <h2>Where the split enters the model</h2>
+
+                <p>This distinction is not merely philosophical. In FT-Transformer, for example, a numerical feature is tokenized with a feature-specific linear projection, while a categorical feature uses a lookup table.<sup><a href="#ref-2">[2]</a></sup> TabTransformer concentrates its contextual embeddings on categorical features, then combines them with continuous inputs downstream.<sup><a href="#ref-3">[3]</a></sup> These are sensible designs—but the route is chosen before learning begins.</p>
+
+                <p>Meanwhile, numerical feature embeddings have become surprisingly important. Piecewise-linear encoding (PLE) and periodic embeddings can materially improve a range of tabular neural backbones, sometimes allowing an MLP to compete with a Transformer.<sup><a href="#ref-4">[4]</a></sup> That result suggests a broader possibility: perhaps the representation in front of the backbone deserves at least as much attention as the backbone itself.</p>
+
+                <p>Recent representation work has made the numerical side much richer, while the categorical side in representative architectures still often begins with a lookup table or contextualized identity embedding. The imbalance is understandable—category embeddings are already expressive—but it leaves ordered, quasi-continuous, and target-structured categories with fewer explicit inductive biases.</p>
+
+                <figure class="wide-figure">
+                    <div class="encoding-figure">
+                        <svg viewBox="0 0 920 360" role="img" aria-labelledby="encoding-title encoding-desc">
+                            <title id="encoding-title">A multi-view feature encoder</title>
+                            <desc id="encoding-desc">One ambiguous feature is encoded through identity, piecewise-linear, and target-aware views, mixed by a gate, and passed to a shared backbone.</desc>
+                            <defs>
+                                <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a999f"></path>
+                                </marker>
+                            </defs>
+                            <rect x="30" y="130" width="130" height="92" rx="16" fill="#f4f6f5" stroke="#cfd9d5"></rect>
+                            <text x="95" y="164" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" fill="#607078">feature</text>
+                            <text x="95" y="194" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#19242a">xⱼ</text>
+                            <path d="M160 176 H220" stroke="#8a999f" stroke-width="2" marker-end="url(#arrow)"></path>
+
+                            <rect x="235" y="34" width="205" height="78" rx="14" fill="#fff5f1" stroke="#e2a699"></rect>
+                            <text x="337" y="65" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#d8654f">IDENTITY VIEW</text>
+                            <text x="337" y="91" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#607078">lookup / one-hot</text>
+
+                            <rect x="235" y="140" width="205" height="78" rx="14" fill="#fffaf0" stroke="#e0c17f"></rect>
+                            <text x="337" y="171" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#b9811c">ORDERED VIEW</text>
+                            <text x="337" y="197" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#607078">raw / rank / PLE</text>
+
+                            <rect x="235" y="246" width="205" height="78" rx="14" fill="#f0f8f6" stroke="#8cc2ba"></rect>
+                            <text x="337" y="277" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#237a78">TARGET-AWARE VIEW</text>
+                            <text x="337" y="303" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#607078">ordered / cross-fitted</text>
+
+                            <path d="M205 176 C215 176 213 73 235 73" fill="none" stroke="#8a999f" stroke-width="2" marker-end="url(#arrow)"></path>
+                            <path d="M205 176 H235" fill="none" stroke="#8a999f" stroke-width="2" marker-end="url(#arrow)"></path>
+                            <path d="M205 176 C215 176 213 285 235 285" fill="none" stroke="#8a999f" stroke-width="2" marker-end="url(#arrow)"></path>
+
+                            <path d="M440 73 C490 73 490 176 535 176" fill="none" stroke="#8a999f" stroke-width="2" marker-end="url(#arrow)"></path>
+                            <path d="M440 179 H535" fill="none" stroke="#8a999f" stroke-width="2" marker-end="url(#arrow)"></path>
+                            <path d="M440 285 C490 285 490 176 535 176" fill="none" stroke="#8a999f" stroke-width="2" marker-end="url(#arrow)"></path>
+
+                            <circle cx="590" cy="176" r="54" fill="#19242a"></circle>
+                            <text x="590" y="170" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#ffffff">SEMANTIC</text>
+                            <text x="590" y="193" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#ffffff">GATE</text>
+
+                            <path d="M644 176 H705" stroke="#8a999f" stroke-width="2" marker-end="url(#arrow)"></path>
+                            <rect x="720" y="126" width="165" height="100" rx="16" fill="#edf2f8" stroke="#9fb1c9"></rect>
+                            <text x="802" y="169" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#4d73a5">SHARED</text>
+                            <text x="802" y="192" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#4d73a5">BACKBONE</text>
+                        </svg>
+                    </div>
+                    <figcaption><strong>Figure 2.</strong> A candidate front end: offer several views, then learn a sparse or regularized mixture before the shared backbone. The target-aware route must be leakage-safe.</figcaption>
+                </figure>
+
+                <h2>The candidate: preprocess uncertainty</h2>
+
+                <p>Instead of assigning one route to feature <em>j</em>, construct a small set of views and mix them:</p>
+
+                <div class="formula">zⱼ = αᵢd eⱼ(xⱼ) + αₚₗₑ pⱼ(xⱼ) + αᵣₐw rⱼ(xⱼ) + αₜgₜ tⱼ(xⱼ)</div>
+
+                <p>Here, <em>e</em> is an identity-preserving embedding, <em>p</em> is a piecewise-linear view, <em>r</em> is a standardized or ranked scalar view, and <em>t</em> is a target-aware statistic. The coefficients could be fixed by validation, produced by a small gate, or regularized toward a single route.</p>
+
+                <p>Target encoding is tempting because it can reveal an order among categories. But naïvely computing a category’s target mean leaks the answer into its own representation. CatBoost’s ordered target statistics are an important warning and a useful template: target-aware preprocessing must respect training order or use honest out-of-fold estimates.<sup><a href="#ref-5">[5]</a></sup> Applying PLE <em>after</em> such an estimate is plausible, but only if the whole two-stage pipeline remains leakage-safe.</p>
+
+                <p>The harder extension is relational. A category may look unordered alone and become ordered conditional on region, age, or product family. Explicit pair encodings could surface this early, but naïve crosses explode in cardinality. A useful method would need selective, factorized, or strongly regularized feature combinations—not a brute-force Cartesian product.</p>
+
+                <h2>A first synthetic probe</h2>
+
+                <p>Before training a large neural network, I built a deliberately small representation test. It creates three discrete features: a number with non-monotonic category behavior, a declared category with a smooth ordinal effect, and a hybrid feature with both a trend and level-specific residuals. Every method uses the same ridge readout, so the only difference is what the preprocessing exposes.</p>
+
+                <div class="experiment-grid">
+                    <div class="experiment-card"><strong>Schema only</strong><span>Raw standardized views for declared numbers; one-hot for the declared category.</span></div>
+                    <div class="experiment-card"><strong>Semantic oracle</strong><span>The correct view is chosen using knowledge of the synthetic data-generating process.</span></div>
+                    <div class="experiment-card"><strong>Multi-view</strong><span>Every feature receives raw, PLE, and one-hot views without knowing its true semantics.</span></div>
+                </div>
+
+                <figure class="wide-figure">
+                    <div class="result-figure">
+                        <svg viewBox="0 0 820 390" role="img" aria-labelledby="result-title result-desc">
+                            <title id="result-title">RMSE by training set size for three feature encodings</title>
+                            <desc id="result-desc">The schema-only model remains above 1.17 RMSE. Multi-view preprocessing improves from 0.80 to 0.70 and approaches the semantic oracle.</desc>
+                            <rect width="820" height="390" fill="#ffffff"></rect>
+                            <text x="74" y="30" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#607078">TEST RMSE · LOWER IS BETTER</text>
+                            <g stroke="#e4e9e7" stroke-width="1">
+                                <line x1="85" y1="65" x2="735" y2="65"></line>
+                                <line x1="85" y1="145" x2="735" y2="145"></line>
+                                <line x1="85" y1="225" x2="735" y2="225"></line>
+                                <line x1="85" y1="305" x2="735" y2="305"></line>
+                            </g>
+                            <g font-family="Inter, sans-serif" font-size="12" fill="#718087">
+                                <text x="52" y="69">0.7</text>
+                                <text x="52" y="149">0.9</text>
+                                <text x="52" y="229">1.1</text>
+                                <text x="52" y="309">1.3</text>
+                                <text x="105" y="340" text-anchor="middle">200</text>
+                                <text x="295" y="340" text-anchor="middle">500</text>
+                                <text x="485" y="340" text-anchor="middle">1,000</text>
+                                <text x="675" y="340" text-anchor="middle">2,500</text>
+                                <text x="410" y="372" text-anchor="middle" font-weight="700">TRAINING ROWS</text>
+                            </g>
+                            <polyline points="105,270 295,261 485,256 675,254" fill="none" stroke="#d8654f" stroke-width="4"></polyline>
+                            <polyline points="105,93 295,73 485,68 675,64" fill="none" stroke="#d69a2d" stroke-width="4"></polyline>
+                            <polyline points="105,104 295,77 485,70 675,65" fill="none" stroke="#237a78" stroke-width="4"></polyline>
+                            <g fill="#d8654f"><circle cx="105" cy="270" r="5"></circle><circle cx="295" cy="261" r="5"></circle><circle cx="485" cy="256" r="5"></circle><circle cx="675" cy="254" r="5"></circle></g>
+                            <g fill="#d69a2d"><circle cx="105" cy="93" r="5"></circle><circle cx="295" cy="73" r="5"></circle><circle cx="485" cy="68" r="5"></circle><circle cx="675" cy="64" r="5"></circle></g>
+                            <g fill="#237a78"><circle cx="105" cy="104" r="5"></circle><circle cx="295" cy="77" r="5"></circle><circle cx="485" cy="70" r="5"></circle><circle cx="675" cy="65" r="5"></circle></g>
+                            <g font-family="Inter, sans-serif" font-size="12" font-weight="700">
+                                <text x="745" y="258" fill="#d8654f">schema only</text>
+                                <text x="745" y="63" fill="#d69a2d">oracle</text>
+                                <text x="745" y="82" fill="#237a78">multi-view</text>
+                            </g>
+                        </svg>
+                    </div>
+                    <figcaption><strong>Figure 3.</strong> Mean test RMSE over 20 seeds. The multi-view encoder nearly reaches the semantic oracle, while the schema-only representation cannot recover the hidden nonlinearity. Exact values and standard deviations are in the <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-01/results.csv">results file</a>.</figcaption>
+                </figure>
+
+                <div class="result-callout"><strong>0.701 RMSE</strong><span>Multi-view at 2,500 rows, versus 1.173 for schema-only and 0.698 for the semantic oracle.</span></div>
+
+                <p>This result is a sanity check, not confirmation. The generator was designed to contain the ambiguity the encoder addresses, and a linear readout is not a modern tabular backbone. What it does establish is that “let the model figure it out” can be a needlessly hard request when the input representation has already erased plausible structure.</p>
+
+                <p>The <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-01">experiment code</a> is intentionally short and dependency-light. Reproducing the chart requires only NumPy.</p>
+
+                <h2>What would falsify the idea?</h2>
+
+                <p>The next step is not to add more machinery. It is to find the smallest set of tests capable of killing the hypothesis.</p>
+
+                <ol class="research-questions">
+                    <li><span><strong>Backbone test.</strong> Does multi-view encoding still help MLP, ResNet, and FT-Transformer baselines once capacity and tuning budgets are matched?</span></li>
+                    <li><span><strong>Ambiguity test.</strong> Are gains concentrated in features whose raw, ordinal, and identity views disagree—or does extra dimensionality explain them?</span></li>
+                    <li><span><strong>Leakage test.</strong> Can ordered or cross-fitted target views improve results without optimistic validation bias?</span></li>
+                    <li><span><strong>Interaction test.</strong> Can a selective pair encoder discover conditional order without a cardinality explosion?</span></li>
+                    <li><span><strong>Simplicity test.</strong> Does a learned gate beat plain concatenation after accounting for parameters, latency, and variance?</span></li>
+                </ol>
+
+                <p>If the answer to these questions is mostly “no,” the binary split may be a useful inductive bias rather than a bottleneck. If the answer is “yes,” then preprocessing is not merely cleanup. It is the first learned theory of what a table means.</p>
+
+                <h2>References</h2>
+
+                <ol class="reference-list">
+                    <li id="ref-1"><a href="https://iclr.cc/Conferences/2027/AuthorGuidelines">ICLR 2027 Author Guidelines</a>. Official abstract and paper deadlines.</li>
+                    <li id="ref-2">Gorishniy, Rubachev, Khrulkov, and Babenko. <a href="https://papers.neurips.cc/paper_files/paper/2021/file/9d86d83f925f2149e9edb0ac3b49229c-Paper.pdf">Revisiting Deep Learning Models for Tabular Data</a>. NeurIPS 2021.</li>
+                    <li id="ref-3">Huang, Khetan, Cvitkovic, and Karnin. <a href="https://arxiv.org/abs/2012.06678">TabTransformer: Tabular Data Modeling Using Contextual Embeddings</a>. 2020.</li>
+                    <li id="ref-4">Gorishniy, Rubachev, and Babenko. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/9e9f0ffc3d836836ca96cbf8fe14b105-Paper-Conference.pdf">On Embeddings for Numerical Features in Tabular Deep Learning</a>. NeurIPS 2022.</li>
+                    <li id="ref-5">Prokhorenkova, Gusev, Vorobev, Dorogush, and Gulin. <a href="https://papers.nips.cc/paper_files/paper/2018/file/14491b756b3a51daac41c24863285549-Paper.pdf">CatBoost: Unbiased Boosting with Categorical Features</a>. NeurIPS 2018.</li>
+                </ol>
+
+                <p class="next-post"><strong>Next:</strong> Day 2 will turn “feature ambiguity” into measurable diagnostics: cardinality, local smoothness, monotonic evidence, and target-conditional instability.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>
+</body>
+</html>
