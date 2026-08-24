@@ -1,0 +1,189 @@
+{
+  "dataset": "california",
+  "screen_candidates": 58,
+  "selection_seed": 0,
+  "selected_roles": {
+    "fixed_baseline": {
+      "candidate_id": "base_000",
+      "phase": "backbone",
+      "method": "schema_ple",
+      "bins": 16,
+      "width": 256,
+      "depth": 3,
+      "dropout": 0.1,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "model": "mlp",
+      "activation": "relu",
+      "low_cardinality": 32,
+      "smoothing": 20.0,
+      "identity_effect_threshold": 0.01,
+      "gate_entropy_weight": 0.001
+    },
+    "tuned_backbone": {
+      "candidate_id": "base_013",
+      "phase": "backbone",
+      "method": "schema_ple",
+      "bins": 64,
+      "width": 384,
+      "depth": 4,
+      "dropout": 0.1,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0,
+      "model": "resnet",
+      "activation": "gelu",
+      "low_cardinality": 32,
+      "smoothing": 20.0,
+      "identity_effect_threshold": 0.01,
+      "gate_entropy_weight": 0.001
+    },
+    "best_semantic": {
+      "candidate_id": "semantic_00_002",
+      "phase": "semantic",
+      "method": "numeric_identity",
+      "bins": 64,
+      "width": 384,
+      "depth": 4,
+      "dropout": 0.1,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0,
+      "model": "resnet",
+      "activation": "gelu",
+      "low_cardinality": 8,
+      "smoothing": 20.0,
+      "identity_effect_threshold": 0.01,
+      "gate_entropy_weight": 0.001
+    },
+    "best_overall": {
+      "candidate_id": "semantic_00_002",
+      "phase": "semantic",
+      "method": "numeric_identity",
+      "bins": 64,
+      "width": 384,
+      "depth": 4,
+      "dropout": 0.1,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0,
+      "model": "resnet",
+      "activation": "gelu",
+      "low_cardinality": 8,
+      "smoothing": 20.0,
+      "identity_effect_threshold": 0.01,
+      "gate_entropy_weight": 0.001
+    }
+  },
+  "ensemble_members": [
+    {
+      "candidate_id": "semantic_00_002",
+      "phase": "semantic",
+      "method": "numeric_identity",
+      "bins": 64,
+      "width": 384,
+      "depth": 4,
+      "dropout": 0.1,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0,
+      "model": "resnet",
+      "activation": "gelu",
+      "low_cardinality": 8,
+      "smoothing": 20.0,
+      "identity_effect_threshold": 0.01,
+      "gate_entropy_weight": 0.001
+    },
+    {
+      "candidate_id": "base_006",
+      "phase": "backbone",
+      "method": "schema_ple",
+      "bins": 64,
+      "width": 384,
+      "depth": 3,
+      "dropout": 0.0,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "model": "resnet",
+      "activation": "relu",
+      "low_cardinality": 32,
+      "smoothing": 20.0,
+      "identity_effect_threshold": 0.01,
+      "gate_entropy_weight": 0.001
+    },
+    {
+      "candidate_id": "base_017",
+      "phase": "backbone",
+      "method": "schema_ple",
+      "bins": 32,
+      "width": 128,
+      "depth": 2,
+      "dropout": 0.2,
+      "learning_rate": 0.001,
+      "weight_decay": 1e-05,
+      "model": "resnet",
+      "activation": "silu",
+      "low_cardinality": 32,
+      "smoothing": 20.0,
+      "identity_effect_threshold": 0.01,
+      "gate_entropy_weight": 0.001
+    },
+    {
+      "candidate_id": "base_003",
+      "phase": "backbone",
+      "method": "schema_ple",
+      "bins": 128,
+      "width": 256,
+      "depth": 3,
+      "dropout": 0.1,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "model": "mlp",
+      "activation": "relu",
+      "low_cardinality": 32,
+      "smoothing": 20.0,
+      "identity_effect_threshold": 0.01,
+      "gate_entropy_weight": 0.001
+    },
+    {
+      "candidate_id": "base_013",
+      "phase": "backbone",
+      "method": "schema_ple",
+      "bins": 64,
+      "width": 384,
+      "depth": 4,
+      "dropout": 0.1,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0,
+      "model": "resnet",
+      "activation": "gelu",
+      "low_cardinality": 32,
+      "smoothing": 20.0,
+      "identity_effect_threshold": 0.01,
+      "gate_entropy_weight": 0.001
+    }
+  ],
+  "confirmation": {
+    "best_overall": {
+      "test_mean": 0.4780418574810028,
+      "test_std": 0.003985101476720918,
+      "seeds": 5
+    },
+    "best_semantic": {
+      "test_mean": 0.4780418574810028,
+      "test_std": 0.003985101476720918,
+      "seeds": 5
+    },
+    "fixed_baseline": {
+      "test_mean": 0.4950099527835846,
+      "test_std": 0.004988094001397611,
+      "seeds": 5
+    },
+    "hp_ensemble": {
+      "test_mean": 0.4561815975866878,
+      "test_std": 0.001495826661294254,
+      "seeds": 5
+    },
+    "tuned_backbone": {
+      "test_mean": 0.4792594790458679,
+      "test_std": 0.005244343418660749,
+      "seeds": 5
+    }
+  }
+}

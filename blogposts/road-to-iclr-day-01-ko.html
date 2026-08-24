@@ -229,18 +229,222 @@
 
                 <p>이 결과는 확인이 아니라 타당성 점검입니다. 생성기는 인코더가 다루려는 모호성을 의도적으로 포함하도록 설계했고, 선형 readout은 최신 정형 데이터 백본이 아닙니다. 다만 입력 표현이 가능한 구조를 이미 지운 상황에서 “모델이 알아서 찾게 하자”는 요구가 불필요하게 어려울 수 있음을 보여 줍니다.</p>
 
-                <p><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-01">실험 코드</a>는 의도적으로 짧고 의존성이 적습니다. 결과를 재현하는 데 NumPy만 필요합니다.</p>
+                <p><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-01">합성 실험 코드</a>는 의도적으로 짧고 의존성이 적습니다. 결과를 재현하는 데 NumPy만 필요합니다.</p>
+
+                <h2>장난감 실험에서 네 개의 실제 데이터셋으로</h2>
+
+                <p>합성 생성기는 메커니즘이 가능함을 보여 줄 수 있지만, 실제 표에 그 메커니즘이 중요할 만큼 의미론적 모호성이 존재하는지는 보여 주지 못합니다. 다음 실험에서는 <em>TabPack: Efficient Hyperparameter Ensembles for Tabular Deep Learning</em>의 데이터와 분할 방식을 빌립니다.<sup><a href="#ref-6">[6]</a></sup> TabPack은 중대형 데이터셋 17개를 평가하지만, 17개를 모두 실행한다고 해서 이 첫 질문이 더 날카로워지는 것은 아닙니다.</p>
+
+                <p>그래서 1일차 결과를 확인하기 <em>전에</em> 네 개의 데이터셋을 선택했습니다. 세 개는 서로 다른 종류의 특성 의미 모호성을 기대할 이유가 있고, 나머지 하나는 음성 대조군입니다.</p>
+
+                <div class="benchmark-table-wrap" role="region" aria-label="집중 실제 데이터 벤치마크" tabindex="0">
+                    <table class="benchmark-table">
+                        <thead><tr><th>데이터셋</th><th>학습 / 검증 / 테스트</th><th>특성</th><th>선정 이유</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Adult</strong></td><td>26,048 / 6,513 / 16,281</td><td>수치 6 · 이진 1 · 범주 7</td><td>명목형, 순서형, 수치형 구조가 섞여 있습니다.</td></tr>
+                            <tr><td><strong>Diamond</strong></td><td>34,521 / 8,631 / 10,788</td><td>수치 6 · 범주 3</td><td>cut, color, clarity가 명시적으로 순서를 가진 범주입니다.</td></tr>
+                            <tr><td><strong>Black Friday</strong></td><td>106,764 / 26,692 / 33,365</td><td>수치 4 · 이진 1 · 범주 4</td><td>저카디널리티 수치 코드가 크기와 식별자의 의미를 함께 가집니다.</td></tr>
+                            <tr><td><strong>California Housing</strong></td><td>13,209 / 3,303 / 4,128</td><td>수치 8</td><td>모두 수치형인 음성 대조군입니다. 추가 식별자 경로가 도움이 되지 않아야 합니다.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>Churn Modelling은 파이프라인을 빠르게 점검하는 용도로 남겨 두되, 주 집계에는 포함하지 않습니다. 편리한 디버깅 데이터셋이 조용히 근거로 바뀌어서는 안 되기 때문입니다.</p>
+
+                <h3>정말 중요한 비교</h3>
+
+                <p>약한 비교는 다중 관점과 원시 수치 입력의 비교입니다. PLE가 수치 특성에 도움이 된다는 사실은 이미 알려져 있으므로, 그런 결과만으로는 특성 정체성에 관해 거의 말할 수 없습니다. 결정적인 비교 대상은 <strong>스키마 + PLE</strong> 기준선입니다.</p>
+
+                <div class="experiment-grid">
+                    <div class="experiment-card"><strong>스키마</strong><span>분위수 정규화한 수치값, 이진값, 범주 one-hot 식별자를 사용합니다.</span></div>
+                    <div class="experiment-card"><strong>스키마 + PLE</strong><span>같은 전처리에 모든 수치 특성의 piecewise-linear 관점을 추가합니다.</span></div>
+                    <div class="experiment-card"><strong>다중 관점</strong><span>저카디널리티 수치에는 식별자 관점을, 범주에는 누수 없는 타깃 순서 관점을 추가합니다.</span></div>
+                </div>
+
+                <p>세 경로는 모두 동일하게 고정한 MLP에 입력됩니다. 수치 열은 학습 데이터에서 고유값이 32개 이하일 때만 식별자 관점을 받습니다. 범주별 타깃 통계는 평활화하고 5-fold로 교차 적합합니다. 학습 행은 자신의 타깃을 보지 않은 매핑으로 인코딩하며, 검증과 테스트 인코딩은 해당 fold 매핑을 평균합니다. 어떤 전처리 단계도 테스트 레이블을 보지 않습니다.</p>
+
+                <p>각 데이터셋이 공개한 학습/검증/테스트 분할을 그대로 사용하고, 검증 성능으로 조기 종료하며, 다섯 개 학습 시드를 실행합니다. 테스트 정확도 또는 RMSE의 평균과 표준편차뿐 아니라 입력 차원, 파라미터 수, 실행 시간도 보고합니다. 주 결과는 네 데이터셋에서 다중 관점이 스키마 + PLE 대비 보인 정규화 평균 개선이며, 개별 데이터셋의 승패는 부차적입니다. 전체 <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-01">다운로드 및 벤치마크 스크립트</a>는 저장소에 있습니다.</p>
+
+                <div class="thesis"><strong>사전 확정한 해석.</strong> 스키마만 사용한 기준선을 이기는 것으로는 충분하지 않습니다. 다중 관점이 스키마 + PLE를 안정적으로 이기지 못하거나, 파라미터 수와 분산을 고려한 뒤 개선이 사라진다면 더 넓은 의미 라우팅 가설은 아직 지지를 얻지 못한 것입니다.</div>
+
+                <h3>결과: PLE는 도움이 되지만 전체 다중 관점 경로는 그렇지 않습니다</h3>
+
+                <div class="benchmark-table-wrap" role="region" aria-label="다섯 시드 실제 데이터 벤치마크 결과" tabindex="0">
+                    <table class="benchmark-table results-table">
+                        <thead><tr><th>데이터셋</th><th>지표</th><th>스키마</th><th>스키마 + PLE</th><th>다중 관점</th><th>다중 관점 vs PLE</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Adult</strong></td><td>정확도 ↑</td><td>0.8552 ± .0022</td><td><strong>0.8561 ± .0010</strong></td><td>0.8553 ± .0012</td><td class="worse">−0.09%</td></tr>
+                            <tr><td><strong>Diamond</strong></td><td>RMSE ↓</td><td>0.1423 ± .0010</td><td><strong>0.1395 ± .0021</strong></td><td>0.1436 ± .0013</td><td class="worse">−2.93%</td></tr>
+                            <tr><td><strong>Black Friday</strong></td><td>RMSE ↓</td><td>0.7012 ± .0005</td><td>0.6946 ± .0011</td><td><strong>0.6930 ± .0019</strong></td><td class="better">+0.23%</td></tr>
+                            <tr><td><strong>California</strong></td><td>RMSE ↓</td><td>0.5029 ± .0040</td><td><strong>0.4950 ± .0056</strong></td><td><strong>0.4950 ± .0056</strong></td><td>0.00%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="result-callout negative-result"><strong>−0.70%</strong><span>스키마 + PLE 대비 다중 관점의 매크로 평균 상대 변화입니다. 양수여야 가설에 유리합니다.</span></div>
+
+                <p>넓은 형태의 가설은 이 첫 실제 데이터 실험을 통과하지 못했습니다. 다중 관점은 Black Friday에서만 스키마 + PLE를 이겼고, California에서는 정확히 같았으며, Adult와 Diamond에서는 뒤처졌습니다. California는 음성 대조군인 동시에 구현 점검입니다. 범주 특성도, 고유값 32개 이하의 수치 특성도 없으므로 스키마 + PLE와 다중 관점은 같은 표현이 되고, 실제로 모든 실행 결과가 동일했습니다.</p>
+
+                <p>Diamond의 실패가 가장 많은 정보를 줍니다. cut, color, clarity에 순서가 있으므로 가장 쉬운 승리를 예상할 수 있었습니다. 그러나 타깃에서 유도한 범주 관점은 다섯 개의 대응 시드 모두에서 성능을 낮췄습니다. 가능한 설명 하나는 교란입니다. 범주의 평균 가격은 범주 고유의 순서뿐 아니라 carat과 다른 수치 요인의 분포도 반영합니다. 더 단순한 설명은 추가된 49개 입력 차원과 잡음이 있는 교차 적합 추정치가 최적화를 어렵게 했다는 것입니다. 이는 결과가 제기한 가설일 뿐, 아직 확립된 설명은 아닙니다.</p>
+
+                <p>따라서 다음 ablation은 좁아야 합니다. 알려진 순서 rank, 원시 타깃 평균, 수치 전용 모델 이후 <em>잔차</em>의 타깃 평균을 비교하고, 그다음 희소 게이트와 파라미터 수를 맞춘 PLE 대조군을 추가해야 합니다. 이 변형 중 하나가 여러 시드에서 스키마 + PLE를 이기기 전까지, 신뢰할 수 있는 1일차 결과는 수치 표현에 관한 것이지 수치와 범주 정체성 사이의 일반적인 학습 연속체에 관한 것이 아닙니다. 시드별 점수는 <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-01/real_results.csv">real_results.csv</a>에 있습니다.</p>
+
+                <h3>두 번째 실험: 라우팅은 성능을 높이지만 대조군이 중요합니다</h3>
+
+                <p>이어서 더 좁은 ablation을 실행했습니다. 새 실험은 수치 식별자, 원시 범주 타깃 평균, 잔차 타깃 평균, 진단 기반 선택, 희소 게이트, 검증 성능 기반 greedy late fusion을 각각 분리합니다. 모든 단일 모델은 스키마 + PLE와 파라미터 수를 맞췄습니다. 시드 0의 검증 성능으로 PLE bin 8, 16, 32, 64, 128을 탐색한 뒤 Diamond는 64, Black Friday는 128로 고정하고 선택한 구성을 다섯 시드에서 실행했습니다.</p>
+
+                <div class="benchmark-table-wrap" role="region" aria-label="확장된 다섯 시드 라우팅 결과" tabindex="0">
+                    <table class="benchmark-table results-table">
+                        <thead><tr><th>데이터셋</th><th>Bin</th><th>스키마 + PLE</th><th>게이트 PLE</th><th>희소 게이트</th><th>Late fusion</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Diamond</strong></td><td>64</td><td>0.13709 ± .00157</td><td>0.13602 ± .00118</td><td><strong>0.13588 ± .00068</strong></td><td>0.13642 ± .00131</td></tr>
+                            <tr><td><strong>Black Friday</strong></td><td>128</td><td>0.69257 ± .00111</td><td>0.69371 ± .00149</td><td>0.69298 ± .00132</td><td><strong>0.68864 ± .00031</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p>성능은 좋아졌지만, 대조군 때문에 쉬운 해석은 불가능합니다. Diamond에서 희소 게이트는 일반 PLE보다 0.88% 개선되고 대응 시드 다섯 개 중 네 개에서 이겼습니다. 하지만 게이트가 두 잔차 범주 경로에 준 전체 가중치는 약 1.9%에 불과하고, PLE만 사용하는 게이트 대조군도 이미 0.77% 개선됩니다. 희소 게이트는 구조를 맞춘 대조군보다 평균 0.10%만 좋았고, 다섯 시드 중 두 개에서만 이겼습니다. 겉으로 보이는 개선의 대부분은 스키마와 PLE를 따로 투영한 효과이며, 범주 순서를 학습한 효과라고 보기는 아직 어렵습니다.</p>
+
+                <p>Black Friday는 다른 이야기를 보여 줍니다. Late fusion은 RMSE를 0.57% 개선했고 다섯 대응 시드 모두에서 이겼습니다. Greedy 앙상블은 PLE와 수치 식별자 모델을 반복해서 유지했고, 개별적으로 약한 잔차 모델도 상보적 오차 때문에 자주 추가했습니다. 이는 유용한 성능 개선이지만 두세 개 모델의 비용을 사용하므로 파라미터 수를 맞춘 비교가 아닙니다. 이제 세 멤버로 구성한 PLE 전용 딥 앙상블이 필요한 대조군입니다.</p>
+
+                <div class="thesis"><strong>업데이트된 해석.</strong> 다중 관점 연결 방식은 여전히 지지를 얻지 못했습니다. 관점별 분리 투영은 Diamond에서 더 나은 MLP 입력부이고, 선택적 late fusion은 Black Friday에서 안정적인 개선입니다. 그러나 어느 결과도 일반적인 구조 또는 앙상블 다양성이 아니라 학습된 수치–범주 의미가 개선의 원인임을 아직 입증하지 못합니다. 전체 150개 실행 기록은 <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-01/expanded_results.csv">expanded_results.csv</a>에 있습니다.</div>
+
+                <h3>더 넓은 탐색에서 마침내 좁은 신호를 찾았습니다</h3>
+
+                <p>넓은 탐색의 실패는 질문을 더 정밀하게 만들었습니다. PLE와 식별자 인코딩은 같은 아이디어의 두 구현이 아닙니다. 서로 다른 가정을 둡니다. <strong>PLE는 가까운 값들이 무엇을 공유해야 하는지 묻고, 식별자 관점은 이 정확한 값이 무엇을 기억해야 하는지 묻습니다.</strong></p>
+
+                <figure class="wide-figure">
+                    <div class="insight-figure">
+                        <svg viewBox="0 0 960 330" role="img" aria-labelledby="dual-view-title-ko dual-view-desc-ko">
+                            <title id="dual-view-title-ko">하나의 수치 특성을 표현하는 세 가지 방법</title>
+                            <desc id="dual-view-desc-ko">PLE는 가까운 값 사이의 부드러운 관계를 모델링합니다. 식별자 인코딩은 각 정확한 값에 독립적인 효과를 줍니다. 둘을 결합하면 부드러운 추세와 정확한 값의 예외를 함께 보존합니다.</desc>
+                            <rect class="viz-panel" x="10" y="10" width="300" height="300" rx="18" />
+                            <rect class="viz-panel" x="330" y="10" width="300" height="300" rx="18" />
+                            <rect class="viz-panel" x="650" y="10" width="300" height="300" rx="18" />
+
+                            <text class="viz-title" x="35" y="48">PLE 관점</text>
+                            <text class="viz-label" x="35" y="72">가까운 값이 구조를 공유</text>
+                            <path class="viz-axis" d="M55 245 H275 M55 245 V100" />
+                            <path class="viz-ple" d="M65 225 C105 217 128 195 155 177 S205 145 265 112" />
+                            <circle cx="135" cy="190" r="5" fill="var(--essay-teal)" />
+                            <circle cx="165" cy="171" r="5" fill="var(--essay-teal)" />
+                            <circle cx="195" cy="153" r="5" fill="var(--essay-teal)" />
+                            <text class="viz-note" x="55" y="278">39</text>
+                            <text class="viz-note" x="153" y="278">40</text>
+                            <text class="viz-note" x="255" y="278">41</text>
+
+                            <text class="viz-title" x="355" y="48">식별자 관점</text>
+                            <text class="viz-label" x="355" y="72">정확한 값을 서로 구분</text>
+                            <path class="viz-axis" d="M375 245 H595 M375 245 V100" />
+                            <rect class="viz-identity" x="400" y="200" width="42" height="45" rx="5" opacity=".58" />
+                            <rect class="viz-identity" x="464" y="112" width="42" height="133" rx="5" />
+                            <rect class="viz-identity" x="528" y="184" width="42" height="61" rx="5" opacity=".7" />
+                            <text class="viz-note" x="412" y="278">39</text>
+                            <text class="viz-note" x="476" y="278">40</text>
+                            <text class="viz-note" x="540" y="278">41</text>
+
+                            <text class="viz-title" x="675" y="48">두 관점 결합</text>
+                            <text class="viz-label" x="675" y="72">부드러운 추세 + 예외</text>
+                            <path class="viz-axis" d="M695 245 H915 M695 245 V100" />
+                            <path class="viz-ple" d="M705 225 C745 217 768 195 795 177 S845 145 905 112" opacity=".48" />
+                            <circle class="viz-combined" cx="775" cy="190" r="8" />
+                            <circle class="viz-combined" cx="805" cy="118" r="11" />
+                            <circle class="viz-combined" cx="835" cy="153" r="8" />
+                            <path d="M805 164 V132" stroke="var(--essay-coral)" stroke-width="3" stroke-dasharray="4 4" />
+                            <text class="viz-note" x="695" y="278">39</text>
+                            <text class="viz-note" x="793" y="278">40</text>
+                            <text class="viz-note" x="895" y="278">41</text>
+                        </svg>
+                    </div>
+                    <figcaption><strong>그림 4.</strong> 하나의 수치는 두 가지 유용한 기하를 가질 수 있습니다. PLE는 가까운 값끼리 근거를 공유하고, 식별자 인코딩은 40에서의 급등처럼 정확한 값의 예외를 허용합니다. 결합 표현은 두 해석 중 하나를 미리 강요하지 않습니다.</figcaption>
+                </figure>
+
+                <p>이는 부분적으로만 수치적인 정수에서 중요합니다. 주당 40시간은 39시간과 41시간에 가깝지만 질적으로 다른 집단을 나타낼 수도 있습니다. 제품 코드 2는 코드 1과 3의 의미상 중간이 아닐 수 있습니다. 이런 모든 열을 연속형으로 취급하는 것은 모든 숫자를 범주로 취급하는 것만큼 독단적입니다.</p>
+
+                <p>선택 규칙도 이 직관에서 바로 나옵니다. 먼저 수치 전용 모델이 정규화된 값, PLE, 이진 특성으로 out-of-fold 예측을 만듭니다. 그런 다음 각 특성의 정확한 값별로 잔차를 묶습니다.</p>
+
+                <div class="diagnostic-question"><strong>?</strong><span>부드러운 모델이 최선의 예측을 한 뒤에도, 오차가 정확한 값에 따라 체계적으로 정렬되는가?<small>정확한 값 집단이 남은 잔차 분산의 0.1% 이상을 설명하면 해당 열에 식별자 관점을 추가합니다. 관점 자체는 타깃을 사용하지 않으며, 학습 데이터만 쓰는 이 선택 규칙에서만 레이블을 사용합니다.</small></span></div>
+
+                <p>이 메커니즘을 고정한 뒤 네 데이터셋에서 총 397개의 모델을 실행했습니다. 탐색 범위에는 PLE 해상도, MLP와 ResNet 백본, 최적화 설정, 식별자 임계값, 잔차 경로, 게이트가 포함됩니다. 시드 0의 모든 검증 선택을 고정한 다음 다섯 시드에서 테스트했습니다. 탐색 파일에는 테스트 점수가 없습니다. 전체 설정은 본문의 논지보다 <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-01">실험 README</a>에 두는 편이 낫습니다.</p>
+
+                <div class="benchmark-table-wrap" role="region" aria-label="넓은 다섯 시드 신호 탐색 결과" tabindex="0">
+                    <table class="benchmark-table results-table">
+                        <thead><tr><th>데이터셋</th><th>고정 PLE</th><th>튜닝 백본</th><th>의미 후보</th><th>HP 앙상블</th></tr></thead>
+                        <tbody>
+                            <tr><td><strong>Adult 정확도 ↑</strong></td><td>0.85623 ± .00103</td><td>0.85948 ± .00169</td><td><strong>0.87259 ± .00108</strong></td><td><strong>0.87299 ± .00072</strong></td></tr>
+                            <tr><td><strong>Diamond RMSE ↓</strong></td><td>0.14078 ± .00076</td><td>0.13567 ± .00123</td><td>0.13525 ± .00079<sup>†</sup></td><td><strong>0.13229 ± .00043</strong></td></tr>
+                            <tr><td><strong>Black Friday RMSE ↓</strong></td><td>0.69436 ± .00025</td><td>0.69267 ± .00064</td><td><strong>0.69119 ± .00051</strong></td><td><strong>0.68515 ± .00027</strong></td></tr>
+                            <tr><td><strong>California RMSE ↓</strong></td><td>0.49501 ± .00499</td><td>0.47926 ± .00524</td><td>0.47804 ± .00399<sup>†</sup></td><td><strong>0.45618 ± .00150</strong></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p><sup>†</sup> 검증으로 선택된 이 경로들은 해당 카디널리티 임계값에서 실제 식별자 특성을 하나도 추가하지 않습니다. 같은 표현을 다시 학습한 실행이므로, 수치 차이가 있더라도 Diamond와 California의 의미 신호는 없다고 판단합니다.</p>
+
+                <p>가장 놀라운 차이는 모델군 사이가 아니라 데이터셋 사이에 있습니다. 명시적으로 순서가 있는 범주를 가진 Diamond가 가장 쉬운 의미론적 승리처럼 보였지만 어떤 경로도 대조군을 통과하지 못했습니다. 대신 Adult와 Black Friday에서는 수치로 저장된 열에 식별자 관점을 줄 때 성능이 좋아집니다. 스키마의 중요한 실수는 순서형 변수를 “범주형”이라 부른 것이 아니었습니다. 모든 숫자가 수치 기하를 따라야 한다고 가정한 것이었습니다.</p>
+
+                <p>Adult가 가장 명확한 양성 결과입니다. 잔차 진단은 모든 시드에서 수치 열 3, 4, 5를 선택합니다. 전체 경로는 튜닝 백본보다 정확도가 1.31%p 높고 모든 대응 시드에서 이겼습니다. 더 중요한 점은 식별자만 추가한 대조군도 0.87143 ± .00139에 도달했다는 것입니다. 따라서 개선의 대부분은 잔차 범주 타깃 인코딩을 제거한 뒤에도 유지됩니다.</p>
+
+                <figure class="wide-figure">
+                    <div class="insight-figure">
+                        <svg viewBox="0 0 820 350" role="img" aria-labelledby="adult-ladder-title-ko adult-ladder-desc-ko">
+                            <title id="adult-ladder-title-ko">Adult 정확도 대조군 사다리</title>
+                            <desc id="adult-ladder-desc-ko">고정 PLE MLP는 0.85623, 튜닝한 PLE ResNet은 0.85948, 선택된 식별자 관점을 추가하면 0.87143, 범주 잔차 관점을 추가하면 0.87259, 하이퍼파라미터 앙상블은 0.87299입니다.</desc>
+                            <line class="viz-grid" x1="280" y1="42" x2="280" y2="292" />
+                            <line class="viz-grid" x1="420" y1="42" x2="420" y2="292" />
+                            <line class="viz-grid" x1="560" y1="42" x2="560" y2="292" />
+                            <line class="viz-grid" x1="700" y1="42" x2="700" y2="292" />
+
+                            <text class="viz-label" x="24" y="72">고정 PLE MLP</text>
+                            <text class="viz-label" x="24" y="122">튜닝 PLE ResNet</text>
+                            <text class="viz-label" x="24" y="172">+ 식별자 관점</text>
+                            <text class="viz-label" x="24" y="222">+ 범주 잔차 관점</text>
+                            <text class="viz-label" x="24" y="272">HP 앙상블</text>
+
+                            <line class="ladder-bar" x1="280" y1="67" x2="367" y2="67" />
+                            <line class="ladder-bar tuned" x1="280" y1="117" x2="413" y2="117" />
+                            <line class="ladder-bar semantic" x1="280" y1="167" x2="580" y2="167" />
+                            <line class="ladder-bar semantic" x1="280" y1="217" x2="597" y2="217" />
+                            <line class="ladder-bar ensemble" x1="280" y1="267" x2="602" y2="267" />
+
+                            <circle class="ladder-dot" cx="367" cy="67" r="8" />
+                            <circle class="ladder-dot tuned" cx="413" cy="117" r="8" />
+                            <circle class="ladder-dot semantic" cx="580" cy="167" r="9" />
+                            <circle class="ladder-dot semantic" cx="597" cy="217" r="9" />
+                            <circle class="ladder-dot ensemble" cx="602" cy="267" r="9" />
+
+                            <text class="viz-value" x="382" y="72">0.85623</text>
+                            <text class="viz-value" x="428" y="122">0.85948</text>
+                            <text class="viz-value" x="595" y="172">0.87143</text>
+                            <text class="viz-value" x="612" y="222">0.87259</text>
+                            <text class="viz-value" x="617" y="272">0.87299</text>
+
+                            <text class="viz-note" x="266" y="325">.850</text>
+                            <text class="viz-note" x="406" y="325">.860</text>
+                            <text class="viz-note" x="546" y="325">.870</text>
+                            <text class="viz-note" x="686" y="325">.880</text>
+                            <text class="viz-note" x="24" y="325">정확도; 축은 .850에서 시작</text>
+                        </svg>
+                    </div>
+                    <figcaption><strong>그림 5.</strong> Adult의 대조군 사다리는 네 효과를 분리합니다. 백본 튜닝은 소폭 개선하고, 선택된 수치 식별자 관점이 큰 도약을 만들며, 이후 범주 잔차 관점과 앙상블의 추가 이득은 작습니다. 모든 값은 다섯 시드 테스트 평균입니다.</figcaption>
+                </figure>
+
+                <p>Black Friday도 더 작은 규모로 같은 패턴을 보입니다. 네 수치 열 모두에 식별자 관점을 추가하면 RMSE가 0.21% 감소하고 다섯 시드 모두에서 이깁니다. 더 복잡한 범주 타깃 및 잔차 경로는 데이터셋을 가로지르는 안정적인 개선을 만들지 못했습니다.</p>
+
+                <p>앙상블은 다른 질문에 답합니다. 각 튜닝 단일 모델과 비교해 Diamond의 RMSE를 2.49%, Black Friday를 1.09%, California를 4.82% 낮춥니다. 이는 하이퍼파라미터 다양성의 강한 근거이지만 특성 의미의 근거는 아닙니다. 선택된 멤버 중 여러 개는 일반적인 스키마 + PLE 모델입니다.</p>
+
+                <div class="thesis"><strong>현재 해석.</strong> 보편적인 다중 관점 가설은 여전히 틀렸지만, 더 좁은 주장은 지지를 얻었습니다. 수치로 저장된 일부 열은 추가 식별자 경로의 이점을 얻습니다. 효과는 Adult에서 크고 Black Friday에서 작으며 Diamond와 California에서는 없습니다. 범주 타깃 및 잔차 관점은 여전히 지지를 얻지 못했습니다. 전체 탐색, 고정된 선택, 다섯 시드 결과는 <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-01/signal_search">signal_search/</a>에 있습니다.</div>
 
                 <h2>무엇이 이 아이디어를 반증할까?</h2>
 
                 <p>다음 단계는 장치를 더 붙이는 것이 아닙니다. 이 가설을 무너뜨릴 수 있는 최소한의 실험을 찾는 것입니다.</p>
 
                 <ol class="research-questions">
-                    <li><span><strong>백본 실험.</strong> 모델 용량과 튜닝 예산을 맞춘 뒤에도 다중 관점 인코딩이 MLP, ResNet, FT-Transformer 기준선을 개선하는가?</span></li>
-                    <li><span><strong>모호성 실험.</strong> 개선이 원값·순서·식별자 관점이 서로 충돌하는 특성에 집중되는가, 아니면 단순한 차원 증가로 설명되는가?</span></li>
-                    <li><span><strong>누수 실험.</strong> ordered 또는 cross-fitted 타깃 관점이 낙관적인 검증 편향 없이 결과를 개선하는가?</span></li>
-                    <li><span><strong>상호작용 실험.</strong> 선택적 쌍 인코더가 카디널리티 폭발 없이 조건부 순서를 발견할 수 있는가?</span></li>
-                    <li><span><strong>단순성 실험.</strong> 파라미터 수, 지연 시간, 분산을 고려한 뒤에도 학습된 게이트가 단순 연결을 이기는가?</span></li>
+                    <li><span><strong>기여도 실험.</strong> Adult에서 선택된 세 열 중 어느 열이 개선을 만들며, 정확한 값별 잔차 그림에 예상한 급등이 나타나는가?</span></li>
+                    <li><span><strong>분할 안정성 실험.</strong> 하나의 분할에서 초기화 시드만 바꿀 때가 아니라 새로운 데이터 분할에서도 잔차 진단이 같은 열을 선택하는가?</span></li>
+                    <li><span><strong>백본 실험.</strong> 선택된 식별자 관점이 파라미터 수를 맞춘 MLP, ResNet, FT-Transformer에서도 도움이 되는가?</span></li>
+                    <li><span><strong>일반화 실험.</strong> 학습 표를 암기하지 않으면서 희귀하거나 보지 못한 값을 식별자 경로가 어떻게 처리해야 하는가?</span></li>
+                    <li><span><strong>단순성 실험.</strong> 파라미터 수, 지연 시간, 분산을 고려한 뒤에도 단순한 이중 관점이 학습 게이트와 경쟁할 수 있는가?</span></li>
                 </ol>
 
                 <p>이 질문들의 답이 대부분 “아니오”라면 이분법은 병목이 아니라 유용한 귀납 편향일 수 있습니다. 답이 “예”라면 전처리는 단순한 데이터 정리가 아닙니다. 표가 무엇을 의미하는지에 대한 첫 번째 학습된 이론입니다.</p>
@@ -253,6 +457,7 @@
                     <li id="ref-3">Huang, Khetan, Cvitkovic, and Karnin. <a href="https://arxiv.org/abs/2012.06678">TabTransformer: Tabular Data Modeling Using Contextual Embeddings</a>. 2020.</li>
                     <li id="ref-4">Gorishniy, Rubachev, and Babenko. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/9e9f0ffc3d836836ca96cbf8fe14b105-Paper-Conference.pdf">On Embeddings for Numerical Features in Tabular Deep Learning</a>. NeurIPS 2022.</li>
                     <li id="ref-5">Prokhorenkova, Gusev, Vorobev, Dorogush, and Gulin. <a href="https://papers.nips.cc/paper_files/paper/2018/file/14491b756b3a51daac41c24863285549-Paper.pdf">CatBoost: Unbiased Boosting with Categorical Features</a>. NeurIPS 2018.</li>
+                    <li id="ref-6">Gorishniy, Kotelnikov, Rubachev, and Babenko. <a href="https://arxiv.org/abs/2607.05380">TabPack: Efficient Hyperparameter Ensembles for Tabular Deep Learning</a>. ICML 2026.</li>
                 </ol>
 
                 <p class="next-post"><strong>다음 글:</strong> 2일차에는 카디널리티, 국소 평활성, 단조성 근거, 타깃 조건부 불안정성을 사용해 “특성 모호성”을 측정 가능한 진단 지표로 바꿉니다.</p>
