@@ -84,6 +84,24 @@ main {
     padding: 1.5rem 2rem;
 }
 
+.profile-intro {
+    padding: 1.25rem 0 0.5rem;
+}
+
+.profile-intro h1 {
+    margin-bottom: 0.55rem;
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: -0.75px;
+}
+
+.profile-intro p {
+    max-width: 680px;
+    color: var(--secondary-color);
+    font-size: 1.05rem;
+}
+
 section {
     margin-bottom: var(--section-spacing);
 }
