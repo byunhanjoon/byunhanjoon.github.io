@@ -28,8 +28,8 @@
             background: #dddddd;
             color: var(--ink);
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 8.35pt;
-            line-height: 1.28;
+            font-size: 9pt;
+            line-height: 1.36;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
@@ -43,8 +43,8 @@
             position: relative;
             width: 210mm;
             height: 297mm;
-            margin: 0 auto;
-            padding: 10mm 11.5mm 9mm;
+            margin: 0 auto 8mm;
+            padding: 12mm 14mm 10mm;
             overflow: hidden;
             background: #ffffff;
         }
@@ -54,14 +54,14 @@
             grid-template-columns: 1fr auto;
             gap: 10mm;
             align-items: end;
-            padding-bottom: 3.3mm;
+            padding-bottom: 4mm;
             border-bottom: 1.2pt solid var(--rule);
         }
 
         h1 {
             margin: 0;
             font-family: Georgia, "Times New Roman", serif;
-            font-size: 23pt;
+            font-size: 24pt;
             font-weight: 700;
             letter-spacing: -0.35pt;
             line-height: 1;
@@ -70,7 +70,7 @@
         .headline {
             margin-top: 1.4mm;
             color: var(--muted);
-            font-size: 8.4pt;
+            font-size: 8.8pt;
             font-weight: 600;
             letter-spacing: 0.45pt;
             text-transform: uppercase;
@@ -80,7 +80,7 @@
             display: grid;
             gap: 0.65mm;
             color: var(--muted);
-            font-size: 7.7pt;
+            font-size: 8pt;
             text-align: right;
         }
 
@@ -88,22 +88,15 @@
             text-decoration: underline;
         }
 
-        .cv-body {
-            display: grid;
-            grid-template-columns: 0.86fr 1.44fr;
-            gap: 8mm;
-            padding-top: 1.2mm;
-        }
-
         section {
-            margin-top: 3.8mm;
+            margin-top: 5mm;
         }
 
         h2 {
-            margin: 0 0 2mm;
+            margin: 0 0 2.6mm;
             padding-bottom: 0.65mm;
             border-bottom: 0.7pt solid var(--rule);
-            font-size: 9.6pt;
+            font-size: 10.2pt;
             font-weight: 700;
             letter-spacing: 0.75pt;
             text-transform: uppercase;
@@ -116,12 +109,14 @@
         .profile {
             color: #252525;
             text-align: left;
+            font-size: 9.35pt;
+            line-height: 1.42;
         }
 
         .focus {
             margin-top: 1.6mm;
             color: var(--muted);
-            font-size: 7.8pt;
+            font-size: 8.5pt;
         }
 
         .focus strong {
@@ -129,7 +124,7 @@
         }
 
         .item {
-            margin-bottom: 2.65mm;
+            margin-bottom: 4mm;
             break-inside: avoid;
             page-break-inside: avoid;
         }
@@ -151,19 +146,19 @@
 
         .date {
             color: var(--muted);
-            font-size: 7.6pt;
+            font-size: 8.2pt;
             white-space: nowrap;
         }
 
         .institution {
             margin-top: 0.25mm;
             color: var(--muted);
-            font-size: 7.75pt;
+            font-size: 8.35pt;
             font-style: italic;
         }
 
         ul {
-            margin: 0.7mm 0 0 3.6mm;
+            margin: 1mm 0 0 4mm;
             padding: 0;
         }
 
@@ -173,37 +168,16 @@
         }
 
         .teaching-summary {
-            margin-top: 1.2mm;
+            margin-top: 1.5mm;
             color: var(--muted);
-            font-size: 7.7pt;
-        }
-
-        .trajectory {
-            display: grid;
-            gap: 2mm;
-        }
-
-        .trajectory-step {
-            padding-left: 2.2mm;
-            border-left: 1pt solid var(--rule);
-        }
-
-        .trajectory-step strong {
-            display: block;
-            margin-bottom: 0.2mm;
-            font-size: 8.1pt;
-        }
-
-        .trajectory-step span {
-            color: var(--muted);
-            font-size: 7.65pt;
+            font-size: 8.35pt;
         }
 
         .publication {
             display: grid;
-            grid-template-columns: 4mm 1fr;
-            gap: 1.1mm;
-            margin-bottom: 3.8mm;
+            grid-template-columns: 5mm 1fr;
+            gap: 1.5mm;
+            margin-bottom: 6.5mm;
             break-inside: avoid;
             page-break-inside: avoid;
         }
@@ -219,27 +193,27 @@
         }
 
         .pub-title {
-            font-size: 8.55pt;
-            line-height: 1.22;
+            font-size: 10pt;
+            line-height: 1.25;
         }
 
         .authors {
-            margin-top: 0.55mm;
+            margin-top: 0.9mm;
             color: #292929;
-            font-size: 7.9pt;
+            font-size: 8.8pt;
         }
 
         .contribution-note {
             margin-top: 0.2mm;
             color: var(--muted);
-            font-size: 7.2pt;
+            font-size: 7.8pt;
             font-style: italic;
         }
 
         .venue {
-            margin-top: 0.5mm;
+            margin-top: 0.8mm;
             color: var(--muted);
-            font-size: 7.75pt;
+            font-size: 8.6pt;
             font-style: italic;
         }
 
@@ -253,15 +227,15 @@
             display: inline-block;
             margin-top: 0.45mm;
             color: var(--ink);
-            font-size: 7.55pt;
+            font-size: 8.2pt;
             border-bottom: 0.45pt solid var(--light-rule);
         }
 
         footer {
             position: absolute;
-            right: 11.5mm;
+            right: 14mm;
             bottom: 4.2mm;
-            left: 11.5mm;
+            left: 14mm;
             color: #666666;
             font-size: 6.7pt;
             text-align: center;
@@ -274,12 +248,19 @@
 
             .page {
                 margin: 0;
+                break-after: page;
+                page-break-after: always;
+            }
+
+            .page:last-child {
+                break-after: auto;
+                page-break-after: auto;
             }
         }
     </style>
 </head>
 <body>
-    <div class="page">
+    <div class="page page--overview">
         <div class="cv">
             <header>
                 <div>
@@ -293,8 +274,7 @@
                 </div>
             </header>
 
-            <div class="cv-body">
-                <aside>
+            <div class="overview-content">
                     <section>
                         <h2>Research Profile</h2>
                         <p class="profile">Researcher at the intersection of machine learning, mathematical optimization, and finance, focusing on tabular data and time-series modeling. Current work combines evolutionary computation and Transformer architectures to improve predictive performance, efficiency, and interpretability.</p>
@@ -380,9 +360,26 @@
                         <p class="teaching-summary">Prepared course content, coordinated teaching support, answered questions, and graded assignments and examinations.</p>
                     </section>
 
-                </aside>
+            </div>
+        </div>
+        <footer>Han Joon Byun · Curriculum Vitae · Updated August 2026 · 1 / 2</footer>
+    </div>
 
-                <main>
+    <div class="page page--publications">
+        <div class="cv">
+            <header>
+                <div>
+                    <h1>Han Joon Byun</h1>
+                    <p class="headline">Curriculum Vitae</p>
+                </div>
+                <div class="contact">
+                    <a href="mailto:byunhanjoon@snu.ac.kr">byunhanjoon@snu.ac.kr</a>
+                    <a href="https://byunhanjoon.github.io">byunhanjoon.github.io</a>
+                    <a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ">Google Scholar</a>
+                </div>
+            </header>
+
+            <main>
                     <section>
                         <h2>Publications</h2>
                         <div class="publication">
@@ -440,27 +437,9 @@
                         </div>
                     </section>
 
-                    <section>
-                        <h2>Research Trajectory</h2>
-                        <div class="trajectory">
-                            <div class="trajectory-step">
-                                <strong>Neural Network Foundations</strong>
-                                <span>CNN and ANN pruning and transfer learning.</span>
-                            </div>
-                            <div class="trajectory-step">
-                                <strong>Combinatorial Optimization</strong>
-                                <span>Transformer-based language modeling for the Traveling Salesperson Problem.</span>
-                            </div>
-                            <div class="trajectory-step">
-                                <strong>Financial &amp; Tabular AI</strong>
-                                <span>Optimization and neural methods for performance, efficiency, and interpretability.</span>
-                            </div>
-                        </div>
-                    </section>
-                </main>
-            </div>
+            </main>
         </div>
-        <footer>Han Joon Byun · Curriculum Vitae · Updated August 2026</footer>
+        <footer>Han Joon Byun · Curriculum Vitae · Updated August 2026 · 2 / 2</footer>
     </div>
 </body>
 </html>
