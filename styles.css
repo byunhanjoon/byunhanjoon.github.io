@@ -63,6 +63,7 @@ nav {
 .nav-links {
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-links a {
@@ -75,6 +76,34 @@ nav {
 
 .nav-links a:hover {
     opacity: 0.7;
+}
+
+.language-selector {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--primary-color);
+}
+
+.language-selector i {
+    font-size: 1rem;
+}
+
+.language-select {
+    max-width: 5.5rem;
+    padding: 0.15rem 0;
+    border: 0;
+    color: var(--primary-color);
+    background: transparent;
+    font: inherit;
+    font-size: 0.86rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.language-select:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
 }
 
 /* Main Content */
@@ -284,6 +313,8 @@ footer {
 
     .nav-links {
         justify-content: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
     }
 
     main {
