@@ -1,6 +1,6 @@
-# Day 3 experiments: from a useful trick to a falsifiable method
+# Day 2 follow-up: from a useful trick to a falsifiable method
 
-This directory asks whether the Day 2 exact-state results support a broad
+This follow-up asks whether the exact-state results support a broad
 tabular-learning method. The answer is deliberately split in two:
 
 1. **Mechanism:** yes. A smooth numerical basis can leave stable state-local or
@@ -14,6 +14,18 @@ tabular-learning method. The answer is deliberately split in two:
 The stronger paper direction is to use this result as a concrete mechanism and
 intervention inside the already-confirmed **information-equivalent schema
 sensitivity** project in `/home/byunhanjoon/2027ICLR/projects/multi_ple/schema_fragmentation`.
+
+## New follow-up: local basis ensembles
+
+An identity-inspired follow-up does transfer across the full nine-dataset
+TabPack release. It replaces cumulative PLE coordinates with an
+information-equivalent local hat basis and ensembles the two fitted models with
+a validation-selected weight. Across 64/128 bins, MLP/ResNet, and four seeds,
+it improves proper loss in 141/144 runs and has a positive mean result on every
+dataset. This does not rescue exact-state discovery as a universal encoder; it
+instead identifies **information-equivalent basis choice as an ensemble
+hyperparameter**. See `LOCAL_BASIS_REPORT.md` for the protocol, controls,
+negative results, and ICLR caveats.
 
 ## Fixed method
 

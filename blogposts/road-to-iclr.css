@@ -15,7 +15,9 @@
 .d2-surface-demo,
 .d2-geometry-figure,
 .d2-results-figure,
-.d2-gate-figure {
+.d2-gate-figure,
+.d2-local-demo,
+.d2-confirmation-figure {
     overflow: hidden;
     border: 1px solid var(--essay-line);
     border-radius: 1rem;
@@ -468,9 +470,125 @@
     font-size: 1rem;
 }
 
+.d2-local-demo {
+    padding: 2rem;
+}
+
+.d2-local-toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+    color: var(--essay-muted);
+    font-size: 0.82rem;
+    font-weight: 650;
+}
+
+.d2-local-toolbar output {
+    min-width: 3.5rem;
+    color: var(--essay-teal);
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+.d2-local-demo input[type="range"] {
+    width: 100%;
+    margin: 1rem 0 2rem;
+    accent-color: var(--essay-teal);
+}
+
+.d2-confirmation-figure {
+    padding: 1.5rem;
+}
+
+.d2-confirmation-head {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    overflow: hidden;
+    border: 1px solid var(--essay-line);
+    border-radius: 0.75rem;
+    background: var(--essay-line);
+}
+
+.d2-confirmation-head > div {
+    display: grid;
+    gap: 0.25rem;
+    padding: 1.2rem;
+    background: #f4faf8;
+    text-align: center;
+}
+
+.d2-confirmation-head strong {
+    color: var(--essay-teal);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.45rem, 3vw, 2.1rem);
+    font-weight: 500;
+}
+
+.d2-confirmation-head span,
+.d2-compute-control {
+    color: var(--essay-muted);
+    font-size: 0.7rem;
+}
+
+.d2-dataset-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem 2.2rem;
+    margin: 1.8rem 0;
+}
+
+.d2-dataset-row {
+    display: grid;
+    grid-template-columns: 6.2rem minmax(3rem, 1fr) 3.4rem;
+    gap: 0.65rem;
+    align-items: center;
+    min-width: 0;
+    color: var(--essay-muted);
+    font-size: 0.7rem;
+}
+
+.d2-dataset-row i {
+    height: 7px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #e8eeec;
+}
+
+.d2-dataset-row i b {
+    display: block;
+    width: var(--gain);
+    height: 100%;
+    border-radius: inherit;
+    background: var(--essay-teal);
+}
+
+.d2-dataset-row strong {
+    color: var(--essay-teal);
+    text-align: right;
+}
+
+.d2-compute-control {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem 2rem;
+    flex-wrap: wrap;
+    padding: 0.9rem 1rem;
+    border-radius: 0.6rem;
+    background: #fff8f5;
+    text-align: center;
+}
+
+.d2-compute-control strong:first-child {
+    color: var(--essay-teal);
+}
+
 @media (max-width: 720px) {
     .d2-basis-demo,
-    .d2-surface-demo {
+    .d2-surface-demo,
+    .d2-local-demo,
+    .d2-confirmation-figure {
         padding: 1rem;
     }
 
@@ -519,6 +637,15 @@
         flex-direction: column;
         gap: 0.2rem;
         text-align: center;
+    }
+
+    .d2-confirmation-head,
+    .d2-dataset-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .d2-dataset-row {
+        grid-template-columns: 5.8rem minmax(3rem, 1fr) 3.2rem;
     }
 }
 

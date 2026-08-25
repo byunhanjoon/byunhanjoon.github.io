@@ -13,7 +13,7 @@ from sklearn.preprocessing import StandardScaler
 
 
 HERE = Path(__file__).resolve().parent
-DAY1 = HERE.parent / "road-to-iclr-day-01"
+DAY1 = HERE.parent.parent / "road-to-iclr-day-01"
 sys.path.insert(0, str(DAY1))
 
 import real_data_benchmark as benchmark  # noqa: E402

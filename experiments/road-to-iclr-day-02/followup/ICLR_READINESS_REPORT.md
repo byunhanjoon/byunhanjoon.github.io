@@ -20,7 +20,7 @@ The stronger thesis is:
 > explain concrete failures through basis geometry, and reduce it with a
 > compute-matched multi-view intervention.
 
-The Day 3 exact-state work fills two missing pieces in that paper:
+The exact-state follow-up fills two missing pieces in that paper:
 
 1. **Mechanism.** On finite support, singleton PLE and identity are
    information-equivalent and rank-equivalent, yet Adult's useful columns are

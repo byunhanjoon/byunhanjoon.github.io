@@ -1,7 +1,7 @@
 """Download the public, preprocessed datasets released with TabPack.
 
-Only the small Day 1 benchmark panel is extracted. The archive remains in the
-user cache and the datasets remain untracked by Git.
+By default, all nine real datasets in the release are extracted. The archive
+remains in the user cache and the datasets remain untracked by Git.
 """
 
 from __future__ import annotations
@@ -17,7 +17,17 @@ ARCHIVE_URL = (
     "https://huggingface.co/datasets/Yura52/tabpack-data/resolve/main/"
     "tabpack-data.tar.gz"
 )
-DEFAULT_DATASETS = ("churn", "adult", "diamond", "black-friday", "california")
+DEFAULT_DATASETS = (
+    "adult",
+    "black-friday",
+    "california",
+    "churn",
+    "diamond",
+    "higgs-small",
+    "house",
+    "microsoft",
+    "otto",
+)
 
 
 def download(url: str, destination: Path) -> None:
@@ -40,10 +50,14 @@ def extract(archive: Path, output: Path, datasets: set[str]) -> None:
             destination = (output / member.name).resolve()
             if output not in destination.parents:
                 raise RuntimeError(f"Unsafe archive member: {member.name}")
+            if member.issym() or member.islnk():
+                raise RuntimeError(f"Archive links are not allowed: {member.name}")
             if Path(member.name).name.startswith("._"):
                 continue
             members.append(member)
-        handle.extractall(output, members=members, filter="data")
+        # Paths and link types are checked above. Avoid ``filter=`` here so the
+        # helper also works on Python versions before 3.12.
+        handle.extractall(output, members=members)
 
 
 def main() -> None:

@@ -9,7 +9,7 @@ import numpy as np
 
 
 HERE = Path(__file__).resolve().parent
-DAY1 = HERE.parent / "road-to-iclr-day-01"
+DAY1 = HERE.parent.parent / "road-to-iclr-day-01"
 DEFAULT_JPLE = Path("/home/byunhanjoon/2027ICLR/projects/multi_ple/jple_tabarena")
 sys.path.insert(0, str(DAY1))
 sys.path.insert(0, str(DEFAULT_JPLE))

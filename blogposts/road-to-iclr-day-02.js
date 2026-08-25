@@ -145,6 +145,68 @@
         select(buttons[0]);
     }
 
+    function initializeLocalBasisDemo(demo) {
+        if (!demo) {
+            return;
+        }
+
+        const slider = demo.querySelector("[data-local-slider]");
+        const valueOutput = demo.querySelector("[data-local-value]");
+        const cumulativeVector = demo.querySelector("[data-cumulative-vector]");
+        const localVector = demo.querySelector("[data-local-vector]");
+        const cumulativeCode = demo.querySelector("[data-cumulative-code]");
+        const localCode = demo.querySelector("[data-local-code]");
+        const note = demo.querySelector("[data-local-note]");
+        const ramps = 5;
+
+        function rounded(values) {
+            return values.map(function (value) {
+                return value.toFixed(2);
+            });
+        }
+
+        function cells(container, values) {
+            container.innerHTML = "";
+            values.forEach(function (value) {
+                const cell = document.createElement("span");
+                cell.style.setProperty("--activation", value * 100 + "%");
+                const bar = document.createElement("i");
+                const label = document.createElement("b");
+                label.textContent = value.toFixed(2);
+                cell.appendChild(bar);
+                cell.appendChild(label);
+                container.appendChild(cell);
+            });
+        }
+
+        function render() {
+            const x = Number(slider.value) / 100;
+            const width = 1 / ramps;
+            const cumulative = Array.from({ length: ramps }, function (_, index) {
+                return Math.max(0, Math.min(1, (x - index * width) / width));
+            });
+            const local = [1 - cumulative[0]];
+            for (let index = 1; index < ramps; index += 1) {
+                local.push(cumulative[index - 1] - cumulative[index]);
+            }
+
+            valueOutput.textContent = x.toFixed(2);
+            cells(cumulativeVector, cumulative);
+            cells(localVector, local);
+            cumulativeCode.textContent = formatVector(rounded(cumulative));
+            localCode.textContent = formatVector(rounded(local));
+            const cumulativeActive = cumulative.filter(function (value) { return value > 0.001; }).length;
+            const localActive = local.filter(function (value) { return value > 0.001; }).length;
+            note.textContent = korean
+                ? "누적 기저는 " + cumulativeActive + "개 좌표, 국소 기저는 " + localActive + "개 좌표가 활성화됩니다. 표현하는 값은 같습니다."
+                : "The cumulative basis activates " + cumulativeActive + " coordinates; the local basis activates " + localActive + ". The represented value is unchanged.";
+        }
+
+        slider.addEventListener("input", render);
+        render();
+    }
+
     initializeBasisDemo(document.querySelector("[data-basis-demo]"));
     initializeSurfaceDemo(document.querySelector("[data-surface-demo]"));
+    initializeLocalBasisDemo(document.querySelector("[data-local-basis-demo]"));
 })();

@@ -11,8 +11,9 @@ import numpy as np
 
 
 HERE = Path(__file__).resolve().parent
-DAY1 = HERE.parent / "road-to-iclr-day-01"
-DAY2 = HERE.parent / "road-to-iclr-day-02"
+EXPERIMENTS = HERE.parent.parent
+DAY1 = EXPERIMENTS / "road-to-iclr-day-01"
+DAY2 = HERE.parent
 sys.path.insert(0, str(DAY1))
 sys.path.insert(0, str(DAY2))
 

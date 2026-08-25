@@ -210,3 +210,28 @@ tuned single model), as are the Black Friday ensemble gains. These are evidence
 for hyperparameter diversity, not for feature semantics. The per-dataset screen,
 confirmation, and selection manifests are in `signal_search/`, with the combined
 comparison in `signal_search_summary.csv`.
+
+## Matched Adult identity-versus-diversity follow-up
+
+A subsequent prediction-retaining control puts the tuned Day 1 Adult backbone,
+selected identity, four ordinary seeds, and four information-equivalent schemas
+on the same TabPack split and parameter budget. The schema models keep 128-bin
+PLE fixed and replace only the normalized numerical coordinates with PAD,
+DUPLICATE, POSNEG, or SIGNMAG. All ensemble comparisons cost four fits.
+
+| System | Accuracy | AUC | Accuracy gain vs one PLE model |
+| --- | ---: | ---: | ---: |
+| Single PLE | 0.8617 | 0.9143 | — |
+| Single PLE + selected identity | 0.8693 | 0.9250 | +0.7616 pp |
+| Four PLE seeds | 0.8607 | 0.9155 | -0.0983 pp |
+| Four PLE schemas | 0.8635 | 0.9152 | +0.1781 pp |
+| Four selected-identity seeds | **0.8724** | **0.9279** | **+1.0749 pp** |
+
+A single identity model beats both four-fit PLE ensembles. The schema ensemble
+has lower pairwise prediction distance than the ordinary seed ensemble (0.0464
+versus 0.0561), likely because PLE already supplies most of the numerical basis
+and the schema intervention changes only six raw coordinates. The large Adult
+identity gain is therefore not an ordinary ensembling artifact. Full predictions,
+member-level metrics, and the frozen protocol are in
+`adult_identity_schema_matched/` and
+`configs/adult_identity_schema_matched.json`.

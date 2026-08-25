@@ -313,12 +313,10 @@ Higgs-small and Churn reject pair corrections, while Diamond, California, and
 House abstain structurally. Microsoft offers a promising second interaction
 dataset, but only on one sampled seed.
 
-This is still not an ICLR-level method. Pair selection searches many candidates
-with the same cross-validation predictions, Microsoft needs full multi-seed
-confirmation, and no single encoder dominates: crossed identity is robust but
-wide, while a one-dimensional residual map is compact but can mismatch the
-downstream model. The next decisive experiment is nested pair selection on a
-larger dataset panel, followed by a backbone-aligned residual correction and a
-cardinality-matched random-pair control. That creates a clear Day 3 question:
-can joint-state discovery be turned into a compact encoder without losing its
-cross-backbone reliability?
+The frozen follow-up is preserved in [`followup/`](followup/). Exact-state
+selection passed its mechanistic checks but failed the predeclared breadth gate
+(1/6 untouched datasets). The more general result came from replacing
+cumulative PLE with an information-equivalent local hat basis and ensembling
+the two fitted models: proper loss improved in 141/144 paired runs across all
+nine TabPack datasets. See [`followup/LOCAL_BASIS_REPORT.md`](followup/LOCAL_BASIS_REPORT.md)
+for the full protocol, compute-matched seed control, and negative results.
