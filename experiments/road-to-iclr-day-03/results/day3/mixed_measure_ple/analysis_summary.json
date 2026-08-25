@@ -1,0 +1,37 @@
+{
+  "control": {
+    "tail_dataset_wins": 2,
+    "tail_mean_relative_proper_loss_reduction": -0.0033681149476421446
+  },
+  "gate_clauses": {
+    "adult_accuracy_gain": true,
+    "adult_all_backbones_positive": true,
+    "dataset_win_fraction": false,
+    "minimum_mean_loss_reduction": false,
+    "positive_bootstrap_lower": false,
+    "positive_official_score": false
+  },
+  "gate_passed": false,
+  "integrity": {
+    "completed_cells": 216,
+    "expected_cells": 216,
+    "failures": 0,
+    "parameter_matched": true
+  },
+  "primary": {
+    "adult_accuracy_gain_percentage_points": 0.666762210893411,
+    "adult_backbone_gains": {
+      "mlp": 0.6879184325287188,
+      "resnet": 0.6715394222304161,
+      "tabm": 0.6408287779210986
+    },
+    "dataset_bootstrap_interval": [
+      -0.022427842265941147,
+      0.011633990048647467
+    ],
+    "dataset_wins": 3,
+    "datasets": 8,
+    "mean_official_gain": -0.3804201076678125,
+    "mean_relative_proper_loss_reduction": -0.005676324914893674
+  }
+}

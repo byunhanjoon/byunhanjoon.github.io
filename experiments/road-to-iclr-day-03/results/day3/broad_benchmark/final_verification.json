@@ -1,5 +1,5 @@
 {
-  "verified_at": "2026-08-25T19:14:43.863009+09:00",
+  "verified_at": "2026-08-26T07:05:00.556573+09:00",
   "python": "3.10.16 (main, Dec 11 2024, 16:24:50) [GCC 11.2.0]",
   "py_compile": {
     "command": [
@@ -13,12 +13,19 @@
       "experiments/day3/analyze_broad_phase1.py",
       "experiments/day3/analyze_day3.py",
       "experiments/day3/analyze_distribution_shift.py",
+      "experiments/day3/analyze_measure_orbit.py",
+      "experiments/day3/analyze_mixed_measure_ple.py",
       "experiments/day3/analyze_optimizer_remedies.py",
+      "experiments/day3/analyze_orbit_ensemble.py",
+      "experiments/day3/analyze_selective_measure_orbit.py",
+      "experiments/day3/analyze_trajectory_decomposition.py",
       "experiments/day3/audit_broad_completion.py",
       "experiments/day3/audit_canonicalization_numerics.py",
+      "experiments/day3/audit_day3_agent_brief.py",
       "experiments/day3/audit_day3_goal.py",
       "experiments/day3/audit_distribution_shift.py",
       "experiments/day3/audit_extension_completion.py",
+      "experiments/day3/audit_trajectory_decomposition.py",
       "experiments/day3/broad_data.py",
       "experiments/day3/broad_extension_data.py",
       "experiments/day3/broad_models.py",
@@ -27,7 +34,10 @@
       "experiments/day3/freeze_broad_benchmark.py",
       "experiments/day3/freeze_broad_extension.py",
       "experiments/day3/freeze_distribution_shift.py",
+      "experiments/day3/measure_orbit.py",
+      "experiments/day3/mixed_measure_ple.py",
       "experiments/day3/optimizer_remedies.py",
+      "experiments/day3/orbit_ensemble.py",
       "experiments/day3/run_block_residualization.py",
       "experiments/day3/run_broad_benchmark.py",
       "experiments/day3/run_broad_confirmation.py",
@@ -46,6 +56,8 @@
       "experiments/day3/run_suite.py",
       "experiments/day3/run_whitening.py",
       "experiments/day3/seed_followups_from_phase1.py",
+      "experiments/day3/selective_measure_orbit.py",
+      "experiments/day3/trajectory_decomposition.py",
       "experiments/day3/verify_day3_final.py",
       "tests/test_basis_equivalence.py",
       "tests/test_block_residualization.py",
@@ -53,8 +65,11 @@
       "tests/test_canonicalization_limitations.py",
       "tests/test_fourier_equivalence.py",
       "tests/test_invariant_regularizer.py",
+      "tests/test_mixed_measure_ple.py",
       "tests/test_optimizer_remedies.py",
+      "tests/test_orbit_ensemble.py",
       "tests/test_ordinal_equivalence.py",
+      "tests/test_trajectory_decomposition.py",
       "tests/test_whitening.py"
     ],
     "exit_code": 0,
@@ -68,10 +83,10 @@
       "-q"
     ],
     "exit_code": 0,
-    "output": "................                                                         [100%]\n16 passed in 1.23s\n"
+    "output": "..............................                                           [100%]\n=============================== warnings summary ===============================\ntests/test_orbit_ensemble.py::test_repeated_member_view_matches_ordinary_tabm_forward\n  /home/byunhanjoon/adaptive_embedding/exploratory/.venv-tabm/lib/python3.10/site-packages/tabm.py:339: UserWarning: When training=False, the input should usually have the shape (batch_size, d), i.e. hold one representation per object. However: x.shape=torch.Size([11, 4, 8]). Is this intentional?\n    warnings.warn(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n30 passed, 1 warning in 2.62s\n"
   },
   "audits": {
-    "broad": true,
+    "broad": false,
     "extension": true,
     "distribution_shift": true
   },
@@ -82,8 +97,8 @@
         "-m",
         "experiments.day3.audit_broad_completion"
       ],
-      "exit_code": 0,
-      "output": "{\n  \"freeze\": {\n    \"exists\": true,\n    \"protected_files\": 293,\n    \"aggregate_sha256\": \"7e5482daa38e13b8b4c1880e937a82c4246b95ce8ddd7a167a096b3493981441\",\n    \"changed\": [],\n    \"authorized_analysis_fixes\": [\n      \"/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-03/experiments/day3/analyze_broad_phase1.py\",\n      \"/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-03/experiments/day3/analyze_broad_final.py\"\n    ],\n    \"missing\": [],\n    \"matches\": true\n  },\n  \"confirmation_selection_exists\": true,\n  \"phase1\": {\n    \"expected\": 2400,\n    \"rows\": 2400,\n    \"successful_unique\": 2400,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"complete\": true,\n    \"missing_examples\": []\n  },\n  \"confirmation\": {\n    \"expected\": 2800,\n    \"rows\": 2800,\n    \"successful_unique\": 2800,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"complete\": true,\n    \"missing_examples\": []\n  },\n  \"robustness\": {\n    \"expected\": 504,\n    \"rows\": 504,\n    \"successful_unique\": 504,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"complete\": true,\n    \"missing_examples\": []\n  },\n  \"scientific_invariants\": {\n    \"natural_equivalence_max_error\": 7.16459151174191e-15,\n    \"controlled_kappa_max_relative_error\": 2.864375403532904e-14\n  },\n  \"complete\": true\n}\n"
+      "exit_code": 1,
+      "output": "{\n  \"freeze\": {\n    \"exists\": true,\n    \"protected_files\": 293,\n    \"aggregate_sha256\": \"7e5482daa38e13b8b4c1880e937a82c4246b95ce8ddd7a167a096b3493981441\",\n    \"changed\": [\n      \"/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-03/experiments/day3/broad_data.py\",\n      \"/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-03/tests/test_broad_benchmark.py\"\n    ],\n    \"authorized_analysis_fixes\": [\n      \"/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-03/experiments/day3/analyze_broad_phase1.py\",\n      \"/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-03/experiments/day3/analyze_broad_final.py\"\n    ],\n    \"missing\": [],\n    \"matches\": false\n  },\n  \"confirmation_selection_exists\": true,\n  \"phase1\": {\n    \"expected\": 2400,\n    \"rows\": 2400,\n    \"successful_unique\": 2400,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"complete\": true,\n    \"missing_examples\": []\n  },\n  \"confirmation\": {\n    \"expected\": 2800,\n    \"rows\": 2800,\n    \"successful_unique\": 2800,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"complete\": true,\n    \"missing_examples\": []\n  },\n  \"robustness\": {\n    \"expected\": 504,\n    \"rows\": 504,\n    \"successful_unique\": 504,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"complete\": true,\n    \"missing_examples\": []\n  },\n  \"scientific_invariants\": {\n    \"natural_equivalence_max_error\": 7.16459151174191e-15,\n    \"controlled_kappa_max_relative_error\": 2.864375403532904e-14\n  },\n  \"complete\": false\n}\n"
     },
     "extension": {
       "command": [
@@ -104,5 +119,5 @@
       "output": "{\n  \"freeze\": {\n    \"exists\": true,\n    \"matches\": true,\n    \"aggregate_sha256\": \"103efe48919b99aef195ae229e573af52d6cf3d202b1b99525ac90a44d78fc95\",\n    \"changed\": [],\n    \"missing\": []\n  },\n  \"coverage\": {\n    \"expected\": 18,\n    \"rows\": 18,\n    \"successful_unique\": 18,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"missing_examples\": []\n  },\n  \"scientific_invariants\": {\n    \"natural_equivalence_max_error\": 4.634160215100733e-15,\n    \"controlled_kappa_max_relative_error\": 6.217248937900877e-15\n  },\n  \"complete\": true\n}\n"
     }
   },
-  "complete": true
+  "complete": false
 }

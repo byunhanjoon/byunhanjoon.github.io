@@ -14,9 +14,50 @@
 > [broad benchmark report](BROAD_BENCHMARK_REPORT.md) for the final evidence and
 > ICLR verdict. Sections below preserve the original study record.
 
+> **Latest method update:** a later, preregistered Selective Measure-Orbit
+> confirmation passed its frozen gate on 21 datasets, but the required
+> untouched external test rejected the performance claim. On seven new
+> datasets it was 0.521% worse than an exactly update-matched two-seed ordinary
+> TabM ensemble (95% dataset-bootstrap interval [−0.831%, −0.195%]) and neutral
+> to worse than one baseline. See `MEASURE_ORBIT_REPORT.md` and
+> `EXTERNAL_MEASURE_ORBIT_REPORT.md`. Measure-Orbit remains a diagnostic, not a
+> claimed performance remedy.
+
 ## Executive verdict
 
 **The ICLR thesis is materially stronger, but the remedy story is incomplete.** Across numerical PLE blocks, nominal categorical contrasts, and genuine ordinal state spaces, deliberately increasing condition number under exact, invertible, geometric-mean-scale-controlled basis changes caused monotone losses on the main MLP screen and replicated at the endpoints with ResNet. Adult's exact PLE/identity gap shrank by 91% after whitening and vanished after aligned canonicalization. However, the proposed function-space penalty did not reduce basis sensitivity, natural ordinal whitening was not uniformly beneficial, and exact numerical–categorical residualization did not help Diamonds by itself. The defensible paper is therefore a causal schema/basis-sensitivity paper with canonicalization as evidence—not yet a solved invariant-optimization paper.
+
+### Seven requested answers
+
+1. **Did controlled conditioning causally affect learning?** Yes. With
+   information, dimension, global scale, split, model, and budget fixed,
+   increasing κ caused monotone degradation in the headline numerical sweeps
+   and near-monotone degradation for nominal and ordinal blocks.
+2. **Did whitening explain PLE versus identity?** Yes for the exact Adult
+   construction. It reduced the mean absolute accuracy gap from 0.210 pp to
+   0.018 pp (91.2%); aligned canonicalization made the inputs and scores
+   identical.
+3. **Did ordinals reproduce the effect?** Yes under controlled equivalent-basis
+   κ sweeps on Adult and Diamond. Natural ordinal bases were not ranked simply
+   by condition number, so whitening is not a universal ordinal encoder.
+4. **Did nominal categoricals reproduce the effect?** Yes. The Adult and
+   Diamond MLP sweeps were monotone or near-monotone, with ResNet endpoint
+   replication.
+5. **Did invariant regularization reduce sensitivity?** No. The proposed
+   activation-energy penalty slightly increased aggregate spread. Later exact
+   anchor canonicalization and input-natural updates succeeded, but those are
+   different remedies.
+6. **What is the strongest defensible ICLR claim?** Neural tabular models have
+   broad, causally isolated finite-training sensitivity within exactly
+   equivalent numerical, nominal, and ordinal representation orbits; known
+   invariance principles can close the gap, while practical remedies have
+   measurable accuracy, stability, rank, and compute tradeoffs.
+7. **What single experiment should Day 4 run next?** The previously requested
+   untouched external Measure-Orbit test is now complete and negative. Do not
+   launch another post-hoc method search on Day 3. The next paper experiment,
+   if additional data become available, should be a frozen replication of the
+   core basis-sensitivity benchmark rather than an attempt to rescue this
+   selector.
 
 ## 1. Reproduction of Day-2 anchors
 
@@ -28,7 +69,21 @@ Before writing Day 3 code, I reran the frozen Adult MLP/64-bin Day 2 anchor on t
 | local PLE | 0.858608 | 0.858608 |
 | validation-selected blend | 0.859714 | 0.859714 |
 
-The rerun is saved in `results/day3_anchor_reproduction.csv`. The official split fingerprints, environment, package versions, and baseline git hash are saved in `results/day3/environment.json` and `results/day3/structured_feature_audit.csv`.
+The rerun is saved in `results/day3_anchor_reproduction.csv`. I also reran the
+frozen Black Friday MLP/64-bin/seed-0 anchor from Day 2. Every overlapping
+scalar reproduced bit-for-bit:
+
+| Representation | Day 2 test RMSE | Day 3 rerun |
+| --- | ---: | ---: |
+| cumulative PLE | 0.696628 | 0.696628 |
+| local PLE | 0.694846 | 0.694846 |
+| validation-selected basis blend | 0.693196 | 0.693196 |
+
+That rerun is saved in
+`results/day3_anchor_reproduction_black_friday.csv`. The official split
+fingerprints, environment, package versions, and baseline git hash are saved in
+`results/day3/environment.json` and
+`results/day3/structured_feature_audit.csv`.
 
 The frozen Day 2 prospective tier remains named in `experiments/day3/configs/preregistered.json`: Wine Quality, Miami Housing, Food Delivery Time, Seismic Bumps, HELOC, and Credit Card Default. Their TabArena arrays/loaders are not present in this workspace's released TabPack data, so I did not replace them with favorable datasets or claim a prospective breadth result. Day 3 uses the available Adult, Black Friday, California, and Diamond anchors plus a synthetic cyclic integrity fixture.
 

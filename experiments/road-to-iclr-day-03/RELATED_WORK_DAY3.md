@@ -14,6 +14,11 @@ the broad benchmark outcomes were inspected.
 | Numerical embeddings | PLE and periodic numerical embeddings can substantially improve tabular DL | PLE or numerical embeddings are new | Can two information-equivalent encodings learn differently solely because of their basis? |
 | Tabular orientation / rotation | Grinsztajn et al. test feature rotations and argue that tabular learners should preserve meaningful feature orientation | The broad observation that feature rotations or orientation matter in tabular learning is new | Can conditioning be isolated causally within exactly equivalent numerical, nominal, ordinal, and cyclic representation orbits, and can optimizer invariance close the resulting gaps? |
 | Stretch transformation | Supervised and unsupervised transformations can change feature geometry to make target functions smoother | Feature transformation for tabular learning is new | Unlike stretch, do target-independent, exactly equivalent recodings expose optimizer artifacts without changing target geometry? |
+| Rotation Forest | Full PCA rotations of random feature subsets can create accurate and diverse tree ensemble members while retaining all components | Transforming full-information feature coordinates per ensemble member is new | Do semantic, exactly equivalent tabular bases improve a parameter-efficient neural ensemble where arbitrary rotations fail? |
+| TabPFN transformation ensembles | Feature-order shifts and alternative preprocessing configurations are ensembled to improve prediction and approximate missing symmetries | Ensembling tabular input transformations or permutations is new | Can basis-orbit views provide training-time diversity in a shared-weight model, rather than inference configurations for a pretrained foundation model? |
+| TabM | Shared-weight parameter-efficient ensembling is a strong tabular DL baseline | Parameter-efficient tabular ensembling is new | Can exact schema-basis charts serve as a useful structured diversity axis inside TabM without adding trainable parameters? |
+| Multi-view tabular learning | Feature subsets and alternative table views are established augmentation and representation-learning tools | Multi-view tabular learning is new | Can multiple full-information numerical charts specialize shared-weight supervised ensemble members? |
+| Function-basis numerical encoding | Numerical features can be expanded in general function bases, including piecewise-linear and spline families | Function-basis expansion or splines are new | Does separating empirical atoms from a conditional continuous measure prevent quantile-resolution collapse and provide useful ensemble diversity? |
 
 ## Primary sources
 
@@ -44,6 +49,21 @@ the broad benchmark outcomes were inspected.
   https://openreview.net/forum?id=IDxZhXrpNf
 - Ye et al., *Stretch Transformation for Tabular Data*, ICLR 2026 submission:
   https://openreview.net/forum?id=TkerLrovDn
+- Rodríguez, Kuncheva, and Alonso, *Rotation Forest: A New Classifier
+  Ensemble Method*, TPAMI 2006:
+  https://doi.org/10.1109/TPAMI.2006.211
+- Hollmann et al., *Accurate predictions on small data with a tabular
+  foundation model*, Nature 2025:
+  https://www.nature.com/articles/s41586-024-08328-6
+- Gorishniy et al., *TabM: Advancing Tabular Deep Learning with
+  Parameter-Efficient Ensembling*, ICLR 2025:
+  https://openreview.net/forum?id=Sd4wYYOhmY
+- Ucar, Hajiramezanali, and Edwards, *SubTab: Subsetting Features of Tabular
+  Data for Self-Supervised Representation Learning*, NeurIPS 2021:
+  https://openreview.net/forum?id=vrhNQ7aYSdr
+- Shtoff et al., *Function Basis Encoding of Numerical Features in
+  Factorization Machines*, TMLR 2024:
+  https://openreview.net/forum?id=M4222IBHsh
 
 ## Claim that remains defensible only if the broad gates pass
 

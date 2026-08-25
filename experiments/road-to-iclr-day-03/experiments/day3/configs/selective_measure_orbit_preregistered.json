@@ -1,0 +1,53 @@
+{
+  "version": "1.0-frozen-before-confirmation-outcomes",
+  "frozen_at": "2026-08-26T00:19:00+09:00",
+  "hypothesis": "Validation proper loss can identify when structured mixed-measure member diversity is useful, yielding a safe selective Measure-Orbit method with an explicit ordinary-TabM abstention path.",
+  "development_evidence": {
+    "status": "post_hoc_hypothesis_generation_only",
+    "datasets": 8,
+    "mean_selected_relative_proper_loss_reduction": 0.0150056768,
+    "positive_dataset_means": "8/8"
+  },
+  "confirmation": {
+    "broad_datasets": [
+      "australian_credit_approval",
+      "bank_marketing_subscription",
+      "compustat_kor_direction",
+      "credit_card_default",
+      "credit_card_fraud",
+      "fremtpl_claim_count",
+      "german_credit_risk",
+      "heloc_credit_risk",
+      "kdd17_stock_direction",
+      "kdd17_stock_return",
+      "lendingclub_loan_default",
+      "polish_bankruptcy_1year",
+      "polish_bankruptcy_2year",
+      "polish_bankruptcy_3year",
+      "polish_bankruptcy_4year",
+      "polish_bankruptcy_5year"
+    ],
+    "extension_datasets": [
+      "covtype_extension",
+      "jannis_extension",
+      "gesture_extension",
+      "santander_extension",
+      "fb_comments_extension"
+    ],
+    "seeds": [0, 1, 2],
+    "candidate_arms": ["baseline_tabm", "measure_orbit_tabm"],
+    "selection_rule": "choose the arm with lower validation proper loss independently within each dataset and seed",
+    "test_targets_used_for_selection": false
+  },
+  "claim_gate": {
+    "minimum_mean_relative_proper_loss_reduction": 0.005,
+    "minimum_dataset_win_fraction": 0.6,
+    "require_positive_dataset_bootstrap_lower_bound": true,
+    "minimum_paired_win_fraction": 0.5,
+    "allow_excess_failures": false,
+    "bootstrap_samples": 10000,
+    "confidence": 0.95
+  },
+  "claim_boundary": "This is a two-fit validation-selection method. It is not compute-matched to one ordinary TabM fit and must later be compared with a two-seed TabM portfolio.",
+  "stop_rule": "Reject selective Measure-Orbit as a broad method if any claim-gate clause fails."
+}

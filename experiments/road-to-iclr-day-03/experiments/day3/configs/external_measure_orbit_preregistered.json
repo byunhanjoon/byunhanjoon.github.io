@@ -1,0 +1,148 @@
+{
+  "version": "1.0-frozen-before-external-outcomes",
+  "frozen_at": "2026-08-26T07:10:05+09:00",
+  "hypothesis": "The locked validation-selective Measure-Orbit portfolio improves proper loss on globally untouched datasets and adds value beyond an exactly update-matched two-seed ordinary-TabM prediction ensemble.",
+  "chronology": {
+    "outcomes_inspected_before_freeze": false,
+    "prior_measure_orbit_development_datasets": 8,
+    "prior_measure_orbit_confirmation_datasets": 21,
+    "panel_overlap_with_prior_measure_orbit_datasets": 0
+  },
+  "selection_rule": "From locally available RTDL-format data, exclude every prior Measure-Orbit dataset, duplicate copies, learning-to-rank tasks, related-source variants of prior datasets, feature width above 500, and class count above 100. Retain every remaining supported source and only the latest date-purged Sberbank window.",
+  "datasets": {
+    "coil2000_external": {
+      "path": "/home/byunhanjoon/adaptive_embedding/certified_residual_study/data/coil2000_caravan_insurance",
+      "task": "binclass",
+      "numeric_stem": "N",
+      "categorical_stem": null,
+      "source_group": "coil2000"
+    },
+    "give_me_some_credit_external": {
+      "path": "/home/byunhanjoon/adaptive_embedding/certified_residual_study/data/give_me_some_credit",
+      "task": "binclass",
+      "numeric_stem": "N",
+      "categorical_stem": null,
+      "source_group": "give_me_some_credit"
+    },
+    "openml_credit_43454_external": {
+      "path": "/home/byunhanjoon/adaptive_embedding/certified_residual_study/data/openml_credit_risk_43454",
+      "task": "binclass",
+      "numeric_stem": "N",
+      "categorical_stem": null,
+      "source_group": "openml_43454"
+    },
+    "taiwanese_bankruptcy_external": {
+      "path": "/home/byunhanjoon/adaptive_embedding/certified_residual_study/data/taiwanese_bankruptcy_prediction",
+      "task": "binclass",
+      "numeric_stem": "N",
+      "categorical_stem": null,
+      "source_group": "taiwanese_bankruptcy"
+    },
+    "helena_external": {
+      "path": "/data/safe_tabular_benchmarks/helena",
+      "task": "multiclass",
+      "numeric_stem": "N",
+      "categorical_stem": null,
+      "source_group": "helena"
+    },
+    "year_external": {
+      "path": "/data/safe_tabular_benchmarks/year",
+      "task": "regression",
+      "numeric_stem": "N",
+      "categorical_stem": null,
+      "source_group": "year_prediction_msd"
+    },
+    "sberbank_window2_external": {
+      "path": "/data/tokenization_sberbank_date_purged_v1/window2/sberbank_housing",
+      "task": "regression",
+      "numeric_stem": "N",
+      "categorical_stem": "C",
+      "source_group": "sberbank_date_purged"
+    }
+  },
+  "pre_outcome_exclusions": {
+    "south_german_credit": "related-source variant of the previously used German credit dataset",
+    "aloi": "1000 output classes exceeds the frozen maximum of 100",
+    "epsilon": "2000 numerical features exceeds the frozen maximum of 500",
+    "yahoo": "learning-to-rank task",
+    "sberbank_windows_0_1": "dependent windows from the retained Sberbank source",
+    "adult_california_covtype_higgs_jannis_microsoft": "duplicate copies of datasets used previously"
+  },
+  "data": {
+    "max_train_rows": 50000,
+    "max_eval_rows": 20000,
+    "sample_seed": 2026,
+    "transforms_fit_on_training_only": true
+  },
+  "seeds": [101, 202, 303],
+  "seedmate_offset": 10000,
+  "arms": [
+    "baseline_anchor",
+    "measure_orbit",
+    "baseline_seedmate_update_matched"
+  ],
+  "locked_method": {
+    "selector": "choose baseline_anchor or measure_orbit using lower validation proper loss within each dataset and seed",
+    "member_assignment": [
+      "baseline_fixed_ple",
+      "baseline_fixed_ple",
+      "baseline_fixed_ple",
+      "baseline_fixed_ple",
+      "tail_reallocated_ple",
+      "tail_reallocated_ple",
+      "mixed_measure_ple",
+      "mixed_measure_ple"
+    ],
+    "encoding": {
+      "maximum_total_ple_width": 1024,
+      "minimum_budget_per_numeric_column": 4,
+      "maximum_budget_per_numeric_column": 128,
+      "maximum_atoms_per_column": 16,
+      "minimum_nonatom_rows": 32
+    },
+    "training": {
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "latent_size": 64,
+      "n_blocks": 2,
+      "d_block": 192,
+      "dropout": 0.1,
+      "batch_size": 512,
+      "large_batch_size": 1024,
+      "large_dataset_threshold": 50000,
+      "max_epochs": 30,
+      "patience": 5
+    },
+    "source_hashes": {
+      "measure_orbit_config_sha256": "2bbbc35a616119f4361dc4885f20f172d67d9defd4401cc609a64bd70e2246e2",
+      "measure_orbit_code_sha256": "95b5e09a6e7b2a17e22aeda2add6e56c50b818e06ace97ec90a04a811ac3d3cc",
+      "selective_measure_orbit_code_sha256": "133778da9901a79c798ab89ffe5fef270b4f0c085da6b5df438096311c2be647"
+    }
+  },
+  "compute_match": {
+    "selective_portfolio": "baseline_anchor plus measure_orbit",
+    "seed_portfolio": "the shared baseline_anchor plus an independent ordinary-TabM seedmate",
+    "matching_rule": "Force the seedmate to execute exactly the number of epochs and minibatch updates executed by the measure_orbit fit; retain its best validation checkpoint within that budget.",
+    "prediction_ensemble": "average probabilities for classification and standardized predictions for regression",
+    "parameters_per_fit_identical": true,
+    "input_width_per_fit_identical": true
+  },
+  "primary_endpoint": "dataset-mean relative test proper-loss reduction of selective Measure-Orbit versus the exactly update-matched two-seed ordinary-TabM prediction ensemble",
+  "primary_gate": {
+    "minimum_mean_relative_proper_loss_reduction": 0.0025,
+    "minimum_dataset_win_fraction": 0.6,
+    "require_positive_dataset_bootstrap_lower_bound": true,
+    "minimum_paired_win_fraction": 0.5,
+    "allow_excess_failures": false,
+    "bootstrap_samples": 10000,
+    "confidence": 0.95
+  },
+  "baseline_preservation_gate": {
+    "minimum_mean_relative_proper_loss_reduction": 0.005,
+    "minimum_dataset_win_fraction": 0.6,
+    "require_positive_dataset_bootstrap_lower_bound": true,
+    "minimum_paired_win_fraction": 0.5,
+    "allow_excess_failures": false
+  },
+  "decision_rule": "Validate the external performance claim only if both the primary seed-ensemble gate and the baseline-preservation gate pass. Otherwise retain the 21-dataset confirmation as internal prospective evidence and reject a stronger external-performance claim."
+}
