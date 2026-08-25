@@ -960,6 +960,7 @@
 
 .d3-next-board {
     margin: 2.4rem 0;
+    background: #fffdf9;
 }
 
 .d3-next-constants {
@@ -968,19 +969,21 @@
     gap: 0.55rem;
     align-items: center;
     padding: 1rem 1.25rem;
-    color: #ffffff;
-    background: var(--essay-ink);
+    border-bottom: 1px solid var(--essay-line);
+    background: #f7f9f8;
 }
 
 .d3-next-constants > span {
     margin-right: 0.35rem;
+    color: var(--essay-teal);
 }
 
 .d3-next-constants > b {
     padding: 0.35rem 0.6rem;
-    border: 1px solid #536167;
+    border: 1px solid var(--essay-line);
     border-radius: 999px;
-    color: #dfe6e3;
+    color: var(--essay-muted);
+    background: #ffffff;
     font-size: 0.62rem;
     font-weight: 700;
 }
@@ -996,6 +999,15 @@
 .d3-next-flow section {
     display: grid;
     gap: 0.35rem;
+    padding: 1.2rem;
+    border: 1px solid #d8eae5;
+    border-radius: 0.75rem;
+    background: #f4faf8;
+}
+
+.d3-next-flow section:last-child {
+    border-color: #dfe5ed;
+    background: #f6f8fb;
 }
 
 .d3-next-flow section > span {
@@ -1005,7 +1017,7 @@
     letter-spacing: 0.1em;
 }
 
-.d3-next-flow section:last-child > span { color: var(--essay-coral); }
+.d3-next-flow section:last-child > span { color: var(--essay-blue); }
 
 .d3-next-flow section > strong {
     color: var(--essay-ink);
@@ -1019,7 +1031,7 @@
 }
 
 .d3-next-flow > div b {
-    color: var(--essay-ink);
+    color: var(--essay-coral);
     font-size: 1.5rem;
 }
 
@@ -1043,12 +1055,12 @@
 }
 
 .d3-next-flow section > i.sparse b:nth-child(3) { background: var(--essay-teal); }
-.d3-next-flow section > i.dense b:nth-child(1) { background: #e9b4a7; }
-.d3-next-flow section > i.dense b:nth-child(2) { background: #dc806b; }
-.d3-next-flow section > i.dense b:nth-child(3) { background: #efc7bd; }
-.d3-next-flow section > i.dense b:nth-child(4) { background: #d8654f; }
-.d3-next-flow section > i.dense b:nth-child(5) { background: #e89e8d; }
-.d3-next-flow section > i.dense b:nth-child(6) { background: #f2d7d0; }
+.d3-next-flow section > i.dense b:nth-child(1) { background: #d9e6e3; }
+.d3-next-flow section > i.dense b:nth-child(2) { background: #bdd8d2; }
+.d3-next-flow section > i.dense b:nth-child(3) { background: #92c1b9; }
+.d3-next-flow section > i.dense b:nth-child(4) { background: #8eabc7; }
+.d3-next-flow section > i.dense b:nth-child(5) { background: #b2c5d8; }
+.d3-next-flow section > i.dense b:nth-child(6) { background: #d8e1e9; }
 
 .d3-checklist {
     margin: 1.5rem 0 2.5rem;

@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260826-3">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260826-4">
     <script src="../language.js" defer></script>
     <script src="road-to-iclr-day-03.js?v=20260826-2" defer></script>
     <script type="application/ld+json">
@@ -117,13 +117,12 @@
                 <figcaption><strong>Figure 4.</strong> κ=1000 minus κ=1 normalized utility. Negative is harmful. The combined dataset/model-clustered 95% interval is −9.93% to −6.94%; the paired Wilcoxon probability is 6.2×10<sup>−21</sup>.</figcaption>
             </figure>
 
-            <p>The effect survived every backbone. These are dense-stem versions of FT-Transformer and TabM so that an arbitrary full input-basis map remains an exact first-layer reparameterization; I do not call this native tokenization invariance. All 2,400 original broad cells and 120 extension cells completed without failures, and reconstruction errors stayed near 10<sup>−14</sup>.</p>
+            <p>The effect survived every backbone. I used dense-stem versions of FT-Transformer and TabM so the basis change remained an exact first-layer reparameterization; this is not a claim about native tokenization invariance. Reconstruction errors stayed near 10<sup>−14</sup>.</p>
 
             <div class="thesis"><strong>What the result says.</strong> The function class stayed fixed, but ordinary training did not. This first benchmark still mixed two causes: a coordinate change can alter the function produced at initialization, and it can alter every optimizer update afterward.</div>
 
             <h2>Same function, then one AdamW step</h2>
-            <p>To separate those causes, I ran a second experiment on Adult, California Housing, and Diamonds with MLP and ResNet, five seeds, and a fixed budget of 200 updates. Every pair saw identical rows, labels, minibatches, and dropout masks. The only intervention was the input basis.</p>
-            <p>Ordinary initialization uses the same parameter distribution in both bases, but that does <em>not</em> produce the same starting function. So I added a function-matched arm. For <em>X</em>&prime; = <em>XB</em>, the first-layer weights start at <em>W</em>&prime;<sub>0</sub> = <em>W</em><sub>0</sub><em>B</em><sup>&minus;T</sup>. Before training, the two networks then agree to numerical precision.</p>
+            <p>To separate those causes, I ran 200-update experiments on Adult, California Housing, and Diamonds. Paired MLPs and ResNets saw identical rows, minibatches, and dropout masks. I also transformed the first-layer weights by <em>B</em><sup>&minus;T</sup>, making the two networks compute the same function before training.</p>
 
             <figure class="wide-figure">
                 <div class="d3-trajectory-demo" data-trajectory-demo>
@@ -155,14 +154,13 @@
                 <section><span>PREDICTION GATE</span><strong>failed</strong><p>early drift detected non-equivariance but did not predict damage reliably</p></section>
             </div>
 
-            <p>The result is sharper than “conditioning hurts.” At &kappa;=3000, function matching removed <strong>94.66%</strong> of the original harm, with reductions from 76.6% to 98.3% in every dataset/model group. Initialization was therefore the dominant mechanism in this fixed-budget stress test.</p>
-            <p>But AdamW was still not coordinate-equivariant. Mean prediction drift was 5.8&times;10<sup>&minus;6</sup> at step 0 and <strong>0.071</strong> after one update; all 90 controlled matched cells moved apart. A matched input-natural update nearly closed the controlled experiment, with step-200 drift of 7.6&times;10<sup>&minus;5</sup> and endpoint harm of 1.6&times;10<sup>&minus;7</sup>.</p>
-            <p>One hoped-for insight did <em>not</em> survive its frozen gate. One-step drift predicted endpoint harm only slightly better than log condition number (leave-one-dataset-out <em>R</em><sup>2</sup> &minus;0.160 versus &minus;0.201; improvement 0.041, below the required 0.10). Early drift is a detector of broken equivariance, not a universal measure of consequential damage. The task, labels, and local curvature still decide whether that drift matters.</p>
+            <p>At &kappa;=3000, function matching removed <strong>94.66%</strong> of the original harm. Initialization was the dominant mechanism in this stress test.</p>
+            <p>AdamW still broke equivalence: all 90 matched pairs moved apart after one update. An input-natural update nearly closed the full-rank cases, but one-step drift failed as a held-out predictor of final damage. It detects broken equivariance; it does not tell us when the break will matter.</p>
 
             <h2>Remove the arbitrary coordinates</h2>
-            <p>The cleanest diagnostic was canonicalization. Center the training matrix, choose a deterministic set of linearly independent anchor rows, and describe every row using coefficients of those anchors. If <em>X</em> = <em>CR</em>, then after any invertible recoding <em>B</em>:</p>
+            <p>The cleanest diagnostic was canonicalization: choose independent anchor rows and describe every row using their coefficients. If <em>X</em> = <em>CR</em>, then after an invertible recoding <em>B</em>:</p>
             <div class="formula">XB = C(RB)</div>
-            <p>The table and anchors both move, but the coefficient matrix <em>C</em> does not. It is like describing locations relative to landmarks: stretch the map and the landmarks together, and the landmark coefficients remain unchanged.</p>
+            <p>The table and anchors move together, but <em>C</em> does not. It is like describing locations relative to landmarks: stretch the map and landmarks together, and the landmark coordinates remain unchanged.</p>
 
             <figure class="wide-figure">
                 <div class="d3-canonical-demo" data-canonical-demo>
@@ -175,21 +173,7 @@
                 <figcaption><strong>Figure 6.</strong> Switch to the stretched view: the cloud and anchors move together, while the coefficients stay 2 and −0.5. “Canonical” is the common internal representation given to the network.</figcaption>
             </figure>
 
-            <p>In ten datasets, four models, five seeds, and both endpoints, exact anchor canonicalization removed <strong>99.81%</strong> of the paired sensitivity while losing 0.20% on the clean basis. A progressively sketched version removed 99.43%. A first-layer input-natural update—multiplying by the inverse input second moment and using compatible initialization—removed 99.69%.</p>
-
-            <figure class="wide-figure">
-                <div class="d3-remedy-board">
-                    <div class="d3-remedy-head"><span>FROZEN FIVE-SEED GATE</span><strong>≥80% sensitivity removed · ≤1% mean clean loss</strong></div>
-                    <div class="d3-remedy-row pass"><span>Exact anchors</span><i><b style="--remove:99.81%"></b></i><strong>99.81%</strong><em>pass</em></div>
-                    <div class="d3-remedy-row pass"><span>Sketch anchors</span><i><b style="--remove:99.43%"></b></i><strong>99.43%</strong><em>pass*</em></div>
-                    <div class="d3-remedy-row pass"><span>Input-natural</span><i><b style="--remove:99.69%"></b></i><strong>99.69%</strong><em>pass†</em></div>
-                    <div class="d3-remedy-row fail"><span>Whitening</span><i><b style="--remove:56.84%"></b></i><strong>56.84%</strong><em>fail</em></div>
-                    <div class="d3-remedy-row fail"><span>SOAP</span><i><b style="--remove:36.06%"></b></i><strong>36.06%</strong><em>fail</em></div>
-                    <div class="d3-remedy-row worse"><span>Shampoo</span><i><b style="--remove:0%"></b></i><strong>−13.23%</strong><em>fail</em></div>
-                    <div class="d3-remedy-notes"><span>* numerically approximate under pivot ties</span><span>† aggregate clean loss 1.00%; TabM clean loss 2.63%</span></div>
-                </div>
-                <figcaption><strong>Figure 7.</strong> Mean paired sensitivity reduction under the frozen confirmation criterion. Practical damped or grafted full-matrix optimizers are not automatically affine-invariant.</figcaption>
-            </figure>
+            <p>Across ten datasets and four models, exact anchors removed <strong>99.81%</strong> of paired sensitivity. Sketch anchors removed 99.43%, and an input-natural update removed 99.69%. These are powerful controls, but they bring rank, stability, or compute tradeoffs; they are not a universally better encoder.</p>
 
             <h2>The reality check</h2>
             <p>κ=1000 is a causal stress test, not a claim about the usual severity of deployed schemas. I therefore tested naturally named cumulative/local encodings and ordinary preprocessing choices. Across 150 natural pairs, the median absolute normalized gap was only <strong>0.38%</strong>; its clustered interval included zero. Raw-standard, quantile-standard, and PLE differences were also small and lacked a universal ranking.</p>
@@ -200,11 +184,9 @@
                 <section><span>RANDOM SPLIT</span><strong>−1.11%</strong><p>same tables; harmful in 8/9 pairs</p></section>
             </div>
 
-            <p>The time-split result is especially useful: deployment shift did not amplify the basis effect here; it mostly removed it. This is a limitation, not an argument for random splitting. The random split may mix entities and neighboring dates.</p>
+            <p>Deployment shift did not amplify the effect here; on three chronological finance splits it mostly disappeared. This is a limitation, not an argument for random splitting.</p>
 
-            <p>Rank stress tests add another caveat. Duplicating columns did not crash any of 504 runs, but an input-natural ridge of 10<sup>−10</sup> produced erratic predictions on Microsoft as the preconditioner condition approached 10<sup>10</sup>. Ridges around 10<sup>−8</sup> to 10<sup>−6</sup> were safer. Exact anchors remained stable; the sketch could switch a near-tied pivot in floating point and was slower to fit than the full construction on this benchmark.</p>
-
-            <p>The trajectory experiment made that rank caveat concrete. Adult's natural basis had 123 columns but rank 116. Even with a perfectly conditioned basis map and relation error below 5&times;10<sup>&minus;13</sup>, an <em>undamped</em> inverse amplified numerical noise in the seven null directions: matched input-natural drift reached 0.374 by step 200. California and Diamonds were full rank and closed to roughly 3&times;10<sup>&minus;7</sup>. Invariance therefore needs an explicit effective-rank or damping policy; exact algebra alone is not enough.</p>
+            <p>Rank was the other important exception. Adult’s natural basis had 123 columns but rank 116, so an undamped inverse amplified noise in seven null directions. Full-rank California and Diamond nearly closed. Invariance needs an explicit rank or damping policy; exact algebra is not enough.</p>
 
             <h2>The performance method failed its last test</h2>
             <p>I also tried to turn the mechanism into performance. Selective Measure-Orbit combined ordinary TabM with a representation chosen from the same equivalence orbit. It looked convincing internally: Adult gained 1.013 accuracy points in the one-fit comparison, and a frozen 21-dataset confirmation improved proper loss by 1.103% on average.</p>
@@ -252,11 +234,11 @@
             <h2>What you can use now</h2>
             <p>When one tabular encoding beats another, do not ask only which name won. Ask what changed:</p>
             <ol class="d3-checklist">
-                <li><strong>Information:</strong> can each representation reconstruct the other on every split?</li>
-                <li><strong>Geometry:</strong> what are their rank, scale, singular values, and condition number?</li>
-                <li><strong>Coordinates:</strong> does the gap survive standardization, whitening, and alignment?</li>
-                <li><strong>Training:</strong> does it survive function-matched initialization?</li>
-                <li><strong>Compute:</strong> does the proposed method beat spending the same updates on another ordinary seed?</li>
+                <li><span><strong>Information:</strong> can each representation reconstruct the other on every split?</span></li>
+                <li><span><strong>Geometry:</strong> what are their rank, scale, singular values, and condition number?</span></li>
+                <li><span><strong>Coordinates:</strong> does the gap survive standardization, whitening, and alignment?</span></li>
+                <li><span><strong>Training:</strong> does it survive function-matched initialization?</span></li>
+                <li><span><strong>Compute:</strong> does the proposed method beat spending the same updates on another ordinary seed?</span></li>
             </ol>
 
             <div class="thesis"><strong>Day 3 conclusion.</strong> A table does not have one natural neural representation. Equivalent coordinates alter both the function prior induced by ordinary initialization and the optimizer trajectory that follows. Day 3 found a reliable way to expose that gap. The next step is to learn which useful properties of a coordinate system—conditioning, locality, sparsity, or initialization—we should preserve on purpose.</div>
