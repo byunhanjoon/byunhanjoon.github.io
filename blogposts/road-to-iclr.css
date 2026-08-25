@@ -15,13 +15,206 @@
 .d3-trajectory-demo,
 .d3-canonical-demo,
 .d3-result-board,
-.d3-remedy-board {
+.d3-remedy-board,
+.d3-origin-board,
+.d3-closure-board,
+.d3-external-board,
+.d3-next-board {
     overflow: hidden;
     border: 1px solid var(--essay-line);
     border-radius: 1rem;
     background: #ffffff;
     box-shadow: 0 18px 50px rgba(25, 36, 42, 0.07);
     font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.d3-origin-board {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    min-height: 300px;
+}
+
+.d3-origin-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    color: #ffffff;
+    background: var(--essay-ink);
+}
+
+.d3-origin-copy > span,
+.d3-closure-head > span,
+.d3-next-constants > span {
+    color: #89c9c2;
+    font-size: 0.65rem;
+    font-weight: 850;
+    letter-spacing: 0.11em;
+}
+
+.d3-origin-copy > strong {
+    margin-top: 0.65rem;
+    font: 700 1.65rem/1.2 Georgia, serif;
+}
+
+.d3-origin-copy > p {
+    margin: 1rem 0 0;
+    color: #c5cfcb;
+    font-size: 0.76rem;
+    line-height: 1.55;
+}
+
+.d3-origin-scores {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+    background: #ffffff;
+}
+
+.d3-origin-scores section {
+    display: grid;
+    gap: 0.55rem;
+}
+
+.d3-origin-scores section > span {
+    color: var(--essay-muted);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.d3-origin-scores section > strong {
+    color: var(--essay-ink);
+    font: 700 2rem Georgia, serif;
+}
+
+.d3-origin-scores section.identity > strong {
+    color: var(--essay-teal);
+}
+
+.d3-origin-scores section > i,
+.d3-closure-flow section > i {
+    display: block;
+    overflow: hidden;
+    height: 0.65rem;
+    border-radius: 999px;
+    background: #edf1ef;
+}
+
+.d3-origin-scores section > i > b {
+    display: block;
+    width: var(--score);
+    height: 100%;
+    border-radius: inherit;
+    background: var(--essay-muted);
+}
+
+.d3-origin-scores section.identity > i > b {
+    background: linear-gradient(90deg, #94cec5, var(--essay-teal));
+}
+
+.d3-origin-arrow {
+    display: grid;
+    gap: 0.2rem;
+    color: var(--essay-coral);
+    text-align: center;
+}
+
+.d3-origin-arrow > span {
+    font-size: 0.68rem;
+    font-weight: 850;
+    white-space: nowrap;
+}
+
+.d3-origin-arrow > b {
+    font-size: 1.5rem;
+}
+
+.d3-closure-head {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--essay-line);
+    background: #f7f9f8;
+}
+
+.d3-closure-head > span {
+    display: block;
+    color: var(--essay-teal);
+}
+
+.d3-closure-head > strong {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--essay-ink);
+    font-size: 1rem;
+}
+
+.d3-closure-head > p {
+    margin: 0.2rem 0 0;
+    color: var(--essay-muted);
+    font-size: 0.68rem;
+}
+
+.d3-closure-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 1.1rem;
+    align-items: center;
+    padding: 1.7rem 1.5rem;
+}
+
+.d3-closure-flow section {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.d3-closure-flow section > span {
+    color: var(--essay-muted);
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.d3-closure-flow section > strong {
+    color: var(--essay-ink);
+    font: 700 1.35rem Georgia, serif;
+}
+
+.d3-closure-flow section > i > b {
+    display: block;
+    width: max(var(--gap), 2px);
+    height: 100%;
+    border-radius: inherit;
+    background: var(--essay-coral);
+}
+
+.d3-closure-flow section.white > i > b { background: var(--essay-gold); }
+.d3-closure-flow section.aligned > i > b { background: var(--essay-teal); }
+
+.d3-closure-arrow {
+    color: #9ba9a5;
+    font-size: 1.2rem;
+}
+
+.d3-closure-note {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: #315f5c;
+    background: #edf7f5;
+}
+
+.d3-closure-note strong {
+    color: var(--essay-teal);
+    font: 700 1.5rem Georgia, serif;
+}
+
+.d3-closure-note span {
+    font-size: 0.7rem;
+    line-height: 1.45;
 }
 
 .d3-demo-toolbar {
@@ -644,6 +837,248 @@
     line-height: 1.4;
 }
 
+.d3-external-board {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    margin: 2.4rem 0;
+}
+
+.d3-external-board section {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1.5rem;
+    background: #f2f9f7;
+}
+
+.d3-external-board section.external {
+    background: #fff5f1;
+}
+
+.d3-external-board section > span {
+    color: var(--essay-teal);
+    font-size: 0.64rem;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+}
+
+.d3-external-board section.external > span,
+.d3-external-board section.external > strong,
+.d3-external-board section.external > em {
+    color: var(--essay-coral);
+}
+
+.d3-external-board section > strong {
+    color: var(--essay-teal);
+    font: 700 2rem Georgia, serif;
+}
+
+.d3-external-board section > p {
+    margin: 0;
+    color: var(--essay-muted);
+    font-size: 0.72rem;
+    line-height: 1.45;
+}
+
+.d3-external-board section > em {
+    margin-top: 0.45rem;
+    color: var(--essay-teal);
+    font-size: 0.64rem;
+    font-style: normal;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.d3-external-divider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0 1rem;
+    color: var(--essay-muted);
+    background: #ffffff;
+    text-align: center;
+}
+
+.d3-external-divider b {
+    color: var(--essay-ink);
+    font-size: 1.4rem;
+}
+
+.d3-external-divider span {
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.d3-knowledge-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2.2rem 0;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.d3-knowledge-grid section {
+    padding: 1.4rem 1.5rem;
+    border-top: 4px solid var(--essay-teal);
+    background: #f2f9f7;
+}
+
+.d3-knowledge-grid section.unknown {
+    border-color: var(--essay-gold);
+    background: #fffaf0;
+}
+
+.d3-knowledge-grid section > span {
+    color: var(--essay-teal);
+    font-size: 0.64rem;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+}
+
+.d3-knowledge-grid section.unknown > span { color: #9b6a16; }
+
+.d3-knowledge-grid section > strong {
+    display: block;
+    margin: 0.35rem 0 0.8rem;
+    color: var(--essay-ink);
+    font: 700 1.25rem Georgia, serif;
+}
+
+.d3-knowledge-grid ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: var(--essay-muted);
+    font-size: 0.72rem;
+    line-height: 1.55;
+}
+
+.d3-knowledge-grid li + li { margin-top: 0.35rem; }
+
+.d3-next-board {
+    margin: 2.4rem 0;
+}
+
+.d3-next-constants {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    color: #ffffff;
+    background: var(--essay-ink);
+}
+
+.d3-next-constants > span {
+    margin-right: 0.35rem;
+}
+
+.d3-next-constants > b {
+    padding: 0.35rem 0.6rem;
+    border: 1px solid #536167;
+    border-radius: 999px;
+    color: #dfe6e3;
+    font-size: 0.62rem;
+    font-weight: 700;
+}
+
+.d3-next-flow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.8rem;
+}
+
+.d3-next-flow section {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.d3-next-flow section > span {
+    color: var(--essay-teal);
+    font-size: 0.64rem;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+}
+
+.d3-next-flow section:last-child > span { color: var(--essay-coral); }
+
+.d3-next-flow section > strong {
+    color: var(--essay-ink);
+    font: 700 1.15rem/1.25 Georgia, serif;
+}
+
+.d3-next-flow > div {
+    display: grid;
+    color: var(--essay-muted);
+    text-align: center;
+}
+
+.d3-next-flow > div b {
+    color: var(--essay-ink);
+    font-size: 1.5rem;
+}
+
+.d3-next-flow > div span {
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.d3-next-flow section > i {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.35rem;
+    margin-top: 0.7rem;
+}
+
+.d3-next-flow section > i b {
+    height: 2.6rem;
+    border-radius: 0.25rem;
+    background: #e7edeb;
+}
+
+.d3-next-flow section > i.sparse b:nth-child(3) { background: var(--essay-teal); }
+.d3-next-flow section > i.dense b:nth-child(1) { background: #e9b4a7; }
+.d3-next-flow section > i.dense b:nth-child(2) { background: #dc806b; }
+.d3-next-flow section > i.dense b:nth-child(3) { background: #efc7bd; }
+.d3-next-flow section > i.dense b:nth-child(4) { background: #d8654f; }
+.d3-next-flow section > i.dense b:nth-child(5) { background: #e89e8d; }
+.d3-next-flow section > i.dense b:nth-child(6) { background: #f2d7d0; }
+
+.d3-checklist {
+    margin: 1.5rem 0 2.5rem;
+    padding: 0;
+    list-style: none;
+    counter-reset: d3-check;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.d3-checklist li {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: 0.8rem;
+    align-items: baseline;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--essay-line);
+    color: var(--essay-muted);
+    counter-increment: d3-check;
+    font-size: 0.8rem;
+    line-height: 1.55;
+}
+
+.d3-checklist li::before {
+    content: counter(d3-check, decimal-leading-zero);
+    color: var(--essay-coral);
+    font-weight: 850;
+}
+
+.d3-checklist strong { color: var(--essay-ink); }
+
 .d3-verdict {
     margin: 2.4rem 0;
     padding: 1.5rem 1.7rem;
@@ -703,8 +1138,33 @@
 
     .d3-result-hero,
     .d3-mechanism-grid,
-    .d3-reality-grid {
+    .d3-reality-grid,
+    .d3-origin-board,
+    .d3-knowledge-grid {
         grid-template-columns: 1fr;
+    }
+
+    .d3-origin-scores,
+    .d3-closure-flow,
+    .d3-external-board,
+    .d3-next-flow {
+        grid-template-columns: 1fr;
+    }
+
+    .d3-origin-arrow > b,
+    .d3-closure-arrow,
+    .d3-external-divider b,
+    .d3-next-flow > div b {
+        transform: rotate(90deg);
+    }
+
+    .d3-closure-note {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .d3-external-divider {
+        padding: 0.65rem 1rem;
     }
 
     .d3-result-hero section + section {
