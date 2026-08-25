@@ -54,6 +54,19 @@ The main reproduction/analysis entry points are:
 /home/byunhanjoon/adaptive_embedding/exploratory/.venv-tabm/bin/python -m experiments.day3.audit_day3_goal
 ```
 
+## Function-matched trajectory extension
+
+The post-benchmark Day 3 extension decomposes basis sensitivity into initial
+function mismatch and optimizer-induced trajectory drift. Its outcome-blind
+protocol and final report are in `TRAJECTORY_DECOMPOSITION_PROTOCOL.md` and
+`TRAJECTORY_DECOMPOSITION_REPORT.md`.
+
+```bash
+/home/byunhanjoon/adaptive_embedding/exploratory/.venv-tabm/bin/python -m experiments.day3.trajectory_decomposition --device cuda:0
+/home/byunhanjoon/adaptive_embedding/exploratory/.venv-tabm/bin/python -m experiments.day3.analyze_trajectory_decomposition
+/home/byunhanjoon/adaptive_embedding/exploratory/.venv-tabm/bin/python -m experiments.day3.audit_trajectory_decomposition
+```
+
 Important artifacts are under `results/day3/broad_benchmark/`:
 
 - `combined_30_summary.json`: combined controlled result;

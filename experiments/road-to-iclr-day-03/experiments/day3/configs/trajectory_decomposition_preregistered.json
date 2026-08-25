@@ -1,0 +1,80 @@
+{
+  "version": "1.0-frozen-before-trajectory-outcomes",
+  "frozen_at": "2026-08-25T20:00:00+09:00",
+  "purpose": "Decompose equivalent-basis sensitivity into initialization mismatch and optimizer-induced function-space trajectory drift.",
+  "status": "outcome_blind_preregistration",
+  "datasets": ["adult", "california", "diamond"],
+  "models": ["mlp", "resnet"],
+  "seeds": [0, 1, 2, 3, 4],
+  "representation_pairs": {
+    "controlled": {
+      "kappas": [1.0, 30.0, 3000.0],
+      "reference": "joint train-whitened numerical-PLE, binary, and nominal-contrast coordinates",
+      "changed": "the reference multiplied by a fixed scale-controlled invertible map"
+    },
+    "natural": {
+      "pairs": ["cumulative_helmert__to__local_adjacent"],
+      "reference": "blockwise-whitened cumulative numerical PLE plus Helmert nominal contrasts",
+      "changed": "the exactly equivalent blockwise-whitened local PLE plus adjacent nominal contrasts"
+    }
+  },
+  "arms": {
+    "ordinary_adamw": {
+      "initialization": "identical parameter arrays in both coordinate systems",
+      "first_layer_update": "AdamW",
+      "role": "total initialization-plus-optimizer sensitivity"
+    },
+    "matched_adamw": {
+      "initialization": "changed first-layer weight is reference weight times inverse-transpose basis map",
+      "first_layer_update": "AdamW",
+      "role": "optimizer sensitivity conditional on the same initial function"
+    },
+    "covariance_adamw": {
+      "initialization": "same-seed input-covariance-metric initialization fitted separately in each coordinate system",
+      "first_layer_update": "AdamW",
+      "role": "deployable initialization intervention; invariant in distribution, not necessarily paired"
+    },
+    "matched_input_natural": {
+      "initialization": "function matched",
+      "first_layer_update": "full inverse augmented-input second moment with no ridge beyond numerical eigenvalue floor",
+      "role": "idealized near-exact closure control"
+    },
+    "ordinary_input_natural": {
+      "initialization": "identical parameter arrays in both coordinate systems",
+      "first_layer_update": "full inverse augmented-input second moment with no ridge beyond numerical eigenvalue floor",
+      "role": "diagnostic separating update invariance from initialization invariance"
+    }
+  },
+  "training": {
+    "updates": 200,
+    "trajectory_steps": [0, 1, 5, 20, 100, 200],
+    "batch_size": 1024,
+    "probe_rows_per_split": 2048,
+    "adamw_learning_rate": 0.003,
+    "adamw_weight_decay": 0.0001,
+    "natural_first_learning_rate": 0.03,
+    "natural_later_adamw_learning_rate": 0.001,
+    "dropout": 0.1,
+    "same_batch_order": true,
+    "same_dropout_masks_within_pair": true,
+    "selection": "none; final checkpoint is exactly update 200"
+  },
+  "primary_quantity": "symmetric normalized RMS prediction drift between paired models on fixed train and validation probes",
+  "primary_hypotheses": {
+    "H1": "Function-matched AdamW has nonzero one-step orbit drift, demonstrating optimizer non-equivariance independently of initialization.",
+    "H2": "Early function-space orbit drift predicts final normalized paired performance harm better than input condition number alone.",
+    "H3": "Function matching materially reduces final sensitivity relative to ordinary AdamW, quantifying the initialization contribution.",
+    "H4": "Function-matched input-natural training remains near the same function trajectory and supplies a closure control.",
+    "H5": "The orbit-drift relationship transfers from controlled transforms to the natural cumulative/local pair."
+  },
+  "analysis_gates": {
+    "matched_step0_max_drift": 0.0001,
+    "minimum_function_matching_reduction_fraction": 0.5,
+    "minimum_leave_one_dataset_out_r2_improvement_over_log_kappa": 0.1,
+    "minimum_natural_direction_agreement_fraction": 0.6,
+    "bootstrap_samples": 10000,
+    "confidence": 0.95
+  },
+  "failure_policy": "Every requested pair is recorded; exceptions and nonfinite values are failures and are never silently dropped.",
+  "claim_boundary": "This experiment does not claim that natural gradient, affine-invariant optimization, covariance initialization, or canonicalization is new. The candidate novelty is a function-space trajectory decomposition and a prospective early orbit-drift diagnostic for information-equivalent tabular schemas."
+}

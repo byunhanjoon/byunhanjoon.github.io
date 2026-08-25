@@ -28,7 +28,7 @@
         "Same Information, Different Difficulty": "같은 정보, 다른 난이도",
         "Road to ICLR · Day 3 / 30": "Road to ICLR · 3일차 / 30",
         "August 26, 2026": "2026년 8월 26일",
-        "A 30-dataset causal audit of why invertible coordinates can make the same tabular learning problem much harder—and which invariance remedies actually work.": "가역적인 좌표가 같은 정형 학습 문제를 훨씬 어렵게 만드는 이유와 실제로 작동하는 불변성 대책을 30개 데이터셋에서 인과적으로 검증합니다.",
+        "A 30-dataset causal audit and function-matched experiment show how equivalent coordinates change both initialization and optimization.": "30개 데이터셋 인과 감사와 함수 정합 실험으로 동등한 좌표가 초기화와 최적화를 모두 어떻게 바꾸는지 보여줍니다.",
         "Read Day 3 →": "3일차 읽기 →",
         "Manuscripts Under Review": "심사 중인 원고",
         "Byun, Han Joon is a researcher at Seoul National University working on tabular data, time series, finance, machine learning, and optimization.": "변한준은 정형 데이터, 시계열, 금융, 머신러닝, 최적화를 연구하는 서울대학교 연구자입니다.",

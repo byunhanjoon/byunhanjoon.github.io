@@ -1,5 +1,11 @@
 # Day 3 broad benchmark report
 
+> **Post-benchmark extension:** a later outcome-blind 600-pair trajectory study
+> decomposed the controlled effect into initialization and optimizer components.
+> Function matching removed 94.7% of κ=3000 harm under a fixed update budget,
+> although AdamW still produced immediate function-space drift. The universal
+> drift-prediction hypothesis failed. See `TRAJECTORY_DECOMPOSITION_REPORT.md`.
+
 ## Executive result
 
 There is a strong and broad **controlled** signal. Across 30 tabular datasets,

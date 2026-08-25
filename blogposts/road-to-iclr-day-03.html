@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Same Information, Different Difficulty — Road to ICLR Day 3</title>
-    <meta name="description" content="Day 3 of Road to ICLR: a 30-dataset causal audit shows that invertible coordinate changes can make the same tabular learning problem much harder—and tests which invariance remedies actually work.">
+    <meta name="description" content="Day 3 of Road to ICLR: a 30-dataset causal audit and function-matched trajectory experiment show how equivalent coordinates change both initialization and optimization.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
@@ -12,15 +12,15 @@
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Same Information, Different Difficulty">
-    <meta property="og:description" content="Road to ICLR, Day 3/30 — 30 datasets, four neural backbones, and an exact test of whether coordinates alone can change learning difficulty.">
+    <meta property="og:description" content="Road to ICLR, Day 3/30 — a 30-dataset causal audit plus a function-matched decomposition of initialization and optimizer drift.">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260826-1">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260826-2">
     <script src="../language.js" defer></script>
-    <script src="road-to-iclr-day-03.js?v=20260826-1" defer></script>
+    <script src="road-to-iclr-day-03.js?v=20260826-2" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Same Information, Different Difficulty","description":"A 30-dataset causal audit of optimization under information-equivalent tabular coordinates.","datePublished":"2026-08-26","dateModified":"2026-08-26","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Same Information, Different Difficulty","description":"A 30-dataset causal audit and function-matched decomposition of initialization and optimization under equivalent tabular coordinates.","datePublished":"2026-08-26","dateModified":"2026-08-26","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html"}
     </script>
 </head>
 <body>
@@ -83,7 +83,45 @@
 
             <p>The effect survived every backbone. These are dense-stem versions of FT-Transformer and TabM so that an arbitrary full input-basis map remains an exact first-layer reparameterization; I do not call this native tokenization invariance. All 2,400 original broad cells and 120 extension cells completed without failures, and reconstruction errors stayed near 10<sup>−14</sup>.</p>
 
-            <div class="thesis"><strong>What the result says.</strong> The function class stayed fixed, but finite training did not. Ordinary AdamW systematically assigned different difficulty to exactly equivalent descriptions of the same tabular problem.</div>
+            <div class="thesis"><strong>What the result says.</strong> The function class stayed fixed, but ordinary training did not. This first benchmark still mixed two causes: a coordinate change can alter the function produced at initialization, and it can alter every optimizer update afterward.</div>
+
+            <h2>Same function, then one AdamW step</h2>
+            <p>To separate those causes, I ran a second experiment on Adult, California Housing, and Diamonds with MLP and ResNet, five seeds, and a fixed budget of 200 updates. Every pair saw identical rows, labels, minibatches, and dropout masks. The only intervention was the input basis.</p>
+            <p>Ordinary initialization uses the same parameter distribution in both bases, but that does <em>not</em> produce the same starting function. So I added a function-matched arm. For <em>X</em>&prime; = <em>XB</em>, the first-layer weights start at <em>W</em>&prime;<sub>0</sub> = <em>W</em><sub>0</sub><em>B</em><sup>&minus;T</sup>. Before training, the two networks then agree to numerical precision.</p>
+
+            <figure class="wide-figure">
+                <div class="d3-trajectory-demo" data-trajectory-demo>
+                    <div class="d3-demo-toolbar">
+                        <div><span class="d3-eyebrow">TRAJECTORY DECOMPOSITION</span><strong>What is held equal?</strong></div>
+                        <div class="d3-trajectory-buttons" role="group" aria-label="Choose a trajectory comparison"><button type="button" data-trajectory="ordinary" aria-pressed="true">ordinary init</button><button type="button" data-trajectory="matched" aria-pressed="false">same function</button><button type="button" data-trajectory="natural" aria-pressed="false">invariant update</button></div>
+                    </div>
+                    <div class="d3-trajectory-stage">
+                        <svg viewBox="0 0 760 300" role="img" aria-labelledby="d3-trajectory-title d3-trajectory-desc">
+                            <title id="d3-trajectory-title">Reference and recoded training trajectories</title>
+                            <desc id="d3-trajectory-desc">An interactive comparison of ordinary initialization, function-matched initialization, and a matched input-natural update.</desc>
+                            <rect x="1" y="1" width="758" height="298" rx="18" fill="#fbfcfb" stroke="#e2e9e6"></rect>
+                            <g class="d3-trajectory-guides"><line x1="100" y1="45" x2="100" y2="258"></line><line x1="260" y1="45" x2="260" y2="258"></line><line x1="445" y1="45" x2="445" y2="258"></line><line x1="650" y1="45" x2="650" y2="258"></line></g>
+                            <path class="d3-trajectory-path reference" data-trajectory-path="reference" d="M100 230 C235 204 405 126 650 82"></path>
+                            <path class="d3-trajectory-path changed" data-trajectory-path="changed" d="M100 265 C245 252 430 223 650 190"></path>
+                            <circle class="d3-trajectory-dot changed" data-trajectory-start cx="100" cy="265" r="7"></circle><circle class="d3-trajectory-dot reference" cx="100" cy="230" r="7"></circle>
+                            <text x="82" y="280">step 0</text><text x="242" y="280">1</text><text x="427" y="280">20</text><text x="628" y="280">200</text>
+                            <text class="d3-trajectory-label reference" x="584" y="69">reference</text><text class="d3-trajectory-label changed" data-trajectory-label x="577" y="211">recoded</text>
+                        </svg>
+                        <div class="d3-trajectory-readout"><section><span>&kappa;=3000 endpoint harm</span><strong data-trajectory-harm>54.00%</strong></section><section><span data-trajectory-drift-label>step-0 functions</span><strong data-trajectory-drift>different</strong></section><p data-trajectory-note>Ordinary parameter initialization creates different functions before optimization even begins.</p></div>
+                    </div>
+                </div>
+                <figcaption><strong>Figure 3.</strong> The schematic summarizes 600 paired cells: 1,200 models and 7,200 recorded checkpoints. At &kappa;=3000, matching the initial function reduced mean normalized endpoint harm from 54.00% to 2.89%.</figcaption>
+            </figure>
+
+            <div class="d3-mechanism-grid">
+                <section><span>INITIALIZATION</span><strong>94.66%</strong><p>of severe endpoint harm removed by starting from the same function</p></section>
+                <section><span>OPTIMIZER</span><strong>0.071</strong><p>prediction drift after just one matched AdamW update</p></section>
+                <section><span>PREDICTION GATE</span><strong>failed</strong><p>early drift detected non-equivariance but did not predict damage reliably</p></section>
+            </div>
+
+            <p>The result is sharper than “conditioning hurts.” At &kappa;=3000, function matching removed <strong>94.66%</strong> of the original harm, with reductions from 76.6% to 98.3% in every dataset/model group. Initialization was therefore the dominant mechanism in this fixed-budget stress test.</p>
+            <p>But AdamW was still not coordinate-equivariant. Mean prediction drift was 5.8&times;10<sup>&minus;6</sup> at step 0 and <strong>0.071</strong> after one update; all 90 controlled matched cells moved apart. A matched input-natural update nearly closed the controlled experiment, with step-200 drift of 7.6&times;10<sup>&minus;5</sup> and endpoint harm of 1.6&times;10<sup>&minus;7</sup>.</p>
+            <p>One hoped-for insight did <em>not</em> survive its frozen gate. One-step drift predicted endpoint harm only slightly better than log condition number (leave-one-dataset-out <em>R</em><sup>2</sup> &minus;0.160 versus &minus;0.201; improvement 0.041, below the required 0.10). Early drift is a detector of broken equivariance, not a universal measure of consequential damage. The task, labels, and local curvature still decide whether that drift matters.</p>
 
             <h2>Remove the arbitrary coordinates</h2>
             <p>The cleanest diagnostic was canonicalization. Center the training matrix, choose a deterministic set of linearly independent anchor rows, and describe every row using coefficients of those anchors. If <em>X</em> = <em>CR</em>, then after any invertible recoding <em>B</em>:</p>
@@ -98,7 +136,7 @@
                         <div class="d3-coefficient-card"><span>selected point</span><strong>x = 2r₁ − 0.5r₂</strong><div class="d3-coefficient-bars"><i><b style="--coef:80%"></b><span>2.0</span></i><i class="negative"><b style="--coef:20%"></b><span>−0.5</span></i></div><p data-canonical-note>The coordinates and anchors are in the reference basis.</p></div>
                     </div>
                 </div>
-                <figcaption><strong>Figure 3.</strong> Switch to the stretched view: the cloud and anchors move together, while the coefficients stay 2 and −0.5. “Canonical” is the common internal representation given to the network.</figcaption>
+                <figcaption><strong>Figure 4.</strong> Switch to the stretched view: the cloud and anchors move together, while the coefficients stay 2 and −0.5. “Canonical” is the common internal representation given to the network.</figcaption>
             </figure>
 
             <p>In ten datasets, four models, five seeds, and both endpoints, exact anchor canonicalization removed <strong>99.81%</strong> of the paired sensitivity while losing 0.20% on the clean basis. A progressively sketched version removed 99.43%. A first-layer input-natural update—multiplying by the inverse input second moment and using compatible initialization—removed 99.69%.</p>
@@ -114,7 +152,7 @@
                     <div class="d3-remedy-row worse"><span>Shampoo</span><i><b style="--remove:0%"></b></i><strong>−13.23%</strong><em>fail</em></div>
                     <div class="d3-remedy-notes"><span>* numerically approximate under pivot ties</span><span>† aggregate clean loss 1.00%; TabM clean loss 2.63%</span></div>
                 </div>
-                <figcaption><strong>Figure 4.</strong> Mean paired sensitivity reduction under the frozen confirmation criterion. Practical damped or grafted full-matrix optimizers are not automatically affine-invariant.</figcaption>
+                <figcaption><strong>Figure 5.</strong> Mean paired sensitivity reduction under the frozen confirmation criterion. Practical damped or grafted full-matrix optimizers are not automatically affine-invariant.</figcaption>
             </figure>
 
             <h2>The reality check</h2>
@@ -130,17 +168,19 @@
 
             <p>Rank stress tests add another caveat. Duplicating columns did not crash any of 504 runs, but an input-natural ridge of 10<sup>−10</sup> produced erratic predictions on Microsoft as the preconditioner condition approached 10<sup>10</sup>. Ridges around 10<sup>−8</sup> to 10<sup>−6</sup> were safer. Exact anchors remained stable; the sketch could switch a near-tied pivot in floating point and was slower to fit than the full construction on this benchmark.</p>
 
+            <p>The trajectory experiment made that rank caveat concrete. Adult's natural basis had 123 columns but rank 116. Even with a perfectly conditioned basis map and relation error below 5&times;10<sup>&minus;13</sup>, an <em>undamped</em> inverse amplified numerical noise in the seven null directions: matched input-natural drift reached 0.374 by step 200. California and Diamonds were full rank and closed to roughly 3&times;10<sup>&minus;7</sup>. Invariance therefore needs an explicit effective-rank or damping policy; exact algebra alone is not enough.</p>
+
             <h2>What is—and is not—the paper</h2>
             <p>Natural gradient, K-FAC’s ideal affine invariance,<sup><a href="#ref-1">[1]</a></sup> whitening, Shampoo, SOAP, and canonicalization are prior art. Feature orientation in tabular learning was also studied before.<sup><a href="#ref-2">[2]</a></sup> General canonicalization has known continuity limitations.<sup><a href="#ref-3">[3]</a></sup> The result cannot honestly be sold as the invention of invariant optimization or the first observation that coordinates matter.</p>
 
             <div class="d3-verdict">
                 <span>FINAL DAY 3 VERDICT</span>
-                <strong>ICLR-plausible, but borderline.</strong>
-                <p>The potential contribution is the exact-equivalence causal benchmark: controlled conditioning, verified cross-schema orbits, prospective replication, modern backbones, canonical closure, and a practical audit of accuracy, rank, shift, runtime, and memory. The controlled evidence is strong. The natural effects and method novelty are modest.</p>
+                <strong>A sharper mechanism, still a borderline paper.</strong>
+                <p>The potential contribution is now an exact-equivalence causal benchmark plus a function-matched mechanism decomposition: ordinary initialization explains most severe fixed-budget harm, AdamW diverges after one matched update, and invariant closure exposes a rank requirement. That is more explanatory than the benchmark alone. The decomposition still covers only three datasets, its universal predictor failed, natural effects remain small, and the remedies are prior art.</p>
             </div>
 
             <p>The narrow claim is now stronger than Day 2’s ensemble observation:</p>
-            <div class="thesis"><strong>Day 3 conclusion.</strong> Modern neural tabular learners show broad finite-training sensitivity within exactly equivalent representation orbits. Known invariance principles can close the gap, but practical approximations carry real stability, performance, and compute tradeoffs.</div>
+            <div class="thesis"><strong>Day 3 conclusion.</strong> Equivalent coordinates alter both the function prior induced by ordinary initialization and the optimizer trajectory that follows. Most severe harm here began at initialization; AdamW still drifted after exact function matching, and invariant closure required an explicit rank policy.</div>
 
             <h2>References</h2>
             <ol class="reference-list">
@@ -149,7 +189,7 @@
                 <li id="ref-3">Dym, Lawrence, and Siegel. <a href="https://proceedings.mlr.press/v235/dym24a.html">Equivariant Frames and the Impossibility of Continuous Canonicalization</a>. ICML 2024.</li>
                 <li id="ref-4">Vyas et al. <a href="https://openreview.net/forum?id=IDxZhXrpNf">SOAP: Improving and Stabilizing Shampoo using Adam</a>. ICLR 2025.</li>
             </ol>
-            <p class="next-post"><strong>Next:</strong> can the exact-equivalence audit become a stable, scalable training principle—and can we find natural schemas where that principle matters enough to change deployment decisions?</p>
+            <p class="next-post"><strong>Next:</strong> can a stable effective-rank rule and a task-aware measure of harmful drift turn this mechanism into a genuinely new training principle?</p>
         </div>
     </article></main>
     <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>

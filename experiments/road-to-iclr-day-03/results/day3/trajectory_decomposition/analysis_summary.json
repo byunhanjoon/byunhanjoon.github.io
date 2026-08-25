@@ -1,0 +1,97 @@
+{
+  "H1_matched_adamw_one_step_drift": {
+    "increase_cluster_bootstrap_95ci": [
+      0.03600934213937189,
+      0.09508160858869194
+    ],
+    "mean_increase": 0.07103346127400097,
+    "mean_step0": 5.8136734694773456e-06,
+    "mean_step1": 0.07103927494747043,
+    "positive_fraction": 1.0
+  },
+  "H2_leave_one_dataset_out": {
+    "condition_number": {
+      "feature": "condition",
+      "mae": 0.020664888240679878,
+      "r2": -0.20111971431860542,
+      "sign_agreement": 0.7
+    },
+    "early_auc_r2_improvement": -0.03160879004331685,
+    "early_drift_auc": {
+      "feature": "early_auc",
+      "mae": 0.022225137464296656,
+      "r2": -0.23272850436192227,
+      "sign_agreement": 0.6555555555555556
+    },
+    "preregistered_improvement_gate": 0.1,
+    "step1_orbit_drift": {
+      "feature": "step1_drift",
+      "mae": 0.021472609699501304,
+      "r2": -0.16028494876528376,
+      "sign_agreement": 0.7333333333333333
+    },
+    "step1_r2_improvement": 0.04083476555332166
+  },
+  "H3_initialization_contribution_at_kappa3000": {
+    "function_matching_reduction_fraction": 0.94655847097481,
+    "matched_mean_harm": 0.02885592333795469,
+    "ordinary_mean_harm": 0.5399531761966114,
+    "paired_cluster_bootstrap_95ci": [
+      0.018727263880629418,
+      1.1860212591495871
+    ],
+    "paired_mean_difference": 0.5110972528586567,
+    "preregistered_reduction_gate": 0.5
+  },
+  "H4_matched_input_natural_closure": {
+    "controlled": {
+      "maximum_step200_drift": 0.0006208352739857,
+      "mean_final_harm": 1.644205239571675e-07,
+      "mean_step200_drift": 7.567746032432727e-05
+    },
+    "maximum_step200_drift": 1.0334513753403234,
+    "mean_final_harm": -0.0015492331004529772,
+    "mean_step0_drift": 4.458210367977814e-06,
+    "mean_step200_drift": 0.031191708504964142,
+    "natural": {
+      "by_dataset": {
+        "adult": {
+          "mean_final_harm": -0.01859230095483556,
+          "mean_step200_drift": 0.3736187594926096,
+          "reference_rank": 116
+        },
+        "california": {
+          "mean_final_harm": 1.3657955880653412e-08,
+          "mean_step200_drift": 3.1442543872385356e-07,
+          "reference_rank": 64
+        },
+        "diamond": {
+          "mean_final_harm": 1.0306728337420994e-08,
+          "mean_step200_drift": 3.3099860238289934e-07,
+          "reference_rank": 64
+        }
+      },
+      "maximum_step200_drift": 1.0334513753403234,
+      "mean_final_harm": -0.006197425663383782,
+      "mean_step200_drift": 0.12453980163888359
+    },
+    "ordinary_init_natural_mean_final_harm": 0.012006891139886032,
+    "ordinary_init_natural_mean_step200_drift": 0.15976962878058398
+  },
+  "H5_natural_transfer": {
+    "actual_mean": 0.00012144650923112541,
+    "cells": 30,
+    "mae": 0.021521075053938712,
+    "predicted_mean": -0.021139905814131072,
+    "preregistered_direction_gate": 0.6,
+    "sign_agreement": 0.6
+  },
+  "coverage": {
+    "basis_relation_max_error": 7.634103579644668e-13,
+    "expected_cells": 600,
+    "failures": 0,
+    "observed_cells": 600,
+    "successful_cells": 600,
+    "trajectory_rows": 7200
+  }
+}

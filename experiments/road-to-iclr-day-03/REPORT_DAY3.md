@@ -1,5 +1,12 @@
 # Day 3 — Basis Geometry and Categorical Conditioning
 
+> **Post-benchmark mechanism update:** the preregistered function-matched
+> trajectory extension found that coordinate-dependent initialization explains
+> about 95% of the κ=3000 fixed-budget harm, while matched AdamW still diverges
+> after one update. Early drift did not pass its held-out-dataset prediction
+> gate, and undamped input-natural closure failed on Adult's rank-deficient
+> natural representation. See `TRAJECTORY_DECOMPOSITION_REPORT.md`.
+
 > **Final status:** the original 771-run mechanism study was followed by a
 > frozen 25-dataset benchmark, a separately frozen five-dataset prospective
 > replication, 2,800 five-seed remedy-confirmation cells, rank/ridge and

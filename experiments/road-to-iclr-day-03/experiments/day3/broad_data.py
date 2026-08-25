@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
-from scipy.linalg import qr
+from scipy.linalg import block_diag, qr
 
 from .core import (
     DATA_ROOT,
@@ -245,6 +245,82 @@ def natural_representation(dataset: Dataset, family: str) -> Representation:
             "categorical": categorical_meta,
             "input_features": values["train"].shape[1],
         },
+    )
+
+
+def paired_natural_representations(
+    dataset: Dataset,
+) -> tuple[Representation, Representation, np.ndarray]:
+    """Return the natural exact pair and its known blockwise linear map.
+
+    A single global least-squares map can mix unrelated semantic blocks when
+    they are collinear on the training rows.  This construction instead fits
+    the square map within every retained semantic block, verifies it on every
+    split, and then joins the maps block-diagonally.
+    """
+
+    reference_blocks, reference_bins, reference_categorical = _natural_blocks(
+        dataset, "cumulative_helmert"
+    )
+    changed_blocks, changed_bins, changed_categorical = _natural_blocks(
+        dataset, "local_adjacent"
+    )
+    if len(reference_blocks) != len(changed_blocks):
+        raise AssertionError("Natural representations have different semantic block counts")
+    transforms: list[np.ndarray] = []
+    block_errors: list[dict[str, float]] = []
+    for reference, changed in zip(reference_blocks, changed_blocks):
+        if reference["train"].shape[1] != changed["train"].shape[1]:
+            raise AssertionError("Natural pair retained different block ranks")
+        transform = np.linalg.lstsq(reference["train"], changed["train"], rcond=1e-10)[0]
+        if np.linalg.matrix_rank(transform, tol=1e-10) != transform.shape[0]:
+            raise np.linalg.LinAlgError("Natural block map is not invertible")
+        errors = {
+            part: float(
+                np.linalg.norm(reference[part] @ transform - changed[part])
+                / max(np.linalg.norm(changed[part]), 1e-30)
+            )
+            for part in PARTS
+        }
+        transforms.append(transform)
+        block_errors.append(errors)
+    rows = {part: len(dataset.y[part]) for part in PARTS}
+    reference_values = _combine_nonempty(reference_blocks, rows)
+    changed_values = _combine_nonempty(changed_blocks, rows)
+    transform = block_diag(*transforms) if transforms else np.empty((0, 0), dtype=np.float64)
+    global_errors = {
+        part: float(
+            np.linalg.norm(reference_values[part] @ transform - changed_values[part])
+            / max(np.linalg.norm(changed_values[part]), 1e-30)
+        )
+        for part in PARTS
+    }
+    metadata = {
+        "equivalence_class": "natural_exact_spline_contrast",
+        "reference_family": "cumulative_helmert",
+        "changed_family": "local_adjacent",
+        "reference_bins": reference_bins,
+        "changed_bins": changed_bins,
+        "reference_categorical": reference_categorical,
+        "changed_categorical": changed_categorical,
+        "block_relation_errors": block_errors,
+        "basis_relation_errors": global_errors,
+        "basis_condition": float(np.linalg.cond(transform)) if transform.size else 1.0,
+    }
+    return (
+        Representation(
+            name="natural_cumulative_helmert",
+            parts=reference_values,
+            metadata=metadata,
+        ),
+        Representation(
+            name="natural_local_adjacent",
+            parts=changed_values,
+            metadata=metadata,
+            reference=reference_values,
+            basis_transform=transform,
+        ),
+        transform,
     )
 
 

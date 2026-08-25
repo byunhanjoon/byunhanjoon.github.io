@@ -126,6 +126,110 @@
         select(buttons[0]);
     }
 
+    function initializeTrajectoryDemo(demo) {
+        if (!demo) {
+            return;
+        }
+
+        const buttons = Array.from(demo.querySelectorAll("[data-trajectory]"));
+        const changedPath = demo.querySelector('[data-trajectory-path="changed"]');
+        const changedStart = demo.querySelector("[data-trajectory-start]");
+        const changedLabel = demo.querySelector("[data-trajectory-label]");
+        const harm = demo.querySelector("[data-trajectory-harm]");
+        const drift = demo.querySelector("[data-trajectory-drift]");
+        const driftLabel = demo.querySelector("[data-trajectory-drift-label]");
+        const note = demo.querySelector("[data-trajectory-note]");
+        const states = {
+            en: {
+                ordinary: {
+                    path: "M100 265 C245 252 430 223 650 190",
+                    start: 265,
+                    labelY: 211,
+                    label: "recoded",
+                    harm: "54.00%",
+                    driftLabel: "step-0 functions",
+                    drift: "different",
+                    note: "Ordinary parameter initialization creates different functions before optimization even begins."
+                },
+                matched: {
+                    path: "M100 230 C235 218 405 174 650 145",
+                    start: 230,
+                    labelY: 166,
+                    label: "recoded",
+                    harm: "2.89%",
+                    driftLabel: "step-1 drift",
+                    drift: "0.071",
+                    note: "The functions start equal, yet one AdamW update makes every controlled pair move apart."
+                },
+                natural: {
+                    path: "M100 230 C235 204 405 127 650 84",
+                    start: 230,
+                    labelY: 106,
+                    label: "recoded",
+                    harm: "0.00002%",
+                    driftLabel: "step-200 drift",
+                    drift: "0.000076",
+                    note: "Controlled full-rank pairs nearly overlap. Rank-deficient Adult is the important counterexample."
+                }
+            },
+            ko: {
+                ordinary: {
+                    path: "M100 265 C245 252 430 223 650 190",
+                    start: 265,
+                    labelY: 211,
+                    label: "변환",
+                    harm: "54.00%",
+                    driftLabel: "step-0 함수",
+                    drift: "다름",
+                    note: "일반 parameter 초기화는 최적화를 시작하기도 전에 서로 다른 함수를 만듭니다."
+                },
+                matched: {
+                    path: "M100 230 C235 218 405 174 650 145",
+                    start: 230,
+                    labelY: 166,
+                    label: "변환",
+                    harm: "2.89%",
+                    driftLabel: "step-1 drift",
+                    drift: "0.071",
+                    note: "함수는 같게 시작하지만 AdamW update 한 번 뒤 모든 통제 pair가 벌어집니다."
+                },
+                natural: {
+                    path: "M100 230 C235 204 405 127 650 84",
+                    start: 230,
+                    labelY: 106,
+                    label: "변환",
+                    harm: "0.00002%",
+                    driftLabel: "step-200 drift",
+                    drift: "0.000076",
+                    note: "통제된 full-rank pair는 거의 겹칩니다. Rank-deficient Adult가 중요한 반례입니다."
+                }
+            }
+        };
+
+        function select(button) {
+            const trajectory = button.dataset.trajectory;
+            const state = states[korean ? "ko" : "en"][trajectory];
+            buttons.forEach(function (candidate) {
+                candidate.setAttribute("aria-pressed", candidate === button ? "true" : "false");
+            });
+            changedPath.setAttribute("d", state.path);
+            changedStart.setAttribute("cy", state.start);
+            changedLabel.setAttribute("y", state.labelY);
+            changedLabel.textContent = state.label;
+            harm.textContent = state.harm;
+            driftLabel.textContent = state.driftLabel;
+            drift.textContent = state.drift;
+            note.textContent = state.note;
+            demo.dataset.activeTrajectory = trajectory;
+        }
+
+        buttons.forEach(function (button) {
+            button.addEventListener("click", function () { select(button); });
+        });
+        select(buttons[0]);
+    }
+
     initializeKappaDemo(document.querySelector("[data-kappa-demo]"));
+    initializeTrajectoryDemo(document.querySelector("[data-trajectory-demo]"));
     initializeCanonicalDemo(document.querySelector("[data-canonical-demo]"));
 })();

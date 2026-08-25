@@ -4,6 +4,7 @@ import torch
 from experiments.day3.broad_data import (
     controlled_representation,
     natural_blockwise_equivalence_errors,
+    paired_natural_representations,
     sketched_anchor_canonicalize,
 )
 from experiments.day3.broad_models import make_model
@@ -39,6 +40,14 @@ def test_controlled_transform_has_requested_condition_and_fixed_energy():
 def test_natural_pair_is_blockwise_affine_equivalent():
     errors = natural_blockwise_equivalence_errors(synthetic_dataset())
     assert max(value for direction in errors.values() for value in direction.values()) < 1e-10
+
+
+def test_natural_pair_exposes_an_exact_invertible_global_map():
+    reference, changed, transform = paired_natural_representations(synthetic_dataset())
+    assert transform.shape[0] == transform.shape[1]
+    assert np.linalg.matrix_rank(transform) == len(transform)
+    for part in ("train", "val", "test"):
+        assert np.allclose(reference.parts[part] @ transform, changed.parts[part], atol=1e-9)
 
 
 def test_all_broad_models_have_dense_first_affine_layer():

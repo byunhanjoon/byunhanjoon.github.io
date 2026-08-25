@@ -18,3 +18,12 @@ The benchmark completion claims are valid only when the final syntax, test, and
 freeze audits pass. Their exact command outputs and timestamps are stored in
 `final_verification.json`; the seven checks are recomputed rather than asserted
 manually by `experiments/day3/audit_day3_goal.py`.
+
+## Post-benchmark trajectory extension
+
+The later function-matched decomposition is audited separately in
+`results/day3/trajectory_decomposition/completion_audit.json`. It contains all
+600 preregistered paired cells and 7,200 trajectory observations with zero
+failures. The frozen config/protocol digests, exact basis relations, step-0
+function-matching gate, and per-cell checkpoint coverage all pass. Its revised
+mechanistic verdict is in `TRAJECTORY_DECOMPOSITION_REPORT.md`.

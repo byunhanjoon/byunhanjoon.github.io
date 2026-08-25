@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>같은 정보, 다른 난이도 — Road to ICLR 3일차</title>
-    <meta name="description" content="Road to ICLR 3일차: 30개 데이터셋의 인과적 감사로 가역적 좌표 변환이 같은 정형 학습 문제를 더 어렵게 만들 수 있음을 보이고, 어떤 불변성 대책이 실제로 작동하는지 검증합니다.">
+    <meta name="description" content="Road to ICLR 3일차: 30개 데이터셋 인과 감사와 함수 정합 trajectory 실험으로 동등한 좌표가 초기화와 최적화를 어떻게 바꾸는지 분해합니다.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03-ko.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
@@ -12,15 +12,15 @@
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="같은 정보, 다른 난이도">
-    <meta property="og:description" content="Road to ICLR 3일차 — 30개 데이터셋과 네 가지 신경망에서 좌표만으로 학습 난이도가 달라지는지 정확히 검증합니다.">
+    <meta property="og:description" content="Road to ICLR 3일차 — 30개 데이터셋 인과 감사와 함수 정합 실험으로 초기화 효과와 optimizer drift를 분해합니다.">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03-ko.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260826-1">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260826-2">
     <script src="../language.js" defer></script>
-    <script src="road-to-iclr-day-03.js?v=20260826-1" defer></script>
+    <script src="road-to-iclr-day-03.js?v=20260826-2" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"같은 정보, 다른 난이도","description":"정보가 동등한 정형 좌표에서 최적화를 검증한 30개 데이터셋 인과적 감사.","datePublished":"2026-08-26","dateModified":"2026-08-26","inLanguage":"ko","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03-ko.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"같은 정보, 다른 난이도","description":"동등한 정형 좌표 아래 초기화와 최적화를 분해한 30개 데이터셋 인과 감사와 함수 정합 실험.","datePublished":"2026-08-26","dateModified":"2026-08-26","inLanguage":"ko","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03-ko.html"}
     </script>
 </head>
 <body>
@@ -83,7 +83,45 @@
 
             <p>효과는 모든 backbone에서 유지되었습니다. FT-Transformer와 TabM은 임의의 full input-basis 변환이 첫 layer의 정확한 reparameterization이 되도록 dense stem을 붙인 버전입니다. 이를 native tokenization의 불변성이라고 부르지는 않습니다. 원래 broad cell 2,400개와 확장 cell 120개는 실패 없이 모두 끝났고, reconstruction error는 10<sup>−14</sup> 수준이었습니다.</p>
 
-            <div class="thesis"><strong>결과의 의미.</strong> 함수 공간은 그대로였지만 유한 시간 학습은 그렇지 않았습니다. 일반 AdamW는 똑같은 정형 문제를 표현하는 동등한 좌표에 체계적으로 서로 다른 난이도를 부여했습니다.</div>
+            <div class="thesis"><strong>결과의 의미.</strong> 함수 공간은 그대로였지만 일반적인 학습은 그렇지 않았습니다. 다만 첫 benchmark는 두 원인을 섞고 있었습니다. 좌표 변화는 초기화가 만드는 함수를 바꿀 수도 있고, 이후 optimizer update를 모두 바꿀 수도 있습니다.</div>
+
+            <h2>같은 함수에서, AdamW 한 step 뒤</h2>
+            <p>두 원인을 분리하기 위해 Adult, California Housing, Diamonds에서 MLP와 ResNet, seed 5개, 고정된 200 update로 두 번째 실험을 했습니다. 각 pair는 같은 row, label, minibatch, dropout mask를 보았습니다. 개입은 입력 기저뿐이었습니다.</p>
+            <p>일반 초기화는 두 기저에서 같은 parameter 분포를 쓰지만, 그것이 같은 시작 함수를 만들지는 않습니다. 그래서 함수 정합 arm을 추가했습니다. <em>X</em>&prime; = <em>XB</em>일 때 첫 layer를 <em>W</em>&prime;<sub>0</sub> = <em>W</em><sub>0</sub><em>B</em><sup>&minus;T</sup>로 시작하면 학습 전에 두 신경망의 함수가 수치 오차 범위에서 같습니다.</p>
+
+            <figure class="wide-figure">
+                <div class="d3-trajectory-demo" data-trajectory-demo>
+                    <div class="d3-demo-toolbar">
+                        <div><span class="d3-eyebrow">TRAJECTORY 분해</span><strong>무엇을 같게 둘까요?</strong></div>
+                        <div class="d3-trajectory-buttons" role="group" aria-label="trajectory 비교 선택"><button type="button" data-trajectory="ordinary" aria-pressed="true">일반 초기화</button><button type="button" data-trajectory="matched" aria-pressed="false">같은 함수</button><button type="button" data-trajectory="natural" aria-pressed="false">불변 update</button></div>
+                    </div>
+                    <div class="d3-trajectory-stage">
+                        <svg viewBox="0 0 760 300" role="img" aria-labelledby="d3-trajectory-title-ko d3-trajectory-desc-ko">
+                            <title id="d3-trajectory-title-ko">기준 좌표와 변환 좌표의 학습 trajectory</title>
+                            <desc id="d3-trajectory-desc-ko">일반 초기화, 함수 정합 초기화, 정합 input-natural update를 대화형으로 비교합니다.</desc>
+                            <rect x="1" y="1" width="758" height="298" rx="18" fill="#fbfcfb" stroke="#e2e9e6"></rect>
+                            <g class="d3-trajectory-guides"><line x1="100" y1="45" x2="100" y2="258"></line><line x1="260" y1="45" x2="260" y2="258"></line><line x1="445" y1="45" x2="445" y2="258"></line><line x1="650" y1="45" x2="650" y2="258"></line></g>
+                            <path class="d3-trajectory-path reference" data-trajectory-path="reference" d="M100 230 C235 204 405 126 650 82"></path>
+                            <path class="d3-trajectory-path changed" data-trajectory-path="changed" d="M100 265 C245 252 430 223 650 190"></path>
+                            <circle class="d3-trajectory-dot changed" data-trajectory-start cx="100" cy="265" r="7"></circle><circle class="d3-trajectory-dot reference" cx="100" cy="230" r="7"></circle>
+                            <text x="82" y="280">step 0</text><text x="242" y="280">1</text><text x="427" y="280">20</text><text x="628" y="280">200</text>
+                            <text class="d3-trajectory-label reference" x="584" y="69">기준</text><text class="d3-trajectory-label changed" data-trajectory-label x="577" y="211">변환</text>
+                        </svg>
+                        <div class="d3-trajectory-readout"><section><span>&kappa;=3000 끝점 악화</span><strong data-trajectory-harm>54.00%</strong></section><section><span data-trajectory-drift-label>step-0 함수</span><strong data-trajectory-drift>다름</strong></section><p data-trajectory-note>일반 parameter 초기화는 최적화를 시작하기도 전에 서로 다른 함수를 만듭니다.</p></div>
+                    </div>
+                </div>
+                <figcaption><strong>그림 3.</strong> 이 도식은 paired cell 600개, 모델 1,200개, 기록된 checkpoint 7,200개를 요약합니다. &kappa;=3000에서 시작 함수를 맞추자 평균 정규화 끝점 악화가 54.00%에서 2.89%로 줄었습니다.</figcaption>
+            </figure>
+
+            <div class="d3-mechanism-grid">
+                <section><span>초기화</span><strong>94.66%</strong><p>같은 함수에서 시작하자 심한 끝점 악화 중 제거된 비율</p></section>
+                <section><span>OPTIMIZER</span><strong>0.071</strong><p>정합된 AdamW update 단 한 번 뒤의 예측 drift</p></section>
+                <section><span>예측 기준</span><strong>실패</strong><p>초기 drift는 비등변성을 잡았지만 악화를 안정적으로 예측하지 못함</p></section>
+            </div>
+
+            <p>결과는 “조건이 나쁘면 어렵다”보다 더 날카롭습니다. &kappa;=3000에서 함수 정합은 원래 악화의 <strong>94.66%</strong>를 제거했고, 모든 데이터셋/모델 그룹에서 76.6%~98.3%를 제거했습니다. 따라서 이 고정 예산 stress test의 지배적 mechanism은 초기화였습니다.</p>
+            <p>그렇지만 AdamW는 여전히 coordinate-equivariant하지 않았습니다. 평균 예측 drift는 step 0에서 5.8&times;10<sup>&minus;6</sup>이었지만 update 한 번 뒤 <strong>0.071</strong>이 되었고, 통제된 정합 cell 90개가 모두 벌어졌습니다. 정합 input-natural update는 통제 실험을 거의 닫았습니다. step-200 drift는 7.6&times;10<sup>&minus;5</sup>, 끝점 악화는 1.6&times;10<sup>&minus;7</sup>이었습니다.</p>
+            <p>기대했던 한 통찰은 고정된 기준을 <em>통과하지 못했습니다</em>. 한 step drift는 log 조건수보다 끝점 악화를 아주 조금 더 잘 예측했을 뿐입니다(leave-one-dataset-out <em>R</em><sup>2</sup> &minus;0.160 대 &minus;0.201, 개선 0.041로 요구한 0.10 미만). 초기 drift는 깨진 equivariance의 detector이지, 중요한 손상의 보편적 척도는 아닙니다. 그 drift가 실제로 중요한지는 과제, label, 국소 curvature가 결정합니다.</p>
 
             <h2>임의의 좌표를 제거하기</h2>
             <p>가장 깨끗한 진단은 canonicalization이었습니다. 학습 행렬을 center하고, 선형 독립인 anchor row를 결정론적으로 고른 뒤, 모든 행을 anchor의 계수로 표현합니다. <em>X</em> = <em>CR</em>이면 임의의 가역 변환 <em>B</em> 이후에도 다음이 성립합니다.</p>
@@ -98,7 +136,7 @@
                         <div class="d3-coefficient-card"><span>선택한 점</span><strong>x = 2r₁ − 0.5r₂</strong><div class="d3-coefficient-bars"><i><b style="--coef:80%"></b><span>2.0</span></i><i class="negative"><b style="--coef:20%"></b><span>−0.5</span></i></div><p data-canonical-note>좌표와 anchor가 기준 기저에 있습니다.</p></div>
                     </div>
                 </div>
-                <figcaption><strong>그림 3.</strong> 늘인 관점으로 바꾸면 점 구름과 anchor가 함께 움직이지만 계수 2와 −0.5는 그대로입니다. “정준”은 신경망에 전달되는 공통 내부 표현입니다.</figcaption>
+                <figcaption><strong>그림 4.</strong> 늘인 관점으로 바꾸면 점 구름과 anchor가 함께 움직이지만 계수 2와 −0.5는 그대로입니다. “정준”은 신경망에 전달되는 공통 내부 표현입니다.</figcaption>
             </figure>
 
             <p>데이터셋 10개, 모델 4개, seed 5개, 두 끝점의 확인 실험에서 정확한 anchor canonicalization은 clean basis 성능을 평균 0.20% 잃으면서 대응 민감도의 <strong>99.81%</strong>를 제거했습니다. 점진적 sketch 버전은 99.43%를 제거했습니다. 첫 layer gradient에 입력 2차 moment의 역행렬을 곱하고 호환되는 초기화를 사용한 input-natural update는 99.69%를 제거했습니다.</p>
@@ -114,7 +152,7 @@
                     <div class="d3-remedy-row worse"><span>Shampoo</span><i><b style="--remove:0%"></b></i><strong>−13.23%</strong><em>실패</em></div>
                     <div class="d3-remedy-notes"><span>* pivot tie에서 수치적으로 근사적</span><span>† 전체 clean loss 1.00%, TabM clean loss 2.63%</span></div>
                 </div>
-                <figcaption><strong>그림 4.</strong> 고정된 확인 기준에서의 평균 대응 민감도 제거율입니다. damping이나 grafting이 있는 실용 full-matrix optimizer가 자동으로 affine-invariant인 것은 아닙니다.</figcaption>
+                <figcaption><strong>그림 5.</strong> 고정된 확인 기준에서의 평균 대응 민감도 제거율입니다. damping이나 grafting이 있는 실용 full-matrix optimizer가 자동으로 affine-invariant인 것은 아닙니다.</figcaption>
             </figure>
 
             <h2>현실성 점검</h2>
@@ -130,17 +168,19 @@
 
             <p>Rank stress test는 또 다른 주의점을 보여줍니다. 열을 복제해도 504회 실행 중 crash는 없었지만, input-natural ridge가 10<sup>−10</sup>일 때 preconditioner 조건수가 10<sup>10</sup>에 가까워지며 Microsoft 예측이 불안정해졌습니다. 10<sup>−8</sup> ~ 10<sup>−6</sup> 정도가 더 안전했습니다. 정확한 anchor는 안정적이었지만, sketch는 부동소수점에서 거의 같은 pivot을 다르게 고를 수 있었고 이 benchmark에서는 full construction보다 fit도 느렸습니다.</p>
 
+            <p>Trajectory 실험은 이 rank 주의점을 구체적으로 보여주었습니다. Adult의 자연 기저는 열이 123개지만 rank는 116이었습니다. 기저 변환 행렬의 조건수가 정확히 1에 가깝고 관계 오차도 5&times;10<sup>&minus;13</sup> 미만이었지만, <em>damping이 없는</em> 역행렬은 일곱 null 방향의 수치 noise를 증폭했습니다. 정합 input-natural의 step-200 drift는 0.374까지 커졌습니다. 반면 full rank인 California와 Diamonds는 약 3&times;10<sup>&minus;7</sup>까지 닫혔습니다. 따라서 불변성에는 명시적인 effective-rank 또는 damping 정책이 필요하며, 정확한 대수만으로는 충분하지 않습니다.</p>
+
             <h2>논문인 것과 아닌 것</h2>
             <p>Natural gradient, K-FAC의 이상적 affine invariance,<sup><a href="#ref-1">[1]</a></sup> whitening, Shampoo, SOAP, 일반적인 canonicalization은 선행 연구입니다. 정형 학습에서 feature orientation도 이미 연구되었습니다.<sup><a href="#ref-2">[2]</a></sup> 일반 canonicalization에는 알려진 연속성 한계도 있습니다.<sup><a href="#ref-3">[3]</a></sup> 이 결과를 불변 최적화의 발명이나 좌표가 중요하다는 최초 관찰로 포장할 수는 없습니다.</p>
 
             <div class="d3-verdict">
                 <span>3일차 최종 판단</span>
-                <strong>ICLR 가능성은 있지만 경계선에 있습니다.</strong>
-                <p>가능한 기여는 exact-equivalence 인과 benchmark입니다. 통제된 conditioning, 검증된 cross-schema orbit, 전향적 재현, 현대 backbone, canonical closure, 그리고 정확도·rank·shift·runtime·memory의 실용적 감사를 하나로 묶습니다. 통제된 증거는 강하지만 자연 효과와 방법론적 새로움은 크지 않습니다.</p>
+                <strong>Mechanism은 선명해졌지만, 여전히 경계선 논문입니다.</strong>
+                <p>가능한 기여는 이제 exact-equivalence 인과 benchmark와 함수 정합 mechanism 분해의 결합입니다. 일반 초기화가 심한 고정 예산 악화의 대부분을 설명하고, AdamW는 정합된 첫 update 뒤 갈라지며, 불변성 closure는 rank 조건을 드러냈습니다. Benchmark만 있을 때보다 설명력은 높아졌습니다. 하지만 분해 실험은 아직 데이터셋 3개뿐이고, 보편적 predictor는 실패했으며, 자연 효과는 작고 대책은 선행 연구입니다.</p>
             </div>
 
             <p>이제 좁은 주장은 2일차의 앙상블 관찰보다 강해졌습니다.</p>
-            <div class="thesis"><strong>3일차 결론.</strong> 현대 정형 데이터 신경망은 정확히 동등한 표현 orbit 안에서도 유한 시간 학습 민감도를 넓게 보입니다. 알려진 불변성 원리는 이 차이를 닫을 수 있지만, 실용적 근사는 안정성·성능·계산 비용의 실제 tradeoff를 가집니다.</div>
+            <div class="thesis"><strong>3일차 결론.</strong> 동등한 좌표는 일반 초기화가 유도하는 함수 prior와 이후 optimizer trajectory를 모두 바꿉니다. 여기서 심한 악화의 대부분은 초기화에서 시작했지만 AdamW는 정확한 함수 정합 뒤에도 갈라졌고, 불변성 closure에는 명시적인 rank 정책이 필요했습니다.</div>
 
             <h2>참고문헌</h2>
             <ol class="reference-list">
@@ -149,7 +189,7 @@
                 <li id="ref-3">Dym, Lawrence, and Siegel. <a href="https://proceedings.mlr.press/v235/dym24a.html">Equivariant Frames and the Impossibility of Continuous Canonicalization</a>. ICML 2024.</li>
                 <li id="ref-4">Vyas et al. <a href="https://openreview.net/forum?id=IDxZhXrpNf">SOAP: Improving and Stabilizing Shampoo using Adam</a>. ICLR 2025.</li>
             </ol>
-            <p class="next-post"><strong>다음:</strong> exact-equivalence 감사를 안정적이고 확장 가능한 학습 원리로 바꿀 수 있을까요? 그리고 그 원리가 deployment 결정을 바꿀 만큼 중요한 자연 schema를 찾을 수 있을까요?</p>
+            <p class="next-post"><strong>다음:</strong> 안정적인 effective-rank 규칙과 과제를 고려한 harmful-drift 척도가 이 mechanism을 정말 새로운 학습 원리로 바꿀 수 있을까요?</p>
         </div>
     </article></main>
     <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>
