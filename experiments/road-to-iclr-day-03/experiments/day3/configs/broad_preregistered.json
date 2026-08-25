@@ -1,0 +1,117 @@
+{
+  "version": "1.1-frozen-before-broad-outcomes",
+  "frozen_at": "2026-08-25T00:00:00+09:00",
+  "data": {
+    "max_train_rows": 50000,
+    "max_eval_rows": 20000,
+    "sample_seed": 2026,
+    "max_category_cardinality": 100,
+    "max_numeric_representation_width": 256,
+    "min_bins": 2,
+    "max_bins": 8
+  },
+  "datasets": [
+    "adult",
+    "black-friday",
+    "california",
+    "churn",
+    "diamond",
+    "higgs-small",
+    "house",
+    "microsoft",
+    "otto",
+    "australian_credit_approval",
+    "bank_marketing_subscription",
+    "compustat_kor_direction",
+    "credit_card_default",
+    "credit_card_fraud",
+    "fremtpl_claim_count",
+    "german_credit_risk",
+    "heloc_credit_risk",
+    "kdd17_stock_direction",
+    "kdd17_stock_return",
+    "lendingclub_loan_default",
+    "polish_bankruptcy_1year",
+    "polish_bankruptcy_2year",
+    "polish_bankruptcy_3year",
+    "polish_bankruptcy_4year",
+    "polish_bankruptcy_5year"
+  ],
+  "source_groups": {
+    "kdd17_stock_direction": "kdd17",
+    "kdd17_stock_return": "kdd17",
+    "polish_bankruptcy_1year": "polish_bankruptcy",
+    "polish_bankruptcy_2year": "polish_bankruptcy",
+    "polish_bankruptcy_3year": "polish_bankruptcy",
+    "polish_bankruptcy_4year": "polish_bankruptcy",
+    "polish_bankruptcy_5year": "polish_bankruptcy"
+  },
+  "calibration_datasets": ["adult", "california", "otto"],
+  "calibration_seeds": [31415],
+  "architecture_confirmation_datasets": [
+    "adult",
+    "black-friday",
+    "california",
+    "diamond",
+    "microsoft",
+    "otto",
+    "australian_credit_approval",
+    "bank_marketing_subscription",
+    "credit_card_fraud",
+    "kdd17_stock_return"
+  ],
+  "temporal_shift_datasets": [
+    "compustat_kor_direction",
+    "kdd17_stock_direction",
+    "kdd17_stock_return"
+  ],
+  "models": ["mlp", "resnet", "dense_stem_ft_transformer", "dense_stem_tabm"],
+  "broad_seeds": [0, 1, 2],
+  "confirmation_seeds": [0, 1, 2, 3, 4],
+  "kappas": [1.0, 1000.0],
+  "remedies": [
+    "adamw",
+    "diagonal_adamw",
+    "whiten_adamw",
+    "anchor_whiten_adamw",
+    "sketch_anchor_whiten_adamw",
+    "input_natural",
+    "first_layer_kfac",
+    "shampoo",
+    "soap"
+  ],
+  "confirmation_selection": {
+    "count": 4,
+    "validation_only": true,
+    "maximum_mean_unperturbed_normalized_loss": 0.01
+  },
+  "optimizer_calibration": {
+    "adamw_learning_rates": [0.0003, 0.001, 0.003],
+    "matrix_learning_rates": [0.003, 0.01, 0.03],
+    "kfac_damping": [0.0001, 0.001, 0.01],
+    "precondition_frequency": [1, 10],
+    "weight_decay": 0.0001
+  },
+  "training": {
+    "batch_size": 1024,
+    "large_batch_size": 4096,
+    "large_dataset_threshold": 50000,
+    "max_epochs": 30,
+    "patience": 5,
+    "width": 256,
+    "depth": 3,
+    "dropout": 0.1
+  },
+  "robustness": {
+    "duplicate_fractions": [0.0, 0.25, 0.5],
+    "ridge_relative": [1e-10, 1e-8, 1e-6, 0.0001],
+    "datasets": ["australian_credit_approval", "adult", "microsoft", "kdd17_stock_return"]
+  },
+  "claim_gates": {
+    "minimum_harmful_fraction": 0.6,
+    "minimum_sensitivity_reduction": 0.8,
+    "maximum_unperturbed_normalized_loss": 0.01,
+    "bootstrap_samples": 10000,
+    "confidence": 0.95
+  }
+}

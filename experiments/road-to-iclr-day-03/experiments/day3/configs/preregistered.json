@@ -1,0 +1,37 @@
+{
+  "frozen_at": "2026-08-25T00:00:00+09:00",
+  "protocol": "fixed hyperparameters inherited from the Day-2 local-basis screen",
+  "official_splits": true,
+  "sample_seed": 2026,
+  "datasets": {
+    "anchors": ["adult", "black-friday", "california", "diamond"],
+    "prospective_day2": ["wine_quality", "miami_housing", "Food_Delivery_Time", "seismic-bumps", "heloc", "credit_card_clients_default"],
+    "available_tabpack": ["adult", "black-friday", "california", "churn", "diamond", "higgs-small", "house", "microsoft", "otto"]
+  },
+  "model": {
+    "backbone": "MLP",
+    "width": 256,
+    "depth": 3,
+    "dropout": 0.1,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_size": 512,
+    "max_epochs": 40,
+    "patience": 6
+  },
+  "seeds": [0, 1, 2, 3, 4],
+  "target_kappas": [1, 3, 10, 30, 100, 300, 1000, 3000],
+  "rank_relative_tolerance": 1e-10,
+  "hypotheses": {
+    "H1": "Increasing controlled condition number degrades convergence and/or predictive performance under exact equivalent bases.",
+    "H2": "Canonicalization substantially shrinks PLE/identity performance gaps.",
+    "H3": "A function-space first-layer penalty reduces performance spread across equivalent bases.",
+    "H4": "Nominal categorical contrast conditioning mirrors numerical conditioning.",
+    "H5": "Exact numerical-categorical block residualization improves optimization or robustness when cross-block dependence is strong.",
+    "H6": "Leakage-safe residual target encoding helps beyond ordinary target encoding.",
+    "H7": "Frequency-aware preconditioning improves tail robustness beyond adaptive optimization.",
+    "H8": "Sparse numeric-by-category cross atoms beat matched controls broadly."
+  },
+  "decision_rule": "P0 is evaluated before P1/P2. P2 is cut first if P0 does not support a coherent mechanism or if compute is constrained. Null results are retained."
+}

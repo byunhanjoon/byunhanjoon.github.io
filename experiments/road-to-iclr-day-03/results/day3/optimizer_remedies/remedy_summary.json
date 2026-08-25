@@ -1,0 +1,12 @@
+{
+  "trained_confirmation_runs": 360,
+  "dataset_model_pairs": 6,
+  "anchor_max_absolute_sensitivity": 4.148860717446332e-06,
+  "anchor_mean_baseline_gain": 1.7616484060832474,
+  "natural_max_absolute_sensitivity": 0.9196247910972485,
+  "natural_mean_baseline_gain": 1.082432071801948,
+  "adamw_mean_sensitivity": 13.872378774384124,
+  "anchor_mean_sensitivity": 6.818942618731851e-07,
+  "natural_mean_sensitivity": -0.42331888823028235,
+  "failed_screen_runs": 4
+}

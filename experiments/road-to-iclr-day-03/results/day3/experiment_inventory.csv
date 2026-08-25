@@ -1,0 +1,11 @@
+file,rows,datasets,models
+numeric_kappa.csv,138,"['adult', 'california', 'diamond']","['mlp', 'resnet']"
+categorical_kappa.csv,92,"['adult', 'diamond']","['mlp', 'resnet']"
+ordinal_basis.csv,90,"['adult', 'black-friday', 'diamond']","['mlp', 'resnet']"
+ordinal_kappa.csv,88,"['adult', 'black-friday', 'diamond']","['mlp', 'resnet']"
+ple_identity_whitening_exact.csv,50,['adult'],['mlp']
+invariant_regularizer.csv,123,"['adult', 'diamond']",['mlp']
+block_residualization.csv,60,"['adult', 'diamond']",['mlp']
+cyclic_geometry.csv,70,['synthetic-hour-of-day'],['mlp']
+residual_te.csv,30,"['adult', 'diamond']",['mlp']
+frequency_preconditioning.csv,30,"['adult', 'diamond']",['mlp']

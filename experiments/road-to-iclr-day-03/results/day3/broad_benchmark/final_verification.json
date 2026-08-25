@@ -1,0 +1,108 @@
+{
+  "verified_at": "2026-08-25T19:14:43.863009+09:00",
+  "python": "3.10.16 (main, Dec 11 2024, 16:24:50) [GCC 11.2.0]",
+  "py_compile": {
+    "command": [
+      "/home/byunhanjoon/adaptive_embedding/exploratory/.venv-tabm/bin/python",
+      "-m",
+      "py_compile",
+      "experiments/day3/__init__.py",
+      "experiments/day3/analyze_broad_calibration.py",
+      "experiments/day3/analyze_broad_extension.py",
+      "experiments/day3/analyze_broad_final.py",
+      "experiments/day3/analyze_broad_phase1.py",
+      "experiments/day3/analyze_day3.py",
+      "experiments/day3/analyze_distribution_shift.py",
+      "experiments/day3/analyze_optimizer_remedies.py",
+      "experiments/day3/audit_broad_completion.py",
+      "experiments/day3/audit_canonicalization_numerics.py",
+      "experiments/day3/audit_day3_goal.py",
+      "experiments/day3/audit_distribution_shift.py",
+      "experiments/day3/audit_extension_completion.py",
+      "experiments/day3/broad_data.py",
+      "experiments/day3/broad_extension_data.py",
+      "experiments/day3/broad_models.py",
+      "experiments/day3/core.py",
+      "experiments/day3/distribution_shift_data.py",
+      "experiments/day3/freeze_broad_benchmark.py",
+      "experiments/day3/freeze_broad_extension.py",
+      "experiments/day3/freeze_distribution_shift.py",
+      "experiments/day3/optimizer_remedies.py",
+      "experiments/day3/run_block_residualization.py",
+      "experiments/day3/run_broad_benchmark.py",
+      "experiments/day3/run_broad_confirmation.py",
+      "experiments/day3/run_broad_extension.py",
+      "experiments/day3/run_broad_phase1.py",
+      "experiments/day3/run_broad_robustness.py",
+      "experiments/day3/run_categorical_basis.py",
+      "experiments/day3/run_cross_atoms.py",
+      "experiments/day3/run_datetime_geometry.py",
+      "experiments/day3/run_distribution_shift.py",
+      "experiments/day3/run_equivalent_basis.py",
+      "experiments/day3/run_frequency_preconditioning.py",
+      "experiments/day3/run_invariant_regularizer.py",
+      "experiments/day3/run_ordinal_basis.py",
+      "experiments/day3/run_residual_te.py",
+      "experiments/day3/run_suite.py",
+      "experiments/day3/run_whitening.py",
+      "experiments/day3/seed_followups_from_phase1.py",
+      "experiments/day3/verify_day3_final.py",
+      "tests/test_basis_equivalence.py",
+      "tests/test_block_residualization.py",
+      "tests/test_broad_benchmark.py",
+      "tests/test_canonicalization_limitations.py",
+      "tests/test_fourier_equivalence.py",
+      "tests/test_invariant_regularizer.py",
+      "tests/test_optimizer_remedies.py",
+      "tests/test_ordinal_equivalence.py",
+      "tests/test_whitening.py"
+    ],
+    "exit_code": 0,
+    "output": ""
+  },
+  "pytest": {
+    "command": [
+      "/home/byunhanjoon/adaptive_embedding/exploratory/.venv-tabm/bin/python",
+      "-m",
+      "pytest",
+      "-q"
+    ],
+    "exit_code": 0,
+    "output": "................                                                         [100%]\n16 passed in 1.23s\n"
+  },
+  "audits": {
+    "broad": true,
+    "extension": true,
+    "distribution_shift": true
+  },
+  "audit_details": {
+    "broad": {
+      "command": [
+        "/home/byunhanjoon/adaptive_embedding/exploratory/.venv-tabm/bin/python",
+        "-m",
+        "experiments.day3.audit_broad_completion"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"freeze\": {\n    \"exists\": true,\n    \"protected_files\": 293,\n    \"aggregate_sha256\": \"7e5482daa38e13b8b4c1880e937a82c4246b95ce8ddd7a167a096b3493981441\",\n    \"changed\": [],\n    \"authorized_analysis_fixes\": [\n      \"/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-03/experiments/day3/analyze_broad_phase1.py\",\n      \"/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-03/experiments/day3/analyze_broad_final.py\"\n    ],\n    \"missing\": [],\n    \"matches\": true\n  },\n  \"confirmation_selection_exists\": true,\n  \"phase1\": {\n    \"expected\": 2400,\n    \"rows\": 2400,\n    \"successful_unique\": 2400,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"complete\": true,\n    \"missing_examples\": []\n  },\n  \"confirmation\": {\n    \"expected\": 2800,\n    \"rows\": 2800,\n    \"successful_unique\": 2800,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"complete\": true,\n    \"missing_examples\": []\n  },\n  \"robustness\": {\n    \"expected\": 504,\n    \"rows\": 504,\n    \"successful_unique\": 504,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"complete\": true,\n    \"missing_examples\": []\n  },\n  \"scientific_invariants\": {\n    \"natural_equivalence_max_error\": 7.16459151174191e-15,\n    \"controlled_kappa_max_relative_error\": 2.864375403532904e-14\n  },\n  \"complete\": true\n}\n"
+    },
+    "extension": {
+      "command": [
+        "/home/byunhanjoon/adaptive_embedding/exploratory/.venv-tabm/bin/python",
+        "-m",
+        "experiments.day3.audit_extension_completion"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"freeze\": {\n    \"exists\": true,\n    \"matches\": true,\n    \"aggregate_sha256\": \"58ed19b7c12e1d24524f6f9e5e1acd160e7f65715da5310a23aff7f916fd60af\",\n    \"changed\": [],\n    \"missing\": []\n  },\n  \"coverage\": {\n    \"expected\": 120,\n    \"rows\": 120,\n    \"successful_unique\": 120,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"missing_examples\": []\n  },\n  \"scientific_invariants\": {\n    \"natural_equivalence_max_error\": 5.065149143742567e-15,\n    \"controlled_kappa_max_relative_error\": 1.9095836023552692e-14\n  },\n  \"complete\": true\n}\n"
+    },
+    "distribution_shift": {
+      "command": [
+        "/home/byunhanjoon/adaptive_embedding/exploratory/.venv-tabm/bin/python",
+        "-m",
+        "experiments.day3.audit_distribution_shift"
+      ],
+      "exit_code": 0,
+      "output": "{\n  \"freeze\": {\n    \"exists\": true,\n    \"matches\": true,\n    \"aggregate_sha256\": \"103efe48919b99aef195ae229e573af52d6cf3d202b1b99525ac90a44d78fc95\",\n    \"changed\": [],\n    \"missing\": []\n  },\n  \"coverage\": {\n    \"expected\": 18,\n    \"rows\": 18,\n    \"successful_unique\": 18,\n    \"failures\": 0,\n    \"duplicate_success_rows\": 0,\n    \"missing\": 0,\n    \"unexpected\": 0,\n    \"missing_examples\": []\n  },\n  \"scientific_invariants\": {\n    \"natural_equivalence_max_error\": 4.634160215100733e-15,\n    \"controlled_kappa_max_relative_error\": 6.217248937900877e-15\n  },\n  \"complete\": true\n}\n"
+    }
+  },
+  "complete": true
+}

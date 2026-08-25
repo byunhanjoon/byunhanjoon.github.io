@@ -1,0 +1,31 @@
+{
+  "chronological_purged": {
+    "datasets": 3,
+    "pairs": 9,
+    "mean_sensitivity_normalized": 6.700699189251262e-06,
+    "median_sensitivity_normalized": -0.0014126689015301341,
+    "harmful_fraction": 0.5555555555555556,
+    "dataset_bootstrap_ci": [
+      -0.008114135125656138,
+      0.005035663879886225
+    ]
+  },
+  "row_random": {
+    "datasets": 3,
+    "pairs": 9,
+    "mean_sensitivity_normalized": -0.01109138786908243,
+    "median_sensitivity_normalized": -0.007034971451727712,
+    "harmful_fraction": 0.8888888888888888,
+    "dataset_bootstrap_ci": [
+      -0.023428689356684,
+      -0.0014959626608173416
+    ]
+  },
+  "paired_split_difference": {
+    "pairs": 9,
+    "mean_random_minus_chronological_sensitivity": -0.011098088568271682,
+    "median_random_minus_chronological_sensitivity": -0.010446013919304553,
+    "random_is_more_harmful_fraction": 1.0
+  },
+  "interpretation_limit": "The row-random split is an explicit easier-distribution comparator and may mix entities or adjacent dates; it is not a deployment recommendation."
+}

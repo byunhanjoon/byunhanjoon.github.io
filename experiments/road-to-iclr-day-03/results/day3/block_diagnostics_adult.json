@@ -1,0 +1,18 @@
+{
+  "dataset": "adult",
+  "before": {
+    "normalized_cross_gram": 0.05733317881822586,
+    "top_canonical_correlation": 1.0000000000000024,
+    "mean_canonical_correlation": 0.19150083680935176
+  },
+  "after": {
+    "normalized_cross_gram": 6.375858063734086e-09,
+    "top_canonical_correlation": 4.0583135130516565e-07,
+    "mean_canonical_correlation": 2.572425974053134e-08
+  },
+  "beta_shape": [
+    96,
+    93
+  ],
+  "joint_reconstruction_error": 1.9949910168293172e-08
+}

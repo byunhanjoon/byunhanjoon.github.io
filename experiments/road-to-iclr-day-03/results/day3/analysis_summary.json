@@ -1,0 +1,251 @@
+{
+  "inventory": [
+    {
+      "file": "numeric_kappa.csv",
+      "rows": 138,
+      "datasets": [
+        "adult",
+        "california",
+        "diamond"
+      ],
+      "models": [
+        "mlp",
+        "resnet"
+      ]
+    },
+    {
+      "file": "categorical_kappa.csv",
+      "rows": 92,
+      "datasets": [
+        "adult",
+        "diamond"
+      ],
+      "models": [
+        "mlp",
+        "resnet"
+      ]
+    },
+    {
+      "file": "ordinal_basis.csv",
+      "rows": 90,
+      "datasets": [
+        "adult",
+        "black-friday",
+        "diamond"
+      ],
+      "models": [
+        "mlp",
+        "resnet"
+      ]
+    },
+    {
+      "file": "ordinal_kappa.csv",
+      "rows": 88,
+      "datasets": [
+        "adult",
+        "black-friday",
+        "diamond"
+      ],
+      "models": [
+        "mlp",
+        "resnet"
+      ]
+    },
+    {
+      "file": "ple_identity_whitening_exact.csv",
+      "rows": 50,
+      "datasets": [
+        "adult"
+      ],
+      "models": [
+        "mlp"
+      ]
+    },
+    {
+      "file": "invariant_regularizer.csv",
+      "rows": 123,
+      "datasets": [
+        "adult",
+        "diamond"
+      ],
+      "models": [
+        "mlp"
+      ]
+    },
+    {
+      "file": "block_residualization.csv",
+      "rows": 60,
+      "datasets": [
+        "adult",
+        "diamond"
+      ],
+      "models": [
+        "mlp"
+      ]
+    },
+    {
+      "file": "cyclic_geometry.csv",
+      "rows": 70,
+      "datasets": [
+        "synthetic-hour-of-day"
+      ],
+      "models": [
+        "mlp"
+      ]
+    },
+    {
+      "file": "residual_te.csv",
+      "rows": 30,
+      "datasets": [
+        "adult",
+        "diamond"
+      ],
+      "models": [
+        "mlp"
+      ]
+    },
+    {
+      "file": "frequency_preconditioning.csv",
+      "rows": 30,
+      "datasets": [
+        "adult",
+        "diamond"
+      ],
+      "models": [
+        "mlp"
+      ]
+    }
+  ],
+  "total_runs": 771,
+  "numeric": {
+    "correlations": {
+      "adult/mlp": {
+        "spearman_rho": -1.0,
+        "pvalue": 0.0
+      },
+      "adult/resnet": {
+        "spearman_rho": -0.9999999999999999,
+        "pvalue": NaN
+      },
+      "california/mlp": {
+        "spearman_rho": -1.0,
+        "pvalue": 0.0
+      },
+      "california/resnet": {
+        "spearman_rho": -0.9999999999999999,
+        "pvalue": NaN
+      },
+      "diamond/mlp": {
+        "spearman_rho": -1.0,
+        "pvalue": 0.0
+      },
+      "diamond/resnet": {
+        "spearman_rho": -0.9999999999999999,
+        "pvalue": NaN
+      }
+    },
+    "max_kappa_delta_ci": [
+      -0.0381556586452493,
+      0.03037096335735764,
+      -0.05098019172812104,
+      -0.025331125562377564
+    ]
+  },
+  "categorical": {
+    "correlations": {
+      "adult/mlp": {
+        "spearman_rho": -0.9761904761904763,
+        "pvalue": 3.3143960262001043e-05
+      },
+      "adult/resnet": {
+        "spearman_rho": -0.9999999999999999,
+        "pvalue": NaN
+      },
+      "diamond/mlp": {
+        "spearman_rho": -0.9761904761904763,
+        "pvalue": 3.3143960262001043e-05
+      },
+      "diamond/resnet": {
+        "spearman_rho": -0.9999999999999999,
+        "pvalue": NaN
+      }
+    },
+    "max_kappa_delta_ci": [
+      -0.013483314814681261,
+      0.00712910001053584,
+      -0.017282144059107156,
+      -0.009684485570255367
+    ]
+  },
+  "whitening": {
+    "raw_absolute_gap": 0.002100608070757315,
+    "whitened_absolute_gap": 0.00018426386585590482,
+    "gap_reduction": 0.9122807017543859
+  },
+  "regularizer": {
+    "invariant": {
+      "std": 0.010534056225768154,
+      "spread": 0.023873269396613585
+    },
+    "no_first_wd": {
+      "std": 0.009267886168025543,
+      "spread": 0.021174027681903747
+    },
+    "standard": {
+      "std": 0.010212660054917418,
+      "spread": 0.023244641577610282
+    }
+  },
+  "ordinal_natural": {
+    "adult/cumulative": 0.8571709354462257,
+    "adult/cumulative_standardized": 0.8579079909096492,
+    "adult/local": 0.8577605798169646,
+    "adult/path_spectral": 0.8588415944966525,
+    "adult/whitened": 0.8570480928689884,
+    "black-friday/cumulative": -0.7043669604716285,
+    "black-friday/cumulative_standardized": -0.7037636406058467,
+    "black-friday/local": -0.704521900870904,
+    "black-friday/path_spectral": -0.7053180092633085,
+    "black-friday/whitened": -0.7045033161188471,
+    "diamond/cumulative": -0.14766995209823724,
+    "diamond/cumulative_standardized": -0.15204835389640675,
+    "diamond/local": -0.14934128743654826,
+    "diamond/path_spectral": -0.1497480910826414,
+    "diamond/whitened": -0.1525053473855325
+  },
+  "cyclic": {
+    "centered_onehot": -0.7033517497601224,
+    "full_fourier_phase_0": -0.7036108693410483,
+    "truncated_first_harmonic": -0.7071830849018681
+  },
+  "block": {
+    "adult/block_residualized": -0.00045451753577789854,
+    "adult/block_residualized_whitened": -0.0016092377618082353,
+    "adult/blockwise_whitened": -0.0024691358024691245,
+    "adult/joint_whitened": -0.0014618266691235116,
+    "adult/raw_joint": 0.0,
+    "adult/standardized_categorical": -0.0004299490203304446,
+    "diamond/block_residualized": -0.001300965924377656,
+    "diamond/block_residualized_whitened": 0.00196528774765099,
+    "diamond/blockwise_whitened": 0.0009774288427067067,
+    "diamond/joint_whitened": 0.0019192533538015422,
+    "diamond/raw_joint": 0.0,
+    "diamond/standardized_categorical": 0.0025763978195374572
+  },
+  "residual_te": {
+    "adult/plain_contrast": 0.0,
+    "adult/residual_target_encoding": 0.0004790860512253525,
+    "adult/standard_target_encoding": 7.370554634236192e-05,
+    "diamond/plain_contrast": 0.0,
+    "diamond/residual_target_encoding": -0.0009515112678707638,
+    "diamond/standard_target_encoding": -0.0009788292301964152
+  },
+  "frequency_preconditioning": {
+    "adult/0.0": 0.0,
+    "adult/0.25": 7.370554634236192e-05,
+    "adult/0.5": -0.0008598980406608892,
+    "diamond/0.0": 0.0,
+    "diamond/0.25": 0.0004495957415189378,
+    "diamond/0.5": 0.0004885538673736589
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "captured_at": "2026-08-25T15:20:41.633748+09:00",
+  "timing": "initial fixes after phase1 training began and before phase1 analysis or confirmation selection; robustness-glob fix during confirmation and before robustness execution or final analysis",
+  "reason": "Pre-analysis audit found that run-level glob patterns also matched *_curves.csv epoch tables, missing/failure cells were not enforced by selection/gate code, and natural/preprocessing differences mixed raw RMSE units with unitless classification metrics. A subsequent pre-robustness audit found the same curve-table glob defect in the final robustness loader and that the preregistered rank/ridge, compute, and clustered-inference audits needed explicit summary exports. The fixes exclude curve tables, require complete 25-dataset validation coverage for selection, count missing/failure confirmation cells against the no-divergence-excess gate, normalize regression differences by reference RMSE for cross-task summaries, and export the already-preregistered robustness, runtime, peak-memory, source-group confirmation, and natural/preprocessing contrasts without introducing a new selection or outcome threshold. They change no data, model, optimizer, hyperparameter, task metric, effect threshold, or ranking criterion.",
+  "files": {
+    "/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-03/experiments/day3/analyze_broad_phase1.py": {
+      "original_sha256": "69d235330e2cca167dea8fe72dab3d9e9e753ab6a73c43b7117c723a9777fbbe",
+      "corrected_sha256": "2eb16396563a013e7fdc91118272d063bb465b74b4c6ae1920db99114a87d569"
+    },
+    "/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-03/experiments/day3/analyze_broad_final.py": {
+      "original_sha256": "b61fa11476297c8d9dff77a7d46efb9d9c3a4ac719c25f634de90947aa510cb0",
+      "corrected_sha256": "3852e9f8b2e39ac3f20975f7d0077811e119a08e7bd4f9ab7e62f9e384c24505"
+    }
+  }
+}

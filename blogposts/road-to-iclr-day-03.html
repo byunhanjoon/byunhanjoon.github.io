@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Same Information, Different Difficulty — Road to ICLR Day 3</title>
+    <meta name="description" content="Day 3 of Road to ICLR: a 30-dataset causal audit shows that invertible coordinate changes can make the same tabular learning problem much harder—and tests which invariance remedies actually work.">
+    <meta name="author" content="Han Joon Byun">
+    <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
+    <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
+    <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03-ko.html">
+    <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Same Information, Different Difficulty">
+    <meta property="og:description" content="Road to ICLR, Day 3/30 — 30 datasets, four neural backbones, and an exact test of whether coordinates alone can change learning difficulty.">
+    <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260826-1">
+    <script src="../language.js" defer></script>
+    <script src="road-to-iclr-day-03.js?v=20260826-1" defer></script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Same Information, Different Difficulty","description":"A 30-dataset causal audit of optimization under information-equivalent tabular coordinates.","datePublished":"2026-08-26","dateModified":"2026-08-26","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html"}
+    </script>
+</head>
+<body>
+    <header><nav><div class="social-icons"><a href="../Han_Joon_Byun_CV.pdf" target="_blank" title="CV"><i class="fas fa-file-alt"></i></a><a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a><a href="https://linkedin.com/in/byunhanjoon" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://github.com/byunhanjoon" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a href="mailto:byunhanjoon@snu.ac.kr" title="Email"><i class="fas fa-envelope"></i></a></div><div class="nav-links"><a href="../index.html">Home</a><a href="../blog.html">Blog</a></div></nav></header>
+    <main class="essay"><article>
+        <div class="essay-header">
+            <p class="series-kicker">Road to ICLR · Day 3 / 30</p>
+            <h1>Same information,<br>different difficulty</h1>
+            <p class="essay-deck">An invertible change of coordinates cannot remove information or shrink a neural network’s function class. It can still make the same learning problem dramatically harder.</p>
+            <div class="essay-meta"><span>August 26, 2026</span><span>Han Joon Byun</span><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-03">Experiments and results ↗</a></div>
+        </div>
+        <div class="essay-body">
+            <p><a href="road-to-iclr-day-02.html">Day 2</a> ended with a puzzle. Cumulative and local numerical bases span the same piecewise-linear functions, but they lead neural networks down different training paths. Blending those paths helped. That left a more basic question: was this a small encoder curiosity, or a general failure of optimization?</p>
+            <div class="thesis"><strong>The question.</strong> If I deliberately make an information-equivalent basis ill-conditioned—while preserving its rank, scale, split, and represented functions—does neural tabular learning reliably get worse?</div>
+
+            <h2>What a condition number feels like</h2>
+            <p>Imagine a round cloud of points. A reversible coordinate change can stretch it into a thin ellipse without adding, removing, or merging a single point. The condition number, κ, measures the ratio between the most stretched and least stretched directions.</p>
+
+            <figure class="wide-figure">
+                <div class="d3-kappa-demo" data-kappa-demo>
+                    <div class="d3-demo-toolbar">
+                        <div><span class="d3-eyebrow">COORDINATE STRESS</span><strong>Choose κ</strong></div>
+                        <div class="d3-kappa-buttons" role="group" aria-label="Choose a condition number"><button type="button" data-kappa="1" aria-pressed="true">1</button><button type="button" data-kappa="10" aria-pressed="false">10</button><button type="button" data-kappa="100" aria-pressed="false">100</button><button type="button" data-kappa="1000" aria-pressed="false">1,000</button></div>
+                    </div>
+                    <div class="d3-valley-stage">
+                        <svg viewBox="0 0 760 330" role="img" aria-labelledby="d3-valley-title d3-valley-desc">
+                            <title id="d3-valley-title">Optimization valley as conditioning increases</title>
+                            <desc id="d3-valley-desc">Interactive loss contours become longer and narrower as the condition number increases.</desc>
+                            <defs><marker id="d3-path-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#d8654f"></path></marker></defs>
+                            <rect x="1" y="1" width="758" height="328" rx="18" fill="#fbfcfb" stroke="#e2e9e6"></rect>
+                            <g class="d3-contours" transform="rotate(-20 382 166)"><ellipse data-contour="outer" cx="382" cy="166" rx="112" ry="88"></ellipse><ellipse data-contour="middle" cx="382" cy="166" rx="78" ry="61"></ellipse><ellipse data-contour="inner" cx="382" cy="166" rx="43" ry="34"></ellipse></g>
+                            <path class="d3-step-path" data-step-path d="M118 266 C210 230 288 194 382 166" marker-end="url(#d3-path-arrow)"></path>
+                            <circle cx="118" cy="266" r="7" fill="#19242a"></circle><circle cx="382" cy="166" r="8" fill="#237a78"></circle>
+                            <text x="92" y="298" font-family="Inter, sans-serif" font-size="13" fill="#607078">start</text><text x="396" y="156" font-family="Inter, sans-serif" font-size="13" fill="#237a78">same optimum</text>
+                        </svg>
+                        <div class="d3-kappa-readout"><div><span>condition number</span><strong data-kappa-output>1</strong></div><p data-kappa-note>Directions are balanced. A single step size can make useful progress in each one.</p></div>
+                    </div>
+                </div>
+                <figcaption><strong>Figure 1.</strong> The points and optimum have not changed—only their coordinates. As κ grows, a safe step across the narrow direction becomes slow along the long direction. Adam rescales individual axes, but an arbitrary basis also rotates and mixes them.</figcaption>
+            </figure>
+
+            <p>The controlled experiment starts from a whitened representation <em>X</em><sub>1</sub> and constructs <em>X</em><sub>1000</sub> = <em>X</em><sub>1</sub><em>B</em>, where <em>B</em> is invertible. A first affine layer can absorb <em>B</em><sup>−1</sup>, so both inputs permit exactly the same predictors. The transformation preserves overall activation energy; it changes anisotropy, not global scale.</p>
+
+            <h2>A broad causal signal</h2>
+            <p>I first froze 25 available tabular tasks, four architectures, both κ endpoints, and three seeds. After that screen finished, I separately froze five additional datasets as a prospective replication. The two stages must be reported separately: the full 30 were not jointly preregistered before any outcome existed.</p>
+
+            <figure class="wide-figure">
+                <div class="d3-result-board" role="img" aria-label="Controlled basis sensitivity across thirty datasets and four neural architectures">
+                    <div class="d3-result-hero"><section><strong>30</strong><span>distinct datasets</span></section><section><strong>336 / 360</strong><span>paired comparisons harmed</span></section><section><strong>−8.40%</strong><span>mean normalized utility</span></section></div>
+                    <div class="d3-model-bars">
+                        <div class="d3-model-row"><span>FT-Transformer</span><i><b style="--harm:90.63%"></b></i><strong>−9.06%</strong></div>
+                        <div class="d3-model-row"><span>TabM</span><i><b style="--harm:85.21%"></b></i><strong>−8.52%</strong></div>
+                        <div class="d3-model-row"><span>MLP</span><i><b style="--harm:82.22%"></b></i><strong>−8.22%</strong></div>
+                        <div class="d3-model-row"><span>ResNet</span><i><b style="--harm:77.76%"></b></i><strong>−7.78%</strong></div>
+                    </div>
+                    <div class="d3-replication-strip"><span>separate five-dataset replication</span><strong>60 / 60 harmful</strong><span>95% interval: −10.56% to −7.82%</span></div>
+                </div>
+                <figcaption><strong>Figure 2.</strong> κ=1000 minus κ=1 normalized utility. Negative is harmful. The combined dataset/model-clustered 95% interval is −9.93% to −6.94%; the paired Wilcoxon probability is 6.2×10<sup>−21</sup>.</figcaption>
+            </figure>
+
+            <p>The effect survived every backbone. These are dense-stem versions of FT-Transformer and TabM so that an arbitrary full input-basis map remains an exact first-layer reparameterization; I do not call this native tokenization invariance. All 2,400 original broad cells and 120 extension cells completed without failures, and reconstruction errors stayed near 10<sup>−14</sup>.</p>
+
+            <div class="thesis"><strong>What the result says.</strong> The function class stayed fixed, but finite training did not. Ordinary AdamW systematically assigned different difficulty to exactly equivalent descriptions of the same tabular problem.</div>
+
+            <h2>Remove the arbitrary coordinates</h2>
+            <p>The cleanest diagnostic was canonicalization. Center the training matrix, choose a deterministic set of linearly independent anchor rows, and describe every row using coefficients of those anchors. If <em>X</em> = <em>CR</em>, then after any invertible recoding <em>B</em>:</p>
+            <div class="formula">XB = C(RB)</div>
+            <p>The table and anchors both move, but the coefficient matrix <em>C</em> does not. It is like describing locations relative to landmarks: stretch the map and the landmarks together, and the landmark coefficients remain unchanged.</p>
+
+            <figure class="wide-figure">
+                <div class="d3-canonical-demo" data-canonical-demo>
+                    <div class="d3-demo-toolbar"><div><span class="d3-eyebrow">ANCHOR COORDINATES</span><strong>Change the visible basis</strong></div><div class="d3-canonical-buttons" role="group" aria-label="Choose a coordinate view"><button type="button" data-basis="reference" aria-pressed="true">reference</button><button type="button" data-basis="stretched" aria-pressed="false">stretched</button><button type="button" data-basis="canonical" aria-pressed="false">canonical</button></div></div>
+                    <div class="d3-canonical-grid">
+                        <div class="d3-map" data-canonical-map aria-label="Point cloud and two anchor rows"><span class="d3-axis d3-axis-x"></span><span class="d3-axis d3-axis-y"></span><i class="d3-point" data-point="0"></i><i class="d3-point" data-point="1"></i><i class="d3-point" data-point="2"></i><i class="d3-point" data-point="3"></i><i class="d3-point" data-point="4"></i><i class="d3-point anchor" data-point="5"><b>r₁</b></i><i class="d3-point anchor second" data-point="6"><b>r₂</b></i></div>
+                        <div class="d3-coefficient-card"><span>selected point</span><strong>x = 2r₁ − 0.5r₂</strong><div class="d3-coefficient-bars"><i><b style="--coef:80%"></b><span>2.0</span></i><i class="negative"><b style="--coef:20%"></b><span>−0.5</span></i></div><p data-canonical-note>The coordinates and anchors are in the reference basis.</p></div>
+                    </div>
+                </div>
+                <figcaption><strong>Figure 3.</strong> Switch to the stretched view: the cloud and anchors move together, while the coefficients stay 2 and −0.5. “Canonical” is the common internal representation given to the network.</figcaption>
+            </figure>
+
+            <p>In ten datasets, four models, five seeds, and both endpoints, exact anchor canonicalization removed <strong>99.81%</strong> of the paired sensitivity while losing 0.20% on the clean basis. A progressively sketched version removed 99.43%. A first-layer input-natural update—multiplying by the inverse input second moment and using compatible initialization—removed 99.69%.</p>
+
+            <figure class="wide-figure">
+                <div class="d3-remedy-board">
+                    <div class="d3-remedy-head"><span>FROZEN FIVE-SEED GATE</span><strong>≥80% sensitivity removed · ≤1% mean clean loss</strong></div>
+                    <div class="d3-remedy-row pass"><span>Exact anchors</span><i><b style="--remove:99.81%"></b></i><strong>99.81%</strong><em>pass</em></div>
+                    <div class="d3-remedy-row pass"><span>Sketch anchors</span><i><b style="--remove:99.43%"></b></i><strong>99.43%</strong><em>pass*</em></div>
+                    <div class="d3-remedy-row pass"><span>Input-natural</span><i><b style="--remove:99.69%"></b></i><strong>99.69%</strong><em>pass†</em></div>
+                    <div class="d3-remedy-row fail"><span>Whitening</span><i><b style="--remove:56.84%"></b></i><strong>56.84%</strong><em>fail</em></div>
+                    <div class="d3-remedy-row fail"><span>SOAP</span><i><b style="--remove:36.06%"></b></i><strong>36.06%</strong><em>fail</em></div>
+                    <div class="d3-remedy-row worse"><span>Shampoo</span><i><b style="--remove:0%"></b></i><strong>−13.23%</strong><em>fail</em></div>
+                    <div class="d3-remedy-notes"><span>* numerically approximate under pivot ties</span><span>† aggregate clean loss 1.00%; TabM clean loss 2.63%</span></div>
+                </div>
+                <figcaption><strong>Figure 4.</strong> Mean paired sensitivity reduction under the frozen confirmation criterion. Practical damped or grafted full-matrix optimizers are not automatically affine-invariant.</figcaption>
+            </figure>
+
+            <h2>The reality check</h2>
+            <p>κ=1000 is a causal stress test, not a claim about the usual severity of deployed schemas. I therefore tested naturally named cumulative/local encodings and ordinary preprocessing choices. Across 150 natural pairs, the median absolute normalized gap was only <strong>0.38%</strong>; its clustered interval included zero. Raw-standard, quantile-standard, and PLE differences were also small and lacked a universal ranking.</p>
+
+            <div class="d3-reality-grid">
+                <section><span>NATURAL COORDINATES</span><strong>0.38%</strong><p>median absolute cumulative/local gap</p></section>
+                <section><span>CHRONOLOGICAL SHIFT</span><strong>≈ 0.00%</strong><p>mean κ sensitivity on three finance tasks</p></section>
+                <section><span>RANDOM SPLIT</span><strong>−1.11%</strong><p>same tables; harmful in 8/9 pairs</p></section>
+            </div>
+
+            <p>The time-split result is especially useful: deployment shift did not amplify the basis effect here; it mostly removed it. This is a limitation, not an argument for random splitting. The random split may mix entities and neighboring dates.</p>
+
+            <p>Rank stress tests add another caveat. Duplicating columns did not crash any of 504 runs, but an input-natural ridge of 10<sup>−10</sup> produced erratic predictions on Microsoft as the preconditioner condition approached 10<sup>10</sup>. Ridges around 10<sup>−8</sup> to 10<sup>−6</sup> were safer. Exact anchors remained stable; the sketch could switch a near-tied pivot in floating point and was slower to fit than the full construction on this benchmark.</p>
+
+            <h2>What is—and is not—the paper</h2>
+            <p>Natural gradient, K-FAC’s ideal affine invariance,<sup><a href="#ref-1">[1]</a></sup> whitening, Shampoo, SOAP, and canonicalization are prior art. Feature orientation in tabular learning was also studied before.<sup><a href="#ref-2">[2]</a></sup> General canonicalization has known continuity limitations.<sup><a href="#ref-3">[3]</a></sup> The result cannot honestly be sold as the invention of invariant optimization or the first observation that coordinates matter.</p>
+
+            <div class="d3-verdict">
+                <span>FINAL DAY 3 VERDICT</span>
+                <strong>ICLR-plausible, but borderline.</strong>
+                <p>The potential contribution is the exact-equivalence causal benchmark: controlled conditioning, verified cross-schema orbits, prospective replication, modern backbones, canonical closure, and a practical audit of accuracy, rank, shift, runtime, and memory. The controlled evidence is strong. The natural effects and method novelty are modest.</p>
+            </div>
+
+            <p>The narrow claim is now stronger than Day 2’s ensemble observation:</p>
+            <div class="thesis"><strong>Day 3 conclusion.</strong> Modern neural tabular learners show broad finite-training sensitivity within exactly equivalent representation orbits. Known invariance principles can close the gap, but practical approximations carry real stability, performance, and compute tradeoffs.</div>
+
+            <h2>References</h2>
+            <ol class="reference-list">
+                <li id="ref-1">Martens and Grosse. <a href="https://proceedings.mlr.press/v37/martens15.html">Optimizing Neural Networks with Kronecker-factored Approximate Curvature</a>. ICML 2015.</li>
+                <li id="ref-2">Grinsztajn, Oyallon, and Varoquaux. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/0378c7692da36807bdec87ab043cdadc-Abstract-Datasets_and_Benchmarks.html">Why do tree-based models still outperform deep learning on typical tabular data?</a> NeurIPS 2022.</li>
+                <li id="ref-3">Dym, Lawrence, and Siegel. <a href="https://proceedings.mlr.press/v235/dym24a.html">Equivariant Frames and the Impossibility of Continuous Canonicalization</a>. ICML 2024.</li>
+                <li id="ref-4">Vyas et al. <a href="https://openreview.net/forum?id=IDxZhXrpNf">SOAP: Improving and Stabilizing Shampoo using Adam</a>. ICLR 2025.</li>
+            </ol>
+            <p class="next-post"><strong>Next:</strong> can the exact-equivalence audit become a stable, scalable training principle—and can we find natural schemas where that principle matters enough to change deployment decisions?</p>
+        </div>
+    </article></main>
+    <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>
+</body>
+</html>

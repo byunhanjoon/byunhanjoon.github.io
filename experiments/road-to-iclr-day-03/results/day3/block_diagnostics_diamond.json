@@ -1,0 +1,18 @@
+{
+  "dataset": "diamond",
+  "before": {
+    "normalized_cross_gram": 0.039225634187459946,
+    "top_canonical_correlation": 0.8550981234246936,
+    "mean_canonical_correlation": 0.2704393769193681
+  },
+  "after": {
+    "normalized_cross_gram": 1.966665053032557e-08,
+    "top_canonical_correlation": 5.587656570380451e-07,
+    "mean_canonical_correlation": 1.1188517960170703e-07
+  },
+  "beta_shape": [
+    167,
+    17
+  ],
+  "joint_reconstruction_error": 1.6987797835099627e-08
+}

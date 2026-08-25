@@ -1,0 +1,97 @@
+{
+  "phase1_runs": 2400,
+  "confirmation_runs": 2800,
+  "confirmation_failures": 0,
+  "confirmation_cells_with_five_seeds": 280,
+  "confirmation_cells": 280,
+  "gates": {
+    "adamw_median_sensitivity": -0.05195662333355194,
+    "adamw_bootstrap_ci": [
+      -0.10990388984261637,
+      -0.06795635767474136
+    ],
+    "adamw_harmful_fraction": 0.92,
+    "basis_sensitivity_gate_passes": true,
+    "remedy_gates": {
+      "adamw": {
+        "mean_sensitivity_reduction": 0.0,
+        "mean_unperturbed_normalized_loss": -0.0,
+        "confirmation_pairs": 200,
+        "expected_confirmation_pairs": 200,
+        "failure_rate_including_missing": 0.0,
+        "adamw_failure_rate_including_missing": 0.0,
+        "no_divergence_excess": true,
+        "passes": false
+      },
+      "anchor_whiten_adamw": {
+        "mean_sensitivity_reduction": 0.9981349832585507,
+        "mean_unperturbed_normalized_loss": 0.0019567339297272206,
+        "confirmation_pairs": 200,
+        "expected_confirmation_pairs": 200,
+        "failure_rate_including_missing": 0.0,
+        "adamw_failure_rate_including_missing": 0.0,
+        "no_divergence_excess": true,
+        "passes": true
+      },
+      "input_natural": {
+        "mean_sensitivity_reduction": 0.9968641502584207,
+        "mean_unperturbed_normalized_loss": 0.009969317596379253,
+        "confirmation_pairs": 200,
+        "expected_confirmation_pairs": 200,
+        "failure_rate_including_missing": 0.0,
+        "adamw_failure_rate_including_missing": 0.0,
+        "no_divergence_excess": true,
+        "passes": true
+      },
+      "shampoo": {
+        "mean_sensitivity_reduction": -0.13227597530870017,
+        "mean_unperturbed_normalized_loss": 0.0028333458567876423,
+        "confirmation_pairs": 200,
+        "expected_confirmation_pairs": 200,
+        "failure_rate_including_missing": 0.0,
+        "adamw_failure_rate_including_missing": 0.0,
+        "no_divergence_excess": true,
+        "passes": false
+      },
+      "sketch_anchor_whiten_adamw": {
+        "mean_sensitivity_reduction": 0.9942733163831842,
+        "mean_unperturbed_normalized_loss": 0.002103554981513215,
+        "confirmation_pairs": 200,
+        "expected_confirmation_pairs": 200,
+        "failure_rate_including_missing": 0.0,
+        "adamw_failure_rate_including_missing": 0.0,
+        "no_divergence_excess": true,
+        "passes": true
+      },
+      "soap": {
+        "mean_sensitivity_reduction": 0.3606194305957296,
+        "mean_unperturbed_normalized_loss": 0.004020457534812351,
+        "confirmation_pairs": 200,
+        "expected_confirmation_pairs": 200,
+        "failure_rate_including_missing": 0.0,
+        "adamw_failure_rate_including_missing": 0.0,
+        "no_divergence_excess": true,
+        "passes": false
+      },
+      "whiten_adamw": {
+        "mean_sensitivity_reduction": 0.5683813559270029,
+        "mean_unperturbed_normalized_loss": 0.0045522177990003805,
+        "confirmation_pairs": 200,
+        "expected_confirmation_pairs": 200,
+        "failure_rate_including_missing": 0.0,
+        "adamw_failure_rate_including_missing": 0.0,
+        "no_divergence_excess": true,
+        "passes": false
+      }
+    }
+  },
+  "natural_pair_raw_mean_difference": 27.893094355160052,
+  "natural_pair_mean_normalized_difference": 0.0012616673541031584,
+  "natural_pair_median_absolute_normalized_difference": 0.003798289840878488,
+  "raw_minus_ple_mean_normalized": -0.01442511155978064,
+  "quantile_minus_ple_mean_normalized": 0.0032205384481895413,
+  "temporal_adamw_mean_sensitivity": -0.00045572267915627217,
+  "non_temporal_adamw_mean_sensitivity": -0.09358488506011212,
+  "robustness_pairs": 252,
+  "efficiency_cells": 21
+}
