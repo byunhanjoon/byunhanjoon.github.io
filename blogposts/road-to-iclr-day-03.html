@@ -3,254 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Same Information, Different Difficulty — Road to ICLR Day 3</title>
-    <meta name="description" content="Day 3 of Road to ICLR: an Adult accuracy jump leads to a 30-dataset causal audit of why equivalent tabular coordinates create different learning problems.">
+    <title>Same Table, Different Predictor — Road to ICLR Day 3</title>
+    <meta name="description" content="Day 3 of Road to ICLR: how harmless rewrites of the same table can change a prediction, how to measure that hidden risk, and how to repair part of it.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03-ko.html">
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Same Information, Different Difficulty">
-    <meta property="og:description" content="Road to ICLR, Day 3/30 — an Adult accuracy jump reveals how equivalent coordinates change initialization, optimization, and finite-budget learning.">
+    <meta property="og:title" content="Same Table, Different Predictor">
+    <meta property="og:description" content="Road to ICLR, Day 3/30 — auditing the risk created by arbitrary schema choices in tabular learning.">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260826-4">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260826-5">
     <script src="../language.js" defer></script>
-    <script src="road-to-iclr-day-03.js?v=20260826-2" defer></script>
+    <script src="road-to-iclr-day-03.js?v=20260826-3" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Same Information, Different Difficulty","description":"An Adult accuracy jump leads to a 30-dataset causal audit and function-matched decomposition of learning under equivalent tabular coordinates.","datePublished":"2026-08-26","dateModified":"2026-08-26","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Same Table, Different Predictor","description":"How harmless rewrites of the same table can change a prediction, how to measure that hidden risk, and how to repair part of it.","datePublished":"2026-08-26","dateModified":"2026-08-26","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html"}
     </script>
 </head>
 <body>
     <header><nav><div class="social-icons"><a href="../Han_Joon_Byun_CV.pdf" target="_blank" title="CV"><i class="fas fa-file-alt"></i></a><a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a><a href="https://linkedin.com/in/byunhanjoon" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://github.com/byunhanjoon" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a href="mailto:byunhanjoon@snu.ac.kr" title="Email"><i class="fas fa-envelope"></i></a></div><div class="nav-links"><a href="../index.html">Home</a><a href="../blog.html">Blog</a></div></nav></header>
+
     <main class="essay"><article>
         <div class="essay-header">
             <p class="series-kicker">Road to ICLR · Day 3 / 30</p>
-            <h1>Same information,<br>different difficulty</h1>
-            <p class="essay-deck">A small encoding change raised Adult accuracy from 85.98% to 87.27%. The attempt to explain that jump uncovered a broader problem: two tables can say exactly the same thing and still be very different to learn from.</p>
-            <div class="essay-meta"><span>August 26, 2026</span><span>Han Joon Byun</span><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-03">Experiments and results ↗</a></div>
+            <h1>Same table,<br>different predictor</h1>
+            <p class="essay-deck">A model should not care whether we put <em>age</em> before <em>income</em>, rename “gold” as 0, or measure dollars in cents. Sometimes the whole learning pipeline does care—and tuning can amplify the difference.</p>
+            <div class="essay-meta"><span>August 26, 2026</span><span>Han Joon Byun</span><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-idea-search">Experiments and results ↗</a></div>
         </div>
+
         <div class="essay-body">
-            <p><a href="road-to-iclr-day-02.html">Day 2</a> found the sort of result that is exciting and dangerous. I kept the Adult split, model, and training budget fixed, but gave capital gain and capital loss an exact-value identity view. Mean accuracy rose from <strong>85.98% to 87.27%</strong>: a gain of 1.29 percentage points.</p>
-            <p>That is large enough to tempt a quick story. Perhaps zero is special. Perhaps exact values contain information that a smooth numerical encoder throws away. Or perhaps the model simply finds one coordinate system easier to use than another.</p>
+            <p><a href="road-to-iclr-day-01.html">Day 1</a> blurred the line between “numerical” and “categorical.” <a href="road-to-iclr-day-02.html">Day 2</a> showed that two encodings can contain the same information, yet lead a neural network down different learning paths. Day 3 began by stress-testing that effect. Equivalent coordinates changed initialization and optimization across 30 datasets—but my attempt to turn the effect into a better predictor lost to the simple control of training another seed.</p>
+
+            <p>That failure changed the question. Instead of asking <em>which representation wins?</em>, I began asking something more basic:</p>
+
+            <div class="thesis"><strong>The new question.</strong> If we rewrite a table without changing what it means, does the final prediction stay the same?</div>
+
+            <p>This sounds like a low bar. In practice, it exposes a hidden source of uncertainty that ordinary train/test evaluation never sees.</p>
+
+            <h2>One table has many spellings</h2>
+            <p>Consider a small customer table. We can move its columns, replace category names with arbitrary IDs, or change the unit of income. Each version describes the same people. A reversible rewrite should be as harmless as changing a file’s font.</p>
 
             <figure class="wide-figure">
-                <div class="d3-origin-board" role="img" aria-label="Adult accuracy rises from 85.98 percent with PLE to 87.27 percent when capital gain and capital loss receive exact-value identity views">
-                    <div class="d3-origin-copy"><span>THE RESULT THAT STARTED DAY 3</span><strong>Same rows. Same model.<br>Different coordinates.</strong><p>Exact-value views for capital gain and loss produced the strongest Adult result.</p></div>
-                    <div class="d3-origin-scores">
-                        <section><span>PLE baseline</span><strong>85.98%</strong><i><b style="--score:85.98%"></b></i></section>
-                        <div class="d3-origin-arrow"><span>+1.29 pp</span><b>&rarr;</b></div>
-                        <section class="identity"><span>Gain + loss identity</span><strong>87.27%</strong><i><b style="--score:87.27%"></b></i></section>
+                <div class="d3q-orbit" data-schema-demo>
+                    <div class="d3q-orbit-copy">
+                        <span class="d3q-eyebrow">A TABLE’S REPRESENTATION ORBIT</span>
+                        <h3>Change the spelling.<br>Keep the meaning.</h3>
+                        <p>The numbers at right are illustrative. The unsettling behavior they show is real.</p>
+                        <div class="d3q-schema-buttons" role="group" aria-label="Choose a harmless table rewrite">
+                            <button type="button" data-schema="reference" aria-pressed="true"><i>A</i><span>reference</span></button>
+                            <button type="button" data-schema="columns" aria-pressed="false"><i>↔</i><span>move columns</span></button>
+                            <button type="button" data-schema="categories" aria-pressed="false"><i>01</i><span>rename categories</span></button>
+                            <button type="button" data-schema="units" aria-pressed="false"><i>¢</i><span>change units</span></button>
+                        </div>
+                    </div>
+                    <div class="d3q-table-stage">
+                        <div class="d3q-table-label"><span data-schema-label>REFERENCE SPELLING</span><small>same two customers throughout</small></div>
+                        <div class="d3q-table-wrap"><table data-schema-table aria-label="Two-row illustrative customer table"></table></div>
+                        <div class="d3q-prediction">
+                            <div><span>model says “will renew”</span><strong data-schema-prediction>62%</strong></div>
+                            <i><b data-schema-meter></b><em data-schema-marker></em></i>
+                            <p data-schema-note>No rewrite. This is the arbitrary reference we happened to start from.</p>
+                        </div>
                     </div>
                 </div>
-                <figcaption><strong>Figure 1.</strong> Five paired seeds on the released Adult split. A flag for each column’s dominant value did nothing; the gain appeared gradually as dozens of exact values were retained.</figcaption>
+                <figcaption><strong>Figure 1.</strong> These rewrites preserve the task when applied consistently to training and test data. The collection of all declared equivalent spellings is an <em>orbit</em>. A robust pipeline would give one aligned prediction everywhere on it.</figcaption>
             </figure>
 
-            <p>The controls weakened the simplest explanation. Indicators for gain = 0 and loss = 0 produced essentially no gain. Keeping only one, two, or four common values also did little. Improvement began around eight retained values and kept growing through dozens of levels. This looks less like one magic point mass and more like a distributed collection of exceptions.</p>
-            <p>Then came the more surprising clue. On the observed Adult states, a carefully constructed identity basis and a PLE basis can reconstruct one another to roughly 10<sup>&minus;14</sup> error. They contain the same information and span the same functions. Yet their raw scores differ.</p>
-            <div class="thesis"><strong>The question.</strong> Can coordinates alone make a fixed neural learning problem easier or harder—even when information, rank, scale, split, model, and represented functions stay unchanged?</div>
+            <p>The rewrite must be honest. Renaming “gold” as 0 is harmless; pretending that 0 is closer to “silver” than to “bronze” is not. Converting dollars to cents is harmless; converting temperature without accounting for its offset is not. So the first step of the audit is always to declare which changes preserve the meaning of the task.</p>
 
-            <h2>What a condition number feels like</h2>
-            <p>Imagine a round cloud of points. A reversible coordinate change can stretch it into a thin ellipse without adding, removing, or merging a single point. The condition number, κ, measures the ratio between the most stretched and least stretched directions.</p>
+            <div class="d3q-language-strip" aria-label="Plain-language translation of schema quotient terminology"><span><b>same meaning</b><small>one semantic table</small></span><i>÷</i><span><b>arbitrary spellings</b><small>the nuisance choices</small></span><i>=</i><span class="answer"><b>the thing we care about</b><small>the table without formatting accidents</small></span></div>
+
+            <p>Mathematicians call this a <em>quotient</em>: we choose to treat all meaning-preserving spellings as one object. Here is the practical version: <strong>a result belongs to the table only if it survives the spellings we agreed should not matter.</strong></p>
+
+            <h2>Prediction wobble has an exact price</h2>
+            <p>Run the complete pipeline once on each spelling and place its prediction on a line. If the dots overlap, the pipeline ignored the nuisance. If they spread out, the prediction depends on formatting luck.</p>
 
             <figure class="wide-figure">
-                <div class="d3-kappa-demo" data-kappa-demo>
-                    <div class="d3-demo-toolbar">
-                        <div><span class="d3-eyebrow">COORDINATE STRESS</span><strong>Choose κ</strong></div>
-                        <div class="d3-kappa-buttons" role="group" aria-label="Choose a condition number"><button type="button" data-kappa="1" aria-pressed="true">1</button><button type="button" data-kappa="10" aria-pressed="false">10</button><button type="button" data-kappa="100" aria-pressed="false">100</button><button type="button" data-kappa="1000" aria-pressed="false">1,000</button></div>
+                <div class="d3q-tax-demo" data-tax-demo>
+                    <div class="d3q-demo-head">
+                        <div><span class="d3q-eyebrow">SCHEMA RISK</span><strong>How far do equivalent spellings pull the prediction apart?</strong></div>
+                        <div class="d3q-tax-buttons" role="group" aria-label="Choose an illustrative amount of prediction wobble"><button type="button" data-spread="steady" aria-pressed="false">steady</button><button type="button" data-spread="observed" aria-pressed="true">wobbly</button><button type="button" data-spread="severe" aria-pressed="false">very wobbly</button></div>
                     </div>
-                    <div class="d3-valley-stage">
-                        <svg viewBox="0 0 760 330" role="img" aria-labelledby="d3-valley-title d3-valley-desc">
-                            <title id="d3-valley-title">Optimization valley as conditioning increases</title>
-                            <desc id="d3-valley-desc">Interactive loss contours become longer and narrower as the condition number increases.</desc>
-                            <defs><marker id="d3-path-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#d8654f"></path></marker></defs>
-                            <rect x="1" y="1" width="758" height="328" rx="18" fill="#fbfcfb" stroke="#e2e9e6"></rect>
-                            <g class="d3-contours" transform="rotate(-20 382 166)"><ellipse data-contour="outer" cx="382" cy="166" rx="112" ry="88"></ellipse><ellipse data-contour="middle" cx="382" cy="166" rx="78" ry="61"></ellipse><ellipse data-contour="inner" cx="382" cy="166" rx="43" ry="34"></ellipse></g>
-                            <path class="d3-step-path" data-step-path d="M118 266 C210 230 288 194 382 166" marker-end="url(#d3-path-arrow)"></path>
-                            <circle cx="118" cy="266" r="7" fill="#19242a"></circle><circle cx="382" cy="166" r="8" fill="#237a78"></circle>
-                            <text x="92" y="298" font-family="Inter, sans-serif" font-size="13" fill="#607078">start</text><text x="396" y="156" font-family="Inter, sans-serif" font-size="13" fill="#237a78">same optimum</text>
-                        </svg>
-                        <div class="d3-kappa-readout"><div><span>condition number</span><strong data-kappa-output>1</strong></div><p data-kappa-note>Directions are balanced. A single step size can make useful progress in each one.</p></div>
+                    <div class="d3q-probability-stage">
+                        <div class="d3q-axis"><span>0%</span><span>probability of class A</span><span>100%</span></div>
+                        <div class="d3q-dot-lane" data-tax-lane><i data-tax-dot="0"><b>column order</b></i><i data-tax-dot="1"><b>category IDs</b></i><i data-tax-dot="2"><b>class IDs</b></i><i data-tax-dot="3"><b>units</b></i><em data-tax-centroid><b>average</b></em></div>
+                    </div>
+                    <div class="d3q-risk-identity">
+                        <section><span>average loss of<br>the separate models</span><strong data-member-loss>0.183</strong></section><b>=</b>
+                        <section class="average"><span>loss of their<br>average prediction</span><strong data-centroid-loss>0.176</strong></section><b>+</b>
+                        <section class="tax"><span>loss caused by<br>schema wobble</span><strong data-schema-tax>0.007</strong></section>
                     </div>
                 </div>
-                <figcaption><strong>Figure 2.</strong> The points and optimum have not changed—only their coordinates. As κ grows, a safe step across the narrow direction becomes slow along the long direction. Adam rescales individual axes, but an arbitrary basis also rotates and mixes them.</figcaption>
+                <figcaption><strong>Figure 2.</strong> An illustrative binary example. For squared error—and for the multiclass Brier score—the identity is exact: average individual loss equals the loss of the average prediction plus prediction variance across spellings.</figcaption>
             </figure>
 
-            <p>The controlled experiment starts from a whitened representation <em>X</em><sub>1</sub> and constructs <em>X</em><sub>1000</sub> = <em>X</em><sub>1</sub><em>B</em>, where <em>B</em> is invertible. A first affine layer can absorb <em>B</em><sup>−1</sup>, so both inputs permit exactly the same predictors. The transformation preserves overall activation energy; it changes anisotropy, not global scale.</p>
+            <p>The last term is the useful one. It is the portion of proper loss caused only by disagreement across equivalent spellings. Once the models have been fitted, it needs no test labels: we can measure it directly from their predictions. I call it <strong>schema risk</strong>.</p>
 
-            <h2>Did geometry explain Adult?</h2>
-            <p>For capital gain and loss, I made the comparison exact. The identity and PLE designs had the same centered rank and reconstructed each other on train, validation, and test. Then I progressively removed arbitrary coordinate differences.</p>
+            <p>This turns a vague complaint—“models are representation-sensitive”—into an auditable quantity. In the first conventional-model cells, averaging across spellings removed <strong>0.21% to 1.13%</strong> of mean Brier loss. The hard predicted label changed for <strong>2.3% to 11.6%</strong> of rows. In same-seed neural comparisons, the corresponding tax ranged from <strong>0.63% to 8.20%</strong>.</p>
+
+            <h2>Now we can ask who caused it</h2>
+            <p>A table has several arbitrary choices at once. We can vary feature order, category IDs, class IDs, units, or a coordinate basis independently. The result is a grid of predictions. Functional ANOVA then divides the wobble into causes.</p>
 
             <figure class="wide-figure">
-                <div class="d3-closure-board" role="img" aria-label="The controlled PLE and identity accuracy gap falls from 0.210 percentage points raw to 0.018 after whitening and zero after exact alignment">
-                    <div class="d3-closure-head"><span>ADULT CLOSURE TEST</span><strong>Make equivalent bases look alike</strong><p>Mean absolute accuracy gap across five paired seeds</p></div>
-                    <div class="d3-closure-flow">
-                        <section class="raw"><span>raw coordinates</span><strong>0.210 pp</strong><i><b style="--gap:100%"></b></i></section>
-                        <b class="d3-closure-arrow">&rarr;</b>
-                        <section class="white"><span>whitened</span><strong>0.018 pp</strong><i><b style="--gap:8.6%"></b></i></section>
-                        <b class="d3-closure-arrow">&rarr;</b>
-                        <section class="aligned"><span>whitened + aligned</span><strong>0.000 pp</strong><i><b style="--gap:0%"></b></i></section>
+                <div class="d3q-anova-board">
+                    <div class="d3q-anova-grid" role="img" aria-label="Illustration of main effects and interactions in a product of feature-order and category-code choices">
+                        <div class="d3q-grid-y"><span>category<br>codes</span><b>4</b><b>3</b><b>2</b><b>1</b></div>
+                        <div class="d3q-heatmap" aria-hidden="true"><i style="--v:.18"></i><i style="--v:.3"></i><i style="--v:.68"></i><i style="--v:.82"></i><i style="--v:.28"></i><i style="--v:.38"></i><i style="--v:.63"></i><i style="--v:.76"></i><i style="--v:.58"></i><i style="--v:.22"></i><i style="--v:.79"></i><i style="--v:.48"></i><i style="--v:.72"></i><i style="--v:.55"></i><i style="--v:.32"></i><i style="--v:.14"></i></div>
+                        <div class="d3q-grid-x"><b>1</b><b>2</b><b>3</b><b>4</b><span>feature order</span></div>
                     </div>
-                    <div class="d3-closure-note"><strong>91.2%</strong><span>of the mean absolute gap disappears after whitening; alignment makes the inputs and all five scores identical.</span></div>
+                    <div class="d3q-anova-parts"><section><i class="row"></i><span><b>category effect</b>Rows move together.</span></section><section><i class="column"></i><span><b>order effect</b>Columns move together.</span></section><section><i class="patch"></i><span><b>interaction</b>One choice changes the effect of another.</span></section></div>
                 </div>
-                <figcaption><strong>Figure 3.</strong> A closure test, not just a correlation: once the same-space representations are put into the same coordinates, the controlled difference disappears.</figcaption>
+                <figcaption><strong>Figure 3.</strong> The colors stand for different predictions. Main effects identify one harmful nuisance; interactions reveal combinations that are harmless alone but unstable together.</figcaption>
             </figure>
 
-            <p>This is the cleanest Day 3 finding, but it needs a careful boundary. It explains a <strong>0.210-point controlled gap</strong>, not automatically all of the original <strong>1.29-point improvement</strong>. The original model appended an additional view and also changed resolution, redundancy, locality, and regularization. Geometry is a major mechanism; it is not yet the whole Adult attribution.</p>
+            <p>This matters because it tells us where to intervene. A model may be robust to category codes but sensitive to column position. Or two choices may become dangerous only in combination. We can also cross these schema choices with ordinary randomness such as the train/validation split or initialization seed.</p>
 
-            <h2>A broad causal signal</h2>
-            <p>I first froze 25 available tabular tasks, four architectures, both κ endpoints, and three seeds. After that screen finished, I separately froze five additional datasets as a prospective replication. The two stages must be reported separately: the full 30 were not jointly preregistered before any outcome existed.</p>
+            <p>That cross revealed a recurring pattern: much of the neural instability was not “the chart” or “the seed” alone. The <strong>chart × seed interaction explained 54%–65%</strong> of their joint prediction variance. The spelling changed which random training runs succeeded.</p>
+
+            <h2>Tuning is part of the model</h2>
+            <p>So far, imagine keeping one training recipe fixed. Real pipelines do more: they try several recipes on validation data and choose a winner. That selection step can react to the spelling too.</p>
+
+            <p>This creates a subtle tradeoff. Tuning separately for every spelling may improve average accuracy, while making equivalent versions of the same table disagree more.</p>
 
             <figure class="wide-figure">
-                <div class="d3-result-board" role="img" aria-label="Controlled basis sensitivity across thirty datasets and four neural architectures">
-                    <div class="d3-result-hero"><section><strong>30</strong><span>distinct datasets</span></section><section><strong>336 / 360</strong><span>paired comparisons harmed</span></section><section><strong>−8.40%</strong><span>mean normalized utility</span></section></div>
-                    <div class="d3-model-bars">
-                        <div class="d3-model-row"><span>FT-Transformer</span><i><b style="--harm:90.63%"></b></i><strong>−9.06%</strong></div>
-                        <div class="d3-model-row"><span>TabM</span><i><b style="--harm:85.21%"></b></i><strong>−8.52%</strong></div>
-                        <div class="d3-model-row"><span>MLP</span><i><b style="--harm:82.22%"></b></i><strong>−8.22%</strong></div>
-                        <div class="d3-model-row"><span>ResNet</span><i><b style="--harm:77.76%"></b></i><strong>−7.78%</strong></div>
+                <div class="d3q-selection-demo" data-selection-demo>
+                    <div class="d3q-demo-head">
+                        <div><span class="d3q-eyebrow">OTTO · RANDOM FOREST · ONE UNSEEN SPLIT</span><strong>Should tuning run again after a harmless rewrite?</strong></div>
+                        <div class="d3q-selection-buttons" role="group" aria-label="Compare frozen and separately reselected configurations"><button type="button" data-selection="frozen" aria-pressed="true">choose once</button><button type="button" data-selection="selected" aria-pressed="false">retune each spelling</button></div>
                     </div>
-                    <div class="d3-replication-strip"><span>separate five-dataset replication</span><strong>60 / 60 harmful</strong><span>95% interval: −10.56% to −7.82%</span></div>
+                    <div class="d3q-selection-flow">
+                        <div class="d3q-representatives">
+                            <div class="d3q-rep-label"><span>16 equivalent spellings</span><small data-selection-summary>one recipe is frozen across all 16</small></div>
+                            <div class="d3q-rep-grid" data-rep-grid aria-label="Selected configurations for sixteen equivalent spellings"></div>
+                            <div class="d3q-rep-legend"><span><i class="a"></i>configuration 0</span><span><i class="d"></i>configuration 3</span></div>
+                        </div>
+                        <div class="d3q-selection-stats">
+                            <section><span>mean Brier loss</span><strong data-selection-brier>reference</strong><small>lower is better</small></section>
+                            <section><span>schema risk</span><strong data-selection-risk>0.0032</strong><small data-selection-risk-note>baseline wobble</small></section>
+                            <section><span>hard-label flips</span><strong data-selection-flips>13.8%</strong><small>rows that change class</small></section>
+                        </div>
+                    </div>
+                    <div class="d3q-selection-verdict" data-selection-verdict><b>Choose once:</b> feature order cannot change the recipe, but the recipe is not optimized for every spelling.</div>
                 </div>
-                <figcaption><strong>Figure 4.</strong> κ=1000 minus κ=1 normalized utility. Negative is harmful. The combined dataset/model-clustered 95% interval is −9.93% to −6.94%; the paired Wilcoxon probability is 6.2×10<sup>−21</sup>.</figcaption>
+                <figcaption><strong>Figure 4.</strong> A prospective numerical, multiclass case. Feature order alone switched 4 of 16 decisions. Reselection improved orbit-mean Brier by 0.0051, but raised schema risk 2.35× and increased hard-label flips.</figcaption>
             </figure>
 
-            <p>The effect survived every backbone. I used dense-stem versions of FT-Transformer and TabM so the basis change remained an exact first-layer reparameterization; this is not a claim about native tokenization invariance. Reconstruction errors stayed near 10<sup>−14</sup>.</p>
+            <p>The tuning rule is therefore part of the predictor—not backstage bookkeeping. If changing column order changes which hyperparameters win, it can change the final model twice: once through training, and again through model selection.</p>
 
-            <div class="thesis"><strong>What the result says.</strong> The function class stayed fixed, but ordinary training did not. This first benchmark still mixed two causes: a coordinate change can alter the function produced at initialization, and it can alter every optimizer update afterward.</div>
+            <div class="d3q-switch-equation"><div><span>same spelling</span><b>→</b><strong>validation scores</strong><b>→</b><strong>chosen recipe</strong><b>→</b><strong>prediction</strong></div><p>Change the spelling and every arrow can move.</p></div>
 
-            <h2>Same function, then one AdamW step</h2>
-            <p>To separate those causes, I ran 200-update experiments on Adult, California Housing, and Diamonds. Paired MLPs and ResNets saw identical rows, minibatches, and dropout masks. I also transformed the first-layer weights by <em>B</em><sup>&minus;T</sup>, making the two networks compute the same function before training.</p>
+            <h3>The effect was structured, not universal</h3>
+            <p>Across the small Adult/Churn/Otto panel, forests switched somewhere on all three datasets, CatBoost on two, and histogram gradient boosting on none. This is evidence of family structure—not an estimate of how often all tabular models switch.</p>
+
+            <div class="d3q-family-panel" role="img" aria-label="Tuning decisions switched for forests on three of three datasets, CatBoost on two of three, and histogram gradient boosting on zero of three">
+                <div class="head"><span>pipeline family</span><b>Adult</b><b>Churn</b><b>Otto</b><strong>ever switched</strong></div>
+                <div><span>Random forest</span><i class="on"></i><i class="on"></i><i class="on"></i><strong>3 / 3</strong></div>
+                <div><span>CatBoost</span><i class="on"></i><i class="on"></i><i></i><strong>2 / 3</strong></div>
+                <div><span>HistGB</span><i></i><i></i><i></i><strong>0 / 3</strong></div>
+            </div>
+
+            <p>The three originally unstable cases were then rerun on seven unseen validation splits. Reselection raised schema risk on <strong>7/7 Adult–CatBoost</strong>, <strong>6/7 Churn–forest</strong>, and <strong>7/7 Churn–CatBoost</strong> splits. The dominant effect was schema × split: a representation did not have to be consistently bad to make search less reproducible.</p>
+
+            <div class="d3q-split-strip" aria-label="Schema risk increases over seven unseen splits">
+                <section><span>Adult · CatBoost</span><i><b></b><b></b><b></b><b></b><b></b><b></b><b></b></i><strong>7 / 7</strong></section>
+                <section><span>Churn · forest</span><i><b></b><b></b><b></b><b></b><b></b><b></b><b class="no"></b></i><strong>6 / 7</strong></section>
+                <section><span>Churn · CatBoost</span><i><b></b><b></b><b></b><b></b><b></b><b></b><b></b></i><strong>7 / 7</strong></section>
+                <small>each square is a validation split · coral means re-tuning increased schema risk</small>
+            </div>
+
+            <h2>A repair suggested by the diagnosis</h2>
+            <p>If selection is overreacting to one spelling, do not let one spelling cast the deciding vote. Evaluate each candidate recipe on a small development menu of equivalent spellings, average its validation loss, choose once, and freeze that choice across the rest.</p>
 
             <figure class="wide-figure">
-                <div class="d3-trajectory-demo" data-trajectory-demo>
-                    <div class="d3-demo-toolbar">
-                        <div><span class="d3-eyebrow">TRAJECTORY DECOMPOSITION</span><strong>What is held equal?</strong></div>
-                        <div class="d3-trajectory-buttons" role="group" aria-label="Choose a trajectory comparison"><button type="button" data-trajectory="ordinary" aria-pressed="true">ordinary init</button><button type="button" data-trajectory="matched" aria-pressed="false">same function</button><button type="button" data-trajectory="natural" aria-pressed="false">invariant update</button></div>
+                <div class="d3q-pooling-board">
+                    <div class="d3q-pooling-flow">
+                        <section class="spellings"><span>development spellings</span><div><i>↔</i><i>01</i><i>¢</i><i>⟳</i></div><small>same meaning, four views</small></section><b>→</b>
+                        <section class="scores"><span>average validation loss</span><div><i style="--score:72%"><em>A</em></i><i style="--score:48%"><em>B</em></i><i style="--score:61%"><em>C</em></i></div><small>every spelling gets a vote</small></section><b>→</b>
+                        <section class="winner"><span>one shared choice</span><strong>B</strong><small>freeze across evaluation views</small></section>
                     </div>
-                    <div class="d3-trajectory-stage">
-                        <svg viewBox="0 0 760 300" role="img" aria-labelledby="d3-trajectory-title d3-trajectory-desc">
-                            <title id="d3-trajectory-title">Reference and recoded training trajectories</title>
-                            <desc id="d3-trajectory-desc">An interactive comparison of ordinary initialization, function-matched initialization, and a matched input-natural update.</desc>
-                            <rect x="1" y="1" width="758" height="298" rx="18" fill="#fbfcfb" stroke="#e2e9e6"></rect>
-                            <g class="d3-trajectory-guides"><line x1="100" y1="45" x2="100" y2="258"></line><line x1="260" y1="45" x2="260" y2="258"></line><line x1="445" y1="45" x2="445" y2="258"></line><line x1="650" y1="45" x2="650" y2="258"></line></g>
-                            <path class="d3-trajectory-path reference" data-trajectory-path="reference" d="M100 230 C235 204 405 126 650 82"></path>
-                            <path class="d3-trajectory-path changed" data-trajectory-path="changed" d="M100 265 C245 252 430 223 650 190"></path>
-                            <circle class="d3-trajectory-dot changed" data-trajectory-start cx="100" cy="265" r="7"></circle><circle class="d3-trajectory-dot reference" cx="100" cy="230" r="7"></circle>
-                            <text x="82" y="280">step 0</text><text x="242" y="280">1</text><text x="427" y="280">20</text><text x="628" y="280">200</text>
-                            <text class="d3-trajectory-label reference" x="584" y="69">reference</text><text class="d3-trajectory-label changed" data-trajectory-label x="577" y="211">recoded</text>
-                        </svg>
-                        <div class="d3-trajectory-readout"><section><span>&kappa;=3000 endpoint harm</span><strong data-trajectory-harm>54.00%</strong></section><section><span data-trajectory-drift-label>step-0 functions</span><strong data-trajectory-drift>different</strong></section><p data-trajectory-note>Ordinary parameter initialization creates different functions before optimization even begins.</p></div>
+                    <div class="d3q-repair-results">
+                        <div class="d3q-repair-head"><span>held-out schema risk</span><small>average over all balanced development menus</small></div>
+                        <section><span>Adult · CatBoost</span><i><b style="--after:70.8%"></b></i><strong>−29.2%</strong></section>
+                        <section><span>Churn · forest</span><i><b style="--after:62.5%"></b></i><strong>−37.5%</strong></section>
+                        <section><span>Churn · CatBoost</span><i><b style="--after:65.3%"></b></i><strong>−34.7%</strong></section>
+                        <p><b>7 / 7 splits improved in all three cases.</b> The lighter remainder is the wobble removed by pooled selection.</p>
                     </div>
                 </div>
-                <figcaption><strong>Figure 5.</strong> The schematic summarizes 600 paired cells: 1,200 models and 7,200 recorded checkpoints. At &kappa;=3000, matching the initial function reduced mean normalized endpoint harm from 54.00% to 2.89%.</figcaption>
+                <figcaption><strong>Figure 5.</strong> The repair uses only validation data. Development and evaluation spellings are disjoint; one recipe chosen from the former is audited on the latter.</figcaption>
             </figure>
 
-            <div class="d3-mechanism-grid">
-                <section><span>INITIALIZATION</span><strong>94.66%</strong><p>of severe endpoint harm removed by starting from the same function</p></section>
-                <section><span>OPTIMIZER</span><strong>0.071</strong><p>prediction drift after just one matched AdamW update</p></section>
-                <section><span>PREDICTION GATE</span><strong>failed</strong><p>early drift detected non-equivariance but did not predict damage reliably</p></section>
+            <p>This is not a free improvement. Pooling reduced risk for most individual menus—228/252, 180/252, and 198/252—but not every one. Mean Brier loss also became worse on most held-out splits. The honest result is an <strong>accuracy–stability frontier</strong>, not a universally better tuning algorithm.</p>
+
+            <div class="d3q-frontier">
+                <div class="d3q-frontier-chart" role="img" aria-label="Conceptual frontier between predictive loss and schema risk"><span class="y">better average loss ↑</span><span class="x">less schema risk →</span><i class="retune"><b>retune each</b><small>accurate<br>less stable</small></i><i class="pooled"><b>pool, then freeze</b><small>more stable<br>possible loss cost</small></i><svg viewBox="0 0 440 220" aria-hidden="true"><path d="M74 54 C125 73 182 125 225 140 S321 164 383 183"></path></svg></div>
+                <p><strong>The repair moves the operating point.</strong> Which point is preferable depends on how costly inconsistency is for the application.</p>
             </div>
 
-            <p>At &kappa;=3000, function matching removed <strong>94.66%</strong> of the original harm. Initialization was the dominant mechanism in this stress test.</p>
-            <p>AdamW still broke equivalence: all 90 matched pairs moved apart after one update. An input-natural update nearly closed the full-rank cases, but one-step drift failed as a held-out predictor of final damage. It detects broken equivariance; it does not tell us when the break will matter.</p>
+            <h2>The audit needs its own audit</h2>
+            <p>There is another layer of arbitrariness: which spellings enter the development menu? Across balanced menus, the chosen recipe changed mostly through a <strong>menu × validation-split interaction</strong>. The subset was not simply good or bad; its influence depended on the split.</p>
 
-            <h2>Remove the arbitrary coordinates</h2>
-            <p>The cleanest diagnostic was canonicalization: choose independent anchor rows and describe every row using their coefficients. If <em>X</em> = <em>CR</em>, then after an invertible recoding <em>B</em>:</p>
-            <div class="formula">XB = C(RB)</div>
-            <p>The table and anchors move together, but <em>C</em> does not. It is like describing locations relative to landmarks: stretch the map and landmarks together, and the landmark coordinates remain unchanged.</p>
-
-            <figure class="wide-figure">
-                <div class="d3-canonical-demo" data-canonical-demo>
-                    <div class="d3-demo-toolbar"><div><span class="d3-eyebrow">ANCHOR COORDINATES</span><strong>Change the visible basis</strong></div><div class="d3-canonical-buttons" role="group" aria-label="Choose a coordinate view"><button type="button" data-basis="reference" aria-pressed="true">reference</button><button type="button" data-basis="stretched" aria-pressed="false">stretched</button><button type="button" data-basis="canonical" aria-pressed="false">canonical</button></div></div>
-                    <div class="d3-canonical-grid">
-                        <div class="d3-map" data-canonical-map aria-label="Point cloud and two anchor rows"><span class="d3-axis d3-axis-x"></span><span class="d3-axis d3-axis-y"></span><i class="d3-point" data-point="0"></i><i class="d3-point" data-point="1"></i><i class="d3-point" data-point="2"></i><i class="d3-point" data-point="3"></i><i class="d3-point" data-point="4"></i><i class="d3-point anchor" data-point="5"><b>r₁</b></i><i class="d3-point anchor second" data-point="6"><b>r₂</b></i></div>
-                        <div class="d3-coefficient-card"><span>selected point</span><strong>x = 2r₁ − 0.5r₂</strong><div class="d3-coefficient-bars"><i><b style="--coef:80%"></b><span>2.0</span></i><i class="negative"><b style="--coef:20%"></b><span>−0.5</span></i></div><p data-canonical-note>The coordinates and anchors are in the reference basis.</p></div>
-                    </div>
-                </div>
-                <figcaption><strong>Figure 6.</strong> Switch to the stretched view: the cloud and anchors move together, while the coefficients stay 2 and −0.5. “Canonical” is the common internal representation given to the network.</figcaption>
-            </figure>
-
-            <p>Across ten datasets and four models, exact anchors removed <strong>99.81%</strong> of paired sensitivity. Sketch anchors removed 99.43%, and an input-natural update removed 99.69%. These are powerful controls, but they bring rank, stability, or compute tradeoffs; they are not a universally better encoder.</p>
-
-            <h2>The reality check</h2>
-            <p>κ=1000 is a causal stress test, not a claim about the usual severity of deployed schemas. I therefore tested naturally named cumulative/local encodings and ordinary preprocessing choices. Across 150 natural pairs, the median absolute normalized gap was only <strong>0.38%</strong>; its clustered interval included zero. Raw-standard, quantile-standard, and PLE differences were also small and lacked a universal ranking.</p>
-
-            <div class="d3-reality-grid">
-                <section><span>NATURAL COORDINATES</span><strong>0.38%</strong><p>median absolute cumulative/local gap</p></section>
-                <section><span>CHRONOLOGICAL SHIFT</span><strong>≈ 0.00%</strong><p>mean κ sensitivity on three finance tasks</p></section>
-                <section><span>RANDOM SPLIT</span><strong>−1.11%</strong><p>same tables; harmful in 8/9 pairs</p></section>
+            <div class="d3q-menu-board">
+                <div class="d3q-menu-matrix" role="img" aria-label="Illustration showing selected configurations changing across development menus and validation splits"><span>menu ↓ · split →</span><div><b>A</b><b>A</b><b>C</b><b>C</b><b>A</b><b>B</b><b>B</b></div><div><b>A</b><b>B</b><b>C</b><b>A</b><b>A</b><b>B</b><b>D</b></div><div><b>A</b><b>A</b><b>D</b><b>A</b><b>C</b><b>B</b><b>D</b></div><div><b>B</b><b>A</b><b>D</b><b>A</b><b>C</b><b>C</b><b>D</b></div></div>
+                <div class="d3q-menu-stats"><span>decision variance from menu × split</span><section><b>28%</b><small>Adult · CatBoost</small></section><section><b>44%</b><small>Churn · forest</small></section><section><b>51%</b><small>Churn · CatBoost</small></section><p>A single convenient menu would hide this uncertainty.</p></div>
             </div>
 
-            <p>Deployment shift did not amplify the effect here; on three chronological finance splits it mostly disappeared. This is a limitation, not an argument for random splitting.</p>
+            <p>Even the word “average” needs a declaration. Uniformly weighting all spellings asks, “How stable am I under an even draw?” If real deployments favor some spellings, the answer changes. Under moderate adverse reweighting, favorable split counts fell from 7/7 everywhere to 7/7, 4/7, and 5/7.</p>
 
-            <p>Rank was the other important exception. Adult’s natural basis had 123 columns but rank 116, so an undamped inverse amplified noise in seven null directions. Full-rank California and Diamond nearly closed. Invariance needs an explicit rank or damping policy; exact algebra is not enough.</p>
-
-            <h2>The performance method failed its last test</h2>
-            <p>I also tried to turn the mechanism into performance. Selective Measure-Orbit combined ordinary TabM with a representation chosen from the same equivalence orbit. It looked convincing internally: Adult gained 1.013 accuracy points in the one-fit comparison, and a frozen 21-dataset confirmation improved proper loss by 1.103% on average.</p>
-
-            <div class="d3-external-board" role="img" aria-label="Measure-Orbit improved internal proper loss by 1.103 percent but was 0.521 percent worse than an update-matched seed ensemble on seven untouched datasets">
-                <section class="internal"><span>INTERNAL CONFIRMATION</span><strong>+1.103%</strong><p>proper-loss reduction<br>21 datasets</p><em>passed frozen gate</em></section>
-                <div class="d3-external-divider"><b>&rarr;</b><span>untouched test</span></div>
-                <section class="external"><span>EXTERNAL VS 2 SEEDS</span><strong>&minus;0.521%</strong><p>proper-loss reduction<br>7 new datasets</p><em>95% interval entirely negative</em></section>
+            <div class="d3q-weight-demo" data-weight-demo>
+                <div><span>How adversarially are spellings weighted?</span><div class="d3q-weight-buttons" role="group" aria-label="Choose a weighting sensitivity"><button type="button" data-weight="uniform" aria-pressed="true">uniform</button><button type="button" data-weight="two" aria-pressed="false">up to 2×</button><button type="button" data-weight="four" aria-pressed="false">up to 4×</button></div></div>
+                <section><span>splits where pooling helps</span><div><b data-weight-result="0">7 / 7</b><small>Adult · CatBoost</small></div><div><b data-weight-result="1">7 / 7</b><small>Churn · forest</small></div><div><b data-weight-result="2">7 / 7</b><small>Churn · CatBoost</small></div></section>
+                <p data-weight-note>Uniform weighting is a choice, not a law of nature.</p>
             </div>
 
-            <p>Then I tested it on seven untouched datasets against an exactly update-matched two-seed ordinary TabM ensemble. Measure-Orbit was <strong>0.521% worse</strong>, with a 95% dataset-bootstrap interval of [&minus;0.831%, &minus;0.195%]. It won only 7 of 21 seed-level comparisons. The method is a useful diagnostic, not a general performance claim.</p>
-            <p>This changed how I read the internal success. Representation diversity may help, but a second ordinary seed is already a strong and simple use of the same compute. Any next method must face that baseline from the beginning.</p>
+            <div class="thesis"><strong>The estimand has to include the distribution.</strong> There is no context-free number called “the schema risk.” There is schema risk under a declared set of harmless rewrites and a declared way of weighting them.</div>
 
-            <h2>What survived Day 3</h2>
+            <h2>Meaning cannot be tuned into existence</h2>
+            <p>A final experiment sharpened the boundary. For an ordered field, nearby values really are neighbors; for a cyclic field, the ends meet; for a nominal field such as color, any path through the categories is invented.</p>
 
-            <div class="d3-knowledge-grid">
-                <section class="known"><span>FOUND</span><strong>A causal phenomenon</strong><ul><li>Equivalent bases can change finite-budget learning.</li><li>The effect spans numerical, nominal, and ordinal blocks.</li><li>Adult’s exact same-space gap is mostly geometric.</li><li>Initialization explains most severe stress-test harm.</li><li>AdamW still breaks equivalence after one matched update.</li></ul></section>
-                <section class="unknown"><span>NOT YET FOUND</span><strong>A general practical cure</strong><ul><li>No universally best natural encoding.</li><li>No reliable early predictor of harmful drift.</li><li>No new invariant optimizer claim.</li><li>No method that beats a fair seed ensemble externally.</li><li>No complete attribution of Adult’s original +1.29 points.</li></ul></section>
+            <div class="d3q-topology-board">
+                <section class="path"><span>ORDERED</span><div><i>low</i><b></b><i>mid</i><b></b><i>high</i></div><p>A path is meaningful.</p></section>
+                <section class="ring"><span>CYCLIC</span><div><i>23:00</i><i>00:00</i><i>01:00</i></div><p>A ring is meaningful.</p></section>
+                <section class="nominal"><span>NOMINAL</span><div><i>red</i><b></b><i>blue</i><b></b><i>gold</i></div><p>This order is made up.</p></section>
             </div>
 
-            <h2>What is—and is not—the paper</h2>
-            <p>Natural gradient, K-FAC’s ideal affine invariance,<sup><a href="#ref-1">[1]</a></sup> whitening, Shampoo, SOAP, and canonicalization are prior art. Feature orientation in tabular learning was also studied before.<sup><a href="#ref-2">[2]</a></sup> General canonicalization has known continuity limitations.<sup><a href="#ref-3">[3]</a></sup> The result cannot honestly be sold as the invention of invariant optimization, the first observation that coordinates matter, or a validated new performance method.</p>
+            <p>With fixed strength, the correct path or ring beat a deliberately permuted geometry in all 18 ordered and cyclic cells, while the neutral geometry beat every false topology in all nine nominal cells. That looked reassuring.</p>
 
-            <div class="d3-verdict">
-                <span>FINAL DAY 3 VERDICT</span>
-                <strong>A strong phenomenon and mechanism; an unfinished method story.</strong>
-                <p>The defensible contribution is an exact-equivalence causal benchmark plus a function-matched mechanism decomposition: ordinary initialization explains most severe fixed-budget harm, AdamW diverges after one matched update, and invariant closure exposes a rank requirement. The Adult closure gives the story a concrete origin. Natural effects remain small, the universal predictor failed, and the performance method failed externally.</p>
+            <p>Then I let validation tune the strength. False paths, rings, and permuted paths beat the neutral model in <strong>8/9, 8/9, and 9/9</strong> nominal cells. Search had exploited accidental adjacency. It had not discovered meaning.</p>
+
+            <div class="d3q-meaning-callout"><i>metadata</i><b>→</b><strong>choose the semantic family</strong><b>→</b><i>validation</i><b>→</b><strong>tune within that family</strong></div>
+
+            <p>The order matters. Validation can choose how strongly to trust a declared geometry. It cannot tell us whether “red” is truly next to “blue.” Semantics must enter as metadata, not emerge from a hyperparameter sweep.</p>
+
+            <h2>What survived the experiments</h2>
+            <p>The point of running many probes was not to preserve them all. It was to let weak stories die and keep the few claims that became clearer under pressure.</p>
+
+            <div class="d3q-verdict-grid">
+                <section class="survived"><span>SURVIVED</span><strong>A measurable pipeline risk</strong><ul><li>Equivalent spellings can change fitted predictions.</li><li>The resulting proper-loss tax is exact and label-free after fitting.</li><li>The tax can be attributed to schema choices and their interactions.</li><li>Pooling validation evidence can target selection-induced risk.</li></ul></section>
+                <section class="died"><span>DID NOT SURVIVE</span><strong>A universal performance trick</strong><ul><li>The representation ensemble lost to another ordinary seed externally.</li><li>Four apparent architecture-ranking reversals vanished with 13 more seeds.</li><li>Pooled selection does not dominate on both accuracy and stability.</li><li>Validation cannot infer category semantics from arbitrary IDs.</li></ul></section>
             </div>
 
-            <h2>The next experiment: hold conditioning fixed</h2>
-            <p>Condition number is now an established lever, but it is not a complete theory. Whitening can make every direction equally scaled while destroying <em>locality</em>: a sparse coordinate that means “this value” becomes a dense mixture of many values. Two bases can both have &kappa;=1 and still feel very different to a finite neural network.</p>
+            <p>This leads to a different paper than I expected at the start of Day 3. It is not “here is the best tabular encoding.” It is an audit of whether a claimed result is identifiable from the table’s meaning—or partly determined by arbitrary coordinates.</p>
 
-            <div class="d3-next-board" role="img" aria-label="Proposed experiment progressively rotates a local sparse basis into a dense basis while holding information, condition number, and initial function fixed">
-                <div class="d3-next-constants"><span>KEEP FIXED</span><b>same information</b><b>&kappa; = 1</b><b>same initial function</b><b>same updates</b></div>
-                <div class="d3-next-flow">
-                    <section><span>LOCAL</span><strong>one event,<br>few coordinates</strong><i class="sparse"><b></b><b></b><b></b><b></b><b></b><b></b></i></section>
-                    <div><b>&rarr;</b><span>progressively rotate</span></div>
-                    <section><span>DENSE</span><strong>one event,<br>many coordinates</strong><i class="dense"><b></b><b></b><b></b><b></b><b></b><b></b></i></section>
-                </div>
-            </div>
+            <div class="d3q-final-flow"><section><span>1 · DECLARE</span><strong>Which rewrites preserve meaning?</strong></section><b>→</b><section><span>2 · MEASURE</span><strong>How much do predictions wobble?</strong></section><b>→</b><section><span>3 · ATTRIBUTE</span><strong>Which choices and interactions cause it?</strong></section><b>→</b><section><span>4 · ACT</span><strong>Does the targeted repair transfer?</strong></section></div>
 
-            <p>This is the clean next test. Start from a whitened local basis, rotate it gradually toward a dense random orthogonal basis, and function-match the first layer. Then measure the first 100 updates and final performance on Adult, Black Friday, and Diamond across MLP, ResNet, and TabM.</p>
-            <p>If performance changes smoothly with rotation density, locality becomes a mechanism rather than an intuition. If the gap vanishes, the simpler account wins: conditioning and initialization were enough.</p>
+            <div class="thesis"><strong>Day 3 conclusion.</strong> The model is not just its architecture and weights. It is the entire path from schema to preprocessing, tuning, training, and prediction. If harmless rewrites change that path, the variation belongs in the reported uncertainty—not behind one lucky table spelling.</div>
 
-            <h2>What you can use now</h2>
-            <p>When one tabular encoding beats another, do not ask only which name won. Ask what changed:</p>
-            <ol class="d3-checklist">
-                <li><span><strong>Information:</strong> can each representation reconstruct the other on every split?</span></li>
-                <li><span><strong>Geometry:</strong> what are their rank, scale, singular values, and condition number?</span></li>
-                <li><span><strong>Coordinates:</strong> does the gap survive standardization, whitening, and alignment?</span></li>
-                <li><span><strong>Training:</strong> does it survive function-matched initialization?</span></li>
-                <li><span><strong>Compute:</strong> does the proposed method beat spending the same updates on another ordinary seed?</span></li>
-            </ol>
-
-            <div class="thesis"><strong>Day 3 conclusion.</strong> A table does not have one natural neural representation. Equivalent coordinates alter both the function prior induced by ordinary initialization and the optimizer trajectory that follows. Day 3 found a reliable way to expose that gap. The next step is to learn which useful properties of a coordinate system—conditioning, locality, sparsity, or initialization—we should preserve on purpose.</div>
+            <details class="d3q-details">
+                <summary>Technical notes and statistical boundaries</summary>
+                <div><p>For squared loss and multiclass Brier loss, the displayed decomposition is the Hilbert-space identity <code>E<sub>z</sub>‖p<sub>z</sub>−y‖² = ‖E<sub>z</sub>p<sub>z</sub>−y‖² + E<sub>z</sub>‖p<sub>z</sub>−E<sub>z</sub>p<sub>z</sub>‖²</code>. Output classes are aligned before comparison.</p><p>The Adult/Churn/Otto family panel is a 3 × 3 pilot and should not be read as population prevalence. The three seven-split confirmation cases were selected because they were unstable on an earlier split. Exact tests treat the split—not the row or overlapping menu—as the replication unit.</p><p>The 29.2%, 37.5%, and 34.7% repair results average all 36 balanced development-menu partitions within each split. Individual menus overlap, so 252 menu outcomes are not 252 independent trials. Sensitivity to the menu distribution remains part of the result.</p></div>
+            </details>
 
             <h2>References</h2>
             <ol class="reference-list">
-                <li id="ref-1">Martens and Grosse. <a href="https://proceedings.mlr.press/v37/martens15.html">Optimizing Neural Networks with Kronecker-factored Approximate Curvature</a>. ICML 2015.</li>
-                <li id="ref-2">Grinsztajn, Oyallon, and Varoquaux. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/0378c7692da36807bdec87ab043cdadc-Abstract-Datasets_and_Benchmarks.html">Why do tree-based models still outperform deep learning on typical tabular data?</a> NeurIPS 2022.</li>
-                <li id="ref-3">Dym, Lawrence, and Siegel. <a href="https://proceedings.mlr.press/v235/dym24a.html">Equivariant Frames and the Impossibility of Continuous Canonicalization</a>. ICML 2024.</li>
-                <li id="ref-4">Vyas et al. <a href="https://openreview.net/forum?id=IDxZhXrpNf">SOAP: Improving and Stabilizing Shampoo using Adam</a>. ICLR 2025.</li>
+                <li id="ref-1">Brier. <a href="https://doi.org/10.1175/1520-0493(1950)078%3C0001:VOFEIT%3E2.0.CO;2">Verification of forecasts expressed in terms of probability</a>. Monthly Weather Review, 1950.</li>
+                <li id="ref-2">Hooker. <a href="https://doi.org/10.1198/106186007X237892">Generalized functional ANOVA diagnostics for high-dimensional functions of dependent variables</a>. Journal of Computational and Graphical Statistics, 2007.</li>
+                <li id="ref-3">Schneider et al. <a href="https://proceedings.mlr.press/v293/schneider25a.html">Overtuning in Hyperparameter Optimization</a>. AutoML, 2025.</li>
+                <li id="ref-4">Dym, Lawrence, and Siegel. <a href="https://proceedings.mlr.press/v235/dym24a.html">Equivariant Frames and the Impossibility of Continuous Canonicalization</a>. ICML, 2024.</li>
             </ol>
-            <p class="next-post"><strong>Full record:</strong> the <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-03/day3.md">reader-facing synthesis</a>, <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-03/REPORT_DAY3.md">technical report</a>, and <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-03/EXTERNAL_MEASURE_ORBIT_REPORT.md">untouched external test</a> include exact protocols and results.</p>
+
+            <p class="next-post"><strong>Full research record:</strong> the <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-idea-search/ICLR_PAPER_FREEZE_CARD.md">current freeze card</a>, <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-idea-search/ICLR_CONCEPT_MEMO.md">concept memo</a>, and <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-idea-search/ORBITANOVA_PROTOCOL_DRAFT.md">protocol draft</a> contain the exact estimands, protocols, and claim boundaries.</p>
         </div>
     </article></main>
     <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>
