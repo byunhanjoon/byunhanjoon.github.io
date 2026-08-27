@@ -7,72 +7,94 @@
         if (!demo) return;
 
         const table = demo.querySelector("[data-orbit-table]");
-        const headers = Array.from(table.querySelectorAll("div > b"));
-        const cells = Array.from(table.querySelectorAll("div > i"));
+        const headers = Array.from(table.querySelectorAll(".d3-table-grid > b"));
+        const cells = Array.from(table.querySelectorAll(".d3-table-grid > i"));
         const name = table.querySelector("[data-orbit-name]");
         const note = table.querySelector("[data-orbit-note]");
+        const before = table.querySelector("[data-orbit-before]");
+        const after = table.querySelector("[data-orbit-after]");
         const controls = Array.from(demo.querySelectorAll("[data-orbit-view]"));
         const states = korean ? {
             original: {
                 name: "원본",
                 headers: ["나이", "플랜", "소득"],
                 cells: ["37", "실버", "$52k", "54", "골드", "$81k"],
-                note: "같은 사람 · 같은 target"
+                note: "표기를 눌러 보세요. 행과 target은 그대로입니다.",
+                before: "나이 · 플랜 · 소득", after: "변화 없음",
+                changedHeaders: [], changedCells: []
             },
             columns: {
                 name: "열 순서",
                 headers: ["소득", "나이", "플랜"],
                 cells: ["$52k", "37", "실버", "$81k", "54", "골드"],
-                note: "같은 값 · 새로운 순서"
+                note: "순서만 바뀌었습니다. 값은 각 열과 함께 이동합니다.",
+                before: "나이 · 플랜 · 소득", after: "소득 · 나이 · 플랜",
+                changedHeaders: [0, 1, 2], changedCells: [0, 1, 2, 3, 4, 5]
             },
             categories: {
                 name: "범주 이름",
                 headers: ["나이", "플랜 ID", "소득"],
                 cells: ["37", "0", "$52k", "54", "1", "$81k"],
-                note: "같은 범주 · 새로운 이름"
+                note: "범주 이름만 바뀌었습니다. 실버↔0, 골드↔1입니다.",
+                before: "실버 · 골드", after: "0 · 1",
+                changedHeaders: [1], changedCells: [1, 4]
             },
             units: {
                 name: "센트 단위",
                 headers: ["나이", "플랜", "소득 (¢)"],
                 cells: ["37", "실버", "5.2M¢", "54", "골드", "8.1M¢"],
-                note: "같은 크기 · 새로운 단위"
+                note: "단위만 바뀌었습니다. 달러를 센트로 표시합니다.",
+                before: "$52k · $81k", after: "5.2M¢ · 8.1M¢",
+                changedHeaders: [2], changedCells: [2, 5]
             },
             basis: {
                 name: "혼합 기저",
                 headers: ["z₁", "z₂", "z₃"],
                 cells: ["89", "37", "52", "135", "55", "82"],
-                note: "같은 encoded rows · 가역적 축 혼합"
+                note: "좌표만 바뀌었습니다. 가역적 혼합이라 정보는 그대로입니다.",
+                before: "나이 · 플랜 · 소득", after: "z₁ · z₂ · z₃",
+                changedHeaders: [0, 1, 2], changedCells: [0, 1, 2, 3, 4, 5]
             }
         } : {
             original: {
                 name: "original",
                 headers: ["age", "plan", "income"],
                 cells: ["37", "silver", "$52k", "54", "gold", "$81k"],
-                note: "same people · same target"
+                note: "Choose a spelling; the rows and target stay fixed.",
+                before: "age · plan · income", after: "unchanged",
+                changedHeaders: [], changedCells: []
             },
             columns: {
                 name: "column order",
                 headers: ["income", "age", "plan"],
                 cells: ["$52k", "37", "silver", "$81k", "54", "gold"],
-                note: "same values · new order"
+                note: "Only the order changed; values moved with their columns.",
+                before: "age · plan · income", after: "income · age · plan",
+                changedHeaders: [0, 1, 2], changedCells: [0, 1, 2, 3, 4, 5]
             },
             categories: {
                 name: "category names",
                 headers: ["age", "plan ID", "income"],
                 cells: ["37", "0", "$52k", "54", "1", "$81k"],
-                note: "same categories · new names"
+                note: "Only the category names changed: silver↔0 and gold↔1.",
+                before: "silver · gold", after: "0 · 1",
+                changedHeaders: [1], changedCells: [1, 4]
             },
             units: {
                 name: "cents",
                 headers: ["age", "plan", "income (¢)"],
                 cells: ["37", "silver", "5.2M¢", "54", "gold", "8.1M¢"],
-                note: "same magnitudes · new units"
+                note: "Only the units changed: dollars are now shown as cents.",
+                before: "$52k · $81k", after: "5.2M¢ · 8.1M¢",
+                changedHeaders: [2], changedCells: [2, 5]
             },
             basis: {
                 name: "mixed basis",
                 headers: ["z₁", "z₂", "z₃"],
                 cells: ["89", "37", "52", "135", "55", "82"],
-                note: "same encoded rows · invertible axis mix"
+                note: "Only the coordinates changed; an invertible mix keeps all information.",
+                before: "age · plan · income", after: "z₁ · z₂ · z₃",
+                changedHeaders: [0, 1, 2], changedCells: [0, 1, 2, 3, 4, 5]
             }
         };
 
@@ -83,8 +105,13 @@
             });
             headers.forEach(function (cell, index) { cell.textContent = state.headers[index]; });
             cells.forEach(function (cell, index) { cell.textContent = state.cells[index]; });
+            headers.concat(cells).forEach(function (cell) { cell.classList.remove("is-changed"); });
+            state.changedHeaders.forEach(function (index) { headers[index].classList.add("is-changed"); });
+            state.changedCells.forEach(function (index) { cells[index].classList.add("is-changed"); });
             name.textContent = state.name;
             note.textContent = state.note;
+            before.textContent = state.before;
+            after.textContent = state.after;
             demo.dataset.activeOrbit = control.dataset.orbitView;
             if (animate) {
                 table.classList.remove("is-changing");
