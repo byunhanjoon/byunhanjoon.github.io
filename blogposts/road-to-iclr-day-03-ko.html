@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03-ko.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260827-4">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260827-5">
     <script src="../language.js" defer></script>
     <script src="road-to-iclr-day-03.js?v=20260827-3" defer></script>
     <script type="application/ld+json">
@@ -42,14 +42,21 @@
             <p>열을 옮기고, 범주 이름을 바꾸고, 달러를 센트로 바꾸고, 인코딩된 feature block을 회전해 봅시다. 각 변환이 가역적이고 일관되게 적용되면 행과 label, 예측 과제는 바뀌지 않습니다. 표기만 달라집니다.</p>
 
             <figure class="wide-figure">
-                <div class="d3-orbit-board">
-                    <header><span>표현의 ORBIT</span><strong>의미는 고정하고 좌표만 움직입니다.</strong></header>
+                <div class="d3-orbit-board" role="img" aria-label="하나의 의미적 표가 열, 범주, 단위, 기저의 동등한 표현 orbit으로 이어지고 스키마 위험 분해로 연결되는 그림">
+                    <div class="d3-orbit-intro"><span>표현의 ORBIT</span><strong>하나의 의미, 여러 좌표계</strong></div>
                     <div class="d3-orbit-flow">
                         <section class="d3-semantic-table"><span>하나의 의미적 표</span><div><b>나이</b><b>플랜</b><b>소득</b><i>37</i><i>실버</i><i>$52k</i><i>54</i><i>골드</i><i>$81k</i></div><small>같은 사람 · 같은 target</small></section>
-                        <b class="d3-orbit-arrow">→</b>
-                        <div class="d3-orbit-views"><section><i>↔</i><strong>열</strong><small>위치 바꾸기</small></section><section><i>01</i><strong>범주</strong><small>이름 바꾸기</small></section><section><i>¢</i><strong>단위</strong><small>scale 바꾸기</small></section><section class="focus"><i>B</i><strong>기저</strong><small>좌표 섞기</small></section></div>
+                        <div class="d3-orbit-bridge"><span>가역적 변환</span><i>→</i></div>
+                        <div class="d3-orbit-map">
+                            <div class="d3-orbit-ring" aria-hidden="true"></div>
+                            <div class="d3-orbit-core"><strong>같은 표</strong><span>같은 예측 과제</span></div>
+                            <section class="columns"><i>↔</i><span><strong>열</strong><small>순서 바꾸기</small></span></section>
+                            <section class="categories"><i>01</i><span><strong>범주</strong><small>이름 바꾸기</small></span></section>
+                            <section class="units"><i>¢</i><span><strong>단위</strong><small>scale 바꾸기</small></span></section>
+                            <section class="basis"><i>B</i><span><strong>기저</strong><small>좌표 섞기</small></span></section>
+                        </div>
                     </div>
-                    <div class="d3-risk-identity"><section class="total"><span>별도 fit의<br>평균 손실</span></section><b class="equals">=</b><section class="mean"><span>평균 예측의<br>손실</span></section><b class="plus">+</b><section class="risk"><strong>스키마 위험</strong><span>표기 사이의<br>예측 분산</span></section></div>
+                    <div class="d3-risk-identity"><span class="d3-risk-label">ORBIT이 드러내는 것</span><section class="total"><strong>평균 fitted loss</strong><small>여러 표현에 걸친 평균</small></section><b class="equals">=</b><section class="mean"><strong>ensemble loss</strong><small>평균 예측의 손실</small></section><b class="plus">+</b><section class="risk"><strong>스키마 위험</strong><small>표기 사이의 예측 분산</small></section></div>
                 </div>
                 <figcaption><strong>그림 1.</strong> 동등한 표기의 집합은 표현 <em>orbit</em>을 이룹니다. 제곱 오차와 다중 클래스 Brier 손실에서 fitted prediction 사이의 불일치는 학습 뒤 label 없이도 구할 수 있는 정확한 항입니다. 단순한 불안정성의 비유가 아닙니다.</figcaption>
             </figure>

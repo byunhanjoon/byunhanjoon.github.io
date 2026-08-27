@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260827-4">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260827-5">
     <script src="../language.js" defer></script>
     <script src="road-to-iclr-day-03.js?v=20260827-3" defer></script>
     <script type="application/ld+json">
@@ -42,14 +42,21 @@
             <p>Move its columns. Rename categories. Change dollars to cents. Rotate an encoded feature block. If each rewrite is reversible and applied consistently, the rows, labels, and prediction task have not changed. Only the spelling has.</p>
 
             <figure class="wide-figure">
-                <div class="d3-orbit-board">
-                    <header><span>A REPRESENTATION ORBIT</span><strong>Keep the meaning. Move the coordinates.</strong></header>
+                <div class="d3-orbit-board" role="img" aria-label="One semantic table connected to an orbit of equivalent column, category, unit, and basis representations, followed by the schema-risk decomposition">
+                    <div class="d3-orbit-intro"><span>REPRESENTATION ORBIT</span><strong>One meaning, many coordinate systems</strong></div>
                     <div class="d3-orbit-flow">
                         <section class="d3-semantic-table"><span>ONE SEMANTIC TABLE</span><div><b>age</b><b>plan</b><b>income</b><i>37</i><i>silver</i><i>$52k</i><i>54</i><i>gold</i><i>$81k</i></div><small>same people · same target</small></section>
-                        <b class="d3-orbit-arrow">→</b>
-                        <div class="d3-orbit-views"><section><i>↔</i><strong>columns</strong><small>move them</small></section><section><i>01</i><strong>categories</strong><small>rename them</small></section><section><i>¢</i><strong>units</strong><small>rescale them</small></section><section class="focus"><i>B</i><strong>basis</strong><small>mix coordinates</small></section></div>
+                        <div class="d3-orbit-bridge"><span>reversible rewrite</span><i>→</i></div>
+                        <div class="d3-orbit-map">
+                            <div class="d3-orbit-ring" aria-hidden="true"></div>
+                            <div class="d3-orbit-core"><strong>same table</strong><span>same prediction task</span></div>
+                            <section class="columns"><i>↔</i><span><strong>columns</strong><small>reordered</small></span></section>
+                            <section class="categories"><i>01</i><span><strong>categories</strong><small>renamed</small></span></section>
+                            <section class="units"><i>¢</i><span><strong>units</strong><small>rescaled</small></span></section>
+                            <section class="basis"><i>B</i><span><strong>basis</strong><small>coordinates mixed</small></span></section>
+                        </div>
                     </div>
-                    <div class="d3-risk-identity"><section class="total"><span>average loss<br>of separate fits</span></section><b class="equals">=</b><section class="mean"><span>loss of the<br>average prediction</span></section><b class="plus">+</b><section class="risk"><strong>schema risk</strong><span>prediction variance<br>across spellings</span></section></div>
+                    <div class="d3-risk-identity"><span class="d3-risk-label">WHAT THE ORBIT REVEALS</span><section class="total"><strong>average fitted loss</strong><small>across representations</small></section><b class="equals">=</b><section class="mean"><strong>ensemble loss</strong><small>of the mean prediction</small></section><b class="plus">+</b><section class="risk"><strong>schema risk</strong><small>prediction variance across spellings</small></section></div>
                 </div>
                 <figcaption><strong>Figure 1.</strong> Equivalent spellings form a representation <em>orbit</em>. For squared error and multiclass Brier loss, disagreement across fitted predictions is an exact, label-free term after fitting—not just a metaphor for instability.</figcaption>
             </figure>
