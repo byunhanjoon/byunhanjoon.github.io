@@ -1,0 +1,10 @@
+{
+  "frozen_at": "2026-08-28T03:25:00+09:00",
+  "timing_note": "Frozen after T+T ensemble outcomes, before training Q-PLE or midrank members on this panel.",
+  "datasets_config": "safeple_stack_prospective_config.json",
+  "candidate_pairs": ["T+Q", "T+midrank"],
+  "control": "T+T with the same two members, per-member gradient-bearing parameter budget, architecture, seeds, optimizer, and epoch budget.",
+  "selection": "Choose T+Q or T+midrank by lower validation loss; do not tune ensemble weights.",
+  "validation_gate": "The validation-selected heterogeneous pair must beat T+T in at least 7/12 cells, have positive mean paired validation gain overall and within both task families, and each individual heterogeneous pair must have positive overall mean gain.",
+  "test_role": "Developmental; promote only to a new prospective panel if the validation gate passes."
+}

@@ -1,0 +1,91 @@
+{
+  "config": {
+    "architectures": [
+      "mlp",
+      "resnet",
+      "ft_transformer"
+    ],
+    "batch_size": 256,
+    "claim_boundary": "Improvement over the internal parameter-matched T-PLE anchor is distinct from improvement over Adult's atom-aware exact-support model.",
+    "cycle_gate_logit": -2.0,
+    "d_token": 16,
+    "depth": 2,
+    "development_datasets": [
+      "adult",
+      "churn",
+      "higgs-small"
+    ],
+    "dropout": 0.1,
+    "epochs": 40,
+    "frequency_modes": 8,
+    "frozen_at": "2026-08-27T18:42:00+09:00",
+    "ft_feedforward_width": 64,
+    "hypothesis": "The frozen T-PLE anchor plus zero-start Q/midrank residual transfers from temporal regression to binary classification without sacrificing validation log-loss.",
+    "learning_rate": 0.001,
+    "max_eval_rows": 15000,
+    "max_train_rows": 50000,
+    "method": "frozen_t_anchor_q_rank_residual",
+    "patience": 6,
+    "pilot_gate": "nonnegative validation log-loss gain in all 9 cells, strict wins in at least 5/9, positive mean validation gain, and positive mean test gain on at least 2/3 datasets",
+    "primary_metric": "binary log-loss",
+    "protocol_correction_reason": "The first classification pilot accidentally inherited the shorter regression schedule. This frozen rerun restores the established Adult protocol's batch size, epoch budget, and patience before confirmation.",
+    "qple_bins": 16,
+    "rank_ple_bins": 16,
+    "rare_hash_buckets": 16,
+    "residual_gate_l1_weight": 0.0001,
+    "safe_selection": "epoch zero is the frozen T-PLE anchor and remains eligible for validation early stopping",
+    "sample_seed": 20260827,
+    "secondary_metrics": [
+      "ROC AUC",
+      "accuracy"
+    ],
+    "seed": 20260827,
+    "support_cardinality_max": 128,
+    "top_exact_levels": 32,
+    "tple_bins": 16,
+    "tple_min_samples_leaf": 32,
+    "weight_decay": 0.0001,
+    "width": 128
+  },
+  "datasets": {
+    "adult": {
+      "full_split_sizes": {
+        "test": 16281,
+        "train": 26048,
+        "val": 6513
+      },
+      "n_fields": 14,
+      "sampled_split_sizes": {
+        "test": 15000,
+        "train": 26048,
+        "val": 6513
+      }
+    },
+    "churn": {
+      "full_split_sizes": {
+        "test": 2000,
+        "train": 6400,
+        "val": 1600
+      },
+      "n_fields": 11,
+      "sampled_split_sizes": {
+        "test": 2000,
+        "train": 6400,
+        "val": 1600
+      }
+    },
+    "higgs-small": {
+      "full_split_sizes": {
+        "test": 19610,
+        "train": 62751,
+        "val": 15688
+      },
+      "n_fields": 28,
+      "sampled_split_sizes": {
+        "test": 15000,
+        "train": 50000,
+        "val": 15000
+      }
+    }
+  }
+}

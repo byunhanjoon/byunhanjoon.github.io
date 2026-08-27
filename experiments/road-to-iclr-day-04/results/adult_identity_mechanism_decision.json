@@ -1,0 +1,6 @@
+{
+  "mechanism_gate_passed": true,
+  "qple_architecture_passes": 3,
+  "tple_architecture_passes": 3,
+  "winning_mechanism": "supervised/additive"
+}

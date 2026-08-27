@@ -1,0 +1,19 @@
+{
+  "categorical_fields": [],
+  "numeric_fields": [
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5"
+  ],
+  "openml_data_id": 1489,
+  "openml_name": "phoneme",
+  "rows": 5404,
+  "split_sizes": {
+    "test": 1081,
+    "train": 3242,
+    "val": 1081
+  },
+  "task": "classification"
+}

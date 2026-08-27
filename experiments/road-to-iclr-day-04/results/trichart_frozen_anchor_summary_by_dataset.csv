@@ -1,0 +1,5 @@
+dataset,cells,validation_safe,validation_wins,mean_validation_gain_pct,test_wins,mean_test_gain_pct
+cooking-time,9,9,9,0.2238866692710563,5,0.13396828467662653
+delivery-eta,9,9,3,0.014518886497505656,3,0.1969529113827398
+maps-routing,6,6,5,0.2845319032824503,5,0.26426667052337754
+weather,9,9,8,0.6526284958622699,8,0.7516669984407921

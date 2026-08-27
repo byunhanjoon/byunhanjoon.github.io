@@ -1,0 +1,27 @@
+{
+  "cells": 33,
+  "claim": "promising multi-chart method, but the frozen broad confirmation gate did not pass",
+  "confirmation_gate_passed": false,
+  "datasets_positive_vs_qple": 4,
+  "datasets_positive_vs_tple": 3,
+  "descriptive_mean_test_gain_vs_best_typed_pct": 0.11380383115423977,
+  "descriptive_test_wins_vs_best_typed": 18,
+  "development_alignment_ablation": {
+    "shared_consistency": {
+      "mean_gain_vs_qple_pct": 0.5167888125675496,
+      "mean_gain_vs_tple_pct": 0.6195986110218766,
+      "wins_vs_both": 6
+    },
+    "shared_noalign": {
+      "mean_gain_vs_qple_pct": 0.22548604569238842,
+      "mean_gain_vs_tple_pct": 0.3291264057815954,
+      "wins_vs_both": 4
+    }
+  },
+  "mean_validation_gain_vs_qple_pct": 0.3254323022739355,
+  "mean_validation_gain_vs_rank_pct": 0.3637521775059578,
+  "mean_validation_gain_vs_tple_pct": 0.28905047161915143,
+  "validation_wins_vs_both": 26,
+  "validation_wins_vs_qple": 29,
+  "validation_wins_vs_tple": 28
+}

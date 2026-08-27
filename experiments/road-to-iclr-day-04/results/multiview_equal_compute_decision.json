@@ -1,0 +1,43 @@
+{
+  "fixed_policy_predeclared_gate": {
+    "clauses": {
+      "at_least_8_of_12_test_wins": true,
+      "positive_dataset_mean_on_at_least_3_of_4": true,
+      "positive_mean_within_both_task_families": false,
+      "positive_overall_mean_relative_test_gain": false
+    },
+    "interpretation": "Promising win consistency, but the frozen policy is not promoted because the full prospective gate failed.",
+    "mean_relative_test_gain_pct": -3.3067398950226146,
+    "mean_relative_test_gain_pct_by_task": {
+      "classification": -11.513224439007123,
+      "regression": 4.89974464896189
+    },
+    "passed": false,
+    "positive_dataset_means": 3,
+    "test_cells": 12,
+    "test_wins": 10
+  },
+  "panels": {
+    "development": {
+      "max_per_member_parameter_relative_mismatch": 0.0,
+      "mean_test_relative_gain_pct": 1.6067012716670088,
+      "note": "Validation-selected between two heterogeneous pairs; developmental only.",
+      "test_cells": 12,
+      "test_wins": 12
+    },
+    "fixed_policy_confirmation": {
+      "max_per_member_parameter_relative_mismatch": 0.0,
+      "mean_test_relative_gain_pct": -3.3067398950226146,
+      "note": "Prospective fixed task policy; exactly two deployed models and no view search.",
+      "test_cells": 12,
+      "test_wins": 10
+    },
+    "selection_confirmation": {
+      "max_per_member_parameter_relative_mismatch": 0.005069505589796953,
+      "mean_test_relative_gain_pct": 1.9897364331285694,
+      "note": "Prospective data, but trains three candidates to select a two-member pair.",
+      "test_cells": 12,
+      "test_wins": 10
+    }
+  }
+}

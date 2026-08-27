@@ -1,0 +1,45 @@
+{
+  "delivery_three_seed": {
+    "cells": 9,
+    "mean_validation_gain_vs_qple_pct": 0.03936995389422192,
+    "mean_validation_gain_vs_tple_pct": 0.13695413690261782,
+    "validation_wins_vs_qple": 6,
+    "validation_wins_vs_tple": 8
+  },
+  "interval_rank": {
+    "development_cells": 6,
+    "development_gate_passed": true,
+    "development_wins": 4,
+    "mean_development_gain_pct": 0.05177748329013374,
+    "mean_transfer_gain_pct": -0.0743916356198962,
+    "transfer_cells": 5,
+    "transfer_passed": false,
+    "transfer_wins": 0
+  },
+  "rank_cycle": {
+    "cells": 6,
+    "gate_passed": false,
+    "mean_gain_vs_control_pct": -0.16976074555947,
+    "mean_gain_vs_midrank_pct": -0.6106205863095444,
+    "passing_cells": 1
+  },
+  "universal_midrank": {
+    "cells": 11,
+    "claim": "competitive type-agnostic default; not a universal replacement for supervised T-PLE",
+    "mean_validation_gain_vs_qple_pct": 0.059713313636631286,
+    "mean_validation_gain_vs_tple_pct": 0.0398341104375849,
+    "validation_wins_vs_both": 7,
+    "validation_wins_vs_qple": 9,
+    "validation_wins_vs_tple": 8
+  },
+  "universal_midrank_confirmation": {
+    "cells": 33,
+    "claim": "useful complementary chart, not a general standalone replacement",
+    "confirmation_gate_passed": false,
+    "datasets_positive_vs_both": 2,
+    "mean_validation_gain_vs_qple_pct": -0.03983056957668123,
+    "mean_validation_gain_vs_tple_pct": -0.07605916647031916,
+    "validation_wins_vs_qple": 18,
+    "validation_wins_vs_tple": 18
+  }
+}

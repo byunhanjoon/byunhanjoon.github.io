@@ -1,0 +1,23 @@
+{
+  "categorical_fields": [
+    "day"
+  ],
+  "numeric_fields": [
+    "date",
+    "period",
+    "nswprice",
+    "nswdemand",
+    "vicprice",
+    "vicdemand",
+    "transfer"
+  ],
+  "openml_data_id": 151,
+  "openml_name": "electricity",
+  "rows": 45312,
+  "split_sizes": {
+    "test": 9063,
+    "train": 27186,
+    "val": 9063
+  },
+  "task": "classification"
+}

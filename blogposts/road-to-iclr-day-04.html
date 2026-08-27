@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Feature Is a Domain — Road to ICLR Day 4</title>
-    <meta name="description" content="Day 4 of Road to ICLR: a visual journey from numerical columns to measured function spaces, the FieldRiesz experiment, and an audit-guided route toward an ICLR paper.">
+    <title>Same Table, Different Views — Road to ICLR Day 4</title>
+    <meta name="description" content="Day 4 of Road to ICLR: why different views of the same table make a better matched-compute neural ensemble, and why numerical atoms still need identity.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04.html">
     <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04-ko.html">
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="A Feature Is a Domain">
-    <meta property="og:description" content="A visual journey from numerical columns to measured function spaces—and the controls that changed the paper idea.">
+    <meta property="og:title" content="Same Table, Different Views">
+    <meta property="og:description" content="Three neural networks, one table, and a controlled test of representation diversity versus another random seed.">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260827-2">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260827-3">
     <script src="../language.js" defer></script>
-    <script src="road-to-iclr-day-04.js?v=20260827-2" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"A Feature Is a Domain","description":"A visual journey from numerical columns to measured function spaces, the FieldRiesz experiment, and an audit-guided route toward an ICLR paper.","datePublished":"2026-08-27","dateModified":"2026-08-27","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Same Table, Different Views","description":"Why different views of the same table make a better matched-compute neural ensemble, and why numerical atoms still need identity.","datePublished":"2026-08-27","dateModified":"2026-08-27","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04.html"}
     </script>
 </head>
 <body>
@@ -29,261 +28,116 @@
     <main class="essay"><article>
         <div class="essay-header">
             <p class="series-kicker">Road to ICLR · Day 4 / 30</p>
-            <h1>A feature is<br>a domain</h1>
-            <p class="essay-deck">A column is not merely a vector of values. It is a place where functions live—with mass, neighbors, and sometimes a geometry worth teaching the model.</p>
+            <h1>Same table,<br>different views</h1>
+            <p class="essay-deck">Three networks can read the same column in three equally valid ways. At matched compute, that diversity can be worth more than another random seed.</p>
             <div class="essay-meta"><span>August 27, 2026</span><span>Han Joon Byun</span><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-04">Experiments and results ↗</a></div>
         </div>
 
         <div class="essay-body">
-            <p><a href="road-to-iclr-day-01.html">Day 1</a> found that some numerical columns contain important exact values. <a href="road-to-iclr-day-02.html">Day 2</a> found that two encodings can contain the same information and still guide learning along different paths. <a href="road-to-iclr-day-03.html">Day 3</a> widened the problem: even harmless rewrites of the same table can change the final predictor.</p>
+            <p><a href="road-to-iclr-day-01.html">Day 1</a> found exact states hiding inside numerical columns. <a href="road-to-iclr-day-02.html">Day 2</a> found that equivalent coordinates lead neural networks down different paths. <a href="road-to-iclr-day-03.html">Day 3</a> showed that this sensitivity is broad.</p>
 
-            <p>Those three observations point to one missing object. We keep discussing <em>vectors</em> that represent a feature, but not the thing being represented.</p>
+            <div class="thesis"><strong>The Day 4 question.</strong> Can we turn representation sensitivity from a nuisance into useful diversity—without giving the method more models, parameters, or test-set choices?</div>
 
-            <div class="thesis"><strong>The Day 4 question.</strong> Before choosing coordinates for a feature, can we say what functions of that feature should be easy to learn?</div>
+            <h2>One value can have several addresses</h2>
 
-            <p>This question led to a mathematical construction, a hopeful experiment, several controls that nearly killed it, and—more importantly—a clearer ICLR direction.</p>
-
-            <h2>The same dtype can hide different worlds</h2>
-
-            <p>Imagine four columns, all stored as numbers:</p>
-
-            <div class="d4-worlds" aria-label="Four numerical fields with different semantic geometries">
-                <section><span>37.2</span><strong>temperature</strong><small>a point on a line</small></section>
-                <section><span>23:00</span><strong>hour of day</strong><small>a point on a circle</small></section>
-                <section><span>02139</span><strong>ZIP code</strong><small>a name in a bag</small></section>
-                <section><span>37.56, 126.97</span><strong>location</strong><small>a point on a surface</small></section>
-            </div>
-
-            <p>They share a storage type but disagree about the most basic question: <strong>which values are neighbors?</strong> For temperature, 20 is between 19 and 21. For an hour, 23:00 is beside 00:00. For a ZIP code, arithmetic adjacency may mean nothing. Latitude and longitude make sense together, not as two unrelated rulers.</p>
+            <p>Suppose a column contains incomes. The raw value is the same in every row below. What changes is its <em>address</em>.</p>
 
             <figure class="wide-figure">
-                <div class="d4-domain-demo" data-domain-demo>
-                    <div class="d4-demo-copy">
-                        <span class="d4-eyebrow">ONE COLUMN, THREE POSSIBLE DOMAINS</span>
-                        <h3 data-domain-title>Ordered values live on a path</h3>
-                        <p data-domain-copy>Nearby values may share statistical strength. The two ends stay far apart.</p>
-                        <div class="d4-domain-buttons" role="group" aria-label="Choose a field geometry">
-                            <button type="button" data-domain="ordered" aria-pressed="true">ordered</button>
-                            <button type="button" data-domain="cyclic" aria-pressed="false">cyclic</button>
-                            <button type="button" data-domain="nominal" aria-pressed="false">nominal</button>
-                        </div>
-                    </div>
-                    <div class="d4-domain-stage">
-                        <svg viewBox="0 0 640 260" role="img" aria-labelledby="d4-domain-svg-title d4-domain-svg-description">
-                            <title id="d4-domain-svg-title">Ordered field geometry</title>
-                            <desc id="d4-domain-svg-description">Seven values connected along a path.</desc>
-                            <g data-domain-edges class="d4-domain-edges"><line x1="70" y1="130" x2="153" y2="130"></line><line x1="153" y1="130" x2="236" y2="130"></line><line x1="236" y1="130" x2="320" y2="130"></line><line x1="320" y1="130" x2="404" y2="130"></line><line x1="404" y1="130" x2="487" y2="130"></line><line x1="487" y1="130" x2="570" y2="130"></line></g>
-                            <g data-domain-nodes class="d4-domain-nodes"><circle cx="70" cy="130" r="19"></circle><circle cx="153" cy="130" r="19"></circle><circle cx="236" cy="130" r="19"></circle><circle cx="320" cy="130" r="19"></circle><circle cx="404" cy="130" r="19"></circle><circle cx="487" cy="130" r="19"></circle><circle cx="570" cy="130" r="19"></circle></g>
-                            <g data-domain-labels class="d4-domain-labels"><text x="70" y="181">1</text><text x="153" y="181">2</text><text x="236" y="181">3</text><text x="320" y="181">4</text><text x="404" y="181">5</text><text x="487" y="181">6</text><text x="570" y="181">7</text></g>
-                        </svg>
-                        <div class="d4-neighbor-readout"><span>the schema declares</span><strong data-domain-rule>1—2—3—4—5—6—7</strong></div>
+                <div class="d4v-lenses" role="img" aria-label="The same numerical values represented by target-aware, quantile, and rank coordinate systems">
+                    <div class="d4v-lens-source"><span>same column</span><strong>18 · 22 · 22 · 41 · 90</strong><small>no rows or labels are invented</small></div>
+                    <div class="d4v-lens-arrow" aria-hidden="true">→</div>
+                    <div class="d4v-lens-stack">
+                        <section class="target"><header><b>T-PLE</b><span>task-shaped map</span></header><div class="d4v-track"><i style="--x:8%"></i><i style="--x:23%"></i><i class="stacked" style="--x:23%"></i><i style="--x:50%"></i><i style="--x:92%"></i><em style="--x:34%"></em><em style="--x:69%"></em></div><small>Put boundaries where a small target-aware tree finds useful changes.</small></section>
+                        <section class="quantile"><header><b>Q-PLE</b><span>population-shaped map</span></header><div class="d4v-track"><i style="--x:8%"></i><i style="--x:36%"></i><i class="stacked" style="--x:36%"></i><i style="--x:65%"></i><i style="--x:92%"></i><em style="--x:25%"></em><em style="--x:52%"></em><em style="--x:78%"></em></div><small>Give dense regions more resolution by following training quantiles.</small></section>
+                        <section class="rank"><header><b>midrank</b><span>order-only map</span></header><div class="d4v-track"><i style="--x:8%"></i><i style="--x:36%"></i><i class="stacked" style="--x:36%"></i><i style="--x:64%"></i><i style="--x:92%"></i></div><small>Forget distance; keep only what fraction of training rows lies below.</small></section>
                     </div>
                 </div>
-                <figcaption><strong>Figure 1.</strong> Try changing the geometry. The values need not change; only the relationships we are willing to declare. “Nominal” is not an absence of thought—it is a decision not to invent neighbors.</figcaption>
+                <figcaption><strong>Figure 1.</strong> Three charts of one column. Each preserves a defensible aspect of the same training data, but makes different patterns easy for gradient descent to find.</figcaption>
             </figure>
 
-            <p>This is what I mean by a <em>domain</em>. It is the set of values together with the relationships that survive a change of coordinates. An encoding is only a chart we draw on top of it.</p>
+            <p>No chart is universally best. That is usually presented as a hyperparameter problem: choose one. But different charts also produce different mistakes. This suggests treating a representation like a camera angle rather than a winner-take-all setting.</p>
 
-            <div class="d4-language-strip" aria-label="Domain and chart distinction"><span><b>field</b><small>the values and their meaning</small></span><i>→</i><span><b>function space</b><small>questions the model can ask</small></span><i>→</i><span class="answer"><b>coordinates</b><small>one way to compute those questions</small></span></div>
+            <h2>An atom is visible, but not necessarily named</h2>
 
-            <h2>Two kinds of structure</h2>
-
-            <p>Once a field becomes a small function space, two different sources of structure appear.</p>
-
-            <div class="d4-two-forms">
-                <section><span class="d4-form-symbol">M</span><div><strong>Where does the data live?</strong><p>If half the rows equal zero, functions near zero should not be measured as if the column were uniform. <em>Mass</em> comes from training examples.</p></div></section>
-                <section><span class="d4-form-symbol">S</span><div><strong>Which changes are rough?</strong><p>On an ordered field, jumping between adjacent values is rough. On a cycle, the first and last values are neighbors. <em>Stiffness</em> comes from meaning.</p></div></section>
-            </div>
-
-            <p>The proposal is to combine them in one operator:</p>
-
-            <div class="d4-main-equation" aria-label="K equals M plus tau S">
-                <div><b>K</b><span>learning geometry</span></div><i>=</i><div><b>M</b><span>observed mass</span></div><i>+</i><div><b>τ S</b><span>semantic smoothness</span></div>
-            </div>
-
-            <p>The scalar <code>τ</code> says how strongly to trust the declared geometry. At <code>τ = 0</code>, the method only normalizes for where observations occur. As <code>τ</code> grows, rapidly oscillating functions become more expensive.</p>
+            <p>There was one loose end from Day 1. If many rows have exactly the same numerical value—an <em>atom</em>—do Q-PLE and T-PLE already handle it?</p>
 
             <figure class="wide-figure">
-                <div class="d4-smooth-demo" data-smooth-demo>
-                    <div class="d4-smooth-controls">
-                        <span class="d4-eyebrow">WHAT τ DOES</span>
-                        <h3 data-smooth-title>Mostly follow the observed pattern</h3>
-                        <label for="d4-tau">semantic smoothness <output data-tau-output>τ = 0.6</output></label>
-                        <input id="d4-tau" type="range" min="0" max="100" value="20" data-tau-range>
-                        <p data-smooth-note>Small local wiggles remain cheap; the declared neighborhood is only a gentle prior.</p>
-                    </div>
-                    <div class="d4-smooth-stage">
-                        <svg viewBox="0 0 640 300" role="img" aria-label="Illustration of increasing smoothness over an ordered field">
-                            <g class="d4-grid-lines"><line x1="55" y1="50" x2="600" y2="50"></line><line x1="55" y1="140" x2="600" y2="140"></line><line x1="55" y1="230" x2="600" y2="230"></line></g>
-                            <path data-tau-curve class="d4-smooth-curve" d="M65 200 C99 166 133 92 167 96 C201 100 235 205 269 188 C303 171 337 62 371 76 C405 90 439 207 473 184 C507 161 541 95 575 108"></path>
-                            <g class="d4-smooth-points"><circle cx="65" cy="210" r="7"></circle><circle cx="133" cy="92" r="7"></circle><circle cx="201" cy="212" r="7"></circle><circle cx="269" cy="175" r="7"></circle><circle cx="337" cy="58" r="7"></circle><circle cx="405" cy="203" r="7"></circle><circle cx="473" cy="187" r="7"></circle><circle cx="541" cy="88" r="7"></circle><circle cx="575" cy="120" r="7"></circle></g>
-                            <text x="55" y="275">small value</text><text x="600" y="275" text-anchor="end">large value</text>
-                        </svg>
-                    </div>
+                <div class="d4v-atom-figure">
+                    <section class="d4v-atom-ple"><span class="d4-eyebrow">PLE SEES A PILE</span><svg viewBox="0 0 420 210" role="img" aria-label="A piecewise linear curve passing through a pile of repeated observations"><path d="M35 170 L120 145 L205 90 L290 72 L385 38"></path><line x1="35" y1="180" x2="390" y2="180"></line><g><circle cx="205" cy="167" r="7"></circle><circle cx="205" cy="149" r="7"></circle><circle cx="205" cy="131" r="7"></circle><circle cx="205" cy="113" r="7"></circle><circle cx="205" cy="95" r="7"></circle></g><text x="205" y="204" text-anchor="middle">repeated value: 0</text></svg><p>A quantile knot or tree split can notice the mass. It still describes the value through an ordered, shared basis.</p></section>
+                    <div class="d4v-atom-plus">+</div>
+                    <section class="d4v-atom-id"><span class="d4-eyebrow">IDENTITY GIVES IT A NAME</span><div class="d4v-id-card"><small>known exact value</small><strong>0</strong><i>→</i><b>its own learned vector</b></div><p>Seen levels get a private residual embedding. Unseen levels get zero—not a guessed identity.</p></section>
                 </div>
-                <figcaption><strong>Figure 2.</strong> An intuition, not an experimental fit. Move the slider: <code>τ</code> changes which functions are easy, while the underlying function space stays the same.</figcaption>
+                <figcaption><strong>Figure 2.</strong> Seeing a concentration of rows is not the same as giving that exact state an independent parameter. The two mechanisms can coexist.</figcaption>
             </figure>
 
-            <p>This distinction matters. I am not adding target information or a more expressive basis. For finite <code>τ</code>, the model can represent the same piecewise-linear functions. I am changing the ruler used by initialization and regularization.</p>
+            <p>I held the exact-identity mechanism fixed and changed only the second model's chart: atom-aware T+Q versus atom-aware T+T. It improved validation log loss for MLP and ResNet, was effectively tied for FT-Transformer, and also helped an attention-plus-MLP hybrid.</p>
 
-            <div class="equation-card"><code>‖f‖²<sub>K</sub> = a<sup>⊤</sup>(M + τS)a</code><span>The coordinates <code>a</code> may change when we redraw the chart. The cost assigned to the underlying field function should not.</span></div>
-
-            <p>I call this construction <strong>FieldRiesz</strong>, after the Riesz map that turns a notion of function size into coordinates. The name is less important than the promise: <strong>rewriting the same field should not silently rewrite its learning prior.</strong></p>
-
-            <h2>The wrong geometry is the real baseline</h2>
-
-            <p>A smooth basis can win for uninteresting reasons: better scaling, different support points, or extra parameters. Ordinary piecewise-linear embedding (PLE), for example, turns a value into overlapping local bins. So the useful comparison is not “new encoding versus old encoding.” It is a ladder of increasingly annoying controls.</p>
-
-            <div class="d4-control-ladder" aria-label="Control ladder for FieldRiesz">
-                <section><i>1</i><div><strong>ordinary PLE</strong><small>established numerical embedding</small></div></section>
-                <section><i>2</i><div><strong>support only</strong><small>same train-only nodes, no new metric</small></div></section>
-                <section><i>3</i><div><strong>mass only</strong><small>same conditioning, τ = 0</small></div></section>
-                <section class="wrong"><i>4</i><div><strong>wrong neighbors</strong><small>same spectrum, randomized modes</small></div></section>
-                <section class="answer"><i>5</i><div><strong>declared neighbors</strong><small>must beat every earlier explanation</small></div></section>
+            <div class="d4v-atom-results" aria-label="Adult atom-aware T plus Q gains over atom-aware T plus T">
+                <section><span>MLP</span><strong>+0.372%</strong></section>
+                <section><span>ResNet</span><strong>+0.916%</strong></section>
+                <section class="tie"><span>FT-Transformer</span><strong>−0.015%</strong></section>
+                <section><span>Attention + MLP</span><strong>+0.293%</strong></section>
             </div>
 
-            <p>If mass alone wins, the discovery is conditioning. If correct and randomized geometry tie, the discovery is merely a favorable spectrum. Meaning earns credit only for the gap that remains after both controls.</p>
+            <div class="thesis"><strong>Atom lesson.</strong> Q-PLE and T-PLE can react to repeated values. A dedicated identity channel still changes the learning geometry—and chart diversity can help after identity is already present.</div>
 
-            <h2>The experiment split into two stories</h2>
+            <h2>The controls removed three tempting stories</h2>
 
-            <p>The broad performance story was disappointing. I compared against RAPLE, my stronger existing pipeline: an out-of-fold tree anchor followed by learned residual features and a neural model. Across five datasets, three backbones—MLP, ResNet, and TabM—and three seeds, there are 45 paired cells.</p>
+            <div class="d4v-failure-path" aria-label="Three failed hypotheses leading to the matched-compute experiment">
+                <section><span>contrastive alignment</span><strong>1 / 6 wins</strong><small>Bringing two whole-table views together blurred useful differences.</small></section>
+                <section><span>learned chart residual</span><strong>matched by T-only</strong><small>The extra network helped; the special chart was not the cause.</small></section>
+                <section><span>two-view fixed policy</span><strong>10 / 12 wins, gate failed</strong><small>One tiny baseline loss made a 50/50 mixture too fragile.</small></section>
+            </div>
+
+            <p>The third failure suggested a small correction: keep two ordinary T-PLE members as ballast, and replace only the third. This also gives the cleanest possible control.</p>
+
+            <h2>HeteroBag-3: replace one view, not one budget</h2>
 
             <figure class="wide-figure">
-                <div class="d4-scoreboard">
-                    <header><span class="d4-eyebrow">THE FULL 5 × 3 × 3 PANEL</span><strong>Does semantic FieldRiesz win?</strong></header>
-                    <div class="d4-score-row negative"><div><span>versus raw RAPLE</span><small>the performance baseline</small></div><strong>17 / 45</strong><b>−0.15%</b></div>
-                    <div class="d4-score-row"><div><span>versus mass only</span><small>does smoothness add value?</small></div><strong>29 / 45</strong><b>+0.24%</b></div>
-                    <div class="d4-score-row positive"><div><span>versus one wrong geometry</span><small>does neighbor identity matter?</small></div><strong>33 / 45</strong><b>+0.57%</b></div>
-                    <p>Win counts are paired dataset–model–seed cells. Percentages are mean relative loss improvements; positive favors semantic FieldRiesz.</p>
+                <div class="d4v-bag-figure" role="img" aria-label="HeteroBag-3 replaces one of three T-PLE ensemble members with Q-PLE for classification or midrank for regression">
+                    <section class="candidate"><header><span>PROPOSED</span><strong>representation diversity</strong></header><div class="d4v-model-row"><div class="t"><b>T</b><small>seed A</small></div><i>+</i><div class="t"><b>T</b><small>seed B</small></div><i>+</i><div class="alternate"><b>Q / R</b><small>seed C</small></div><i>→</i><div class="average"><b>⅓</b><small>average</small></div></div><p>Q-PLE for classification; midrank (<b>R</b>) for regression.</p></section>
+                    <div class="d4v-versus">same<br>compute</div>
+                    <section class="control"><header><span>CONTROL</span><strong>seed diversity</strong></header><div class="d4v-model-row"><div class="t"><b>T</b><small>seed A</small></div><i>+</i><div class="t"><b>T</b><small>seed B</small></div><i>+</i><div class="t"><b>T</b><small>seed C</small></div><i>→</i><div class="average"><b>⅓</b><small>average</small></div></div><p>Same architecture, active parameters, seeds, optimizer, and epochs.</p></section>
                 </div>
-                <figcaption><strong>Figure 3.</strong> Across all 45, semantic Riesz beats raw RAPLE in only 17 cells. This is not a broadly superior predictor. But the increasing advantage as controls become more specific leaves a narrower mechanism worth testing.</figcaption>
+                <figcaption><strong>Figure 3.</strong> The experiment asks one narrow question: is a different representation worth more than another initialization of the established one?</figcaption>
             </figure>
 
-            <p>The mechanism story was more encouraging. California Housing and Weather were the two datasets where the pilot suggested meaningful geometry. I repeatedly randomized the field-function modes while preserving the complete generalized spectrum relative to empirical mass—in plain language, the control kept the same menu of smooth and rough frequencies but reassigned what those frequencies meant. Correct geometry won <strong>80/90 control comparisons (+0.90%)</strong> across MLP, ResNet, and TabM. Averaging the five controls within each dataset–model–seed cell gave <strong>18/18</strong> wins.</p>
-
-            <div class="d4-evidence-zoom" aria-label="How the evidence narrows from broad performance to a selected mechanism and then a failed replication">
-                <section class="broad"><span>Broad panel</span><strong>17 / 45</strong><small>does not beat raw RAPLE</small></section>
-                <i>zoom in</i>
-                <section class="mechanism"><span>Selected mechanism stress</span><strong>80 / 90</strong><small>beats exact spectral controls</small></section>
-                <i>look away</i>
-                <section class="replication"><span>King County replication</span><strong>2 / 9</strong><small>beats raw RAPLE; mixed controls</small></section>
-            </div>
-
-            <p>That middle result sounds stronger than it is. <strong>California and Weather were selected after the broad pilot</strong>, so 80/90 is a stress test of the suspected mechanism—not 90 independent discoveries and not a confirmatory p-value. The independent, predeclared spatial replication on chronological King County did not reproduce California: 2/9 wins versus raw RAPLE, and −0.03% against the averaged exact-spectrum control.</p>
-
-            <div class="thesis"><strong>The result that survived.</strong> Meaningful mode assignment can matter after support, dimension, mass, and spectrum are fixed. I do not yet know a reliable, label-safe rule for when that difference improves prediction.</div>
-
-            <h2>A small formula for what the model still misses</h2>
-
-            <p>The most useful version does not replace the whole model. It begins with an out-of-fold anchor—such as a tree model—and asks whether a field contains a smooth pattern in the anchor’s remaining errors.</p>
-
-            <div class="d4-residual-flow" aria-label="Residual Riesz workflow">
-                <section><span>1</span><strong>anchor</strong><small>fit out of fold</small></section><i>→</i>
-                <section><span>2</span><strong>residual</strong><small>what it still misses</small></section><i>→</i>
-                <section><span>3</span><strong>field function</strong><small>smooth in declared geometry</small></section><i>→</i>
-                <section><span>4</span><strong>backbone</strong><small>MLP, ResNet, TabM, TabR…</small></section>
-            </div>
-
-            <div class="equation-card"><code>c = E[φ(X)r<sub>oof</sub>], &nbsp;&nbsp; h(x) = c<sup>⊤</sup>(M + τS)<sup>−1</sup>φ(x)</code><span><code>c</code> records how basis functions line up with the anchor residual. Applying <code>(M + τS)<sup>−1</sup></code> turns that evidence into the smoothest field function that explains it.</span></div>
-
-            <p>In ordinary language: <strong>find the simplest schema-respecting correction to what the strong baseline still gets wrong.</strong> At <code>τ = 0</code>, this is familiar Galerkin residual regression. Adding <code>S</code> is classical smoothing. The potential contribution is not the matrix inverse; it is the disciplined use of declared tabular semantics, chart covariance, and controls inside modern tabular pipelines.</p>
-
-            <h2>The method should begin with a diagnosis</h2>
-
-            <p>The negative results changed my preferred paper. A universal encoder asks one intervention to help everywhere. But Day 3 already produced a way to learn which arbitrary choice is hurting a pipeline.</p>
-
-            <p><strong>OrbitANOVA remains the primary ICLR direction.</strong> Its shortest description is: <em>arbitrary schema spelling is an unreported hyperparameter.</em> Refit a complete pipeline under meaning-preserving spellings, align the outputs, and measure how much its prediction wobbles.</p>
-
-            <div class="equation-card"><code>SR = E<sub>x,z</sub> ‖P<sub>z</sub>(x) − P̄(x)‖²</code><span>For squared and Brier loss, this schema risk is exactly the loss removed by averaging predictions over equivalent spellings. It can therefore be measured without evaluation labels after fitting.</span></div>
+            <p>I froze the rule and four new OpenML datasets before downloading their values or labels. There was no per-dataset view search and no test-dependent weight fitting.</p>
 
             <figure class="wide-figure">
-                <div class="d4-audit-loop">
-                    <div class="d4-loop-center"><span>THE PAPER CLAIM</span><strong>diagnosis should choose the repair</strong></div>
-                    <section class="one"><i>1</i><strong>Rewrite harmlessly</strong><small>orders, IDs, units, charts</small></section>
-                    <section class="two"><i>2</i><strong>Measure wobble</strong><small>in proper-loss units</small></section>
-                    <section class="three"><i>3</i><strong>Attribute it</strong><small>factors, interactions, seeds, tuning</small></section>
-                    <section class="four"><i>4</i><strong>Choose one action</strong><small>or abstain</small></section>
-                    <section class="five"><i>5</i><strong>Test elsewhere</strong><small>unseen levels and datasets</small></section>
+                <div class="d4v-result-map">
+                    <header><div><span class="d4-eyebrow">FROZEN PROSPECTIVE PANEL</span><strong>HeteroBag-3 versus T+T+T</strong></div><div class="d4v-headline"><b>10 / 12</b><small>test wins</small></div></header>
+                    <div class="d4v-matrix-head"><span>dataset</span><span>MLP</span><span>ResNet</span><span>FT</span><span>mean</span></div>
+                    <section><strong>Ionosphere<small>classification</small></strong><b class="loss">−0.85%</b><b>+1.13%</b><b>+3.81%</b><em>+1.36%</em></section>
+                    <section><strong>Diabetes<small>classification</small></strong><b>+0.97%</b><b class="loss">−0.74%</b><b>+2.19%</b><em>+0.81%</em></section>
+                    <section><strong>CPU Small<small>regression</small></strong><b>+0.03%</b><b>+0.64%</b><b>+0.28%</b><em>+0.32%</em></section>
+                    <section><strong>House-16H<small>regression</small></strong><b>+1.13%</b><b>+0.88%</b><b>+0.66%</b><em>+0.89%</em></section>
+                    <footer><span><b>+0.843%</b> mean test-loss reduction</span><span><b>4 / 4</b> positive dataset means</span><span><b>exact</b> parameter match</span></footer>
                 </div>
-                <figcaption><strong>Figure 4.</strong> The novelty is not another sensitivity score. It is the closed loop from a declared equivalence contract to an action whose benefit transfers beyond the audit used to choose it.</figcaption>
+                <figcaption><strong>Figure 4.</strong> Relative log-loss reduction for classification and RMSE reduction for regression. Green cells favor HeteroBag-3; coral cells favor three T-PLE seeds.</figcaption>
             </figure>
 
-            <p>The decomposition makes the intervention conditional:</p>
+            <p>The effect is modest, but unusually clean: +1.084% on classification, +0.602% on regression, and +0.843% overall. All six regression cells improve. More importantly, the result survives the control that killed the earlier multi-view story.</p>
 
-            <div class="d4-repair-map" aria-label="Mapping from diagnosed schema instability to candidate repair">
-                <div class="head"><span>dominant source of wobble</span><span>candidate response</span></div>
-                <section><strong>feature order</strong><i>→</i><span>symmetrize or average a balanced cover</span></section>
-                <section><strong>category or target IDs</strong><i>→</i><span>use an equivariant interface</span></section>
-                <section class="field"><strong>within-field chart</strong><i>→</i><span>FieldRiesz or a covariant optimizer</span></section>
-                <section><strong>schema × tuning</strong><i>→</i><span>pool validation over spellings, then freeze</span></section>
-                <section><strong>nothing stable</strong><i>→</i><span>abstain or use a generic ensemble</span></section>
+            <h2>What survived Day 4</h2>
+
+            <div class="d4v-takeaways">
+                <section><span>01</span><strong>Do not force agreement</strong><p>Different views are useful because they disagree. Full-row contrastive alignment can erase the diversity we wanted.</p></section>
+                <section><span>02</span><strong>Compare against another seed</strong><p>A second network is not evidence for a representation. Replace one member at fixed model count and compute.</p></section>
+                <section><span>03</span><strong>Separate atoms from order</strong><p>Repeated numerical states may deserve identities; ordered charts still contribute a different inductive bias.</p></section>
             </div>
 
-            <p>This synthesis gives FieldRiesz a better role. It is not “the new preprocessing method.” It is one closure the audit may choose when within-field coordinates dominate the risk. The scientific question becomes whether structured attribution chooses a better action than simpler alarms.</p>
+            <div class="thesis"><strong>Day 4 conclusion.</strong> A table does not need synthetic rows to gain useful augmentation. Render the same rows through several defensible coordinate systems, preserve their disagreement, and spend an ensemble slot on representation diversity.</div>
 
-            <h2>What is actually new?</h2>
-
-            <p>The mathematical ingredients have deep histories. Finite elements already use mass and stiffness matrices. Splines and graph Laplacians already express smoothness. Functional ANOVA already decomposes effects. Bregman information already relates prediction dispersion to loss. Recent tabular work studies numerical embeddings, preprocessing robustness, equivariance, strong tuned baselines, nearest-neighbor models, ensembles, and foundation models.</p>
-
-            <div class="d4-novelty">
-                <section><span class="d4-panel-label">Established</span><strong>The pieces</strong><p>Mass, stiffness, smoothing, Riesz maps, variance identities, fANOVA, and equivariance.</p></section>
-                <section><span class="d4-panel-label">Plausibly new</span><strong>The closed loop</strong><p>Declare equivalent schemas, price complete-pipeline risk, attribute it, and choose a matched repair.</p></section>
-                <section><span class="d4-panel-label">Still unearned</span><strong>The payoff</strong><p>A repair policy that transfers across datasets and improves loss at matched compute.</p></section>
-            </div>
-
-            <p>I would rate the direction about <strong>3.5/5 ready</strong>. If submitted today, my own decision would be weak reject: the composition is differentiated, but its broad prevalence and audit-guided action are promises. The bottleneck is demonstrated payoff, not another decorative theorem.</p>
-
-            <h2>The experiment that can kill the idea</h2>
-
-            <p>The decisive test gives four audits the same development cases, the same compute, and the same library of possible actions:</p>
-
-            <div class="d4-tournament">
-                <div class="audits"><span>PAIRWISE<br><small>violation count</small></span><span>PREF<br><small>single knob</small></span><span>VARIANCE<br><small>one scalar</small></span><span class="orbit">ORBITANOVA<br><small>structured causes</small></span></div>
-                <i>all choose from the same shelf</i>
-                <div class="actions"><span>abstain</span><span>seed ensemble</span><span>schema cover</span><span>pooled HPO</span><span>covariant closure</span></div>
-                <i>evaluate once, elsewhere</i>
-                <div class="finish"><strong>held-out loss − schema risk − resource cost</strong><small>unseen nuisance levels · unseen dataset–model cases</small></div>
-            </div>
-
-            <p>The panel should contain 12–15 datasets and modern families: MLP, ResNet, FT-Transformer, TabR, TabM, and—where their interface permits it—tabular foundation models. All model families from one dataset stay in the same outer fold. The dataset, not each seed or backbone, is the replication unit.</p>
-
-            <p>OrbitANOVA earns the larger claim only if its attribution changes which action is selected and improves the held-out loss–stability–resource frontier. If it does no better than a pairwise alarm, the honest reviewer summary is “PREF plus ANOVA,” and the project should shrink.</p>
-
-            <div class="d4-verdict">
-                <header><span>DAY 4 VERDICT</span><strong>Audit first. Intervene second.</strong></header>
-                <div>
-                    <section><strong>Primary paper · OrbitANOVA</strong><ul><li>clear risk-valued object</li><li>interactions with seeds and tuning</li><li>a decisive matched-budget action test</li></ul></section>
-                    <section><strong>Secondary mechanism · FieldRiesz</strong><ul><li>clean chart-covariant construction</li><li>selected-case geometry signal</li><li>no broad performance or selector yet</li></ul></section>
-                </div>
-            </div>
-
-            <div class="thesis"><strong>Day 4 conclusion.</strong> A feature is not the coordinates preprocessing happened to emit. It is a domain on which the model learns functions. Sometimes the domain has useful geometry; sometimes inventing one is harmful. The promising paper is not a method that always trusts geometry. It is an audit that learns which arbitrary choice matters, chooses the smallest repair, and proves that choice useful somewhere it has not already looked.</div>
-
-            <details class="d3q-details">
-                <summary>Technical and statistical boundaries</summary>
-                <div><p>All support nodes, mass matrices, and stiffness operators use training covariates only. Residual-Riesz uses labels only through out-of-fold anchor residuals, so a row never contributes its label to its own residual. Finite-τ charts span the same nonredundant centered piecewise-linear function space. Parameter counts are matched analytically. Node-permuted controls preserve ordinary stiffness spectra; the harder <code>M</code>-isospectral controls preserve generalized spectra relative to empirical mass. The 80/90 count reuses 18 fitted semantic cells against five controls each and is conditional on post-pilot dataset selection. King County was the predeclared spatial replication. Chart covariance is claimed for represented functions, penalties, and transported metric updates—not for identical AdamW trajectories under every rotation. The public numbers are research-pipeline results, not an official full TabReD leaderboard submission.</p></div>
-            </details>
+            <p><strong>HeteroBag-3 is a candidate method, not a finished paper.</strong> One prospective panel and one seed triplet are not enough. The next test is a second frozen panel with multiple triplets, stronger tuned ensembles, and an automatic rule for when numerical atoms deserve identities. But Day 4 finally isolates a value that ordinary extra capacity does not explain.</p>
 
             <h2>References</h2>
             <ol class="reference-list">
-                <li>Gorishniy et al. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/9e9f0ffc3d836836ca96cbf8fe14b105-Abstract-Conference.html">On Embeddings for Numerical Features in Tabular Deep Learning</a>. NeurIPS 2022.</li>
-                <li>Gorishniy et al. <a href="https://openreview.net/forum?id=rhgIgTSSxW">TabR: Tabular Deep Learning Meets Nearest Neighbors</a>. ICLR 2024.</li>
-                <li>Gorishniy et al. <a href="https://openreview.net/forum?id=Sd4wYYOhmY">TabM: Advancing Tabular Deep Learning with Parameter-Efficient Ensembling</a>. ICLR 2025.</li>
-                <li>Rubachev et al. <a href="https://openreview.net/forum?id=L14sqcrUC3">TabReD: Analyzing Pitfalls and Filling the Gaps in Tabular Deep Learning Benchmarks</a>. ICLR 2025.</li>
-                <li>Holzmüller et al. <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/2ee1c87245956e3eaa71aaba5f5753eb-Abstract.html">Better by Default: Strong Pre-Tuned MLPs and Boosted Trees on Tabular Data</a>. NeurIPS 2024.</li>
-                <li>Ye et al. <a href="https://openreview.net/forum?id=JytL2MrlLT">Revisiting Nearest Neighbor for Tabular Data</a>. ICLR 2025.</li>
-                <li>Qu et al. <a href="https://proceedings.mlr.press/v267/qu25d.html">TabICL: A Tabular Foundation Model for In-Context Learning on Large Data</a>. ICML 2025.</li>
-                <li>Arbel et al. <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/5a66c7adffdbde9dd5e78820cbf6935c-Abstract-Conference.html">EquiTabPFN</a>. NeurIPS 2025.</li>
-                <li>Gruber and Buettner. <a href="https://proceedings.mlr.press/v206/gruber23a.html">Uncertainty Estimates of Predictions via a General Bias-Variance Decomposition</a>. AISTATS 2023.</li>
-                <li>Lengerich et al. <a href="https://proceedings.mlr.press/v108/lengerich20a.html">Purifying Interaction Effects with the Functional ANOVA</a>. AISTATS 2020.</li>
-                <li>Liu et al. <a href="https://academic.oup.com/pnasnexus/article/5/6/pgag197/8699520">Robustness is important: limitations of LLMs for predictions on tabular data</a>. PNAS Nexus 2026.</li>
-                <li><a href="https://openreview.net/pdf?id=1JhhSxdBS1">Preprocessing Robustness in Heterogeneous Tabular Learning (PREF)</a>. TMLR submission, 2026.</li>
-                <li>Chernozhukov et al. <a href="https://proceedings.mlr.press/v162/chernozhukov22a.html">RieszNet and ForestRiesz</a>. ICML 2022.</li>
-                <li>Agarwal et al. <a href="https://proceedings.neurips.cc/paper/2021/hash/251bd0442dfcc53b5a761e050f8022b8-Abstract.html">Neural Additive Models</a>. NeurIPS 2021.</li>
-                <li>Otto et al. <a href="https://www.jmlr.org/papers/v26/24-1315.html">A Unified Framework to Enforce, Discover, and Promote Symmetry in Machine Learning</a>. JMLR 2025.</li>
+                <li id="ref-1">Gorishniy, Rubachev, and Babenko. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/9e9f0ffc3d836836ca96cbf8fe14b105-Paper-Conference.pdf">On Embeddings for Numerical Features in Tabular Deep Learning</a>. NeurIPS 2022.</li>
+                <li id="ref-2">Gorishniy, Kotelnikov, Rubachev, and Babenko. <a href="https://arxiv.org/abs/2607.05380">TabPack: Efficient Hyperparameter Ensembles for Tabular Deep Learning</a>. ICML 2026.</li>
+                <li id="ref-3"><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/HETEROPLE_REPORT.md">Day 4 HeteroPLE report</a>: frozen protocols, controls, and complete results.</li>
             </ol>
-
-            <p class="next-post"><strong>Full research record:</strong> <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/PORTFOLIO_NOVELTY_REVIEW.md">portfolio novelty review</a>, <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/ICLR_DIRECTION_FREEZE.md">direction freeze</a>, <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/day4.md">technical Day 4 write-up</a>, <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/THEORY_FIELDRIESZ.md">formal derivation</a>, and <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-04/results">results</a>.</p>
+            <p class="next-post"><strong>Previous:</strong> <a href="road-to-iclr-day-03.html">Day 3 shows why equivalent coordinates can have different difficulty.</a></p>
         </div>
     </article></main>
     <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>

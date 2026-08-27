@@ -1,0 +1,26 @@
+{
+  "claim": "Replacing one of three homogeneous T-PLE members with a fixed task-level alternate chart improves an equal-compute T-PLE bag across this frozen prospective panel.",
+  "clauses": {
+    "at_least_8_of_12_test_wins": true,
+    "exact_per_member_parameter_match": true,
+    "positive_dataset_mean_on_at_least_3_of_4": true,
+    "positive_mean_within_both_task_families": true,
+    "positive_overall_mean_relative_test_gain": true
+  },
+  "mean_relative_test_gain_pct": 0.8430600035979848,
+  "mean_relative_test_gain_pct_by_dataset": {
+    "openml-cpu-small-562": 0.3158026409421069,
+    "openml-diabetes-37": 0.8087569303017301,
+    "openml-house-16h-574": 0.8877989506326224,
+    "openml-ionosphere-59": 1.3598814925154803
+  },
+  "mean_relative_test_gain_pct_by_task": {
+    "classification": 1.084319211408605,
+    "regression": 0.6018007957873647
+  },
+  "median_relative_test_gain_pct": 0.7682413871512712,
+  "positive_dataset_means": 4,
+  "prospective_gate_passed": true,
+  "test_cells": 12,
+  "test_wins": 10
+}

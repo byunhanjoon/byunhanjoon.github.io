@@ -1,0 +1,97 @@
+{
+  "cells": [
+    {
+      "clears_cell_gate": true,
+      "dataset": "weather",
+      "model": "mlp",
+      "ple_adapter_val_rmse": 1.6785311166120152,
+      "ple_val_rmse": 1.679713523452515,
+      "semantic_gain_vs_adapter_pct": 0.20674688944748967,
+      "semantic_gain_vs_ple_pct": 0.27699471651213614,
+      "semantic_gain_vs_wrong_pct": 0.2625865128931838,
+      "semantic_local_val_rmse": 1.6750608057400116,
+      "semantic_noalign_val_rmse": 1.6790881158646993,
+      "semantic_wrong_val_rmse": 1.6794708697318974
+    },
+    {
+      "clears_cell_gate": true,
+      "dataset": "weather",
+      "model": "resnet",
+      "ple_adapter_val_rmse": 1.6643509116879525,
+      "ple_val_rmse": 1.664537453820957,
+      "semantic_gain_vs_adapter_pct": 0.027354186802621354,
+      "semantic_gain_vs_ple_pct": 0.03855796629661164,
+      "semantic_gain_vs_wrong_pct": 0.0032684523702467246,
+      "semantic_local_val_rmse": 1.6638956420305182,
+      "semantic_noalign_val_rmse": 1.6643280864340602,
+      "semantic_wrong_val_rmse": 1.66395002744463
+    },
+    {
+      "clears_cell_gate": false,
+      "dataset": "weather",
+      "model": "ft_transformer",
+      "ple_adapter_val_rmse": 1.6625219912472322,
+      "ple_val_rmse": 1.6619383559054508,
+      "semantic_gain_vs_adapter_pct": -0.057926744779117294,
+      "semantic_gain_vs_ple_pct": -0.09306483643343284,
+      "semantic_gain_vs_wrong_pct": -0.10562577208170605,
+      "semantic_local_val_rmse": 1.6634850361179987,
+      "semantic_noalign_val_rmse": 1.6612566996468328,
+      "semantic_wrong_val_rmse": 1.6617298211644818
+    },
+    {
+      "clears_cell_gate": false,
+      "dataset": "cooking-time",
+      "model": "mlp",
+      "ple_adapter_val_rmse": 0.4669258558424072,
+      "ple_val_rmse": 0.4669319479759117,
+      "semantic_gain_vs_adapter_pct": -0.00787579784631621,
+      "semantic_gain_vs_ple_pct": -0.00657097958853189,
+      "semantic_gain_vs_wrong_pct": 0.0010543339693641768,
+      "semantic_local_val_rmse": 0.46696262997890553,
+      "semantic_noalign_val_rmse": 0.46693993161044334,
+      "semantic_wrong_val_rmse": 0.4669675533764467
+    },
+    {
+      "clears_cell_gate": true,
+      "dataset": "cooking-time",
+      "model": "resnet",
+      "ple_adapter_val_rmse": 0.46777159598209933,
+      "ple_val_rmse": 0.46776634782958687,
+      "semantic_gain_vs_adapter_pct": 0.01443193812622517,
+      "semantic_gain_vs_ple_pct": 0.013310139791076724,
+      "semantic_gain_vs_wrong_pct": 0.01874071718012002,
+      "semantic_local_val_rmse": 0.46770408747479514,
+      "semantic_noalign_val_rmse": 0.4678074151332438,
+      "semantic_wrong_val_rmse": 0.46779175500459247
+    },
+    {
+      "clears_cell_gate": false,
+      "dataset": "cooking-time",
+      "model": "ft_transformer",
+      "ple_adapter_val_rmse": 0.46979593459346486,
+      "ple_val_rmse": 0.46947596365023136,
+      "semantic_gain_vs_adapter_pct": -0.1362014374344422,
+      "semantic_gain_vs_ple_pct": -0.20444918025099668,
+      "semantic_gain_vs_wrong_pct": -0.2335923564194208,
+      "semantic_local_val_rmse": 0.47043580340938973,
+      "semantic_noalign_val_rmse": 0.4693401265013964,
+      "semantic_wrong_val_rmse": 0.4693394622997974
+    }
+  ],
+  "decision": "Do not inspect Weather/Cooking test metrics, do not transfer to Delivery ETA, and stop the field-local contrastive branch.",
+  "predeclared_gate": {
+    "cleared_cells": 3,
+    "passed": false,
+    "required_cells": 5,
+    "rule": "semantic_local must have lower validation RMSE than PLE, the parameter-matched PLE adapter, and semantic_wrong_local in at least 5/6 Weather/Cooking architecture cells"
+  },
+  "semantic_local": {
+    "mean_gain_vs_ple_pct": 0.004129637721143849,
+    "mean_gain_vs_wrong_geometry_pct": -0.008928018681368693,
+    "wins_vs_ple": 3,
+    "wins_vs_wrong_geometry": 4
+  },
+  "status": "stop_branch",
+  "test_metrics_computed": false
+}

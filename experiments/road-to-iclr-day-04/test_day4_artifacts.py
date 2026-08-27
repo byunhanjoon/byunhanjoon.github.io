@@ -190,8 +190,8 @@ def test_synthetic_completion_is_only_a_designed_sanity_check() -> None:
 def test_all_machine_readable_artifacts_are_structurally_valid() -> None:
     csv_paths = sorted(HERE.rglob("*.csv"))
     json_paths = sorted(HERE.rglob("*.json"))
-    assert len(csv_paths) == 134
-    assert len(json_paths) == 70
+    assert len(csv_paths) == 249
+    assert len(json_paths) == 196
 
     row_count = 0
     for path in csv_paths:
@@ -209,11 +209,86 @@ def test_all_machine_readable_artifacts_are_structurally_valid() -> None:
                 }
                 assert normalized_values.isdisjoint(NONFINITE_TEXT), path
                 row_count += 1
-    assert row_count == 19_104
+    assert row_count == 20_310
 
     for path in json_paths:
         payload = json.loads(path.read_text(), object_pairs_hook=unique_json_object)
         assert_finite_json(payload, path)
+
+
+def test_trichart_confirmation_and_claim_boundary() -> None:
+    decision = json.loads((RESULTS / "trichart_decision.json").read_text())
+    assert decision["cells"] == 33
+    assert decision["validation_wins_vs_qple"] == 29
+    assert decision["validation_wins_vs_tple"] == 28
+    assert decision["validation_wins_vs_both"] == 26
+    assert decision["mean_validation_gain_vs_qple_pct"] == pytest.approx(
+        0.3254323023
+    )
+    assert decision["mean_validation_gain_vs_tple_pct"] == pytest.approx(
+        0.2890504716
+    )
+    assert decision["confirmation_gate_passed"] is False
+
+    summary = {
+        row["dataset"]: row
+        for row in csv.DictReader(
+            (RESULTS / "trichart_summary_by_dataset.csv").open()
+        )
+    }
+    assert float(summary["maps-routing"]["mean_gain_vs_tple_pct"]) < 0
+    assert all(
+        float(summary[dataset]["mean_gain_vs_qple_pct"]) > 0
+        for dataset in summary
+    )
+
+
+def test_frozen_anchor_trichart_regression_and_classification() -> None:
+    decision = json.loads(
+        (RESULTS / "trichart_frozen_anchor_decision.json").read_text()
+    )
+    regression = decision["regression"]
+    assert regression["gate_passed"] is True
+    assert regression["cells"] == 33
+    assert regression["validation_safe_cells"] == 33
+    assert regression["strict_validation_wins"] == 25
+    assert regression["epoch_zero_fallbacks"] == 8
+    assert regression["mean_validation_gain_pct"] == pytest.approx(
+        0.2947423601
+    )
+    assert regression["descriptive_test_wins"] == 21
+    assert regression["datasets_with_positive_mean_test_gain"] == 4
+
+    classification = decision["classification"]
+    assert classification["gate_passed"] is True
+    assert classification["cells"] == 27
+    assert classification["validation_safe_cells"] == 27
+    assert classification["substantive_validation_wins"] == 26
+    assert classification["test_wins"] == 26
+    assert classification["datasets_with_positive_mean_test_gain"] == 3
+    assert classification["mean_validation_gain_pct"] == pytest.approx(
+        0.6432326395
+    )
+
+    adult = decision["adult_exact_support"]
+    assert adult["architectures"] == 3
+    assert adult["trichart_beats_selected_exact_support_on_validation"] == 0
+    assert adult["mean_trichart_minus_exact_validation_log_loss"] == pytest.approx(
+        0.0115679704
+    )
+
+
+def test_universal_rank_and_interval_stopping_decisions() -> None:
+    decision = json.loads((RESULTS / "universal_rank_decision.json").read_text())
+    confirmation = decision["universal_midrank_confirmation"]
+    assert confirmation["cells"] == 33
+    assert confirmation["validation_wins_vs_qple"] == 18
+    assert confirmation["validation_wins_vs_tple"] == 18
+    assert confirmation["confirmation_gate_passed"] is False
+    interval = decision["interval_rank"]
+    assert interval["development_gate_passed"] is True
+    assert interval["transfer_wins"] == 0
+    assert interval["transfer_passed"] is False
 
 
 def test_public_post_metadata_and_local_links() -> None:
@@ -226,12 +301,12 @@ def test_public_post_metadata_and_local_links() -> None:
     metadata = parser.json_ld[0]
     assert isinstance(metadata, dict)
     assert_finite_json(metadata, PUBLIC_POST)
-    assert metadata["headline"] == "A Feature Is a Domain"
-    assert "OrbitANOVA remains the primary" in html
-    assert "FieldRiesz" in html
-    assert "Across all 45, semantic Riesz beats raw RAPLE in only 17" in html
-    assert "80/90 control comparisons (+0.90%)" in html
-    assert "California and Weather were selected after the broad pilot" in html
+    assert metadata["headline"] == "Same Table, Different Views"
+    assert "HeteroBag-3" in html
+    assert "10 / 12" in html
+    assert "+0.843%" in html
+    assert "same architecture, active parameters, seeds, optimizer, and epochs" in html.lower()
+    assert "Atom lesson" in html
 
     missing = []
     for reference in [*parser.hrefs, *parser.srcs]:
@@ -281,7 +356,7 @@ def test_markdown_claims_match_the_frozen_portfolio_decision() -> None:
 
 def test_markdown_local_links_resolve() -> None:
     markdown_paths = sorted(HERE.glob("*.md"))
-    assert len(markdown_paths) == 7
+    assert len(markdown_paths) == 15
 
     missing: list[tuple[Path, str]] = []
     for path in markdown_paths:

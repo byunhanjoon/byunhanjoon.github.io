@@ -1,0 +1,24 @@
+{
+  "joint_gate_passed": true,
+  "method": "frozen T-PLE anchor plus parameter-matched zero-start T-PLE residual",
+  "prospective_validation_only": true,
+  "tasks": {
+    "classification": {
+      "cells": 6,
+      "gate_passed": true,
+      "mean_validation_gain_pct": 1.673238731023556,
+      "positive_datasets": 2,
+      "safe_cells": 6,
+      "strict_wins": 6
+    },
+    "regression": {
+      "cells": 6,
+      "gate_passed": true,
+      "mean_validation_gain_pct": 2.8654484457750424,
+      "positive_datasets": 2,
+      "safe_cells": 6,
+      "strict_wins": 6
+    }
+  },
+  "test_metrics_opened": false
+}

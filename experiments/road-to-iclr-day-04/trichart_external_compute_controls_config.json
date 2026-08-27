@@ -1,0 +1,9 @@
+{
+  "frozen_at": "2026-08-28T00:05:00+09:00",
+  "timing_note": "Frozen after the cascade's prospective test was opened, but before training either compute/capacity control.",
+  "independent_ensemble": "Train a second independent T-PLE model with the residual branch's parameter budget and seed offset, then average its prediction with the original anchor.",
+  "wide_single_model": "Train one T-PLE model matched to the combined anchor-plus-residual parameter count.",
+  "training_budget": "The ensemble matches the cascade's two training phases; the wide model matches allocated parameter capacity but uses one training phase.",
+  "validation_gate": "The cascade must beat each control in at least 7/12 validation cells, have positive mean paired gain against each control, and have positive mean paired gain against each control within both task families.",
+  "test_role": "Descriptive because the cascade test metrics were already opened before these controls were frozen."
+}

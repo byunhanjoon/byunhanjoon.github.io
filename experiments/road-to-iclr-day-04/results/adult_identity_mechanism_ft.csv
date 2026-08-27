@@ -1,0 +1,2 @@
+dataset,model,method,seed,selected_columns,parameters,target_parameters,matched_width,matched_ft_feedforward_width,best_epoch,val_log_loss,val_auc,val_accuracy,test_log_loss,test_auc,test_accuracy,mean_support_gate,train_seconds
+adult,ft_transformer,qple,20260827,0;2;3;4;5,16271,16262,128,159,25,0.3024158531949905,0.9155055740698707,0.8555197297712268,0.30560969668806903,0.9121715186259239,0.8591609851974694,0.0,57.81650148006156

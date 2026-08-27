@@ -1,0 +1,10 @@
+{
+  "dataset_gates": {
+    "cooking-time": false,
+    "weather": false
+  },
+  "development_cells": 6,
+  "method_gate_passed": false,
+  "passing_cells": 0,
+  "transfer_authorized": false
+}

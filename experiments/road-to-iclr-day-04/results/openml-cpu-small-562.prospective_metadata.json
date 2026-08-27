@@ -1,0 +1,26 @@
+{
+  "categorical_fields": [],
+  "numeric_fields": [
+    "lread",
+    "lwrite",
+    "scall",
+    "sread",
+    "swrite",
+    "fork",
+    "exec",
+    "rchar",
+    "wchar",
+    "runqsz",
+    "freemem",
+    "freeswap"
+  ],
+  "openml_data_id": 562,
+  "openml_name": "cpu_small",
+  "rows": 8192,
+  "split_sizes": {
+    "test": 1639,
+    "train": 4914,
+    "val": 1639
+  },
+  "task": "regression"
+}

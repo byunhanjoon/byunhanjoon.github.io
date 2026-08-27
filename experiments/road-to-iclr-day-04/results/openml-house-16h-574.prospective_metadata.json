@@ -1,0 +1,30 @@
+{
+  "categorical_fields": [],
+  "numeric_fields": [
+    "P1",
+    "P5p1",
+    "P6p2",
+    "P11p4",
+    "P14p9",
+    "P15p1",
+    "P15p3",
+    "P16p2",
+    "P18p2",
+    "P27p4",
+    "H2p2",
+    "H8p2",
+    "H10p1",
+    "H13p1",
+    "H18pA",
+    "H40p4"
+  ],
+  "openml_data_id": 574,
+  "openml_name": "house_16H",
+  "rows": 22784,
+  "split_sizes": {
+    "test": 4557,
+    "train": 13670,
+    "val": 4557
+  },
+  "task": "regression"
+}

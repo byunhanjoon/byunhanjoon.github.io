@@ -1,0 +1,87 @@
+{
+  "cuda": "NVIDIA H100 NVL",
+  "datasets": {
+    "weather": {
+      "binary_fields": 3,
+      "categorical_cardinalities": [],
+      "cyclic_fields": [
+        {
+          "column": 95,
+          "name": "day_of_week",
+          "origin_from_train": 1.0,
+          "period": 7.0
+        },
+        {
+          "column": 96,
+          "name": "day_of_month",
+          "origin_from_train": 1.0,
+          "period": 31.0
+        },
+        {
+          "column": 97,
+          "name": "minute_of_day",
+          "origin_from_train": 0.0,
+          "period": 1440.0
+        },
+        {
+          "column": 98,
+          "name": "hour_of_day",
+          "origin_from_train": 0.0,
+          "period": 24.0
+        },
+        {
+          "column": 99,
+          "name": "month",
+          "origin_from_train": 1.0,
+          "period": 12.0
+        }
+      ],
+      "full_split_sizes": {
+        "test": 40840,
+        "train": 340596,
+        "val": 42359
+      },
+      "numerical_fields": 100,
+      "used_split_sizes": {
+        "test": 15000,
+        "train": 50000,
+        "val": 15000
+      }
+    }
+  },
+  "protocol": {
+    "alignment_weight": 0.01,
+    "batch_size": 512,
+    "d_token": 16,
+    "datasets": [
+      "weather"
+    ],
+    "depth": 2,
+    "device": "cuda:0",
+    "epochs": 20,
+    "learning_rate": 0.001,
+    "max_eval_rows": 15000,
+    "max_train_rows": 50000,
+    "methods": [
+      "ple",
+      "topology",
+      "topology_wrong",
+      "multiview_noalign",
+      "multiview_vicreg",
+      "multiview_wrong"
+    ],
+    "models": [
+      "mlp"
+    ],
+    "n_bins": 16,
+    "output": "results/semantic_multiview_weather_mlp.csv",
+    "patience": 4,
+    "sample_seed": 20260827,
+    "seeds": [
+      20260827
+    ],
+    "weight_decay": 0.0001,
+    "width": 128
+  },
+  "torch": "2.7.0+cu126"
+}

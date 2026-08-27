@@ -1,0 +1,10 @@
+{
+  "architecture_gate_passed": false,
+  "dataset_gates": {
+    "cooking-time": false,
+    "weather": false
+  },
+  "development_cells": 6,
+  "passing_development_cells": 1,
+  "transfer_authorized": false
+}

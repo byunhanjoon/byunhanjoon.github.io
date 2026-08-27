@@ -1,0 +1,22 @@
+{
+  "categorical_fields": [],
+  "numeric_fields": [
+    "preg",
+    "plas",
+    "pres",
+    "skin",
+    "insu",
+    "mass",
+    "pedi",
+    "age"
+  ],
+  "openml_data_id": 37,
+  "openml_name": "diabetes",
+  "rows": 768,
+  "split_sizes": {
+    "test": 154,
+    "train": 460,
+    "val": 154
+  },
+  "task": "classification"
+}

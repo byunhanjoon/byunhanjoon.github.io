@@ -1,0 +1,32 @@
+{
+  "categorical_fields": [],
+  "numeric_fields": [
+    "climbRate",
+    "Sgz",
+    "p",
+    "q",
+    "curRoll",
+    "absRoll",
+    "diffClb",
+    "diffRollRate",
+    "diffDiffClb",
+    "SaTime1",
+    "SaTime2",
+    "SaTime3",
+    "SaTime4",
+    "diffSaTime1",
+    "diffSaTime2",
+    "diffSaTime3",
+    "diffSaTime4",
+    "Sa"
+  ],
+  "openml_data_id": 216,
+  "openml_name": "elevators",
+  "rows": 16599,
+  "split_sizes": {
+    "test": 3320,
+    "train": 9959,
+    "val": 3320
+  },
+  "task": "regression"
+}

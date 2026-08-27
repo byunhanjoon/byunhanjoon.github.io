@@ -1,0 +1,84 @@
+{
+  "config": {
+    "architectures": [
+      "mlp",
+      "resnet",
+      "ft_transformer"
+    ],
+    "batch_size": 512,
+    "consistency_weight": 0.1,
+    "cycle_gate_logit": -2.0,
+    "d_token": 16,
+    "depth": 2,
+    "development_datasets": [
+      "weather",
+      "cooking-time"
+    ],
+    "development_gate": "at least one shared variant must beat both typed Q-PLE and typed T-PLE on validation RMSE in at least 4/6 cells and have positive mean gain versus both",
+    "dropout": 0.1,
+    "epochs": 20,
+    "frequency_modes": 8,
+    "frozen_at": "2026-08-27T15:03:00+09:00",
+    "ft_feedforward_width": 64,
+    "fusion": "one tokenizer per view, one shared backbone, equal prediction average",
+    "hypothesis": "Q-PLE, T-PLE, and type-agnostic empirical-midrank views have complementary errors; supervised shared-backbone training can retain the gain of an independent equal ensemble with fewer backbone parameters.",
+    "independent_ensemble_reference": "the frozen equal average of separately trained rank/Q/T systems; it is evidence for complementarity, not the shared model baseline",
+    "learning_rate": 0.001,
+    "max_eval_rows": 15000,
+    "max_train_rows": 50000,
+    "methods": [
+      "shared_noalign",
+      "shared_consistency"
+    ],
+    "patience": 4,
+    "qple_bins": 16,
+    "rank_ple_bins": 16,
+    "rare_hash_buckets": 16,
+    "sample_seed": 20260827,
+    "seed": 20260828,
+    "shared_consistency_loss": "mean supervised MSE plus 0.1 times mean squared deviation from the per-row three-view prediction mean",
+    "shared_noalign_loss": "mean supervised MSE over the three view predictions",
+    "support_cardinality_max": 128,
+    "top_exact_levels": 32,
+    "tple_bins": 16,
+    "tple_min_impurity_decrease": 0.0,
+    "tple_min_samples_leaf": 32,
+    "transfer_datasets": [
+      "delivery-eta",
+      "maps-routing"
+    ],
+    "views": [
+      "typed_qple",
+      "typed_tple",
+      "universal_midrank_ple"
+    ],
+    "weight_decay": 0.0001,
+    "width": 128
+  },
+  "datasets": {
+    "cooking-time": {
+      "full_split_sizes": {
+        "test": 41648,
+        "train": 227087,
+        "val": 51251
+      },
+      "n_fields": 192
+    },
+    "delivery-eta": {
+      "full_split_sizes": {
+        "test": 36927,
+        "train": 279415,
+        "val": 34174
+      },
+      "n_fields": 223
+    },
+    "weather": {
+      "full_split_sizes": {
+        "test": 40840,
+        "train": 340596,
+        "val": 42359
+      },
+      "n_fields": 103
+    }
+  }
+}

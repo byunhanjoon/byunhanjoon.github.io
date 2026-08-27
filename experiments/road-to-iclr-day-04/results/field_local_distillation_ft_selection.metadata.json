@@ -1,0 +1,96 @@
+{
+  "cuda": "NVIDIA H100 NVL",
+  "datasets": {
+    "cooking-time": {
+      "cyclic_fields": [
+        {
+          "column": 183,
+          "name": "day_of_week",
+          "period": 7.0
+        },
+        {
+          "column": 184,
+          "name": "minute_of_day",
+          "period": 1440.0
+        },
+        {
+          "column": 185,
+          "name": "hour_of_day",
+          "period": 24.0
+        }
+      ],
+      "test_rows_loaded_but_never_evaluated": 15000,
+      "used_train_rows": 50000,
+      "used_validation_rows": 15000
+    },
+    "weather": {
+      "cyclic_fields": [
+        {
+          "column": 95,
+          "name": "day_of_week",
+          "period": 7.0
+        },
+        {
+          "column": 96,
+          "name": "day_of_month",
+          "period": 31.0
+        },
+        {
+          "column": 97,
+          "name": "minute_of_day",
+          "period": 1440.0
+        },
+        {
+          "column": 98,
+          "name": "hour_of_day",
+          "period": 24.0
+        },
+        {
+          "column": 99,
+          "name": "month",
+          "period": 12.0
+        }
+      ],
+      "test_rows_loaded_but_never_evaluated": 15000,
+      "used_train_rows": 50000,
+      "used_validation_rows": 15000
+    }
+  },
+  "protocol": {
+    "batch_size": 512,
+    "d_token": 16,
+    "datasets": [
+      "weather",
+      "cooking-time"
+    ],
+    "depth": 2,
+    "device": "cuda:1",
+    "epochs": 20,
+    "learning_rate": 0.001,
+    "local_weight": 0.1,
+    "max_eval_rows": 15000,
+    "max_train_rows": 50000,
+    "methods": [
+      "ple",
+      "ple_adapter",
+      "semantic_noalign",
+      "semantic_local",
+      "semantic_wrong_local"
+    ],
+    "models": [
+      "ft_transformer"
+    ],
+    "n_bins": 16,
+    "output": "experiments/road-to-iclr-day-04/results/field_local_distillation_ft_selection.csv",
+    "patience": 4,
+    "sample_seed": 20260827,
+    "seeds": [
+      20260827
+    ],
+    "weight_decay": 0.0001,
+    "width": 128
+  },
+  "selection_only": true,
+  "test_metrics_computed": false,
+  "torch": "2.7.0+cu126"
+}

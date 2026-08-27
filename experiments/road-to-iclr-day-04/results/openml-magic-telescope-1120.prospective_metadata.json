@@ -1,0 +1,24 @@
+{
+  "categorical_fields": [],
+  "numeric_fields": [
+    "fLength:",
+    "fWidth:",
+    "fSize:",
+    "fConc:",
+    "fConc1:",
+    "fAsym:",
+    "fM3Long:",
+    "fM3Trans:",
+    "fAlpha:",
+    "fDist:"
+  ],
+  "openml_data_id": 1120,
+  "openml_name": "MagicTelescope",
+  "rows": 19020,
+  "split_sizes": {
+    "test": 3804,
+    "train": 11412,
+    "val": 3804
+  },
+  "task": "classification"
+}

@@ -33,6 +33,28 @@ then tells us which nuisance to pool, cover, or make covariant. The identities
 are established mathematics. The plausible novelty is this complete
 measurement-to-action chain for the schema quotient.
 
+### Late neural continuation: the honest result
+
+The later LightGBM-free experiments tested contrastive alignment, exact atom
+tokens, multi-chart residuals, and equal-compute ensembles on MLP, ResNet, and
+FT-Transformer. Full-row contrastive learning and the broad automatic atom
+rules failed. A safe Q/rank residual initially looked general, but an
+independent T-PLE residual matched it; that result was extra model capacity,
+not established representation value.
+
+The surviving controlled signal is narrower. On Adult, where exact numerical
+identities are already known to matter, atom-aware T+Q beats atom-aware T+T in
+2/3 frozen validation cells (+0.424% mean log-loss reduction). It is also
+positive in a post-gate attention+MLP hybrid (+0.293%). Thus Q/T coordinate
+diversity can add after atoms are explicitly modeled. A broader fixed policy
+won 10/12 prospective test cells but failed its predeclared mean-gain clauses,
+so it was not promoted. A final exact-compute correction keeps two T-PLE
+members and replaces only the third with Q-PLE for classification or empirical
+midrank for regression. This **HeteroBag-3** method passes a new frozen OpenML
+panel: 10/12 test wins, +0.843% mean gain, positive means in classification and
+regression, and positive dataset means on 4/4 datasets. The full accounting is in
+[`HETEROPLE_REPORT.md`](HETEROPLE_REPORT.md).
+
 I call the construction **FieldRiesz**. The paper-level framing is **fields,
 not features**: a table schema should specify domains and admissible function
 priors, not merely storage types and coordinates.
@@ -452,6 +474,72 @@ general selector: the analogous positive top-8 Weather rule loses both raw
 RAPLE and anchor-only in both backbone means. Because the score itself uses the
 semantic operator, it also cannot be reused as unbiased evidence that semantics
 beat the control; it is a performance localizer only.
+
+## Late Day 4: a neural-only contrastive test
+
+I also tested the most direct LightGBM-free version of “bring different
+representations of the same table together.” Every row receives a quantile PLE
+view and a topology view: empirical-rank cosine modes for ordered fields,
+Fourier modes for explicitly cyclic fields, and unordered embeddings for
+nominal fields. Both views share an MLP, ResNet, or field-token
+FT-Transformer. A VICReg-style loss aligns the two row latents. The controls
+are the same two-view model without alignment and an aligned model whose cyclic
+phase cells are permuted.
+
+The result is negative as a general method. On fixed official-temporal Weather
+and Cooking Time subsets, semantic alignment beats PLE in only 1/6
+dataset–backbone cells, with -0.69% mean RMSE gain. Correct cyclic geometry
+beats the permuted control in 4/6 cells but by only +0.03% on average. The one
+visible win—Weather MLP, +1.04% versus PLE—cannot support a semantic claim
+because wrong geometry retains +0.99%.
+
+This changes the next experiment. Full-row alignment is too coarse when only
+three to five of 103–192 fields have declared cyclic meaning. If continued,
+the method should keep exact PLE as its deployed path and add only a
+zero-initialized, field-local semantic residual with a local paired loss. It
+must beat a parameter-matched ordinary adapter and the wrong-geometry residual
+on validation before any more test sets are opened. The full protocol and
+table are in
+[`SEMANTIC_MULTIVIEW_REPORT.md`](SEMANTIC_MULTIVIEW_REPORT.md).
+
+I ran that gate. The field-local model begins as exact PLE, adds
+zero-initialized residuals only to the declared cyclic fields, and locally
+distills the Fourier token toward a stop-gradient PLE token. It cleared only
+3/6 validation cells, below the predeclared 5/6 threshold. Its mean validation
+gain over PLE was +0.004%, and correct geometry was -0.009% worse than the
+permuted control on average. I therefore did not compute Weather/Cooking test
+metrics or transfer to Delivery ETA. The validation-only record is in
+[`FIELD_LOCAL_DISTILLATION_REPORT.md`](FIELD_LOCAL_DISTILLATION_REPORT.md), and
+the contrastive branch stops here.
+
+## Late Day 4: a safe multi-chart residual
+
+The broader neural search did produce one performance-bearing method, but from
+chart complementarity rather than cyclic contrastive geometry or GAN-generated
+rows. Q-PLE, T-PLE, and empirical-midrank PLE win on different cells. An
+initial shared-backbone TriChart model was broadly useful but missed its strict
+gate because Maps Routing remained negative against T-PLE on average.
+
+The successful correction is **AnchorTriChart**. It trains and freezes a
+parameter-matched T-PLE predictor, then learns a separate residual from
+`0.5*((Q-T)+(midrank-T))` token differences. Its scalar residual gate is exactly
+zero at initialization, and epoch zero remains eligible in validation early
+stopping. The method can therefore return the untouched T-PLE anchor.
+
+Across three seeds, four temporal regression datasets, and MLP, ResNet, and
+FT-Transformer where practical, all 33 cells are validation-safe, 25 are strict
+wins, and the mean relative RMSE gain is +0.295%. Descriptive test gain is
+positive on every dataset (+0.343% overall, 21/33 wins). A separate binary-
+classification confirmation on Adult, Churn, and Higgs-small is validation-safe
+in all 27 cells, with 26 substantive validation wins and 26 test wins; mean
+relative log-loss gains are +0.643% validation and +0.624% test.
+
+This does not erase the Day 1 atom result. On Adult, exact-support T-PLE remains
+better in all three architectures, by 0.0116 validation log-loss on average.
+The clean interpretation is that exact level identity is a strong specialized
+Adult mechanism, while the frozen multi-chart residual is the transferable
+one. Full protocols, the training-parity correction, and machine-readable
+tables are in [`TRICHART_REPORT.md`](TRICHART_REPORT.md).
 
 ## ICLR verdict
 

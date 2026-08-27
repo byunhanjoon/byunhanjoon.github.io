@@ -1,0 +1,33 @@
+{
+  "adult_exact_support": {
+    "architectures": 3,
+    "conclusion": "The chart residual complements T-PLE on Adult but does not replace exact atom identity.",
+    "mean_trichart_minus_exact_validation_log_loss": 0.011567970418314108,
+    "trichart_beats_selected_exact_support_on_validation": 0
+  },
+  "claim": "The frozen-anchor chart residual is a validation-safe, architecture-agnostic complement to T-PLE across the tested regression and binary-classification panels. Adult exact support remains a stronger specialized atom mechanism.",
+  "classification": {
+    "cells": 27,
+    "datasets_with_positive_mean_test_gain": 3,
+    "gate_passed": true,
+    "mean_test_gain_pct": 0.6239825821581148,
+    "mean_test_log_loss_gain": 0.002365910269714783,
+    "mean_validation_gain_pct": 0.64323263947022,
+    "mean_validation_log_loss_gain": 0.00243454825092072,
+    "substantive_validation_wins": 26,
+    "test_wins": 26,
+    "validation_safe_cells": 27
+  },
+  "method": "frozen T-PLE anchor plus zero-start Q/midrank chart residual",
+  "regression": {
+    "cells": 33,
+    "datasets_with_positive_mean_test_gain": 4,
+    "descriptive_test_wins": 21,
+    "epoch_zero_fallbacks": 8,
+    "gate_passed": true,
+    "mean_descriptive_test_gain_pct": 0.3432998113224755,
+    "mean_validation_gain_pct": 0.2947423601324906,
+    "strict_validation_wins": 25,
+    "validation_safe_cells": 33
+  }
+}

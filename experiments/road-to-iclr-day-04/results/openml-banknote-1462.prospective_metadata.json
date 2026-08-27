@@ -1,0 +1,18 @@
+{
+  "categorical_fields": [],
+  "numeric_fields": [
+    "V1",
+    "V2",
+    "V3",
+    "V4"
+  ],
+  "openml_data_id": 1462,
+  "openml_name": "banknote-authentication",
+  "rows": 1372,
+  "split_sizes": {
+    "test": 275,
+    "train": 822,
+    "val": 275
+  },
+  "task": "classification"
+}

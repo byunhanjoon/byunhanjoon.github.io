@@ -1,0 +1,13 @@
+{
+  "frozen_at": "2026-08-27T20:30:00+09:00",
+  "question": "Does the Q/T/midrank chart-difference residual outperform an equally large second T-PLE residual model, or is the gain explained by extra neural capacity?",
+  "control": "Freeze the identical trained T-PLE anchor, then train an independent T-PLE tokenizer and same-family residual backbone behind the same exactly-zero scalar gate.",
+  "capacity_match": "Adjust MLP/ResNet width or FT feed-forward width to minimize the difference in trainable parameters versus AnchorTriChart's residual branch.",
+  "training_match": "Use the identical optimizer, schedule, loaders, validation fallback, seed offset, and anchor recipe as AnchorTriChart.",
+  "regression_pilot_gate": "AnchorTriChart must have lower validation error than the T-only capacity control in at least 6/11 seed-27 cells, positive mean paired validation gain, and positive mean paired validation gain on at least 3/4 datasets before classification controls or new-data transfer.",
+  "gated_followup_frozen_after_control": "Keep frozen-anchor T tokens as the residual base and add per-field exactly-zero Q-minus-T and midrank-minus-T gates; match total gradient-bearing residual parameters to the same capacity target.",
+  "gated_followup_gate": "The gated residual must beat the T-only capacity control in at least 6/11 validation cells, have positive mean paired validation gain, and have positive mean paired validation gain on at least 3/4 datasets.",
+  "primary_split": "validation",
+  "test_role": "descriptive only after the validation comparison is complete",
+  "pilot_seed": 20260827
+}
