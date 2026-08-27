@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>특성은 하나의 도메인입니다 — Road to ICLR 4일차</title>
-    <meta name="description" content="Road to ICLR 4일차: 수치형 열에서 측도가 주어진 함수 공간으로, FieldRiesz 실험을 거쳐 감사 기반 ICLR 논문 방향에 이르는 시각적 여정.">
+    <title>같은 표, 다른 관점 — Road to ICLR 4일차</title>
+    <meta name="description" content="Road to ICLR 4일차: 같은 표를 서로 다른 수치 좌표계로 읽는 신경망 앙상블과 수치형 원자의 정체성에 관한 대조 실험.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04-ko.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04.html">
     <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04-ko.html">
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="특성은 하나의 도메인입니다">
-    <meta property="og:description" content="수치형 열에서 측도가 주어진 함수 공간으로—그리고 대조 실험을 통해 논문 아이디어가 어떻게 바뀌었는지 살펴봅니다.">
+    <meta property="og:title" content="같은 표, 다른 관점">
+    <meta property="og:description" content="세 개의 신경망, 하나의 표, 그리고 표현 다양성과 또 하나의 무작위 시드를 비교하는 계산량 정합 실험.">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04-ko.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260827-2">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260827-4">
     <script src="../language.js" defer></script>
-    <script src="road-to-iclr-day-04.js?v=20260827-2" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"특성은 하나의 도메인입니다","description":"수치형 열에서 측도가 주어진 함수 공간으로, FieldRiesz 실험을 거쳐 감사 기반 ICLR 논문 방향에 이르는 시각적 여정.","datePublished":"2026-08-27","dateModified":"2026-08-27","inLanguage":"ko","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04-ko.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"같은 표, 다른 관점","description":"같은 표를 서로 다른 수치 좌표계로 읽는 신경망 앙상블과 수치형 원자의 정체성에 관한 대조 실험.","datePublished":"2026-08-27","dateModified":"2026-08-27","inLanguage":"ko","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-04-ko.html"}
     </script>
 </head>
 <body>
@@ -29,278 +28,116 @@
     <main class="essay"><article>
         <div class="essay-header">
             <p class="series-kicker">Road to ICLR · 4일차 / 30</p>
-            <h1>특성은 하나의<br>도메인입니다</h1>
-            <p class="essay-deck">하나의 열은 단순한 값의 벡터가 아닙니다. 그 안에는 함수가 살아갑니다. 질량과 이웃이 있고, 때로는 모델에 가르칠 만한 기하가 있습니다.</p>
+            <h1>같은 표,<br>다른 관점</h1>
+            <p class="essay-deck">세 신경망은 같은 열을 서로 타당한 세 방식으로 읽을 수 있습니다. 계산량을 맞추면, 이 차이가 단순히 무작위 시드를 하나 더 쓰는 것보다 가치 있을 수 있습니다.</p>
             <div class="essay-meta"><span>2026년 8월 27일</span><span>변한준</span><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-04">실험과 결과 ↗</a></div>
         </div>
 
         <div class="essay-body">
-            <p><a href="road-to-iclr-day-01-ko.html">1일차</a>에는 일부 수치형 열이 중요한 정확한 값을 포함한다는 사실을 발견했습니다. <a href="road-to-iclr-day-02-ko.html">2일차</a>에는 두 인코딩이 같은 정보를 담고 있어도 서로 다른 학습 경로로 이끌 수 있음을 확인했습니다. <a href="road-to-iclr-day-03-ko.html">3일차</a>에는 문제의 범위를 넓혔습니다. 같은 표를 의미 변화 없이 다시 표현하는 것만으로도 최종 예측기가 달라질 수 있었습니다.</p>
+            <p><a href="road-to-iclr-day-01-ko.html">1일차</a>에는 수치형 열 안에 숨어 있는 정확한 상태를 발견했습니다. <a href="road-to-iclr-day-02-ko.html">2일차</a>에는 동등한 좌표도 신경망을 서로 다른 경로로 이끈다는 사실을 보았습니다. <a href="road-to-iclr-day-03-ko.html">3일차</a>에는 이 민감성이 여러 데이터와 모델에서 넓게 나타남을 확인했습니다.</p>
 
-            <p>이 세 가지 관찰은 빠져 있던 하나의 대상을 가리킵니다. 우리는 특성을 표현하는 <em>벡터</em>는 계속 논하지만, 정작 무엇을 표현하는지는 말하지 않습니다.</p>
+            <div class="thesis"><strong>4일차의 질문.</strong> 표현 민감성을 골칫거리가 아니라 유용한 다양성으로 바꿀 수 있을까요? 모델 수, 파라미터 수, 테스트셋 선택권은 늘리지 않은 채로 말입니다.</div>
 
-            <div class="thesis"><strong>4일차의 질문.</strong> 특성의 좌표를 선택하기 전에, 그 특성의 어떤 함수가 쉽게 학습되어야 하는지 말할 수 있을까요?</div>
+            <h2>하나의 값에는 여러 주소가 있습니다</h2>
 
-            <p>이 질문은 하나의 수학적 구성, 희망적인 실험, 그 아이디어를 거의 무너뜨린 여러 대조 실험, 그리고 무엇보다 더 명확해진 ICLR 방향으로 이어졌습니다.</p>
-
-            <h2>같은 dtype 안에 서로 다른 세계가 숨어 있습니다</h2>
-
-            <p>모두 숫자로 저장된 네 개의 열을 떠올려 봅시다.</p>
-
-            <div class="d4-worlds" aria-label="서로 다른 의미론적 기하를 가진 네 개의 수치형 필드">
-                <section><span>37.2</span><strong>온도</strong><small>직선 위의 한 점</small></section>
-                <section><span>23:00</span><strong>하루 중 시각</strong><small>원 위의 한 점</small></section>
-                <section><span>02139</span><strong>우편번호</strong><small>이름들의 모음 속 한 항목</small></section>
-                <section><span>37.56, 126.97</span><strong>위치</strong><small>표면 위의 한 점</small></section>
-            </div>
-
-            <p>저장 타입은 같지만 가장 기본적인 질문에 대해서는 답이 다릅니다. <strong>어떤 값들이 이웃일까요?</strong> 온도에서는 20이 19와 21 사이에 있습니다. 시각에서는 23:00이 00:00 옆에 있습니다. 우편번호에서는 숫자가 이어진다는 사실이 아무 의미도 없을 수 있습니다. 위도와 경도는 서로 무관한 두 개의 자가 아니라 함께 볼 때 의미가 있습니다.</p>
+            <p>소득을 담은 열을 생각해 봅시다. 아래에서 원래 값은 언제나 같습니다. 달라지는 것은 그 값의 <em>주소</em>입니다.</p>
 
             <figure class="wide-figure">
-                <div class="d4-domain-demo" data-domain-demo>
-                    <div class="d4-demo-copy">
-                        <span class="d4-eyebrow">하나의 열, 세 가지 가능한 도메인</span>
-                        <h3 data-domain-title>순서형 값은 경로 위에 놓입니다</h3>
-                        <p data-domain-copy>가까운 값들은 통계적 정보를 공유할 수 있습니다. 양 끝은 여전히 멀리 떨어져 있습니다.</p>
-                        <div class="d4-domain-buttons" role="group" aria-label="필드 기하 선택">
-                            <button type="button" data-domain="ordered" aria-pressed="true">순서형</button>
-                            <button type="button" data-domain="cyclic" aria-pressed="false">순환형</button>
-                            <button type="button" data-domain="nominal" aria-pressed="false">명목형</button>
-                        </div>
-                    </div>
-                    <div class="d4-domain-stage">
-                        <svg viewBox="0 0 640 260" role="img" aria-labelledby="d4-domain-svg-title d4-domain-svg-description">
-                            <title id="d4-domain-svg-title">순서형 필드 기하</title>
-                            <desc id="d4-domain-svg-description">경로를 따라 연결된 일곱 개의 값.</desc>
-                            <g data-domain-edges class="d4-domain-edges"><line x1="70" y1="130" x2="153" y2="130"></line><line x1="153" y1="130" x2="236" y2="130"></line><line x1="236" y1="130" x2="320" y2="130"></line><line x1="320" y1="130" x2="404" y2="130"></line><line x1="404" y1="130" x2="487" y2="130"></line><line x1="487" y1="130" x2="570" y2="130"></line></g>
-                            <g data-domain-nodes class="d4-domain-nodes"><circle cx="70" cy="130" r="19"></circle><circle cx="153" cy="130" r="19"></circle><circle cx="236" cy="130" r="19"></circle><circle cx="320" cy="130" r="19"></circle><circle cx="404" cy="130" r="19"></circle><circle cx="487" cy="130" r="19"></circle><circle cx="570" cy="130" r="19"></circle></g>
-                            <g data-domain-labels class="d4-domain-labels"><text x="70" y="181">1</text><text x="153" y="181">2</text><text x="236" y="181">3</text><text x="320" y="181">4</text><text x="404" y="181">5</text><text x="487" y="181">6</text><text x="570" y="181">7</text></g>
-                        </svg>
-                        <div class="d4-neighbor-readout"><span>스키마가 선언한 관계</span><strong data-domain-rule>1—2—3—4—5—6—7</strong></div>
+                <div class="d4v-lenses" role="img" aria-label="같은 수치 값을 타깃 인식, 분위수, 순위 좌표계로 표현한 그림">
+                    <div class="d4v-lens-source"><span>같은 열</span><strong>18 · 22 · 22 · 41 · 90</strong><small>새로운 행이나 레이블을 만들지 않습니다</small></div>
+                    <div class="d4v-lens-arrow" aria-hidden="true">→</div>
+                    <div class="d4v-lens-stack">
+                        <section class="target"><header><b>T-PLE</b><span>과제에 맞춘 지도</span></header><div class="d4v-track"><i style="--x:8%"></i><i style="--x:23%"></i><i class="stacked" style="--x:23%"></i><i style="--x:50%"></i><i style="--x:92%"></i><em style="--x:34%"></em><em style="--x:69%"></em></div><small>작은 타깃 인식 트리가 유용한 변화를 찾은 곳에 경계를 둡니다.</small></section>
+                        <section class="quantile"><header><b>Q-PLE</b><span>분포에 맞춘 지도</span></header><div class="d4v-track"><i style="--x:8%"></i><i style="--x:36%"></i><i class="stacked" style="--x:36%"></i><i style="--x:65%"></i><i style="--x:92%"></i><em style="--x:25%"></em><em style="--x:52%"></em><em style="--x:78%"></em></div><small>훈련 분위수를 따라 데이터가 밀집한 구간을 더 자세히 봅니다.</small></section>
+                        <section class="rank"><header><b>중간순위</b><span>순서만 남긴 지도</span></header><div class="d4v-track"><i style="--x:8%"></i><i style="--x:36%"></i><i class="stacked" style="--x:36%"></i><i style="--x:64%"></i><i style="--x:92%"></i></div><small>거리는 버리고, 훈련 행 중 얼마가 아래에 있는지만 남깁니다.</small></section>
                     </div>
                 </div>
-                <figcaption><strong>그림 1.</strong> 기하를 바꿔 보세요. 값은 그대로이고, 우리가 선언하려는 관계만 달라집니다. “명목형”은 생각하지 않았다는 뜻이 아닙니다. 이웃을 지어내지 않겠다는 결정입니다.</figcaption>
+                <figcaption><strong>그림 1.</strong> 하나의 열을 그리는 세 좌표계입니다. 각각 같은 훈련 데이터의 타당한 측면을 보존하지만, 경사하강법이 찾기 쉬운 패턴은 달라집니다.</figcaption>
             </figure>
 
-            <p>이것이 제가 말하는 <em>도메인</em>입니다. 값들의 집합과, 좌표를 바꾸어도 유지되는 관계를 함께 이릅니다. 인코딩은 그 위에 그리는 하나의 좌표계일 뿐입니다.</p>
+            <p>모든 곳에서 가장 좋은 좌표계는 없습니다. 보통은 이를 하이퍼파라미터 문제로 보고 하나만 고릅니다. 하지만 서로 다른 좌표계는 서로 다른 실수도 만듭니다. 표현을 승자독식 설정이 아니라 카메라 각도처럼 생각해 볼 수 있습니다.</p>
 
-            <div class="d4-language-strip" aria-label="도메인과 좌표계의 구분"><span><b>필드</b><small>값과 그 의미</small></span><i>→</i><span><b>함수 공간</b><small>모델이 물을 수 있는 질문</small></span><i>→</i><span class="answer"><b>좌표</b><small>그 질문을 계산하는 한 가지 방법</small></span></div>
+            <h2>원자는 보일 수 있지만, 이름이 붙은 것은 아닙니다</h2>
 
-            <h2>두 종류의 구조</h2>
-
-            <p>필드를 작은 함수 공간으로 바라보면, 서로 다른 두 가지 구조가 나타납니다.</p>
-
-            <div class="d4-two-forms">
-                <section><span class="d4-form-symbol">M</span><div><strong>데이터는 어디에 분포할까요?</strong><p>행의 절반이 0이라면, 0 근처의 함수를 열 전체가 균일한 것처럼 측정해서는 안 됩니다. <em>질량</em>은 학습 표본에서 나옵니다.</p></div></section>
-                <section><span class="d4-form-symbol">S</span><div><strong>어떤 변화가 거칠까요?</strong><p>순서형 필드에서는 인접한 값 사이를 급격히 뛰는 변화가 거칩니다. 순환형 필드에서는 첫 값과 마지막 값이 이웃입니다. <em>강성</em>은 의미에서 나옵니다.</p></div></section>
-            </div>
-
-            <p>두 구조를 하나의 연산자로 결합하는 것이 제안의 핵심입니다.</p>
-
-            <div class="d4-main-equation" aria-label="K는 M 더하기 타우 S">
-                <div><b>K</b><span>학습 기하</span></div><i>=</i><div><b>M</b><span>관측 질량</span></div><i>+</i><div><b>τ S</b><span>의미론적 매끄러움</span></div>
-            </div>
-
-            <p>스칼라 <code>τ</code>는 선언한 기하를 얼마나 강하게 신뢰할지 나타냅니다. <code>τ = 0</code>이면 관측이 발생한 위치에 대해서만 정규화합니다. <code>τ</code>가 커질수록 빠르게 진동하는 함수의 비용이 증가합니다.</p>
+            <p>1일차에는 한 가지 의문이 남았습니다. 많은 행이 정확히 같은 수치 값, 즉 <em>원자</em>를 가진다면 Q-PLE와 T-PLE가 이미 처리하는 것 아닐까요?</p>
 
             <figure class="wide-figure">
-                <div class="d4-smooth-demo" data-smooth-demo>
-                    <div class="d4-smooth-controls">
-                        <span class="d4-eyebrow">τ의 역할</span>
-                        <h3 data-smooth-title>관측된 패턴을 주로 따릅니다</h3>
-                        <label for="d4-tau">의미론적 매끄러움 <output data-tau-output>τ = 0.6</output></label>
-                        <input id="d4-tau" type="range" min="0" max="100" value="20" data-tau-range>
-                        <p data-smooth-note>작은 국소 요동의 비용은 여전히 낮습니다. 선언한 이웃 관계는 완만한 사전분포로만 작용합니다.</p>
-                    </div>
-                    <div class="d4-smooth-stage">
-                        <svg viewBox="0 0 640 300" role="img" aria-label="순서형 필드에서 매끄러움이 증가하는 모습">
-                            <g class="d4-grid-lines"><line x1="55" y1="50" x2="600" y2="50"></line><line x1="55" y1="140" x2="600" y2="140"></line><line x1="55" y1="230" x2="600" y2="230"></line></g>
-                            <path data-tau-curve class="d4-smooth-curve" d="M65 200 C99 166 133 92 167 96 C201 100 235 205 269 188 C303 171 337 62 371 76 C405 90 439 207 473 184 C507 161 541 95 575 108"></path>
-                            <g class="d4-smooth-points"><circle cx="65" cy="210" r="7"></circle><circle cx="133" cy="92" r="7"></circle><circle cx="201" cy="212" r="7"></circle><circle cx="269" cy="175" r="7"></circle><circle cx="337" cy="58" r="7"></circle><circle cx="405" cy="203" r="7"></circle><circle cx="473" cy="187" r="7"></circle><circle cx="541" cy="88" r="7"></circle><circle cx="575" cy="120" r="7"></circle></g>
-                            <text x="55" y="275">작은 값</text><text x="600" y="275" text-anchor="end">큰 값</text>
-                        </svg>
-                    </div>
+                <div class="d4v-atom-figure">
+                    <section class="d4v-atom-ple"><span class="d4-eyebrow">PLE는 쌓임을 봅니다</span><svg viewBox="0 0 420 210" role="img" aria-label="반복 관측값의 쌓임을 지나는 구간별 선형 곡선"><path d="M35 170 L120 145 L205 90 L290 72 L385 38"></path><line x1="35" y1="180" x2="390" y2="180"></line><g><circle cx="205" cy="167" r="7"></circle><circle cx="205" cy="149" r="7"></circle><circle cx="205" cy="131" r="7"></circle><circle cx="205" cy="113" r="7"></circle><circle cx="205" cy="95" r="7"></circle></g><text x="205" y="204" text-anchor="middle">반복된 값: 0</text></svg><p>분위수 매듭이나 트리 분할은 이 질량을 알아볼 수 있습니다. 하지만 여전히 값을 순서가 있는 공유 기저로 설명합니다.</p></section>
+                    <div class="d4v-atom-plus">+</div>
+                    <section class="d4v-atom-id"><span class="d4-eyebrow">정체성은 이름을 붙입니다</span><div class="d4v-id-card"><small>훈련에서 본 정확한 값</small><strong>0</strong><i>→</i><b>자신만의 학습 벡터</b></div><p>이미 본 값은 전용 잔차 임베딩을 얻습니다. 처음 보는 값에는 정체성을 추측하지 않고 0을 줍니다.</p></section>
                 </div>
-                <figcaption><strong>그림 2.</strong> 실험 적합 결과가 아니라 직관을 위한 그림입니다. 슬라이더를 움직여 보세요. <code>τ</code>는 어떤 함수를 쉽게 학습할 수 있는지 바꾸지만, 기반 함수 공간은 그대로 유지됩니다.</figcaption>
+                <figcaption><strong>그림 2.</strong> 행이 몰린 곳을 알아보는 것과 그 정확한 상태에 독립 파라미터를 주는 것은 다릅니다. 두 메커니즘은 함께 쓸 수 있습니다.</figcaption>
             </figure>
 
-            <p>이 구분은 중요합니다. 타깃 정보를 추가하거나 표현력이 더 큰 기저를 도입하는 것이 아닙니다. 유한한 <code>τ</code>에서 모델은 동일한 구간별 선형 함수를 표현할 수 있습니다. 바꾸는 것은 초기화와 정규화가 사용하는 자입니다.</p>
+            <p>정확한 정체성 메커니즘은 고정하고 두 번째 모델의 좌표계만 바꿨습니다. 원자 인식 T+Q와 원자 인식 T+T를 비교했습니다. MLP와 ResNet의 검증 로그 손실은 개선되었고, FT-Transformer는 사실상 동률이었으며, attention-plus-MLP 혼합 모델도 개선되었습니다.</p>
 
-            <div class="equation-card"><code>‖f‖²<sub>K</sub> = a<sup>⊤</sup>(M + τS)a</code><span>좌표계를 다시 그리면 좌표 <code>a</code>는 바뀔 수 있습니다. 하지만 기반 필드 함수에 부여되는 비용은 바뀌지 않아야 합니다.</span></div>
-
-            <p>함수의 크기에 대한 개념을 좌표로 바꾸는 Riesz 사상에서 이름을 따 이 구성을 <strong>FieldRiesz</strong>라고 부릅니다. 이름보다 중요한 것은 하나의 약속입니다. <strong>같은 필드를 다시 표현했다고 해서 학습 사전분포까지 소리 없이 바뀌어서는 안 됩니다.</strong></p>
-
-            <h2>진짜 기준선은 잘못된 기하입니다</h2>
-
-            <p>매끄러운 기저는 더 나은 스케일링, 다른 지지점, 추가 파라미터처럼 흥미롭지 않은 이유로 이길 수 있습니다. 예를 들어 일반적인 piecewise-linear embedding(PLE)은 값을 서로 겹치는 국소 구간으로 바꿉니다. 따라서 유용한 비교는 “새 인코딩 대 기존 인코딩”이 아닙니다. 점점 더 까다로워지는 대조군의 사다리여야 합니다.</p>
-
-            <div class="d4-control-ladder" aria-label="FieldRiesz 대조군 사다리">
-                <section><i>1</i><div><strong>일반 PLE</strong><small>확립된 수치형 임베딩</small></div></section>
-                <section><i>2</i><div><strong>지지점만</strong><small>동일한 학습 전용 노드, 새로운 계량 없음</small></div></section>
-                <section><i>3</i><div><strong>질량만</strong><small>동일한 조건화, τ = 0</small></div></section>
-                <section class="wrong"><i>4</i><div><strong>잘못된 이웃</strong><small>동일한 스펙트럼, 무작위 모드</small></div></section>
-                <section class="answer"><i>5</i><div><strong>선언한 이웃</strong><small>앞선 모든 설명을 이겨야 함</small></div></section>
+            <div class="d4v-atom-results" aria-label="Adult에서 원자 인식 T+T 대비 원자 인식 T+Q의 개선율">
+                <section><span>MLP</span><strong>+0.372%</strong></section>
+                <section><span>ResNet</span><strong>+0.916%</strong></section>
+                <section class="tie"><span>FT-Transformer</span><strong>−0.015%</strong></section>
+                <section><span>Attention + MLP</span><strong>+0.293%</strong></section>
             </div>
 
-            <p>질량만으로 이긴다면 발견한 것은 조건화입니다. 올바른 기하와 무작위 기하가 비슷하다면 발견한 것은 유리한 스펙트럼일 뿐입니다. 이 두 대조군을 거친 뒤에도 남는 차이만 의미의 공로로 인정할 수 있습니다.</p>
+            <div class="thesis"><strong>원자에 관한 교훈.</strong> Q-PLE와 T-PLE는 반복 값을 감지할 수 있습니다. 하지만 전용 정체성 채널은 여전히 학습 기하를 바꾸며, 정체성을 이미 넣은 뒤에도 좌표계 다양성이 도움이 될 수 있습니다.</div>
 
-            <h2>실험은 두 개의 이야기로 갈라졌습니다</h2>
+            <h2>대조 실험은 매력적인 세 이야기를 지웠습니다</h2>
 
-            <p>넓은 범위의 성능 이야기는 실망스러웠습니다. 기존의 더 강력한 파이프라인인 RAPLE과 비교했습니다. RAPLE은 out-of-fold 트리 앵커에 학습된 잔차 특성과 신경망 모델을 이어 붙입니다. 다섯 데이터셋, 세 백본(MLP, ResNet, TabM), 세 시드를 조합하면 45개의 대응 셀이 생깁니다.</p>
+            <div class="d4v-failure-path" aria-label="계산량 정합 실험으로 이어진 세 개의 실패한 가설">
+                <section><span>대조 학습 정렬</span><strong>1 / 6 승리</strong><small>표 전체의 두 관점을 가깝게 만들자 유용한 차이까지 흐려졌습니다.</small></section>
+                <section><span>학습된 좌표 잔차</span><strong>T-only와 동률</strong><small>추가 신경망은 도움이 됐지만 특별한 좌표계가 원인은 아니었습니다.</small></section>
+                <section><span>두 관점 고정 정책</span><strong>10 / 12 승리, 게이트 실패</strong><small>한 번의 작은 기준선 패배만으로도 50/50 혼합은 너무 취약했습니다.</small></section>
+            </div>
+
+            <p>세 번째 실패가 작은 수정을 알려 주었습니다. 평범한 T-PLE 두 개를 안정판으로 남기고 세 번째 모델만 바꿉니다. 그러면 가장 깔끔한 대조군도 얻습니다.</p>
+
+            <h2>HeteroBag-3: 예산이 아니라 관점 하나를 바꿉니다</h2>
 
             <figure class="wide-figure">
-                <div class="d4-scoreboard">
-                    <header><span class="d4-eyebrow">전체 5 × 3 × 3 패널</span><strong>의미론적 FieldRiesz가 이길까요?</strong></header>
-                    <div class="d4-score-row negative"><div><span>원시 RAPLE 대비</span><small>성능 기준선</small></div><strong>17 / 45</strong><b>−0.15%</b></div>
-                    <div class="d4-score-row"><div><span>질량만 사용한 경우 대비</span><small>매끄러움이 가치를 더하는가?</small></div><strong>29 / 45</strong><b>+0.24%</b></div>
-                    <div class="d4-score-row positive"><div><span>하나의 잘못된 기하 대비</span><small>이웃의 정체성이 중요한가?</small></div><strong>33 / 45</strong><b>+0.57%</b></div>
-                    <p>승수는 데이터셋–모델–시드가 대응된 셀을 기준으로 합니다. 백분율은 평균 상대 손실 개선이며, 양수는 의미론적 FieldRiesz에 유리합니다.</p>
+                <div class="d4v-bag-figure" role="img" aria-label="HeteroBag-3가 세 T-PLE 앙상블 중 하나를 분류에서는 Q-PLE, 회귀에서는 중간순위로 바꾸는 그림">
+                    <section class="candidate"><header><span>제안 방법</span><strong>표현 다양성</strong></header><div class="d4v-model-row"><div class="t"><b>T</b><small>시드 A</small></div><i>+</i><div class="t"><b>T</b><small>시드 B</small></div><i>+</i><div class="alternate"><b>Q / R</b><small>시드 C</small></div><i>→</i><div class="average"><b>⅓</b><small>평균</small></div></div><p>분류에는 Q-PLE, 회귀에는 중간순위(<b>R</b>)를 사용합니다.</p></section>
+                    <div class="d4v-versus">같은<br>계산량</div>
+                    <section class="control"><header><span>대조군</span><strong>시드 다양성</strong></header><div class="d4v-model-row"><div class="t"><b>T</b><small>시드 A</small></div><i>+</i><div class="t"><b>T</b><small>시드 B</small></div><i>+</i><div class="t"><b>T</b><small>시드 C</small></div><i>→</i><div class="average"><b>⅓</b><small>평균</small></div></div><p>구조, 활성 파라미터, 시드, 옵티마이저, 학습 횟수를 모두 맞춥니다.</p></section>
                 </div>
-                <figcaption><strong>그림 3.</strong> 45개 전체에서 의미론적 Riesz는 원시 RAPLE을 17개 셀에서만 이깁니다. 전반적으로 우월한 예측기는 아닙니다. 다만 대조군이 더 구체적일수록 우위가 커지는 현상은 더 좁게 검증할 가치가 있는 메커니즘을 남깁니다.</figcaption>
+                <figcaption><strong>그림 3.</strong> 실험은 하나의 좁은 질문만 묻습니다. 다른 표현은 확립된 표현을 다른 초기값으로 한 번 더 학습하는 것보다 가치 있는가?</figcaption>
             </figure>
 
-            <p>메커니즘에 관한 이야기는 조금 더 고무적이었습니다. California Housing과 Weather는 파일럿에서 의미 있는 기하가 있을 가능성을 보인 두 데이터셋입니다. 경험적 질량에 대한 일반화 스펙트럼 전체를 보존하면서 필드 함수 모드를 반복해서 무작위화했습니다. 쉽게 말하면, 대조군은 매끄러운 주파수와 거친 주파수의 목록은 그대로 두되 각 주파수의 의미만 다시 배정했습니다. 올바른 기하는 MLP, ResNet, TabM 전체에서 <strong>90번의 대조 비교 중 80번(+0.90%)</strong> 이겼습니다. 각 데이터셋–모델–시드 셀 안에서 다섯 대조군을 평균하면 <strong>18/18</strong> 승리였습니다.</p>
-
-            <div class="d4-evidence-zoom" aria-label="넓은 성능 평가에서 선택된 메커니즘, 그리고 실패한 재현으로 좁혀지는 증거">
-                <section class="broad"><span>전체 패널</span><strong>17 / 45</strong><small>원시 RAPLE을 이기지 못함</small></section>
-                <i>확대</i>
-                <section class="mechanism"><span>선택된 메커니즘 스트레스 테스트</span><strong>80 / 90</strong><small>정확한 스펙트럼 대조군을 이김</small></section>
-                <i>다른 곳에서 확인</i>
-                <section class="replication"><span>King County 재현</span><strong>2 / 9</strong><small>원시 RAPLE 대비 승리; 대조군 결과 혼재</small></section>
-            </div>
-
-            <p>가운데 결과는 겉보기만큼 강하지 않습니다. <strong>California와 Weather는 전체 파일럿 이후에 선택되었습니다.</strong> 따라서 80/90은 의심되는 메커니즘의 스트레스 테스트이지, 90개의 독립적인 발견도 확증적 p-value도 아닙니다. 시간순으로 분할한 King County에서 사전 선언한 독립적 공간 재현은 California의 결과를 되풀이하지 못했습니다. 원시 RAPLE 대비 2/9 승리에 그쳤고, 정확한 스펙트럼 대조군의 평균보다 0.03% 나빴습니다.</p>
-
-            <div class="thesis"><strong>끝까지 남은 결과.</strong> 지지점, 차원, 질량, 스펙트럼을 고정한 뒤에도 의미 있는 모드 배정은 영향을 줄 수 있습니다. 하지만 그 차이가 언제 예측을 개선하는지 알려 주는 신뢰할 만하고 레이블에 안전한 규칙은 아직 없습니다.</div>
-
-            <h2>모델이 여전히 놓치는 것을 위한 작은 공식</h2>
-
-            <p>가장 유용한 버전은 모델 전체를 교체하지 않습니다. 트리 모델 같은 out-of-fold 앵커에서 시작해, 앵커가 남긴 오차 안에 필드의 매끄러운 패턴이 있는지 묻습니다.</p>
-
-            <div class="d4-residual-flow" aria-label="잔차 Riesz 작업 흐름">
-                <section><span>1</span><strong>앵커</strong><small>out-of-fold로 적합</small></section><i>→</i>
-                <section><span>2</span><strong>잔차</strong><small>여전히 놓친 것</small></section><i>→</i>
-                <section><span>3</span><strong>필드 함수</strong><small>선언한 기하에서 매끄러움</small></section><i>→</i>
-                <section><span>4</span><strong>백본</strong><small>MLP, ResNet, TabM, TabR…</small></section>
-            </div>
-
-            <div class="equation-card"><code>c = E[φ(X)r<sub>oof</sub>], &nbsp;&nbsp; h(x) = c<sup>⊤</sup>(M + τS)<sup>−1</sup>φ(x)</code><span><code>c</code>는 기저 함수가 앵커 잔차와 얼마나 나란히 움직이는지 기록합니다. <code>(M + τS)<sup>−1</sup></code>을 적용하면 그 증거가 이를 설명하는 가장 매끄러운 필드 함수로 바뀝니다.</span></div>
-
-            <p>일상적인 언어로 말하면, <strong>강한 기준선이 여전히 틀리는 부분에 대해 스키마를 존중하는 가장 단순한 보정을 찾는 것</strong>입니다. <code>τ = 0</code>이면 익숙한 Galerkin 잔차 회귀입니다. <code>S</code>를 더하는 것은 고전적인 평활화입니다. 잠재적인 기여는 역행렬 자체가 아니라, 선언된 정형 데이터 의미론과 좌표계 공변성, 대조군을 현대적 정형 데이터 파이프라인 안에서 엄격하게 사용하는 방식입니다.</p>
-
-            <h2>방법은 진단에서 시작해야 합니다</h2>
-
-            <p>부정적인 결과는 제가 선호하는 논문의 방향을 바꾸었습니다. 보편적 인코더는 하나의 개입이 어디서나 도움이 되기를 요구합니다. 그러나 3일차에는 이미 파이프라인을 해치는 임의적 선택이 무엇인지 알아내는 방법을 만들었습니다.</p>
-
-            <p><strong>OrbitANOVA는 여전히 주된 ICLR 방향입니다.</strong> 가장 짧게 설명하면 이렇습니다. <em>임의적인 스키마 표기는 보고되지 않는 하이퍼파라미터입니다.</em> 의미를 보존하는 여러 표기 아래에서 전체 파이프라인을 다시 적합하고, 출력을 정렬한 뒤, 예측이 얼마나 흔들리는지 측정합니다.</p>
-
-            <div class="equation-card"><code>SR = E<sub>x,z</sub> ‖P<sub>z</sub>(x) − P̄(x)‖²</code><span>제곱 손실과 Brier 손실에서 이 스키마 위험은 동등한 표기들의 예측을 평균함으로써 제거되는 손실과 정확히 같습니다. 따라서 적합을 마친 뒤에는 평가 레이블 없이 측정할 수 있습니다.</span></div>
+            <p>규칙과 새로운 OpenML 데이터셋 네 개를 값이나 레이블을 내려받기 전에 고정했습니다. 데이터셋별 관점 탐색도, 테스트 결과에 맞춘 가중치 학습도 없었습니다.</p>
 
             <figure class="wide-figure">
-                <div class="d4-audit-loop">
-                    <div class="d4-loop-center"><span>논문의 주장</span><strong>진단이 수리 방법을 선택해야 합니다</strong></div>
-                    <section class="one"><i>1</i><strong>의미 변화 없이 다시 쓰기</strong><small>순서, ID, 단위, 좌표계</small></section>
-                    <section class="two"><i>2</i><strong>흔들림 측정</strong><small>적정 손실 단위</small></section>
-                    <section class="three"><i>3</i><strong>원인 귀속</strong><small>요인, 상호작용, 시드, 튜닝</small></section>
-                    <section class="four"><i>4</i><strong>하나의 행동 선택</strong><small>또는 보류</small></section>
-                    <section class="five"><i>5</i><strong>다른 곳에서 검증</strong><small>보지 못한 수준과 데이터셋</small></section>
+                <div class="d4v-result-map">
+                    <header><div><span class="d4-eyebrow">사전 고정한 전향적 패널</span><strong>HeteroBag-3 대 T+T+T</strong></div><div class="d4v-headline"><b>10 / 12</b><small>테스트 승리</small></div></header>
+                    <div class="d4v-matrix-head"><span>데이터셋</span><span>MLP</span><span>ResNet</span><span>FT</span><span>평균</span></div>
+                    <section><strong>Ionosphere<small>분류</small></strong><b class="loss">−0.85%</b><b>+1.13%</b><b>+3.81%</b><em>+1.36%</em></section>
+                    <section><strong>Diabetes<small>분류</small></strong><b>+0.97%</b><b class="loss">−0.74%</b><b>+2.19%</b><em>+0.81%</em></section>
+                    <section><strong>CPU Small<small>회귀</small></strong><b>+0.03%</b><b>+0.64%</b><b>+0.28%</b><em>+0.32%</em></section>
+                    <section><strong>House-16H<small>회귀</small></strong><b>+1.13%</b><b>+0.88%</b><b>+0.66%</b><em>+0.89%</em></section>
+                    <footer><span><b>+0.843%</b> 평균 테스트 손실 감소</span><span><b>4 / 4</b> 데이터셋 평균 양수</span><span><b>정확히 일치</b> 파라미터 수</span></footer>
                 </div>
-                <figcaption><strong>그림 4.</strong> 새로움은 또 하나의 민감도 점수에 있지 않습니다. 선언된 동등성 계약에서 출발해, 선택에 사용한 감사의 범위를 넘어 효과가 전이되는 행동까지 이어지는 폐루프에 있습니다.</figcaption>
+                <figcaption><strong>그림 4.</strong> 분류는 로그 손실, 회귀는 RMSE의 상대 감소율입니다. 청록색은 HeteroBag-3, 산호색은 세 T-PLE 시드에 유리합니다.</figcaption>
             </figure>
 
-            <p>분해 결과에 따라 개입도 달라집니다.</p>
+            <p>효과는 작지만 대조가 매우 깔끔합니다. 분류에서 +1.084%, 회귀에서 +0.602%, 전체에서 +0.843%입니다. 회귀 여섯 셀은 모두 개선되었습니다. 더 중요한 점은, 앞선 다중 관점 이야기를 무너뜨린 대조군을 이번 결과가 통과했다는 것입니다.</p>
 
-            <div class="d4-repair-map" aria-label="진단된 스키마 불안정성에서 후보 수리 방법으로의 대응">
-                <div class="head"><span>흔들림의 주된 원인</span><span>후보 대응</span></div>
-                <section><strong>특성 순서</strong><i>→</i><span>대칭화하거나 균형 잡힌 cover를 평균</span></section>
-                <section><strong>범주 또는 타깃 ID</strong><i>→</i><span>등변 인터페이스 사용</span></section>
-                <section class="field"><strong>필드 내부 좌표계</strong><i>→</i><span>FieldRiesz 또는 공변 최적화기</span></section>
-                <section><strong>스키마 × 튜닝</strong><i>→</i><span>여러 표기에서 검증을 통합한 뒤 동결</span></section>
-                <section><strong>안정적인 원인 없음</strong><i>→</i><span>보류하거나 일반 앙상블 사용</span></section>
+            <h2>4일차에 살아남은 것</h2>
+
+            <div class="d4v-takeaways">
+                <section><span>01</span><strong>억지로 일치시키지 마세요</strong><p>서로 다른 관점은 다르기 때문에 유용합니다. 행 전체의 대조 학습 정렬은 원하던 다양성을 지울 수 있습니다.</p></section>
+                <section><span>02</span><strong>또 다른 시드와 비교하세요</strong><p>신경망 하나를 더 썼다는 사실은 표현의 증거가 아닙니다. 모델 수와 계산량을 고정한 채 한 멤버를 교체해야 합니다.</p></section>
+                <section><span>03</span><strong>원자와 순서를 분리하세요</strong><p>반복되는 수치 상태에는 정체성이 필요할 수 있고, 순서형 좌표계는 그와 다른 귀납 편향을 제공합니다.</p></section>
             </div>
 
-            <p>이 종합은 FieldRiesz에 더 적절한 역할을 부여합니다. 이것은 “새로운 전처리 방법”이 아닙니다. 필드 내부 좌표가 위험을 지배할 때 감사 결과가 선택할 수 있는 하나의 폐쇄 방법입니다. 과학적 질문은 구조화된 귀속이 단순한 경보보다 더 나은 행동을 선택하는가로 바뀝니다.</p>
+            <div class="thesis"><strong>4일차의 결론.</strong> 유용한 증강을 위해 가상의 행을 만들 필요는 없습니다. 같은 행을 여러 타당한 좌표계로 그리고, 그 차이를 보존하며, 앙상블 한 자리를 표현 다양성에 쓰면 됩니다.</div>
 
-            <h2>4일차 후반: 대조 학습 버전은 대조군을 넘지 못했습니다</h2>
-
-            <p>LightGBM을 사용하지 않는 직접적인 아이디어도 시험했습니다. 모든 행을 두 번 표현합니다. 한 번은 분위수 PLE로, 다른 한 번은 순서형 코사인 모드와 선언된 순환형 필드를 위한 정확한 Fourier 모드로 표현한 뒤, VICReg 스타일 손실로 두 잠재 표현을 정렬합니다. MLP, ResNet, 필드 토큰 FT-Transformer는 동일한 예측 백본을 공유합니다. 대조군은 두 관점을 유지하되 정렬을 제거하거나, 차원과 파라미터 수를 보존하면서 순환 위상 셀을 순열합니다.</p>
-
-            <div class="d4-scoreboard">
-                <header><span class="d4-eyebrow">신경망 전용 시간순 스크리닝</span><strong>의미론적 좌표계 정렬이 PLE를 이길까요?</strong></header>
-                <div class="d4-score-row negative"><div><span>Weather + Cooking Time</span><small>세 백본, 동결된 시드 하나</small></div><strong>1 / 6</strong><b>−0.69%</b></div>
-                <div class="d4-score-row"><div><span>올바른 순환 대 잘못된 순환</span><small>선언한 고리 인접성이 중요한가?</small></div><strong>4 / 6</strong><b>+0.03%</b></div>
-                <p>백분율은 평균 상대 RMSE 개선입니다. 두 데이터셋 모두 고정된 학습 전용 서브샘플링과 공식 시간순 분할을 사용합니다.</p>
-            </div>
-
-            <p>PLE를 이긴 유일한 경우는 Weather MLP(+1.04%)이지만, 잘못된 기하도 +0.99%를 유지했습니다. Cooking Time에서는 세 백본 모두 이 방법을 기각합니다. 따라서 양의 결과가 나온 셀은 최적화 효과이지 순환형 의미가 도움이 되었다는 증거가 아닙니다. 103–192개 필드 가운데 순환형 의미가 선언된 필드가 3–5개뿐일 때 행 전체 정렬은 지나치게 거친 방법일 가능성이 큽니다. 남은 마지막 게이트 실험은 0으로 초기화되고 PLE를 보존하는 잔차를 선언된 필드 토큰에만 적용하고 정렬하는 것입니다. 다른 테스트 세트를 열기 전에 검증에서 일반 어댑터와 잘못된 기하를 모두 이겨야 합니다. 전체 표와 프로토콜은 <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/SEMANTIC_MULTIVIEW_REPORT.md">의미론적 다중 관점 보고서</a>에 있습니다.</p>
-
-            <p><strong>그 게이트를 실행했고, 실패했습니다.</strong> 필드 국소 모델은 요구된 5/6이 아니라 3/6개의 검증 셀만 통과했습니다. PLE 대비 평균 개선은 +0.004%였고, 올바른 기하는 순열 대조군보다 평균 0.009% 더 나빴습니다. Weather나 Cooking Time의 테스트 지표는 계산하지 않았고, 이 방법을 Delivery ETA로 전이하지도 않았습니다. <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/FIELD_LOCAL_DISTILLATION_REPORT.md">검증 전용 필드 국소 보고서</a>로 4일차의 대조 학습 분기를 닫습니다.</p>
-
-            <h2>실제로 새로운 것은 무엇일까요?</h2>
-
-            <p>수학적 구성 요소들은 오랜 역사를 갖고 있습니다. 유한요소법은 이미 질량 행렬과 강성 행렬을 사용합니다. 스플라인과 그래프 라플라시안은 이미 매끄러움을 표현합니다. 함수적 ANOVA는 이미 효과를 분해합니다. Bregman 정보는 이미 예측의 산포와 손실을 연결합니다. 최근 정형 데이터 연구는 수치 임베딩, 전처리 견고성, 등변성, 강력하게 튜닝된 기준선, 최근접 이웃 모델, 앙상블, 파운데이션 모델을 다룹니다.</p>
-
-            <div class="d4-novelty">
-                <section><span class="d4-panel-label">확립됨</span><strong>구성 요소</strong><p>질량, 강성, 평활화, Riesz 사상, 분산 항등식, fANOVA, 등변성.</p></section>
-                <section><span class="d4-panel-label">새로울 가능성</span><strong>폐루프</strong><p>동등한 스키마를 선언하고, 전체 파이프라인 위험을 가격화하고, 원인을 귀속한 뒤, 그에 맞는 수리를 선택합니다.</p></section>
-                <section><span class="d4-panel-label">아직 입증되지 않음</span><strong>효용</strong><p>데이터셋 사이에서 전이되고 동일한 계산량에서 손실을 개선하는 수리 정책.</p></section>
-            </div>
-
-            <p>이 방향의 준비도는 <strong>5점 만점에 약 3.5점</strong>이라고 평가하겠습니다. 오늘 투고한다면 제 결정도 약한 거절(weak reject)입니다. 구성은 차별화되어 있지만 넓은 범위에서의 보편성과 감사 기반 행동은 아직 약속에 불과합니다. 병목은 또 하나의 장식적인 정리가 아니라 입증된 효용입니다.</p>
-
-            <h2>아이디어를 폐기할 수 있는 실험</h2>
-
-            <p>결정적인 검증에서는 네 가지 감사 방법에 동일한 개발 사례, 동일한 계산량, 동일한 후보 행동 모음을 제공합니다.</p>
-
-            <div class="d4-tournament">
-                <div class="audits"><span>쌍별 비교<br><small>위반 횟수</small></span><span>PREF<br><small>단일 조절값</small></span><span>분산<br><small>스칼라 하나</small></span><span class="orbit">ORBITANOVA<br><small>구조화된 원인</small></span></div>
-                <i>모두 같은 후보군에서 선택</i>
-                <div class="actions"><span>보류</span><span>시드 앙상블</span><span>스키마 cover</span><span>통합 HPO</span><span>공변 폐쇄</span></div>
-                <i>다른 곳에서 한 번 평가</i>
-                <div class="finish"><strong>홀드아웃 손실 − 스키마 위험 − 자원 비용</strong><small>보지 못한 방해 요인 수준 · 보지 못한 데이터셋–모델 사례</small></div>
-            </div>
-
-            <p>패널에는 12–15개 데이터셋과 현대적인 모델 계열이 포함되어야 합니다. MLP, ResNet, FT-Transformer, TabR, TabM, 그리고 인터페이스가 허용하는 경우 정형 데이터 파운데이션 모델까지 포함합니다. 한 데이터셋의 모든 모델 계열은 동일한 바깥쪽 fold에 배치합니다. 반복 단위는 각 시드나 백본이 아니라 데이터셋입니다.</p>
-
-            <p>OrbitANOVA가 더 큰 주장을 얻으려면 귀속 결과가 선택되는 행동을 바꾸고, 홀드아웃 손실–안정성–자원 프런티어를 개선해야 합니다. 쌍별 경보보다 낫지 않다면 정직한 리뷰어의 요약은 “PREF에 ANOVA를 더한 것”이고, 프로젝트의 범위를 줄여야 합니다.</p>
-
-            <div class="d4-verdict">
-                <header><span>4일차 결론</span><strong>먼저 감사하고, 그다음 개입합니다.</strong></header>
-                <div>
-                    <section><strong>주 논문 · OrbitANOVA</strong><ul><li>위험으로 값을 매긴 명확한 대상</li><li>시드 및 튜닝과의 상호작용</li><li>동일 예산으로 수행하는 결정적 행동 검증</li></ul></section>
-                    <section><strong>보조 메커니즘 · FieldRiesz</strong><ul><li>깔끔한 좌표계 공변 구성</li><li>선택된 사례의 기하 신호</li><li>넓은 범위의 성능 개선도 선택 규칙도 아직 없음</li></ul></section>
-                </div>
-            </div>
-
-            <div class="thesis"><strong>4일차 결론.</strong> 특성은 전처리가 우연히 출력한 좌표가 아닙니다. 모델이 함수를 학습하는 하나의 도메인입니다. 때로는 그 도메인에 유용한 기하가 있고, 때로는 기하를 지어내는 일이 해롭습니다. 가능성 있는 논문은 언제나 기하를 신뢰하는 방법이 아닙니다. 어떤 임의적 선택이 중요한지 학습하고, 가장 작은 수리를 선택한 뒤, 이미 들여다본 적 없는 곳에서 그 선택의 유용성을 입증하는 감사 방법입니다.</div>
-
-            <details class="d3q-details">
-                <summary>기술적·통계적 경계</summary>
-                <div><p>모든 지지 노드, 질량 행렬, 강성 연산자는 학습 공변량만 사용합니다. 잔차 Riesz는 out-of-fold 앵커 잔차를 통해서만 레이블을 사용하므로 어떤 행도 자신의 잔차에 자신의 레이블을 제공하지 않습니다. 유한한 τ의 좌표계는 중복되지 않고 중심화된 동일한 구간별 선형 함수 공간을 생성합니다. 파라미터 수는 해석적으로 맞춥니다. 노드 순열 대조군은 일반 강성 스펙트럼을 보존하며, 더 어려운 <code>M</code>-등스펙트럼 대조군은 경험적 질량에 대한 일반화 스펙트럼을 보존합니다. 80/90이라는 횟수는 적합된 의미론적 셀 18개를 각각 다섯 대조군과 비교해 재사용한 결과이며, 파일럿 이후 선택된 데이터셋에 조건부입니다. King County는 사전 선언한 공간 재현이었습니다. 좌표계 공변성은 표현된 함수, 페널티, 운반된 계량 업데이트에 대해 주장하며, 모든 회전 아래에서 AdamW의 경로가 동일하다고 주장하지 않습니다. 공개한 수치는 연구 파이프라인의 결과이지 공식적인 전체 TabReD 리더보드 제출 결과가 아닙니다.</p></div>
-            </details>
+            <p><strong>HeteroBag-3는 후보 방법이지 완성된 논문이 아닙니다.</strong> 한 번의 전향적 패널과 하나의 시드 조합만으로는 부족합니다. 다음 검증은 여러 시드 조합을 포함한 두 번째 사전 고정 패널, 더 강하게 튜닝한 앙상블, 그리고 수치형 원자에 언제 정체성을 줄지 정하는 자동 규칙입니다. 그래도 4일차에는 평범한 추가 용량만으로 설명되지 않는 가치를 마침내 분리해 냈습니다.</p>
 
             <h2>참고문헌</h2>
             <ol class="reference-list">
-                <li>Gorishniy et al. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/9e9f0ffc3d836836ca96cbf8fe14b105-Abstract-Conference.html">On Embeddings for Numerical Features in Tabular Deep Learning</a>. NeurIPS 2022.</li>
-                <li>Gorishniy et al. <a href="https://openreview.net/forum?id=rhgIgTSSxW">TabR: Tabular Deep Learning Meets Nearest Neighbors</a>. ICLR 2024.</li>
-                <li>Gorishniy et al. <a href="https://openreview.net/forum?id=Sd4wYYOhmY">TabM: Advancing Tabular Deep Learning with Parameter-Efficient Ensembling</a>. ICLR 2025.</li>
-                <li>Rubachev et al. <a href="https://openreview.net/forum?id=L14sqcrUC3">TabReD: Analyzing Pitfalls and Filling the Gaps in Tabular Deep Learning Benchmarks</a>. ICLR 2025.</li>
-                <li>Holzmüller et al. <a href="https://proceedings.neurips.cc/paper_files/paper/2024/hash/2ee1c87245956e3eaa71aaba5f5753eb-Abstract.html">Better by Default: Strong Pre-Tuned MLPs and Boosted Trees on Tabular Data</a>. NeurIPS 2024.</li>
-                <li>Ye et al. <a href="https://openreview.net/forum?id=JytL2MrlLT">Revisiting Nearest Neighbor for Tabular Data</a>. ICLR 2025.</li>
-                <li>Qu et al. <a href="https://proceedings.mlr.press/v267/qu25d.html">TabICL: A Tabular Foundation Model for In-Context Learning on Large Data</a>. ICML 2025.</li>
-                <li>Arbel et al. <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/5a66c7adffdbde9dd5e78820cbf6935c-Abstract-Conference.html">EquiTabPFN</a>. NeurIPS 2025.</li>
-                <li>Gruber and Buettner. <a href="https://proceedings.mlr.press/v206/gruber23a.html">Uncertainty Estimates of Predictions via a General Bias-Variance Decomposition</a>. AISTATS 2023.</li>
-                <li>Lengerich et al. <a href="https://proceedings.mlr.press/v108/lengerich20a.html">Purifying Interaction Effects with the Functional ANOVA</a>. AISTATS 2020.</li>
-                <li>Liu et al. <a href="https://academic.oup.com/pnasnexus/article/5/6/pgag197/8699520">Robustness is important: limitations of LLMs for predictions on tabular data</a>. PNAS Nexus 2026.</li>
-                <li><a href="https://openreview.net/pdf?id=1JhhSxdBS1">Preprocessing Robustness in Heterogeneous Tabular Learning (PREF)</a>. TMLR submission, 2026.</li>
-                <li>Chernozhukov et al. <a href="https://proceedings.mlr.press/v162/chernozhukov22a.html">RieszNet and ForestRiesz</a>. ICML 2022.</li>
-                <li>Agarwal et al. <a href="https://proceedings.neurips.cc/paper/2021/hash/251bd0442dfcc53b5a761e050f8022b8-Abstract.html">Neural Additive Models</a>. NeurIPS 2021.</li>
-                <li>Otto et al. <a href="https://www.jmlr.org/papers/v26/24-1315.html">A Unified Framework to Enforce, Discover, and Promote Symmetry in Machine Learning</a>. JMLR 2025.</li>
-                <li>Bahri et al. <a href="https://openreview.net/forum?id=CuV_qYkmKb3">SCARF: Self-Supervised Contrastive Learning using Random Feature Corruption</a>. ICLR 2022.</li>
-                <li>Somepalli et al. <a href="https://arxiv.org/abs/2106.01342">SAINT: Improved Neural Networks for Tabular Data via Row Attention and Contrastive Pre-Training</a>. 2021.</li>
+                <li id="ref-1">Gorishniy, Rubachev, and Babenko. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/file/9e9f0ffc3d836836ca96cbf8fe14b105-Paper-Conference.pdf">On Embeddings for Numerical Features in Tabular Deep Learning</a>. NeurIPS 2022.</li>
+                <li id="ref-2">Gorishniy, Kotelnikov, Rubachev, and Babenko. <a href="https://arxiv.org/abs/2607.05380">TabPack: Efficient Hyperparameter Ensembles for Tabular Deep Learning</a>. ICML 2026.</li>
+                <li id="ref-3"><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/HETEROPLE_REPORT.md">4일차 HeteroPLE 보고서</a>: 사전 고정 프로토콜, 대조군, 전체 결과.</li>
             </ol>
-
-            <p class="next-post"><strong>전체 연구 기록:</strong> <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/PORTFOLIO_NOVELTY_REVIEW.md">포트폴리오 독창성 검토</a>, <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/ICLR_DIRECTION_FREEZE.md">방향 동결 문서</a>, <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/day4.md">4일차 기술 문서</a>, <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-04/THEORY_FIELDRIESZ.md">형식적 유도</a>, <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-04/results">결과</a>를 확인할 수 있습니다.</p>
+            <p class="next-post"><strong>이전 글:</strong> <a href="road-to-iclr-day-03-ko.html">3일차에서는 동등한 좌표가 왜 서로 다른 난이도를 만들 수 있는지 살펴봅니다.</a></p>
         </div>
     </article></main>
     <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>
