@@ -1,0 +1,188 @@
+{
+  "status": "completed_day3_invariance_matrix_analysis",
+  "source": "invariance_matrix_results.json",
+  "preregistered_tolerance": 1e-10,
+  "aggregate": {
+    "applicable_cells": 66,
+    "within_preregistered_tolerance": 33,
+    "within_practical_1e-6_tolerance": 36,
+    "selection_switch_cells": 12,
+    "by_factor": {
+      "category_ids": {
+        "cells": 12,
+        "within_preregistered_tolerance": 6,
+        "within_practical_1e-6_tolerance": 6,
+        "selection_switch_cells": 4
+      },
+      "class_ids": {
+        "cells": 18,
+        "within_preregistered_tolerance": 13,
+        "within_practical_1e-6_tolerance": 14,
+        "selection_switch_cells": 2
+      },
+      "feature_order": {
+        "cells": 18,
+        "within_preregistered_tolerance": 4,
+        "within_practical_1e-6_tolerance": 5,
+        "selection_switch_cells": 6
+      },
+      "numeric_units": {
+        "cells": 18,
+        "within_preregistered_tolerance": 10,
+        "within_practical_1e-6_tolerance": 11,
+        "selection_switch_cells": 0
+      }
+    },
+    "switching_cells": [
+      {
+        "dataset": "adult",
+        "family": "ordinal_forest_sqrt",
+        "factor": "category_ids",
+        "switch_fraction": 0.75
+      },
+      {
+        "dataset": "adult",
+        "family": "ordinal_forest_full",
+        "factor": "category_ids",
+        "switch_fraction": 0.5
+      },
+      {
+        "dataset": "adult",
+        "family": "catboost_native",
+        "factor": "feature_order",
+        "switch_fraction": 0.25
+      },
+      {
+        "dataset": "adult",
+        "family": "catboost_native",
+        "factor": "class_ids",
+        "switch_fraction": 0.5
+      },
+      {
+        "dataset": "churn",
+        "family": "ordinal_forest_sqrt",
+        "factor": "feature_order",
+        "switch_fraction": 0.25
+      },
+      {
+        "dataset": "churn",
+        "family": "ordinal_forest_sqrt",
+        "factor": "category_ids",
+        "switch_fraction": 0.75
+      },
+      {
+        "dataset": "churn",
+        "family": "ordinal_forest_full",
+        "factor": "category_ids",
+        "switch_fraction": 0.25
+      },
+      {
+        "dataset": "churn",
+        "family": "catboost_native",
+        "factor": "feature_order",
+        "switch_fraction": 0.5
+      },
+      {
+        "dataset": "churn",
+        "family": "catboost_native",
+        "factor": "class_ids",
+        "switch_fraction": 0.5
+      },
+      {
+        "dataset": "otto",
+        "family": "ordinal_forest_full",
+        "factor": "feature_order",
+        "switch_fraction": 0.25
+      },
+      {
+        "dataset": "otto",
+        "family": "onehot_forest_full",
+        "factor": "feature_order",
+        "switch_fraction": 0.25
+      },
+      {
+        "dataset": "otto",
+        "family": "catboost_native",
+        "factor": "feature_order",
+        "switch_fraction": 0.5
+      }
+    ]
+  },
+  "affine_float32_diagnostic": {
+    "adult": {
+      "numerical_columns": 6,
+      "views": [
+        {
+          "view": "numeric_units_1",
+          "float32_training_boundary_disagreements": 0,
+          "absolute_train_unique_count_change": 0,
+          "test_rows_with_changed_train_rank_interval_summed_over_columns": 0
+        },
+        {
+          "view": "numeric_units_2",
+          "float32_training_boundary_disagreements": 0,
+          "absolute_train_unique_count_change": 0,
+          "test_rows_with_changed_train_rank_interval_summed_over_columns": 0
+        },
+        {
+          "view": "numeric_units_3",
+          "float32_training_boundary_disagreements": 0,
+          "absolute_train_unique_count_change": 0,
+          "test_rows_with_changed_train_rank_interval_summed_over_columns": 0
+        }
+      ],
+      "any_float32_training_boundary_change": false,
+      "any_test_rank_interval_change": false
+    },
+    "churn": {
+      "numerical_columns": 7,
+      "views": [
+        {
+          "view": "numeric_units_1",
+          "float32_training_boundary_disagreements": 2,
+          "absolute_train_unique_count_change": 2,
+          "test_rows_with_changed_train_rank_interval_summed_over_columns": 1320
+        },
+        {
+          "view": "numeric_units_2",
+          "float32_training_boundary_disagreements": 0,
+          "absolute_train_unique_count_change": 0,
+          "test_rows_with_changed_train_rank_interval_summed_over_columns": 0
+        },
+        {
+          "view": "numeric_units_3",
+          "float32_training_boundary_disagreements": 0,
+          "absolute_train_unique_count_change": 0,
+          "test_rows_with_changed_train_rank_interval_summed_over_columns": 0
+        }
+      ],
+      "any_float32_training_boundary_change": true,
+      "any_test_rank_interval_change": true
+    },
+    "otto": {
+      "numerical_columns": 93,
+      "views": [
+        {
+          "view": "numeric_units_1",
+          "float32_training_boundary_disagreements": 0,
+          "absolute_train_unique_count_change": 0,
+          "test_rows_with_changed_train_rank_interval_summed_over_columns": 0
+        },
+        {
+          "view": "numeric_units_2",
+          "float32_training_boundary_disagreements": 0,
+          "absolute_train_unique_count_change": 0,
+          "test_rows_with_changed_train_rank_interval_summed_over_columns": 0
+        },
+        {
+          "view": "numeric_units_3",
+          "float32_training_boundary_disagreements": 0,
+          "absolute_train_unique_count_change": 0,
+          "test_rows_with_changed_train_rank_interval_summed_over_columns": 0
+        }
+      ],
+      "any_float32_training_boundary_change": false,
+      "any_test_rank_interval_change": false
+    }
+  }
+}

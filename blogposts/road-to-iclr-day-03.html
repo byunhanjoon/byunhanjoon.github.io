@@ -123,10 +123,37 @@
 
             <p>That cross revealed a recurring pattern: much of the neural instability was not “the chart” or “the seed” alone. The <strong>chart × seed interaction explained 54%–65%</strong> of their joint prediction variance. The spelling changed which random training runs succeeded.</p>
 
+            <h2>Which invariances did the models already have?</h2>
+            <p>There is an important objection to test before blaming a model family: trees and native categorical learners already ignore some rewrites by construction. So I ran a separate one-factor-at-a-time audit on Adult, Churn, and Otto. It crossed six pipelines with feature order, category IDs, aligned class IDs, and positive affine unit changes. The semantic split stayed fixed; each row used 2,000 training and 750 test examples.</p>
+
+            <p>First I chose a configuration on the reference spelling and froze it across the other views. Only afterward did I rerun validation selection. This separates <em>the fitted learner changed</em> from <em>the tuning decision changed</em>.</p>
+
+            <div class="d3q-invariance-card" role="group" aria-label="Observed fixed-configuration invariance by pipeline and schema rewrite">
+                <div class="d3q-invariance-head"><span>FIXED-CONFIGURATION AUDIT</span><strong>“Tree invariant” is not one property. It depends on the rewrite and the fitting algorithm.</strong></div>
+                <div class="d3q-invariance-scroll"><table>
+                    <thead><tr><th>pipeline</th><th>move columns</th><th>rename categories</th><th>rename classes</th><th>change units</th></tr></thead>
+                    <tbody>
+                        <tr><td>one-hot logistic</td><td><i class="near">≤ 6×10⁻⁷</i></td><td><i class="steady">ignored</i></td><td><i class="near">≤ 5×10⁻⁷</i></td><td><i class="near">≤ 6×10⁻⁷</i></td></tr>
+                        <tr><td>ordinal forest · √p</td><td><i class="moves">changed</i></td><td><i class="moves">changed</i></td><td><i class="steady">ignored</i></td><td><i class="moves">changed</i></td></tr>
+                        <tr><td>ordinal forest · all</td><td><i class="moves">changed</i></td><td><i class="moves">changed</i></td><td><i class="steady">ignored</i></td><td><i class="moves">changed</i></td></tr>
+                        <tr><td>one-hot forest · all</td><td><i class="moves">changed</i></td><td><i class="moves">changed</i></td><td><i class="steady">ignored</i></td><td><i class="steady">ignored</i></td></tr>
+                        <tr><td>native HistGB</td><td><i class="mixed">task-dependent</i></td><td><i class="steady">ignored</i></td><td><i class="mixed">task-dependent</i></td><td><i class="steady">ignored</i></td></tr>
+                        <tr><td>native CatBoost</td><td><i class="moves">changed</i></td><td><i class="steady">ignored</i></td><td><i class="mixed">task-dependent</i></td><td><i class="mixed">task-dependent</i></td></tr>
+                    </tbody>
+                </table></div>
+                <div class="d3q-invariance-legend"><span><b>ignored</b> in every applicable dataset at 10⁻¹⁰</span><span><b>changed</b> in every applicable dataset</span><span><b>task-dependent</b> changed on some datasets</span></div>
+            </div>
+
+            <p>The objection was right for category spelling. <strong>Native CatBoost and native HistGB were exactly invariant to every tested category-ID permutation.</strong> The forest result came from the deliberately ordinal pipeline: it fed arbitrary IDs to numerical thresholds, so renaming a category changed the partitions the learner could express. One-hot encoding removed that false order, but its forest still moved slightly because the concrete tree builder can couple random tie-breaking to derived column positions.</p>
+
+            <p>The other rewrites still reached real pipelines. Feature order changed every forest family and CatBoost, plus multiclass HistGB on Otto. Binary class reversal changed HistGB and CatBoost after their output columns were aligned, while the forests did not move. Histogram boosting ignored every tested unit conversion exactly; raw forests did not, even though an ideal axis-aligned tree admits the same rank partitions. That last gap belongs to finite training arithmetic and implementation details, not to the abstract tree function class.</p>
+
             <h2>Tuning is part of the model</h2>
             <p>So far, imagine keeping one training recipe fixed. Real pipelines do more: they try several recipes on validation data and choose a winner. That selection step can react to the spelling too.</p>
 
             <p>This creates a subtle tradeoff. Tuning separately for every spelling may improve average accuracy, while making equivalent versions of the same table disagree more.</p>
+
+            <p>In the expanded one-factor audit, validation changed its choice in <strong>12 of 66 applicable dataset × pipeline × rewrite cells</strong>. One-hot logistic and HistGB never switched; no unit rewrite switched any family. The switches were concentrated in feature order, ordinal category codes, and binary class IDs. A stable choice still did not imply stable predictions—HistGB is the clearest example.</p>
 
             <figure class="wide-figure">
                 <div class="d3q-selection-demo" data-selection-demo>
@@ -253,7 +280,7 @@
 
             <details class="d3q-details">
                 <summary>Technical notes and statistical boundaries</summary>
-                <div><p>For squared loss and multiclass Brier loss, the displayed decomposition is the Hilbert-space identity <code>E<sub>z</sub>‖p<sub>z</sub>−y‖² = ‖E<sub>z</sub>p<sub>z</sub>−y‖² + E<sub>z</sub>‖p<sub>z</sub>−E<sub>z</sub>p<sub>z</sub>‖²</code>. Output classes are aligned before comparison.</p><p>The Adult/Churn/Otto family panel is a 3 × 3 pilot and should not be read as population prevalence. The three seven-split confirmation cases were selected because they were unstable on an earlier split. Exact tests treat the split—not the row or overlapping menu—as the replication unit.</p><p>The 29.2%, 37.5%, and 34.7% repair results average all 36 balanced development-menu partitions within each split. Individual menus overlap, so 252 menu outcomes are not 252 independent trials. Sensitivity to the menu distribution remains part of the result.</p></div>
+                <div><p>For squared loss and multiclass Brier loss, the displayed decomposition is the Hilbert-space identity <code>E<sub>z</sub>‖p<sub>z</sub>−y‖² = ‖E<sub>z</sub>p<sub>z</sub>−y‖² + E<sub>z</sub>‖p<sub>z</sub>−E<sub>z</sub>p<sub>z</sub>‖²</code>. Output classes are aligned before comparison.</p><p>The invariance matrix uses one reference plus up to three nonidentity views per factor, a predeclared 10<sup>−10</sup> tolerance, and one semantic split. Its 66 applicable cells are controlled diagnostics, not independent prevalence samples. Code, configuration, raw results, and the complete numerical report are in <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-idea-search">the experiment directory</a>.</p><p>The Adult/Churn/Otto family panel is a 3 × 3 pilot and should not be read as population prevalence. The three seven-split confirmation cases were selected because they were unstable on an earlier split. Exact tests treat the split—not the row or overlapping menu—as the replication unit.</p><p>The 29.2%, 37.5%, and 34.7% repair results average all 36 balanced development-menu partitions within each split. Individual menus overlap, so 252 menu outcomes are not 252 independent trials. Sensitivity to the menu distribution remains part of the result.</p></div>
             </details>
 
             <h2>References</h2>
