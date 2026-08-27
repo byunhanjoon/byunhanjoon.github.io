@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>같은 정보, 다른 난이도 — Road to ICLR 3일차</title>
-    <meta name="description" content="Road to ICLR 3일차: 동등한 표 좌표는 정보와 표현력을 보존하지만 신경망의 초기 함수 사전분포와 최적화 경로를 바꿉니다.">
+    <meta name="description" content="Road to ICLR 3일차: 하나의 표에는 동등한 표현이 많습니다. 스키마 위험은 예측의 흔들림을 재고, 기저 실험은 그 이유를 밝힙니다.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03-ko.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
@@ -12,7 +12,7 @@
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="같은 정보, 다른 난이도">
-    <meta property="og:description" content="Road to ICLR, 3/30일차 — 최적화기는 정보를 보는 것이 아니라 좌표를 봅니다.">
+    <meta property="og:description" content="Road to ICLR, 3/30일차 — 하나의 의미적 표가 여러 학습 문제로 바뀌는 이유.">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03-ko.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
@@ -20,7 +20,7 @@
     <script src="../language.js" defer></script>
     <script src="road-to-iclr-day-03.js?v=20260827-3" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"같은 정보, 다른 난이도","description":"동등한 표 좌표는 정보와 표현력을 보존하지만 신경망의 초기 함수 사전분포와 최적화 경로를 바꿉니다.","datePublished":"2026-08-26","dateModified":"2026-08-27","inLanguage":"ko","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03-ko.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"같은 정보, 다른 난이도","description":"하나의 표에는 동등한 표현이 많습니다. 스키마 위험은 예측의 흔들림을 재고, 기저 실험은 그 이유를 밝힙니다.","datePublished":"2026-08-26","dateModified":"2026-08-27","inLanguage":"ko","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03-ko.html"}
     </script>
 </head>
 <body>
@@ -30,18 +30,37 @@
         <div class="essay-header">
             <p class="series-kicker">Road to ICLR · 3 / 30일차</p>
             <h1>같은 정보,<br>다른 난이도</h1>
-            <p class="essay-deck">인코딩은 정보를 담는 데서 끝나지 않습니다. 모델이 어떤 함수에서 시작하기 쉬운지, 학습이 어떤 기하를 지나야 하는지도 정합니다.</p>
+            <p class="essay-deck">같은 표에도 동등한 표현은 많습니다. 신경망 pipeline은 이 무해한 선택을 서로 다른 함수와 학습 경로, 예측으로 바꿀 수 있습니다.</p>
             <div class="essay-meta"><span>2026년 8월 26일</span><span>Han Joon Byun</span><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-03">실험과 결과 ↗</a></div>
         </div>
 
         <div class="essay-body">
-            <p><a href="road-to-iclr-day-02-ko.html">2일차</a>에는 누적 인코딩과 국소 인코딩이 같은 조각별 선형 함수를 표현하면서도 서로 보완적인 오차를 만든다는 사실을 보았습니다. 네트워크가 <em>정보</em>에서 직접 배운다고 생각할 때만 이것은 역설입니다.</p>
+            <p><a href="road-to-iclr-day-02-ko.html">2일차</a>에는 누적 인코딩과 국소 인코딩이 같은 조각별 선형 함수를 표현하면서도 서로 보완적인 오차를 만든다는 사실을 보았습니다. 더 넓은 교훈은 표에 단 하나의 필연적인 표현이 있는 것은 아니라는 점입니다.</p>
 
-            <div class="thesis"><strong>빠져 있던 구분.</strong> 표현은 데이터에서 무엇을 복원할 수 있는지 정합니다. 그 좌표는 어떤 함수를 초기화하고 도달하기 쉬운지도 정합니다. 최적화기가 직접 보는 것은 후자입니다.</div>
+            <h2>하나의 표에는 여러 표현이 있습니다</h2>
 
-            <h2>하나의 문제, 여러 좌표계</h2>
+            <p>열을 옮기고, 범주 이름을 바꾸고, 달러를 센트로 바꾸고, 인코딩된 feature block을 회전해 봅시다. 각 변환이 가역적이고 일관되게 적용되면 행과 label, 예측 과제는 바뀌지 않습니다. 표기만 달라집니다.</p>
 
-            <p>특성 행렬 <em>X</em>를 가역 행렬 <em>B</em>로 바꿔 <em>XB</em>를 만든다고 합시다. <em>B</em><sup>−1</sup>을 곱하면 <em>X</em>를 되찾으므로 정보는 사라지지 않습니다. 첫 층이 affine인 네트워크도 같은 역변환을 흡수할 수 있어 함수 클래스까지 같습니다.</p>
+            <figure class="wide-figure">
+                <div class="d3-orbit-board">
+                    <header><span>표현의 ORBIT</span><strong>의미는 고정하고 좌표만 움직입니다.</strong></header>
+                    <div class="d3-orbit-flow">
+                        <section class="d3-semantic-table"><span>하나의 의미적 표</span><div><b>나이</b><b>플랜</b><b>소득</b><i>37</i><i>실버</i><i>$52k</i><i>54</i><i>골드</i><i>$81k</i></div><small>같은 사람 · 같은 target</small></section>
+                        <b class="d3-orbit-arrow">→</b>
+                        <div class="d3-orbit-views"><section><i>↔</i><strong>열</strong><small>위치 바꾸기</small></section><section><i>01</i><strong>범주</strong><small>이름 바꾸기</small></section><section><i>¢</i><strong>단위</strong><small>scale 바꾸기</small></section><section class="focus"><i>B</i><strong>기저</strong><small>좌표 섞기</small></section></div>
+                    </div>
+                    <div class="d3-risk-identity"><section><span>별도 fit의<br>평균 손실</span></section><b>=</b><section><span>평균 예측의<br>손실</span></section><b>+</b><section class="risk"><strong>스키마 위험</strong><span>표기 사이의<br>예측 분산</span></section></div>
+                </div>
+                <figcaption><strong>그림 1.</strong> 동등한 표기의 집합은 표현 <em>orbit</em>을 이룹니다. 제곱 오차와 다중 클래스 Brier 손실에서 fitted prediction 사이의 불일치는 학습 뒤 label 없이도 구할 수 있는 정확한 항입니다. 단순한 불안정성의 비유가 아닙니다.</figcaption>
+            </figure>
+
+            <p>예시 하나도 바꾸지 않고 생긴 불확실성입니다. orbit을 따라 예측이 움직인다면 pipeline은 표현의 우연성도 일부 학습한 것입니다. 이 예측 분산을 <strong>스키마 위험</strong>이라고 부르겠습니다.</p>
+
+            <div class="thesis"><strong>불변성 검사.</strong> 결과가 표 자체에 속한다고 말할 수 있는 정도는 우리가 동등하다고 선언한 표현을 얼마나 견디는지에 달려 있습니다.</div>
+
+            <h2>orbit의 한 방향을 확대해 봅시다</h2>
+
+            <p>3일차 실험은 마지막 변환만 떼어 냅니다. 특성 행렬 <em>X</em>를 가역 행렬 <em>B</em>로 바꿔 <em>XB</em>를 만듭니다. <em>B</em><sup>−1</sup>을 곱하면 <em>X</em>를 되찾고, affine 첫 층도 같은 역변환을 흡수합니다. 정보와 함수 클래스는 정확히 같습니다.</p>
 
             <p>하지만 가역 변환은 둥근 문제를 길고 얇은 문제로 만들 수 있습니다. 조건수 κ는 이 왜곡의 크기입니다. 아래에서 직접 키워 보세요.</p>
 
@@ -66,7 +85,7 @@
                     </div>
                     <div class="d3-invariant-ribbon"><span><b>보존</b> 행 · 정보 · rank · 전체 에너지 · 함수 클래스</span><span><b>변경</b> 좌표 기하</span></div>
                 </div>
-                <figcaption><strong>그림 1.</strong> 가역 기저 변환은 학습 문제를 대수적으로 보존하지만 유한한 최적화 경로까지 보존하지는 않습니다. Adam은 축마다 scale을 바꾸지만, 축을 섞는 회전까지 일반적으로 되돌리지는 못합니다.</figcaption>
+                <figcaption><strong>그림 2.</strong> 가역 기저 변환은 학습 문제를 대수적으로 보존하지만 유한한 최적화 경로까지 보존하지는 않습니다. Adam은 축마다 scale을 바꾸지만, 축을 섞는 회전까지 일반적으로 되돌리지는 못합니다.</figcaption>
             </figure>
 
             <p>여기에는 쉽게 뒤섞이는 층위가 있습니다. <strong>같은 정보</strong>라고 같은 초기 함수가 되는 것은 아니며, <strong>같은 초기 함수</strong>라고 같은 학습 경로가 되는 것도 아닙니다.</p>
@@ -86,7 +105,7 @@
                     </div>
                     <div class="d3-replication-strip"><span>5개 데이터셋 replication</span><strong>60 / 60 해로움</strong><span>95% 구간: −10.56%–−7.82%</span></div>
                 </div>
-                <figcaption><strong>그림 2.</strong> κ=1,000 utility에서 κ=1 utility를 뺀 정규화 값입니다. 합친 dataset/model cluster 95% 구간은 −9.93%–−6.94%입니다. 다섯 데이터셋 단계는 기존 screen 뒤에 고정했으므로 별도로 보고합니다.</figcaption>
+                <figcaption><strong>그림 3.</strong> κ=1,000 utility에서 κ=1 utility를 뺀 정규화 값입니다. 합친 dataset/model cluster 95% 구간은 −9.93%–−6.94%입니다. 다섯 데이터셋 단계는 기존 screen 뒤에 고정했으므로 별도로 보고합니다.</figcaption>
             </figure>
 
             <p>효과는 모든 backbone에서 살아남았습니다. <em>X</em>와 <em>XB</em>가 약 10<sup>−14</sup> 오차로 서로를 복원하므로 “한 인코딩에 신호가 더 많다”는 설명은 성립하지 않습니다. 고정된 학습 budget에서 일어난 좌표 불변성의 인과적 실패입니다.</p>
@@ -116,7 +135,7 @@
                         <div class="d3-trajectory-readout"><section><span>κ=3,000 끝점 손실</span><strong data-trajectory-harm>54.00%</strong></section><section><span data-trajectory-drift-label>step-0 함수</span><strong data-trajectory-drift>다름</strong></section><p data-trajectory-note>같은 정보라도 일반 무작위 초기화가 같은 함수를 뽑는 것은 아닙니다.</p></div>
                     </div>
                 </div>
-                <figcaption><strong>그림 3.</strong> 600개 pair의 trajectory 실험입니다. 함수가 같도록 초기화하자 평균 끝점 손실이 54.00%에서 2.89%로 줄었습니다. 그래도 AdamW update 한 번 뒤 모든 통제 pair가 벌어졌고, input-natural update는 full-rank 경로를 거의 닫았습니다.</figcaption>
+                <figcaption><strong>그림 4.</strong> 600개 pair의 trajectory 실험입니다. 함수가 같도록 초기화하자 평균 끝점 손실이 54.00%에서 2.89%로 줄었습니다. 그래도 AdamW update 한 번 뒤 모든 통제 pair가 벌어졌고, input-natural update는 full-rank 경로를 거의 닫았습니다.</figcaption>
             </figure>
 
             <p>이것이 핵심 메커니즘입니다. 초기 함수를 맞추자 κ=3,000의 심한 손상 중 <strong>94.66%</strong>가 사라졌습니다. 표현은 학습 전부터 <em>함수 사전분포</em>로 작동했습니다. 하지만 matched prediction은 AdamW step 한 번 뒤 5.8×10<sup>−6</sup>에서 <strong>0.071</strong>까지 벌어졌습니다. 표현은 동시에 <em>최적화 metric</em>이었습니다.</p>
@@ -140,7 +159,7 @@
 
             <p>성능 방법도 같은 경고를 남겼습니다. Measure-Orbit은 내부 21개 데이터셋에서 유망했지만, 전혀 보지 않은 일곱 데이터셋에서는 compute-matched two-seed TabM ensemble보다 <strong>0.521%</strong> 나빴습니다. 현상은 살아남았고, 제안한 recipe는 살아남지 못했습니다.</p>
 
-            <div class="thesis"><strong>3일차 결론.</strong> 정보가 동등한 좌표가 학습까지 동등한 것은 아닙니다. 좌표는 네트워크가 시작하기 쉬운 함수와 최적화기가 선호하는 경로를 모두 바꿉니다. 이것은 신뢰할 만한 진단적 사실이지만, 아직 보편적인 성능 비법은 아닙니다.</div>
+            <div class="thesis"><strong>3일차 결론.</strong> 하나의 의미적 표가 여러 학습 문제를 만들 수 있습니다. 동등한 표현은 네트워크가 시작하기 쉬운 함수와 최적화기가 선호하는 경로를 모두 바꿉니다. 스키마 위험은 그 흔들림을 재고, 기저 실험은 그 뒤의 메커니즘 하나를 설명합니다. 신뢰할 만한 진단이지만 아직 보편적인 성능 비법은 아닙니다.</div>
 
             <h2>참고문헌</h2>
             <ol class="reference-list">

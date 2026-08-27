@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Same Information, Different Difficulty — Road to ICLR Day 3</title>
-    <meta name="description" content="Day 3 of Road to ICLR: equivalent tabular coordinates preserve information and expressivity, yet change the function prior and optimization path of neural networks.">
+    <meta name="description" content="Day 3 of Road to ICLR: one table has many equivalent representations; schema risk measures their prediction wobble, while basis experiments reveal why it happens.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
@@ -12,7 +12,7 @@
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="Same Information, Different Difficulty">
-    <meta property="og:description" content="Road to ICLR, Day 3/30 — the optimizer does not see information; it sees coordinates.">
+    <meta property="og:description" content="Road to ICLR, Day 3/30 — how one semantic table becomes many learning problems.">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
@@ -20,7 +20,7 @@
     <script src="../language.js" defer></script>
     <script src="road-to-iclr-day-03.js?v=20260827-3" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Same Information, Different Difficulty","description":"Equivalent tabular coordinates preserve information and expressivity, yet change the function prior and optimization path of neural networks.","datePublished":"2026-08-26","dateModified":"2026-08-27","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Same Information, Different Difficulty","description":"One table has many equivalent representations; schema risk measures their prediction wobble, while basis experiments reveal why it happens.","datePublished":"2026-08-26","dateModified":"2026-08-27","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html"}
     </script>
 </head>
 <body>
@@ -30,18 +30,37 @@
         <div class="essay-header">
             <p class="series-kicker">Road to ICLR · Day 3 / 30</p>
             <h1>Same information,<br>different difficulty</h1>
-            <p class="essay-deck">An encoding does more than carry information. It chooses the model’s initial function prior and the geometry through which learning must move.</p>
+            <p class="essay-deck">The same table has many equivalent representations. A neural pipeline can turn those harmless choices into different functions, training paths, and predictions.</p>
             <div class="essay-meta"><span>August 26, 2026</span><span>Han Joon Byun</span><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-03">Experiments and results ↗</a></div>
         </div>
 
         <div class="essay-body">
-            <p><a href="road-to-iclr-day-02.html">Day 2</a> found that cumulative and local encodings span the same piecewise-linear functions, yet produce complementary errors. That sounds paradoxical only if we think the network learns directly from <em>information</em>.</p>
+            <p><a href="road-to-iclr-day-02.html">Day 2</a> found that cumulative and local encodings span the same piecewise-linear functions, yet produce complementary errors. The broader lesson is that a table does not come with one inevitable representation.</p>
 
-            <div class="thesis"><strong>The missing distinction.</strong> A representation determines what can be recovered from the data. Its coordinates also determine which functions are easy to initialize and easy to reach. The optimizer only sees the second.</div>
+            <h2>One table has many representations</h2>
 
-            <h2>One problem, many coordinate systems</h2>
+            <p>Move its columns. Rename categories. Change dollars to cents. Rotate an encoded feature block. If each rewrite is reversible and applied consistently, the rows, labels, and prediction task have not changed. Only the spelling has.</p>
 
-            <p>Start with a feature matrix <em>X</em>. Replace it by <em>XB</em>, where <em>B</em> is invertible. Nothing is lost: multiplying by <em>B</em><sup>−1</sup> recovers <em>X</em>. A network with an affine first layer can absorb the same inverse, so its function class is unchanged too.</p>
+            <figure class="wide-figure">
+                <div class="d3-orbit-board">
+                    <header><span>A REPRESENTATION ORBIT</span><strong>Keep the meaning. Move the coordinates.</strong></header>
+                    <div class="d3-orbit-flow">
+                        <section class="d3-semantic-table"><span>ONE SEMANTIC TABLE</span><div><b>age</b><b>plan</b><b>income</b><i>37</i><i>silver</i><i>$52k</i><i>54</i><i>gold</i><i>$81k</i></div><small>same people · same target</small></section>
+                        <b class="d3-orbit-arrow">→</b>
+                        <div class="d3-orbit-views"><section><i>↔</i><strong>columns</strong><small>move them</small></section><section><i>01</i><strong>categories</strong><small>rename them</small></section><section><i>¢</i><strong>units</strong><small>rescale them</small></section><section class="focus"><i>B</i><strong>basis</strong><small>mix coordinates</small></section></div>
+                    </div>
+                    <div class="d3-risk-identity"><section><span>average loss<br>of separate fits</span></section><b>=</b><section><span>loss of the<br>average prediction</span></section><b>+</b><section class="risk"><strong>schema risk</strong><span>prediction variance<br>across spellings</span></section></div>
+                </div>
+                <figcaption><strong>Figure 1.</strong> Equivalent spellings form a representation <em>orbit</em>. For squared error and multiclass Brier loss, disagreement across fitted predictions is an exact, label-free term after fitting—not just a metaphor for instability.</figcaption>
+            </figure>
+
+            <p>This is uncertainty created without changing a single example. If the predictions move around the orbit, the pipeline is partly learning the representation accident. I call the resulting prediction variance <strong>schema risk</strong>.</p>
+
+            <div class="thesis"><strong>The invariance test.</strong> A result belongs to the table only to the extent that it survives the representations we have declared equivalent.</div>
+
+            <h2>Zoom in on one orbit direction</h2>
+
+            <p>The Day 3 experiments isolate the last rewrite. Start with a feature matrix <em>X</em> and replace it by <em>XB</em>, where <em>B</em> is invertible. Multiplying by <em>B</em><sup>−1</sup> recovers <em>X</em>, and an affine first layer can absorb the same inverse. Information and function class are exactly unchanged.</p>
 
             <p>But a reversible map can turn a round problem into a long, thin one. The condition number κ measures this distortion. Try increasing it below.</p>
 
@@ -66,7 +85,7 @@
                     </div>
                     <div class="d3-invariant-ribbon"><span><b>preserved</b> rows · information · rank · global energy · function class</span><span><b>changed</b> coordinate geometry</span></div>
                 </div>
-                <figcaption><strong>Figure 1.</strong> An invertible basis change preserves the learning problem algebraically, but not the path taken by finite optimization. Adam rescales axes individually; it cannot generally undo a rotation that mixes them.</figcaption>
+                <figcaption><strong>Figure 2.</strong> An invertible basis change preserves the learning problem algebraically, but not the path taken by finite optimization. Adam rescales axes individually; it cannot generally undo a rotation that mixes them.</figcaption>
             </figure>
 
             <p>This reveals a hierarchy that is easy to blur together: <strong>same information</strong> does not imply the same initial function, and <strong>the same initial function</strong> does not imply the same training path.</p>
@@ -86,7 +105,7 @@
                     </div>
                     <div class="d3-replication-strip"><span>five-dataset replication</span><strong>60 / 60 harmful</strong><span>95% interval: −10.56% to −7.82%</span></div>
                 </div>
-                <figcaption><strong>Figure 2.</strong> Normalized utility at κ=1,000 minus κ=1. The combined dataset/model-clustered 95% interval is −9.93% to −6.94%. The five-dataset stage was frozen after the original screen and is reported separately.</figcaption>
+                <figcaption><strong>Figure 3.</strong> Normalized utility at κ=1,000 minus κ=1. The combined dataset/model-clustered 95% interval is −9.93% to −6.94%. The five-dataset stage was frozen after the original screen and is reported separately.</figcaption>
             </figure>
 
             <p>The effect survived every backbone. Because <em>X</em> and <em>XB</em> reconstruct one another to roughly 10<sup>−14</sup>, “one encoding contains more signal” is not available as an explanation. This is a causal failure of coordinate invariance under a fixed training budget.</p>
@@ -116,7 +135,7 @@
                         <div class="d3-trajectory-readout"><section><span>κ=3,000 endpoint harm</span><strong data-trajectory-harm>54.00%</strong></section><section><span data-trajectory-drift-label>step-0 functions</span><strong data-trajectory-drift>different</strong></section><p data-trajectory-note>Equal information does not make ordinary random initialization sample the same function.</p></div>
                     </div>
                 </div>
-                <figcaption><strong>Figure 3.</strong> A 600-pair trajectory experiment. Function matching reduced mean endpoint harm from 54.00% to 2.89%. AdamW still separated every controlled pair after one update; an input-natural update nearly closed the full-rank trajectories.</figcaption>
+                <figcaption><strong>Figure 4.</strong> A 600-pair trajectory experiment. Function matching reduced mean endpoint harm from 54.00% to 2.89%. AdamW still separated every controlled pair after one update; an input-natural update nearly closed the full-rank trajectories.</figcaption>
             </figure>
 
             <p>This is the main mechanistic result. Matching the initial function removed <strong>94.66%</strong> of the severe κ=3,000 damage. The representation was acting as a <em>function prior</em> before learning began. Yet matched predictions drifted from 5.8×10<sup>−6</sup> to <strong>0.071</strong> after one AdamW step. The representation was also acting as an <em>optimization metric</em>.</p>
@@ -140,7 +159,7 @@
 
             <p>The attempted performance method delivered the same warning. Measure-Orbit looked promising on 21 internal datasets, then lost by <strong>0.521%</strong> to a compute-matched two-seed TabM ensemble on seven untouched datasets. The phenomenon survived; the proposed recipe did not.</p>
 
-            <div class="thesis"><strong>Day 3 conclusion.</strong> Information-equivalent coordinates need not be learning-equivalent. They change both the functions a network is likely to start with and the paths its optimizer prefers. That is a reliable diagnostic fact—not yet a universal performance trick.</div>
+            <div class="thesis"><strong>Day 3 conclusion.</strong> One semantic table can induce many learning problems. Equivalent representations change both the functions a network is likely to start with and the paths its optimizer prefers. Schema risk measures the resulting wobble; the basis experiments explain one mechanism behind it. That is a reliable diagnostic—not yet a universal performance trick.</div>
 
             <h2>References</h2>
             <ol class="reference-list">

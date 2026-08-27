@@ -28,7 +28,7 @@
         "Same Information, Different Difficulty": "같은 정보, 다른 난이도",
         "Road to ICLR · Day 3 / 30": "Road to ICLR · 3일차 / 30",
         "August 26, 2026": "2026년 8월 26일",
-        "A 30-dataset causal audit and function-matched experiment show how equivalent coordinates change both initialization and optimization.": "30개 데이터셋 인과 감사와 함수 정합 실험으로 동등한 좌표가 초기화와 최적화를 모두 어떻게 바꾸는지 보여줍니다.",
+        "Why one semantic table can become many learning problems—and how schema risk, initialization, and optimizer geometry connect.": "하나의 의미적 표가 여러 학습 문제로 바뀌는 이유와 스키마 위험, 초기화, 최적화 기하가 어떻게 이어지는지 살펴봅니다.",
         "Read Day 3 →": "3일차 읽기 →",
         "Same Table, Different Views": "같은 표, 다른 관점",
         "Road to ICLR · Day 4 / 30": "Road to ICLR · 4일차 / 30",
