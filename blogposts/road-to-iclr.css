@@ -2900,11 +2900,202 @@
     line-height: 1.6;
 }
 
+/* Day 3 visual essay refinements */
+
+.d3-invariant-ribbon {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.8rem 1.25rem;
+    border-top: 1px solid var(--essay-line);
+    color: var(--essay-muted);
+    background: #f7f9f8;
+    font: 700 0.64rem/1.45 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.d3-invariant-ribbon b {
+    margin-right: 0.3rem;
+    color: var(--essay-teal);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.d3-invariant-ribbon span:last-child b { color: var(--essay-coral); }
+
+.d3-result-board {
+    background:
+        radial-gradient(circle at 8% 8%, rgba(35, 122, 120, 0.08), transparent 32%),
+        radial-gradient(circle at 92% 88%, rgba(216, 101, 79, 0.08), transparent 30%),
+        #ffffff;
+}
+
+.d3-model-row > i {
+    height: 0.72rem;
+    background:
+        repeating-linear-gradient(90deg, transparent 0, transparent calc(25% - 1px), rgba(96, 112, 120, 0.13) calc(25% - 1px), rgba(96, 112, 120, 0.13) 25%),
+        #edf1ef;
+}
+
+.d3-level-strip {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 0.65rem;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    border-bottom: 1px solid var(--essay-line);
+    color: #925243;
+    background: linear-gradient(90deg, #f0f8f6 0 33.33%, #fff8f4 33.33% 100%);
+    font: 800 0.67rem Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.d3-level-strip b {
+    color: #a7b4b0;
+    font-size: 0.9rem;
+}
+
+.d3-level-strip span {
+    padding: 0.45rem 0.55rem;
+    border: 1px solid #efd7d0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.82);
+    transition: 220ms ease;
+}
+
+.d3-level-strip span.kept {
+    border-color: #a9d0ca;
+    color: var(--essay-teal);
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.d3-trajectory-stage {
+    background:
+        radial-gradient(circle at 82% 18%, rgba(35, 122, 120, 0.07), transparent 30%),
+        linear-gradient(180deg, #ffffff, #fbfcfb);
+}
+
+.d3-scope-board {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    overflow: hidden;
+    margin: 2rem 0 2.5rem;
+    border: 1px solid var(--essay-line);
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 0 18px 50px rgba(25, 36, 42, 0.07);
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.d3-scope-board section {
+    margin: 0;
+    padding: 1.5rem;
+}
+
+.d3-scope-board section > span,
+.d3-scope-board footer > span {
+    display: block;
+    color: var(--essay-coral);
+    font-size: 0.63rem;
+    font-weight: 850;
+    letter-spacing: 0.1em;
+}
+
+.d3-scope-board section.natural > span,
+.d3-scope-board footer > span { color: var(--essay-teal); }
+
+.d3-scope-board section > strong {
+    display: block;
+    margin: 0.35rem 0 0.75rem;
+    color: var(--essay-coral);
+    font: 700 2rem Georgia, serif;
+}
+
+.d3-scope-board section.natural > strong { color: var(--essay-teal); }
+
+.d3-scope-board section > i {
+    display: block;
+    height: 0.7rem;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #edf1ef;
+}
+
+.d3-scope-board section > i > b {
+    display: block;
+    width: 84%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #e8afa1, var(--essay-coral));
+}
+
+.d3-scope-board section.natural > i > b {
+    width: 3.8%;
+    min-width: 4px;
+    background: var(--essay-teal);
+}
+
+.d3-scope-board section > p {
+    margin: 0.8rem 0 0;
+    color: var(--essay-muted);
+    font-size: 0.7rem;
+    line-height: 1.5;
+}
+
+.d3-scope-board > div {
+    display: grid;
+    gap: 0.15rem;
+    color: var(--essay-muted);
+    text-align: center;
+}
+
+.d3-scope-board > div b {
+    color: var(--essay-ink);
+    font: 700 1.65rem Georgia, serif;
+}
+
+.d3-scope-board > div span {
+    font-size: 0.56rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.d3-scope-board footer {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: auto 1fr;
+    gap: 0.3rem 1rem;
+    align-items: baseline;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #cde2dd;
+    color: #315f5c;
+    background: linear-gradient(90deg, #eaf6f3, #f5faf8);
+}
+
+.d3-scope-board footer strong {
+    color: var(--essay-ink);
+    font: 700 0.88rem Georgia, serif;
+}
+
+.d3-scope-board footer small {
+    grid-column: 2;
+    color: var(--essay-muted);
+    font-size: 0.63rem;
+    line-height: 1.45;
+}
+
 @media (max-width: 720px) {
     .d3-demo-toolbar,
     .d3-remedy-head,
     .d3-replication-strip,
-    .d3-remedy-notes {
+    .d3-remedy-notes,
+    .d3-invariant-ribbon {
         align-items: flex-start;
         flex-direction: column;
     }
@@ -2994,6 +3185,25 @@
     .d3-remedy-row > em {
         display: none;
     }
+
+    .d3-level-strip {
+        grid-template-columns: 1fr;
+        background: #f7f9f8;
+    }
+
+    .d3-level-strip b { transform: rotate(90deg); }
+
+    .d3-scope-board {
+        grid-template-columns: 1fr;
+    }
+
+    .d3-scope-board > div { padding: 0 1rem; }
+
+    .d3-scope-board footer {
+        grid-template-columns: 1fr;
+    }
+
+    .d3-scope-board footer small { grid-column: 1; }
 }
 
 /* Day 2: information-equivalent bases and exact-state residuals */
