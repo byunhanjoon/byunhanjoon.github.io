@@ -2,6 +2,7 @@
     "use strict";
 
     const svgNS = "http://www.w3.org/2000/svg";
+    const isKorean = document.documentElement.lang.slice(0, 2) === "ko";
 
     const geometries = {
         ordered: {
@@ -36,6 +37,27 @@
         }
     };
 
+    const koreanGeometryText = {
+        ordered: {
+            title: "순서형 값은 경로 위에 놓입니다",
+            copy: "가까운 값들은 통계적 정보를 공유할 수 있습니다. 양 끝은 여전히 멀리 떨어져 있습니다.",
+            rule: "1—2—3—4—5—6—7",
+            description: "경로를 따라 연결된 일곱 개의 값."
+        },
+        cyclic: {
+            title: "순환형 값은 고리를 닫습니다",
+            copy: "마지막 값은 첫 값으로 돌아옵니다. 자정은 시간의 반대편이 아니라 오후 11시 가까이에 있습니다.",
+            rule: "00 ↔ 01뿐 아니라 23 ↔ 00",
+            description: "순환 구조로 연결된 여덟 개의 시각 값."
+        },
+        nominal: {
+            title: "명목형 값에는 이웃을 지어내지 않습니다",
+            copy: "코드는 서로 다른 이름으로 남습니다. 모델은 유사성을 학습할 수 있지만, 스키마가 임의의 경로를 몰래 주입하지는 않습니다.",
+            rule: "A, B, C, D …는 서로 다르며, 어떤 변도 가정하지 않음",
+            description: "연결되지 않은 점으로 표시된 일곱 개의 범주 레이블."
+        }
+    };
+
     const createSvgElement = (tag, attributes = {}) => {
         const element = document.createElementNS(svgNS, tag);
         Object.entries(attributes).forEach(([name, value]) => element.setAttribute(name, String(value)));
@@ -57,12 +79,13 @@
         const renderGeometry = (key) => {
             const geometry = geometries[key];
             if (!geometry) return;
+            const words = isKorean ? koreanGeometryText[key] : geometry;
 
-            title.textContent = geometry.title;
-            copy.textContent = geometry.copy;
-            rule.textContent = geometry.rule;
-            svgTitle.textContent = geometry.title;
-            svgDescription.textContent = geometry.description;
+            title.textContent = words.title;
+            copy.textContent = words.copy;
+            rule.textContent = words.rule;
+            svgTitle.textContent = words.title;
+            svgDescription.textContent = words.description;
             edgesGroup.replaceChildren();
             nodesGroup.replaceChildren();
             labelsGroup.replaceChildren();
@@ -126,14 +149,14 @@
             range.style.setProperty("--d4-range", `${range.value}%`);
 
             if (amount < 0.18) {
-                title.textContent = "Mostly follow the observed pattern";
-                note.textContent = "Small local wiggles remain cheap; the declared neighborhood is only a gentle prior.";
+                title.textContent = isKorean ? "관측된 패턴을 주로 따릅니다" : "Mostly follow the observed pattern";
+                note.textContent = isKorean ? "작은 국소 요동의 비용은 여전히 낮습니다. 선언한 이웃 관계는 완만한 사전분포로만 작용합니다." : "Small local wiggles remain cheap; the declared neighborhood is only a gentle prior.";
             } else if (amount < 0.62) {
-                title.textContent = "Prefer changes that vary gradually";
-                note.textContent = "The model can still bend, but rapid neighbor-to-neighbor oscillations cost more.";
+                title.textContent = isKorean ? "서서히 변하는 함수를 선호합니다" : "Prefer changes that vary gradually";
+                note.textContent = isKorean ? "모델은 여전히 굽힐 수 있지만, 이웃 사이에서 빠르게 진동하는 변화의 비용이 더 커집니다." : "The model can still bend, but rapid neighbor-to-neighbor oscillations cost more.";
             } else {
-                title.textContent = "Trust the declared geometry strongly";
-                note.textContent = "Only broad, smooth variation stays cheap. Too much trust can erase a real sharp effect.";
+                title.textContent = isKorean ? "선언한 기하를 강하게 신뢰합니다" : "Trust the declared geometry strongly";
+                note.textContent = isKorean ? "넓고 매끄러운 변화만 낮은 비용을 유지합니다. 지나친 신뢰는 실제로 존재하는 급격한 효과를 지울 수 있습니다." : "Only broad, smooth variation stays cheap. Too much trust can erase a real sharp effect.";
             }
         };
 
