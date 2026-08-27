@@ -1,0 +1,5 @@
+model,unique_cells,correct_wins,mean_correct_gain_pct
+mlp,6,6,0.9103629875022197
+resnet,6,6,1.386642211381525
+tabm,6,6,0.411431606793113
+all,18,18,0.9028122685589529

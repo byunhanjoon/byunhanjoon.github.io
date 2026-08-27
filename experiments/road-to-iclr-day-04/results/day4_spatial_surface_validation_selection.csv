@@ -1,0 +1,21 @@
+dataset,stiffness_family,model,cells,selected_methods,wins_vs_raw_raple,mean_gain_vs_raw_raple_pct,mean_oracle_regret_pct
+california,product,all,9,"{""anchor_only"": 1, ""anchor_product_mass"": 2, ""anchor_product_riesz"": 5, ""raple_raw"": 1}",8,2.379060837422738,0.39676543286862564
+california,product,mlp,3,"{""anchor_product_mass"": 2, ""anchor_product_riesz"": 1}",3,3.197927108538716,0.2091729769411033
+california,product,resnet,3,"{""anchor_product_riesz"": 2, ""raple_raw"": 1}",2,3.0220024952506983,0.9811233216647737
+california,product,tabm,3,"{""anchor_only"": 1, ""anchor_product_riesz"": 2}",3,0.9172529084787994,0.0
+california,haversine-knn,all,9,"{""anchor_only"": 2, ""anchor_product_mass"": 4, ""anchor_product_riesz"": 3}",9,2.3662456976455744,0.1947816505414378
+california,haversine-knn,mlp,3,"{""anchor_product_mass"": 3}",3,2.991612072669957,0.08445760720276226
+california,haversine-knn,resnet,3,"{""anchor_only"": 1, ""anchor_product_riesz"": 2}",3,3.4275325564613,0.4246490862171041
+california,haversine-knn,tabm,3,"{""anchor_only"": 1, ""anchor_product_mass"": 1, ""anchor_product_riesz"": 1}",3,0.6795924638054655,0.07523825820444706
+king-county-sales,product,all,9,"{""anchor_only"": 3, ""anchor_product_mass"": 2, ""anchor_product_riesz"": 4}",5,0.9131462872195204,0.7714457768136994
+king-county-sales,product,mlp,3,"{""anchor_product_mass"": 2, ""anchor_product_riesz"": 1}",2,1.3426296486994884,0.0660512751165492
+king-county-sales,product,resnet,3,"{""anchor_only"": 2, ""anchor_product_riesz"": 1}",2,1.05982427157661,1.6582532505751633
+king-county-sales,product,tabm,3,"{""anchor_only"": 1, ""anchor_product_riesz"": 2}",1,0.33698494138246265,0.5900328047493858
+king-county-sales,haversine-knn,all,9,"{""anchor_only"": 3, ""anchor_product_mass"": 2, ""anchor_product_riesz"": 4}",5,0.8380386522095634,0.7865627238661187
+king-county-sales,haversine-knn,mlp,3,"{""anchor_product_mass"": 2, ""anchor_product_riesz"": 1}",2,1.2439238509500912,0.04938405196170864
+king-county-sales,haversine-knn,resnet,3,"{""anchor_only"": 2, ""anchor_product_riesz"": 1}",2,1.0340149533249925,1.6779551095881604
+king-county-sales,haversine-knn,tabm,3,"{""anchor_only"": 1, ""anchor_product_riesz"": 2}",1,0.23617715235360678,0.6323490100484873
+california,product-token,all,3,"{""anchor_product_riesz"": 3}",3,3.8113975422442388,0.034485143529807326
+california,product-token,ft,3,"{""anchor_product_riesz"": 3}",3,3.8113975422442388,0.034485143529807326
+king-county-sales,product-token,all,3,"{""anchor_only"": 2, ""anchor_product_riesz"": 1}",2,2.861312733862149,0.7475509914633399
+king-county-sales,product-token,ft,3,"{""anchor_only"": 2, ""anchor_product_riesz"": 1}",2,2.861312733862149,0.7475509914633399

@@ -1,0 +1,4 @@
+model,unique_cells,wins_vs_node,gain_vs_node_pct,wins_vs_isospectral,gain_vs_isospectral_pct
+mlp,3,2,0.05897475304340947,3,0.05457023776084361
+resnet,3,1,-1.0125890590221553,1,-0.6912886007699744
+tabm,3,3,0.13765817424104565,3,0.5505461565438612

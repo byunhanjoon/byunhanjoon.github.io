@@ -1,0 +1,7 @@
+dataset,model,pairs,correct_wins,mean_correct_gain_pct
+california,mlp,3,2,0.43085527760514136
+california,resnet,3,3,2.474083842402756
+california,tabm,3,3,0.6525951898723455
+tabred-weather,mlp,3,3,2.010573705659632
+tabred-weather,resnet,3,2,0.08658865021906655
+tabred-weather,tabm,3,3,0.5149892670140104

@@ -1,0 +1,120 @@
+{
+  "california": {
+    "columns": [
+      6,
+      7
+    ],
+    "nodes": [
+      13,
+      13
+    ],
+    "product_dimension": 169,
+    "product_mass_rank": 92,
+    "isospectral_max_abs_error": 3.9399594697897555e-12,
+    "control_seed": 991337,
+    "stiffness_family": "knn",
+    "stiffness_normalization": "joint-generalized-median",
+    "stiffness_scale": 0.007303463449600142,
+    "knn_neighbors": 16,
+    "knn_bandwidth_radians": 0.00028923790960225243,
+    "raple_feature_count": 22,
+    "raple_selected_features": [
+      6,
+      7,
+      5,
+      0,
+      4,
+      2,
+      3,
+      1
+    ],
+    "raple_relation_types": [
+      "cyclic",
+      "cyclic",
+      "decreasing",
+      "increasing",
+      "cyclic",
+      "increasing",
+      "cyclic",
+      "cyclic"
+    ],
+    "raple_selected_pairs": [
+      {
+        "left": 0,
+        "right": 2,
+        "kind": "periodic",
+        "score": 0.0166778567932505
+      },
+      {
+        "left": 3,
+        "right": 1,
+        "kind": "periodic",
+        "score": 0.012986092964698073
+      },
+      {
+        "left": 6,
+        "right": 7,
+        "kind": "periodic",
+        "score": 0.012681207376927956
+      },
+      {
+        "left": 4,
+        "right": 1,
+        "kind": "co_monotone",
+        "score": 0.011344849078349187
+      },
+      {
+        "left": 4,
+        "right": 3,
+        "kind": "opposing",
+        "score": 0.010851321047297725
+      },
+      {
+        "left": 6,
+        "right": 5,
+        "kind": "opposing",
+        "score": 0.010754971255476533
+      },
+      {
+        "left": 5,
+        "right": 1,
+        "kind": "co_monotone",
+        "score": 0.010400119721919256
+      },
+      {
+        "left": 0,
+        "right": 3,
+        "kind": "periodic",
+        "score": 0.009539927515788325
+      },
+      {
+        "left": 5,
+        "right": 0,
+        "kind": "opposing",
+        "score": 0.008833894739843405
+      },
+      {
+        "left": 7,
+        "right": 5,
+        "kind": "opposing",
+        "score": 0.008043081420200233
+      },
+      {
+        "left": 5,
+        "right": 4,
+        "kind": "co_monotone",
+        "score": 0.007681080073301308
+      },
+      {
+        "left": 7,
+        "right": 1,
+        "kind": "periodic",
+        "score": 0.006646059943520543
+      }
+    ],
+    "field_names": [
+      "Latitude",
+      "Longitude"
+    ]
+  }
+}

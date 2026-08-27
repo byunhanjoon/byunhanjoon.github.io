@@ -1,0 +1,311 @@
+{
+  "california": {
+    "columns": [
+      6,
+      7
+    ],
+    "nodes": [
+      13,
+      13
+    ],
+    "product_dimension": 169,
+    "product_empirical_mass_rank": 69,
+    "product_reference_mass_rank": 144,
+    "product_mass_rank": 144,
+    "product_mass_nullity": 25,
+    "reference_mass_weight": 0.01,
+    "reference_mass_mixture": [],
+    "reference_measure": "tensor-trapezoid-on-declared-support-nodes",
+    "operator_ranks": {
+      "mass": 144,
+      "riesz": 144,
+      "wrong": 144,
+      "isospectral": 144
+    },
+    "isospectral_scope": "reference-completed-function-space-spectrum",
+    "isospectral_max_abs_error": 3.979039320256561e-13,
+    "control_seed": 1201,
+    "base_numeric_block_dimensions": [
+      32,
+      30,
+      32,
+      32,
+      32,
+      32,
+      32,
+      32
+    ],
+    "base_schema_dimension": 0,
+    "stiffness_family": "product",
+    "stiffness_normalization": "joint-generalized-median",
+    "stiffness_scale": 51.467240535933385,
+    "interaction_projection": "empirical-anova",
+    "raple_feature_count": 22,
+    "raple_selected_features": [
+      6,
+      7,
+      5,
+      0,
+      4,
+      2,
+      3,
+      1
+    ],
+    "raple_relation_types": [
+      "cyclic",
+      "cyclic",
+      "decreasing",
+      "increasing",
+      "cyclic",
+      "increasing",
+      "cyclic",
+      "cyclic"
+    ],
+    "raple_selected_pairs": [
+      {
+        "left": 0,
+        "right": 2,
+        "kind": "periodic",
+        "score": 0.0166778567932505
+      },
+      {
+        "left": 3,
+        "right": 1,
+        "kind": "periodic",
+        "score": 0.012986092964698073
+      },
+      {
+        "left": 6,
+        "right": 7,
+        "kind": "periodic",
+        "score": 0.012681207376927956
+      },
+      {
+        "left": 4,
+        "right": 1,
+        "kind": "co_monotone",
+        "score": 0.011344849078349187
+      },
+      {
+        "left": 4,
+        "right": 3,
+        "kind": "opposing",
+        "score": 0.010851321047297725
+      },
+      {
+        "left": 6,
+        "right": 5,
+        "kind": "opposing",
+        "score": 0.010754971255476533
+      },
+      {
+        "left": 5,
+        "right": 1,
+        "kind": "co_monotone",
+        "score": 0.010400119721919256
+      },
+      {
+        "left": 0,
+        "right": 3,
+        "kind": "periodic",
+        "score": 0.009539927515788325
+      },
+      {
+        "left": 5,
+        "right": 0,
+        "kind": "opposing",
+        "score": 0.008833894739843405
+      },
+      {
+        "left": 7,
+        "right": 5,
+        "kind": "opposing",
+        "score": 0.008043081420200233
+      },
+      {
+        "left": 5,
+        "right": 4,
+        "kind": "co_monotone",
+        "score": 0.007681080073301308
+      },
+      {
+        "left": 7,
+        "right": 1,
+        "kind": "periodic",
+        "score": 0.006646059943520543
+      }
+    ],
+    "field_names": [
+      "Latitude",
+      "Longitude"
+    ]
+  },
+  "king-county-sales": {
+    "columns": [
+      13,
+      14
+    ],
+    "nodes": [
+      13,
+      13
+    ],
+    "product_dimension": 169,
+    "product_empirical_mass_rank": 144,
+    "product_reference_mass_rank": 144,
+    "product_mass_rank": 144,
+    "product_mass_nullity": 25,
+    "reference_mass_weight": 0.01,
+    "reference_mass_mixture": [],
+    "reference_measure": "tensor-trapezoid-on-declared-support-nodes",
+    "operator_ranks": {
+      "mass": 144,
+      "riesz": 144,
+      "wrong": 144,
+      "isospectral": 144
+    },
+    "isospectral_scope": "reference-completed-function-space-spectrum",
+    "isospectral_max_abs_error": 2.2737367544323206e-12,
+    "control_seed": 1201,
+    "base_numeric_block_dimensions": [
+      5,
+      12,
+      32,
+      32,
+      4,
+      1,
+      4,
+      3,
+      6,
+      32,
+      13,
+      32,
+      2,
+      32,
+      32,
+      32,
+      32
+    ],
+    "base_schema_dimension": 69,
+    "stiffness_family": "product",
+    "stiffness_normalization": "joint-generalized-median",
+    "stiffness_scale": 6.843346381082226,
+    "interaction_projection": "empirical-anova",
+    "raple_feature_count": 22,
+    "raple_selected_features": [
+      14,
+      13,
+      11,
+      3,
+      15,
+      16,
+      2,
+      9,
+      10,
+      8,
+      1,
+      7,
+      6,
+      0,
+      12,
+      4,
+      5
+    ],
+    "raple_relation_types": [
+      "cyclic",
+      "cyclic",
+      "cyclic",
+      "cyclic",
+      "increasing",
+      "cyclic",
+      "increasing",
+      "increasing",
+      "increasing",
+      "increasing",
+      "increasing",
+      "irregular",
+      "irregular",
+      "increasing",
+      "irregular",
+      "irregular",
+      "irregular"
+    ],
+    "raple_selected_pairs": [
+      {
+        "left": 11,
+        "right": 7,
+        "kind": "opposing",
+        "score": 0.02457180470451871
+      },
+      {
+        "left": 16,
+        "right": 7,
+        "kind": "co_monotone",
+        "score": 0.023415324906720776
+      },
+      {
+        "left": 3,
+        "right": 7,
+        "kind": "co_monotone",
+        "score": 0.02179320939839792
+      },
+      {
+        "left": 14,
+        "right": 13,
+        "kind": "periodic",
+        "score": 0.01942312373812415
+      },
+      {
+        "left": 10,
+        "right": 7,
+        "kind": "opposing",
+        "score": 0.017536547254595688
+      },
+      {
+        "left": 8,
+        "right": 7,
+        "kind": "opposing",
+        "score": 0.01609377371844069
+      },
+      {
+        "left": 16,
+        "right": 8,
+        "kind": "co_monotone",
+        "score": 0.016018546964896754
+      },
+      {
+        "left": 14,
+        "right": 8,
+        "kind": "opposing",
+        "score": 0.015052791522196914
+      },
+      {
+        "left": 13,
+        "right": 8,
+        "kind": "opposing",
+        "score": 0.014878888128580797
+      },
+      {
+        "left": 10,
+        "right": 8,
+        "kind": "periodic",
+        "score": 0.013992720673167477
+      },
+      {
+        "left": 13,
+        "right": 1,
+        "kind": "opposing",
+        "score": 0.01301840628556332
+      },
+      {
+        "left": 16,
+        "right": 2,
+        "kind": "co_monotone",
+        "score": 0.01296211663683019
+      }
+    ],
+    "field_names": [
+      "lat",
+      "long"
+    ]
+  }
+}

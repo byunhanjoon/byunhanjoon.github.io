@@ -1,0 +1,9 @@
+dataset,model,selected_fields,pairs,wins_vs_quantile_ple,gain_vs_quantile_ple_pct,wins_vs_raple_raw,gain_vs_raple_raw_pct,wins_vs_anchor_only,gain_vs_anchor_only_pct,wins_vs_screen_wrong,gain_vs_screen_wrong_pct
+california,mlp,0,3,3,18.438260590140718,3,1.1765096670077837,0,0.0,0,0.0
+california,resnet,0,3,3,15.010187838538917,2,1.8178705589839754,0,0.0,0,0.0
+tabred-cooking-time,mlp,0,3,1,0.05642407063014332,0,-0.3259060167838957,0,0.0,0,0.0
+tabred-cooking-time,resnet,0,3,3,0.45428628448914404,2,-0.09708569958251767,0,0.0,0,0.0
+tabred-delivery-eta,mlp,2,3,2,1.234230487970039,1,-1.177091675861883,2,-0.09871723785368713,1,-0.4516025908457835
+tabred-delivery-eta,resnet,2,3,2,-0.2156261180023489,0,-1.60429254228577,1,0.23336402657269298,0,-0.3101843889713235
+tabred-weather,mlp,0,3,3,3.4361132108984958,2,0.6889589316341268,0,0.0,0,0.0
+tabred-weather,resnet,0,3,3,1.8821024314576817,0,-1.5328153047059399,0,0.0,0,0.0

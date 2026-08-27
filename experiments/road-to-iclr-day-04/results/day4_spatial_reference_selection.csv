@@ -1,0 +1,5 @@
+dataset,selector,cells,selected,wins_vs_anchor_product_mass,gain_vs_anchor_product_mass_pct,wins_vs_anchor_product_wrong,gain_vs_anchor_product_wrong_pct,wins_vs_anchor_product_isospectral,gain_vs_anchor_product_isospectral_pct,wins_vs_raple_raw,gain_vs_raple_raw_pct,mean_oracle_regret_pct
+california,semantic-rho-only,9,"{""0.001"": 2, ""0.01"": 2, ""0.1"": 5}",8.0,0.0879122645063088,7.0,0.019215756090777407,7.0,0.03054017794124443,,,
+california,raw-anchor-mass-semantic,9,"{""anchor_only@0.01"": 1, ""anchor_product_mass@0.1"": 1, ""anchor_product_riesz@0.01"": 2, ""anchor_product_riesz@0.1"": 4, ""raple_raw@0.01"": 1}",,,,,,,8.0,1.1732417457766817,0.19219657342831317
+king-county-sales,semantic-rho-only,9,"{""0.001"": 5, ""0.01"": 3, ""0.1"": 1}",5.0,-0.04670974190120772,3.0,0.10521988203502824,4.0,-0.09136011604287171,,,
+king-county-sales,raw-anchor-mass-semantic,9,"{""anchor_only@0.01"": 2, ""anchor_product_mass@0.001"": 2, ""anchor_product_riesz@0.001"": 2, ""anchor_product_riesz@0.01"": 2, ""anchor_product_riesz@0.1"": 1}",,,,,,,7.0,0.806514723314304,0.1980158116848572

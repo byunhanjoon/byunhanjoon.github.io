@@ -1,0 +1,13 @@
+dataset,control,comparisons,semantic_wins,mean_semantic_gain_pct
+california,1201,9,4,-0.06396535507552717
+california,1202,9,7,-0.018639114651972807
+california,1203,9,4,0.0431363758977308
+california,1204,9,7,0.04031384838762789
+california,991337,9,8,0.19119470254683668
+king-county-sales,1201,9,5,0.09508304261590067
+king-county-sales,1202,9,5,0.16733575977926707
+king-county-sales,1203,9,4,0.2040230603942603
+king-county-sales,1204,9,5,0.30841830125326486
+king-county-sales,991337,9,5,0.16433597674549322
+california,within-cell-mean,9,7,0.038656506880795
+king-county-sales,within-cell-mean,9,6,0.19250176551833464
