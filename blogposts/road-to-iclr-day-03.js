@@ -3,6 +3,104 @@
 
     const korean = (document.documentElement.lang || "en").slice(0, 2) === "ko";
 
+    function initializeOrbitDemo(demo) {
+        if (!demo) return;
+
+        const table = demo.querySelector("[data-orbit-table]");
+        const headers = Array.from(table.querySelectorAll("div > b"));
+        const cells = Array.from(table.querySelectorAll("div > i"));
+        const name = table.querySelector("[data-orbit-name]");
+        const note = table.querySelector("[data-orbit-note]");
+        const controls = Array.from(demo.querySelectorAll("[data-orbit-view]"));
+        const states = korean ? {
+            original: {
+                name: "원본",
+                headers: ["나이", "플랜", "소득"],
+                cells: ["37", "실버", "$52k", "54", "골드", "$81k"],
+                note: "같은 사람 · 같은 target"
+            },
+            columns: {
+                name: "열 순서",
+                headers: ["소득", "나이", "플랜"],
+                cells: ["$52k", "37", "실버", "$81k", "54", "골드"],
+                note: "같은 값 · 새로운 순서"
+            },
+            categories: {
+                name: "범주 이름",
+                headers: ["나이", "플랜 ID", "소득"],
+                cells: ["37", "0", "$52k", "54", "1", "$81k"],
+                note: "같은 범주 · 새로운 이름"
+            },
+            units: {
+                name: "센트 단위",
+                headers: ["나이", "플랜", "소득 (¢)"],
+                cells: ["37", "실버", "5.2M¢", "54", "골드", "8.1M¢"],
+                note: "같은 크기 · 새로운 단위"
+            },
+            basis: {
+                name: "혼합 기저",
+                headers: ["z₁", "z₂", "z₃"],
+                cells: ["89", "37", "52", "135", "55", "82"],
+                note: "같은 encoded rows · 가역적 축 혼합"
+            }
+        } : {
+            original: {
+                name: "original",
+                headers: ["age", "plan", "income"],
+                cells: ["37", "silver", "$52k", "54", "gold", "$81k"],
+                note: "same people · same target"
+            },
+            columns: {
+                name: "column order",
+                headers: ["income", "age", "plan"],
+                cells: ["$52k", "37", "silver", "$81k", "54", "gold"],
+                note: "same values · new order"
+            },
+            categories: {
+                name: "category names",
+                headers: ["age", "plan ID", "income"],
+                cells: ["37", "0", "$52k", "54", "1", "$81k"],
+                note: "same categories · new names"
+            },
+            units: {
+                name: "cents",
+                headers: ["age", "plan", "income (¢)"],
+                cells: ["37", "silver", "5.2M¢", "54", "gold", "8.1M¢"],
+                note: "same magnitudes · new units"
+            },
+            basis: {
+                name: "mixed basis",
+                headers: ["z₁", "z₂", "z₃"],
+                cells: ["89", "37", "52", "135", "55", "82"],
+                note: "same encoded rows · invertible axis mix"
+            }
+        };
+
+        function select(control, animate) {
+            const state = states[control.dataset.orbitView];
+            controls.forEach(function (candidate) {
+                candidate.setAttribute("aria-pressed", candidate === control ? "true" : "false");
+            });
+            headers.forEach(function (cell, index) { cell.textContent = state.headers[index]; });
+            cells.forEach(function (cell, index) { cell.textContent = state.cells[index]; });
+            name.textContent = state.name;
+            note.textContent = state.note;
+            demo.dataset.activeOrbit = control.dataset.orbitView;
+            if (animate) {
+                table.classList.remove("is-changing");
+                void table.offsetWidth;
+                table.classList.add("is-changing");
+            }
+        }
+
+        controls.forEach(function (control) {
+            control.addEventListener("click", function () { select(control, true); });
+        });
+        select(controls.find(function (control) {
+            return control.getAttribute("aria-pressed") === "true";
+        }) || controls[0], false);
+    }
+
     function initializeKappaDemo(demo) {
         if (!demo) return;
 
@@ -137,6 +235,7 @@
         select(buttons[0]);
     }
 
+    initializeOrbitDemo(document.querySelector("[data-orbit-demo]"));
     initializeKappaDemo(document.querySelector("[data-kappa-demo]"));
     initializeTrajectoryDemo(document.querySelector("[data-trajectory-demo]"));
 }());

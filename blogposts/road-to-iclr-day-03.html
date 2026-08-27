@@ -16,9 +16,9 @@
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260827-5">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260827-6">
     <script src="../language.js" defer></script>
-    <script src="road-to-iclr-day-03.js?v=20260827-3" defer></script>
+    <script src="road-to-iclr-day-03.js?v=20260827-4" defer></script>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BlogPosting","headline":"Same Information, Different Difficulty","description":"One table has many equivalent representations; schema risk measures their prediction wobble, while basis experiments reveal why it happens.","datePublished":"2026-08-26","dateModified":"2026-08-27","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-03.html"}
     </script>
@@ -42,23 +42,23 @@
             <p>Move its columns. Rename categories. Change dollars to cents. Rotate an encoded feature block. If each rewrite is reversible and applied consistently, the rows, labels, and prediction task have not changed. Only the spelling has.</p>
 
             <figure class="wide-figure">
-                <div class="d3-orbit-board" role="img" aria-label="One semantic table connected to an orbit of equivalent column, category, unit, and basis representations, followed by the schema-risk decomposition">
+                <div class="d3-orbit-board" data-orbit-demo aria-label="Explore equivalent spellings of one semantic table">
                     <div class="d3-orbit-intro"><span>REPRESENTATION ORBIT</span><strong>One meaning, many coordinate systems</strong></div>
                     <div class="d3-orbit-flow">
-                        <section class="d3-semantic-table"><span>ONE SEMANTIC TABLE</span><div><b>age</b><b>plan</b><b>income</b><i>37</i><i>silver</i><i>$52k</i><i>54</i><i>gold</i><i>$81k</i></div><small>same people · same target</small></section>
+                        <section class="d3-semantic-table" data-orbit-table><span>ONE SEMANTIC TABLE <output data-orbit-name aria-live="polite">original</output></span><div><b>age</b><b>plan</b><b>income</b><i>37</i><i>silver</i><i>$52k</i><i>54</i><i>gold</i><i>$81k</i></div><small data-orbit-note>same people · same target</small></section>
                         <div class="d3-orbit-bridge"><span>reversible rewrite</span><i>→</i></div>
-                        <div class="d3-orbit-map">
+                        <div class="d3-orbit-map" role="group" aria-label="Choose a table spelling">
                             <div class="d3-orbit-ring" aria-hidden="true"></div>
-                            <div class="d3-orbit-core"><strong>same table</strong><span>same prediction task</span></div>
-                            <section class="columns"><i>↔</i><span><strong>columns</strong><small>reordered</small></span></section>
-                            <section class="categories"><i>01</i><span><strong>categories</strong><small>renamed</small></span></section>
-                            <section class="units"><i>¢</i><span><strong>units</strong><small>rescaled</small></span></section>
-                            <section class="basis"><i>B</i><span><strong>basis</strong><small>coordinates mixed</small></span></section>
+                            <button type="button" class="d3-orbit-core" data-orbit-view="original" aria-pressed="true"><strong>same table</strong><span>original spelling</span></button>
+                            <button type="button" class="d3-orbit-node columns" data-orbit-view="columns" aria-pressed="false"><i>↔</i><span><strong>columns</strong><small>reordered</small></span></button>
+                            <button type="button" class="d3-orbit-node categories" data-orbit-view="categories" aria-pressed="false"><i>01</i><span><strong>categories</strong><small>renamed</small></span></button>
+                            <button type="button" class="d3-orbit-node units" data-orbit-view="units" aria-pressed="false"><i>¢</i><span><strong>units</strong><small>rescaled</small></span></button>
+                            <button type="button" class="d3-orbit-node basis" data-orbit-view="basis" aria-pressed="false"><i>B</i><span><strong>basis</strong><small>coordinates mixed</small></span></button>
                         </div>
                     </div>
                     <div class="d3-risk-identity"><span class="d3-risk-label">WHAT THE ORBIT REVEALS</span><section class="total"><strong>average fitted loss</strong><small>across representations</small></section><b class="equals">=</b><section class="mean"><strong>ensemble loss</strong><small>of the mean prediction</small></section><b class="plus">+</b><section class="risk"><strong>schema risk</strong><small>prediction variance across spellings</small></section></div>
                 </div>
-                <figcaption><strong>Figure 1.</strong> Equivalent spellings form a representation <em>orbit</em>. For squared error and multiclass Brier loss, disagreement across fitted predictions is an exact, label-free term after fitting—not just a metaphor for instability.</figcaption>
+                <figcaption><strong>Figure 1.</strong> Click a spelling on the orbit. The coordinates change; the people, information, and prediction task do not. For squared error and multiclass Brier loss, disagreement across fitted predictions is an exact, label-free term after fitting—not just a metaphor for instability.</figcaption>
             </figure>
 
             <p>This is uncertainty created without changing a single example. If the predictions move around the orbit, the pipeline is partly learning the representation accident. I call the resulting prediction variance <strong>schema risk</strong>.</p>
