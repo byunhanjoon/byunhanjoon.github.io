@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>우연이 아니라 궤도를 평균내기 — Road to ICLR 5일차</title>
-    <meta name="description" content="Road to ICLR 5일차: 정확히 동등한 스키마 표기와 학습 시드는 하나의 nuisance 공간을 이루며, 균형 cover는 무작위 앙상블보다 그 평균을 효율적으로 추정합니다.">
+    <meta name="description" content="Road to ICLR 5일차: 의미를 보존하는 스키마 재표기와 학습 시드가 예측을 바꾸며, 모든 쌍을 균형화한 표본이 전체 평균을 효율적으로 추정합니다.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05-ko.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05.html">
@@ -12,14 +12,14 @@
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05.html">
     <meta property="og:type" content="article">
     <meta property="og:title" content="우연이 아니라 궤도를 평균내기">
-    <meta property="og:description" content="의도적으로 균형 잡힌 16회 학습은 16개의 무작위 표본보다 128개 스키마·시드 quotient의 평균을 더 정확히 추정할 수 있습니다.">
+    <meta property="og:description" content="스키마와 시드 선택의 모든 쌍을 균형화한 16회 학습은 16개의 무작위 표본보다 128개 모델의 평균을 더 정확히 추정할 수 있습니다.">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05-ko.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="road-to-iclr.css?v=20260828-1">
     <script src="../language.js" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"우연이 아니라 궤도를 평균내기","description":"정확히 동등한 스키마 표기와 학습 시드는 하나의 nuisance 공간을 이루며, 균형 cover는 무작위 앙상블보다 그 평균을 효율적으로 추정합니다.","datePublished":"2026-08-28","dateModified":"2026-08-28","inLanguage":"ko","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05-ko.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"우연이 아니라 궤도를 평균내기","description":"의미를 보존하는 스키마 재표기와 학습 시드가 예측을 바꾸며, 모든 쌍을 균형화한 표본이 전체 평균을 효율적으로 추정합니다.","datePublished":"2026-08-28","dateModified":"2026-08-28","inLanguage":"ko","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05-ko.html"}
     </script>
 </head>
 <body>
@@ -29,29 +29,29 @@
         <div class="essay-header">
             <p class="series-kicker">Road to ICLR · 5일차 / 30</p>
             <h1>우연이 아니라<br>궤도를 평균내기</h1>
-            <p class="essay-deck">표의 정확히 동등한 표기와 학습 시드는 하나의 nuisance 공간을 이룹니다. 의도적으로 균형 잡힌 16회 학습은 16개의 무작위 표본보다 128개 구성원의 평균을 더 정확히 추정할 수 있습니다.</p>
+            <p class="essay-deck">의미를 보존하는 스키마 재표기와 무작위 학습 시드는 한 파이프라인의 128개 버전을 만듭니다. 모든 쌍을 균형화한 16회 학습은 16개의 무작위 표본보다 전체 평균을 더 정확히 추정할 수 있습니다.</p>
             <div class="essay-meta"><span>2026년 8월 28일</span><span>변한준</span><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-05">실험과 결과 ↗</a></div>
         </div>
 
         <div class="essay-body">
             <p><a href="road-to-iclr-day-03-ko.html">3일차</a>에는 의미를 보존하는 표의 재표기만으로도 예측이 달라질 수 있음을 보았습니다. <a href="road-to-iclr-day-04-ko.html">4일차</a>에는 앙상블의 시드 하나를 다른 표현으로 교체해 이 불일치를 성능으로 바꾸려 했습니다.</p>
 
-            <p>조건부 두 번째 패널에서 성능 신호는 더 커졌습니다. HeteroBag은 72개 비교 중 56개에서 이겼고 평균 손실을 2.41% 줄였습니다. 그러나 결정적인 대조 실험이 이야기를 무너뜨렸습니다. 고정된 메커니즘 triplet에서 세 번째 구성원을 좌표만 바꾼 T-PLE 모델로 교체하자 1.71% 개선되었고, 의미 있는 대안 표현이라고 가정했던 모델은 1.15% 개선에 그쳤습니다. 다양성은 도움이 되었지만 이 실험은 <em>의미적</em> 다양성만의 효과를 분리하지 못했습니다.</p>
+            <p>사전에 정한 두 번째 데이터셋 그룹에서 성능 신호는 더 커졌습니다. <strong>HeteroBag</strong>은 타깃 패턴에 따라 구간을 정한 수치 인코딩 두 개와 분위수 또는 순위 인코딩 하나를 묶은 3-모델 앙상블입니다. 72개 비교 중 56개에서 이겼고 평균 손실을 2.41% 줄였습니다. 그러나 미리 정한 시드 세 개에서는 단순한 좌표 변환이 1.71%, 의미 있는 대안 관점은 1.15% 개선되었습니다. 다양성은 도움이 되었지만 <em>의미적</em> 다양성만의 효과는 분리되지 않았습니다.</p>
 
             <div class="d5-direction" aria-label="5일차 연구 방향 결정">
-                <section class="advance"><span>주 방향 · 진행</span><strong>OrbitCover</strong><p>선언한 스키마·시드 nuisance를 균형 설계로 평균냅니다.</p></section>
-                <section class="demote"><span>보조 방향 · 강등</span><strong>HeteroBag</strong><p>+2.41% 신호는 실재하지만 표현 고유의 메커니즘은 분리되지 않았습니다.</p></section>
-                <section class="stop"><span>성능 방법으로 중단</span><strong>FieldRiesz</strong><p>기하는 아름다웠지만 독립 패널에서 성능 서열이 재현되지 않았습니다.</p></section>
+                <section class="advance"><span>주 방향 · 진행</span><strong>OrbitCover · 균형 평균</strong><p>스키마·시드 변형의 모든 쌍을 균형화하고 클래스 이름을 복원한 뒤 예측을 평균냅니다.</p></section>
+                <section class="demote"><span>보조 방향 · 강등</span><strong>HeteroBag · 혼합 관점</strong><p>시드 하나를 다른 수치 인코딩으로 교체합니다. 개선은 실재하지만 원인은 분리되지 않았습니다.</p></section>
+                <section class="stop"><span>성능 방법으로 중단</span><strong>FieldRiesz · 의미 기하</strong><p>특성에 선언한 순서·순환·그래프를 따라 매끄럽게 만듭니다. 성능 서열은 재현되지 않았습니다.</p></section>
             </div>
 
             <div class="thesis"><strong>5일차의 전환.</strong> 임의적인 표현 중 무엇이 이겨야 하는지 묻는 일을 멈춥니다. 무엇이 결과를 바꾸지 않아야 하는지 먼저 선언하고, 그 모든 경우에 대한 평균 예측을 추정합니다.</div>
 
             <h2>우연은 하나의 knob이 아니라 곱공간입니다</h2>
 
-            <p>분류 문제의 의미를 보존하는 네 가지 연산을 생각해 봅시다. 특성 순서를 바꾸고, 범주 ID를 다시 붙이고, 타깃 ID를 바꾼 뒤 확률을 원래 의미에 맞게 정렬하고, 학습 시드를 바꿉니다. 주 실험에서는 이들이 4 × 4 × 2 × 4 곱공간, 즉 하나의 학습 파이프라인에서 나온 128개의 적합된 버전을 만듭니다.</p>
+            <p>분류 문제의 의미를 보존하는 네 가지 연산을 생각해 봅시다. 열 순서를 바꾸고, 범주 코드를 다시 붙이고, 클래스 레이블의 숫자 코드를 바꾼 뒤 확률을 원래 의미에 맞게 정렬하고, 초기화를 결정하는 무작위 시드를 바꿉니다. 이들은 결과에 영향을 줄 수 있지만 문제의 의미에는 영향을 주지 않아야 하는 <em>nuisance</em>, 즉 비본질적 선택입니다. 이들은 4 × 4 × 2 × 4 격자, 곧 전처리부터 모델 학습까지 포함한 하나의 학습 파이프라인에서 128개 버전을 만듭니다. 이 동등한 버전들의 집합을 <em>궤도</em>라 부릅니다.</p>
 
             <figure class="wide-figure">
-                <div class="d5-orbit" role="img" aria-label="특성 순서, 범주 ID, 타깃 ID, 학습 시드가 128개 nuisance 곱공간을 이루며 그 평균이 quotient 예측이 됩니다">
+                <div class="d5-orbit" role="img" aria-label="특성 순서, 범주 ID, 타깃 ID, 학습 시드가 한 파이프라인의 128개 버전을 만들며 그 평균이 목표 예측이 됩니다">
                     <div class="d5-orbit-source"><span>하나의 과제</span><strong>같은 행<br>같은 레이블<br>같은 의미</strong></div>
                     <div class="d5-orbit-arrow" aria-hidden="true">→</div>
                     <div class="d5-factors">
@@ -64,86 +64,86 @@
                         <section><i>4</i><span>학습<br>시드</span></section>
                     </div>
                     <div class="d5-orbit-arrow" aria-hidden="true">→</div>
-                    <div class="d5-quotient"><span>128개 예측기</span><strong>평균</strong><small>nuisance-quotient 예측</small></div>
+                    <div class="d5-quotient"><span>128개 예측기</span><strong>평균</strong><small>전체 궤도의 목표</small></div>
                 </div>
-                <figcaption><strong>그림 1.</strong> Quotient는 새로운 모델 구조가 아닙니다. 완전한 학습 파이프라인을 선언된 유한 nuisance 곱공간 전체에 적분해 얻는 예측입니다.</figcaption>
+                <figcaption><strong>그림 1.</strong> 선언한 모든 스키마·시드 선택에 대한 평균을 <em>quotient 예측</em>이라 부릅니다. 이는 새로운 모델 구조가 아니라 추정할 목표값입니다.</figcaption>
             </figure>
 
-            <p>이는 시드 분산보다 넓고 데이터 증강보다 엄격합니다. 모든 action은 완전한 파이프라인의 학습을 거치며, 비교 전에 출력 확률을 같은 의미의 클래스로 다시 정렬합니다. Brier 손실과 제곱오차에서는 평균 구성원의 quotient 대비 초과 손실이 이 곱공간에서의 예측 분산과 <em>정확히</em> 같습니다.</p>
+            <p>이는 시드 분산보다 넓고 데이터 증강보다 엄격합니다. 모든 재표기는 전체 학습 파이프라인을 거치며, 비교 전에 클래스 확률을 원래 의미에 맞게 정렬합니다. 확률과 레이블 사이의 제곱오차인 Brier 손실과 일반 제곱오차에서는 한 구성원의 평균 초과 손실이 128개 선택에서 생긴 예측 분산과 <em>정확히</em> 같습니다.</p>
 
-            <p>감사 결과, 16개 데이터셋 모두에서 적어도 한 파이프라인이 유의미한 스키마 위험을 보였지만 불변인 one-hot 선형 대조군에는 전혀 없었습니다. Adam MLP는 16/16, ordinal forest는 13/16, CatBoost는 7/16, HistGradientBoosting은 3/16 데이터셋에서 유의미했습니다. 더 중요한 점은 정확한 예측 공간 fANOVA에서 상당한 이원 및 고차 상호작용이 나타났다는 것입니다. 이것이 첫 번째 해결책이었던 ‘nuisance를 하나씩 평균내기’가 유의미한 18개 경우 중 2개에서만 성공한 이유입니다.</p>
+            <p>동등한 재표기만으로 생긴 예측 분산, 즉 <em>스키마 위험</em>은 16개 데이터셋 모두에서 측정되었지만 재표기의 영향을 받지 않도록 만든 선형 대조군에는 없었습니다. 한 신경망 파이프라인에서는 16/16, 세 트리 파이프라인에서는 각각 13/16, 7/16, 3/16에서 나타났습니다. 정확한 분산 분해로 각 선택과 선택 조합의 몫을 계산하자 상호작용이 컸습니다. 따라서 nuisance를 하나씩 평균내는 첫 해결책은 무시할 수 없는 18개 경우 중 2개에서만 성공했습니다.</p>
 
             <h2>16회 학습으로 16개 무작위 표본보다 더 넓게 덮기</h2>
 
-            <p>무작위 16개 앙상블은 기대값에서는 공정하지만, 어떤 요인 쌍은 반복해서 뽑고 다른 쌍은 놓칠 수 있습니다. Strength-2 cover는 같은 16회 학습을 사용하면서 모든 nuisance 수준의 쌍이 같은 횟수만큼 나타나게 합니다. 주효과와 이원 상호작용은 설계에 의해 상쇄되고 고차 구조만 남습니다.</p>
+            <p>서로 독립인 16개 무작위 표본(IID)은 평균적으로 공정하지만, 한 번의 실행에서는 어떤 조합을 반복하고 다른 조합을 놓칠 수 있습니다. 실험설계에서 strength 2라 부르는 <em>쌍 균형 cover</em>는 128개 중 16개를 골라 가능한 모든 선택의 쌍이 같은 횟수만큼 나타나게 합니다. 한두 선택에 걸친 효과는 상쇄되고 세 선택 이상이 함께 만드는 효과만 남습니다.</p>
 
             <figure class="wide-figure">
                 <div class="d5-cover-figure">
                     <section class="iid">
-                        <header><span>IID-16</span><strong>기대값에서 균형</strong></header>
+                        <header><span>무작위 16개 · IID</span><strong>평균적으로 균형</strong></header>
                         <div class="d5-pair-matrix" aria-label="무작위 추출에서 불균형한 쌍의 빈도"><i>3</i><i>0</i><i>2</i><i>1</i><i>0</i><i>2</i><i>1</i><i>1</i><i>2</i><i>1</i><i>0</i><i>1</i><i>0</i><i>1</i><i>1</i><i>0</i></div>
                         <p>어떤 쌍은 반복되고 어떤 쌍은 한 번도 나오지 않습니다.</p>
                     </section>
                     <div class="d5-cover-vs"><b>16</b><span>회<br>학습</span></div>
                     <section class="cover">
-                        <header><span>ORBITCOVER-16</span><strong>이번 실행에서 균형</strong></header>
+                        <header><span>쌍 균형 16개</span><strong>이번 실행에서 균형</strong></header>
                         <div class="d5-pair-matrix" aria-label="균형 cover에서 모든 쌍이 한 번씩 등장"><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i></div>
                         <p>모든 쌍이 똑같이 표현됩니다.</p>
                     </section>
                 </div>
-                <figcaption><strong>그림 2.</strong> 각각 네 수준인 두 요인에 투영한 개념도입니다. 실제 혼합 수준 설계는 특성 순서, 범주 ID, 타깃 ID, 시드의 모든 쌍을 동시에 균형화합니다.</figcaption>
+                <figcaption><strong>그림 2.</strong> 각각 네 선택지를 가진 두 재표기 축의 개념도입니다. 실제 설계는 열 순서, 범주 코드, 클래스 코드, 시드의 모든 쌍을 동시에 균형화합니다.</figcaption>
             </figure>
 
-            <div class="d5-result-board" aria-label="고정된 OrbitCover 확인 실험 결과">
-                <header><span>고정된 확인 실험</span><strong>같은 모델 · 같은 학습 횟수 · 더 작은 quotient 오차</strong></header>
-                <div class="d5-result-hero"><section><b>25 / 25</b><span>유의미한 셀에서<br>세 핵심 대조군 모두 승리</span></section><section><b>−68.9%</b><span>IID-16 대비<br>평균 잔차</span></section><section><b>42.4</b><span>16-fit cover의 중앙값<br>IID 등가 학습 횟수</span></section></div>
-                <div class="d5-strength-ladder"><span><small>4회 · strength 1</small><i><b style="--d5-width:23.9%"></b></i><strong>23.9%</strong></span><span><small>16회 · strength 2</small><i><b style="--d5-width:68.9%"></b></i><strong>68.9%</strong></span><span><small>64회 · strength 3</small><i><b style="--d5-width:94.6%"></b></i><strong>94.6%</strong></span></div>
-                <footer>같은 학습 횟수의 IID 앙상블 대비 예측 잔차 감소율</footer>
+            <div class="d5-result-board" aria-label="사전에 정한 쌍 균형 확인 실험 결과">
+                <header><span>사전에 정한 확인 실험</span><strong>같은 모델 · 같은 학습 횟수 · 128개 모델 평균에 더 가까움</strong></header>
+                <div class="d5-result-hero"><section><b>25 / 25</b><span>무시할 수 없는 모델–데이터<br>경우에서 모든 대조군에 승리</span></section><section><b>−68.9%</b><span>무작위 16개 대비<br>평균 예측 오차</span></section><section><b>42.4</b><span>균형 16회와 같은 정확도에<br>필요한 무작위 학습 중앙값</span></section></div>
+                <div class="d5-strength-ladder"><span><small>4회 · 개별 요인 균형</small><i><b style="--d5-width:23.9%"></b></i><strong>23.9%</strong></span><span><small>16회 · 모든 쌍 균형</small><i><b style="--d5-width:68.9%"></b></i><strong>68.9%</strong></span><span><small>64회 · 모든 삼중 조합 균형</small><i><b style="--d5-width:94.6%"></b></i><strong>94.6%</strong></span></div>
+                <footer>같은 학습 횟수의 무작위 표본 대비 전체 128개 모델 예측과의 거리 감소율</footer>
             </div>
 
-            <p>이 결과는 새로운 nuisance 생성기, 다른 데이터 subsample, 외부 OpenML 데이터셋, 분류·회귀 균형 패널에서도 유지되었습니다. 서로 의존적인 이 반복들을 모두 합치면 strength-2는 유의미한 57개 셀 모두에서 IID와 strength-1을 이겼고, seed block에는 55개에서 이겼습니다. 이는 기술적 감사 결과이지 57개의 독립 시행으로 계산한 통계 검정이 아닙니다.</p>
+            <p>이 결과는 다른 재표기 규칙과 시드, 다른 행 표본, 공개 데이터 저장소 OpenML의 벤치마크, 분류·회귀를 반씩 담은 그룹에서도 유지되었습니다. 서로 관련된 반복을 합치면 쌍 균형은 스키마 위험이 측정된 57개 경우 모두에서 무작위 표본과 개별 요인 균형을 이겼고, 시드만 바꾼 앙상블에는 55개에서 이겼습니다. 이는 감사용 집계이지 57개의 독립 시행이 아닙니다.</p>
 
-            <p>한 번의 승리보다 4/16/64회에서 계속 커지는 계층이 더 중요합니다. 설계의 strength를 상호작용 차수에 맞추어야 한다는 뜻입니다. 직교 배열이 언제나 이긴다는 뜻은 아닙니다. 순수한 삼원 상호작용에서는 16-fit strength-2 설계의 위험이 IID의 16/9배입니다. 이후 고차원 실험에서도 이 경계를 실제로 확인했습니다. Nuisance 스펙트럼과 cover가 맞을 때 방법이 작동합니다.</p>
+            <p>한 번의 승리보다 4/16/64회에서 계속 커지는 계층이 중요합니다. 실제로 중요한 상호작용 차수까지 균형화해야 한다는 뜻입니다. 항상 좋아지는 것은 아닙니다. 세 nuisance가 함께 만날 때만 효과가 나타나면 쌍 균형은 무작위 표본보다 16/9배 위험할 수 있습니다. 고차원 실험에서도 이 경계가 나타났습니다. 설계와 상호작용 구조가 맞아야 합니다.</p>
 
             <h2>편향 없는 예측도 편향된 점수를 만들 수 있습니다</h2>
 
-            <p>유한 cover 예측은 quotient에 대해 불편입니다. 그러나 그 예측의 보통 제곱 손실은 불편하지 않습니다. 잔차 분산이 점수를 위로 밀기 때문입니다. 서로 독립인 두 cover를 사용하면 이 항이 사라집니다. 두 예측을 Q̂<sub>A</sub>, Q̂<sub>B</sub>라고 할 때 다음 교차곱으로 평가합니다.</p>
+            <p>유한 cover 예측은 <em>불편</em>입니다. 여러 cover에서 평균내면 전체 128개 모델의 예측과 같습니다. 하지만 남은 예측 잡음이 제곱 안에 들어가므로 보통 제곱 손실은 평균적으로 너무 큽니다. 서로 독립인 두 cover는 이 추가 항을 없앱니다. 두 예측을 Q̂<sub>A</sub>, Q̂<sub>B</sub>, 레이블을 <em>y</em>라 할 때 다음 교차곱을 사용합니다.</p>
 
-            <div class="d5-cross-equation"><span>cover A</span><b>〈 y − Q̂<sub>A</sub>, y − Q̂<sub>B</sub> 〉</b><span>cover B</span><small>전체 quotient의 Brier 손실 또는 MSE에 대해 정확히 불편</small></div>
+            <div class="d5-cross-equation"><span>균형 집합 A</span><b>〈 y − Q̂<sub>A</sub>, y − Q̂<sub>B</sub> 〉</b><span>균형 집합 B</span><small>전체 궤도의 Brier 손실 또는 평균제곱오차를 평균적으로 정확히 추정</small></div>
 
-            <p>이 작은 대수적 변화가 가장 깔끔한 메커니즘 결과를 만들었습니다. 32회 학습에서 cover cross-score는 171개 후보 중 158개에서 더 작은 quotient-loss RMSE를 보였습니다. 패널 평균 RMSE는 같은 예산의 IID U-statistic 대비 27–38%에 불과했습니다. 별도의 공분산 감사가 예측한 분산과 측정한 분산의 기하평균 비율도 모든 패널과 방법에서 0.988–1.042였습니다.</p>
+            <p>이 작은 대수적 변화가 가장 깔끔한 메커니즘 결과를 만들었습니다. 32회 학습에서 점수의 평균제곱근오차(RMSE)는 171개 모델 후보 중 158개에서 더 작았습니다. 데이터셋 그룹별 평균은 같은 예산의 무작위 표본으로 만든 불편 점수의 27–38%에 불과했습니다. 별도로 계산한 예상 점수 분산도 측정값과 약 4% 이내로 일치했습니다.</p>
 
-            <p>Cover들을 의도적으로 서로 겹치지 않게 만들 수도 있습니다. 서로를 피하는 두 cover를 짝짓거나 네 개의 disjoint cover를 64회 학습으로 pack합니다. 작은 곱공간에서는 정확한 quotient에 도달하고, 그 전에는 음의 의존성을 만듭니다. Antithetic 위험 추정 자체는 새롭지 않습니다. 2026년 연구가 이미 antithetic Gaussian cross-validation의 분산 감소를 증명했습니다.<sup><a href="#ref-4">[4]</a></sup> 여기서의 더 좁은 차이는 유한하고 이산적이며 상호작용 구조를 반영한다는 점입니다.</p>
+            <p>균형 집합들을 의도적으로 겹치지 않게 만들 수도 있습니다. 같은 모델 버전을 공유하지 않는 두 집합을 짝짓거나 네 집합을 64회 학습으로 묶습니다. 작은 격자에서는 정확한 전체 평균에 도달하고, 그 전에는 한 집합의 오차를 다른 집합이 상쇄하는 경향이 생깁니다. 이런 음의 결합 자체는 새롭지 않습니다. 2026년 연구가 Gaussian 교차검증에서 비슷한 분산 감소를 증명했습니다.<sup><a href="#ref-4">[4]</a></sup> 여기서의 차이는 정확한 파이프라인 재표기로 만든 유한 격자와 알려진 상호작용입니다.</p>
 
-            <p>마지막 untouched 네 source·다섯 모델군 블록에서는 세 packing action 모두 비퇴화 후보 17개 전부를 개선했습니다. Four-pack은 score RMSE를 19.47% 줄였습니다. 이후 15-source 종합에서도 모든 source가 유리했고 equal-source 감소율은 19.39%였습니다. 단, 이 종합은 결과 확인 후 계산한 것이고 네 source gate 자체만 prospective입니다.</p>
+            <p>마지막으로 이전에 보지 않은 네 데이터셋과 다섯 종류의 모델을 교차했습니다. 이미 오차 0에서 동률인 경우를 제외한 17개 모두가 모든 비중복 전략에서 개선되었습니다. 네 cover를 묶자 점수 오차가 19.47% 줄었습니다. 이후 15개 데이터셋 종합에서도 모두 유리했고 데이터셋별 평균 감소율은 19.39%였습니다. 이 종합은 결과를 본 뒤 계산했지만, 네 데이터셋 실험과 통과 기준은 결과 전에 고정했습니다.</p>
 
             <h2>더 나은 선택기가 테스트에서는 질 수도 있습니다</h2>
 
-            <p>점수 잡음이 줄자 모든 패널에서 검증 순위는 더 충실해졌습니다. 그런데 prospective 외부 패널에서는 정확한 검증 승자와의 일치율이 90.5%에서 95.8%로 올랐음에도 선택된 테스트 손실은 평균 2.93 × 10<sup>−3</sup> 나빠졌습니다. 정확한 검증 승자와 테스트 승자가 일치한 데이터셋은 8개 중 2개뿐이었습니다.</p>
+            <p>점수 잡음이 줄자 모든 패널에서 검증 순위는 더 충실해졌습니다. 그러나 결과를 보기 전에 프로토콜을 고정한 외부 8-데이터셋 실험에서는 정확한 검증 승자와의 일치율이 90.5%에서 95.8%로 올랐음에도 선택된 테스트 손실은 평균 2.93 × 10<sup>−3</sup> 나빠졌습니다. 정확한 검증 승자와 테스트 승자가 일치한 데이터셋은 8개 중 2개뿐이었습니다.</p>
 
             <figure class="wide-figure">
-                <div class="d5-boundary" role="img" aria-label="OrbitCover는 nuisance Monte Carlo 오차를 줄이지만 held-out 분할의 불안정성을 제거하지는 못합니다">
-                    <section class="solved"><span>감소</span><strong>nuisance Monte Carlo</strong><div><i style="--d5-noise:18%"></i></div><p>균형 cover는 고정된 검증 quotient의 추정을 안정화합니다.</p></section>
+                <div class="d5-boundary" role="img" aria-label="쌍 균형 표본은 스키마와 시드 표본 오차를 줄이지만 검증과 테스트 분할의 불안정성을 제거하지는 못합니다">
+                    <section class="solved"><span>감소</span><strong>스키마·시드 표본 오차</strong><div><i style="--d5-noise:18%"></i></div><p>쌍 균형은 하나의 고정된 검증셋 추정을 안정화합니다.</p></section>
                     <div class="d5-boundary-arrow" aria-hidden="true">≠</div>
-                    <section class="open"><span>여전히 지배적</span><strong>held-out 분할 잡음</strong><div><i style="--d5-noise:88%"></i></div><p>더 정확한 검증 답이 테스트셋의 답과 같다는 보장은 없습니다.</p></section>
-                    <footer><b>39 / 40</b><span>두 source-C 분할에서 strength-2 승리</span><b>6 / 8</b><span>검증 승자가 테스트로 전이</span></footer>
+                    <section class="open"><span>여전히 지배적</span><strong>검증/테스트 분할 잡음</strong><div><i style="--d5-noise:88%"></i></div><p>더 정확한 검증 답이 테스트셋의 답과 같다는 보장은 없습니다.</p></section>
+                    <footer><b>39 / 40</b><span>두 데이터 분할에서 쌍 균형 승리</span><b>6 / 8</b><span>검증 승자가 테스트로 전이</span></footer>
                 </div>
-                <figcaption><strong>그림 3.</strong> 이 방법은 선언된 스키마·시드 nuisance를 적분하지만 train/validation/test 분할에서 생기는 불확실성은 적분하지 않습니다. 반복 분할은 경쟁 방법이 아니라 보완 방법입니다.</figcaption>
+                <figcaption><strong>그림 3.</strong> 이 방법은 스키마와 시드 선택을 평균내지만 train/validation/test 분할의 불확실성은 평균내지 않습니다. 반복 분할은 다른 문제를 해결합니다.</figcaption>
             </figure>
 
-            <p>이는 부차적인 문제가 아닙니다. 잡음이 큰 선택기는 우연히 테스트가 선호하는 모델을 고를 수 있지만, 더 좋은 선택기는 검증이 선호하는 모델을 충실히 고릅니다. 대체 분할들에서 후보 간 격차의 이동은 남은 cross-score RMSE보다 최소 2.51배, 보통 55.3배 컸습니다. Nuisance 적분이 거의 해결되고 나면 데이터 분할 불안정성이 더 큰 문제가 됩니다.</p>
+            <p>이는 부차적인 문제가 아닙니다. 잡음이 큰 선택기는 우연히 테스트가 선호하는 모델을 고를 수 있지만, 더 좋은 선택기는 검증이 선호하는 모델을 충실히 고릅니다. 대체 분할에서 두 후보의 격차는 남은 점수 오차보다 최소 2.51배, 보통 55.3배 더 크게 움직였습니다. 스키마·시드 표본화가 거의 해결되면 데이터 분할 불안정성이 더 큰 문제가 됩니다.</p>
 
             <h2>5일차에 살아남은 것</h2>
 
             <div class="d5-takeaways">
-                <section><span>01</span><strong>먼저 estimand를 정합니다</strong><p>목표는 우연히 실행된 표기 하나가 아니라, 선언된 정확한 동등성과 시드에 대한 완전한 파이프라인 quotient입니다.</p></section>
-                <section><span>02</span><strong>알고 있는 구조를 균형화합니다</strong><p>학습 예산을 nuisance 상호작용을 덮는 데 씁니다. Cover strength를 측정한 fANOVA 스펙트럼에 맞춥니다.</p></section>
-                <section><span>03</span><strong>경계를 인정합니다</strong><p>낮은 nuisance 분산은 평가를 개선하지만 하나의 유한 held-out 분할이 모델 순위를 정확히 정한다는 보장은 없습니다.</p></section>
+                <section><span>01</span><strong>먼저 목표를 정합니다</strong><p>우연히 실행된 한 버전이 아니라 선언한 모든 동등한 스키마와 시드의 평균을 평가합니다.</p></section>
+                <section><span>02</span><strong>알고 있는 구조를 균형화합니다</strong><p>학습 예산으로 상호작용을 덮습니다. 측정된 분산 분해에 따라 개별 요인, 쌍, 삼중 조합을 균형화합니다.</p></section>
+                <section><span>03</span><strong>경계를 인정합니다</strong><p>낮은 스키마·시드 분산은 평가를 개선하지만 하나의 유한 데이터 분할이 모델 순위를 맞히게 하지는 못합니다.</p></section>
             </div>
 
-            <div class="thesis"><strong>5일차 결론.</strong> 정확한 스키마 선택과 무작위 시드는 하나의 유한 nuisance 곱공간으로 다루어야 합니다. OrbitCover는 이 선언을 같은 학습 횟수의 추정기로 바꾸고, 독립적인 packed cover는 그 추정기를 불편 선택 점수로 바꿉니다. 기여는 고전적인 재료 각각이 아니라 완전한 파이프라인 안에서 이들을 결합한 구성입니다.</div>
+            <div class="thesis"><strong>5일차 결론.</strong> 정확히 동등한 스키마 재표기와 무작위 시드는 함께 평균내야 합니다. <strong>OrbitCover</strong>는 이 전체 절차의 이름입니다. 상호작용이 균형 잡힌 변형들을 고정하고, 예측을 정렬해 평균내며, 정직한 검증 점수가 필요할 때는 서로 독립인 두 균형 집합을 사용합니다.</div>
 
-            <p><strong>이제 논문의 주 방향은 OrbitCover입니다.</strong> 예측 SOTA가 아니라 평가와 모델 선택에 관한 논문입니다. 다음 결정적 실험은 반복 데이터 분할을 포함하는 완전히 새로운 multi-source 패널입니다. 이제 남은 불확실성의 주원인은 스키마 궤도를 표본화하는 방식이 아니기 때문입니다.</p>
+            <p>이는 예측 최고 성능 주장이 아니라 평가와 모델 선택에 관한 논문입니다. 다음 결정적 실험은 반복 데이터 분할을 포함하는 새로운 다중 데이터셋 패널입니다. 이제 남은 불확실성의 주원인은 스키마와 시드 선택을 표본화하는 방식이 아니기 때문입니다.</p>
 
             <h2>참고문헌</h2>
             <ol class="reference-list">
@@ -151,7 +151,7 @@
                 <li id="ref-2">Owen. <a href="https://www3.stat.sinica.edu.tw/statistica/j2n2/j2n27/j2n27.htm">Orthogonal Arrays for Computer Experiments, Integration and Visualization</a>. Statistica Sinica 1992.</li>
                 <li id="ref-3">Gruber와 Buettner. <a href="https://proceedings.mlr.press/v206/gruber23a.html">Better Uncertainty Calibration via Proper Scores for Classification and Beyond</a>. AISTATS 2023.</li>
                 <li id="ref-4">Liu, Panigrahi, Soloff. <a href="https://doi.org/10.1093/jrsssb/qkag073">Cross-validation with antithetic Gaussian randomization</a>. JRSS-B 2026.</li>
-                <li id="ref-5"><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-05/DAY5_FINAL_REPORT.md">5일차 최종 보고서</a>와 <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/iclr_direction_decision/FINAL_DIRECTION_DECISION.md">고정된 방향 결정</a>: 프로토콜, 실패한 gate, 이론적 경계, 전체 evidence label.</li>
+                <li id="ref-5"><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-05/DAY5_FINAL_REPORT.md">5일차 최종 보고서</a>와 <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/iclr_direction_decision/FINAL_DIRECTION_DECISION.md">방향 결정</a>: 결과 전에 고정한 실험, 실패한 가설, 이론적 경계, 근거 등급.</li>
             </ol>
             <p class="next-post"><strong>이전 글:</strong> <a href="road-to-iclr-day-04-ko.html">4일차에는 앙상블 한 자리를 같은 표의 다른 관점에 사용합니다.</a></p>
         </div>

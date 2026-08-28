@@ -38,7 +38,7 @@
         "Average the Orbit, Not the Accident": "우연이 아니라 궤도를 평균내기",
         "Road to ICLR · Day 5 / 30": "Road to ICLR · 5일차 / 30",
         "August 28, 2026": "2026년 8월 28일",
-        "Why exact schema spellings and training seeds should be averaged as one nuisance space—and how balanced covers do it with fewer fits.": "정확히 동등한 스키마 표기와 학습 시드를 하나의 nuisance 공간으로 평균내야 하는 이유와 균형 cover가 더 적은 학습으로 이를 수행하는 방법을 살펴봅니다.",
+        "Why harmless schema rewrites and training seeds should be averaged together—and how balancing every pair gets closer to the full average with fewer training runs.": "의미를 보존하는 스키마 재표기와 학습 시드를 함께 평균내야 하는 이유와 모든 쌍을 균형화해 더 적은 학습으로 전체 평균에 가까워지는 방법을 살펴봅니다.",
         "Read Day 5 →": "5일차 읽기 →",
         "Manuscripts Under Review": "심사 중인 원고",
         "Byun, Han Joon is a researcher at Seoul National University working on tabular data, time series, finance, machine learning, and optimization.": "변한준은 정형 데이터, 시계열, 금융, 머신러닝, 최적화를 연구하는 서울대학교 연구자입니다.",
