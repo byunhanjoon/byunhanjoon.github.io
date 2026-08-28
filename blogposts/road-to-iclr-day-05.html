@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Average the Orbit, Not the Accident — Road to ICLR Day 5</title>
+    <meta name="description" content="Day 5 of Road to ICLR: exact schema spellings and training seeds form one nuisance space, and balanced covers estimate its average more efficiently than random ensembles.">
+    <meta name="author" content="Han Joon Byun">
+    <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05.html">
+    <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05.html">
+    <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05-ko.html">
+    <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Average the Orbit, Not the Accident">
+    <meta property="og:description" content="Sixteen deliberately balanced fits can estimate a 128-member schema-and-seed quotient better than sixteen random draws.">
+    <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260828-1">
+    <script src="../language.js" defer></script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Average the Orbit, Not the Accident","description":"Exact schema spellings and training seeds form one nuisance space, and balanced covers estimate its average more efficiently than random ensembles.","datePublished":"2026-08-28","dateModified":"2026-08-28","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-05.html"}
+    </script>
+</head>
+<body>
+    <header><nav><div class="social-icons"><a href="../Han_Joon_Byun_CV.pdf" target="_blank" title="CV"><i class="fas fa-file-alt"></i></a><a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ" target="_blank" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a><a href="https://linkedin.com/in/byunhanjoon" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://github.com/byunhanjoon" target="_blank" title="GitHub"><i class="fab fa-github"></i></a><a href="mailto:byunhanjoon@snu.ac.kr" title="Email"><i class="fas fa-envelope"></i></a></div><div class="nav-links"><a href="../index.html">Home</a><a href="../blog.html">Blog</a></div></nav></header>
+
+    <main class="essay"><article>
+        <div class="essay-header">
+            <p class="series-kicker">Road to ICLR · Day 5 / 30</p>
+            <h1>Average the orbit,<br>not the accident</h1>
+            <p class="essay-deck">A table’s exact spellings and training seeds form one nuisance space. Sixteen deliberately balanced fits can estimate its 128-member average better than sixteen random draws.</p>
+            <div class="essay-meta"><span>August 28, 2026</span><span>Han Joon Byun</span><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/tree/main/experiments/road-to-iclr-day-05">Experiments and results ↗</a></div>
+        </div>
+
+        <div class="essay-body">
+            <p><a href="road-to-iclr-day-03.html">Day 3</a> found that harmless rewrites of a table can move its predictions. <a href="road-to-iclr-day-04.html">Day 4</a> tried to profit from that disagreement by replacing one seed in an ensemble with another representation.</p>
+
+            <p>The performance signal grew on a conditional second panel: HeteroBag won 56 of 72 comparisons and reduced loss by 2.41% on average. Then the decisive control broke the story. On the frozen mechanism triplet, replacing the third member with a merely transformed T-PLE model gained 1.71%; the supposedly meaningful alternate representation gained 1.15%. Diversity helped, but the experiment did not isolate <em>semantic</em> diversity.</p>
+
+            <div class="d5-direction" aria-label="Day 5 research direction decision">
+                <section class="advance"><span>PRIMARY · ADVANCE</span><strong>OrbitCover</strong><p>Average declared schema-and-seed nuisances with a balanced design.</p></section>
+                <section class="demote"><span>SECONDARY · DEMOTE</span><strong>HeteroBag</strong><p>+2.41% is real; the representation-specific mechanism is not isolated.</p></section>
+                <section class="stop"><span>STOP AS METHOD</span><strong>FieldRiesz</strong><p>Beautiful geometry, but the independent performance hierarchy did not replicate.</p></section>
+            </div>
+
+            <div class="thesis"><strong>The Day 5 pivot.</strong> Stop asking which arbitrary representation should win. Declare which changes should not matter, then estimate the prediction averaged over all of them.</div>
+
+            <h2>The accident is a product, not a knob</h2>
+
+            <p>Consider four operations that preserve the meaning of a classification problem: reorder features, rename category IDs, swap target IDs and align the probabilities back, and change the training seed. In the main construction they create a 4 × 4 × 2 × 4 product: 128 fitted versions of one learning pipeline.</p>
+
+            <figure class="wide-figure">
+                <div class="d5-orbit" role="img" aria-label="Feature order, category IDs, target IDs, and training seed form a 128-member nuisance product whose average is the quotient prediction">
+                    <div class="d5-orbit-source"><span>ONE TASK</span><strong>same rows<br>same labels<br>same meaning</strong></div>
+                    <div class="d5-orbit-arrow" aria-hidden="true">→</div>
+                    <div class="d5-factors">
+                        <section><i>4</i><span>feature<br>orders</span></section>
+                        <b>×</b>
+                        <section><i>4</i><span>category-ID<br>maps</span></section>
+                        <b>×</b>
+                        <section><i>2</i><span>target-ID<br>maps</span></section>
+                        <b>×</b>
+                        <section><i>4</i><span>training<br>seeds</span></section>
+                    </div>
+                    <div class="d5-orbit-arrow" aria-hidden="true">→</div>
+                    <div class="d5-quotient"><span>128 PREDICTORS</span><strong>average</strong><small>the nuisance-quotient prediction</small></div>
+                </div>
+                <figcaption><strong>Figure 1.</strong> The quotient is not a new model architecture. It is the prediction obtained by integrating the complete fitted pipeline over a declared finite nuisance product.</figcaption>
+            </figure>
+
+            <p>This is broader than seed variance and stricter than data augmentation: every action passes through the entire pipeline, and outputs are aligned back to the same semantic classes before comparison. For Brier loss and squared error, the average member’s excess loss over this quotient is <em>exactly</em> the prediction variance across the product.</p>
+
+            <p>The audit found material schema risk somewhere on all 16 datasets, while the invariant one-hot linear control had none. Adam MLP was material on 16/16, ordinal forest on 13/16, CatBoost on 7/16, and HistGradientBoosting on 3/16. More importantly, exact prediction-space fANOVA found substantial pair and higher-order interactions. That explains why the first remedy—average one nuisance at a time—worked in only 2 of 18 material cases.</p>
+
+            <h2>Sixteen fits can cover more than sixteen draws</h2>
+
+            <p>A random 16-member ensemble is marginally fair, but it can repeatedly sample some factor pairs and miss others. A strength-2 cover spends the same 16 fits so that every pair of nuisance levels appears equally often. Main effects and pair interactions cancel by construction; only higher-order structure survives.</p>
+
+            <figure class="wide-figure">
+                <div class="d5-cover-figure">
+                    <section class="iid">
+                        <header><span>IID-16</span><strong>fair in expectation</strong></header>
+                        <div class="d5-pair-matrix" aria-label="Unbalanced pair counts from random sampling"><i>3</i><i>0</i><i>2</i><i>1</i><i>0</i><i>2</i><i>1</i><i>1</i><i>2</i><i>1</i><i>0</i><i>1</i><i>0</i><i>1</i><i>1</i><i>0</i></div>
+                        <p>Some pairs repeat; some never appear.</p>
+                    </section>
+                    <div class="d5-cover-vs"><b>16</b><span>fits<br>each</span></div>
+                    <section class="cover">
+                        <header><span>ORBITCOVER-16</span><strong>balanced in this run</strong></header>
+                        <div class="d5-pair-matrix" aria-label="Every pair represented once by a balanced cover"><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i><i>1</i></div>
+                        <p>Every pair is represented equally.</p>
+                    </section>
+                </div>
+                <figcaption><strong>Figure 2.</strong> A schematic projection onto two four-level factors. The real mixed-level design balances every pair across feature order, category IDs, target IDs, and seed simultaneously.</figcaption>
+            </figure>
+
+            <div class="d5-result-board" aria-label="Frozen OrbitCover confirmation results">
+                <header><span>FROZEN CONFIRMATION</span><strong>same model · same fit budget · less quotient error</strong></header>
+                <div class="d5-result-hero"><section><b>25 / 25</b><span>material cells beat<br>all three core controls</span></section><section><b>−68.9%</b><span>mean residual<br>versus IID-16</span></section><section><b>42.4</b><span>median IID-equivalent<br>fits from a 16-fit cover</span></section></div>
+                <div class="d5-strength-ladder"><span><small>4 fits · strength 1</small><i><b style="--d5-width:23.9%"></b></i><strong>23.9%</strong></span><span><small>16 fits · strength 2</small><i><b style="--d5-width:68.9%"></b></i><strong>68.9%</strong></span><span><small>64 fits · strength 3</small><i><b style="--d5-width:94.6%"></b></i><strong>94.6%</strong></span></div>
+                <footer>reduction in prediction residual versus an equal-budget IID ensemble</footer>
+            </div>
+
+            <p>The result survived new nuisance generators, a changed subsample, external OpenML datasets, and a task-balanced classification/regression panel. Across these dependent repeats, strength-2 beat IID and strength-1 in all 57 material cells; it beat seed blocks in 55. Those counts are a descriptive audit, not 57 independent trials.</p>
+
+            <p>The increasing 4/16/64 hierarchy is more revealing than a single win. It says to match design strength to interaction order. It does <em>not</em> say orthogonal arrays always win: a pure triple interaction makes the 16-fit strength-2 design 16/9 times as risky as IID. Later high-dimensional tests found this boundary in real data. The method works when the nuisance spectrum matches the cover.</p>
+
+            <h2>An unbiased prediction can still have a biased score</h2>
+
+            <p>A finite cover prediction is unbiased for the quotient. Its ordinary squared loss is not: residual variance pushes the score upward. Two independent covers remove that term. If their predictions are Q̂<sub>A</sub> and Q̂<sub>B</sub>, score the cross-product</p>
+
+            <div class="d5-cross-equation"><span>cover A</span><b>〈 y − Q̂<sub>A</sub>, y − Q̂<sub>B</sub> 〉</b><span>cover B</span><small>exactly unbiased for full-quotient Brier loss or MSE</small></div>
+
+            <p>This small algebraic move produced the cleanest mechanism result. At 32 fits, the cover cross-score had lower quotient-loss RMSE in 158 of 171 candidates. Its panel-average RMSE was only 27–38% of the equally budgeted IID U-statistic. A separate covariance audit predicted the measured variance to within a geometric ratio of 0.988–1.042 across every panel and method.</p>
+
+            <p>The covers can also be made deliberately disjoint. Pair two covers that avoid one another, or pack four disjoint covers into 64 fits. On small products this closes to the exact quotient; before closure it creates negative dependence. Antithetic risk estimation is not new—2026 work already proves variance gains for antithetic Gaussian cross-validation.<sup><a href="#ref-4">[4]</a></sup> The narrower distinction here is finite, discrete, and interaction-aware.</p>
+
+            <p>In the final untouched four-source, five-model-family block, every one of 17 nondegenerate candidates improved under each packing action. The four-pack cut score RMSE by 19.47%. Across the later 15-source synthesis, every source remained favorable, with a 19.39% equal-source reduction—the synthesis is post-outcome, while the four-source gate itself was prospective.</p>
+
+            <h2>The better selector can still lose</h2>
+
+            <p>Lower score noise made validation rankings more faithful on every panel. Yet on the prospective external panel, cover agreement with the exact validation winner rose from 90.5% to 95.8% while selected test loss became worse by 2.93 × 10<sup>−3</sup> on average. The exact validation and test winners agreed on only 2 of 8 datasets.</p>
+
+            <figure class="wide-figure">
+                <div class="d5-boundary" role="img" aria-label="OrbitCover reduces nuisance Monte Carlo error but does not remove held-out partition instability">
+                    <section class="solved"><span>REDUCED</span><strong>nuisance Monte Carlo</strong><div><i style="--d5-noise:18%"></i></div><p>Balanced covers stabilize the estimate of a fixed validation quotient.</p></section>
+                    <div class="d5-boundary-arrow" aria-hidden="true">≠</div>
+                    <section class="open"><span>STILL DOMINANT</span><strong>held-out partition noise</strong><div><i style="--d5-noise:88%"></i></div><p>A more exact validation answer need not be the test set’s answer.</p></section>
+                    <footer><b>39 / 40</b><span>strength-2 wins across two source-C partitions</span><b>6 / 8</b><span>validation winners transferred to test</span></footer>
+                </div>
+                <figcaption><strong>Figure 3.</strong> The method integrates declared schema and seed nuisances; it does not integrate uncertainty from drawing the train/validation/test split. Repeated splits are a complement, not a competitor.</figcaption>
+            </figure>
+
+            <p>This is not a side note. A noisy selector can accidentally choose the test-preferred model; a better selector faithfully chooses the validation-preferred one. Across alternate splits, candidate-gap movement was at least 2.51 times—and typically 55.3 times—the remaining cross-score RMSE scale. Once nuisance integration is nearly solved, data-partition instability is the larger problem.</p>
+
+            <h2>What survived Day 5</h2>
+
+            <div class="d5-takeaways">
+                <section><span>01</span><strong>Choose the estimand first</strong><p>The target is the full-pipeline quotient over declared exact equivalences and seed—not whichever spelling happened to run.</p></section>
+                <section><span>02</span><strong>Balance known structure</strong><p>Spend fits covering nuisance interactions. Match cover strength to the measured fANOVA spectrum.</p></section>
+                <section><span>03</span><strong>Respect the boundary</strong><p>Lower nuisance variance improves evaluation. It cannot guarantee that one finite held-out split ranks models correctly.</p></section>
+            </div>
+
+            <div class="thesis"><strong>Day 5 conclusion.</strong> Exact schema choices and random seeds should be treated as one finite nuisance product. OrbitCover turns that declaration into an equal-fit estimator, and independent packed covers turn the estimator into an unbiased selection score. The contribution is not the classical ingredients alone; it is their complete-pipeline composition.</div>
+
+            <p><strong>The paper direction is now OrbitCover.</strong> It is an evaluation and model-selection paper, not a predictive-SOTA claim. The next decisive experiment is an untouched multi-source panel with repeated data splits, because the remaining uncertainty no longer comes mainly from how the schema orbit is sampled.</p>
+
+            <h2>References</h2>
+            <ol class="reference-list">
+                <li id="ref-1">Lengerich et al. <a href="https://proceedings.mlr.press/v108/lengerich20a.html">Purifying Interaction Effects with the Functional ANOVA</a>. AISTATS 2020.</li>
+                <li id="ref-2">Owen. <a href="https://www3.stat.sinica.edu.tw/statistica/j2n2/j2n27/j2n27.htm">Orthogonal Arrays for Computer Experiments, Integration and Visualization</a>. Statistica Sinica 1992.</li>
+                <li id="ref-3">Gruber and Buettner. <a href="https://proceedings.mlr.press/v206/gruber23a.html">Better Uncertainty Calibration via Proper Scores for Classification and Beyond</a>. AISTATS 2023.</li>
+                <li id="ref-4">Liu, Panigrahi, and Soloff. <a href="https://doi.org/10.1093/jrsssb/qkag073">Cross-validation with antithetic Gaussian randomization</a>. JRSS-B 2026.</li>
+                <li id="ref-5"><a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/road-to-iclr-day-05/DAY5_FINAL_REPORT.md">Day 5 final report</a> and <a href="https://github.com/byunhanjoon/byunhanjoon.github.io/blob/main/experiments/iclr_direction_decision/FINAL_DIRECTION_DECISION.md">frozen direction decision</a>: protocols, failed gates, theory boundaries, and complete evidence labels.</li>
+            </ol>
+            <p class="next-post"><strong>Previous:</strong> <a href="road-to-iclr-day-04.html">Day 4 spends one ensemble slot on a different view of the same table.</a></p>
+        </div>
+    </article></main>
+    <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>
+</body>
+</html>
