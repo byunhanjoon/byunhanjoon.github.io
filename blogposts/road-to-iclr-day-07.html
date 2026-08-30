@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Average Is Part of the Model — Road to ICLR Day 7</title>
+    <meta name="description" content="Day 7 of Road to ICLR: an ensemble is defined by what it averages, and interaction-balanced training runs help only when schema and randomness are coupled.">
+    <meta name="author" content="Han Joon Byun">
+    <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-07.html">
+    <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-07.html">
+    <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-07.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Average Is Part of the Model">
+    <meta property="og:description" content="Why balancing schema changes and training randomness works only when the two are coupled—and why that boundary matters.">
+    <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-07.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260830-1">
+    <script src="../language.js" defer></script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"The Average Is Part of the Model","description":"An ensemble is defined by what it averages, and interaction-balanced training runs help only when schema and randomness are coupled.","datePublished":"2026-08-30","dateModified":"2026-08-30","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-07.html"}
+    </script>
+</head>
+<body>
+    <header><nav><div class="social-icons"><a href="../Han_Joon_Byun_CV.pdf" target="_blank" title="CV" aria-label="Curriculum vitae"><i class="fas fa-file-alt"></i></a><a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ" target="_blank" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a><a href="https://linkedin.com/in/byunhanjoon" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://github.com/byunhanjoon" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="mailto:byunhanjoon@snu.ac.kr" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a></div><div class="nav-links"><a href="../index.html">Home</a><a href="../blog.html">Blog</a></div></nav></header>
+
+    <main class="essay"><article>
+        <div class="essay-header">
+            <p class="series-kicker">Road to ICLR · Day 7 / 30</p>
+            <h1>The average is<br>part of the model.</h1>
+            <p class="essay-deck">A neural ensemble is not merely “several runs.” It is a choice about which harmless changes and random events count as the same predictor.</p>
+            <div class="essay-meta"><span>August 30, 2026</span><span>Han Joon Byun</span><a href="assets/road-to-iclr-day-07-paper.pdf">Paper draft ↗</a></div>
+        </div>
+
+        <div class="essay-body">
+            <p><a href="road-to-iclr-day-05.html">Day 5</a> proposed averaging away accidents such as column order, category IDs, and training seeds. Day 7 asked the harder question: does that idea survive fresh independent randomness, four neural architectures, realistic training, and an explicit audit of what is actually being averaged?</p>
+
+            <div class="thesis"><strong>The answer.</strong> Yes at small budget—but only for a coupled, explicitly declared average. Balance the schema while assigning unrelated fresh seeds, and the benefit disappears.</div>
+
+            <h2>An ensemble is a question</h2>
+
+            <p>Suppose two tables differ only by a column permutation or a bijective renaming of category IDs. Semantically, they describe the same task. Computationally, the training pipeline may follow a different path.</p>
+
+            <figure class="wide-figure">
+                <div class="d7-question" role="img" aria-label="Equivalent table representations and training randomness produce aligned predictions which are averaged into one declared quotient predictor">
+                    <header><span>ONE SEMANTIC TASK</span><strong>many legitimate executions</strong></header>
+                    <div class="d7-question-flow">
+                        <section class="d7-table-stack"><span>REPRESENTATIONS</span><div><i><b>A</b><em>x · y · z</em></i><i><b>B</b><em>z · x · y</em></i><i><b>C</b><em>IDs renamed</em></i></div><small>same rows, labels, and meaning</small></section>
+                        <b class="d7-flow-arrow" aria-hidden="true">×</b>
+                        <section class="d7-dice"><span>TRAINING RANDOMNESS</span><div aria-hidden="true"><i>1</i><i>2</i><i>3</i><i>4</i></div><small>initialization · order · dropout</small></section>
+                        <b class="d7-flow-arrow" aria-hidden="true">→</b>
+                        <section class="d7-predictions"><span>ALIGNED PREDICTIONS</span><div aria-hidden="true"><i></i><i></i><i></i><i></i></div><small>map every output back to one meaning</small></section>
+                        <b class="d7-flow-arrow" aria-hidden="true">→</b>
+                        <section class="d7-q"><span>QUOTIENT</span><strong>Q</strong><small>the declared average predictor</small></section>
+                    </div>
+                    <footer><code>Q(x) = average of P(x | representation, randomness)</code></footer>
+                </div>
+                <figcaption><strong>Figure 1.</strong> Before asking how well an ensemble estimates an average, say which average you mean. Changing the nuisance distribution can change the predictor itself.</figcaption>
+            </figure>
+
+            <p>This sounds like notation, but it changes the experiment. A canonical seed ensemble, a schema-plus-fresh-seed ensemble, and a finite coupled schema–initialization–order ensemble need not converge to the same prediction. In the final audit, the canonical and schema-averaged targets were distinguishable beyond Monte Carlo noise in <strong>10 of 144</strong> neural cells.</p>
+
+            <div class="d7-rule"><span>Rule 1</span><strong>Never hide a changed target inside a variance-reduction claim.</strong></div>
+
+            <h2>Balance pairs, not just lists</h2>
+
+            <p>Random sampling can visit some factor pairs repeatedly and miss others. A strength-2 cover arranges the runs so every pair is represented evenly. If prediction variation is mostly made of one-factor and two-factor effects, their errors cancel.</p>
+
+            <figure class="wide-figure">
+                <div class="d7-cover" role="img" aria-label="Random sampling repeats and misses schema by seed pairs while an interaction-balanced cover visits every pair exactly once">
+                    <section class="random"><header><span>RANDOM RUNS</span><strong>clumps and holes</strong></header><div class="d7-pair-grid"><i data-count="3"></i><i></i><i data-count="1"></i><i></i><i></i><i data-count="2"></i><i></i><i data-count="1"></i><i data-count="1"></i><i></i><i data-count="3"></i><i></i><i></i><i data-count="2"></i><i></i><i data-count="3"></i></div><p>Some schema × RNG pairs repeat. Others are absent.</p></section>
+                    <div class="d7-cover-arrow" aria-hidden="true"><b>→</b><span>design the 16 runs</span></div>
+                    <section class="balanced"><header><span>COUPLED COVER</span><strong>every pair once</strong></header><div class="d7-pair-grid"><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i></div><p>Main effects and pair interactions cancel exactly.</p></section>
+                </div>
+                <figcaption><strong>Figure 2.</strong> The important word is <em>coupled</em>. The cover must coordinate the factors that interact; balancing one list while randomizing the other independently is a different design.</figcaption>
+            </figure>
+
+            <p>The prediction field can be decomposed into main effects, pair interactions, triples, and higher-order pieces. This is functional ANOVA in prediction space. A strength-2 design deletes the first two layers from its integration error—not approximately, but algebraically.</p>
+
+            <div class="d7-spectrum" role="img" aria-label="Functional ANOVA spectrum showing main and pair terms removed by a strength-2 cover while higher-order terms remain">
+                <header><span>PREDICTION VARIATION</span><strong>what a strength-2 cover removes</strong></header>
+                <div><section class="removed" style="--share:22%"><span>main effects</span><b>removed</b></section><section class="removed" style="--share:42%"><span>pair interactions</span><b>removed</b></section><section class="remain" style="--share:23%"><span>triples</span><b>remain</b></section><section class="remain" style="--share:13%"><span>higher</span><b>remain</b></section></div>
+                <footer>Design strength is a spectral filter, not a universal ranking rule.</footer>
+            </div>
+
+            <h2>The broad win—and the decisive failure</h2>
+
+            <p>The final frozen panel used 12 datasets, three splits, and four architectures: MLP, ResNet, FT-Transformer, and TabM. Each method received 16 fits. The reference pools used genuinely independent master seeds.</p>
+
+            <div class="d7-results" role="img" aria-label="OrbitCover headline result and its essential caveat">
+                <header><span>144 NEURAL CELLS · B = 16</span><strong>classification + regression</strong></header>
+                <div class="d7-result-hero"><section><b>144 / 144</b><span>coupled-cover cell wins</span></section><section><b>12 / 12</b><span>positive dataset means</span></section><section><b>−55.9%</b><span>dataset-balanced residual</span></section></div>
+                <div class="d7-arch-bars"><span><small>MLP</small><i><b style="--w:93.2%"></b></i><strong>93.2%</strong></span><span><small>TabM</small><i><b style="--w:90.2%"></b></i><strong>90.2%</strong></span><span><small>ResNet</small><i><b style="--w:58.1%"></b></i><strong>58.1%</strong></span><span><small>FT-Transformer</small><i><b style="--w:39.1%"></b></i><strong>39.1%</strong></span></div>
+                <footer>95% dataset-clustered interval: <strong>38.7% to 73.8%</strong> · residual is measured to each method's declared target</footer>
+            </div>
+
+            <p>The tempting conclusion would be “schema balance beats seed ensembling.” That conclusion is false. When the schema was balanced but every run received an unrelated fresh RNG, the method won only 5 of 144 cells and <strong>lost 7.0% on average</strong>.</p>
+
+            <div class="d7-contrast">
+                <section class="works"><span>COUPLED</span><strong>schema × initialization × order</strong><b>−47.6%</b><p>mean cellwise residual in a 48-cell same-target ablation</p><small>48 / 48 wins</small></section>
+                <section class="fails"><span>INDEPENDENT</span><strong>balanced schema + unrelated RNG</strong><b>+7.0%</b><p>more residual than canonical independent seeds</p><small>5 / 144 wins</small></section>
+            </div>
+
+            <p>The first number is the clean mechanism test: every ablation estimates the same finite quotient. Jointly balancing schema, initialization, and order beats balancing none, any one factor, or any pair. The interaction—not the word “orthogonal”—is doing the work.</p>
+
+            <h2>Three boundaries worth keeping</h2>
+
+            <div class="d7-boundaries">
+                <section><span>01 · TARGET</span><strong>The average can move</strong><b>10 / 144</b><p>canonical and schema-averaged predictions differed beyond their Monte Carlo threshold.</p></section>
+                <section><span>02 · TRAINING</span><strong>The edge can vanish</strong><b>1.002×</b><p>mean cover-to-SRS residual ratio at convergence: effectively no advantage.</p></section>
+                <section><span>03 · SELECTION</span><strong>Variance is not shift</strong><b>19 / 36</b><p>exact validation and test winners agreed in only 19 partitions; test regret barely changed.</p></section>
+            </div>
+
+            <p>Exact function matching sharpened the second boundary. It almost erased schema effects for MLP and ResNet, while FT-Transformer and TabM retained small architecture-specific paths that also shrank with training. Equivalent representations do not universally force different converged functions.</p>
+
+            <div class="thesis"><strong>Day 7 conclusion.</strong> An ensemble is a numerical integral over a declared learning pipeline. OrbitCover can estimate that integral efficiently when low-order schema and training interactions are deliberately coupled. It is not a universal better ensemble, and it does not solve validation-to-test shift.</div>
+
+            <div class="d7-takeaways">
+                <section><span>01</span><strong>Define the average</strong><p>“Five models” is not an estimand. State which representations and random events belong to the predictor.</p></section>
+                <section><span>02</span><strong>Couple what interacts</strong><p>Balance the joint pipeline, not isolated factor lists. Otherwise the cancellation guarantee misses the variation.</p></section>
+                <section><span>03</span><strong>Publish the boundary</strong><p>Target shift, independent failure, and convergence failure are part of the result—not appendix debris.</p></section>
+            </div>
+
+            <h2>References</h2>
+            <ol class="reference-list">
+                <li id="ref-1">Owen. <a href="https://www3.stat.sinica.edu.tw/statistica/j2n2/j2n27/j2n27.htm">Orthogonal Arrays for Computer Experiments, Integration and Visualization</a>. Statistica Sinica 1992.</li>
+                <li id="ref-2">Lengerich et al. <a href="https://proceedings.mlr.press/v108/lengerich20a.html">Purifying Interaction Effects with the Functional ANOVA</a>. AISTATS 2020.</li>
+                <li id="ref-3">Gorishniy et al. <a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/c1ba41c694834aeef91ae161711d4939-Abstract-Conference.html">TabM: Advancing Tabular Deep Learning with Parameter-Efficient Ensembling</a>. ICLR 2025.</li>
+                <li id="ref-4">Erickson et al. <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/1697e3fb412da11dc9488249f9e7bbc9-Abstract-Datasets_and_Benchmarks_Track.html">TabArena: A Living Benchmark for Machine Learning on Tabular Data</a>. NeurIPS 2025.</li>
+                <li id="ref-5"><a href="assets/road-to-iclr-day-07-paper.pdf">OrbitCover paper draft</a>: theorem details, frozen protocols, complete failure inventory, and the 140,592-fit audit.</li>
+            </ol>
+            <p class="next-post"><strong>Previous:</strong> <a href="road-to-iclr-day-06.html">Day 6 separates arbitrary names from meaningful neighbors.</a></p>
+        </div>
+    </article></main>
+    <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>
+</body>
+</html>
