@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평균은 모델의 일부다 — Road to ICLR 7일차</title>
+    <meta name="description" content="Road to ICLR 7일차: 앙상블은 무엇을 평균내는지로 정의되며, 상호작용을 균형화한 학습은 스키마와 무작위성이 결합될 때만 도움이 됩니다.">
+    <meta name="author" content="Han Joon Byun">
+    <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-07-ko.html">
+    <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-07.html">
+    <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-07-ko.html">
+    <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-07.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="평균은 모델의 일부다">
+    <meta property="og:description" content="스키마 변화와 학습 무작위성의 균형은 왜 둘이 결합될 때만 작동하며, 그 경계가 왜 중요한지 살펴봅니다.">
+    <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-07-ko.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260831-1">
+    <script src="../language.js" defer></script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"평균은 모델의 일부다","description":"앙상블은 무엇을 평균내는지로 정의되며, 상호작용을 균형화한 학습은 스키마와 무작위성이 결합될 때만 도움이 됩니다.","datePublished":"2026-08-30","dateModified":"2026-08-31","inLanguage":"ko","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-07-ko.html"}
+    </script>
+</head>
+<body>
+    <header><nav><div class="social-icons"><a href="../Han_Joon_Byun_CV.pdf" target="_blank" title="이력서" aria-label="이력서"><i class="fas fa-file-alt"></i></a><a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ" target="_blank" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a><a href="https://linkedin.com/in/byunhanjoon" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://github.com/byunhanjoon" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="mailto:byunhanjoon@snu.ac.kr" title="이메일" aria-label="이메일"><i class="fas fa-envelope"></i></a></div><div class="nav-links"><a href="../index.html">홈</a><a href="../blog.html">블로그</a></div></nav></header>
+
+    <main class="essay"><article>
+        <div class="essay-header">
+            <p class="series-kicker">Road to ICLR · 7일차 / 30</p>
+            <h1>평균은<br>모델의 일부다.</h1>
+            <p class="essay-deck">신경망 앙상블은 단순히 “여러 번 실행한 것”이 아닙니다. 어떤 의미 보존 변화와 무작위 사건을 같은 예측기로 볼지에 대한 선택입니다.</p>
+            <div class="essay-meta"><span>2026년 8월 30일</span><span>변한준</span><a href="assets/road-to-iclr-day-07-paper.pdf">논문 초안 ↗</a></div>
+        </div>
+
+        <div class="essay-body">
+            <p><a href="road-to-iclr-day-05-ko.html">5일차</a>에는 열 순서, 범주 ID, 학습 시드 같은 우연을 평균내 없애자고 제안했습니다. 7일차에는 이 아이디어가 새롭고 독립적인 무작위성, 네 가지 신경망 구조, 현실적인 학습, 그리고 실제로 무엇을 평균내는지에 대한 명시적 감사까지 견디는지 물었습니다.</p>
+
+            <div class="thesis"><strong>답.</strong> 작은 예산에서는 그렇습니다. 단, 결합되고 명시적으로 선언된 평균에 대해서만 그렇습니다. 스키마만 균형화하고 서로 무관한 새 시드를 배정하면 이점은 사라집니다.</div>
+
+            <h2>앙상블은 하나의 질문입니다</h2>
+
+            <p>두 표가 열 순서나 범주 ID의 전단사적 재표기만 다르다고 합시다. 의미적으로는 같은 과제를 설명하지만, 계산 과정에서는 학습 파이프라인이 다른 경로를 따를 수 있습니다.</p>
+
+            <figure class="wide-figure">
+                <div class="d7-question" role="img" aria-label="동등한 표 표현과 학습 무작위성이 정렬된 예측을 만들고, 이를 평균내 선언된 하나의 몫 예측기를 구성합니다">
+                    <header><span>하나의 의미적 과제</span><strong>정당한 실행은 여러 개</strong></header>
+                    <div class="d7-question-flow">
+                        <section class="d7-table-stack"><span>표현</span><div><i><b>A</b><em>x · y · z</em></i><i><b>B</b><em>z · x · y</em></i><i><b>C</b><em>ID 재표기</em></i></div><small>같은 행, 라벨, 의미</small></section>
+                        <b class="d7-flow-arrow" aria-hidden="true">×</b>
+                        <section class="d7-dice"><span>학습 무작위성</span><div aria-hidden="true"><i>1</i><i>2</i><i>3</i><i>4</i></div><small>초기화 · 순서 · 드롭아웃</small></section>
+                        <b class="d7-flow-arrow" aria-hidden="true">→</b>
+                        <section class="d7-predictions"><span>정렬된 예측</span><div aria-hidden="true"><i></i><i></i><i></i><i></i></div><small>모든 출력을 하나의 의미로 되돌림</small></section>
+                        <b class="d7-flow-arrow" aria-hidden="true">→</b>
+                        <section class="d7-q"><span>몫</span><strong>Q</strong><small>선언한 평균 예측기</small></section>
+                    </div>
+                    <footer><code>Q(x) = P(x | 표현, 무작위성)의 평균</code></footer>
+                </div>
+                <figcaption><strong>그림 1.</strong> 앙상블이 평균을 얼마나 잘 추정하는지 묻기 전에 어떤 평균을 뜻하는지 밝혀야 합니다. nuisance 분포를 바꾸면 예측기 자체가 달라질 수 있습니다.</figcaption>
+            </figure>
+
+            <p>이는 단순한 표기 문제처럼 보이지만 실험을 바꿉니다. 표준 시드 앙상블, 스키마와 새 시드를 함께 쓰는 앙상블, 유한하게 결합된 스키마–초기화–순서 앙상블은 같은 예측으로 수렴하지 않을 수 있습니다. 최종 감사에서 표준 타깃과 스키마 평균 타깃은 신경망 셀 <strong>144개 중 10개</strong>에서 Monte Carlo 잡음을 넘어 구별되었습니다.</p>
+
+            <div class="d7-rule"><span>규칙 1</span><strong>바뀐 타깃을 분산 감소 주장 속에 숨기지 않습니다.</strong></div>
+
+            <h2>목록이 아니라 쌍을 균형화합니다</h2>
+
+            <p>무작위 표본은 어떤 요인 쌍을 반복해서 방문하고 다른 쌍은 놓칠 수 있습니다. 강도 2 cover는 모든 쌍이 고르게 나타나도록 실행을 배치합니다. 예측 변화가 주로 단일 요인과 두 요인의 효과로 이루어졌다면 그 오차가 상쇄됩니다.</p>
+
+            <figure class="wide-figure">
+                <div class="d7-cover" role="img" aria-label="무작위 표본은 스키마와 시드 쌍을 반복하거나 놓치지만 상호작용 균형 cover는 모든 쌍을 정확히 한 번 방문합니다">
+                    <section class="random"><header><span>무작위 실행</span><strong>뭉침과 빈칸</strong></header><div class="d7-pair-grid"><i data-count="3"></i><i></i><i data-count="1"></i><i></i><i></i><i data-count="2"></i><i></i><i data-count="1"></i><i data-count="1"></i><i></i><i data-count="3"></i><i></i><i></i><i data-count="2"></i><i></i><i data-count="3"></i></div><p>일부 스키마 × RNG 쌍은 반복되고, 일부는 빠집니다.</p></section>
+                    <div class="d7-cover-arrow" aria-hidden="true"><b>→</b><span>16회 실행을 설계</span></div>
+                    <section class="balanced"><header><span>결합 cover</span><strong>모든 쌍을 한 번씩</strong></header><div class="d7-pair-grid"><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i><i data-count="1"></i></div><p>주효과와 쌍 상호작용이 정확히 상쇄됩니다.</p></section>
+                </div>
+                <figcaption><strong>그림 2.</strong> 핵심 단어는 <em>결합</em>입니다. cover는 상호작용하는 요인들을 함께 조정해야 합니다. 한 목록은 균형화하고 다른 목록은 독립적으로 무작위화하면 전혀 다른 설계가 됩니다.</figcaption>
+            </figure>
+
+            <p>예측장은 주효과, 쌍 상호작용, 삼중 상호작용, 그 이상의 항으로 분해할 수 있습니다. 예측 공간에서의 함수형 ANOVA입니다. 강도 2 설계는 적분 오차에서 앞의 두 층을 근사적으로가 아니라 대수적으로 제거합니다.</p>
+
+            <div class="d7-spectrum" role="img" aria-label="강도 2 cover가 주효과와 쌍 상호작용을 제거하고 고차 항은 남기는 함수형 ANOVA 스펙트럼">
+                <header><span>예측 변화</span><strong>강도 2 cover가 제거하는 것</strong></header>
+                <div><section class="removed" style="--share:22%"><span>주효과</span><b>제거</b></section><section class="removed" style="--share:42%"><span>쌍 상호작용</span><b>제거</b></section><section class="remain" style="--share:23%"><span>삼중 항</span><b>남음</b></section><section class="remain" style="--share:13%"><span>고차 항</span><b>남음</b></section></div>
+                <footer>설계 강도는 스펙트럼 필터이지 보편적인 순위 규칙이 아닙니다.</footer>
+            </div>
+
+            <h2>폭넓은 승리, 그리고 결정적인 실패</h2>
+
+            <p>최종 고정 패널은 데이터셋 12개, 분할 3개, 구조 4개를 사용했습니다. 구조는 MLP, ResNet, FT-Transformer, TabM입니다. 각 방법에는 16회의 학습을 배정했고, 기준 풀에는 실제로 독립적인 마스터 시드를 사용했습니다.</p>
+
+            <div class="d7-results" role="img" aria-label="OrbitCover의 핵심 결과와 반드시 함께 봐야 할 단서">
+                <header><span>신경망 셀 144개 · B = 16</span><strong>분류 + 회귀</strong></header>
+                <div class="d7-result-hero"><section><b>144 / 144</b><span>결합 cover의 셀별 승리</span></section><section><b>12 / 12</b><span>데이터셋 평균 모두 개선</span></section><section><b>−55.9%</b><span>데이터셋 균형 잔차</span></section></div>
+                <div class="d7-arch-bars"><span><small>MLP</small><i><b style="--w:93.2%"></b></i><strong>93.2%</strong></span><span><small>TabM</small><i><b style="--w:90.2%"></b></i><strong>90.2%</strong></span><span><small>ResNet</small><i><b style="--w:58.1%"></b></i><strong>58.1%</strong></span><span><small>FT-Transformer</small><i><b style="--w:39.1%"></b></i><strong>39.1%</strong></span></div>
+                <footer>데이터셋 군집화 95% 구간: <strong>38.7%–73.8%</strong> · 잔차는 각 방법이 선언한 타깃을 기준으로 측정</footer>
+            </div>
+
+            <p>“스키마 균형이 시드 앙상블보다 낫다”는 결론을 내리고 싶어집니다. 하지만 그 결론은 틀렸습니다. 스키마는 균형화하되 각 실행에 서로 무관한 새 RNG를 부여하자 144개 셀 중 5개에서만 이겼고, <strong>평균적으로 7.0% 나빠졌습니다.</strong></p>
+
+            <div class="d7-contrast">
+                <section class="works"><span>결합</span><strong>스키마 × 초기화 × 순서</strong><b>−47.6%</b><p>같은 타깃을 쓰는 48셀 ablation에서의 평균 셀별 잔차</p><small>48 / 48 승</small></section>
+                <section class="fails"><span>독립</span><strong>균형 스키마 + 무관한 RNG</strong><b>+7.0%</b><p>표준 독립 시드보다 더 큰 잔차</p><small>5 / 144 승</small></section>
+            </div>
+
+            <p>첫 번째 수치가 깔끔한 메커니즘 검증입니다. 모든 ablation은 같은 유한 몫을 추정합니다. 스키마, 초기화, 순서를 함께 균형화하면 아무것도 균형화하지 않거나 한 요인 또는 두 요인만 균형화한 경우보다 낫습니다. 일을 하는 것은 “직교”라는 단어가 아니라 상호작용입니다.</p>
+
+            <h2>지켜야 할 세 가지 경계</h2>
+
+            <div class="d7-boundaries">
+                <section><span>01 · 타깃</span><strong>평균은 움직일 수 있습니다</strong><b>10 / 144</b><p>표준 예측과 스키마 평균 예측은 Monte Carlo 임계값을 넘어 달랐습니다.</p></section>
+                <section><span>02 · 학습</span><strong>이점은 사라질 수 있습니다</strong><b>1.002×</b><p>수렴 시 cover 대 SRS의 평균 잔차 비율로, 사실상 이점이 없습니다.</p></section>
+                <section><span>03 · 선택</span><strong>분산은 분포 이동이 아닙니다</strong><b>19 / 36</b><p>정확한 검증 승자와 테스트 승자는 36개 분할 중 19개에서만 일치했고, 테스트 regret은 거의 바뀌지 않았습니다.</p></section>
+            </div>
+
+            <p>정확한 함수 일치는 두 번째 경계를 더 선명하게 만들었습니다. MLP와 ResNet에서는 스키마 효과가 거의 사라졌지만, FT-Transformer와 TabM에는 구조 고유의 작은 경로가 남았고 이마저 학습이 진행되며 줄었습니다. 동등한 표현이 언제나 서로 다른 수렴 함수를 강제하는 것은 아닙니다.</p>
+
+            <div class="thesis"><strong>7일차 결론.</strong> 앙상블은 선언된 학습 파이프라인 위의 수치 적분입니다. <strong>OrbitCover</strong>는 저차 스키마–학습 상호작용을 의도적으로 결합할 때 그 적분을 효율적으로 추정할 수 있습니다. 보편적으로 더 나은 앙상블은 아니며, 검증에서 테스트로의 분포 이동을 해결하지도 않습니다.</div>
+
+            <div class="d7-takeaways">
+                <section><span>01</span><strong>평균을 정의합니다</strong><p>“모델 다섯 개”는 추정 대상이 아닙니다. 어떤 표현과 무작위 사건이 예측기에 속하는지 명시합니다.</p></section>
+                <section><span>02</span><strong>상호작용하는 것을 결합합니다</strong><p>고립된 요인 목록이 아니라 전체 파이프라인을 균형화합니다. 그렇지 않으면 상쇄 보장이 실제 변화를 놓칩니다.</p></section>
+                <section><span>03</span><strong>경계를 공개합니다</strong><p>타깃 이동, 독립 설계의 실패, 수렴 시 실패는 부록의 잔재가 아니라 결과의 일부입니다.</p></section>
+            </div>
+
+            <h2>참고문헌</h2>
+            <ol class="reference-list">
+                <li id="ref-1">Owen. <a href="https://www3.stat.sinica.edu.tw/statistica/j2n2/j2n27/j2n27.htm">Orthogonal Arrays for Computer Experiments, Integration and Visualization</a>. Statistica Sinica 1992.</li>
+                <li id="ref-2">Lengerich 외. <a href="https://proceedings.mlr.press/v108/lengerich20a.html">Purifying Interaction Effects with the Functional ANOVA</a>. AISTATS 2020.</li>
+                <li id="ref-3">Gorishniy 외. <a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/c1ba41c694834aeef91ae161711d4939-Abstract-Conference.html">TabM: Advancing Tabular Deep Learning with Parameter-Efficient Ensembling</a>. ICLR 2025.</li>
+                <li id="ref-4">Erickson 외. <a href="https://proceedings.neurips.cc/paper_files/paper/2025/hash/1697e3fb412da11dc9488249f9e7bbc9-Abstract-Datasets_and_Benchmarks_Track.html">TabArena: A Living Benchmark for Machine Learning on Tabular Data</a>. NeurIPS 2025.</li>
+                <li id="ref-5"><a href="assets/road-to-iclr-day-07-paper.pdf">OrbitCover 논문 초안</a>: 정리의 세부 내용, 사전에 고정한 프로토콜, 전체 실패 목록, 140,592회 학습 감사.</li>
+            </ol>
+            <p class="next-post"><strong>이전 글:</strong> <a href="road-to-iclr-day-06-ko.html">6일차에는 임의적인 이름과 의미 있는 이웃을 구분합니다.</a></p>
+        </div>
+    </article></main>
+    <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>
+</body>
+</html>
