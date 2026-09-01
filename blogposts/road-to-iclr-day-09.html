@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Same Table Shouldn't Need Lucky Coordinates — Road to ICLR Day 9</title>
+    <meta name="description" content="Day 9 of Road to ICLR: why information-equivalent rotations change tabular predictions, how optimizer geometry creates the dependence, and how a validation guard makes invariant features safer.">
+    <meta name="author" content="Han Joon Byun">
+    <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
+    <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
+    <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09-ko.html">
+    <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Same Table Shouldn't Need Lucky Coordinates">
+    <meta property="og:description" content="A harmless rotation can change a tabular model. Day 9 traces the mechanism and finds a safer way to control it.">
+    <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260901-1">
+    <script src="../language.js" defer></script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"The Same Table Shouldn't Need Lucky Coordinates","description":"Why information-equivalent rotations change tabular predictions, how optimizer geometry creates the dependence, and how a validation guard makes invariant features safer.","datePublished":"2026-09-01","dateModified":"2026-09-01","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html"}
+    </script>
+</head>
+<body>
+    <header><nav><div class="social-icons"><a href="../Han_Joon_Byun_CV.pdf" target="_blank" title="CV" aria-label="Curriculum vitae"><i class="fas fa-file-alt"></i></a><a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ" target="_blank" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a><a href="https://linkedin.com/in/byunhanjoon" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://github.com/byunhanjoon" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="mailto:byunhanjoon@snu.ac.kr" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a></div><div class="nav-links"><a href="../index.html">Home</a><a href="../blog.html">Blog</a></div></nav></header>
+
+    <main class="essay"><article>
+        <div class="essay-header">
+            <p class="series-kicker">Road to ICLR · Day 9 / 30</p>
+            <h1>The same table shouldn't need lucky coordinates.</h1>
+            <p class="essay-deck">Rotate a feature space and every row, distance, and label can remain unchanged. Modern tabular models often do not.</p>
+            <div class="essay-meta"><span>September 1, 2026</span><span>Han Joon Byun</span></div>
+        </div>
+
+        <div class="essay-body">
+            <p><a href="road-to-iclr-day-03.html">Day 3</a> showed that equivalent coordinates can create different learning problems. Day 9 asked a stricter question: does this still happen under perfectly conditioned rotations, across current model families, and can we remove it without removing useful inductive bias?</p>
+
+            <div class="thesis"><strong>The lesson.</strong> Invariance is not free. A coordinate-free interface can erase arbitrary sensitivity, but it can also erase a useful learning bias. The safer target is controlled invariance: use as much as validation can justify, then fall back to the raw view.</div>
+
+            <h2>Nothing changed—except the prediction</h2>
+
+            <p>Take a numerical feature block <em>X</em> and multiply it by an orthogonal matrix <em>Q</em>. The new coordinates <em>XQ</em> are exactly invertible; distances and angles are preserved; the condition number is one. This is the same data in a rotated basis.</p>
+
+            <figure class="wide-figure">
+                <div class="d9-rotation" role="img" aria-label="The same rows are represented before and after an orthogonal rotation. Information and distances stay the same, while model predictions change.">
+                    <header><span>ORTHOGONAL CHANGE OF BASIS</span><strong>condition number = 1</strong></header>
+                    <div class="d9-rotation-grid">
+                        <section><span>ORIGINAL COORDINATES</span><div class="d9-points raw"><i></i><i></i><i></i><i></i><b>x₂</b><em>x₁</em></div><small>X</small></section>
+                        <div class="d9-rotate-arrow"><b>× Q</b><span>same geometry</span></div>
+                        <section><span>ROTATED COORDINATES</span><div class="d9-points rotated"><i></i><i></i><i></i><i></i><b>x′₂</b><em>x′₁</em></div><small>XQ</small></section>
+                    </div>
+                    <footer><span><b>=</b> rows · labels · distances · information</span><span><b>≠</b> fitted predictions</span></footer>
+                </div>
+                <figcaption><strong>Figure 1.</strong> Rotation changes the coordinate names, not the problem. Any prediction change reveals a basis preference in the learning pipeline.</figcaption>
+            </figure>
+
+            <p>The preference was broad. Across 11 development datasets and five model families—CatBoost, MLP, TabM, TabICL, and TabPFN—40 of 55 dataset–model units crossed the preregistered disagreement threshold. Median disagreement was <strong>7.67%</strong>. Recognizable alternatives such as one-hot versus Helmert and local versus spectral spline bases also disagreed, with a 5.66% median.</p>
+
+            <div class="d9-evidence" role="img" aria-label="Forty of fifty-five dataset-model units had meaningful prediction disagreement under condition-one basis rotations, spanning five model families.">
+                <header><span>CONDITION-ONE ROTATIONS</span><strong>11 datasets · 5 families · 3 seeds</strong></header>
+                <div class="d9-evidence-hero"><section><b>40 / 55</b><span>meaningful basis effects</span></section><section><b>7.67%</b><span>median disagreement</span></section><section><b>5.66%</b><span>natural-basis median</span></section></div>
+                <div class="d9-model-strip"><span>CatBoost</span><span>MLP</span><span>TabM</span><span>TabICL</span><span>TabPFN</span></div>
+                <footer><i><b style="--w:72.7%"></b></i><strong>72.7% of units crossed the frozen threshold</strong></footer>
+            </div>
+
+            <h2>The optimizer rebuilt the difference</h2>
+
+            <p>Perhaps the two runs simply began as different functions. I removed that explanation by matching their initial predictions. With function-matched SGD, the two bases stayed equivalent. With AdamW, disagreement grew back to 8.42%. Adaptive coordinate-wise updates were reconstructing a coordinate preference that the function itself did not require.</p>
+
+            <div class="d9-mechanism" role="img" aria-label="After matching initial functions, SGD preserves equivalence while AdamW rebuilds basis disagreement to 8.42 percent.">
+                <header><span>CONTROLLED MLP MECHANISM</span><strong>same starting function</strong></header>
+                <div><section><span>EPOCH 0</span><b>matched</b><i><em style="--w:0%"></em></i><small>below numerical tolerance</small></section><section class="d9-sgd"><span>FUNCTION-MATCHED SGD</span><b>1.47 × 10<sup>−8</sup></b><i><em style="--w:.1%"></em></i><small>equivalence preserved</small></section><section class="d9-adam"><span>FUNCTION-MATCHED ADAMW</span><b>8.42%</b><i><em style="--w:84.2%"></em></i><small>difference rebuilt</small></section></div>
+            </div>
+
+            <p>This does not make AdamW “wrong.” Coordinates choose an optimization geometry, and that geometry can sometimes help. The experiment says only that the resulting basis dependence is real, mechanistic, and not guaranteed to be benign.</p>
+
+            <h2>Exact invariance was the wrong finish line</h2>
+
+            <p>A Gram interface describes an embedded row through inner products with fixed training anchors. Rotate both the row and anchors and the coordinates become identical:</p>
+
+            <div class="d9-identity" role="img" aria-label="The Gram coordinates of a row and anchors do not change when both are rotated by the same orthogonal matrix.">
+                <span>ROTATION-INVARIANT INTERFACE</span><b>(ZQ)(AQ)<sup>T</sup> = ZQQ<sup>T</sup>A<sup>T</sup> = ZA<sup>T</sup></b><small>arbitrary axes disappear; similarities to anchors remain</small>
+            </div>
+
+            <p>Pure Gram features removed 100% of rotational disagreement, but the average hid dangerous tails. On the completed embedding panel, their 95th-percentile normalized excess risk was 10.87%, and the worst cell reached 333%. A fixed 75% Gram mixture was better, but its worst cell still reached 169%. Exact invariance had become a metric victory and a predictive-risk failure.</p>
+
+            <p>The final completed test added a simple guard. Fit raw and invariant branches, then choose the largest Gram weight among 75%, 50%, 25%, and 0% whose validation cost stays below a fixed 1% budget. On 12 untouched datasets and three neural backbones after RBF embedding, the guarded method cut median basis disagreement by <strong>75%</strong>, improved task risk in 29 of 36 units, and kept the worst observed normalized excess risk to <strong>0.64%</strong>.</p>
+
+            <div class="d9-final" role="img" aria-label="On twelve untouched datasets and three backbones, guarded Gram control reduced median basis disagreement by 75 percent, won 29 of 36 task-risk comparisons, and limited the worst normalized excess risk to 0.64 percent.">
+                <header><span>UNTOUCHED EMBEDDING PANEL</span><strong>12 datasets × 3 backbones</strong></header>
+                <div class="d9-final-hero"><section><b>75%</b><span>median disagreement removed</span></section><section><b>29 / 36</b><span>task-risk wins</span></section><section><b>13.9%</b><span>raw fallback rate</span></section></div>
+                <div class="d9-tail-table"><span></span><b>MEDIAN C</b><b>P95 C</b><b>WORST C</b><strong>Pure Gram</strong><i>−1.38%</i><i class="warn">+10.87%</i><i class="danger">+333.19%</i><strong>Fixed 75%</strong><i>−3.66%</i><i class="warn">+4.74%</i><i class="danger">+168.50%</i><strong>Guarded 75% max</strong><i class="best">−3.07%</i><i class="best">+0.26%</i><i class="best">+0.64%</i></div>
+                <footer>C is excess task risk normalized by the gap to a trivial predictor. Lower is better.</footer>
+            </div>
+
+            <p>The guard does not prove a universal solution. It uses two fits, covers orthogonal changes inside numerical embeddings, and still loses 6 of 36 units. But it resolves the sharpest failure of the earlier method: the median improvement no longer conceals a catastrophic observed tail.</p>
+
+            <div class="d9-takeaways">
+                <section><span>01</span><strong>Test harmless changes</strong><p>Condition-one rotations isolate coordinate preference without confounding information loss or ill-conditioning.</p></section>
+                <section><span>02</span><strong>Audit the tail</strong><p>Perfect invariance and a good median can coexist with catastrophic predictive cells.</p></section>
+                <section><span>03</span><strong>Keep an escape route</strong><p>A validation guard preserves useful raw-coordinate bias when the invariant branch becomes costly.</p></section>
+            </div>
+
+            <div class="thesis"><strong>Day 9 conclusion.</strong> The same table can become a different predictor merely by rotating its coordinates. A Gram interface can remove that accident, but the raw basis sometimes carries useful inductive bias. The best result was therefore not perfect invariance. It was a guarded compromise that controlled the orbit without trusting it blindly.</div>
+
+            <h2>References</h2>
+            <ol class="reference-list">
+                <li id="ref-1">Hollmann et al. <a href="https://doi.org/10.1038/s41586-024-08328-6">Accurate Predictions on Small Data with a Tabular Foundation Model</a>. Nature, 2025.</li>
+                <li id="ref-2">Ding et al. <a href="https://arxiv.org/abs/2602.11139">TabICLv2: A Better, Faster, Scalable, and Open Tabular Foundation Model</a>. 2026.</li>
+                <li id="ref-3">Gorishniy et al. <a href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/c1ba41c694834aeef91ae161711d4939-Abstract-Conference.html">TabM: Advancing Tabular Deep Learning with Parameter-Efficient Ensembling</a>. ICLR 2025.</li>
+                <li id="ref-4">Gorishniy et al. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/9e9f0ffc3d836836ca96cbf8fe14b105-Abstract-Conference.html">On Embeddings for Numerical Features in Tabular Deep Learning</a>. NeurIPS 2022.</li>
+            </ol>
+            <p class="next-post"><strong>Previous:</strong> <a href="road-to-iclr-day-08.html">Day 8 shows why aggregate predictions need aggregate risk.</a></p>
+        </div>
+    </article></main>
+    <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>
+</body>
+</html>
