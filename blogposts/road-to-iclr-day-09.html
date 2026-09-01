@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Same Table Shouldn't Need Lucky Coordinates — Road to ICLR Day 9</title>
-    <meta name="description" content="Day 9 of Road to ICLR: why information-equivalent rotations change tabular predictions, how optimizer geometry creates the dependence, and how a validation guard makes invariant features safer.">
+    <title>Turning the Paper Shouldn't Change the Answer — Road to ICLR Day 9</title>
+    <meta name="description" content="Day 9 of Road to ICLR: why turning the coordinate grid can change a model's answer, and how describing rows through familiar landmarks makes predictions more dependable.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09-ko.html">
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="The Same Table Shouldn't Need Lucky Coordinates">
-    <meta property="og:description" content="A harmless rotation can change a tabular model. Day 9 traces the mechanism and finds a safer way to control it.">
+    <meta property="og:title" content="Turning the Paper Shouldn't Change the Answer">
+    <meta property="og:description" content="Turn the graph paper without moving the dots. A person sees the same pattern, but an AI model may give a different answer.">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260901-1">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260901-2">
     <script src="../language.js" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"The Same Table Shouldn't Need Lucky Coordinates","description":"Why information-equivalent rotations change tabular predictions, how optimizer geometry creates the dependence, and how a validation guard makes invariant features safer.","datePublished":"2026-09-01","dateModified":"2026-09-01","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Turning the Paper Shouldn't Change the Answer","description":"Why turning the coordinate grid can change a model's answer, and how a landmark-based safety check makes predictions more dependable.","datePublished":"2026-09-01","dateModified":"2026-09-01","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html"}
     </script>
 </head>
 <body>
@@ -28,81 +28,79 @@
     <main class="essay"><article>
         <div class="essay-header">
             <p class="series-kicker">Road to ICLR · Day 9 / 30</p>
-            <h1>The same table shouldn't need lucky coordinates.</h1>
-            <p class="essay-deck">Rotate a feature space and every row, distance, and label can remain unchanged. Modern tabular models often do not.</p>
+            <h1>Turning the paper shouldn't change the answer.</h1>
+            <p class="essay-deck">Turn the graph paper without moving the dots. A person sees the same pattern. An AI model may give a different answer.</p>
             <div class="essay-meta"><span>September 1, 2026</span><span>Han Joon Byun</span></div>
         </div>
 
         <div class="essay-body">
-            <p><a href="road-to-iclr-day-03.html">Day 3</a> showed that equivalent coordinates can create different learning problems. Day 9 asked a stricter question: does this still happen under perfectly conditioned rotations, across current model families, and can we remove it without removing useful inductive bias?</p>
+            <p>Imagine a scatterplot of patients, homes, or companies. Now turn the paper slightly. No dot moves relative to another. A person immediately knows it is the same picture. But when I gave this kind of harmless rewrite to AI models for tables, their answers often changed.</p>
 
-            <div class="thesis"><strong>The lesson.</strong> Invariance is not free. A coordinate-free interface can erase arbitrary sensitivity, but it can also erase a useful learning bias. The safer target is controlled invariance: use as much as validation can justify, then fall back to the raw view.</div>
+            <div class="thesis"><strong>The simple lesson.</strong> A dependable model should learn the pattern of the dots, not which way the graph paper happens to face.</div>
 
-            <h2>Nothing changed—except the prediction</h2>
+            <h2>Turn the paper, change the answer</h2>
 
-            <p>Take a numerical feature block <em>X</em> and multiply it by an orthogonal matrix <em>Q</em>. The new coordinates <em>XQ</em> are exactly invertible; distances and angles are preserved; the condition number is one. This is the same data in a rotated basis.</p>
+            <p>A table may describe the same facts in many ways. We can measure temperature in different units, rename categories, or combine two columns into new directions. If the change is reversible, no information has disappeared. It is like rotating a map: north moves on the page, but the roads and distances stay put.</p>
 
             <figure class="wide-figure">
-                <div class="d9-rotation" role="img" aria-label="The same rows are represented before and after an orthogonal rotation. Information and distances stay the same, while model predictions change.">
-                    <header><span>ORTHOGONAL CHANGE OF BASIS</span><strong>condition number = 1</strong></header>
+                <div class="d9-rotation" role="img" aria-label="The same dots appear before and after the graph paper is turned. Their relationships stay the same, while a model's answer can change.">
+                    <header><span>TURN THE GRAPH PAPER</span><strong>do not move the dots</strong></header>
                     <div class="d9-rotation-grid">
-                        <section><span>ORIGINAL COORDINATES</span><div class="d9-points raw"><i></i><i></i><i></i><i></i><b>x₂</b><em>x₁</em></div><small>X</small></section>
-                        <div class="d9-rotate-arrow"><b>× Q</b><span>same geometry</span></div>
-                        <section><span>ROTATED COORDINATES</span><div class="d9-points rotated"><i></i><i></i><i></i><i></i><b>x′₂</b><em>x′₁</em></div><small>XQ</small></section>
+                        <section><span>BEFORE</span><div class="d9-points raw"><i></i><i></i><i></i><i></i><b>up</b><em>across</em></div><small>same pattern</small></section>
+                        <div class="d9-rotate-arrow"><b>↻</b><span>turn only</span></div>
+                        <section><span>AFTER</span><div class="d9-points rotated"><i></i><i></i><i></i><i></i><b>up</b><em>across</em></div><small>same pattern</small></section>
                     </div>
-                    <footer><span><b>=</b> rows · labels · distances · information</span><span><b>≠</b> fitted predictions</span></footer>
+                    <footer><span><b>=</b> people · facts · distances</span><span><b>≠</b> the model's answer</span></footer>
                 </div>
-                <figcaption><strong>Figure 1.</strong> Rotation changes the coordinate names, not the problem. Any prediction change reveals a basis preference in the learning pipeline.</figcaption>
+                <figcaption><strong>Figure 1.</strong> The picture has not changed. Only the directions used to describe it have.</figcaption>
             </figure>
 
-            <p>The preference was broad. Across 11 development datasets and five model families—CatBoost, MLP, TabM, TabICL, and TabPFN—40 of 55 dataset–model units crossed the preregistered disagreement threshold. Median disagreement was <strong>7.67%</strong>. Recognizable alternatives such as one-hot versus Helmert and local versus spectral spline bases also disagreed, with a 5.66% median.</p>
+            <p>This was not a quirk of one model or one table. I tried five very different kinds of models on 11 real datasets. Nearly three quarters of the model–dataset pairs changed enough to matter. Even ordinary alternative encodings—not only artificial rotations—produced the same problem.</p>
 
-            <div class="d9-evidence" role="img" aria-label="Forty of fifty-five dataset-model units had meaningful prediction disagreement under condition-one basis rotations, spanning five model families.">
-                <header><span>CONDITION-ONE ROTATIONS</span><strong>11 datasets · 5 families · 3 seeds</strong></header>
-                <div class="d9-evidence-hero"><section><b>40 / 55</b><span>meaningful basis effects</span></section><section><b>7.67%</b><span>median disagreement</span></section><section><b>5.66%</b><span>natural-basis median</span></section></div>
-                <div class="d9-model-strip"><span>CatBoost</span><span>MLP</span><span>TabM</span><span>TabICL</span><span>TabPFN</span></div>
-                <footer><i><b style="--w:72.7%"></b></i><strong>72.7% of units crossed the frozen threshold</strong></footer>
+            <div class="d9-evidence" role="img" aria-label="Nearly three in four model and dataset pairs changed their predictions after the coordinate grid was turned, across five kinds of models.">
+                <header><span>NOT A ONE-MODEL QUIRK</span><strong>11 real datasets</strong></header>
+                <div class="d9-evidence-hero"><section><b>Nearly 3 in 4</b><span>changed enough to matter</span></section><section><b>5 kinds</b><span>of modern models tested</span></section><section><b>same facts</b><span>nothing added or removed</span></section></div>
+                <footer><i><b style="--w:72.7%"></b></i><strong>The direction of the axes was influencing the answer.</strong></footer>
             </div>
 
-            <h2>The optimizer rebuilt the difference</h2>
+            <h2>Why would a model care?</h2>
 
-            <p>Perhaps the two runs simply began as different functions. I removed that explanation by matching their initial predictions. With function-matched SGD, the two bases stayed equivalent. With AdamW, disagreement grew back to 8.42%. Adaptive coordinate-wise updates were reconstructing a coordinate preference that the function itself did not require.</p>
+            <p>Training a model is like walking downhill through a landscape. Some training rules take different-sized steps in different compass directions. Turn the compass, and the route can change—even when the hill itself does not.</p>
 
-            <div class="d9-mechanism" role="img" aria-label="After matching initial functions, SGD preserves equivalence while AdamW rebuilds basis disagreement to 8.42 percent.">
-                <header><span>CONTROLLED MLP MECHANISM</span><strong>same starting function</strong></header>
-                <div><section><span>EPOCH 0</span><b>matched</b><i><em style="--w:0%"></em></i><small>below numerical tolerance</small></section><section class="d9-sgd"><span>FUNCTION-MATCHED SGD</span><b>1.47 × 10<sup>−8</sup></b><i><em style="--w:.1%"></em></i><small>equivalence preserved</small></section><section class="d9-adam"><span>FUNCTION-MATCHED ADAMW</span><b>8.42%</b><i><em style="--w:84.2%"></em></i><small>difference rebuilt</small></section></div>
+            <p>To check this explanation, I made two models begin with exactly the same predictions. A simple training rule kept them together after the grid turned. A widely used adaptive rule gradually pulled them apart again. The difference was being created during learning, not by missing information.</p>
+
+            <div class="d9-mechanism" role="img" aria-label="Two learners start with the same answer. A simple training path keeps them together, while an axis-sensitive path makes their answers drift apart.">
+                <header><span>SAME START, DIFFERENT PATH</span><strong>the grid changes the journey</strong></header>
+                <div><section><span>START</span><b>same answer</b><i><em style="--w:2%"></em></i><small>nothing separates them</small></section><section class="d9-sgd"><span>STEADY PATH</span><b>stay together</b><i><em style="--w:2%"></em></i><small>the turned grid is ignored</small></section><section class="d9-adam"><span>AXIS-SENSITIVE PATH</span><b>drift apart</b><i><em style="--w:84.2%"></em></i><small>the grid steers learning</small></section></div>
             </div>
 
-            <p>This does not make AdamW “wrong.” Coordinates choose an optimization geometry, and that geometry can sometimes help. The experiment says only that the resulting basis dependence is real, mechanistic, and not guaranteed to be benign.</p>
+            <h2>Navigate by landmarks, not compass directions</h2>
 
-            <h2>Exact invariance was the wrong finish line</h2>
+            <p>A natural fix is to stop telling the model where a row sits on arbitrary axes. Instead, describe how it relates to a few familiar examples from the training data—like giving directions from landmarks rather than from “east” and “north.” Turn the map and those relationships remain the same.</p>
 
-            <p>A Gram interface describes an embedded row through inner products with fixed training anchors. Rotate both the row and anchors and the coordinates become identical:</p>
-
-            <div class="d9-identity" role="img" aria-label="The Gram coordinates of a row and anchors do not change when both are rotated by the same orthogonal matrix.">
-                <span>ROTATION-INVARIANT INTERFACE</span><b>(ZQ)(AQ)<sup>T</sup> = ZQQ<sup>T</sup>A<sup>T</sup> = ZA<sup>T</sup></b><small>arbitrary axes disappear; similarities to anchors remain</small>
+            <div class="d9-identity" role="img" aria-label="A row is described by its relationships to familiar landmark examples, which stay the same when the coordinate grid turns.">
+                <span>THE LANDMARK VIEW</span><b>new row → relationships to familiar rows → stable description</b><small>turn the map; the landmarks stay in the same places relative to one another</small>
             </div>
 
-            <p>Pure Gram features removed 100% of rotational disagreement, but the average hid dangerous tails. On the completed embedding panel, their 95th-percentile normalized excess risk was 10.87%, and the worst cell reached 333%. A fixed 75% Gram mixture was better, but its worst cell still reached 169%. Exact invariance had become a metric victory and a predictive-risk failure.</p>
+            <p>The landmark view made the model perfectly stable—but sometimes less accurate. That matters. The original directions, although arbitrary, can act as useful shortcuts for learning. Throwing them away everywhere traded one kind of unreliability for another.</p>
 
-            <p>The final completed test added a simple guard. Fit raw and invariant branches, then choose the largest Gram weight among 75%, 50%, 25%, and 0% whose validation cost stays below a fixed 1% budget. On 12 untouched datasets and three neural backbones after RBF embedding, the guarded method cut median basis disagreement by <strong>75%</strong>, improved task risk in 29 of 36 units, and kept the worst observed normalized excess risk to <strong>0.64%</strong>.</p>
+            <p>So the final method kept both views. One model reads the original table; another reads the landmark version. A small practice set decides how much to trust the stable view and returns to the original whenever the change looks risky.</p>
 
-            <div class="d9-final" role="img" aria-label="On twelve untouched datasets and three backbones, guarded Gram control reduced median basis disagreement by 75 percent, won 29 of 36 task-risk comparisons, and limited the worst normalized excess risk to 0.64 percent.">
-                <header><span>UNTOUCHED EMBEDDING PANEL</span><strong>12 datasets × 3 backbones</strong></header>
-                <div class="d9-final-hero"><section><b>75%</b><span>median disagreement removed</span></section><section><b>29 / 36</b><span>task-risk wins</span></section><section><b>13.9%</b><span>raw fallback rate</span></section></div>
-                <div class="d9-tail-table"><span></span><b>MEDIAN C</b><b>P95 C</b><b>WORST C</b><strong>Pure Gram</strong><i>−1.38%</i><i class="warn">+10.87%</i><i class="danger">+333.19%</i><strong>Fixed 75%</strong><i>−3.66%</i><i class="warn">+4.74%</i><i class="danger">+168.50%</i><strong>Guarded 75% max</strong><i class="best">−3.07%</i><i class="best">+0.26%</i><i class="best">+0.64%</i></div>
-                <footer>C is excess task risk normalized by the gap to a trivial predictor. Lower is better.</footer>
+            <div class="d9-final" role="img" aria-label="On twelve new datasets, the guarded blend removed three quarters of coordinate sensitivity, improved prediction quality in twenty-nine of thirty-six comparisons, and showed no large hidden failure.">
+                <header><span>THE SAFER COMPROMISE</span><strong>tested on 12 new datasets</strong></header>
+                <div class="d9-final-hero"><section><b>¾ less</b><span>sensitivity to how the grid faces</span></section><section><b>29 / 36</b><span>better prediction results</span></section><section><b>none</b><span>large hidden failures observed</span></section></div>
+                <footer>Keep the stable view when it helps. Step back toward the original when it does not.</footer>
             </div>
 
-            <p>The guard does not prove a universal solution. It uses two fits, covers orthogonal changes inside numerical embeddings, and still loses 6 of 36 units. But it resolves the sharpest failure of the earlier method: the median improvement no longer conceals a catastrophic observed tail.</p>
+            <p>This is not a universal cure. It needs two trained models and still lost some comparisons. But it passed the most important common-sense test: the typical answer became much less sensitive to the direction of the graph paper, without hiding a disastrous failure elsewhere.</p>
 
             <div class="d9-takeaways">
-                <section><span>01</span><strong>Test harmless changes</strong><p>Condition-one rotations isolate coordinate preference without confounding information loss or ill-conditioning.</p></section>
-                <section><span>02</span><strong>Audit the tail</strong><p>Perfect invariance and a good median can coexist with catastrophic predictive cells.</p></section>
-                <section><span>03</span><strong>Keep an escape route</strong><p>A validation guard preserves useful raw-coordinate bias when the invariant branch becomes costly.</p></section>
+                <section><span>01</span><strong>Turn the paper</strong><p>If the facts stay fixed, a dependable model's answer should stay close too.</p></section>
+                <section><span>02</span><strong>Use landmarks</strong><p>Relationships between examples are often more trustworthy than arbitrary axis directions.</p></section>
+                <section><span>03</span><strong>Keep an escape route</strong><p>Stability is valuable, but not when it makes the actual prediction worse.</p></section>
             </div>
 
-            <div class="thesis"><strong>Day 9 conclusion.</strong> The same table can become a different predictor merely by rotating its coordinates. A Gram interface can remove that accident, but the raw basis sometimes carries useful inductive bias. The best result was therefore not perfect invariance. It was a guarded compromise that controlled the orbit without trusting it blindly.</div>
+            <div class="thesis"><strong>Day 9 conclusion.</strong> Reliable AI should care about the people and patterns in a table, not the direction of its invisible graph paper. The best answer was not to ignore coordinates completely. It was to read the table through stable landmarks while keeping the original view close enough to catch what the landmarks miss.</div>
 
             <h2>References</h2>
             <ol class="reference-list">

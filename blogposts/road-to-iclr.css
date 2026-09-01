@@ -194,6 +194,7 @@
     gap: .8rem;
     align-items: center;
     padding: .8rem 1rem;
+    border-top: 1px solid var(--essay-line);
     color: var(--essay-muted);
     font-size: .58rem;
 }
@@ -249,7 +250,7 @@
 }
 
 .d9-identity span { color: var(--essay-teal); font-size: .56rem; font-weight: 850; letter-spacing: .1em; }
-.d9-identity b { color: var(--essay-ink); font: 400 1.15rem ui-monospace, SFMono-Regular, Menlo, monospace; }
+.d9-identity b { color: var(--essay-ink); font: 400 1.05rem/1.5 Georgia, serif; }
 .d9-identity small { color: var(--essay-muted); font-size: .6rem; }
 
 .d9-final-hero { border-bottom: 1px solid var(--essay-line); }
@@ -333,7 +334,7 @@
     .d9-tail-table > strong,
     .d9-tail-table > b { font-size: .48rem; }
     .d9-tail-table > i { font-size: .58rem; }
-    .d9-identity b { font-size: .78rem; }
+    .d9-identity b { font-size: .9rem; }
 }
 
 /* Day 8: aggregation-aware retrieval risk */
