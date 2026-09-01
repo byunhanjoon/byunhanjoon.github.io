@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Model Saw the Grid, Not Just the Dots — Road to ICLR Day 9</title>
-    <meta name="description" content="Day 9 of Road to ICLR: an interactive visual essay about why turning a coordinate grid can change a model's answer, and how landmark-based descriptions make learning more dependable.">
+    <title>The Model Built Its Own Grid—and Then Trusted It — Road to ICLR Day 9</title>
+    <meta name="description" content="Day 9 of Road to ICLR: an interactive visual essay about the hidden coordinate grids created by numerical embeddings, and why stability needs a safety brake.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09-ko.html">
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="The Model Saw the Grid, Not Just the Dots">
-    <meta property="og:description" content="The dots stayed put. The grid turned. Why did the model change its mind?">
+    <meta property="og:title" content="The Model Built Its Own Grid—and Then Trusted It">
+    <meta property="og:description" content="A number entered the model. It became sixteen internal signals—and acquired a new, arbitrary coordinate system.">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260901-3">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260902-1">
     <script src="../language.js" defer></script>
-    <script src="road-to-iclr-day-09.js?v=20260901-1" defer></script>
+    <script src="road-to-iclr-day-09.js?v=20260902-1" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"The Model Saw the Grid, Not Just the Dots","description":"An interactive visual essay about why turning a coordinate grid can change a model's answer, and how landmark-based descriptions make learning more dependable.","datePublished":"2026-09-01","dateModified":"2026-09-01","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"The Model Built Its Own Grid—and Then Trusted It","description":"An interactive visual essay about hidden coordinate grids created by numerical embeddings, and why stability needs a safety brake.","datePublished":"2026-09-01","dateModified":"2026-09-02","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html"}
     </script>
 </head>
 <body>
@@ -29,123 +29,116 @@
     <main class="essay"><article>
         <div class="essay-header d9-essay-header">
             <p class="series-kicker">Road to ICLR · Day 9 / 30</p>
-            <h1>The model saw the grid, not just the dots.</h1>
-            <p class="essay-deck">The dots stayed put. The grid turned. A person saw the same pattern—but the model changed its mind.</p>
-            <div class="essay-meta"><span>September 1, 2026</span><span>Han Joon Byun</span></div>
+            <h1>The model built its own grid—and then trusted it.</h1>
+            <p class="essay-deck">A number entered the model. It became sixteen internal signals—and acquired a new, arbitrary coordinate system.</p>
+            <div class="essay-meta"><span>September 1, 2026 · updated September 2</span><span>Han Joon Byun</span></div>
         </div>
 
         <div class="essay-body d9-visual-essay">
-            <p>A table is a <em>description</em> of reality. A medical model never meets a patient; it sees columns. A lending model never meets a borrower; it sees numbers. This makes a quiet question surprisingly important:</p>
+            <p>A table is a <em>description</em> of reality. A medical model never meets a patient; it sees columns. This raises a simple test for dependability:</p>
+            <p class="d9-big-question">If two descriptions contain the same information, should the model care which one we chose?</p>
+            <p>Day 9 began by turning the coordinate grid under a dataset. Then a later experiment revealed the more interesting twist: modern models quietly build new coordinate grids inside themselves.</p>
 
-            <p class="d9-big-question">If we rewrite the same facts without changing their meaning, should the answer change?</p>
-
-            <p>For a dependable model, usually not. Day 9 tested that idea with the simplest rewrite I could think of: keep every point and every distance, but turn the invisible graph paper underneath them.</p>
-
-            <h2>One reality, many descriptions</h2>
-
-            <p>Drag the slider. The points rotate together, so their pattern never changes. Only the directions used to describe them do.</p>
+            <h2>The first clue: turn the grid</h2>
+            <p>Drag the slider. The points rotate together, preserving every distance and relationship. Only the directions used to describe them change.</p>
 
             <figure class="wide-figure">
                 <div class="d9-rotate-lab" data-d9-rotate data-rest="at the starting view" data-drift="may drift">
                     <header><span>TRY IT · TURN THE DESCRIPTION</span><strong>the reality underneath stays fixed</strong></header>
                     <div class="d9-rotate-stage">
-                        <div class="d9-paper-frame" aria-hidden="true">
-                            <div class="d9-lab-paper" data-d9-paper style="--angle:18deg">
-                                <i></i><i></i><i></i><i></i><i></i><i></i>
-                                <b>up</b><em>across</em>
-                            </div>
-                        </div>
-                        <div class="d9-observers">
-                            <section><span>WHAT A PERSON SEES</span><b>the same pattern</b><small>relationships between points</small></section>
-                            <section class="sensitive"><span>WHAT A SENSITIVE MODEL SEES</span><b data-d9-model-answer>may drift</b><i><em data-d9-drift style="--drift:51%"></em></i><small>an illustrative response, not a measured score</small></section>
-                        </div>
+                        <div class="d9-paper-frame" aria-hidden="true"><div class="d9-lab-paper" data-d9-paper style="--angle:18deg"><i></i><i></i><i></i><i></i><i></i><i></i><b>up</b><em>across</em></div></div>
+                        <div class="d9-observers"><section><span>WHAT A PERSON SEES</span><b>the same pattern</b><small>relationships between points</small></section><section class="sensitive"><span>WHAT A SENSITIVE MODEL SEES</span><b data-d9-model-answer>may drift</b><i><em data-d9-drift style="--drift:51%"></em></i><small>an illustration, not a measured score</small></section></div>
                     </div>
-                    <label class="d9-range"><span>Turn the coordinate grid</span><input data-d9-angle type="range" min="-35" max="35" value="18" step="1" aria-label="Turn the coordinate grid"><output data-d9-angle-output>18°</output></label>
-                    <footer><span><b>UNCHANGED</b> rows · labels · distances · available information</span><span><b>CHANGED</b> column values</span></footer>
+                    <label class="d9-range"><span>Turn the coordinate grid</span><input data-d9-angle type="range" min="-35" max="35" value="18" step="1" aria-label="Turn the coordinate grid"><output data-d9-angle-output>+18°</output></label>
+                    <footer><span><b>UNCHANGED</b> rows · labels · distances · information</span><span><b>CHANGED</b> coordinate values</span></footer>
                 </div>
-                <figcaption><strong>Figure 1.</strong> This is a conceptual demonstration. A rewrite can preserve the problem while changing the numbers handed to the learner.</figcaption>
+                <figcaption><strong>Figure 1.</strong> A rewrite can preserve the problem while changing the numbers handed to the learner.</figcaption>
             </figure>
 
-            <p>Across 11 real datasets and five very different kinds of models, this was not a corner case. Nearly three quarters of the model–dataset pairs changed enough to cross the study's preset threshold.</p>
-
-            <div class="d9-orbit-finding" role="img" aria-label="Nearly three quarters of model and dataset pairs showed a meaningful change even though the facts stayed the same.">
+            <p>Across 11 real datasets and five model families, nearly three quarters of the model–dataset pairs changed enough to cross a threshold fixed before the test.</p>
+            <div class="d9-orbit-finding" role="img" aria-label="Nearly three quarters of model and dataset pairs changed meaningfully although their information stayed the same.">
                 <div><span>SAME FACTS, DIFFERENT GRID</span><b>nearly 3 in 4</b><p>model–dataset pairs changed enough to matter</p></div>
                 <div class="d9-orbit-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="quiet"></i><i class="quiet"></i><i class="quiet"></i></div>
                 <small>11 datasets · five model families · no information added or removed</small>
             </div>
+            <aside class="d9-side-note"><span>INSIGHT 01</span><p><strong>A representation is not neutral.</strong> A learner never sees “the thing itself.” It sees one coordinate description of it.</p></aside>
 
-            <aside class="d9-side-note"><span>INSIGHT 01</span><p><strong>The representation is part of the model.</strong> A learner never sees “the thing itself.” It sees one chosen description of it.</p></aside>
-
-            <h2>How the grid enters the answer</h2>
-
-            <p>Learning is a journey from a rough first guess to a final rule. Many training algorithms take different-sized steps along different axes. Turn those axes, and the journey can bend—even when the prediction problem is unchanged.</p>
-
-            <div class="d9-path-diagram" role="img" aria-label="Two learners begin with the same answer. One training path ignores the turned grid and stays together; an axis-sensitive path makes the answers split.">
-                <header><span>SAME STARTING ANSWER</span><strong>then the grid enters through training</strong></header>
-                <div class="d9-path-start"><i></i><b>same prediction</b></div>
-                <div class="d9-path-fork" aria-hidden="true"><i></i><i></i></div>
-                <div class="d9-path-lanes">
-                    <section><span>STEADY STEPS</span><div><i></i><i></i></div><b>stay together</b><small>the turned grid is ignored</small></section>
-                    <section class="split"><span>AXIS-SENSITIVE STEPS</span><div><i></i><i></i></div><b>drift apart</b><small>the grid steers the route</small></section>
-                </div>
-            </div>
-
-            <p>I checked this mechanism by forcing two learners to begin with exactly the same predictions. A simple training rule kept the answers together. A widely used adaptive rule pulled them apart again. The difference was being <em>created during learning</em>; it was not evidence that one table contained more facts.</p>
-
-            <aside class="d9-side-note coral"><span>INSIGHT 02</span><p><strong>Equivalent inputs need not create equivalent learning paths.</strong> The coordinate grid acts like a hidden preference over which solutions are easy to reach.</p></aside>
-
-            <h2>Describe relationships, not directions</h2>
-
-            <p>There is another way to locate a point. Instead of saying “three units east and two units north,” say how it relates to familiar landmarks. Turn the map and east changes on the page; the landmarks do not move relative to one another.</p>
+            <h2>Then the model builds another grid</h2>
+            <p>Many tabular models do not use a number such as <em>0.62</em> directly. They first translate it into a row of internal signals—rather like sixteen lights, each responding to a different neighborhood of the number line. This is a numerical embedding.</p>
 
             <figure class="wide-figure">
-                <div class="d9-view-lab" data-d9-view>
-                    <header><span>TWO WAYS TO DESCRIBE ONE POINT</span><div><button type="button" data-d9-view-button="axes" aria-pressed="true">axes</button><button type="button" data-d9-view-button="landmarks" aria-pressed="false">landmarks</button></div></header>
-                    <svg viewBox="0 0 520 285" role="img" aria-label="Switch between locating a point with coordinate axes and locating it by relationships to three landmarks">
-                        <g class="d9-svg-grid"><path d="M70 35V245M130 35V245M190 35V245M250 35V245M310 35V245M370 35V245M430 35V245M55 65H465M55 115H465M55 165H465M55 215H465"/><path class="axis" d="M55 245H475M55 255V25"/><text x="445" y="238">across</text><text x="66" y="48">up</text></g>
-                        <g class="d9-svg-links"><path d="M330 103L125 198M330 103L250 62M330 103L420 218"/><circle cx="125" cy="198" r="15"/><circle cx="250" cy="62" r="15"/><circle cx="420" cy="218" r="15"/><text x="119" y="203">A</text><text x="244" y="67">B</text><text x="414" y="223">C</text></g>
-                        <g class="d9-svg-points"><circle cx="125" cy="198" r="7"/><circle cx="250" cy="62" r="7"/><circle cx="420" cy="218" r="7"/><circle cx="185" cy="132" r="7"/><circle cx="380" cy="155" r="7"/><circle class="query" cx="330" cy="103" r="10"/><text class="query-label" x="345" y="96">new row</text></g>
-                    </svg>
-                    <p data-d9-view-copy data-axis-copy="Axes give the point an address. Turn the grid, and the address changes." data-landmark-copy="Landmarks give the point relationships. Turn the grid, and those relationships remain.">Axes give the point an address. Turn the grid, and the address changes.</p>
+                <div class="d9-embedding-lab" data-d9-embedding data-rest="at the starting view" data-drift="may drift">
+                    <header><span>LOOK INSIDE · ONE NUMBER BECOMES A VECTOR</span><strong>the model manufactures new coordinates</strong></header>
+                    <div class="d9-number-pipeline">
+                        <section class="d9-scalar-card"><span>NUMBER IN THE TABLE</span><b data-d9-number-output>0.62</b><small>one fact</small></section>
+                        <i class="d9-pipeline-arrow" aria-hidden="true">→</i>
+                        <section class="d9-code-card"><span>INTERNAL DESCRIPTION</span><div class="d9-code-bars" data-d9-code-bars aria-hidden="true"></div><small>sixteen coordinates</small></section>
+                        <i class="d9-pipeline-arrow" aria-hidden="true">→</i>
+                        <section class="d9-answer-card"><span>SENSITIVE READER</span><b data-d9-hidden-answer>may drift</b><small>same meaning, different coordinates</small></section>
+                    </div>
+                    <div class="d9-embedding-controls">
+                        <label class="d9-range"><span>Change the number</span><input data-d9-number type="range" min="5" max="95" value="62" step="1" aria-label="Change the input number"><output data-d9-number-label>0.62</output></label>
+                        <label class="d9-range"><span>Turn its hidden coordinates</span><input data-d9-basis type="range" min="-90" max="90" value="35" step="5" aria-label="Turn the hidden coordinate system"><output data-d9-basis-output>+35°</output></label>
+                    </div>
+                    <footer><span><b>UNCHANGED</b> number · geometry · available information</span><span><b>CHANGED</b> which internal coordinates carry it</span></footer>
                 </div>
-                <figcaption><strong>Figure 2.</strong> Switch views. Both describe the same point, but only one depends on which way the axes face.</figcaption>
+                <figcaption><strong>Figure 2.</strong> The bars are a conceptual bell-shaped code. Turning its hidden grid preserves the encoded point but changes its coordinates.</figcaption>
             </figure>
 
-            <p>The landmark description made the tested models perfectly stable to these rotations. But it also exposed a deeper tension: on some tables, accuracy became worse. The arbitrary-looking original axes had sometimes become useful shortcuts.</p>
+            <p>This second grid matters because the model can trust its orientation just as easily as it trusted the original columns. Worse, giving the embedding more dimensions creates more directions in which that accidental preference can hide.</p>
+            <div class="d9-dimension-lab" data-d9-dimension data-copy-template="A {k}-coordinate code has many equivalent orientations.">
+                <header><span>GIVE THE HIDDEN CODE MORE ROOM</span><strong>same scalar, more coordinate choices</strong></header>
+                <div class="d9-dimension-stage">
+                    <div class="d9-dimension-buttons" role="group" aria-label="Embedding dimension"><button type="button" data-d9-k="4">4</button><button type="button" data-d9-k="8">8</button><button type="button" data-d9-k="16" aria-pressed="true">16</button><button type="button" data-d9-k="32">32</button></div>
+                    <div class="d9-dimension-dots" data-d9-dimension-dots aria-hidden="true"></div>
+                    <p data-d9-dimension-copy>A 16-coordinate code has many equivalent orientations.</p>
+                </div>
+                <div class="d9-dimension-evidence"><section><b>21 / 24</b><span>measured trends became more direction-sensitive as width grew</span></section><section><b>≈ 1 / 4</b><span>times the default orientation was actually the best one</span></section></div>
+            </div>
+            <aside class="d9-side-note coral"><span>INSIGHT 02</span><p><strong>Capacity creates coordinate choices.</strong> A wider representation can express more—but it also offers more arbitrary directions for learning to favor.</p></aside>
 
-            <p>So “make everything invariant” is not the right principle. Stability is valuable only while it preserves what helps prediction.</p>
+            <h2>Perfect stability can still be wrong</h2>
+            <p>A relationship-based description can erase the hidden grid completely. That achieved perfect stability. But it sometimes damaged prediction badly: an arbitrary-looking direction had become a useful shortcut.</p>
+            <div class="d9-force-comparison" role="img" aria-label="Raw representations preserve accuracy but remain direction-sensitive; fully stable representations remove sensitivity but can cause large failures; guarded representations seek the strongest safe amount of stability.">
+                <section><span>LEAVE IT ALONE</span><b>flexible</b><i style="--w:0%"></i><small>but the hidden grid remains</small></section>
+                <section class="danger"><span>FORCE PERFECT STABILITY</span><b>100% stable</b><i style="--w:100%"></i><small>rare, severe prediction failures</small></section>
+                <section class="best"><span>ADD A SAFETY BRAKE</span><b>as stable as safe</b><i style="--w:75%"></i><small>back away when quality suffers</small></section>
+            </div>
+            <p>A fixed compromise did not solve this either. The same 75% mixture that looked good on average still produced large misses on a few new datasets. The missing idea was not another representation. It was a <em>guard</em>.</p>
 
-            <aside class="d9-side-note gold"><span>INSIGHT 03</span><p><strong>Invariance is a budget, not a virtue.</strong> Remove irrelevant variation—but stop when removing it begins to erase useful clues.</p></aside>
+            <h2>A dial with a brake</h2>
+            <p>The guarded method starts with a strong dose of the stable view. A held-out practice set asks whether prediction quality stays inside a preset safety line. If not, the method steps down—75%, 50%, 25%, then all the way back to the original view.</p>
+            <div class="d9-guard-lab" data-d9-guard data-accepted="accepted" data-rejected="rejected" data-not-needed="not needed" data-stable-suffix=" stable" data-clear-message="The practice data stays inside the safety line, so the guard keeps the strongest candidate." data-warning-message="The stronger settings cross the safety line, so the guard backs down before using them.">
+                <header><span>TRY THE GUARD</span><strong>the first safe setting wins</strong></header>
+                <div class="d9-guard-cases" role="group" aria-label="Choose a conceptual practice-set outcome"><button type="button" data-d9-guard-case="clear" aria-pressed="true">clear case</button><button type="button" data-d9-guard-case="warning">warning case</button></div>
+                <div class="d9-guard-steps">
+                    <section data-d9-guard-step="75"><b>75%</b><span>stable view</span><i></i><small data-d9-guard-status>accepted</small></section>
+                    <section data-d9-guard-step="50"><b>50%</b><span>stable view</span><i></i><small data-d9-guard-status>not needed</small></section>
+                    <section data-d9-guard-step="25"><b>25%</b><span>stable view</span><i></i><small data-d9-guard-status>not needed</small></section>
+                    <section data-d9-guard-step="0"><b>0%</b><span>original view</span><i></i><small data-d9-guard-status>not needed</small></section>
+                </div>
+                <div class="d9-guard-readout"><span>SELECTED <b data-d9-guard-output>75% stable</b></span><p data-d9-guard-message>The practice data stays inside the safety line, so the guard keeps the strongest candidate.</p></div>
+                <footer>Conceptual example · the real experiment fixed the safety rule before opening the new-data results</footer>
+            </div>
+            <aside class="d9-side-note gold"><span>INSIGHT 03</span><p><strong>Stability needs both a location and a brake.</strong> Apply it where the arbitrary coordinates are created, then retreat when the task says they were useful.</p></aside>
 
-            <h2>A dial, not a switch</h2>
-
-            <p>The final method kept both readers: one sees the original columns; the other sees stable landmark relationships. A small practice set turns the dial toward stability only while prediction quality remains safe.</p>
-
-            <div class="d9-blend-lab" data-d9-blend data-msg-raw="Only the original view: flexible, but the grid can steer it." data-msg-blend="Both views contribute: less grid sensitivity, with an escape route." data-msg-stable="Only landmarks: perfectly stable here, but useful shortcuts may be lost.">
-                <header><span>EXPLORE THE STABILITY DIAL</span><strong>two readers, one prediction</strong></header>
-                <div class="d9-reader-cards"><section><span>ORIGINAL READER</span><b>sees directions</b><small>useful, sometimes fragile</small></section><section><span>LANDMARK READER</span><b>sees relationships</b><small>stable, sometimes restrictive</small></section></div>
-                <div class="d9-blend-bar" aria-hidden="true"><i data-d9-raw-bar style="width:25%">original</i><b data-d9-stable-bar style="width:75%">landmarks</b></div>
-                <label class="d9-range"><span>Landmark share</span><input data-d9-blend-input type="range" min="0" max="100" value="75" step="25" aria-label="Landmark share"><output data-d9-blend-output>75%</output></label>
-                <div class="d9-blend-readout"><span>grid sensitivity left <b data-d9-sensitivity>25%</b></span><p data-d9-blend-message>Both views contribute: less grid sensitivity, with an escape route.</p></div>
+            <p>The method was frozen before testing on twelve untouched datasets. In most cases the guard kept the strong setting. In a few, it chose a smaller dose or returned to the original model.</p>
+            <div class="d9-final d9-final-v3" role="img" aria-label="Across 12 untouched datasets and three model families, the guarded method reduced hidden-coordinate sensitivity by a median 75 percent, improved prediction in 29 of 36 comparisons, and had zero comparisons cross the preset harm line.">
+                <header><span>WHAT HAPPENED ON NEW DATA</span><strong>12 untouched datasets · three model families</strong></header>
+                <div class="d9-final-hero"><section><b>¾ less</b><span>hidden-grid sensitivity</span></section><section><b>29 / 36</b><span>better predictions</span></section><section><b>0 / 36</b><span>crossed the preset harm line</span></section></div>
+                <div class="d9-selection-strip"><span>guard's chosen stable share</span><div aria-hidden="true"><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a75"></i><i class="a50"></i><i class="a25"></i><i class="a25"></i><i class="a25"></i><i class="a0"></i><i class="a0"></i><i class="a0"></i></div><small><b>29</b> kept 75% · <b>4</b> stepped down · <b>3</b> returned to raw</small></div>
+                <footer>The strongest result was not “maximum stability always wins.” It was “use the strongest stability that passes a safety check.”</footer>
             </div>
 
-            <p>The dial is the important idea. It refuses a false choice between “trust the coordinates” and “ignore them.” When the stable view helps, use it strongly. When it becomes costly, back away.</p>
-
-            <div class="d9-final" role="img" aria-label="On twelve new datasets, the guarded blend removed three quarters of coordinate sensitivity, improved prediction quality in twenty-nine of thirty-six comparisons, and showed no large hidden failure.">
-                <header><span>WHAT HAPPENED ON NEW DATA</span><strong>12 untouched datasets</strong></header>
-                <div class="d9-final-hero"><section><b>¾ less</b><span>sensitivity to how the grid faces</span></section><section><b>29 / 36</b><span>better prediction results</span></section><section><b>none</b><span>large hidden failures observed</span></section></div>
-                <footer>A strong but incomplete landmark view was safer than either extreme.</footer>
-            </div>
+            <p><strong>One honest limit:</strong> this is a strong result from one locked new-data panel, not a final verdict. The next test is to repeat the unchanged method on a second independently locked panel.</p>
 
             <h2>Three ideas I want to keep</h2>
-
             <div class="d9-takeaways d9-takeaways-v2">
-                <section><span>01</span><strong>Define what “the same” means</strong><p>Robustness begins with a promise: which rewrites should preserve the answer?</p></section>
-                <section><span>02</span><strong>Test descriptions like software</strong><p>Turn the grid, change the units, rename the states. Meaning-preserving rewrites are unit tests for models.</p></section>
-                <section><span>03</span><strong>Preserve the option to retreat</strong><p>A stable view is safest when the model can fall back before stability harms the task.</p></section>
+                <section><span>01</span><strong>Look beyond the input table</strong><p>Models can manufacture arbitrary coordinates after the data enters the network.</p></section>
+                <section><span>02</span><strong>Test hidden descriptions</strong><p>Turn hidden coordinates without changing their meaning. The answer should survive this unit test.</p></section>
+                <section><span>03</span><strong>Guard the remedy</strong><p>Robustness is safest when the model can retreat before stability harms the task.</p></section>
             </div>
-
-            <div class="thesis"><strong>Day 9 conclusion.</strong> The coordinate system is not the territory. Yet a learner can quietly treat it as evidence. The best remedy was not to erase coordinates, but to place a stable relational view beside them—and let observed performance decide how much trust each view receives.</div>
+            <div class="thesis"><strong>Day 9 conclusion.</strong> The coordinate system is not the territory—even when the model invents that coordinate system itself. The most promising remedy acted exactly where the hidden grid was created, replaced directions with relationships, and kept a safety brake connected to prediction quality.</div>
 
             <h2>References</h2>
             <ol class="reference-list">
