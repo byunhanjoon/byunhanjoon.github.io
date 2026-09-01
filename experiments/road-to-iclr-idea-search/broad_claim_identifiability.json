@@ -1,0 +1,825 @@
+{
+  "source": "/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-03/results/day3/broad_benchmark/final_natural_encoding_pairs.csv",
+  "estimand": "paired-seed MLP minus ResNet test-primary difference, normalized by the Day-3 task scale; positive favors MLP",
+  "warning": "scalar label-dependent claim audit only; the archive does not retain row predictions and cannot estimate schema-representation risk",
+  "dataset_count": 25,
+  "point_direction_change_count": 7,
+  "point_direction_change_fraction": 0.28,
+  "point_direction_change_wilson_95": [
+    0.14283853850956563,
+    0.47576605190361576
+  ],
+  "point_direction_change_datasets": [
+    "bank_marketing_subscription",
+    "churn",
+    "compustat_kor_direction",
+    "credit_card_default",
+    "heloc_credit_risk",
+    "kdd17_stock_direction",
+    "polish_bankruptcy_2year"
+  ],
+  "opposite_nonzero_seed_bootstrap_intervals": [
+    "compustat_kor_direction"
+  ],
+  "representative_span": {
+    "median": 0.003798611143244017,
+    "mean": 0.006747734966806235,
+    "p90": 0.015163679975572459,
+    "maximum": 0.03594578179434931
+  },
+  "practical_threshold_summaries": {
+    "0.0": {
+      "schema_identifiable_count": 18,
+      "unresolved_count": 7,
+      "representative_range_crosses_rope_count": 7,
+      "all_representatives_within_rope_count": 0,
+      "schema_identifiable_datasets": [
+        "adult",
+        "australian_credit_approval",
+        "black-friday",
+        "california",
+        "credit_card_fraud",
+        "diamond",
+        "fremtpl_claim_count",
+        "german_credit_risk",
+        "higgs-small",
+        "house",
+        "kdd17_stock_return",
+        "lendingclub_loan_default",
+        "microsoft",
+        "otto",
+        "polish_bankruptcy_1year",
+        "polish_bankruptcy_3year",
+        "polish_bankruptcy_4year",
+        "polish_bankruptcy_5year"
+      ],
+      "unresolved_datasets": [
+        "bank_marketing_subscription",
+        "churn",
+        "compustat_kor_direction",
+        "credit_card_default",
+        "heloc_credit_risk",
+        "kdd17_stock_direction",
+        "polish_bankruptcy_2year"
+      ],
+      "representative_range_crosses_rope_datasets": [
+        "bank_marketing_subscription",
+        "churn",
+        "compustat_kor_direction",
+        "credit_card_default",
+        "heloc_credit_risk",
+        "kdd17_stock_direction",
+        "polish_bankruptcy_2year"
+      ],
+      "all_representatives_within_rope_datasets": []
+    },
+    "0.001": {
+      "schema_identifiable_count": 16,
+      "unresolved_count": 9,
+      "representative_range_crosses_rope_count": 4,
+      "all_representatives_within_rope_count": 2,
+      "schema_identifiable_datasets": [
+        "australian_credit_approval",
+        "black-friday",
+        "california",
+        "credit_card_fraud",
+        "diamond",
+        "fremtpl_claim_count",
+        "german_credit_risk",
+        "house",
+        "kdd17_stock_return",
+        "lendingclub_loan_default",
+        "microsoft",
+        "otto",
+        "polish_bankruptcy_1year",
+        "polish_bankruptcy_3year",
+        "polish_bankruptcy_4year",
+        "polish_bankruptcy_5year"
+      ],
+      "unresolved_datasets": [
+        "adult",
+        "bank_marketing_subscription",
+        "churn",
+        "compustat_kor_direction",
+        "credit_card_default",
+        "heloc_credit_risk",
+        "higgs-small",
+        "kdd17_stock_direction",
+        "polish_bankruptcy_2year"
+      ],
+      "representative_range_crosses_rope_datasets": [
+        "churn",
+        "compustat_kor_direction",
+        "heloc_credit_risk",
+        "polish_bankruptcy_2year"
+      ],
+      "all_representatives_within_rope_datasets": [
+        "adult",
+        "credit_card_default"
+      ]
+    },
+    "0.005": {
+      "schema_identifiable_count": 10,
+      "unresolved_count": 15,
+      "representative_range_crosses_rope_count": 0,
+      "all_representatives_within_rope_count": 11,
+      "schema_identifiable_datasets": [
+        "australian_credit_approval",
+        "california",
+        "diamond",
+        "german_credit_risk",
+        "house",
+        "kdd17_stock_return",
+        "polish_bankruptcy_1year",
+        "polish_bankruptcy_3year",
+        "polish_bankruptcy_4year",
+        "polish_bankruptcy_5year"
+      ],
+      "unresolved_datasets": [
+        "adult",
+        "bank_marketing_subscription",
+        "black-friday",
+        "churn",
+        "compustat_kor_direction",
+        "credit_card_default",
+        "credit_card_fraud",
+        "fremtpl_claim_count",
+        "heloc_credit_risk",
+        "higgs-small",
+        "kdd17_stock_direction",
+        "lendingclub_loan_default",
+        "microsoft",
+        "otto",
+        "polish_bankruptcy_2year"
+      ],
+      "representative_range_crosses_rope_datasets": [],
+      "all_representatives_within_rope_datasets": [
+        "adult",
+        "bank_marketing_subscription",
+        "churn",
+        "compustat_kor_direction",
+        "credit_card_default",
+        "fremtpl_claim_count",
+        "heloc_credit_risk",
+        "higgs-small",
+        "kdd17_stock_direction",
+        "microsoft",
+        "otto"
+      ]
+    },
+    "0.01": {
+      "schema_identifiable_count": 5,
+      "unresolved_count": 20,
+      "representative_range_crosses_rope_count": 0,
+      "all_representatives_within_rope_count": 14,
+      "schema_identifiable_datasets": [
+        "diamond",
+        "german_credit_risk",
+        "house",
+        "polish_bankruptcy_1year",
+        "polish_bankruptcy_4year"
+      ],
+      "unresolved_datasets": [
+        "adult",
+        "australian_credit_approval",
+        "bank_marketing_subscription",
+        "black-friday",
+        "california",
+        "churn",
+        "compustat_kor_direction",
+        "credit_card_default",
+        "credit_card_fraud",
+        "fremtpl_claim_count",
+        "heloc_credit_risk",
+        "higgs-small",
+        "kdd17_stock_direction",
+        "kdd17_stock_return",
+        "lendingclub_loan_default",
+        "microsoft",
+        "otto",
+        "polish_bankruptcy_2year",
+        "polish_bankruptcy_3year",
+        "polish_bankruptcy_5year"
+      ],
+      "representative_range_crosses_rope_datasets": [],
+      "all_representatives_within_rope_datasets": [
+        "adult",
+        "bank_marketing_subscription",
+        "black-friday",
+        "churn",
+        "compustat_kor_direction",
+        "credit_card_default",
+        "fremtpl_claim_count",
+        "heloc_credit_risk",
+        "higgs-small",
+        "kdd17_stock_direction",
+        "kdd17_stock_return",
+        "lendingclub_loan_default",
+        "microsoft",
+        "otto"
+      ]
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "adult",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": -0.00043633027990993184,
+      "local_mlp_minus_resnet_normalized": -7.084856507688642e-06,
+      "quotient_mlp_minus_resnet_normalized": -0.00022170756820881024,
+      "representative_min": -0.00043633027990993184,
+      "representative_max": -7.084856507688642e-06,
+      "representative_span": 0.0004292454234022432,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        -0.0010166124377180008,
+        0.00021012018607002858
+      ],
+      "local_seed_bootstrap_95": [
+        -0.0017546676937445493,
+        0.0017353995325878335
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.001385640065731275,
+        0.000972759859328931
+      ]
+    },
+    {
+      "dataset": "australian_credit_approval",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": -0.02090332213512495,
+      "local_mlp_minus_resnet_normalized": -0.009953962921488054,
+      "quotient_mlp_minus_resnet_normalized": -0.015428642528306502,
+      "representative_min": -0.02090332213512495,
+      "representative_max": -0.009953962921488054,
+      "representative_span": 0.010949359213636897,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        -0.0593505039193728,
+        0.0033594624860022737
+      ],
+      "local_seed_bootstrap_95": [
+        -0.02762224710712935,
+        0.0018663680477789546
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.028742067935796922,
+        -0.005412467338559046
+      ]
+    },
+    {
+      "dataset": "bank_marketing_subscription",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.0009211463909279219,
+      "local_mlp_minus_resnet_normalized": -0.0013726564286992888,
+      "quotient_mlp_minus_resnet_normalized": -0.00022575501888568347,
+      "representative_min": -0.0013726564286992888,
+      "representative_max": 0.0009211463909279219,
+      "representative_span": 0.002293802819627211,
+      "point_direction_changes": true,
+      "cumulative_seed_bootstrap_95": [
+        -0.0020068671037458685,
+        0.004418052716233745
+      ],
+      "local_seed_bootstrap_95": [
+        -0.005232790273131616,
+        0.003791064518884224
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.002440268356417863,
+        0.004104558617558984
+      ]
+    },
+    {
+      "dataset": "black-friday",
+      "task": "regression",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.0054613968547160205,
+      "local_mlp_minus_resnet_normalized": 0.0035848601001003282,
+      "quotient_mlp_minus_resnet_normalized": 0.004523128477408175,
+      "representative_min": 0.0035848601001003282,
+      "representative_max": 0.0054613968547160205,
+      "representative_span": 0.0018765367546156922,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        0.0037794331923914023,
+        0.007543357347061502
+      ],
+      "local_seed_bootstrap_95": [
+        0.001963001060153507,
+        0.0063954329122061495
+      ],
+      "quotient_seed_bootstrap_95": [
+        0.002871217126272455,
+        0.006969395129633825
+      ]
+    },
+    {
+      "dataset": "california",
+      "task": "regression",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.0178900189646231,
+      "local_mlp_minus_resnet_normalized": 0.009995595771608152,
+      "quotient_mlp_minus_resnet_normalized": 0.013942807368115625,
+      "representative_min": 0.009995595771608152,
+      "representative_max": 0.0178900189646231,
+      "representative_span": 0.007894423193014949,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        0.003143135237131558,
+        0.026516167917912736
+      ],
+      "local_seed_bootstrap_95": [
+        -0.0013205558207975323,
+        0.019024014531031638
+      ],
+      "quotient_seed_bootstrap_95": [
+        0.007713231920860955,
+        0.021517384134928322
+      ]
+    },
+    {
+      "dataset": "churn",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.00268270324767513,
+      "local_mlp_minus_resnet_normalized": -0.0011159078955688868,
+      "quotient_mlp_minus_resnet_normalized": 0.0007833976760531214,
+      "representative_min": -0.0011159078955688868,
+      "representative_max": 0.00268270324767513,
+      "representative_span": 0.003798611143244017,
+      "point_direction_changes": true,
+      "cumulative_seed_bootstrap_95": [
+        -0.0013850522325096204,
+        0.006545837054311665
+      ],
+      "local_seed_bootstrap_95": [
+        -0.004327902632987213,
+        0.005040479616750804
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.0028564774327484166,
+        0.005793158335531234
+      ]
+    },
+    {
+      "dataset": "compustat_kor_direction",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.00492781134364545,
+      "local_mlp_minus_resnet_normalized": -0.0020295484453051924,
+      "quotient_mlp_minus_resnet_normalized": 0.0014491314491701286,
+      "representative_min": -0.0020295484453051924,
+      "representative_max": 0.00492781134364545,
+      "representative_span": 0.006957359788950642,
+      "point_direction_changes": true,
+      "cumulative_seed_bootstrap_95": [
+        0.0008947763243013496,
+        0.01273706876003039
+      ],
+      "local_seed_bootstrap_95": [
+        -0.0034145276607188135,
+        -9.978993209203146e-06
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.0011314693570571022,
+        0.005036465039021415
+      ]
+    },
+    {
+      "dataset": "credit_card_default",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": -0.00026224486188305046,
+      "local_mlp_minus_resnet_normalized": 0.0004260224874133763,
+      "quotient_mlp_minus_resnet_normalized": 8.188881276516291e-05,
+      "representative_min": -0.00026224486188305046,
+      "representative_max": 0.0004260224874133763,
+      "representative_span": 0.0006882673492964267,
+      "point_direction_changes": true,
+      "cumulative_seed_bootstrap_95": [
+        -0.0023289579672464145,
+        0.0024859035623068237
+      ],
+      "local_seed_bootstrap_95": [
+        -0.0013766780279033108,
+        0.0022117145912105007
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.0018528179975748627,
+        0.0023488090767586622
+      ]
+    },
+    {
+      "dataset": "credit_card_fraud",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.0018543209876543305,
+      "local_mlp_minus_resnet_normalized": 0.013408333333333355,
+      "quotient_mlp_minus_resnet_normalized": 0.007631327160493843,
+      "representative_min": 0.0018543209876543305,
+      "representative_max": 0.013408333333333355,
+      "representative_span": 0.011554012345679024,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        -0.03617222222222205,
+        0.025809259259259254
+      ],
+      "local_seed_bootstrap_95": [
+        -0.0223592592592593,
+        0.035675925925926055
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.0032166666666667565,
+        0.026358796296296283
+      ]
+    },
+    {
+      "dataset": "diamond",
+      "task": "regression",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.013695582686660457,
+      "local_mlp_minus_resnet_normalized": 0.01883802417386447,
+      "quotient_mlp_minus_resnet_normalized": 0.016266803430262464,
+      "representative_min": 0.013695582686660457,
+      "representative_max": 0.01883802417386447,
+      "representative_span": 0.005142441487204013,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        0.002677744263050207,
+        0.023564850467211514
+      ],
+      "local_seed_bootstrap_95": [
+        0.0108155888833625,
+        0.031290832466966435
+      ],
+      "quotient_seed_bootstrap_95": [
+        0.006746666573206353,
+        0.023067492898343044
+      ]
+    },
+    {
+      "dataset": "fremtpl_claim_count",
+      "task": "regression",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.0024943976256590343,
+      "local_mlp_minus_resnet_normalized": 0.002334377745350689,
+      "quotient_mlp_minus_resnet_normalized": 0.0024143876855048613,
+      "representative_min": 0.002334377745350689,
+      "representative_max": 0.0024943976256590343,
+      "representative_span": 0.00016001988030834528,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        0.0006982685686187647,
+        0.004465195553957884
+      ],
+      "local_seed_bootstrap_95": [
+        -0.0010858564541712176,
+        0.005921061104542466
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.00019379394277622638,
+        0.005193128329250174
+      ]
+    },
+    {
+      "dataset": "german_credit_risk",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": -0.014885361552028206,
+      "local_mlp_minus_resnet_normalized": -0.014814814814814873,
+      "quotient_mlp_minus_resnet_normalized": -0.01485008818342154,
+      "representative_min": -0.014885361552028206,
+      "representative_max": -0.014814814814814873,
+      "representative_span": 7.054673721333324e-05,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        -0.034285714285714364,
+        0.0004232804232804366
+      ],
+      "local_seed_bootstrap_95": [
+        -0.02285714285714291,
+        -0.006137566137566219
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.028571428571428636,
+        -0.007513227513227527
+      ]
+    },
+    {
+      "dataset": "heloc_credit_risk",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.00276247129619663,
+      "local_mlp_minus_resnet_normalized": -0.0010757700720765613,
+      "quotient_mlp_minus_resnet_normalized": 0.0008433506120600343,
+      "representative_min": -0.0010757700720765613,
+      "representative_max": 0.00276247129619663,
+      "representative_span": 0.0038382413682731915,
+      "point_direction_changes": true,
+      "cumulative_seed_bootstrap_95": [
+        0.00048608869923449927,
+        0.004324994123107939
+      ],
+      "local_seed_bootstrap_95": [
+        -0.006404816262456148,
+        0.0030041875346139557
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.0010399110696741043,
+        0.0032402593004307034
+      ]
+    },
+    {
+      "dataset": "higgs-small",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.0020994160239764525,
+      "local_mlp_minus_resnet_normalized": 0.0002884563791191175,
+      "quotient_mlp_minus_resnet_normalized": 0.001193936201547785,
+      "representative_min": 0.0002884563791191175,
+      "representative_max": 0.0020994160239764525,
+      "representative_span": 0.001810959644857335,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        -0.0006115455427987415,
+        0.004451699031849055
+      ],
+      "local_seed_bootstrap_95": [
+        -0.0006205881224956578,
+        0.0020196677412882558
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.0005726280121169935,
+        0.00223888116208365
+      ]
+    },
+    {
+      "dataset": "house",
+      "task": "regression",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.05608317077250666,
+      "local_mlp_minus_resnet_normalized": 0.020137388978157346,
+      "quotient_mlp_minus_resnet_normalized": 0.038110279875332005,
+      "representative_min": 0.020137388978157346,
+      "representative_max": 0.05608317077250666,
+      "representative_span": 0.03594578179434931,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        0.031248871417305816,
+        0.08314705542556079
+      ],
+      "local_seed_bootstrap_95": [
+        0.0008370153203360134,
+        0.0378049374291295
+      ],
+      "quotient_seed_bootstrap_95": [
+        0.03452690442321766,
+        0.041992035372948405
+      ]
+    },
+    {
+      "dataset": "kdd17_stock_direction",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": -0.002067025495642638,
+      "local_mlp_minus_resnet_normalized": 0.0006634120463054153,
+      "quotient_mlp_minus_resnet_normalized": -0.0007018067246686114,
+      "representative_min": -0.002067025495642638,
+      "representative_max": 0.0006634120463054153,
+      "representative_span": 0.0027304375419480533,
+      "point_direction_changes": true,
+      "cumulative_seed_bootstrap_95": [
+        -0.005777489813421077,
+        0.0019668884230747974
+      ],
+      "local_seed_bootstrap_95": [
+        -0.0034555387851309405,
+        0.0038864016708405336
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.004616514299276009,
+        0.0029266450469576655
+      ]
+    },
+    {
+      "dataset": "kdd17_stock_return",
+      "task": "regression",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": -0.007293829100177906,
+      "local_mlp_minus_resnet_normalized": -0.005151722414362015,
+      "quotient_mlp_minus_resnet_normalized": -0.006222775757269961,
+      "representative_min": -0.007293829100177906,
+      "representative_max": -0.005151722414362015,
+      "representative_span": 0.0021421066858158906,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        -0.014221499285178582,
+        -0.0006659418979741812
+      ],
+      "local_seed_bootstrap_95": [
+        -0.022187997747276245,
+        0.009139311116425047
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.018204748516227415,
+        0.001072632499522047
+      ]
+    },
+    {
+      "dataset": "lendingclub_loan_default",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.007685842248718229,
+      "local_mlp_minus_resnet_normalized": 0.00391796645173681,
+      "quotient_mlp_minus_resnet_normalized": 0.00580190435022752,
+      "representative_min": 0.00391796645173681,
+      "representative_max": 0.007685842248718229,
+      "representative_span": 0.0037678757969814196,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        0.0015417312056482668,
+        0.0168077518821369
+      ],
+      "local_seed_bootstrap_95": [
+        -0.005669824574042859,
+        0.010543568315262486
+      ],
+      "quotient_seed_bootstrap_95": [
+        0.005568963654047021,
+        0.006042649760455376
+      ]
+    },
+    {
+      "dataset": "microsoft",
+      "task": "regression",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.0026811938852500765,
+      "local_mlp_minus_resnet_normalized": 0.003604773670285171,
+      "quotient_mlp_minus_resnet_normalized": 0.003142983777767623,
+      "representative_min": 0.0026811938852500765,
+      "representative_max": 0.003604773670285171,
+      "representative_span": 0.0009235797850350945,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        -0.0014259483206362836,
+        0.004833460228746413
+      ],
+      "local_seed_bootstrap_95": [
+        0.0024802850866889824,
+        0.004593849938182733
+      ],
+      "quotient_seed_bootstrap_95": [
+        0.0005271683830263495,
+        0.004713655083464573
+      ]
+    },
+    {
+      "dataset": "otto",
+      "task": "multiclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.00202003878474466,
+      "local_mlp_minus_resnet_normalized": 0.0037976729153199607,
+      "quotient_mlp_minus_resnet_normalized": 0.0029088558500323103,
+      "representative_min": 0.00202003878474466,
+      "representative_max": 0.0037976729153199607,
+      "representative_span": 0.0017776341305753007,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        -0.0002424046541693592,
+        0.0039592760180995334
+      ],
+      "local_seed_bootstrap_95": [
+        0.000404007756948932,
+        0.006787330316742057
+      ],
+      "quotient_seed_bootstrap_95": [
+        0.0013736263736263687,
+        0.004080478345184213
+      ]
+    },
+    {
+      "dataset": "polish_bankruptcy_1year",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": -0.03980520003219834,
+      "local_mlp_minus_resnet_normalized": -0.02572647508653299,
+      "quotient_mlp_minus_resnet_normalized": -0.032765837559365664,
+      "representative_min": -0.03980520003219834,
+      "representative_max": -0.02572647508653299,
+      "representative_span": 0.014078724945665349,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        -0.0595266843757547,
+        -0.003284230862110493
+      ],
+      "local_seed_bootstrap_95": [
+        -0.07638251630041049,
+        0.0119294856314901
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.0679546003380826,
+        0.004322627384689803
+      ]
+    },
+    {
+      "dataset": "polish_bankruptcy_2year",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": -0.0120484213721919,
+      "local_mlp_minus_resnet_normalized": 0.004648603521554273,
+      "quotient_mlp_minus_resnet_normalized": -0.003699908925318814,
+      "representative_min": -0.0120484213721919,
+      "representative_max": 0.004648603521554273,
+      "representative_span": 0.016697024893746172,
+      "point_direction_changes": true,
+      "cumulative_seed_bootstrap_95": [
+        -0.02805100182149367,
+        0.002709471766848881
+      ],
+      "local_seed_bootstrap_95": [
+        -0.005270947176684859,
+        0.013137522768670196
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.008037340619307887,
+        0.004394353369763182
+      ]
+    },
+    {
+      "dataset": "polish_bankruptcy_3year",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": -0.006285355122564414,
+      "local_mlp_minus_resnet_normalized": -0.022172338451408275,
+      "quotient_mlp_minus_resnet_normalized": -0.014228846786986346,
+      "representative_min": -0.022172338451408275,
+      "representative_max": -0.006285355122564414,
+      "representative_span": 0.015886983328843862,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        -0.014366525994432888,
+        0.0021729370566577755
+      ],
+      "local_seed_bootstrap_95": [
+        -0.04903474903474914,
+        0.002702702702702675
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.02343090598904568,
+        -0.001979886863607727
+      ]
+    },
+    {
+      "dataset": "polish_bankruptcy_4year",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": -0.013447171172493092,
+      "local_mlp_minus_resnet_normalized": -0.02336977122384846,
+      "quotient_mlp_minus_resnet_normalized": -0.018408471198170778,
+      "representative_min": -0.02336977122384846,
+      "representative_max": -0.013447171172493092,
+      "representative_span": 0.00992260005135537,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        -0.01764425369575595,
+        -0.006318550309966531
+      ],
+      "local_seed_bootstrap_95": [
+        -0.037727889659220026,
+        -0.014993947397380913
+      ],
+      "quotient_seed_bootstrap_95": [
+        -0.02768607167748799,
+        -0.010656248853673722
+      ]
+    },
+    {
+      "dataset": "polish_bankruptcy_5year",
+      "task": "binclass",
+      "paired_seed_count": 3,
+      "cumulative_mlp_minus_resnet_normalized": 0.005909341407219992,
+      "local_mlp_minus_resnet_normalized": 0.013266139473736708,
+      "quotient_mlp_minus_resnet_normalized": 0.00958774044047835,
+      "representative_min": 0.005909341407219992,
+      "representative_max": 0.013266139473736708,
+      "representative_span": 0.007356798066516715,
+      "point_direction_changes": false,
+      "cumulative_seed_bootstrap_95": [
+        0.003884230026093949,
+        0.009581100731032022
+      ],
+      "local_seed_bootstrap_95": [
+        0.004900105571380098,
+        0.019401231002131647
+      ],
+      "quotient_seed_bootstrap_95": [
+        0.004581399517957052,
+        0.014491165866581834
+      ]
+    }
+  ]
+}

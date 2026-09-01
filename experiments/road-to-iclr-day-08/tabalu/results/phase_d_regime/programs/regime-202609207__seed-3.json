@@ -1,0 +1,126 @@
+{
+  "truth": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "subtract",
+          "left": 3,
+          "right": 1
+        },
+        {
+          "operator": "abs",
+          "left": 4,
+          "right": null
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0505926125197316,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 1,
+          "right": 2
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 2
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.5515467503245723,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    }
+  ],
+  "experts": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "subtract",
+          "left": 3,
+          "right": 1
+        },
+        {
+          "operator": "abs",
+          "left": 4,
+          "right": null
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0505926572318567,
+      "output_bias": 2.0304669057225055e-09,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 1,
+          "right": 2
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 2
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.5515467502601499,
+      "output_bias": -4.092480798689735e-10,
+      "epsilon": 0.25
+    }
+  ],
+  "single_program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "subtract",
+        "left": 2,
+        "right": 3
+      },
+      {
+        "operator": "multiply",
+        "left": 1,
+        "right": 4
+      },
+      {
+        "operator": "subtract",
+        "left": 5,
+        "right": 2
+      }
+    ],
+    "output": 6,
+    "output_scale": 0.29124330480978533,
+    "output_bias": 0.7629946151575185,
+    "epsilon": 0.25
+  },
+  "recovery": [
+    {
+      "feature_precision": 1.0,
+      "feature_recall": 1.0,
+      "feature_f1": 1.0,
+      "operator_accuracy": 1.0,
+      "exact_program": true,
+      "depth_error": 0.0,
+      "coefficient_error": 4.6742592019199947e-08
+    },
+    {
+      "feature_precision": 1.0,
+      "feature_recall": 1.0,
+      "feature_f1": 1.0,
+      "operator_accuracy": 1.0,
+      "exact_program": true,
+      "depth_error": 0.0,
+      "coefficient_error": 4.736705472296876e-10
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+dataset,seed,truth_expression,compiled_expression,feature_precision,feature_recall,feature_f1,operator_accuracy,exact_program,depth_error,coefficient_error
+program-202608310,0,"add(x2, add(x2, x3))","(1 * add(x2, add(x2, x3)) + -2.8939523e-17)",1.0,1.0,1.0,1.0,True,0.0,1.3996182555444492e-16
+program-202608310,1,"add(x2, add(x2, x3))","(1 * add(x2, add(x2, x3)) + -2.8939523e-17)",1.0,1.0,1.0,1.0,True,0.0,1.3996182555444492e-16
+program-202608311,0,"add(x3, abs(multiply(x1, x2)))","(1 * add(x3, abs(multiply(x1, x2))) + -6.9675321e-17)",1.0,1.0,1.0,1.0,True,0.0,1.8069762383953386e-16
+program-202608311,1,"add(x3, abs(multiply(x1, x2)))","(1 * add(x3, abs(multiply(x1, x2))) + -6.9675321e-17)",1.0,1.0,1.0,1.0,True,0.0,1.8069762383953386e-16
+program-202608312,0,"add(x1, abs(multiply(x0, x3)))","(1 * add(x1, abs(multiply(x0, x3))) + -9.4496528e-17)",1.0,1.0,1.0,1.0,True,0.0,8.716526455670112e-16
+program-202608312,1,"add(x1, abs(multiply(x0, x3)))","(1 * add(x1, abs(multiply(x0, x3))) + -9.4496528e-17)",1.0,1.0,1.0,1.0,True,0.0,8.716526455670112e-16
+program-202608313,0,"multiply(x0, x2)","(1 * multiply(x0, x2) + -1.623343e-18)",1.0,1.0,1.0,1.0,True,0.0,1.6233429574695805e-18
+program-202608313,1,"multiply(x0, x2)","(1 * multiply(x0, x2) + -1.623343e-18)",1.0,1.0,1.0,1.0,True,0.0,1.6233429574695805e-18

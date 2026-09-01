@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-kr-vs-kp-3",
+  "model": "onehot_linear",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 1917,
+    "validation": 639,
+    "test": 640
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": true,
+  "timing": {
+    "setup_seconds": 0.091738095972687,
+    "fit_loop_seconds": 4.411117756040767,
+    "end_to_end_seconds": 4.513402885058895,
+    "fits_per_fit_loop_second": 29.01758852950854
+  }
+}

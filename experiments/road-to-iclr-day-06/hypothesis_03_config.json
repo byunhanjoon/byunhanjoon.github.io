@@ -1,0 +1,22 @@
+{
+  "status": "frozen_before_h3_outcomes",
+  "frozen_on": "2026-08-28",
+  "split_seed": 2026082801,
+  "datasets": ["bank_marketing_subscription", "credit_card_default", "fremtpl_claim_count"],
+  "models": ["mlp", "resnet", "ft_transformer"],
+  "seeds": [8101, 8202, 8303, 8404],
+  "nonidentity_views": 3,
+  "checkpoints": [0, 1, 2, 5, 10, 20, 50, 100, 200],
+  "subsample": {"train": 1000000000, "validation": 1000000000, "test": 1000000000},
+  "training": {
+    "epochs": 200,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "mlp_resnet_width": 128,
+    "depth": 2,
+    "dropout": 0.1,
+    "ft_d_token": 32,
+    "ft_tokens": 8
+  }
+}

@@ -1,0 +1,5 @@
+dataset,problem_type,model,seed,pair,method,split,reconstruction_error,coordinate_error,disagreement,disagreement_reduction,task_error,relative_task_change
+wine-quality-red,regression,catboost,1,local_vs_spectral_hat,Raw,validation,2.0028348924293498e-16,0.0,0.09800051842603857,0.0,0.639397233860171,0.0
+wine-quality-red,regression,catboost,1,local_vs_spectral_hat,GramAnchor,validation,2.0028348924293498e-16,9.723333224939053e-17,0.0,1.0,0.646098269451257,0.010480238631359917
+wine-quality-red,regression,catboost,1,local_vs_spectral_hat,Raw,test,2.0028348924293498e-16,0.0,0.10855302544597366,0.0,0.645943080660962,0.0
+wine-quality-red,regression,catboost,1,local_vs_spectral_hat,GramAnchor,test,2.0028348924293498e-16,9.723333224939053e-17,0.0,1.0,0.6487626377971129,0.004365024133807242

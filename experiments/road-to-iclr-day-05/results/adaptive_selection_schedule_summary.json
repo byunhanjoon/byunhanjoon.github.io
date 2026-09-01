@@ -1,0 +1,233 @@
+{
+  "status": "complete",
+  "draws_per_dataset": 512,
+  "exploratory_posthoc": true,
+  "panels": {
+    "confirmation": {
+      "passed": true,
+      "clauses": {
+        "mean_budget_below_64": true,
+        "agreement_at_least_fixed16": true,
+        "regret_no_larger_than_fixed16": true
+      },
+      "postfailure_conservative_clauses": {
+        "mean_budget_below_64": true,
+        "agreement_at_least_fixed16": true,
+        "regret_no_larger_than_fixed16": true
+      },
+      "method_means": [
+        {
+          "method": "adaptive_nested",
+          "panel": "confirmation",
+          "mean_budget": 12.893465909090908,
+          "stop_at_4": 0.8263494318181818,
+          "stop_at_16": 0.031782670454545456,
+          "stop_at_64": 0.14186789772727273,
+          "selection_agreement": 0.9671519886363636,
+          "validation_quotient_regret": 8.03589558904491e-06,
+          "selected_quotient_test_loss": 0.21928292751778747,
+          "selected_realized_test_loss": 0.21940663297298502
+        },
+        {
+          "method": "conservative_adaptive_postfailure",
+          "panel": "confirmation",
+          "mean_budget": 20.056818181818183,
+          "stop_at_4": 0.0,
+          "stop_at_16": 0.9154829545454546,
+          "stop_at_64": 0.08451704545454546,
+          "selection_agreement": 0.9760298295454546,
+          "validation_quotient_regret": 5.1034864224227385e-06,
+          "selected_quotient_test_loss": 0.21924442459655638,
+          "selected_realized_test_loss": 0.21925449494851115
+        },
+        {
+          "method": "fixed_nested_b16",
+          "panel": "confirmation",
+          "mean_budget": 16.0,
+          "stop_at_4": 0.0,
+          "stop_at_16": 1.0,
+          "stop_at_64": 0.0,
+          "selection_agreement": 0.9591619318181818,
+          "validation_quotient_regret": 8.622069046819362e-06,
+          "selected_quotient_test_loss": 0.2192174774828116,
+          "selected_realized_test_loss": 0.2192356713585595
+        },
+        {
+          "method": "fixed_nested_b4",
+          "panel": "confirmation",
+          "mean_budget": 4.0,
+          "stop_at_4": 1.0,
+          "stop_at_16": 0.0,
+          "stop_at_64": 0.0,
+          "selection_agreement": 0.8979048295454546,
+          "validation_quotient_regret": 4.2474434325721594e-05,
+          "selected_quotient_test_loss": 0.21933200535983366,
+          "selected_realized_test_loss": 0.21950254925173576
+        },
+        {
+          "method": "fixed_nested_b64",
+          "panel": "confirmation",
+          "mean_budget": 64.0,
+          "stop_at_4": 0.0,
+          "stop_at_16": 0.0,
+          "stop_at_64": 1.0,
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.21928345339354285,
+          "selected_realized_test_loss": 0.21928465911626585
+        }
+      ]
+    },
+    "menu_repeat": {
+      "passed": false,
+      "clauses": {
+        "mean_budget_below_64": true,
+        "agreement_at_least_fixed16": false,
+        "regret_no_larger_than_fixed16": false
+      },
+      "postfailure_conservative_clauses": {
+        "mean_budget_below_64": true,
+        "agreement_at_least_fixed16": true,
+        "regret_no_larger_than_fixed16": true
+      },
+      "method_means": [
+        {
+          "method": "adaptive_nested",
+          "panel": "menu_repeat",
+          "mean_budget": 8.05078125,
+          "stop_at_4": 0.8733723958333334,
+          "stop_at_16": 0.07389322916666667,
+          "stop_at_64": 0.052734375,
+          "selection_agreement": 0.9954427083333334,
+          "validation_quotient_regret": 1.5821814794882653e-06,
+          "selected_quotient_test_loss": 0.2893615411376093,
+          "selected_realized_test_loss": 0.28949988039241215
+        },
+        {
+          "method": "conservative_adaptive_postfailure",
+          "panel": "menu_repeat",
+          "mean_budget": 17.078125,
+          "stop_at_4": 0.0,
+          "stop_at_16": 0.9775390625,
+          "stop_at_64": 0.0224609375,
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.2893473848332571,
+          "selected_realized_test_loss": 0.28936420390085343
+        },
+        {
+          "method": "fixed_nested_b16",
+          "panel": "menu_repeat",
+          "mean_budget": 16.0,
+          "stop_at_4": 0.0,
+          "stop_at_16": 1.0,
+          "stop_at_64": 0.0,
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.2893473848332571,
+          "selected_realized_test_loss": 0.2893642172614434
+        },
+        {
+          "method": "fixed_nested_b4",
+          "panel": "menu_repeat",
+          "mean_budget": 4.0,
+          "stop_at_4": 1.0,
+          "stop_at_16": 0.0,
+          "stop_at_64": 0.0,
+          "selection_agreement": 0.9775390625,
+          "validation_quotient_regret": 1.733661153073769e-05,
+          "selected_quotient_test_loss": 0.28931182154080576,
+          "selected_realized_test_loss": 0.2894909666908554
+        },
+        {
+          "method": "fixed_nested_b64",
+          "panel": "menu_repeat",
+          "mean_budget": 64.0,
+          "stop_at_4": 0.0,
+          "stop_at_16": 0.0,
+          "stop_at_64": 1.0,
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.2893473848332571,
+          "selected_realized_test_loss": 0.28934927399361415
+        }
+      ]
+    },
+    "subsample_repeat": {
+      "passed": false,
+      "clauses": {
+        "mean_budget_below_64": true,
+        "agreement_at_least_fixed16": false,
+        "regret_no_larger_than_fixed16": false
+      },
+      "postfailure_conservative_clauses": {
+        "mean_budget_below_64": true,
+        "agreement_at_least_fixed16": true,
+        "regret_no_larger_than_fixed16": true
+      },
+      "method_means": [
+        {
+          "method": "adaptive_nested",
+          "panel": "subsample_repeat",
+          "mean_budget": 14.54296875,
+          "stop_at_4": 0.7659505208333334,
+          "stop_at_16": 0.07291666666666667,
+          "stop_at_64": 0.1611328125,
+          "selection_agreement": 0.9671223958333334,
+          "validation_quotient_regret": 1.6533523510456392e-05,
+          "selected_quotient_test_loss": 0.29433852028707125,
+          "selected_realized_test_loss": 0.2945477609912026
+        },
+        {
+          "method": "conservative_adaptive_postfailure",
+          "panel": "subsample_repeat",
+          "mean_budget": 20.921875,
+          "stop_at_4": 0.0,
+          "stop_at_16": 0.8974609375,
+          "stop_at_64": 0.1025390625,
+          "selection_agreement": 0.99609375,
+          "validation_quotient_regret": 2.98662579187336e-06,
+          "selected_quotient_test_loss": 0.29429901597927044,
+          "selected_realized_test_loss": 0.2943385383415738
+        },
+        {
+          "method": "fixed_nested_b16",
+          "panel": "subsample_repeat",
+          "mean_budget": 16.0,
+          "stop_at_4": 0.0,
+          "stop_at_16": 1.0,
+          "stop_at_64": 0.0,
+          "selection_agreement": 0.9947916666666666,
+          "validation_quotient_regret": 3.982167722497813e-06,
+          "selected_quotient_test_loss": 0.2943004979494216,
+          "selected_realized_test_loss": 0.2943498859585351
+        },
+        {
+          "method": "fixed_nested_b4",
+          "panel": "subsample_repeat",
+          "mean_budget": 4.0,
+          "stop_at_4": 1.0,
+          "stop_at_16": 0.0,
+          "stop_at_64": 0.0,
+          "selection_agreement": 0.8948567708333334,
+          "validation_quotient_regret": 4.97760977261783e-05,
+          "selected_quotient_test_loss": 0.2944374754889054,
+          "selected_realized_test_loss": 0.2946983119885777
+        },
+        {
+          "method": "fixed_nested_b64",
+          "panel": "subsample_repeat",
+          "mean_budget": 64.0,
+          "stop_at_4": 0.0,
+          "stop_at_16": 0.0,
+          "stop_at_64": 1.0,
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.29429457006881693,
+          "selected_realized_test_loss": 0.2942969865758521
+        }
+      ]
+    }
+  },
+  "panels_passing_exploratory_gate": 1
+}

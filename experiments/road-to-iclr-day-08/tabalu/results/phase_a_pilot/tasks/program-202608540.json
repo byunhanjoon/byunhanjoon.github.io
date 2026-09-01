@@ -1,0 +1,31 @@
+{
+  "task_id": "program-202608540",
+  "seed": 202608540,
+  "program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "safe_divide",
+        "left": 2,
+        "right": 3
+      },
+      {
+        "operator": "square",
+        "left": 4,
+        "right": null
+      },
+      {
+        "operator": "subtract",
+        "left": 5,
+        "right": 2
+      }
+    ],
+    "output": 6,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "n_irrelevant": 0,
+  "generation_attempt": 0,
+  "expression": "subtract(square(safe_divide(x2, x3)), x2)"
+}

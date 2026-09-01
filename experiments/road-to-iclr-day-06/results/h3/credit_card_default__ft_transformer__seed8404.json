@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "hypothesis": "H3_FULLSCALE_CLOSURE",
+  "dataset": "credit_card_default",
+  "task": "classification",
+  "model": "ft_transformer",
+  "seed": 8404,
+  "rows": {
+    "train": 18000,
+    "validation": 6000,
+    "test": 6000
+  },
+  "paths": 8,
+  "path_wall_seconds": [
+    128.26135495887138,
+    135.05050556897186,
+    135.03310821787454,
+    134.95915581006557,
+    137.3632427600678,
+    137.4945479920134,
+    137.36726518301293,
+    137.41534502897412
+  ],
+  "total_fit_seconds": 1082.9445255198516,
+  "invocation_wall_seconds": 1084.8992516130675,
+  "config_sha256": "67be6a0a6fe111b75c01fbc49b083dd804479caf2010447317cfdcf73398766d",
+  "protocol_sha256": "c4f0cc5d7b0961abe268a67760053c0fd36302faa25432d8afa930d7cc402802",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0"
+}

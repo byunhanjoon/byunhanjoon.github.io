@@ -1,0 +1,132 @@
+{
+  "datasets": [
+    {
+      "default_target_attribute": "class",
+      "key": "mfeat-fourier",
+      "openml_id": 14,
+      "openml_version": 1,
+      "problem_type": "classification",
+      "raw_columns": 76,
+      "rows": 2000
+    },
+    {
+      "default_target_attribute": "class",
+      "key": "waveform-5000",
+      "openml_id": 60,
+      "openml_version": 1,
+      "problem_type": "classification",
+      "raw_columns": 40,
+      "rows": 5000
+    },
+    {
+      "default_target_attribute": "speaker",
+      "key": "JapaneseVowels",
+      "openml_id": 375,
+      "openml_version": 1,
+      "problem_type": "classification",
+      "raw_columns": 14,
+      "rows": 9961
+    },
+    {
+      "default_target_attribute": "label",
+      "key": "ada_prior",
+      "openml_id": 1037,
+      "openml_version": 1,
+      "problem_type": "classification",
+      "raw_columns": 14,
+      "rows": 4562
+    },
+    {
+      "default_target_attribute": "label",
+      "key": "eye_movements",
+      "openml_id": 1044,
+      "openml_version": 1,
+      "problem_type": "classification",
+      "raw_columns": 27,
+      "rows": 10936
+    },
+    {
+      "default_target_attribute": "state",
+      "key": "mozilla4",
+      "openml_id": 1046,
+      "openml_version": 1,
+      "problem_type": "classification",
+      "raw_columns": 5,
+      "rows": 15545
+    },
+    {
+      "default_target_attribute": "y",
+      "key": "2dplanes",
+      "openml_id": 215,
+      "openml_version": 1,
+      "problem_type": "regression",
+      "raw_columns": 10,
+      "rows": 40768
+    },
+    {
+      "default_target_attribute": "thetadd3",
+      "key": "puma8NH",
+      "openml_id": 225,
+      "openml_version": 1,
+      "problem_type": "regression",
+      "raw_columns": 8,
+      "rows": 8192
+    },
+    {
+      "default_target_attribute": "rej",
+      "key": "bank32nh",
+      "openml_id": 558,
+      "openml_version": 1,
+      "problem_type": "regression",
+      "raw_columns": 32,
+      "rows": 8192
+    },
+    {
+      "default_target_attribute": "shares",
+      "key": "OnlineNewsPopularity",
+      "openml_id": 4545,
+      "openml_version": 1,
+      "problem_type": "regression",
+      "raw_columns": 60,
+      "rows": 39644
+    },
+    {
+      "default_target_attribute": "ksat_lab",
+      "key": "SoilKsatDB",
+      "openml_id": 42332,
+      "openml_version": 1,
+      "problem_type": "regression",
+      "raw_columns": 37,
+      "rows": 13072
+    },
+    {
+      "default_target_attribute": "total_(BRL)",
+      "key": "Brazilian_houses",
+      "openml_id": 42688,
+      "openml_version": 4,
+      "problem_type": "regression",
+      "raw_columns": 12,
+      "rows": 10692
+    }
+  ],
+  "frozen_at_utc": "2026-09-01T09:10:33Z",
+  "panel_balance": "six classification and six regression datasets",
+  "preferred_constraints": {
+    "maximum_raw_columns": 100,
+    "maximum_rows": 50000,
+    "minimum_rows": 1000,
+    "modalities_excluded": [
+      "text",
+      "image"
+    ]
+  },
+  "selection_evidence": {
+    "metadata_only": true,
+    "metadata_source": "Official OpenML REST dataset-list and dataset-description endpoints",
+    "outcomes_accessed_before_lock": false,
+    "prior_basis_blacklist_size": 35,
+    "repository_search_result": "zero case-insensitive exact-name and normalized-alias hits for all twelve selected datasets",
+    "repository_search_scope": "experiments/** excluding the guarded authoritative specification"
+  },
+  "status": "LOCKED_BEFORE_GUARDED_DEVELOPMENT_OUTCOME_ACCESS"
+}

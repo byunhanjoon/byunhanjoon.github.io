@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "draws": 4096,
+  "validation_material_cells": 25,
+  "pooled_probability_strength2_beats_all": 0.991455078125,
+  "comparisons": {
+    "iid16": {
+      "probability_action_lower": 0.999755859375,
+      "mean_reduction": 0.6909418663484832,
+      "median_reduction": 0.6673906705911091,
+      "reduction_q05": 0.40542481441070316,
+      "reduction_q95": 0.8400460507772072
+    },
+    "four_strength1": {
+      "probability_action_lower": 0.994384765625,
+      "mean_reduction": 0.5875452772376142,
+      "median_reduction": 0.5630784545261247,
+      "reduction_q05": 0.2393490295479397,
+      "reduction_q95": 0.7762143809416787
+    },
+    "four_seed_blocks": {
+      "probability_action_lower": 0.99658203125,
+      "mean_reduction": 0.5917657450579717,
+      "median_reduction": 0.5701721332896259,
+      "reduction_q05": 0.25959505832286617,
+      "reduction_q95": 0.7722810265324196
+    }
+  },
+  "source_group_probability_strength2_beats_all": {
+    "compustat_korea": 0.488037109375,
+    "credit_card_default": 0.888916015625,
+    "credit_card_fraud": 0.805419921875,
+    "heloc": 0.9892578125,
+    "kdd17_stock": 0.91064453125,
+    "polish_bankruptcy": 0.917236328125
+  }
+}

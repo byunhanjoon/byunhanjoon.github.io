@@ -1,0 +1,10 @@
+{
+  "artifact_sha256": "1174a3f12672d230d4af6a6fd67ad62a824faa3f138d3c84af923410fba4c8ae",
+  "config_sha256": "693c9a91bbe6bc97c61966d2e9775229d6b784259e46959ddce4343177e5d131",
+  "domain": "ordinal16",
+  "elapsed_seconds": 6.849660568870604,
+  "interventions": 50,
+  "seed": 7303,
+  "status": "complete",
+  "trained_paths": 10
+}

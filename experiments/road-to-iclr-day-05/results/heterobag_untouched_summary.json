@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "evidence_label": "PROSPECTIVE_UNTOUCHED_CLASSIFICATION",
+  "datasets": 8,
+  "cells": 24,
+  "semantic_ttt_cell_wins": 15,
+  "semantic_mean_gain_vs_ttt_pct": 0.02102197624870687,
+  "coordinate_mean_gain_vs_ttt_pct": -0.4405905755563467,
+  "semantic_minus_coordinate_mean_pct": 0.4616125518050537,
+  "datasets_semantic_exceeds_coordinate": 4,
+  "dataset_bootstrap_semantic_minus_coordinate_95_ci_pct": [
+    -0.6800954115132245,
+    1.7154562323802365
+  ],
+  "semantic_specific_gate_clauses": {
+    "positive_mean_semantic_minus_coordinate": true,
+    "at_least_six_of_eight_dataset_means": false
+  },
+  "semantic_specific_gate_passed": false
+}

@@ -1,0 +1,21 @@
+| model | task | total risk | schema-only | seed-only | interaction |
+| --- | --- | --- | --- | --- | --- |
+| ft_transformer | classification | 0.0442788 | 0.0149272 | 0.00293915 | 0.0264124 |
+| ft_transformer | regression | 0.0644139 | 0.0188623 | 0.00677534 | 0.0387762 |
+| mlp | classification | 0.000933732 | 0.000371173 | 0.000177134 | 0.000385426 |
+| mlp | regression | 0.00697394 | 0.00251917 | 0.00135831 | 0.00309646 |
+| resnet | classification | 0.0206524 | 0.00704762 | 0.00277386 | 0.0108309 |
+| resnet | regression | 0.0413938 | 0.0130992 | 0.00675324 | 0.0215414 |
+| tabm | classification | 0.0012443 | 0.000431718 | 0.000310018 | 0.000502568 |
+| tabm | regression | 0.00828301 | 0.0027044 | 0.00218858 | 0.00339003 |
+| catboost_native | classification | 0.00209265 | 0.000442451 | 0.000353666 | 0.00129654 |
+| catboost_native | regression | 0.00363349 | 0.00070515 | 0.000837273 | 0.00209107 |
+| lightgbm | classification | 0.000267456 | 0.000267456 | 0 | 0 |
+| lightgbm | regression | 2.21734e-05 | 2.21734e-05 | 0 | 0 |
+| native_histgb | classification | 0.00151216 | 0.00151216 | 0 | 0 |
+| native_histgb | regression | 2.8985e-05 | 2.8985e-05 | 0 | 0 |
+| onehot_linear | classification | 4.048e-15 | 4.048e-15 | 0 | 0 |
+| onehot_linear | regression | 3.18182e-12 | 3.18182e-12 | 0 | 0 |
+| xgboost | classification | 0.00427749 | 0.00427749 | 0 | 0 |
+| xgboost | regression | 0.00681817 | 0.00681817 | 0 | 0 |
+| tabpfn | classification | 0.000616476 | 0.000616476 | 0 | 0 |

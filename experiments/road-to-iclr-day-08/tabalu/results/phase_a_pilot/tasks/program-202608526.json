@@ -1,0 +1,21 @@
+{
+  "task_id": "program-202608526",
+  "seed": 202608526,
+  "program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "subtract",
+        "left": 2,
+        "right": 0
+      }
+    ],
+    "output": 4,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "n_irrelevant": 0,
+  "generation_attempt": 0,
+  "expression": "subtract(x2, x0)"
+}

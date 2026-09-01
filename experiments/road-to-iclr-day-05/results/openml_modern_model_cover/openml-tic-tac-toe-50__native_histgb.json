@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-tic-tac-toe-50",
+  "model": "native_histgb",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 574,
+    "validation": 192,
+    "test": 192
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": true,
+  "timing": {
+    "setup_seconds": 0.022399192908778787,
+    "fit_loop_seconds": 11.764294400112703,
+    "end_to_end_seconds": 11.788683032849804,
+    "fits_per_fit_loop_second": 10.880380552085958
+  }
+}

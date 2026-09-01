@@ -1,0 +1,4 @@
+dataset,split_seed,model,variance_temperature,validation_nll
+fremtpl_claim_count,20260922,projective_full,3.452527215820382,1.7851465436112606
+fremtpl_claim_count,20260922,projective_independent,3.5346666212607545,1.7843423360371407
+fremtpl_claim_count,20260922,projective_shuffled,3.422864523970579,1.7806959033148673

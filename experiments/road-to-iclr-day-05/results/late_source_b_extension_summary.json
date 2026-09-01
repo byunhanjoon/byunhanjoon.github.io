@@ -1,0 +1,126 @@
+{
+  "status": "complete",
+  "configured_sources": 4,
+  "complete_tensors": 12,
+  "represented_complete_product_fits": 1536,
+  "post_failure_schema_adapter_sources": 2,
+  "primary_strength2_gate": {
+    "numerical_strict_tolerance": 0.0,
+    "all_cell_wins_vs_iid_and_strength1": 9,
+    "all_cells": 12,
+    "material_cell_wins_vs_all_controls": 7,
+    "material_cells": 8,
+    "source_mean_wins_vs_iid_and_strength1": 3,
+    "sources": 4,
+    "passed": false
+  },
+  "packing_and_selection": {
+    "pair32": {
+      "action": "disjoint_pair_mean32",
+      "control": "independent_pair_mean32",
+      "candidate_rmse_wins": 10,
+      "candidates": 12,
+      "source_mean_rmse_wins": 4,
+      "sources": 4,
+      "mean_score_rmse": {
+        "disjoint_pair_mean32": 0.002979692080414342,
+        "independent_pair_mean32": 0.0032040286270539112
+      },
+      "mean_selection_agreement": {
+        "disjoint_pair_mean32": 1.0,
+        "independent_pair_mean32": 1.0
+      },
+      "mean_validation_regret": {
+        "disjoint_pair_mean32": 0.0,
+        "independent_pair_mean32": 0.0
+      },
+      "mean_selected_quotient_test_loss": {
+        "disjoint_pair_mean32": 0.1523162746346545,
+        "independent_pair_mean32": 0.1523162746346545
+      }
+    },
+    "pack64": {
+      "action": "mutually_disjoint_pack64",
+      "control": "two_disjoint_pairs64",
+      "candidate_rmse_wins": 10,
+      "candidates": 12,
+      "source_mean_rmse_wins": 4,
+      "sources": 4,
+      "mean_score_rmse": {
+        "mutually_disjoint_pack64": 0.0016992051038915705,
+        "two_disjoint_pairs64": 0.0021364749196468966
+      },
+      "mean_selection_agreement": {
+        "mutually_disjoint_pack64": 1.0,
+        "two_disjoint_pairs64": 1.0
+      },
+      "mean_validation_regret": {
+        "mutually_disjoint_pack64": 0.0,
+        "two_disjoint_pairs64": 0.0
+      },
+      "mean_selected_quotient_test_loss": {
+        "mutually_disjoint_pack64": 0.1523162746346545,
+        "two_disjoint_pairs64": 0.1523162746346545
+      }
+    },
+    "unbiased_pair_cross64": {
+      "action": "disjoint_pair_cross64",
+      "control": "independent_block_u64",
+      "candidate_rmse_wins": 10,
+      "candidates": 12,
+      "source_mean_rmse_wins": 4,
+      "sources": 4,
+      "mean_score_rmse": {
+        "disjoint_pair_cross64": 0.002129953795247939,
+        "independent_block_u64": 0.002348334440548072
+      },
+      "mean_selection_agreement": {
+        "disjoint_pair_cross64": 1.0,
+        "independent_block_u64": 1.0
+      },
+      "mean_validation_regret": {
+        "disjoint_pair_cross64": 0.0,
+        "independent_block_u64": 0.0
+      },
+      "mean_selected_quotient_test_loss": {
+        "disjoint_pair_cross64": 0.1523162746346545,
+        "independent_block_u64": 0.1523162746346545
+      }
+    }
+  },
+  "exact_validation_to_test_transfer": {
+    "sources": [
+      {
+        "dataset": "openml-mushroom-24",
+        "validation_winner": "ordinal_forest",
+        "test_winner": "ordinal_forest",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      },
+      {
+        "dataset": "openml-colic-25",
+        "validation_winner": "ordinal_forest",
+        "test_winner": "ordinal_forest",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      },
+      {
+        "dataset": "openml-hepatitis-55",
+        "validation_winner": "onehot_linear",
+        "test_winner": "ordinal_forest",
+        "winner_agreement": false,
+        "test_regret_of_validation_winner": 0.019511731422402173
+      },
+      {
+        "dataset": "openml-vote-56",
+        "validation_winner": "onehot_linear",
+        "test_winner": "ordinal_forest",
+        "winner_agreement": false,
+        "test_regret_of_validation_winner": 0.031005910103955273
+      }
+    ],
+    "winner_agreements": 2,
+    "mean_test_regret_of_validation_winner": 0.012629410381589361
+  },
+  "interpretation": "late_source_primary_fail"
+}

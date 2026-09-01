@@ -1,0 +1,113 @@
+{
+  "config": "configs/semantic_orbit_training.yaml",
+  "config_sha256": "bd5f06720f80e30fecd21676a456332a420f51d9e32becacad9361111800a1fe",
+  "dataset_spec": {
+    "name": "california_housing",
+    "openml_id": 43939,
+    "openml_version": 1,
+    "problem_type": "regression"
+  },
+  "device": "cuda:0",
+  "environment": {
+    "cuda_visible_devices": "1",
+    "gpu": "NVIDIA H100 NVL",
+    "packages": {
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.4.2",
+      "torch": "2.7.0"
+    },
+    "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+    "python": "3.10.16"
+  },
+  "experiment": "semantic_orbit_training_ablations",
+  "files": {
+    "metrics.csv": {
+      "bytes": 16092,
+      "sha256": "806e910d70dcecf9bf67ad287363f31f1b4230675b2f14b66e11e30b55596b7d"
+    },
+    "predictions.csv.gz": {
+      "bytes": 390003,
+      "sha256": "054c931db710b50f62c60bf9e6a3adf2da1d7a4528c483a224091f0df8ff8cd9"
+    }
+  },
+  "git": {
+    "commit": "0c456660ae9a87aab7932b569e1954b0ee1d25fe",
+    "day09_status": "?? experiments/road-to-iclr-day-09/"
+  },
+  "inverse_audit_max_delta": 8.088365444081091e-08,
+  "method_telemetry": {
+    "canonical_only": {
+      "best_epoch": 39,
+      "best_validation_mse_normalized": 0.26261648535728455,
+      "fit_seconds": 0.775548093020916,
+      "lambda": 0.0
+    },
+    "consistency_0.1": {
+      "best_epoch": 148,
+      "best_validation_mse_normalized": 0.31807707415686715,
+      "fit_seconds": 3.9530417800415307,
+      "lambda": 0.1
+    },
+    "consistency_1.0": {
+      "best_epoch": 149,
+      "best_validation_mse_normalized": 0.2828984359900157,
+      "fit_seconds": 3.953816509107128,
+      "lambda": 1.0
+    },
+    "dual_view": {
+      "best_epoch": 47,
+      "best_validation_mse_normalized": 0.2635817163520389,
+      "fit_seconds": 1.2656679430510849,
+      "lambda": 0.0
+    },
+    "generic_noise": {
+      "best_epoch": 43,
+      "best_validation_mse_normalized": 0.2812095284461975,
+      "fit_seconds": 0.8388507661875337,
+      "lambda": 0.0
+    },
+    "orbit_augmentation": {
+      "best_epoch": 40,
+      "best_validation_mse_normalized": 0.3307731979423099,
+      "fit_seconds": 1.0613547961693257,
+      "lambda": 0.0
+    },
+    "raw": {
+      "best_epoch": 39,
+      "best_validation_mse_normalized": 0.26261648535728455,
+      "fit_seconds": 0.7585004440043122,
+      "lambda": 0.0
+    }
+  },
+  "methods": [
+    "raw",
+    "generic_noise",
+    "orbit_augmentation",
+    "consistency_0.1",
+    "consistency_1.0",
+    "canonical_only",
+    "dual_view"
+  ],
+  "model_seed": 1,
+  "preprocessing": {
+    "continuous_missing": "training median before orbit construction",
+    "imputed_columns": {
+      "total_bedrooms": {
+        "count": 38,
+        "train_median": 434.0
+      }
+    }
+  },
+  "protocol_version": 1,
+  "representation_count_per_method": 9,
+  "split_audit": {
+    "target_sha256": "4f3bdbff6f6605904e70c304052d0b51d268f234300c6f12e79e911468d40bd6",
+    "test_row_order_sha256": "e19d50918fa6b6d9107767d7bf87ced281e7bfd4322b405fc377cbd360de2a61",
+    "train_test_disjoint": true,
+    "train_validation_disjoint": true,
+    "validation_test_disjoint": true
+  },
+  "status": "complete",
+  "wall_seconds": 12.883839130401611
+}

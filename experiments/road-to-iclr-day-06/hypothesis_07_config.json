@@ -1,0 +1,20 @@
+{
+  "status": "frozen_after_five_development_bundles_before_31_test_bundles",
+  "frozen_on": "2026-08-29T00:28:34+09:00",
+  "development_stems": [
+    "bank_marketing_subscription__ft_transformer__seed8101",
+    "bank_marketing_subscription__mlp__seed8101",
+    "bank_marketing_subscription__resnet__seed8101",
+    "credit_card_default__ft_transformer__seed8101",
+    "credit_card_default__mlp__seed8101"
+  ],
+  "material_mse": 1e-5,
+  "censored_hitting_epoch": 201,
+  "early_survival_epoch": 20,
+  "minimum_later_fraction": 0.8,
+  "minimum_dataset_delay": 30,
+  "minimum_dataset_delay_passes": 2,
+  "minimum_exact_early_survival": 0.9,
+  "minimum_final_reduction_win_fraction": 0.8,
+  "maximum_iea64_material_failure_fraction": 0.25
+}

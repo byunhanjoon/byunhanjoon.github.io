@@ -1,0 +1,28 @@
+{
+  "git_commit": "c000f06e0b8c6989d62ece8a769bbf269910a9b8",
+  "git_dirty": true,
+  "expected_records": 1800,
+  "observed_records": 1800,
+  "all_finite": true,
+  "whole_mlp_source": "/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-08/tabalu/results/phase_a_pilot/records.csv",
+  "confidence_interval_unit": "task (training seeds averaged within task)",
+  "gate": {
+    "passed": true,
+    "checks": {
+      "neural_primitives_interpolate": true,
+      "neural_primitives_fail_to_extrapolate": true,
+      "exact_primitives_extrapolate": true
+    },
+    "observed": {
+      "neural_primitive_iid_nrmse": 0.13006469521116232,
+      "neural_primitive_extrapolation_growth": 49.783104123654674,
+      "exact_8x_nrmse": 0.0
+    },
+    "thresholds": {
+      "neural_primitive_iid_nrmse_max": 0.15,
+      "neural_primitive_extrapolation_growth_min": 5.0,
+      "exact_8x_nrmse_max": 1e-06
+    }
+  },
+  "audit_passed": true
+}

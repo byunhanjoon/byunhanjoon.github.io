@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-mushroom-24",
+  "model": "ordinal_forest",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 4874,
+    "validation": 1625,
+    "test": 1625
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": true,
+  "timing": {
+    "setup_seconds": 12.157957377843559,
+    "fit_loop_seconds": 21.841695994138718,
+    "end_to_end_seconds": 34.049532210920006,
+    "fits_per_fit_loop_second": 5.860350772868058
+  }
+}

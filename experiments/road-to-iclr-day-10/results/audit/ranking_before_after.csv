@@ -1,0 +1,47 @@
+ranking,method,old_rank,new_rank,stable_metric_rank,changed
+A — Paper Safety,GuardedGram-G2-after-RBF-k16,1.0,1.0,1,False
+A — Paper Safety,GuardedGram-G2-g0p0-t01,,,2,False
+A — Paper Safety,Raw,4.0,4.0,7,False
+A — Paper Safety,Raw+Gram@0.5,,,4,False
+A — Paper Safety,Raw+Gram@0.75,,,3,False
+A — Paper Safety,SafeGram-t01,3.0,3.0,6,False
+A — Paper Safety,SafeRankGram-t01,2.0,2.0,5,False
+B — Strict Safety,GuardedGram-G2-after-RBF-k16,1.0,1.0,1,False
+B — Strict Safety,GuardedGram-G2-g0p0-t01,,,2,False
+B — Strict Safety,Raw,3.0,3.0,6,False
+B — Strict Safety,Raw+Gram@0.5,,,3,False
+B — Strict Safety,SafeGram-t01,2.0,2.0,5,False
+B — Strict Safety,SafeRankGram-t01,,,4,False
+C — Basis Control,BlockGuard-Greedy-t01,5.0,5.0,5,False
+C — Basis Control,GuardedGram-G2-after-RBF-k16,2.0,2.0,2,False
+C — Basis Control,GuardedGram-G2-g0p0-t01,3.0,3.0,3,False
+C — Basis Control,PureGram,1.0,1.0,1,False
+C — Basis Control,Raw,9.0,9.0,9,False
+C — Basis Control,Raw+Gram@0.5,6.0,6.0,6,False
+C — Basis Control,Raw+Gram@0.75,4.0,4.0,4,False
+C — Basis Control,SafeGram-t01,8.0,8.0,8,False
+C — Basis Control,SafeRankGram-t01,7.0,7.0,7,False
+D — Predictive Performance,BlockGuard-Greedy-t01,8.0,8.0,8,False
+D — Predictive Performance,GuardedGram-G2-after-RBF-k16,1.0,1.0,1,False
+D — Predictive Performance,GuardedGram-G2-g0p0-t01,4.0,4.0,4,False
+D — Predictive Performance,PureGram,9.0,9.0,9,False
+D — Predictive Performance,Raw,7.0,7.0,7,False
+D — Predictive Performance,Raw+Gram@0.5,3.0,3.0,3,False
+D — Predictive Performance,Raw+Gram@0.75,6.0,6.0,6,False
+D — Predictive Performance,SafeGram-t01,5.0,5.0,5,False
+D — Predictive Performance,SafeRankGram-t01,2.0,2.0,2,False
+E — Efficiency,BlockGuard-Greedy-t01,2.0,2.0,2,False
+E — Efficiency,GuardedGram-G2-after-RBF-k16,5.0,5.0,5,False
+E — Efficiency,GuardedGram-G2-g0p0-t01,3.0,3.0,3,False
+E — Efficiency,PureGram,1.0,1.0,1,False
+E — Efficiency,Raw+Gram@0.5,6.0,6.0,6,False
+E — Efficiency,Raw+Gram@0.75,4.0,4.0,4,False
+F — Overall Paper Candidate,BlockGuard-Greedy-t01,7.0,7.0,5,False
+F — Overall Paper Candidate,GuardedGram-G2-after-RBF-k16,1.0,1.0,2,False
+F — Overall Paper Candidate,GuardedGram-G2-g0p0-t01,4.0,4.0,3,False
+F — Overall Paper Candidate,PureGram,9.0,9.0,1,False
+F — Overall Paper Candidate,Raw,5.0,5.0,9,False
+F — Overall Paper Candidate,Raw+Gram@0.5,6.0,6.0,8,False
+F — Overall Paper Candidate,Raw+Gram@0.75,8.0,8.0,4,False
+F — Overall Paper Candidate,SafeGram-t01,2.0,2.0,7,False
+F — Overall Paper Candidate,SafeRankGram-t01,3.0,3.0,6,False

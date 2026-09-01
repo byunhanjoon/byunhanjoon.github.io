@@ -1,0 +1,26 @@
+{
+  "task_id": "program-202612202",
+  "seed": 202612202,
+  "program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 3
+      },
+      {
+        "operator": "abs",
+        "left": 4,
+        "right": null
+      }
+    ],
+    "output": 5,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "n_irrelevant": 0,
+  "generation_attempt": 0,
+  "expression": "abs(multiply(x0, x3))"
+}

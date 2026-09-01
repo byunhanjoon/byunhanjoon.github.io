@@ -1,0 +1,190 @@
+{
+  "status": "complete",
+  "dataset": "openml-pol-201",
+  "task": "regression",
+  "model": "tabm",
+  "split_seed": 2026082821,
+  "mode": "broad",
+  "actions": 16,
+  "represented_fits": 16,
+  "rows": {
+    "train": 2048,
+    "validation": 512,
+    "test": 512
+  },
+  "features": {
+    "numerical": 48,
+    "categorical": 0,
+    "dense": 48
+  },
+  "cardinalities": [],
+  "device": "cuda:0",
+  "wall_seconds": 5.586398604791611,
+  "maximum_peak_device_bytes": 74871808,
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "package_versions": {
+    "torch": "2.7.0+cu126"
+  },
+  "telemetry": [
+    {
+      "action": 0,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.5134260680060834,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 1,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3552256829570979,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 2,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.344553949078545,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 3,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3563368471805006,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 4,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3465058649890125,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 5,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.34762085415422916,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 6,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.35391885205172,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 7,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.35451600397937,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 8,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.329286142019555,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 9,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3268830440938473,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 10,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.326818646164611,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 11,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3284377970267087,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 12,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3240578949917108,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 13,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3275008420459926,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 14,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.33081885799765587,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 15,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3204912580549717,
+      "peak_device_bytes": 74871808
+    }
+  ]
+}

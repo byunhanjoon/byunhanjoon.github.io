@@ -1,0 +1,1324 @@
+{
+  "status": "complete",
+  "dataset": "german_credit_risk",
+  "task": "classification",
+  "model": "ft_transformer",
+  "split_seed": 2026082821,
+  "mode": "broad",
+  "actions": 128,
+  "represented_fits": 128,
+  "rows": {
+    "train": 600,
+    "validation": 200,
+    "test": 200
+  },
+  "features": {
+    "numerical": 7,
+    "categorical": 13,
+    "dense": 74
+  },
+  "cardinalities": [
+    4,
+    5,
+    10,
+    5,
+    5,
+    4,
+    3,
+    4,
+    3,
+    3,
+    4,
+    2,
+    2
+  ],
+  "device": "cuda:0",
+  "wall_seconds": 43.24009778024629,
+  "maximum_peak_device_bytes": 91589632,
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "package_versions": {
+    "torch": "2.7.0+cu126"
+  },
+  "telemetry": [
+    {
+      "action": 0,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.5299152149818838,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 1,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3623502461705357,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 2,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.36105099599808455,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 3,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3586810559500009,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 4,
+      "feature": 0,
+      "category": 0,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3394664318766445,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 5,
+      "feature": 0,
+      "category": 0,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3372842650860548,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 6,
+      "feature": 0,
+      "category": 0,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.33881762414239347,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 7,
+      "feature": 0,
+      "category": 0,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.33597574289888144,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 8,
+      "feature": 0,
+      "category": 1,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.33552365307696164,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 9,
+      "feature": 0,
+      "category": 1,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3367370890919119,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 10,
+      "feature": 0,
+      "category": 1,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.34155593207105994,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 11,
+      "feature": 0,
+      "category": 1,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.33843794791027904,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 12,
+      "feature": 0,
+      "category": 1,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.33984235278330743,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 13,
+      "feature": 0,
+      "category": 1,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33806865895166993,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 14,
+      "feature": 0,
+      "category": 1,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.34602596517652273,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 15,
+      "feature": 0,
+      "category": 1,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3379063359461725,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 16,
+      "feature": 0,
+      "category": 2,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3377592128235847,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 17,
+      "feature": 0,
+      "category": 2,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.337012407137081,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 18,
+      "feature": 0,
+      "category": 2,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3348396180663258,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 19,
+      "feature": 0,
+      "category": 2,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3374954960308969,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 20,
+      "feature": 0,
+      "category": 2,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3349088979884982,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 21,
+      "feature": 0,
+      "category": 2,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.339133681030944,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 22,
+      "feature": 0,
+      "category": 2,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.33576200483366847,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 23,
+      "feature": 0,
+      "category": 2,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.33803989994339645,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 24,
+      "feature": 0,
+      "category": 3,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3363854750059545,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 25,
+      "feature": 0,
+      "category": 3,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33361219707876444,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 26,
+      "feature": 0,
+      "category": 3,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.34210433601401746,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 27,
+      "feature": 0,
+      "category": 3,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3349328108597547,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 28,
+      "feature": 0,
+      "category": 3,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3438750619534403,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 29,
+      "feature": 0,
+      "category": 3,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.34049624600447714,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 30,
+      "feature": 0,
+      "category": 3,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.33689726796001196,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 31,
+      "feature": 0,
+      "category": 3,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.33529314678162336,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 32,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3355444548651576,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 33,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33524399111047387,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 34,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3403332370799035,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 35,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3336574430577457,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 36,
+      "feature": 1,
+      "category": 0,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.33810088806785643,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 37,
+      "feature": 1,
+      "category": 0,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33604852692224085,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 38,
+      "feature": 1,
+      "category": 0,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3383289889898151,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 39,
+      "feature": 1,
+      "category": 0,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3387792392168194,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 40,
+      "feature": 1,
+      "category": 1,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3356820859480649,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 41,
+      "feature": 1,
+      "category": 1,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33842284395359457,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 42,
+      "feature": 1,
+      "category": 1,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.33820976014249027,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 43,
+      "feature": 1,
+      "category": 1,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.33777587907388806,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 44,
+      "feature": 1,
+      "category": 1,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3383014239370823,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 45,
+      "feature": 1,
+      "category": 1,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3374850070104003,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 46,
+      "feature": 1,
+      "category": 1,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3411877960897982,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 47,
+      "feature": 1,
+      "category": 1,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3390584229491651,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 48,
+      "feature": 1,
+      "category": 2,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.33450451004318893,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 49,
+      "feature": 1,
+      "category": 2,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33569591003470123,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 50,
+      "feature": 1,
+      "category": 2,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3353956351056695,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 51,
+      "feature": 1,
+      "category": 2,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3373104599304497,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 52,
+      "feature": 1,
+      "category": 2,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3452227502129972,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 53,
+      "feature": 1,
+      "category": 2,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.339981677941978,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 54,
+      "feature": 1,
+      "category": 2,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3379229789134115,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 55,
+      "feature": 1,
+      "category": 2,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3346694440115243,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 56,
+      "feature": 1,
+      "category": 3,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3358041108585894,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 57,
+      "feature": 1,
+      "category": 3,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3607905979733914,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 58,
+      "feature": 1,
+      "category": 3,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3636718860361725,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 59,
+      "feature": 1,
+      "category": 3,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3676534900441766,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 60,
+      "feature": 1,
+      "category": 3,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.36270568799227476,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 61,
+      "feature": 1,
+      "category": 3,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3642046460881829,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 62,
+      "feature": 1,
+      "category": 3,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3607783189509064,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 63,
+      "feature": 1,
+      "category": 3,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.36461135488934815,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 64,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.36556649883277714,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 65,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.36809142702259123,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 66,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.36427117278799415,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 67,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.36451606499031186,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 68,
+      "feature": 2,
+      "category": 0,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.36290276679210365,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 69,
+      "feature": 2,
+      "category": 0,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3635893459431827,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 70,
+      "feature": 2,
+      "category": 0,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3649443539325148,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 71,
+      "feature": 2,
+      "category": 0,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3633803431876004,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 72,
+      "feature": 2,
+      "category": 1,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3667502619791776,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 73,
+      "feature": 2,
+      "category": 1,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3337133990135044,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 74,
+      "feature": 2,
+      "category": 1,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.33585852198302746,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 75,
+      "feature": 2,
+      "category": 1,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.33517414587549865,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 76,
+      "feature": 2,
+      "category": 1,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.33757086913101375,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 77,
+      "feature": 2,
+      "category": 1,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33427045308053493,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 78,
+      "feature": 2,
+      "category": 1,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.33823324902914464,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 79,
+      "feature": 2,
+      "category": 1,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3391940479632467,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 80,
+      "feature": 2,
+      "category": 2,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.338198090903461,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 81,
+      "feature": 2,
+      "category": 2,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33410665881820023,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 82,
+      "feature": 2,
+      "category": 2,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.33931635809130967,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 83,
+      "feature": 2,
+      "category": 2,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3339446890167892,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 84,
+      "feature": 2,
+      "category": 2,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.33752325316891074,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 85,
+      "feature": 2,
+      "category": 2,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3370132860727608,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 86,
+      "feature": 2,
+      "category": 2,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3372352619189769,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 87,
+      "feature": 2,
+      "category": 2,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.33742590085603297,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 88,
+      "feature": 2,
+      "category": 3,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3377898149192333,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 89,
+      "feature": 2,
+      "category": 3,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33733399491757154,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 90,
+      "feature": 2,
+      "category": 3,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.33914770907722414,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 91,
+      "feature": 2,
+      "category": 3,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.33664865302853286,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 92,
+      "feature": 2,
+      "category": 3,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.2627181129064411,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 93,
+      "feature": 2,
+      "category": 3,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.21334372810088098,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 94,
+      "feature": 2,
+      "category": 3,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.20806144387461245,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 95,
+      "feature": 2,
+      "category": 3,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.2080063980538398,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 96,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.20851056091487408,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 97,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3058209328446537,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 98,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3399969299789518,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 99,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.33922506985254586,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 100,
+      "feature": 3,
+      "category": 0,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3345155739225447,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 101,
+      "feature": 3,
+      "category": 0,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3346886320505291,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 102,
+      "feature": 3,
+      "category": 0,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3350471828598529,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 103,
+      "feature": 3,
+      "category": 0,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3379286821000278,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 104,
+      "feature": 3,
+      "category": 1,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.33507792511954904,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 105,
+      "feature": 3,
+      "category": 1,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3448230270296335,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 106,
+      "feature": 3,
+      "category": 1,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3397095899563283,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 107,
+      "feature": 3,
+      "category": 1,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3367634790483862,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 108,
+      "feature": 3,
+      "category": 1,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.33676677220501006,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 109,
+      "feature": 3,
+      "category": 1,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33741085696965456,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 110,
+      "feature": 3,
+      "category": 1,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3397573309484869,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 111,
+      "feature": 3,
+      "category": 1,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.33367089298553765,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 112,
+      "feature": 3,
+      "category": 2,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3352016790304333,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 113,
+      "feature": 3,
+      "category": 2,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33642902015708387,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 114,
+      "feature": 3,
+      "category": 2,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.33369770809076726,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 115,
+      "feature": 3,
+      "category": 2,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.33371066697873175,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 116,
+      "feature": 3,
+      "category": 2,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3336474969983101,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 117,
+      "feature": 3,
+      "category": 2,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3339199481997639,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 118,
+      "feature": 3,
+      "category": 2,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3331528960261494,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 119,
+      "feature": 3,
+      "category": 2,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3380343969911337,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 120,
+      "feature": 3,
+      "category": 3,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.33498964202590287,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 121,
+      "feature": 3,
+      "category": 3,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3389479168690741,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 122,
+      "feature": 3,
+      "category": 3,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3382427680771798,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 123,
+      "feature": 3,
+      "category": 3,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.337239378830418,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 124,
+      "feature": 3,
+      "category": 3,
+      "class": 1,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.33434997615404427,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 125,
+      "feature": 3,
+      "category": 3,
+      "class": 1,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.33460957487113774,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 126,
+      "feature": 3,
+      "category": 3,
+      "class": 1,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.33473167987540364,
+      "peak_device_bytes": 91589632
+    },
+    {
+      "action": 127,
+      "feature": 3,
+      "category": 3,
+      "class": 1,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3343685979489237,
+      "peak_device_bytes": 91589632
+    }
+  ]
+}

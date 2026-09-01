@@ -1,0 +1,10 @@
+dataset,model,auroc_epoch_2_top_quartile,positive,total
+bank_marketing_subscription,ft_transformer,0.7407407407407408,3,12
+bank_marketing_subscription,mlp,0.7777777777777778,3,12
+bank_marketing_subscription,resnet,0.7037037037037037,3,12
+credit_card_default,ft_transformer,0.7037037037037037,3,12
+credit_card_default,mlp,0.8888888888888888,3,12
+credit_card_default,resnet,0.888888888888889,3,12
+fremtpl_claim_count,ft_transformer,0.6666666666666667,3,12
+fremtpl_claim_count,mlp,1.0,3,12
+fremtpl_claim_count,resnet,0.7777777777777778,3,12

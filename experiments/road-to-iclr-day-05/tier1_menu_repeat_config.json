@@ -1,0 +1,38 @@
+{
+  "status": "frozen_disjoint_seed_and_nuisance_menu_repeat",
+  "data_root": "/data/tokenization_icaif_grouped_v2",
+  "datasets": [
+    "compustat_kor_direction",
+    "credit_card_default",
+    "credit_card_fraud",
+    "heloc_credit_risk",
+    "kdd17_stock_return",
+    "polish_bankruptcy_3year"
+  ],
+  "source_groups": {
+    "compustat_kor_direction": "compustat_korea",
+    "credit_card_default": "credit_card_default",
+    "credit_card_fraud": "credit_card_fraud",
+    "heloc_credit_risk": "heloc",
+    "kdd17_stock_return": "kdd17_stock",
+    "polish_bankruptcy_3year": "polish_bankruptcy"
+  },
+  "models": [
+    "onehot_linear", "ordinal_forest", "native_histgb",
+    "catboost_native", "onehot_adam_mlp"
+  ],
+  "seeds": [505, 606, 707, 808],
+  "view_seeds": {"feature": 190773, "category": 1821571},
+  "factor_levels": {"feature": 4, "category": 4, "class": 2},
+  "subsample": {
+    "max_train_rows": 20000, "max_validation_rows": 3000,
+    "max_test_rows": 3000, "seed": 20260827
+  },
+  "training": {
+    "forest_estimators": 120, "boosting_iterations": 120,
+    "mlp_max_epochs": 100, "threads_per_fit": 4,
+    "histgb_high_cardinality_policy": "ordinal_fallback_above_255"
+  },
+  "proper_loss_rope_relative": 0.001,
+  "numerical_tolerance": 1e-10
+}

@@ -1,0 +1,132 @@
+{
+  "status": "complete",
+  "panels": {
+    "confirmation": {
+      "methods": {
+        "iid_u32": {
+          "mean_regret_upper_bound": 0.006773583052519038,
+          "mean_observed_regret": 6.920345090841601e-06,
+          "datasets_bound_covers_observed": 11,
+          "datasets": 11,
+          "finite_median_bound_to_regret_ratio": 117.59509850631486
+        },
+        "strength2_cross32": {
+          "mean_regret_upper_bound": 0.0025871330627277745,
+          "mean_observed_regret": 3.9573157709744644e-06,
+          "datasets_bound_covers_observed": 11,
+          "datasets": 11,
+          "finite_median_bound_to_regret_ratio": 93.00696315185348
+        }
+      },
+      "datasets_cover_bound_lower": 11,
+      "datasets": 11,
+      "mean_cover_minus_iid_bound": -0.004186449989791264,
+      "source_bootstrap_95_interval": [
+        -0.00774632639071465,
+        -0.0015115753811015054
+      ]
+    },
+    "menu_repeat": {
+      "methods": {
+        "iid_u32": {
+          "mean_regret_upper_bound": 0.0026459658763573375,
+          "mean_observed_regret": 1.8520247323243763e-06,
+          "datasets_bound_covers_observed": 6,
+          "datasets": 6,
+          "finite_median_bound_to_regret_ratio": 958.8441036022189
+        },
+        "strength2_cross32": {
+          "mean_regret_upper_bound": 0.0007406624114584953,
+          "mean_observed_regret": 0.0,
+          "datasets_bound_covers_observed": 6,
+          "datasets": 6,
+          "finite_median_bound_to_regret_ratio": null
+        }
+      },
+      "datasets_cover_bound_lower": 6,
+      "datasets": 6,
+      "mean_cover_minus_iid_bound": -0.001905303464898842,
+      "source_bootstrap_95_interval": [
+        -0.003930567618415951,
+        -0.0005824125869592449
+      ]
+    },
+    "openml_external": {
+      "methods": {
+        "iid_u32": {
+          "mean_regret_upper_bound": 0.017662950796956067,
+          "mean_observed_regret": 5.08030588376437e-05,
+          "datasets_bound_covers_observed": 8,
+          "datasets": 8,
+          "finite_median_bound_to_regret_ratio": 193.8656826640965
+        },
+        "strength2_cross32": {
+          "mean_regret_upper_bound": 0.006149845232052217,
+          "mean_observed_regret": 3.5243346153225e-05,
+          "datasets_bound_covers_observed": 8,
+          "datasets": 8,
+          "finite_median_bound_to_regret_ratio": 46.96525786360324
+        }
+      },
+      "datasets_cover_bound_lower": 8,
+      "datasets": 8,
+      "mean_cover_minus_iid_bound": -0.011513105564903852,
+      "source_bootstrap_95_interval": [
+        -0.01949052898827171,
+        -0.004366815587060689
+      ]
+    },
+    "openml_taskbalanced": {
+      "methods": {
+        "iid_u32": {
+          "mean_regret_upper_bound": 0.009352279876292054,
+          "mean_observed_regret": 0.00013180720612112059,
+          "datasets_bound_covers_observed": 8,
+          "datasets": 8,
+          "finite_median_bound_to_regret_ratio": 72.42458793205743
+        },
+        "strength2_cross32": {
+          "mean_regret_upper_bound": 0.0025063569455155157,
+          "mean_observed_regret": 2.2845068978336595e-05,
+          "datasets_bound_covers_observed": 8,
+          "datasets": 8,
+          "finite_median_bound_to_regret_ratio": 393.2804942111908
+        }
+      },
+      "datasets_cover_bound_lower": 8,
+      "datasets": 8,
+      "mean_cover_minus_iid_bound": -0.006845922930776538,
+      "source_bootstrap_95_interval": [
+        -0.01427988366748692,
+        -0.0021651417748360328
+      ]
+    },
+    "subsample_repeat": {
+      "methods": {
+        "iid_u32": {
+          "mean_regret_upper_bound": 0.0031168836449555442,
+          "mean_observed_regret": 5.999772296273856e-06,
+          "datasets_bound_covers_observed": 6,
+          "datasets": 6,
+          "finite_median_bound_to_regret_ratio": 86.67383852888909
+        },
+        "strength2_cross32": {
+          "mean_regret_upper_bound": 0.0010621403677471637,
+          "mean_observed_regret": 0.0,
+          "datasets_bound_covers_observed": 6,
+          "datasets": 6,
+          "finite_median_bound_to_regret_ratio": null
+        }
+      },
+      "datasets_cover_bound_lower": 6,
+      "datasets": 6,
+      "mean_cover_minus_iid_bound": -0.0020547432772083803,
+      "source_bootstrap_95_interval": [
+        -0.0038243525546825564,
+        -0.00046423521835293265
+      ]
+    }
+  },
+  "panels_cover_lower_mean_bound": 5,
+  "diagnostic_gate_passed": true
+}

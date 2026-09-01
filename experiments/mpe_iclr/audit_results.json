@@ -1,0 +1,248 @@
+{
+  "status": "FAIL",
+  "integrity_checks": [
+    {
+      "number": 1,
+      "name": "Metric symmetry",
+      "passed": true,
+      "detail": "tasks=9, max symmetry_error=0.000e+00"
+    },
+    {
+      "number": 2,
+      "name": "Metric diagonal equals zero",
+      "passed": true,
+      "detail": "tasks=9, max diagonal_error=0.000e+00"
+    },
+    {
+      "number": 3,
+      "name": "Triangle inequality",
+      "passed": true,
+      "detail": "tasks=9, max violation=0.000e+00"
+    },
+    {
+      "number": 4,
+      "name": "Disjoint train/validation/test states",
+      "passed": true,
+      "detail": "45 partitions checked; overlaps=[]"
+    },
+    {
+      "number": 5,
+      "name": "No target in metric construction",
+      "passed": true,
+      "detail": "target-independent RUN tasks=9; failures=[]"
+    },
+    {
+      "number": 6,
+      "name": "Training-state-only landmarks",
+      "passed": true,
+      "detail": "90/90 ridge cells training-only; failures=[]"
+    },
+    {
+      "number": 7,
+      "name": "Corrupted metrics preserve required controls",
+      "passed": false,
+      "detail": "ridge=90/90; neural corrupt=261/3600; failures=[]"
+    },
+    {
+      "number": 8,
+      "name": "Code relabelings preserve semantic distances",
+      "passed": true,
+      "detail": "bijections=72/72, max metric-aware difference=0.000e+00"
+    },
+    {
+      "number": 9,
+      "name": "MPE relabeling invariance",
+      "passed": true,
+      "detail": "288 transported codebooks; max difference=0.000e+00"
+    },
+    {
+      "number": 10,
+      "name": "Equality-metric unseen collapse",
+      "passed": true,
+      "detail": "collapse difference=0.000e+00; ridge controls=90/90"
+    },
+    {
+      "number": 11,
+      "name": "Representation dimensions",
+      "passed": false,
+      "detail": "ridge=90; neural=988/7640; failures=['legacy-categorical:acs_industry__split0__isolated_field__mlp__unknown_embedding', 'legacy-categorical:employee_salaries__split0__full_table__ft_transformer__unknown_embedding', 'legacy-categorical:employee_salaries__split0__full_table__mlp__unknown_embedding', 'legacy-categorical:employee_salaries__split0__full_table__resnet__unknown_embedding', 'legacy-categorical:employee_salaries__split0__full_table__tabm__unknown_embedding']"
+    },
+    {
+      "number": 12,
+      "name": "No accidental target leakage",
+      "passed": true,
+      "detail": "audits=11/11; failures=[]"
+    },
+    {
+      "number": 13,
+      "name": "Ordinary-covariate parity",
+      "passed": true,
+      "detail": "90 cells have identical row/covariate path and complete representation sets; failures=[]"
+    },
+    {
+      "number": 14,
+      "name": "Equal hyperparameter budgets",
+      "passed": true,
+      "detail": "shared 8-trial budgets verified across ridge, neural, and trees; max MPE/same-metric trial parameter difference=4.908%; failures=[]"
+    },
+    {
+      "number": 15,
+      "name": "Same-backbone representation parity",
+      "passed": false,
+      "detail": "bundles=360/360; missing/mismatched=['acs_occupation__split0__isolated_field__mlp__similarity_same_metric', 'acs_occupation__split0__isolated_field__mlp__similarity_unnormalized', 'acs_occupation__split0__isolated_field__mlp__nystrom', 'acs_occupation__split0__isolated_field__mlp__unknown_embedding', 'acs_occupation__split0__isolated_field__mlp__q_ple']"
+    },
+    {
+      "number": 16,
+      "name": "Validation selection before sealed test",
+      "passed": true,
+      "detail": "single ridge and three sealed neural seed evaluations verified; failures=[]"
+    },
+    {
+      "number": 17,
+      "name": "Raw-coordinate baseline parity",
+      "passed": false,
+      "detail": "geo ridge cells=50; coordinate baselines share all frozen settings/backbones; failures=['tlc_dropoff_zone__split0__isolated_field__mlp__mpe', 'tlc_dropoff_zone__split0__isolated_field__mlp__raw_coordinates', 'tlc_dropoff_zone__split0__isolated_field__mlp__coordinate_fourier', 'tlc_dropoff_zone__split0__isolated_field__mlp__spatial_rbf', 'tlc_dropoff_zone__split0__isolated_field__resnet__mpe']"
+    },
+    {
+      "number": 18,
+      "name": "No hierarchy-ancestor leakage",
+      "passed": true,
+      "detail": "ordinary covariates exclude hierarchy path/ancestor fields; failures=[]"
+    },
+    {
+      "number": 19,
+      "name": "State-balanced metric arithmetic",
+      "passed": false,
+      "detail": "FileNotFoundError: [Errno 2] No such file or directory: '/home/byunhanjoon/byunhanjoon.github.io/experiments/mpe_iclr/raw/neural_cells/acs_occupation__split0__isolated_field__resnet__mpe.json'"
+    },
+    {
+      "number": 20,
+      "name": "Figures/tables regenerate from raw evidence",
+      "passed": true,
+      "detail": "generator rc=0; tables=30/30; figures=11 PNG + 11 PDF; missing=[]"
+    }
+  ],
+  "integrity_passed": 15,
+  "integrity_total": 20,
+  "unit_tests_passed": 0,
+  "unit_tests_total": 38,
+  "completion_checks": [
+    {
+      "name": "Frozen protocol hashes unchanged",
+      "passed": true,
+      "detail": "5/5 frozen hashes match; failures=[]"
+    },
+    {
+      "name": "All frozen public tasks attempted",
+      "passed": true,
+      "detail": "manifests=11/11"
+    },
+    {
+      "name": "Unavailable sources are explicit",
+      "passed": true,
+      "detail": "Amazon and Open Payments retained as NOT RUN; MIMIC status frozen in final_config.json"
+    },
+    {
+      "name": "Raw ridge_cells complete",
+      "passed": true,
+      "detail": "files=90/90, terminal=90/90"
+    },
+    {
+      "name": "Raw nominal_cells complete",
+      "passed": true,
+      "detail": "files=30/30, terminal=30/30"
+    },
+    {
+      "name": "Raw natural_cells complete",
+      "passed": true,
+      "detail": "files=2/2, terminal=2/2"
+    },
+    {
+      "name": "Raw seen_cells complete",
+      "passed": true,
+      "detail": "files=90/90, terminal=90/90"
+    },
+    {
+      "name": "Raw smoothness_cells complete",
+      "passed": true,
+      "detail": "files=45/45, terminal=45/45"
+    },
+    {
+      "name": "Raw relabeling_cells complete",
+      "passed": true,
+      "detail": "files=9/9, terminal=9/9"
+    },
+    {
+      "name": "Raw ablation_cells complete",
+      "passed": true,
+      "detail": "files=50/50, terminal=50/50"
+    },
+    {
+      "name": "Raw hard_split_cells complete",
+      "passed": true,
+      "detail": "files=70/70, terminal=70/70"
+    },
+    {
+      "name": "Raw classification_cells complete",
+      "passed": true,
+      "detail": "files=20/20, terminal=20/20"
+    },
+    {
+      "name": "Raw graph_cells complete",
+      "passed": true,
+      "detail": "files=30/30, terminal=30/30"
+    },
+    {
+      "name": "Raw tree_cells complete",
+      "passed": true,
+      "detail": "files=240/240, terminal=240/240"
+    },
+    {
+      "name": "Raw neural matrix complete",
+      "passed": false,
+      "detail": "files=988/7640, complete=988/7640"
+    },
+    {
+      "name": "Theorems 1\u20136 and Proposition 7 validated",
+      "passed": true,
+      "detail": "all frozen theorem flags pass"
+    },
+    {
+      "name": "Raw aggregates present",
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    {
+      "name": "Statistical summaries reproduce",
+      "passed": true,
+      "detail": "missing=[]"
+    },
+    {
+      "name": "Experiment registry present",
+      "passed": true,
+      "detail": "/home/byunhanjoon/byunhanjoon.github.io/experiments/mpe_iclr/registry.sqlite"
+    },
+    {
+      "name": "Environment locked",
+      "passed": true,
+      "detail": "environment.lock"
+    },
+    {
+      "name": "600-epoch convergence check",
+      "passed": true,
+      "detail": "runnable repeats=2/2; Amazon unavailable recorded; test sealed"
+    },
+    {
+      "name": "Literature audited through 2026",
+      "passed": true,
+      "detail": "LITERATURE_AUDIT.md"
+    },
+    {
+      "name": "Protocol deviations append-only record present",
+      "passed": true,
+      "detail": "PROTOCOL_DEVIATIONS.md"
+    }
+  ],
+  "completion_passed": 22,
+  "completion_total": 23
+}

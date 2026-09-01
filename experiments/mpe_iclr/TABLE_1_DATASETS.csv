@@ -1,0 +1,12 @@
+Source,Task,Status,Rows,States,Metric,Reason,Train states,Val states,Test states,Median support gap
+ACS,acs_industry,RUN,299299.0,234.0,unweighted shortest path on frozen official-code prefix hierarchy,,140.0,46.0,48.0,4.0
+ACS,acs_occupation,RUN,297341.0,433.0,unweighted shortest path on frozen official-code prefix hierarchy,,259.0,86.0,88.0,6.0
+BTS,airline_destination_airport,RUN,293637.0,212.0,haversine distance between official FAA airport coordinates,,127.0,42.0,43.0,120.8512954711914
+BTS,airline_origin_airport,RUN,293780.0,215.0,haversine distance between official FAA airport coordinates,,129.0,43.0,43.0,128.80230712890625
+AMAZON_2023,amazon_leaf_category,NOT RUN,,,,"Frozen raw_meta_All_Beauty snapshot contains no nonempty categories path, so the declared external hierarchy does not exist.",,,,
+CITI_BIKE,citibike_start_station,RUN,430130.0,1505.0,haversine distance between target-independent pooled published station coordinates,,903.0,301.0,301.0,0.2427735924720764
+STRING_BENCHMARK,employee_salaries,RUN,7923.0,92.0,one minus padded character-trigram Jaccard similarity,,55.0,18.0,19.0,0.6585366129875183
+STRING_BENCHMARK,medical_charges,RUN,100000.0,100.0,one minus padded character-trigram Jaccard similarity,,60.0,20.0,20.0,0.3717948794364929
+STRING_BENCHMARK,open_payments,NOT RUN,73558.0,,,"Frozen and active OpenML snapshots omit Total Amount of Payment, which the prospective manifest declared mandatory.",,,,
+NYC_TLC,tlc_dropoff_zone,RUN,297955.0,167.0,haversine distance between official taxi-zone polygon centroids,,100.0,33.0,34.0,1.3209959864616394
+NYC_TLC,tlc_pickup_zone,RUN,297590.0,92.0,haversine distance between official taxi-zone polygon centroids,,55.0,18.0,19.0,0.839070200920105

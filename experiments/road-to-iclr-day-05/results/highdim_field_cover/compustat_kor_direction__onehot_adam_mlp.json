@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "dataset": "compustat_kor_direction",
+  "model": "onehot_adam_mlp",
+  "methods": [
+    "oa32",
+    "iid32"
+  ],
+  "repetitions": 8,
+  "binary_factors": 4,
+  "categorical_fields": 3,
+  "full_joint_cell_count": 256,
+  "oa_runs": 32,
+  "pairwise_balance_verified": true,
+  "rows": {
+    "train": 10000,
+    "validation": 1000,
+    "test": 1000
+  }
+}

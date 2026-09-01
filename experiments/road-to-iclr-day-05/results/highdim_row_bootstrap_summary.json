@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "study": "row",
+  "bootstrap_draws": 50000,
+  "inference_scope": "conditional_on_fixed_model_dataset_panel",
+  "comparisons": {
+    "marginal32": {
+      "pooled_risk_ratio_median": 1.0681689791395461,
+      "pooled_risk_ratio_95_interval": [
+        0.8531797690865545,
+        1.453480745737455
+      ],
+      "bootstrap_probability_oa_lower_pooled_risk": 0.29808,
+      "pooled_brier_difference_median": -0.0001299935493602189,
+      "pooled_brier_difference_95_interval": [
+        -0.000415509553892196,
+        0.00014636726263925903
+      ]
+    },
+    "iid32": {
+      "pooled_risk_ratio_median": 0.7329313788330984,
+      "pooled_risk_ratio_95_interval": [
+        0.5524698964045489,
+        1.1103698999797904
+      ],
+      "bootstrap_probability_oa_lower_pooled_risk": 0.9328,
+      "pooled_brier_difference_median": -1.1600516514997938e-05,
+      "pooled_brier_difference_95_interval": [
+        -0.0003794253703663611,
+        0.00032294007723820966
+      ]
+    }
+  }
+}

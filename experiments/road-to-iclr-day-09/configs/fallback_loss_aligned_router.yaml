@@ -1,0 +1,28 @@
+schema_version: 1
+frozen: true
+frozen_at: 2026-09-01T03:52:23+09:00
+purpose: context_only_loss_aligned_routing_fallback
+generator_version: prior_dial_v1_1
+classification_logit_scale: 2.5
+task_types: [classification, regression]
+rhos: [0.0, 0.25, 0.5, 0.75, 1.0]
+regimes:
+  - {context_size: 64, feature_count: 8}
+  - {context_size: 96, feature_count: 8}
+  - {context_size: 64, feature_count: 12}
+  - {context_size: 96, feature_count: 12}
+query_size: 128
+development_tasks_per_cell: 120
+test_tasks_per_cell: 240
+development_seed: 95001
+test_seed: 105001
+cv_folds: 3
+temperatures: [0.02, 0.05, 0.1, 0.25, 0.5, 1.0, 2.0, 5.0]
+uniform_shrinkages: [0.0, 0.25, 0.5, 0.75, 1.0]
+bootstrap_draws: 10000
+experts: [linear, additive, threshold, interaction, partition, periodic]
+notes:
+  - Same six expert definitions as the immutable E1 bundles.
+  - Router uses only three-fold context predictions at test time.
+  - Fixed mixture and router hyperparameters are selected once per task type on development episodes.
+  - Test cells are immutable and cannot trigger method refinement.

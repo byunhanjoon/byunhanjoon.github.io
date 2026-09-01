@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-titanic-40945",
+  "model": "ordinal_forest",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 785,
+    "validation": 262,
+    "test": 262
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026083041,
+  "timing": {
+    "setup_seconds": 0.02631299803033471,
+    "fit_loop_seconds": 14.76693199109286,
+    "end_to_end_seconds": 14.802737790159881,
+    "fits_per_fit_loop_second": 8.668015812438712
+  }
+}

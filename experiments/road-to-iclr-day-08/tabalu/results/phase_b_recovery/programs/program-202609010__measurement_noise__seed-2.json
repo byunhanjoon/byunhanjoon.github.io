@@ -1,0 +1,65 @@
+{
+  "record": {
+    "git_commit": "c000f06e0b8c6989d62ece8a769bbf269910a9b8",
+    "git_dirty": true,
+    "task_id": "program-202609010",
+    "task_seed": 202609010,
+    "seed": 2,
+    "condition": "measurement_noise",
+    "test_multiplier": 8,
+    "search_seconds": 0.09875034191645682,
+    "operation_count": 3,
+    "truth_expression": "subtract(x2, x1)",
+    "recovered_expression": "(-0.98805847 * subtract(add(x1, subtract(x1, x2)), x1) + 7.7526174e-05)",
+    "mae": 0.17918769625157438,
+    "rmse": 0.22281230954159958,
+    "r2": 0.999768342890174,
+    "nrmse": 0.015220286128257404,
+    "relative_error": 0.015138773470549895,
+    "feature_precision": 1.0,
+    "feature_recall": 1.0,
+    "feature_f1": 1.0,
+    "operator_accuracy": 0.3333333333333333,
+    "exact_program": 0,
+    "depth_error": 2.0,
+    "coefficient_error": 1.9881359918272714
+  },
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "subtract",
+        "left": 2,
+        "right": 1
+      }
+    ],
+    "output": 4,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "recovered": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "subtract",
+        "left": 1,
+        "right": 2
+      },
+      {
+        "operator": "add",
+        "left": 1,
+        "right": 4
+      },
+      {
+        "operator": "subtract",
+        "left": 5,
+        "right": 1
+      }
+    ],
+    "output": 6,
+    "output_scale": -0.988058465653043,
+    "output_bias": 7.752617422857044e-05,
+    "epsilon": 0.25
+  }
+}

@@ -1,0 +1,190 @@
+{
+  "status": "complete",
+  "dataset": "openml-pol-201",
+  "task": "regression",
+  "model": "resnet",
+  "split_seed": 2026082801,
+  "mode": "broad",
+  "actions": 16,
+  "represented_fits": 16,
+  "rows": {
+    "train": 2048,
+    "validation": 512,
+    "test": 512
+  },
+  "features": {
+    "numerical": 48,
+    "categorical": 0,
+    "dense": 48
+  },
+  "cardinalities": [],
+  "device": "cuda:0",
+  "wall_seconds": 5.5614820995833725,
+  "maximum_peak_device_bytes": 71750144,
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "package_versions": {
+    "torch": "2.7.0+cu126"
+  },
+  "telemetry": [
+    {
+      "action": 0,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.5196079658344388,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 1,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.369619081960991,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 2,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.37436714791692793,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 3,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3592761568725109,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 4,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.33371745818294585,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 5,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3245939079206437,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 6,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.317217777017504,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 7,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3169302619062364,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 8,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.31991188297979534,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 9,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3255856209434569,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 10,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3452650001272559,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 11,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.34260582993738353,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 12,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.32239706185646355,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 13,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3375819721259177,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 14,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3207343069370836,
+      "peak_device_bytes": 71750144
+    },
+    {
+      "action": 15,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3320706670638174,
+      "peak_device_bytes": 71750144
+    }
+  ]
+}

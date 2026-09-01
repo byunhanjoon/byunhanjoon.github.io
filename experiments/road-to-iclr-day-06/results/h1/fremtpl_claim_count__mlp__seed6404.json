@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "hypothesis": "H1_SAA",
+  "dataset": "fremtpl_claim_count",
+  "task": "regression",
+  "model": "mlp",
+  "seed": 6404,
+  "split_seed": 2026082801,
+  "paths": 8,
+  "epochs_per_path": 20,
+  "maximum_initial_gap": 2.9802322387695312e-08,
+  "path_wall_seconds": [
+    0.39532466093078256,
+    0.32098227296955884,
+    0.3194262229371816,
+    0.28960659983567894,
+    0.2593778290320188,
+    0.25110247801057994,
+    0.24535281187854707,
+    0.22343792719766498
+  ],
+  "total_fit_seconds": 2.3046108027920127,
+  "config_sha256": "e326c2dd186499ba84c75c13d15bc9e0837d9504ccbd67fd00741ed178106d7a",
+  "protocol_sha256": "e79abc3a2ecbf5201afa2b77b947d729b8c39a3871066daf623934fda17c2bae",
+  "day5_config_sha256": "1e8a099dafb2ac7de9e03f7363f3405a2edad3bf67374fc7d251c28da78c11e9",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0",
+  "tf32": false,
+  "deterministic_algorithms": true
+}

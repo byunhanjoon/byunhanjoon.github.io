@@ -1,0 +1,17 @@
+{
+  "status": "complete",
+  "evidence_status": "post_outcome_mechanism",
+  "dataset_split_pairs": 32,
+  "winner_flips": 4,
+  "median_partition_to_nuisance_scale_ratio": 55.27168177965937,
+  "minimum_partition_to_nuisance_scale_ratio": 2.512441175948202,
+  "maximum_partition_to_nuisance_scale_ratio": 1810.5907796771567,
+  "winner_flip_median_ratio": 100.6070731803504,
+  "alternate_splits": {
+    "dataset_split_pairs": 24,
+    "winner_flips": 3,
+    "median_ratio": 55.27168177965937
+  },
+  "interpretation": "partition_gap_movement_dominates_conditional_nuisance_rmse",
+  "formal_inference_claimed": false
+}

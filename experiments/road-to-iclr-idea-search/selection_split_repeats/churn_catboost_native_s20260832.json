@@ -1,0 +1,426 @@
+{
+  "status": "exploratory_estimand_falsification_pilot",
+  "dataset": "churn",
+  "family": "catboost_native",
+  "fit_size": 2250,
+  "validation_size": 750,
+  "test_size": 1000,
+  "split_seed": 20260832,
+  "factor_shape": [
+    4,
+    4,
+    2
+  ],
+  "candidate_specs": [
+    {
+      "depth": 4,
+      "l2_leaf_reg": 1.0
+    },
+    {
+      "depth": 6,
+      "l2_leaf_reg": 3.0
+    },
+    {
+      "depth": 8,
+      "l2_leaf_reg": 3.0
+    },
+    {
+      "depth": 6,
+      "l2_leaf_reg": 10.0
+    }
+  ],
+  "selection_protocol": {
+    "split_before_rendering": true,
+    "validation_labels_used": true,
+    "test_labels_used_for_selection": false,
+    "same_candidates_and_random_seed_in_every_representation": true,
+    "canonical_identity_selected_config": 1,
+    "orbit_average_validation_selected_config": 0,
+    "development_pooled_selected_config": 1
+  },
+  "selected_config_grid": [
+    [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  ],
+  "selection_counts": {
+    "0": 20,
+    "1": 12
+  },
+  "selection_entropy_bits": 0.9544340029249649,
+  "fraction_different_from_identity_config": 0.625,
+  "selection_decision_anova": {
+    "total": 0.46875,
+    "feature": 0.34375,
+    "category": 0.0,
+    "class": 0.03125,
+    "feature:category": 0.0,
+    "feature:class": 0.09375,
+    "category:class": 0.0,
+    "feature:category:class": 0.0,
+    "component_sum_error": 0.0,
+    "prediction_reconstruction_max_error": 0.0
+  },
+  "mean_validation_brier_by_config": [
+    0.21392372813428503,
+    0.21473144865272237,
+    0.21631976859877589,
+    0.21732932447398293
+  ],
+  "frozen_identity_selection_orbit": {
+    "reference_brier": 0.2081738306463875,
+    "mean_member_brier": 0.20950436141205064,
+    "best_member_brier": 0.2081738306463875,
+    "worst_member_brier": 0.2111325624083727,
+    "member_brier_std": 0.0008313246492961584,
+    "orbit_mean_brier": 0.2090888657612703,
+    "brier_reduction_by_averaging": 0.00041549565078033424,
+    "risk_identity_absolute_error": 1.3823577699190182e-17,
+    "instance_audit": {
+      "hard_label_flip_fraction": 0.027,
+      "mean_nonmodal_vote_fraction": 0.007375,
+      "row_schema_risk_median": 0.00013931340078352595,
+      "row_schema_risk_p95": 0.0017861063684560417,
+      "row_schema_risk_max": 0.006251562032122758,
+      "max_class_probability_range_mean": 0.035024778001350065,
+      "max_class_probability_range_p95": 0.09323091678702919,
+      "max_class_probability_range_max": 0.162643945939362
+    },
+    "anova": {
+      "total": 0.0004154956507803204,
+      "feature": 0.0002693638651722893,
+      "category": 6.122227959240782e-32,
+      "class": 3.7125437847766196e-05,
+      "feature:category": 7.110850456033752e-32,
+      "feature:class": 0.000109006347760265,
+      "category:class": 9.616835667421821e-32,
+      "feature:category:class": 1.0596367699645645e-31,
+      "component_sum_error": 5.421010862427522e-20,
+      "prediction_reconstruction_max_error": 2.220446049250313e-16
+    }
+  },
+  "representation_wise_selection_orbit": {
+    "reference_brier": 0.2081738306463875,
+    "mean_member_brier": 0.20936554373266458,
+    "best_member_brier": 0.2081738306463875,
+    "worst_member_brier": 0.21112728361979824,
+    "member_brier_std": 0.0008174698443797263,
+    "orbit_mean_brier": 0.20886326781429196,
+    "brier_reduction_by_averaging": 0.0005022759183726244,
+    "risk_identity_absolute_error": 1.1058862159352145e-17,
+    "instance_audit": {
+      "hard_label_flip_fraction": 0.026,
+      "mean_nonmodal_vote_fraction": 0.00675,
+      "row_schema_risk_median": 0.00015726142177471488,
+      "row_schema_risk_p95": 0.002332350790968031,
+      "row_schema_risk_max": 0.006847923096414618,
+      "max_class_probability_range_mean": 0.03779942932070662,
+      "max_class_probability_range_p95": 0.10425893215214446,
+      "max_class_probability_range_max": 0.19136983590236312
+    },
+    "anova": {
+      "total": 0.0005022759183726134,
+      "feature": 0.00029115849701977263,
+      "category": 6.203009586125335e-32,
+      "class": 4.4489045075679484e-05,
+      "feature:category": 7.131327755704173e-32,
+      "feature:class": 0.0001666283762771612,
+      "category:class": 9.748340270510458e-32,
+      "feature:category:class": 1.0659770366657811e-31,
+      "component_sum_error": 0.0,
+      "prediction_reconstruction_max_error": 2.220446049250313e-16
+    }
+  },
+  "orbit_average_validation_selection_orbit": {
+    "reference_brier": 0.20766341706774522,
+    "mean_member_brier": 0.20972166653790514,
+    "best_member_brier": 0.20766341706774522,
+    "worst_member_brier": 0.21154981191127456,
+    "member_brier_std": 0.0011465159246235577,
+    "orbit_mean_brier": 0.20938328534115558,
+    "brier_reduction_by_averaging": 0.0003383811967495598,
+    "risk_identity_absolute_error": 1.8973538018496328e-18,
+    "instance_audit": {
+      "hard_label_flip_fraction": 0.018,
+      "mean_nonmodal_vote_fraction": 0.00525,
+      "row_schema_risk_median": 0.0001105977897908368,
+      "row_schema_risk_p95": 0.0014042791129353388,
+      "row_schema_risk_max": 0.005467567111084687,
+      "max_class_probability_range_mean": 0.03112332617286269,
+      "max_class_probability_range_p95": 0.08357956052571991,
+      "max_class_probability_range_max": 0.16493328478614067
+    },
+    "anova": {
+      "total": 0.0003383811967495617,
+      "feature": 0.00019494846354145594,
+      "category": 6.184582348602749e-32,
+      "class": 4.040439235487306e-05,
+      "feature:category": 7.105527817613229e-32,
+      "feature:class": 0.00010302834085323263,
+      "category:class": 9.690412209828489e-32,
+      "feature:category:class": 1.0617633201192135e-31,
+      "component_sum_error": 5.421010862427522e-20,
+      "prediction_reconstruction_max_error": 2.220446049250313e-16
+    }
+  },
+  "development_pooled_selection_orbit": {
+    "reference_brier": 0.2081738306463875,
+    "mean_member_brier": 0.20950436141205064,
+    "best_member_brier": 0.2081738306463875,
+    "worst_member_brier": 0.2111325624083727,
+    "member_brier_std": 0.0008313246492961584,
+    "orbit_mean_brier": 0.2090888657612703,
+    "brier_reduction_by_averaging": 0.00041549565078033424,
+    "risk_identity_absolute_error": 1.3823577699190182e-17,
+    "instance_audit": {
+      "hard_label_flip_fraction": 0.027,
+      "mean_nonmodal_vote_fraction": 0.007375,
+      "row_schema_risk_median": 0.00013931340078352595,
+      "row_schema_risk_p95": 0.0017861063684560417,
+      "row_schema_risk_max": 0.006251562032122758,
+      "max_class_probability_range_mean": 0.035024778001350065,
+      "max_class_probability_range_p95": 0.09323091678702919,
+      "max_class_probability_range_max": 0.162643945939362
+    },
+    "anova": {
+      "total": 0.0004154956507803204,
+      "feature": 0.0002693638651722893,
+      "category": 6.122227959240782e-32,
+      "class": 3.7125437847766196e-05,
+      "feature:category": 7.110850456033752e-32,
+      "feature:class": 0.000109006347760265,
+      "category:class": 9.616835667421821e-32,
+      "feature:category:class": 1.0596367699645645e-31,
+      "component_sum_error": 5.421010862427522e-20,
+      "prediction_reconstruction_max_error": 2.220446049250313e-16
+    }
+  },
+  "heldout_nuisance_evaluation": {
+    "has_disjoint_feature_and_category_levels": true,
+    "development_slices": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        null,
+        null
+      ]
+    ],
+    "evaluation_slices": [
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        null,
+        null
+      ]
+    ],
+    "representation_wise": {
+      "reference_brier": 0.2097611819577323,
+      "mean_member_brier": 0.20981430822075492,
+      "best_member_brier": 0.20910437395708528,
+      "worst_member_brier": 0.21112728361979824,
+      "member_brier_std": 0.00079579203060234,
+      "orbit_mean_brier": 0.2095525447824375,
+      "brier_reduction_by_averaging": 0.00026176343831740834,
+      "risk_identity_absolute_error": 9.703609443745265e-18,
+      "instance_audit": {
+        "hard_label_flip_fraction": 0.012,
+        "mean_nonmodal_vote_fraction": 0.0045,
+        "row_schema_risk_median": 6.63748795345701e-05,
+        "row_schema_risk_p95": 0.0011579887334396636,
+        "row_schema_risk_max": 0.006423487934860918,
+        "max_class_probability_range_mean": 0.021347576717196944,
+        "max_class_probability_range_p95": 0.061080259603909046,
+        "max_class_probability_range_max": 0.13792516239926922
+      },
+      "anova": {
+        "total": 0.00026176343831739863,
+        "feature": 0.00013466424008221024,
+        "category": 1.040417147686812e-32,
+        "class": 5.5295375831342926e-05,
+        "feature:category": 1.1976163645725592e-32,
+        "feature:class": 7.180382240384544e-05,
+        "category:class": 1.4795166865551188e-32,
+        "feature:category:class": 1.6550411268617104e-32,
+        "component_sum_error": 5.421010862427522e-20,
+        "prediction_reconstruction_max_error": 2.220446049250313e-16
+      }
+    },
+    "identity_frozen": {
+      "reference_brier": 0.2111325624083727,
+      "mean_member_brier": 0.20988230922931722,
+      "best_member_brier": 0.2092959011521324,
+      "worst_member_brier": 0.2111325624083727,
+      "member_brier_std": 0.0007308364901804855,
+      "orbit_mean_brier": 0.20953401998482757,
+      "brier_reduction_by_averaging": 0.00034828924448965237,
+      "risk_identity_absolute_error": 1.0462550964485118e-17,
+      "instance_audit": {
+        "hard_label_flip_fraction": 0.02,
+        "mean_nonmodal_vote_fraction": 0.00675,
+        "row_schema_risk_median": 9.408857264223098e-05,
+        "row_schema_risk_p95": 0.001524109396002763,
+        "row_schema_risk_max": 0.00684637594576679,
+        "max_class_probability_range_mean": 0.024676751585687634,
+        "max_class_probability_range_p95": 0.07108448244107794,
+        "max_class_probability_range_max": 0.14324357626931705
+      },
+      "anova": {
+        "total": 0.0003482892444896419,
+        "feature": 0.000204100809052227,
+        "category": 9.494684162552168e-33,
+        "class": 7.4264774080763e-05,
+        "feature:category": 1.1273617503934048e-32,
+        "feature:class": 6.992366135665198e-05,
+        "category:class": 1.3400337682085805e-32,
+        "feature:category:class": 1.536724178603988e-32,
+        "component_sum_error": 5.421010862427522e-20,
+        "prediction_reconstruction_max_error": 2.220446049250313e-16
+      }
+    },
+    "development_pooled": {
+      "reference_brier": 0.2111325624083727,
+      "mean_member_brier": 0.20988230922931722,
+      "best_member_brier": 0.2092959011521324,
+      "worst_member_brier": 0.2111325624083727,
+      "member_brier_std": 0.0007308364901804855,
+      "orbit_mean_brier": 0.20953401998482757,
+      "brier_reduction_by_averaging": 0.00034828924448965237,
+      "risk_identity_absolute_error": 1.0462550964485118e-17,
+      "instance_audit": {
+        "hard_label_flip_fraction": 0.02,
+        "mean_nonmodal_vote_fraction": 0.00675,
+        "row_schema_risk_median": 9.408857264223098e-05,
+        "row_schema_risk_p95": 0.001524109396002763,
+        "row_schema_risk_max": 0.00684637594576679,
+        "max_class_probability_range_mean": 0.024676751585687634,
+        "max_class_probability_range_p95": 0.07108448244107794,
+        "max_class_probability_range_max": 0.14324357626931705
+      },
+      "anova": {
+        "total": 0.0003482892444896419,
+        "feature": 0.000204100809052227,
+        "category": 9.494684162552168e-33,
+        "class": 7.4264774080763e-05,
+        "feature:category": 1.1273617503934048e-32,
+        "feature:class": 6.992366135665198e-05,
+        "category:class": 1.3400337682085805e-32,
+        "feature:category:class": 1.536724178603988e-32,
+        "component_sum_error": 5.421010862427522e-20,
+        "prediction_reconstruction_max_error": 2.220446049250313e-16
+      }
+    },
+    "development_pooled_minus_representation_wise_schema_risk": 8.652580617224328e-05,
+    "development_pooled_minus_representation_wise_brier": -1.85247976099423e-05
+  },
+  "selection_to_frozen_schema_risk_ratio": 1.2088596292868903,
+  "selection_minus_frozen_schema_risk": 8.678026759229295e-05,
+  "selection_minus_frozen_orbit_mean_brier": -0.0002255979469783509,
+  "paired_row_bootstrap": {
+    "resampling_unit": "test_query_row",
+    "conditional_on_fitted_models": true,
+    "draws": 5000,
+    "schema_risk_difference_ci95": [
+      5.195204242539552e-05,
+      0.00012381661536621955
+    ],
+    "schema_risk_ratio_ci95": [
+      1.1225797694138064,
+      1.3031035434290534
+    ],
+    "orbit_mean_brier_difference_ci95": [
+      -0.0015283362970220022,
+      0.0010293675233222538
+    ]
+  },
+  "configuration_switch_decomposition": {
+    "frozen_schema_risk": 0.0004154956507803204,
+    "selected_schema_risk": 0.0005022759183726134,
+    "schema_risk_change": 8.678026759229295e-05,
+    "switch_dispersion": 0.000579437287162701,
+    "twice_frozen_switch_cross_covariance": -0.000492657019570408,
+    "change_reconstruction_error": 1.0842021724855044e-19
+  },
+  "orbit_average_minus_representation_wise_schema_risk": -0.00016389472162305166,
+  "orbit_average_minus_representation_wise_orbit_mean_brier": 0.0005200175268636198
+}

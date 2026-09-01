@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-pc4-1049",
+  "model": "onehot_linear",
+  "task": "binclass",
+  "shape": [
+    4,
+    1,
+    2,
+    4
+  ],
+  "fits": 32,
+  "rows": {
+    "train": 874,
+    "validation": 292,
+    "test": 292
+  },
+  "full_product_verified": true
+}

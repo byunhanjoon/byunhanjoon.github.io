@@ -1,0 +1,10 @@
+{
+  "dataset": "credit-g",
+  "pairs": 100,
+  "bases": 3,
+  "unique_selector_context_evaluations": 36018,
+  "model_runtime_seconds": 1223.3472991865128,
+  "direct_search_converged": false,
+  "direct_search_round_limit": 5,
+  "final_test_labels_used_for_search": false
+}

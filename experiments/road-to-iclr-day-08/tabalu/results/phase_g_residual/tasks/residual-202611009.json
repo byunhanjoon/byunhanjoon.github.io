@@ -1,0 +1,37 @@
+{
+  "task_id": "residual-202611009",
+  "symbolic": {
+    "task_id": "program-202611009",
+    "seed": 202611009,
+    "program": {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 2,
+          "right": 1
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 0
+        },
+        {
+          "operator": "abs",
+          "left": 5,
+          "right": null
+        }
+      ],
+      "output": 6,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    "n_irrelevant": 0,
+    "generation_attempt": 0,
+    "expression": "abs(subtract(safe_divide(x2, x1), x0))"
+  },
+  "residual_mean": 0.26705312728881836,
+  "residual_scale": 0.7609536051750183,
+  "symbolic_scale": 1.7131459712982178
+}

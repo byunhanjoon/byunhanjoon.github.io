@@ -1,0 +1,4 @@
+dataset,split_seed,model,variance_temperature,validation_nll
+cpu_act,20260922,projective_full,2.4801829535314504,1.5955659275428247
+cpu_act,20260922,projective_independent,2.5814453176108243,1.602992551947679
+cpu_act,20260922,projective_shuffled,2.4864743037353247,1.5954860166624343

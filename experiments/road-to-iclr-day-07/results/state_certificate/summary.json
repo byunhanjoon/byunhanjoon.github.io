@@ -1,0 +1,115 @@
+{
+  "aggregate_sign_accuracy": 0.6597222222222222,
+  "aggregate_spearman": 0.6750221043324491,
+  "selectors": {
+    "selected_familywise": {
+      "by_backbone": {
+        "ft_transformer": {
+          "harmful_cells": 1,
+          "min_source_gain": -0.0017209089300438702,
+          "practically_harmful_cells": 1,
+          "selected_cells": 4,
+          "source_balanced_gain": 0.0035965080037273444
+        },
+        "mlp": {
+          "harmful_cells": 0,
+          "min_source_gain": 0.0,
+          "practically_harmful_cells": 0,
+          "selected_cells": 2,
+          "source_balanced_gain": 0.004142625070599744
+        },
+        "resnet": {
+          "harmful_cells": 0,
+          "min_source_gain": 0.0,
+          "practically_harmful_cells": 0,
+          "selected_cells": 2,
+          "source_balanced_gain": 0.0028112983005412298
+        },
+        "tabm": {
+          "harmful_cells": 0,
+          "min_source_gain": 0.0,
+          "practically_harmful_cells": 0,
+          "selected_cells": 2,
+          "source_balanced_gain": 0.0044930049655091155
+        }
+      },
+      "harmful_cells": 1,
+      "practically_harmful_cells": 1,
+      "selected_cells": 10,
+      "source_backbone_balanced_gain": 0.0037608590850943587
+    },
+    "selected_mean": {
+      "by_backbone": {
+        "ft_transformer": {
+          "harmful_cells": 1,
+          "min_source_gain": -0.0017209089300438702,
+          "practically_harmful_cells": 1,
+          "selected_cells": 8,
+          "source_balanced_gain": 0.015844136627177506
+        },
+        "mlp": {
+          "harmful_cells": 0,
+          "min_source_gain": 0.0,
+          "practically_harmful_cells": 0,
+          "selected_cells": 6,
+          "source_balanced_gain": 0.017299498722551175
+        },
+        "resnet": {
+          "harmful_cells": 2,
+          "min_source_gain": -0.002239751806841507,
+          "practically_harmful_cells": 1,
+          "selected_cells": 8,
+          "source_balanced_gain": 0.01395038146039462
+        },
+        "tabm": {
+          "harmful_cells": 1,
+          "min_source_gain": -0.0008485144430927314,
+          "practically_harmful_cells": 1,
+          "selected_cells": 8,
+          "source_balanced_gain": 0.019730377634240556
+        }
+      },
+      "harmful_cells": 4,
+      "practically_harmful_cells": 3,
+      "selected_cells": 30,
+      "source_backbone_balanced_gain": 0.016706098611090965
+    },
+    "selected_pointwise": {
+      "by_backbone": {
+        "ft_transformer": {
+          "harmful_cells": 1,
+          "min_source_gain": -0.0017209089300438702,
+          "practically_harmful_cells": 1,
+          "selected_cells": 4,
+          "source_balanced_gain": 0.0035965080037273444
+        },
+        "mlp": {
+          "harmful_cells": 0,
+          "min_source_gain": 0.0,
+          "practically_harmful_cells": 0,
+          "selected_cells": 3,
+          "source_balanced_gain": 0.006266550784294984
+        },
+        "resnet": {
+          "harmful_cells": 1,
+          "min_source_gain": -0.0014511375746651127,
+          "practically_harmful_cells": 1,
+          "selected_cells": 4,
+          "source_balanced_gain": 0.003148359050031032
+        },
+        "tabm": {
+          "harmful_cells": 1,
+          "min_source_gain": -0.001043709550102729,
+          "practically_harmful_cells": 1,
+          "selected_cells": 4,
+          "source_balanced_gain": 0.0074474395128846325
+        }
+      },
+      "harmful_cells": 3,
+      "practically_harmful_cells": 3,
+      "selected_cells": 15,
+      "source_backbone_balanced_gain": 0.005114714337734498
+    }
+  },
+  "status": "complete_posthoc_development_audit"
+}

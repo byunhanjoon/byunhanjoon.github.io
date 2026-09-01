@@ -1,0 +1,13 @@
+scope,headroom_condition,cells,percentage,base_dataset_model_seed_cells,datasets_affected,models_affected
+all,headroom <= 0,4,0.21367521367521367,1,eye_movements,tabm_d
+all,headroom < 1e-8,4,0.21367521367521367,1,eye_movements,tabm_d
+all,headroom < 1e-6,4,0.21367521367521367,1,eye_movements,tabm_d
+all,headroom < 1e-4 * L_trivial,4,0.21367521367521367,1,eye_movements,tabm_d
+general,headroom <= 0,0,0.0,0,,
+general,headroom < 1e-8,0,0.0,0,,
+general,headroom < 1e-6,0,0.0,0,,
+general,headroom < 1e-4 * L_trivial,0,0.0,0,,
+embedding,headroom <= 0,4,0.9259259259259259,1,eye_movements,tabm_d
+embedding,headroom < 1e-8,4,0.9259259259259259,1,eye_movements,tabm_d
+embedding,headroom < 1e-6,4,0.9259259259259259,1,eye_movements,tabm_d
+embedding,headroom < 1e-4 * L_trivial,4,0.9259259259259259,1,eye_movements,tabm_d

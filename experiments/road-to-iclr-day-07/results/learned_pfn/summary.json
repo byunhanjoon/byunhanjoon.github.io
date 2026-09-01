@@ -1,0 +1,45 @@
+{
+  "gates": {
+    "beats_fixed_rules_at_least_7_of_9": true,
+    "integrity": true,
+    "mean_advantage_at_least_0p02": true,
+    "positive_in_at_least_two_seeds": true,
+    "regret_at_most_0p05": true,
+    "trust_auroc_at_least_0p75": true,
+    "trust_correlation_at_least_0p70": true,
+    "wins_at_least_7_of_9": true
+  },
+  "integrity": true,
+  "matched_prior": {
+    "beats_always_smooth_cells": 9,
+    "beats_zero_cells": 9,
+    "mean_advantage_over_set": 0.1763910982343885,
+    "mean_regret_to_bayes": 0.007594812799383097,
+    "phase_cells": 9,
+    "positive_seed_advantages": 3,
+    "seed_advantage": {
+      "20260831": 0.175375070836809,
+      "20260832": 0.17771066559685597,
+      "20260833": 0.17608755826950073
+    },
+    "structured_wins_over_set": 9,
+    "trust_posterior_correlation": 0.9504605775041557,
+    "trust_regime_auroc": 0.8631641454916504
+  },
+  "passes": true,
+  "prior_shift": {
+    "0.1": {
+      "mean_bayes_mse": 0.9783749447928535,
+      "mean_model_mse": 0.9791554433328135,
+      "mean_regret_to_bayes": 0.0007804985399599305,
+      "mean_trust": 0.2744961943891313
+    },
+    "0.9": {
+      "mean_bayes_mse": 0.6081010224642577,
+      "mean_model_mse": 0.6225688595462728,
+      "mean_regret_to_bayes": 0.01446783708201516,
+      "mean_trust": 0.6781452585149694
+    }
+  },
+  "status": "complete"
+}

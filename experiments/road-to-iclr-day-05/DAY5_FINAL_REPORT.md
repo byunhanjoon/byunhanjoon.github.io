@@ -1,5 +1,14 @@
 # Day-5 final report: from schema sensitivity to nuisance-quotient selection
 
+> **Superseding completion note (2026-08-28).** This long report preserves the
+> evidence narrative before the final common-panel completion. The authoritative
+> verdict is **PARTIALLY SUPPORTED** in [`results.md`](results.md), which adds
+> 144 modern-neural tensors, TabM, TabPFN, CatBoost/HistGB/XGBoost/LightGBM,
+> architecture-wide matched controls, row-order and enlarged-menu experiments,
+> and the corrected maximum-unique mixed-level strength designs. Do not use the
+> older integrity counts or single embedding-MLP matched result below as the
+> final program-wide conclusion.
+
 ## Executive verdict
 
 The best Day-5 direction is **OrbitCover**, not another tabular encoder and not
@@ -772,9 +781,9 @@ compute.
 
 ## Reproducibility status
 
-The final integrity audit verifies 305 complete tensors representing 25,008
-product-cell fits, finite and semantically valid probabilities, consistent
-labels/factor shapes, 151 parseable top-level summaries, and zero
-validation-screening mismatches across the 57 headline test cells. The full
-algebra/construction suite passes 94/94 tests, and 21 paper figures regenerate
-successfully. Commands are recorded in the directory README.
+The superseding integrity audit verifies 587 tensors representing 44,720
+product-cell/control fits or explicitly labeled TabPFN calls, finite and
+semantically valid probabilities, consistent labels/factor shapes, 156
+parseable top-level summaries, and zero structural or validation-screening
+issues. The full algebra/construction suite passes 103/103 tests, and 31 figure
+concepts regenerate successfully. Commands are recorded in the directory README.

@@ -1,0 +1,14 @@
+{
+  "tabpfn_package_version": "8.5.0",
+  "supports_v2_6_api": true,
+  "downloaded_huggingface_blob_files": [
+    "/home/byunhanjoon/.cache/huggingface/hub/models--Prior-Labs--tabpfn_2_6/blobs/0578fa56f97e11024e31735aaec2c4e7332584b7730242fbaf6c0bbd0299206a",
+    "/home/byunhanjoon/.cache/huggingface/hub/models--Prior-Labs--tabpfn_2_6/blobs/c855169116d79d2c957a29107ffc04464555f39aec0eef90c90390f2c2b2008b"
+  ],
+  "resolved_v2_6_checkpoint_files": [],
+  "v2_6_checkpoint_available_for_fit": false,
+  "package_declares_v2_6_gated": true,
+  "runtime_fit_probe": "blocked",
+  "runtime_fit_probe_error": "TabPFNLicenseError: one-time license acceptance/API key required in non-interactive environment",
+  "cached_v2_5_was_not_substituted": true
+}

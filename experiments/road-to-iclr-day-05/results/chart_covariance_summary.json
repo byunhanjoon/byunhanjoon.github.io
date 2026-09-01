@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "runs": 15,
+  "sgd_chart_risk_reduction_vs_adamw": 0.9999999999934573,
+  "field_vector_adam_chart_risk_reduction_vs_adamw": 0.9999999757521385,
+  "sgd_brier_change_vs_adamw": -0.005629963629151191,
+  "field_vector_adam_brier_change_vs_adamw": -0.00012889474450056282,
+  "maximum_identity_error": 4.975091956278716e-17
+}

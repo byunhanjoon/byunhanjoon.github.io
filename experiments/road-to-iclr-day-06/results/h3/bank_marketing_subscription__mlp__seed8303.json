@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "hypothesis": "H3_FULLSCALE_CLOSURE",
+  "dataset": "bank_marketing_subscription",
+  "task": "classification",
+  "model": "mlp",
+  "seed": 8303,
+  "rows": {
+    "train": 27126,
+    "validation": 9042,
+    "test": 9043
+  },
+  "paths": 8,
+  "path_wall_seconds": [
+    35.74543999298476,
+    31.399772512027994,
+    36.840440248837695,
+    36.8873661539983,
+    42.37508461414836,
+    42.44097442692146,
+    42.58677814994007,
+    42.583709839964285
+  ],
+  "total_fit_seconds": 310.8595659388229,
+  "invocation_wall_seconds": 312.82578816381283,
+  "config_sha256": "67be6a0a6fe111b75c01fbc49b083dd804479caf2010447317cfdcf73398766d",
+  "protocol_sha256": "c4f0cc5d7b0961abe268a67760053c0fd36302faa25432d8afa930d7cc402802",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0"
+}

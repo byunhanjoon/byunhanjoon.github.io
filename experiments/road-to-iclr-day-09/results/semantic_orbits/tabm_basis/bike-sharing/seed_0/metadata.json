@@ -1,0 +1,60 @@
+{
+  "bounded_followup": "T6 only on three strongest datasets",
+  "config": "configs/semantic_orbits_tabm_basis.yaml",
+  "config_sha256": "b1085da4254628514499503c380f101a0339c243f166e208a3079a03e1a27238",
+  "dataset_spec": {
+    "cyclic_periods": {
+      "hour": 24,
+      "month": 12,
+      "weekday": 7
+    },
+    "name": "bike-sharing",
+    "openml_id": 42712,
+    "openml_version": 2,
+    "problem_type": "regression"
+  },
+  "device": "cuda:0",
+  "environment": {
+    "cuda_visible_devices": "1",
+    "gpu": "NVIDIA H100 NVL",
+    "packages": {
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "pytabkit": "1.7.3",
+      "scikit-learn": "1.4.2",
+      "torch": "2.7.0"
+    },
+    "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+    "python": "3.10.16",
+    "torch_cuda": "12.6"
+  },
+  "experiment": "semantic_orbits_tabm_basis_followup",
+  "files": {
+    "metrics.csv": {
+      "bytes": 42211,
+      "sha256": "0f6e3da3c2ab67365c7567b3fcc5f1023f6a24e6f1984370abfdd2268996cf9e"
+    },
+    "predictions.csv.gz": {
+      "bytes": 186475,
+      "sha256": "a53d9a936bdc8dcf3b7c1f5344b12df3a8a805fc54cd30c28e29b913804ab77c"
+    }
+  },
+  "git": {
+    "commit": "0c456660ae9a87aab7932b569e1954b0ee1d25fe",
+    "day09_status": "?? experiments/road-to-iclr-day-09/"
+  },
+  "model": "tabm_d",
+  "model_seed": 0,
+  "parent_grid_unchanged": true,
+  "protocol_version": 1,
+  "representation_count": 25,
+  "split_audit": {
+    "target_sha256": "11ddda99682807dd599c4faf1ce6e3803b4b564b0fbe406f1c2061b72660fea1",
+    "test_row_order_sha256": "0266f83f494b2b697878b8e48aa672647bcec7b6b80441aa3fdf00b2f1176903",
+    "train_test_disjoint": true,
+    "train_validation_disjoint": true,
+    "validation_test_disjoint": true
+  },
+  "status": "complete",
+  "wall_seconds": 19.860049962997437
+}

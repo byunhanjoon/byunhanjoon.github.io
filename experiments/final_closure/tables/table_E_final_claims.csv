@@ -1,0 +1,6 @@
+claim,decision,evidence,boundary
+OrbitCover beats canonical independent retraining,pass,"OC2-coupled equal-source B16 reduction 55.894%, interval [0.38653275993244834, 0.7384214651067077]",OC2-independent reduction -7.002%
+Relative efficiency survives convergence,fail,mean convergence OC2/SRS ratio 1.0017,absolute risk and per-architecture corners remain separately reported
+Interaction order explains the SRS boundary,fail,"rho(main+pair,gain)=0.139; rho(higher,gain)=0.258",transparent leave-one-dataset-out performance is descriptive
+No unexplained systematic architecture failure,pass,"{""ft_transformer"": 0.3910178142649847, ""mlp"": 0.9323539220494259, ""resnet"": 0.5809183334186383, ""tabm"": 0.902101585179278}",matched-path residual remains architecture-dependent
+Coupling mechanism localized,complete,lowest mean-residual ablation: all_factors,"finite init/order menu mechanism, not an infinite-RNG theorem"

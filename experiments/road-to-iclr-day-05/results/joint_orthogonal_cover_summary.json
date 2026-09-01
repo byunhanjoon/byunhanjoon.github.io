@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "cells": 25,
+  "material_cells": 12,
+  "orthogonal_cover_designs_classification": 3456,
+  "material_cells_cover_beats_iid": 12,
+  "material_cells_cover_beats_seed_only": 9,
+  "material_cells_cover_beats_both": 9,
+  "exact_two_sided_sign_p_cover_beats_both": 0.14599609375,
+  "mean_cover_vs_iid_residual_reduction_material": 0.2359273066497969,
+  "mean_cover_vs_seed_residual_reduction_material": 0.39963654878385324,
+  "adaptive_orthogonal_cover_gate_passed": true,
+  "mean_joint_main_effect_fraction_material": 0.42171246573489163,
+  "maximum_ambiguity_identity_error": 1.6609977282477928e-16,
+  "maximum_anova_component_sum_error": 3.469446951953614e-18
+}

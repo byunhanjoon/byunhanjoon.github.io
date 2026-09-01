@@ -1,0 +1,29 @@
+{
+  "status": "complete",
+  "cells": 25,
+  "mean_fraction_rows_strength2_lower": {
+    "iid16": 0.9953217803027893,
+    "four_strength1": 0.9779642519722114,
+    "four_seed_blocks": 0.9372397041087153
+  },
+  "cells_with_lower_p95": {
+    "iid16": 25,
+    "four_strength1": 25,
+    "four_seed_blocks": 25
+  },
+  "equal_cell_weight_p95_reduction": {
+    "iid16": 0.6788673378870682,
+    "four_strength1": 0.5736561758244367,
+    "four_seed_blocks": 0.6076867905109871
+  },
+  "equal_cell_weight_p99_reduction": {
+    "iid16": 0.7054033507512276,
+    "four_strength1": 0.6183612800252745,
+    "four_seed_blocks": 0.6388745121412704
+  },
+  "cells_with_lower_max": {
+    "iid16": 25,
+    "four_strength1": 23,
+    "four_seed_blocks": 23
+  }
+}

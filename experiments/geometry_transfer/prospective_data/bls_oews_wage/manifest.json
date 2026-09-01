@@ -1,0 +1,5 @@
+{
+  "status": "NOT RUN \u2014 SOURCE UNAVAILABLE",
+  "source": "bls_oews_wage",
+  "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.bls.gov/oes/home.htm"
+}

@@ -1,0 +1,525 @@
+{
+  "status": "complete",
+  "dataset": "fremtpl_claim_count",
+  "task": "regression",
+  "model": "native_histgb",
+  "actions": 64,
+  "represented_fits": 64,
+  "split_seed": 2026082801,
+  "wall_seconds": 6.752613729098812,
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "telemetry": [
+    {
+      "action": 0,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10752180917188525
+    },
+    {
+      "action": 1,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10887104785069823
+    },
+    {
+      "action": 2,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10484025510959327
+    },
+    {
+      "action": 3,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10364763089455664
+    },
+    {
+      "action": 4,
+      "feature": 0,
+      "category": 1,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10508518293499947
+    },
+    {
+      "action": 5,
+      "feature": 0,
+      "category": 1,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10415231715887785
+    },
+    {
+      "action": 6,
+      "feature": 0,
+      "category": 1,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10472041787579656
+    },
+    {
+      "action": 7,
+      "feature": 0,
+      "category": 1,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10446636797860265
+    },
+    {
+      "action": 8,
+      "feature": 0,
+      "category": 2,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10742715909145772
+    },
+    {
+      "action": 9,
+      "feature": 0,
+      "category": 2,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10487274499610066
+    },
+    {
+      "action": 10,
+      "feature": 0,
+      "category": 2,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.11119634890928864
+    },
+    {
+      "action": 11,
+      "feature": 0,
+      "category": 2,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10706940316595137
+    },
+    {
+      "action": 12,
+      "feature": 0,
+      "category": 3,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.1035202220082283
+    },
+    {
+      "action": 13,
+      "feature": 0,
+      "category": 3,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10350775206461549
+    },
+    {
+      "action": 14,
+      "feature": 0,
+      "category": 3,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10420330497436225
+    },
+    {
+      "action": 15,
+      "feature": 0,
+      "category": 3,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10373985092155635
+    },
+    {
+      "action": 16,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10408656997606158
+    },
+    {
+      "action": 17,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10895564709790051
+    },
+    {
+      "action": 18,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10494569502770901
+    },
+    {
+      "action": 19,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10276735597290099
+    },
+    {
+      "action": 20,
+      "feature": 1,
+      "category": 1,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10581957409158349
+    },
+    {
+      "action": 21,
+      "feature": 1,
+      "category": 1,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10670618014410138
+    },
+    {
+      "action": 22,
+      "feature": 1,
+      "category": 1,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10400431603193283
+    },
+    {
+      "action": 23,
+      "feature": 1,
+      "category": 1,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10638231690973043
+    },
+    {
+      "action": 24,
+      "feature": 1,
+      "category": 2,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10476616909727454
+    },
+    {
+      "action": 25,
+      "feature": 1,
+      "category": 2,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.1092356969602406
+    },
+    {
+      "action": 26,
+      "feature": 1,
+      "category": 2,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.1045280119869858
+    },
+    {
+      "action": 27,
+      "feature": 1,
+      "category": 2,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10307570896111429
+    },
+    {
+      "action": 28,
+      "feature": 1,
+      "category": 3,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10446156212128699
+    },
+    {
+      "action": 29,
+      "feature": 1,
+      "category": 3,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10967614687979221
+    },
+    {
+      "action": 30,
+      "feature": 1,
+      "category": 3,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10530937113799155
+    },
+    {
+      "action": 31,
+      "feature": 1,
+      "category": 3,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10406229505315423
+    },
+    {
+      "action": 32,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10480552702210844
+    },
+    {
+      "action": 33,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10465100686997175
+    },
+    {
+      "action": 34,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10469015594571829
+    },
+    {
+      "action": 35,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10481169796548784
+    },
+    {
+      "action": 36,
+      "feature": 2,
+      "category": 1,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.1049642360303551
+    },
+    {
+      "action": 37,
+      "feature": 2,
+      "category": 1,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10386505094356835
+    },
+    {
+      "action": 38,
+      "feature": 2,
+      "category": 1,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10475281998515129
+    },
+    {
+      "action": 39,
+      "feature": 2,
+      "category": 1,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10464532906189561
+    },
+    {
+      "action": 40,
+      "feature": 2,
+      "category": 2,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.1062682569026947
+    },
+    {
+      "action": 41,
+      "feature": 2,
+      "category": 2,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.106046476168558
+    },
+    {
+      "action": 42,
+      "feature": 2,
+      "category": 2,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10463659605011344
+    },
+    {
+      "action": 43,
+      "feature": 2,
+      "category": 2,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10614594491198659
+    },
+    {
+      "action": 44,
+      "feature": 2,
+      "category": 3,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10531673487275839
+    },
+    {
+      "action": 45,
+      "feature": 2,
+      "category": 3,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10857972898520529
+    },
+    {
+      "action": 46,
+      "feature": 2,
+      "category": 3,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10666407109238207
+    },
+    {
+      "action": 47,
+      "feature": 2,
+      "category": 3,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10495967091992497
+    },
+    {
+      "action": 48,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10384038602933288
+    },
+    {
+      "action": 49,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10523507208563387
+    },
+    {
+      "action": 50,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10481447400525212
+    },
+    {
+      "action": 51,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10510655981488526
+    },
+    {
+      "action": 52,
+      "feature": 3,
+      "category": 1,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.11329629784449935
+    },
+    {
+      "action": 53,
+      "feature": 3,
+      "category": 1,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10472881700843573
+    },
+    {
+      "action": 54,
+      "feature": 3,
+      "category": 1,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10538862296380103
+    },
+    {
+      "action": 55,
+      "feature": 3,
+      "category": 1,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10431414609774947
+    },
+    {
+      "action": 56,
+      "feature": 3,
+      "category": 2,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10471747000701725
+    },
+    {
+      "action": 57,
+      "feature": 3,
+      "category": 2,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.1046454319730401
+    },
+    {
+      "action": 58,
+      "feature": 3,
+      "category": 2,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10365473898127675
+    },
+    {
+      "action": 59,
+      "feature": 3,
+      "category": 2,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10424022492952645
+    },
+    {
+      "action": 60,
+      "feature": 3,
+      "category": 3,
+      "class": 0,
+      "seed": 0,
+      "wall_seconds": 0.10493261204101145
+    },
+    {
+      "action": 61,
+      "feature": 3,
+      "category": 3,
+      "class": 0,
+      "seed": 1,
+      "wall_seconds": 0.10516071389429271
+    },
+    {
+      "action": 62,
+      "feature": 3,
+      "category": 3,
+      "class": 0,
+      "seed": 2,
+      "wall_seconds": 0.10600787191651762
+    },
+    {
+      "action": 63,
+      "feature": 3,
+      "category": 3,
+      "class": 0,
+      "seed": 3,
+      "wall_seconds": 0.10910255322232842
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-churn-40701",
+  "model": "ordinal_forest",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 3000,
+    "validation": 1000,
+    "test": 1000
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026083051,
+  "timing": {
+    "setup_seconds": 0.041549948044121265,
+    "fit_loop_seconds": 78.77282753400505,
+    "end_to_end_seconds": 78.85007910407148,
+    "fits_per_fit_loop_second": 1.6249258025522104
+  }
+}

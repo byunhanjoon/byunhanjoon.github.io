@@ -1,0 +1,22 @@
+schema_version: 1
+frozen: true
+purpose: method_development
+generator_version: prior_dial_v1_1
+classification_logit_scale: 2.5
+generator_seed: 91001
+model_seeds: [101, 102, 103]
+task_types: [classification, regression]
+rhos: [0.0, 0.1, 0.25, 0.5, 0.75, 0.9, 1.0]
+tasks_per_cell: 420
+context_sizes: [32, 64, 128, 256, 512]
+primary_context_sizes: [64, 128]
+query_size: 128
+feature_counts: [4, 8, 16, 32]
+primary_feature_counts: [8, 16]
+informative_fractions: [0.5, 1.0]
+correlations: [0.0, 0.5]
+label_noise: [0.0, 0.1]
+mechanisms: [linear, additive, threshold, interaction, partition, periodic]
+warps: [identity, affine, signed_power, asinh, pwl, sinh]
+held_out_warp_compositions: [signed_power_then_pwl]
+bootstrap_draws: 10000

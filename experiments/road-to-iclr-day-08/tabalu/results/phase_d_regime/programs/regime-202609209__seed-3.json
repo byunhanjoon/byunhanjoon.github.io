@@ -1,0 +1,116 @@
+{
+  "truth": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "subtract",
+          "left": 0,
+          "right": 3
+        },
+        {
+          "operator": "abs",
+          "left": 4,
+          "right": null
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0409453501110113,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "square",
+          "left": 2,
+          "right": null
+        }
+      ],
+      "output": 4,
+      "output_scale": 0.8331092635770432,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    }
+  ],
+  "experts": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "square",
+          "left": 2,
+          "right": null
+        }
+      ],
+      "output": 4,
+      "output_scale": 0.8331092606000621,
+      "output_bias": 2.462030579408747e-11,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "subtract",
+          "left": 0,
+          "right": 3
+        },
+        {
+          "operator": "abs",
+          "left": 4,
+          "right": null
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0409452946045887,
+      "output_bias": -2.780528918222558e-09,
+      "epsilon": 0.25
+    }
+  ],
+  "single_program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "subtract",
+        "left": 3,
+        "right": 0
+      },
+      {
+        "operator": "multiply",
+        "left": 2,
+        "right": 4
+      },
+      {
+        "operator": "abs",
+        "left": 5,
+        "right": null
+      }
+    ],
+    "output": 6,
+    "output_scale": 0.48490645264178023,
+    "output_bias": 0.6316644433691265,
+    "epsilon": 0.25
+  },
+  "recovery": [
+    {
+      "feature_precision": 1.0,
+      "feature_recall": 1.0,
+      "feature_f1": 1.0,
+      "operator_accuracy": 1.0,
+      "exact_program": true,
+      "depth_error": 0.0,
+      "coefficient_error": 3.0016014118672274e-09
+    },
+    {
+      "feature_precision": 1.0,
+      "feature_recall": 1.0,
+      "feature_f1": 1.0,
+      "operator_accuracy": 1.0,
+      "exact_program": true,
+      "depth_error": 0.0,
+      "coefficient_error": 5.82869514875739e-08
+    }
+  ]
+}

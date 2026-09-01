@@ -1,0 +1,8 @@
+dataset,problem_type,model,seed,variant,anchors,selection,normalize,min_empirical_rank,median_empirical_rank,min_anchor_rank,max_coordinate_error,validation_task_error,test_task_error,fit_seconds
+california_housing,regression,controlled_mlp,2,m8-random_index-norm1,8,random_index,True,5,8.0,4,5.225732824312472e-16,65077.67059479435,70616.23183945358,0.29766568006016314
+california_housing,regression,controlled_mlp,2,m8-gram_pivot-norm1,8,gram_pivot,True,5,8.0,5,1.1059621792392972e-15,57925.821975594874,64145.605536170755,0.6643193960189819
+california_housing,regression,controlled_mlp,2,m16-random_index-norm1,16,random_index,True,5,8.0,4,6.185127730774118e-16,62939.223843022846,67639.55799065309,0.48434595484286547
+california_housing,regression,controlled_mlp,2,m16-gram_pivot-norm1,16,gram_pivot,True,5,8.0,5,8.310288330566965e-16,59103.42015650019,64174.45377854668,0.2999343869742006
+california_housing,regression,controlled_mlp,2,m32-random_index-norm1,32,random_index,True,5,8.0,4,4.802095278931476e-16,61168.415544224,65331.91671433982,0.2377490981016308
+california_housing,regression,controlled_mlp,2,m32-gram_pivot-norm1,32,gram_pivot,True,5,8.0,5,6.400446043326516e-16,59877.95340284572,63489.9968372604,0.4148433110676706
+california_housing,regression,controlled_mlp,2,m16-gram_pivot-norm0,16,gram_pivot,False,5,8.0,5,8.356972739996294e-16,59103.42015650019,64174.45377854668,0.5503783579915762

@@ -1,0 +1,173 @@
+{
+  "status": "complete",
+  "panels": {
+    "confirmation": {
+      "clauses": {
+        "saving_at_least_15_percent": true,
+        "pilot_inclusion_at_least_98_percent": true,
+        "agreement_at_least_equal32": false,
+        "regret_at_most_equal32": false,
+        "regret_within_25_percent_equal64": false
+      },
+      "screen_then_cross": {
+        "candidates": 5.0,
+        "pilot_winner_inclusion": 0.9987571022727273,
+        "selection_agreement": 0.9758522727272727,
+        "validation_quotient_regret": 4.4235874695031906e-06,
+        "selected_quotient_test_loss": 0.21924305021421828,
+        "selected_realized_test_loss": 0.21925324797009543,
+        "fit_saving_fraction": 0.3,
+        "total_fits": 224.0,
+        "equal64_fits": 320.0
+      },
+      "equal32": {
+        "selection_agreement": 0.9780717329545454,
+        "validation_quotient_regret": 3.9573157709744644e-06,
+        "selected_quotient_test_loss": 0.219246155764292,
+        "selected_realized_test_loss": 0.2192564155146244
+      },
+      "equal64": {
+        "selection_agreement": 0.9854403409090909,
+        "validation_quotient_regret": 2.6124731854200072e-06,
+        "selected_quotient_test_loss": 0.21925853562346,
+        "selected_realized_test_loss": 0.21926364020943917
+      }
+    },
+    "menu_repeat": {
+      "clauses": {
+        "saving_at_least_15_percent": true,
+        "pilot_inclusion_at_least_98_percent": true,
+        "agreement_at_least_equal32": true,
+        "regret_at_most_equal32": true,
+        "regret_within_25_percent_equal64": true
+      },
+      "screen_then_cross": {
+        "candidates": 5.0,
+        "pilot_winner_inclusion": 1.0,
+        "selection_agreement": 1.0,
+        "validation_quotient_regret": 0.0,
+        "selected_quotient_test_loss": 0.28934738483325706,
+        "selected_realized_test_loss": 0.28935613946979405,
+        "fit_saving_fraction": 0.30000000000000004,
+        "total_fits": 224.0,
+        "equal64_fits": 320.0
+      },
+      "equal32": {
+        "selection_agreement": 1.0,
+        "validation_quotient_regret": 0.0,
+        "selected_quotient_test_loss": 0.28934738483325706,
+        "selected_realized_test_loss": 0.28935426389137925
+      },
+      "equal64": {
+        "selection_agreement": 1.0,
+        "validation_quotient_regret": 0.0,
+        "selected_quotient_test_loss": 0.28934738483325706,
+        "selected_realized_test_loss": 0.2893524522593951
+      }
+    },
+    "openml_external": {
+      "clauses": {
+        "saving_at_least_15_percent": true,
+        "pilot_inclusion_at_least_98_percent": true,
+        "agreement_at_least_equal32": true,
+        "regret_at_most_equal32": true,
+        "regret_within_25_percent_equal64": true
+      },
+      "screen_then_cross": {
+        "candidates": 4.0,
+        "pilot_winner_inclusion": 1.0,
+        "selection_agreement": 0.939697265625,
+        "validation_quotient_regret": 3.5172147474134705e-05,
+        "selected_quotient_test_loss": 0.21755116750072068,
+        "selected_realized_test_loss": 0.2174619365645452,
+        "fit_saving_fraction": 0.25,
+        "total_fits": 192.0,
+        "equal64_fits": 256.0
+      },
+      "equal32": {
+        "selection_agreement": 0.9395751953125,
+        "validation_quotient_regret": 3.5243346153225e-05,
+        "selected_quotient_test_loss": 0.2175263547223422,
+        "selected_realized_test_loss": 0.21746529769317371
+      },
+      "equal64": {
+        "selection_agreement": 0.941162109375,
+        "validation_quotient_regret": 3.43177633249625e-05,
+        "selected_quotient_test_loss": 0.21784892084126228,
+        "selected_realized_test_loss": 0.2178017303342752
+      }
+    },
+    "openml_taskbalanced": {
+      "clauses": {
+        "saving_at_least_15_percent": true,
+        "pilot_inclusion_at_least_98_percent": true,
+        "agreement_at_least_equal32": false,
+        "regret_at_most_equal32": false,
+        "regret_within_25_percent_equal64": false
+      },
+      "screen_then_cross": {
+        "candidates": 3.0,
+        "pilot_winner_inclusion": 1.0,
+        "selection_agreement": 0.9884033203125,
+        "validation_quotient_regret": 2.8539764457144866e-05,
+        "selected_quotient_test_loss": 0.15058882957443656,
+        "selected_realized_test_loss": 0.15056279326482522,
+        "fit_saving_fraction": 0.16666666666666663,
+        "total_fits": 160.0,
+        "equal64_fits": 192.0
+      },
+      "equal32": {
+        "selection_agreement": 0.9906005859375,
+        "validation_quotient_regret": 2.2845068978336595e-05,
+        "selected_quotient_test_loss": 0.15056516962960556,
+        "selected_realized_test_loss": 0.15053933786282853
+      },
+      "equal64": {
+        "selection_agreement": 0.9970703125,
+        "validation_quotient_regret": 7.12927710750985e-06,
+        "selected_quotient_test_loss": 0.15049160162121678,
+        "selected_realized_test_loss": 0.1504843861130572
+      }
+    },
+    "subsample_repeat": {
+      "clauses": {
+        "saving_at_least_15_percent": true,
+        "pilot_inclusion_at_least_98_percent": true,
+        "agreement_at_least_equal32": false,
+        "regret_at_most_equal32": false,
+        "regret_within_25_percent_equal64": false
+      },
+      "screen_then_cross": {
+        "candidates": 5.0,
+        "pilot_winner_inclusion": 1.0,
+        "selection_agreement": 0.9996744791666666,
+        "validation_quotient_regret": 2.4888548265611333e-07,
+        "selected_quotient_test_loss": 0.2942949405613547,
+        "selected_realized_test_loss": 0.29431183069092903,
+        "fit_saving_fraction": 0.30000000000000004,
+        "total_fits": 224.0,
+        "equal64_fits": 320.0
+      },
+      "equal32": {
+        "selection_agreement": 1.0,
+        "validation_quotient_regret": 0.0,
+        "selected_quotient_test_loss": 0.2942945700688168,
+        "selected_realized_test_loss": 0.2943145466539459
+      },
+      "equal64": {
+        "selection_agreement": 1.0,
+        "validation_quotient_regret": 0.0,
+        "selected_quotient_test_loss": 0.2942945700688168,
+        "selected_realized_test_loss": 0.2943078195475001
+      }
+    }
+  },
+  "panels_passing_by_clause": {
+    "saving": 5,
+    "inclusion": 5,
+    "agreement32": 2,
+    "regret32": 2,
+    "regret64": 2
+  },
+  "frozen_gate_passed": false
+}

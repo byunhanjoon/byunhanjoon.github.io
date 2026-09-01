@@ -1,0 +1,89 @@
+{
+  "integrity": {
+    "rows": 36,
+    "equal_parameters_within_backbone": true
+  },
+  "comparisons": {
+    "mlp": {
+      "qple": {
+        "control_mean_test_loss": 0.09401542941729228,
+        "mpe_mean_test_loss": 0.08844831089178716,
+        "mpe_mean_gain_pct": 5.235941834578351,
+        "mpe_wins": 1,
+        "cells": 3
+      },
+      "periodic": {
+        "control_mean_test_loss": 0.08316629379987713,
+        "mpe_mean_test_loss": 0.08844831089178716,
+        "mpe_mean_gain_pct": -6.216230603100759,
+        "mpe_wins": 0,
+        "cells": 3
+      },
+      "code_rbf": {
+        "control_mean_test_loss": 0.10026520490646357,
+        "mpe_mean_test_loss": 0.08844831089178716,
+        "mpe_mean_gain_pct": 11.371650398191143,
+        "mpe_wins": 3,
+        "cells": 3
+      },
+      "mmpe_ring": {
+        "control_mean_test_loss": 0.09265035390853876,
+        "mpe_mean_test_loss": 0.08844831089178716,
+        "mpe_mean_gain_pct": 4.53875601100754,
+        "mpe_wins": 3,
+        "cells": 3
+      },
+      "mpe_corrupt": {
+        "control_mean_test_loss": 0.14814883967240647,
+        "mpe_mean_test_loss": 0.08844831089178716,
+        "mpe_mean_gain_pct": 40.26648317663669,
+        "mpe_wins": 3,
+        "cells": 3
+      }
+    },
+    "resnet": {
+      "qple": {
+        "control_mean_test_loss": 0.09156969189643853,
+        "mpe_mean_test_loss": 0.08766656617323554,
+        "mpe_mean_gain_pct": 3.9789919802630127,
+        "mpe_wins": 2,
+        "cells": 3
+      },
+      "periodic": {
+        "control_mean_test_loss": 0.08104094862937923,
+        "mpe_mean_test_loss": 0.08766656617323554,
+        "mpe_mean_gain_pct": -8.195379400021794,
+        "mpe_wins": 0,
+        "cells": 3
+      },
+      "code_rbf": {
+        "control_mean_test_loss": 0.0962331965565681,
+        "mpe_mean_test_loss": 0.08766656617323554,
+        "mpe_mean_gain_pct": 8.518301077654254,
+        "mpe_wins": 3,
+        "cells": 3
+      },
+      "mmpe_ring": {
+        "control_mean_test_loss": 0.08730211853981013,
+        "mpe_mean_test_loss": 0.08766656617323554,
+        "mpe_mean_gain_pct": -0.4458084072398458,
+        "mpe_wins": 1,
+        "cells": 3
+      },
+      "mpe_corrupt": {
+        "control_mean_test_loss": 0.09498059501250583,
+        "mpe_mean_test_loss": 0.08766656617323554,
+        "mpe_mean_gain_pct": 7.566231843336968,
+        "mpe_wins": 3,
+        "cells": 3
+      }
+    }
+  },
+  "gates": {
+    "mpe_practical_gate_vs_qple_code_and_corrupt": true,
+    "correct_vs_corrupt_wins": 6,
+    "promote_multiscale": false,
+    "periodic_better_in_both_backbone_means": true
+  },
+  "decision": "Single-scale ring MPE passes its narrow diagnostic gate but is not the best hour encoder: fixed periodic features have lower mean test loss in both backbones. Do not claim state of the art or universal PLE replacement."
+}

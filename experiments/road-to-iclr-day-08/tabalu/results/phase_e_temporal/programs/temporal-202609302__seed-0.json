@@ -1,0 +1,107 @@
+{
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 3
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.5683533980469383,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "global": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 3
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.482523972181795,
+    "output_bias": 0.02870300066214153,
+    "epsilon": 0.25
+  },
+  "independent": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 0,
+          "right": 2
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 3
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.42804044343196884,
+      "output_bias": 0.06655422356942892,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 0,
+          "right": 2
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 3
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0374782660605921,
+      "output_bias": -0.39321382767534496,
+      "epsilon": 0.25
+    }
+  ],
+  "shared": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 3
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.5688555130641516,
+    "output_bias": 0.018385220409632957,
+    "epsilon": 0.25
+  },
+  "shared_scales": [
+    0.7524589740605699,
+    1.823799235982517
+  ],
+  "shared_biases": [
+    0.05272010587662895,
+    -0.4267447799207829
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-vote-56",
+  "model": "native_histgb",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 261,
+    "validation": 87,
+    "test": 87
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": true,
+  "timing": {
+    "setup_seconds": 0.029437554068863392,
+    "fit_loop_seconds": 5.526936765993014,
+    "end_to_end_seconds": 5.5581006510183215,
+    "fits_per_fit_loop_second": 23.159302416408682
+  }
+}

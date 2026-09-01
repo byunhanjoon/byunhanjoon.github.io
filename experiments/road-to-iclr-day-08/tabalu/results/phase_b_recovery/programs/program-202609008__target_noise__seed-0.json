@@ -1,0 +1,65 @@
+{
+  "record": {
+    "git_commit": "c000f06e0b8c6989d62ece8a769bbf269910a9b8",
+    "git_dirty": true,
+    "task_id": "program-202609008",
+    "task_seed": 202609008,
+    "seed": 0,
+    "condition": "target_noise",
+    "test_multiplier": 8,
+    "search_seconds": 0.10058276006020606,
+    "operation_count": 2,
+    "truth_expression": "abs(add(x1, x2))",
+    "recovered_expression": "(0.99826083 * abs(add(x1, x2)) + 0.0036802404)",
+    "mae": 0.01624987239483744,
+    "rmse": 0.021532620868218427,
+    "r2": 0.9999935400605428,
+    "nrmse": 0.0025416410952911646,
+    "relative_error": 0.0014155160506978475,
+    "feature_precision": 1.0,
+    "feature_recall": 1.0,
+    "feature_f1": 1.0,
+    "operator_accuracy": 1.0,
+    "exact_program": 1,
+    "depth_error": 0.0,
+    "coefficient_error": 0.0054194092107490155
+  },
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 1,
+        "right": 2
+      },
+      {
+        "operator": "abs",
+        "left": 4,
+        "right": null
+      }
+    ],
+    "output": 5,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "recovered": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 1,
+        "right": 2
+      },
+      {
+        "operator": "abs",
+        "left": 4,
+        "right": null
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.9982608311671254,
+    "output_bias": 0.0036802403778743997,
+    "epsilon": 0.25
+  }
+}

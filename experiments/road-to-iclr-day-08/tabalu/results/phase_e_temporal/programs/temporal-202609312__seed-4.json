@@ -1,0 +1,107 @@
+{
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "operator": "safe_divide",
+        "left": 4,
+        "right": 1
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.44488422870313554,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "global": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "operator": "safe_divide",
+        "left": 4,
+        "right": 1
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.40333590743531506,
+    "output_bias": -0.12454013106672326,
+    "epsilon": 0.25
+  },
+  "independent": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 0,
+          "right": 1
+        },
+        {
+          "operator": "safe_divide",
+          "left": 4,
+          "right": 1
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.3118002177031008,
+      "output_bias": -0.1801506814645784,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 0,
+          "right": 1
+        },
+        {
+          "operator": "safe_divide",
+          "left": 4,
+          "right": 1
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.9257258402273011,
+      "output_bias": 0.5394321448813046,
+      "epsilon": 0.25
+    }
+  ],
+  "shared": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "operator": "safe_divide",
+        "left": 4,
+        "right": 1
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.4384625601877017,
+    "output_bias": -0.39501793187572487,
+    "epsilon": 0.25
+  },
+  "shared_scales": [
+    0.7111216491075764,
+    2.1112996560972075
+  ],
+  "shared_biases": [
+    0.10075511392828879,
+    1.3734333139329293
+  ]
+}

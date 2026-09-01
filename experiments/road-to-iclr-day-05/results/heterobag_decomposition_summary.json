@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "evidence_label": "descriptive_phase2_mechanism",
+  "cells": 24,
+  "maximum_ambiguity_reconstruction_error": 1.1666015375944028e-16,
+  "mean_heterobag_squared_loss_gain": 0.0012725415262882572,
+  "mean_member_quality_gain": 0.00034377283978429966,
+  "mean_diversity_gain": 0.0009287686865039605,
+  "cells_positive_squared_loss_gain": 19,
+  "cells_positive_member_quality_gain": 16,
+  "cells_positive_diversity_gain": 20,
+  "spearman_squared_gain_with_primary_gain": 0.5695652173913043,
+  "coordinate_placebo_mean_squared_loss_gain": -1.4014359524354281e-05
+}

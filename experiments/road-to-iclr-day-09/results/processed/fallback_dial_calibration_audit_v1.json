@@ -1,0 +1,107 @@
+{
+  "inputs": [
+    {
+      "run": "development",
+      "summary": "results/processed/e1_primary_b779842a24_t420_n64_summary.csv",
+      "raw": "results/raw/e1_primary_b779842a24_t420_n64.npz"
+    },
+    {
+      "run": "independent_replication",
+      "summary": "results/processed/fallback_dial_replication_dbe28a797c_t630_n96_summary.csv",
+      "raw": "results/raw/fallback_dial_replication_dbe28a797c_t630_n96.npz"
+    }
+  ],
+  "bootstrap_draws": 10000,
+  "population_information_endpoints": {
+    "rho0": 0.0,
+    "rho1": 1.791759469228055
+  },
+  "linear_fit_diagnostics": [
+    {
+      "run": "development",
+      "task_type": "classification",
+      "utility_r2_vs_rho": 0.9072207780484448,
+      "utility_r2_vs_population_mi": 0.8688686370811018,
+      "max_abs_finite_mi_residual": 0.0486773176603541
+    },
+    {
+      "run": "development",
+      "task_type": "regression",
+      "utility_r2_vs_rho": 0.9703910736049134,
+      "utility_r2_vs_population_mi": 0.9870601320848613,
+      "max_abs_finite_mi_residual": 0.0486773176603541
+    },
+    {
+      "run": "independent_replication",
+      "task_type": "classification",
+      "utility_r2_vs_rho": 0.6790398557185395,
+      "utility_r2_vs_population_mi": 0.8792127905201611,
+      "max_abs_finite_mi_residual": 0.019763379551347438
+    },
+    {
+      "run": "independent_replication",
+      "task_type": "regression",
+      "utility_r2_vs_rho": 0.9760840702267886,
+      "utility_r2_vs_population_mi": 0.9796192814712249,
+      "max_abs_finite_mi_residual": 0.019763379551347438
+    }
+  ],
+  "endpoint_contrasts": [
+    {
+      "run": "development",
+      "task_type": "classification",
+      "tasks_per_endpoint": 420,
+      "rho0_utility": 0.0006412816467587767,
+      "rho0_ci_low": -2.0676714919906925e-05,
+      "rho0_ci_high": 0.0013113957220656993,
+      "rho1_utility": 0.0073268354586339445,
+      "rho1_ci_low": 0.004319156983248706,
+      "rho1_ci_high": 0.01030542479308324,
+      "endpoint_utility_gain": 0.006685553811875168,
+      "endpoint_gain_ci_low": 0.003654160680197053,
+      "endpoint_gain_ci_high": 0.009784210038707608
+    },
+    {
+      "run": "development",
+      "task_type": "regression",
+      "tasks_per_endpoint": 420,
+      "rho0_utility": -0.005201005903406408,
+      "rho0_ci_low": -0.013200349649786756,
+      "rho0_ci_high": 0.0029687030725830577,
+      "rho1_utility": 0.2052339799346237,
+      "rho1_ci_low": 0.1760321799200075,
+      "rho1_ci_high": 0.23720184513059814,
+      "endpoint_utility_gain": 0.2104349858380301,
+      "endpoint_gain_ci_low": 0.17970150694714485,
+      "endpoint_gain_ci_high": 0.2424191033192605
+    },
+    {
+      "run": "independent_replication",
+      "task_type": "classification",
+      "tasks_per_endpoint": 630,
+      "rho0_utility": 0.001160816543439668,
+      "rho0_ci_low": 0.0006963720295000188,
+      "rho0_ci_high": 0.001650309699818201,
+      "rho1_utility": -0.004022020948380086,
+      "rho1_ci_low": -0.006613940490280548,
+      "rho1_ci_high": -0.0015414082547900415,
+      "endpoint_utility_gain": -0.005182837491819753,
+      "endpoint_gain_ci_low": -0.007806140809654388,
+      "endpoint_gain_ci_high": -0.002633219551589966
+    },
+    {
+      "run": "independent_replication",
+      "task_type": "regression",
+      "tasks_per_endpoint": 630,
+      "rho0_utility": -0.007383439346270055,
+      "rho0_ci_low": -0.014363407677508976,
+      "rho0_ci_high": -0.0005794513860369073,
+      "rho1_utility": 0.2433947134418842,
+      "rho1_ci_low": 0.21702988121706707,
+      "rho1_ci_high": 0.27088770919203703,
+      "endpoint_utility_gain": 0.25077815278815424,
+      "endpoint_gain_ci_low": 0.22276659314892328,
+      "endpoint_gain_ci_high": 0.27915909361254715
+    }
+  ]
+}

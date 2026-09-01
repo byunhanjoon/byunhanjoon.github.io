@@ -1,0 +1,8 @@
+feature_set,model,accuracy,auroc,log_loss
+observational_only,logistic,0.5714285714285714,0.5,0.6829081048782217
+observational_only,random_forest,0.5714285714285714,0.5,0.6833864085692836
+observational_only,small_mlp,0.5523809523809524,0.4999993592208125,0.689074519617432
+observational_plus_assumptions,logistic,1.0,1.0,0.0023672773248082186
+observational_plus_assumptions,random_forest,1.0,1.0,0.06937807404321245
+observational_plus_assumptions,small_mlp,0.9994397759103641,1.0,0.1210717370163934
+stupid_majority,constant,0.5714285714285714,0.5,0.6829081047004717

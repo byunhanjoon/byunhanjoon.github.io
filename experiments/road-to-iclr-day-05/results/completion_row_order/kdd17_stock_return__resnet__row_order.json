@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "dataset": "kdd17_stock_return",
+  "task": "regression",
+  "model": "resnet",
+  "row_orders": 4,
+  "represented_fits": 4,
+  "initialization_seed_held_fixed": 101,
+  "minibatch_order_seed_held_fixed": 3101,
+  "mean_squared_prediction_movement_by_order": [
+    0.0,
+    0.08701979368925095,
+    0.09818591922521591,
+    0.08659239858388901
+  ],
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "device": "cuda:0",
+  "wall_seconds": 1.556014978326857,
+  "maximum_peak_device_bytes": 71824384,
+  "telemetry": [
+    {
+      "row_order": 0,
+      "wall_seconds": 0.5313851342070848,
+      "peak_device_bytes": 71824384
+    },
+    {
+      "row_order": 1,
+      "wall_seconds": 0.3456838431302458,
+      "peak_device_bytes": 71824384
+    },
+    {
+      "row_order": 2,
+      "wall_seconds": 0.3327229470014572,
+      "peak_device_bytes": 71824384
+    },
+    {
+      "row_order": 3,
+      "wall_seconds": 0.3462230539880693,
+      "peak_device_bytes": 71824384
+    }
+  ]
+}

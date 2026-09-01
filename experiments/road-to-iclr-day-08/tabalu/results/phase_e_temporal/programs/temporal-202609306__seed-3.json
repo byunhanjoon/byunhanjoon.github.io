@@ -1,0 +1,107 @@
+{
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 0,
+        "right": 3
+      },
+      {
+        "operator": "abs",
+        "left": 4,
+        "right": null
+      }
+    ],
+    "output": 5,
+    "output_scale": 1.0560610305655767,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "global": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 0,
+        "right": 3
+      },
+      {
+        "operator": "abs",
+        "left": 4,
+        "right": null
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.9677663375682963,
+    "output_bias": 0.16862033286245515,
+    "epsilon": 0.25
+  },
+  "independent": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 0,
+          "right": 3
+        },
+        {
+          "operator": "abs",
+          "left": 4,
+          "right": null
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.7551668774589438,
+      "output_bias": 0.2883330277309739,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 0,
+          "right": 3
+        },
+        {
+          "operator": "abs",
+          "left": 4,
+          "right": null
+        }
+      ],
+      "output": 5,
+      "output_scale": 2.3768576686230287,
+      "output_bias": -0.6498774372870666,
+      "epsilon": 0.25
+    }
+  ],
+  "shared": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 0,
+        "right": 3
+      },
+      {
+        "operator": "abs",
+        "left": 4,
+        "right": null
+      }
+    ],
+    "output": 5,
+    "output_scale": 1.042194396567332,
+    "output_bias": -1.4149318421571637,
+    "epsilon": 0.25
+  },
+  "shared_scales": [
+    0.7245931276844632,
+    2.2806280298422656
+  ],
+  "shared_biases": [
+    1.3135829571596074,
+    2.5770558853208696
+  ]
+}

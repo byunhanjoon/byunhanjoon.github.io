@@ -1,0 +1,65 @@
+{
+  "record": {
+    "git_commit": "c000f06e0b8c6989d62ece8a769bbf269910a9b8",
+    "git_dirty": true,
+    "task_id": "program-202609003",
+    "task_seed": 202609003,
+    "seed": 3,
+    "condition": "measurement_noise",
+    "test_multiplier": 8,
+    "search_seconds": 0.1022621940355748,
+    "operation_count": 3,
+    "truth_expression": "square(x3)",
+    "recovered_expression": "(0.95809729 * square(multiply(x3, safe_divide(x3, x3))) + 0.045213071)",
+    "mae": 4.204613867215812,
+    "rmse": 5.645082828938911,
+    "r2": 0.9939868523756444,
+    "nrmse": 0.0775444880333575,
+    "relative_error": 0.041270960721339456,
+    "feature_precision": 1.0,
+    "feature_recall": 1.0,
+    "feature_f1": 1.0,
+    "operator_accuracy": 0.3333333333333333,
+    "exact_program": 0,
+    "depth_error": 2.0,
+    "coefficient_error": 0.08711578041206458
+  },
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "square",
+        "left": 3,
+        "right": null
+      }
+    ],
+    "output": 4,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "recovered": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "safe_divide",
+        "left": 3,
+        "right": 3
+      },
+      {
+        "operator": "multiply",
+        "left": 3,
+        "right": 4
+      },
+      {
+        "operator": "square",
+        "left": 5,
+        "right": null
+      }
+    ],
+    "output": 6,
+    "output_scale": 0.9580972906921263,
+    "output_bias": 0.04521307110419093,
+    "epsilon": 0.25
+  }
+}

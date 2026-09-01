@@ -1,0 +1,118 @@
+{
+  "bootstrap_replicates": 20000,
+  "classification_frozen_comparator": {
+    "datasets": 6,
+    "nll_over_2_rate_ci": [
+      -0.0029296875,
+      -0.0002278645833333333
+    ],
+    "nll_over_2_rate_gain": -0.0014973958333333332,
+    "nll_top_decile_ci": [
+      -0.045252449515255595,
+      -0.00850240871971438
+    ],
+    "nll_top_decile_gain": -0.02512233373023111
+  },
+  "comparisons": {
+    "mse": {
+      "ci_high": 0.5455682295724057,
+      "ci_low": 0.0390754540031658,
+      "gain": 0.21796486408904886,
+      "per_dataset_gain": {
+        "Food_Delivery_Time": 0.042995082178718946,
+        "abalone": 0.019705007312618913,
+        "airfoil_self_noise": 0.017986068248087985,
+        "auction_verification": -0.00662876444019449,
+        "black-friday": -0.014990118658490932,
+        "california": 0.009056213154870233,
+        "concrete_compressive_strength": 0.027066101372017974,
+        "diamond": 0.0031167315665904245,
+        "geographical_origin_of_music": 0.39428693703047274,
+        "house": 0.9508063987449532,
+        "miami_housing": 0.0087850487059019,
+        "naval_propulsion_plant": 0.09449142527402248,
+        "physiochemical_protein": 1.6176587346439633,
+        "solar_flare": 0.00039821921394199525,
+        "superconductivity": 0.0649075076622749,
+        "wine_quality": 0.25779723341503175
+      },
+      "positive_datasets": 14
+    },
+    "se_bottom_90pct": {
+      "ci_high": 0.05024366112525168,
+      "ci_low": 0.011267447880121692,
+      "gain": 0.028780217594387265,
+      "per_dataset_gain": {
+        "Food_Delivery_Time": 0.008058468384856044,
+        "abalone": 0.00989732170486815,
+        "airfoil_self_noise": 0.012090255397898712,
+        "auction_verification": -0.0012487459222998635,
+        "black-friday": -0.0016107135876940611,
+        "california": 0.00034636855413744855,
+        "concrete_compressive_strength": 0.014020349912729107,
+        "diamond": 0.0011648467630977176,
+        "geographical_origin_of_music": 0.1384535273628655,
+        "house": 0.06456986232068854,
+        "miami_housing": -0.0005862006537358525,
+        "naval_propulsion_plant": 0.08585315029750924,
+        "physiochemical_protein": 0.01846494215380478,
+        "solar_flare": 7.568158496860308e-05,
+        "superconductivity": 0.034729602198726076,
+        "wine_quality": 0.07620476503777607
+      },
+      "positive_datasets": 13
+    },
+    "se_over_4_rate": {
+      "ci_high": 0.010452033148871519,
+      "ci_low": 0.0009100850423177082,
+      "gain": 0.004830593532986111,
+      "per_dataset_gain": {
+        "Food_Delivery_Time": 0.0029296875,
+        "abalone": 0.002777777777777778,
+        "airfoil_self_noise": -0.001171875,
+        "auction_verification": -0.0026041666666666674,
+        "black-friday": -0.0024739583333333332,
+        "california": 0.0011067708333333333,
+        "concrete_compressive_strength": 0.0001953125,
+        "diamond": 0.00026041666666666666,
+        "geographical_origin_of_music": 0.03958333333333333,
+        "house": 0.011881510416666666,
+        "miami_housing": 0.0009765625,
+        "naval_propulsion_plant": 5.782411586589357e-20,
+        "physiochemical_protein": 0.0095703125,
+        "solar_flare": 0.0,
+        "superconductivity": 0.0044921875,
+        "wine_quality": 0.009765625
+      },
+      "positive_datasets": 12
+    },
+    "se_top_decile": {
+      "ci_high": 5.036850973485676,
+      "ci_low": 0.22577249178207112,
+      "gain": 1.8873794770900867,
+      "per_dataset_gain": {
+        "Food_Delivery_Time": 0.3520497426628907,
+        "abalone": 0.10405110353927548,
+        "airfoil_self_noise": 0.07014133576899317,
+        "auction_verification": -0.05289692369408817,
+        "black-friday": -0.13334639428477094,
+        "california": 0.08610483846904478,
+        "concrete_compressive_strength": 0.14247082581957335,
+        "diamond": 0.020383404828256662,
+        "geographical_origin_of_music": 2.594454260171894,
+        "house": 8.790591144036528,
+        "miami_housing": 0.09168456227192812,
+        "naval_propulsion_plant": 0.16878059007203638,
+        "physiochemical_protein": 15.764373052826135,
+        "solar_flare": 0.0031720428231139853,
+        "superconductivity": 0.3318659021475148,
+        "wine_quality": 1.8641921459830626
+      },
+      "positive_datasets": 14
+    }
+  },
+  "dataset_count": 16,
+  "episodes": 1060,
+  "parent_max_abs_mse_error": 2.863978586731264e-06,
+  "protocol": "TAIL_RISK_CONTRAST_PROTOCOL.md"
+}

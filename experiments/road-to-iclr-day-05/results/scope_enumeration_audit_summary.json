@@ -1,0 +1,63 @@
+{
+  "status": "complete",
+  "panels": {
+    "strength2_openml_multiclass": {
+      "all": {
+        "cells": 4,
+        "source_datasets": 2,
+        "cells_lower_vs_iid16_residual": 4,
+        "pooled_reduction_vs_iid16_residual": 0.5221567101214093,
+        "cells_lower_vs_four_strength1_residual": 4,
+        "pooled_reduction_vs_four_strength1_residual": 0.36080044864554717,
+        "cells_lower_vs_four_seed_blocks_residual": 3,
+        "pooled_reduction_vs_four_seed_blocks_residual": 0.2915401998978653
+      },
+      "nonenumerating_population_gt_16": {
+        "cells": 4,
+        "source_datasets": 2,
+        "cells_lower_vs_iid16_residual": 4,
+        "pooled_reduction_vs_iid16_residual": 0.5221567101214093,
+        "cells_lower_vs_four_strength1_residual": 4,
+        "pooled_reduction_vs_four_strength1_residual": 0.36080044864554717,
+        "cells_lower_vs_four_seed_blocks_residual": 3,
+        "pooled_reduction_vs_four_seed_blocks_residual": 0.2915401998978653
+      },
+      "full_enumeration_population_eq_16": {
+        "cells": 0,
+        "source_datasets": 0
+      }
+    },
+    "strength2_openml_taskbalanced": {
+      "all": {
+        "cells": 16,
+        "source_datasets": 8,
+        "cells_lower_vs_iid16_residual": 16,
+        "pooled_reduction_vs_iid16_residual": 0.8436939330653104,
+        "cells_lower_vs_four_strength1_residual": 16,
+        "pooled_reduction_vs_four_strength1_residual": 0.7990624700732718,
+        "cells_lower_vs_four_seed_blocks_residual": 16,
+        "pooled_reduction_vs_four_seed_blocks_residual": 0.8113214117002437
+      },
+      "nonenumerating_population_gt_16": {
+        "cells": 10,
+        "source_datasets": 5,
+        "cells_lower_vs_iid16_residual": 10,
+        "pooled_reduction_vs_iid16_residual": 0.5651262225276713,
+        "cells_lower_vs_four_strength1_residual": 10,
+        "pooled_reduction_vs_four_strength1_residual": 0.41293991069113867,
+        "cells_lower_vs_four_seed_blocks_residual": 10,
+        "pooled_reduction_vs_four_seed_blocks_residual": 0.5635868558989815
+      },
+      "full_enumeration_population_eq_16": {
+        "cells": 6,
+        "source_datasets": 3,
+        "cells_lower_vs_iid16_residual": 6,
+        "pooled_reduction_vs_iid16_residual": 1.0,
+        "cells_lower_vs_four_strength1_residual": 6,
+        "pooled_reduction_vs_four_strength1_residual": 1.0,
+        "cells_lower_vs_four_seed_blocks_residual": 6,
+        "pooled_reduction_vs_four_seed_blocks_residual": 1.0
+      }
+    }
+  }
+}

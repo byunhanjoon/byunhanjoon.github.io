@@ -1,0 +1,43 @@
+{
+  "gates": {
+    "at_least_3_empirical_domains_won": true,
+    "direct_capacity_at_least_projective": true,
+    "direct_exposes_at_least_2_violations": true,
+    "integrity": true,
+    "ood_nll_advantage_at_least_0_05": true,
+    "ood_win_rate_at_least_70pct": true,
+    "point_nll_degradation_at_most_0_02": true,
+    "projective_identities_below_1e_5": true
+  },
+  "metrics": {
+    "direct_identity_mean": {
+      "mean_additivity": 0.8369895219802856,
+      "mean_scaling": 0.6184219916661581,
+      "variance_polarization": 0.43582160274187726,
+      "variance_scaling": 0.466825932264328
+    },
+    "direct_parameters": 138850,
+    "empirical_domain_advantage": {
+      "breast_cancer": 2.2384804135395417,
+      "diabetes": 1.47851508607467,
+      "digits": 1.804641021622552,
+      "wine": 1.604275709638993
+    },
+    "empirical_domains_won": 4,
+    "maximum_projective_identity": 8.956543240401516e-08,
+    "ood_cell_win_rate": 1.0,
+    "ood_mean_nll_advantage": 1.773755085799429,
+    "point_mean_nll_advantage": 0.14411593774954476,
+    "projective_identity_mean": {
+      "mean_additivity": 8.493491066019487e-08,
+      "mean_scaling": 8.687232385303408e-08,
+      "variance_polarization": 5.974561290145175e-08,
+      "variance_scaling": 7.835465728097309e-08
+    },
+    "projective_parameters": 53130,
+    "total_wall_seconds": 119.3494510948658
+  },
+  "passed": true,
+  "protocol_sha256": "acb5a3675d0249289904b07b208a6a2568c4122021610c184be8bed45eb13081",
+  "status": "complete_static_semisynthetic_replay"
+}

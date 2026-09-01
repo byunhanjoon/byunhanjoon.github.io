@@ -1,0 +1,135 @@
+{
+  "status": "complete",
+  "bootstrap_draws": 100000,
+  "panels": {
+    "strength2_confirmation": {
+      "iid16_residual": {
+        "point_reduction_equal_source": 0.5836454332197039,
+        "source_cluster_bootstrap_95_interval": [
+          0.469191696491705,
+          0.7818446283164463
+        ],
+        "valid_bootstrap_draws": 100000,
+        "source_groups": 6,
+        "source_groups_strength2_lower": 6
+      },
+      "srswor_b16_residual": {
+        "point_reduction_equal_source": 0.40096622030835327,
+        "source_cluster_bootstrap_95_interval": [
+          0.3027563849758528,
+          0.5792968931937595
+        ],
+        "valid_bootstrap_draws": 100000,
+        "source_groups": 6,
+        "source_groups_strength2_lower": 6
+      },
+      "four_strength1_residual": {
+        "point_reduction_equal_source": 0.4785215100862119,
+        "source_cluster_bootstrap_95_interval": [
+          0.34968824870911397,
+          0.7110151022247766
+        ],
+        "valid_bootstrap_draws": 100000,
+        "source_groups": 6,
+        "source_groups_strength2_lower": 6
+      },
+      "four_seed_blocks_residual": {
+        "point_reduction_equal_source": 0.48663823052686006,
+        "source_cluster_bootstrap_95_interval": [
+          0.35615951897954157,
+          0.7193560875788947
+        ],
+        "valid_bootstrap_draws": 100000,
+        "source_groups": 6,
+        "source_groups_strength2_lower": 6
+      }
+    },
+    "strength2_openml_external": {
+      "iid16_residual": {
+        "point_reduction_equal_source": 0.7688456723283335,
+        "source_cluster_bootstrap_95_interval": [
+          0.5946766868795359,
+          0.8799866903573981
+        ],
+        "valid_bootstrap_draws": 100000,
+        "source_groups": 8,
+        "source_groups_strength2_lower": 8
+      },
+      "srswor_b16_residual": {
+        "point_reduction_equal_source": 0.5679089056239148,
+        "source_cluster_bootstrap_95_interval": [
+          0.29084020332799043,
+          0.7677892441813833
+        ],
+        "valid_bootstrap_draws": 100000,
+        "source_groups": 8,
+        "source_groups_strength2_lower": 8
+      },
+      "four_strength1_residual": {
+        "point_reduction_equal_source": 0.7379422959406015,
+        "source_cluster_bootstrap_95_interval": [
+          0.5416721872679029,
+          0.8606004352755287
+        ],
+        "valid_bootstrap_draws": 100000,
+        "source_groups": 8,
+        "source_groups_strength2_lower": 8
+      },
+      "four_seed_blocks_residual": {
+        "point_reduction_equal_source": 0.641212762662336,
+        "source_cluster_bootstrap_95_interval": [
+          0.4144319510032669,
+          0.7952077973774545
+        ],
+        "valid_bootstrap_draws": 100000,
+        "source_groups": 8,
+        "source_groups_strength2_lower": 7
+      }
+    },
+    "strength2_openml_taskbalanced": {
+      "iid16_residual": {
+        "point_reduction_equal_source": 0.8436939330653104,
+        "source_cluster_bootstrap_95_interval": [
+          0.5318475284501347,
+          0.969881244814818
+        ],
+        "valid_bootstrap_draws": 100000,
+        "source_groups": 8,
+        "source_groups_strength2_lower": 8
+      },
+      "srswor_b16_residual": {
+        "point_reduction_equal_source": 0.3549940409556174,
+        "source_cluster_bootstrap_95_interval": [
+          0.30553010326463825,
+          0.4870806361275307
+        ],
+        "valid_bootstrap_draws": 99956,
+        "source_groups": 8,
+        "source_groups_strength2_lower": 5
+      },
+      "four_strength1_residual": {
+        "point_reduction_equal_source": 0.7990624700732718,
+        "source_cluster_bootstrap_95_interval": [
+          0.38845027537740473,
+          0.9615774439779312
+        ],
+        "valid_bootstrap_draws": 100000,
+        "source_groups": 8,
+        "source_groups_strength2_lower": 8
+      },
+      "four_seed_blocks_residual": {
+        "point_reduction_equal_source": 0.8113214117002437,
+        "source_cluster_bootstrap_95_interval": [
+          0.5529853398663245,
+          0.9592906238037564
+        ],
+        "valid_bootstrap_draws": 100000,
+        "source_groups": 8,
+        "source_groups_strength2_lower": 8
+      }
+    }
+  },
+  "posthoc_scope_extension_panels": [
+    "strength2_openml_taskbalanced"
+  ]
+}

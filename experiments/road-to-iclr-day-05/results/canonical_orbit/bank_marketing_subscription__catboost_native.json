@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "dataset": "bank_marketing_subscription",
+  "model": "catboost_native",
+  "task": "binclass",
+  "seeds": [
+    101,
+    202,
+    303,
+    404
+  ],
+  "checked_orbit_views": 32,
+  "unique_canonical_input_digests": 1,
+  "canonical_input_digest": "ee1e101c994881f6b0ff31c3990b2cdf6289ab05453beec4ab6e4226014ccd02",
+  "rows": {
+    "train": 20000,
+    "validation": 3000,
+    "test": 3000
+  }
+}

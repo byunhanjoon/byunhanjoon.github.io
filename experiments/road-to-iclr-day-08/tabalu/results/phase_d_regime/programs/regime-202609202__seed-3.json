@@ -1,0 +1,136 @@
+{
+  "truth": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 1,
+          "right": 2
+        },
+        {
+          "operator": "safe_divide",
+          "left": 4,
+          "right": 2
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.9061430055323864,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 1,
+          "right": 0
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 1
+        },
+        {
+          "operator": "multiply",
+          "left": 0,
+          "right": 5
+        }
+      ],
+      "output": 6,
+      "output_scale": 0.5768937116678543,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    }
+  ],
+  "experts": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 1,
+          "right": 0
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 1
+        },
+        {
+          "operator": "multiply",
+          "left": 0,
+          "right": 5
+        }
+      ],
+      "output": 6,
+      "output_scale": 0.5768936872931684,
+      "output_bias": -4.8808844119174744e-11,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 1,
+          "right": 2
+        },
+        {
+          "operator": "safe_divide",
+          "left": 4,
+          "right": 2
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.9061430113705885,
+      "output_bias": 1.150897141477536e-09,
+      "epsilon": 0.25
+    }
+  ],
+  "single_program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 1
+      },
+      {
+        "operator": "subtract",
+        "left": 5,
+        "right": 1
+      }
+    ],
+    "output": 6,
+    "output_scale": -0.32355138753465346,
+    "output_bias": 0.00021747490034058903,
+    "epsilon": 0.25
+  },
+  "recovery": [
+    {
+      "feature_precision": 1.0,
+      "feature_recall": 1.0,
+      "feature_f1": 1.0,
+      "operator_accuracy": 1.0,
+      "exact_program": true,
+      "depth_error": 0.0,
+      "coefficient_error": 2.4423494780420607e-08
+    },
+    {
+      "feature_precision": 1.0,
+      "feature_recall": 1.0,
+      "feature_f1": 1.0,
+      "operator_accuracy": 1.0,
+      "exact_program": true,
+      "depth_error": 0.0,
+      "coefficient_error": 6.989099285426015e-09
+    }
+  ]
+}

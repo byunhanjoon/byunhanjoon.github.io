@@ -1,0 +1,129 @@
+{
+  "warning": "exploratory paired t intervals; no multiplicity adjustment and no frozen practical-equivalence margin",
+  "audits": [
+    {
+      "dataset": "adult",
+      "metric": "Brier",
+      "difference_orientation": "MLP minus ResNet; negative favors MLP",
+      "quotient_mean_difference": -0.0014791881225455646,
+      "quotient_paired_seed_95_interval": [
+        -0.001878022436570758,
+        -0.0010803538085203711
+      ],
+      "representative_mean_range": [
+        -0.001726072912826778,
+        -0.0012872007131999822
+      ],
+      "status": "MLP advantage is schema-identifiable over this chart set",
+      "by_chart": [
+        {
+          "chart": "local",
+          "mean_mlp_minus_resnet": -0.0013223743385968826,
+          "paired_seed_95_interval": [
+            -0.002119422127701849,
+            -0.0005253265494919165
+          ],
+          "fraction_seeds_mlp_better": 0.875
+        },
+        {
+          "chart": "cumulative",
+          "mean_mlp_minus_resnet": -0.0013412500803767526,
+          "paired_seed_95_interval": [
+            -0.0020067259401535644,
+            -0.0006757742205999406
+          ],
+          "fraction_seeds_mlp_better": 0.8125
+        },
+        {
+          "chart": "cumulative_standardized",
+          "mean_mlp_minus_resnet": -0.0012872007131999822,
+          "paired_seed_95_interval": [
+            -0.0016908944430874824,
+            -0.000883506983312482
+          ],
+          "fraction_seeds_mlp_better": 0.9375
+        },
+        {
+          "chart": "path_spectral",
+          "mean_mlp_minus_resnet": -0.001719042567727428,
+          "paired_seed_95_interval": [
+            -0.0023755864656032424,
+            -0.0010624986698516137
+          ],
+          "fraction_seeds_mlp_better": 1.0
+        },
+        {
+          "chart": "whitened",
+          "mean_mlp_minus_resnet": -0.001726072912826778,
+          "paired_seed_95_interval": [
+            -0.002378602684475005,
+            -0.0010735431411785514
+          ],
+          "fraction_seeds_mlp_better": 0.875
+        }
+      ]
+    },
+    {
+      "dataset": "diamond",
+      "metric": "standardized MSE",
+      "difference_orientation": "MLP minus ResNet; negative favors MLP",
+      "quotient_mean_difference": 0.0002923540080797594,
+      "quotient_paired_seed_95_interval": [
+        -6.434986937190796e-05,
+        0.0006490578855314268
+      ],
+      "representative_mean_range": [
+        -4.006585642080422e-05,
+        0.0014037708390088532
+      ],
+      "status": "point-estimate direction changes across equivalent charts",
+      "by_chart": [
+        {
+          "chart": "local",
+          "mean_mlp_minus_resnet": -2.358371000699979e-05,
+          "paired_seed_95_interval": [
+            -0.0005777269292356957,
+            0.0005305595092216962
+          ],
+          "fraction_seeds_mlp_better": 0.4375
+        },
+        {
+          "chart": "cumulative",
+          "mean_mlp_minus_resnet": 0.0014037708390088532,
+          "paired_seed_95_interval": [
+            0.0008704822095957199,
+            0.0019370594684219866
+          ],
+          "fraction_seeds_mlp_better": 0.125
+        },
+        {
+          "chart": "cumulative_standardized",
+          "mean_mlp_minus_resnet": -6.499047794828079e-07,
+          "paired_seed_95_interval": [
+            -0.0005192053659433282,
+            0.0005179055563843626
+          ],
+          "fraction_seeds_mlp_better": 0.4375
+        },
+        {
+          "chart": "path_spectral",
+          "mean_mlp_minus_resnet": 0.00012229867259723058,
+          "paired_seed_95_interval": [
+            -0.0005774742949455386,
+            0.0008220716401399998
+          ],
+          "fraction_seeds_mlp_better": 0.5
+        },
+        {
+          "chart": "whitened",
+          "mean_mlp_minus_resnet": -4.006585642080422e-05,
+          "paired_seed_95_interval": [
+            -0.0006166143487063467,
+            0.0005364826358647383
+          ],
+          "fraction_seeds_mlp_better": 0.5625
+        }
+      ]
+    }
+  ]
+}

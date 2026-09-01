@@ -1,0 +1,4461 @@
+{
+  "bundles": [
+    {
+      "bundle": "results/raw/development/replication/catboost/adult/seed_0",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "6ad234d9068bd40d3d4dbfd0dc0f3debadb85648731a855112d52a4dae181a0e",
+      "model": "catboost",
+      "model_seed": 0,
+      "predictions_sha256": "1d51eebd01fcbe2c7dc3e19798a1636779cdb2419eeef23961647d37e9b0a949",
+      "wall_seconds": 15.64306902885437
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/adult/seed_1",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "43752c06b47aa14d6c1281a5010e9ffd7b130b461c18cabebaf5ba90732674ee",
+      "model": "catboost",
+      "model_seed": 1,
+      "predictions_sha256": "13a52acb7a314537c0d929c49e2a9b19fcbe909d8b0e5a41cdf25da3a4d183b4",
+      "wall_seconds": 14.221828937530518
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/adult/seed_2",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "47ab634c64cc794dc103d67f52a390e0bc784e366350ee1383b61d76e2bb7ccc",
+      "model": "catboost",
+      "model_seed": 2,
+      "predictions_sha256": "d24107a4bbe1ef1124c5490864e0a60e13f70136dda939c3def49de613b97576",
+      "wall_seconds": 14.415700197219849
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/bank-marketing/seed_0",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "6266c5f5885eb5ab69a2cf7f845357f370b74f8e83abc6486c987e0b3d7d1b87",
+      "model": "catboost",
+      "model_seed": 0,
+      "predictions_sha256": "45cade14bf25349f95e2775b86d93eecdf1ec9318e6c5a3d3a5f58381a1dceee",
+      "wall_seconds": 14.687905311584473
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/bank-marketing/seed_1",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "282d64ee5102ddff973fa7b74ba8f4f7bbdf2533e8faeffba93d58c61234ed0e",
+      "model": "catboost",
+      "model_seed": 1,
+      "predictions_sha256": "197b75776090128acfbf981d5643395b77138869a7a9c16c9d9463e02136b416",
+      "wall_seconds": 15.011309623718262
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/bank-marketing/seed_2",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "b8da49f8e61a1a5da0cdaa704c5d13b1b286d0a0d1b9d92d60c767508551e642",
+      "model": "catboost",
+      "model_seed": 2,
+      "predictions_sha256": "697f74db94e643fe16bd3e43bfc410421a123fcffe3f178d0f0547ccaad299ee",
+      "wall_seconds": 15.701782703399658
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/bike-sharing/seed_0",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "0989c48347532d875d74560d3e06162f9b6d25abaeeaea9c0898fa3407349282",
+      "model": "catboost",
+      "model_seed": 0,
+      "predictions_sha256": "8385e8c6854374dded5b1ec2bcb7cc38c17c135d643d4f50c3e2f0fbce43a412",
+      "wall_seconds": 11.981505632400513
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/bike-sharing/seed_1",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "6de3040a2adb3860ca6994bef5b3113cda304e9e675a3c76973ac9feda78e5f6",
+      "model": "catboost",
+      "model_seed": 1,
+      "predictions_sha256": "7e3b818c8f5f752345ee239404cc3843a93c269f141bac8bea0680e8f036c7ca",
+      "wall_seconds": 11.971556425094604
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/bike-sharing/seed_2",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "e7247fa7f597fae759a068d6f039c073ab0778ad3381e6ff5a3bb32b7957edaa",
+      "model": "catboost",
+      "model_seed": 2,
+      "predictions_sha256": "ce0c221dd0fd4ddb60c64136ddaf9e605eaede94a934c8b8e8412fd7aeed8d11",
+      "wall_seconds": 11.968657732009888
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/california_housing/seed_0",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "fb33ca4601b3e7a53656494f35b694610e9d896e607e3680820d77d0ac54b396",
+      "model": "catboost",
+      "model_seed": 0,
+      "predictions_sha256": "f12806b564dbe6ac0cb802ebf9be0dcf162c9054b45ae558c8a6a81c428fed50",
+      "wall_seconds": 60.477113008499146
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/california_housing/seed_1",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "fb4d2d783dc010d9873caeb9369fa093aba3150c141a43535fcbb5856dd41c30",
+      "model": "catboost",
+      "model_seed": 1,
+      "predictions_sha256": "919007968eda01ce440bfc130171bb61499cac61038484e276fbb76e293c7617",
+      "wall_seconds": 74.66952681541443
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/california_housing/seed_2",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "01621bbb60cd6e5d36774867a5e6a90af21df9fbe8f89c04a9c80a892a328857",
+      "model": "catboost",
+      "model_seed": 2,
+      "predictions_sha256": "e1e0b0b3fe568bc215ead13bd9c7fce26fee33a2ee195a64f0efe9f76426d7c4",
+      "wall_seconds": 77.41125059127808
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/cpu_small/seed_0",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "f89c3faa50a7aa5448661024b1eeb5ee3b2f80d046b1d3b0f11ba751d8320bc7",
+      "model": "catboost",
+      "model_seed": 0,
+      "predictions_sha256": "64277378808457bf6ed40b65a7dbd3a62548ba707eb5e5a8433b8a283d01b916",
+      "wall_seconds": 87.35521340370178
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/cpu_small/seed_1",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "a31fe535b6af480dfcb7ec8ccf4ac6aca40adde22a0b88d62498138b97e23a7c",
+      "model": "catboost",
+      "model_seed": 1,
+      "predictions_sha256": "7f803f1d20d4b017573a1a87f340563f7fc1983ec1908b408460d6b67b55021a",
+      "wall_seconds": 65.21546602249146
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/cpu_small/seed_2",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "3dfed445d3fd314bd0961f323dea0c1c2124a35c74b4a0fb161c527a179231c3",
+      "model": "catboost",
+      "model_seed": 2,
+      "predictions_sha256": "99f3fa24f293113392b5efed31348189515aecbbf977a8dbedc8b11cafc3e98b",
+      "wall_seconds": 67.91122269630432
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/credit-g/seed_0",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "f0a1d04e593f5f604e86cf5222a91c78c74523e68b6700e51b8ed9fbb83abd7a",
+      "model": "catboost",
+      "model_seed": 0,
+      "predictions_sha256": "54552f0d6e589e0af0f89db01128a258f761d4632fdc6fdc0bbad58af2a9c6fa",
+      "wall_seconds": 12.796093940734863
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/credit-g/seed_1",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "20e9392a396f3504b108148fc908656c9db9b51018a3bc7d991827b32469a1dd",
+      "model": "catboost",
+      "model_seed": 1,
+      "predictions_sha256": "4ff38c180d623449c5277aa0add2c59895697b2a54b89abf9ffe8000978e4878",
+      "wall_seconds": 12.18195104598999
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/credit-g/seed_2",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "38b42b2ad0add8b901cd06ef84c22d019a67847a31dfdfc21c02df6b1a91638d",
+      "model": "catboost",
+      "model_seed": 2,
+      "predictions_sha256": "28dd5f676b5271aa55ddbba7ece88d95ad4eccd2154abc4529205402f92eb5a1",
+      "wall_seconds": 11.569918632507324
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/diamonds/seed_0",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "5cd533aea582a63417a275760a82dcfae33094233bbc54af67357db53ce9648e",
+      "model": "catboost",
+      "model_seed": 0,
+      "predictions_sha256": "13b82abd38441f2d5dd3d338ae16aad651009677c41f28972f80bfa8ca501cf5",
+      "wall_seconds": 22.826574563980103
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/diamonds/seed_1",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "0dd659d5b44f5bf36beded2f5229be5d8aec7b78285ba10fdb5185eacc10b2bd",
+      "model": "catboost",
+      "model_seed": 1,
+      "predictions_sha256": "4ae9705c456b174a010789f72ace0a30afd0fa08b29e000e9c25dddb25257fc2",
+      "wall_seconds": 18.773840188980103
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/diamonds/seed_2",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "f3f2ad67506f61b2f25770fcfc05978cb8f9314f7a7e84a2ea81e2a15ab5da0a",
+      "model": "catboost",
+      "model_seed": 2,
+      "predictions_sha256": "2502b0dfdfbd3069d74ddada4f0336e43259144676a4eae7a7248cf3c44b85d5",
+      "wall_seconds": 19.02008056640625
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/house_16H/seed_0",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "49ab272e428f6758a50e88acb7df4281c1c046a4dd71b990ee8e94d08b378150",
+      "model": "catboost",
+      "model_seed": 0,
+      "predictions_sha256": "e421178f23442d88964fc468c9270e9c7e2e50b60c0e26a43595292a91a9487d",
+      "wall_seconds": 58.55411410331726
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/house_16H/seed_1",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "e78a9f467f26b8d02db9730f0162cb7080e56eff880fc62f6cb66f370c2e4a37",
+      "model": "catboost",
+      "model_seed": 1,
+      "predictions_sha256": "748e303587aa4616ef86e32230dd23592571ccc70dce4030dd6c264b020036ea",
+      "wall_seconds": 59.98036241531372
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/house_16H/seed_2",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "95d566989a1a2d3e68371160983ee1d08c93571898e4fd42bc734e9baa836b7d",
+      "model": "catboost",
+      "model_seed": 2,
+      "predictions_sha256": "604c82513234c6749cb79cc34cfa2df0badce97cffed33623d913f585b0eeeae",
+      "wall_seconds": 59.71845722198486
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/pendigits/seed_0",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "94f75768975c3358387639ffd9ab6d8a21457dce7251e1fe790f5a04b0cfc003",
+      "model": "catboost",
+      "model_seed": 0,
+      "predictions_sha256": "c2e5e1e2444bb5c09406b538760872600113e473bf00e32e17aa2a9ddf210060",
+      "wall_seconds": 132.18758821487427
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/pendigits/seed_1",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "b6ece2568e3a72996a86d3416670750d88b41d5d3fe194d0b9ebbfc6839262c4",
+      "model": "catboost",
+      "model_seed": 1,
+      "predictions_sha256": "a5cb60b9ec310cc3f81c00115396a79dc7fb7e92f43bda2a3c1f48e479c52d2d",
+      "wall_seconds": 132.24370670318604
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/pendigits/seed_2",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "aec7402db694d4ddb0af1a82cdad82caa89a04c084b913df49448dbd6b4de8a5",
+      "model": "catboost",
+      "model_seed": 2,
+      "predictions_sha256": "91eb783d9d4f9548ff6c999fcef214e29c78565498811c9094875ec1ac81e222",
+      "wall_seconds": 132.34244513511658
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/phoneme/seed_0",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "66e544cfd5f013a049d62499a82039241de5846b93291be02415d5ced1025bb8",
+      "model": "catboost",
+      "model_seed": 0,
+      "predictions_sha256": "e0f268dc8274f7c9120baf408bdea4f63db17a851ab878b172d9af3ef20d3224",
+      "wall_seconds": 21.228315353393555
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/phoneme/seed_1",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "7ad8d03e1a47610d8650460cf720dfeb23ef065b86d939963f63044bdf2c2fe5",
+      "model": "catboost",
+      "model_seed": 1,
+      "predictions_sha256": "45f91618ad7d4bbc529658dc52029851658d24ee6b2df2426fd3b42d72da126e",
+      "wall_seconds": 20.3428955078125
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/phoneme/seed_2",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "d9c50e9087545603f45a28bcb69a8fa54846539652abcf3eb90f8c0fe7ba3260",
+      "model": "catboost",
+      "model_seed": 2,
+      "predictions_sha256": "4f06db48c9c43e810040ba9530df5665291c3cc053db45b0c129180bb25a07b0",
+      "wall_seconds": 20.874659776687622
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/wine-quality-red/seed_0",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "0caf09c037633952f61baf0cb973e39d6d2af941a3478d21dfdb7753a1314c28",
+      "model": "catboost",
+      "model_seed": 0,
+      "predictions_sha256": "e6a34f846510d204668d352c959c8c5c305d095bad4e1d44be6947dc9c7a44a6",
+      "wall_seconds": 19.9528386592865
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/wine-quality-red/seed_1",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "7a39a1e83cac83c0ec8a165cd42939e84a1096e68192c6a99e2b8934f806de8b",
+      "model": "catboost",
+      "model_seed": 1,
+      "predictions_sha256": "d5a812dd9d6aba20bd4987c0feb672df00fa103a884bbe652859defde6691d94",
+      "wall_seconds": 20.873356342315674
+    },
+    {
+      "bundle": "results/raw/development/replication/catboost/wine-quality-red/seed_2",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": null,
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "63aae82f0d3fa703f0868e87f2dcb73c03bbfd86cfb4dd7b12fc4c1ea228fe50",
+      "model": "catboost",
+      "model_seed": 2,
+      "predictions_sha256": "0d9792d45a75ed54eb12b96d64c51ec9099a12931c90fea3aeb945c984cc7206",
+      "wall_seconds": 20.940757274627686
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/adult/seed_0",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "d2bd11305b8d57f9d61544e2cee156bfcc5cc2b43296fb290d8218b3c98df9db",
+      "model": "controlled_mlp",
+      "model_seed": 0,
+      "predictions_sha256": "2b2772f6699f92e4f78ffe28d02b7e6838ab6bbc848e1382abeb82b14e35505e",
+      "wall_seconds": 18.83033275604248
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/adult/seed_1",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "61f8ae7d19c70e18c0ca61378b95ee49dc43cedfec099dbb14f66752008f28a7",
+      "model": "controlled_mlp",
+      "model_seed": 1,
+      "predictions_sha256": "cba04936093869b44c1fbfedb707eff1d197cfbe65a85c63a7f502be7e72f3b8",
+      "wall_seconds": 15.960418224334717
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/adult/seed_2",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "3e166d02649620e1ec6c60e3291f02f635921deba8116e433d34d2c9344eef73",
+      "model": "controlled_mlp",
+      "model_seed": 2,
+      "predictions_sha256": "ce78465cfb7c5d5923f9ea6bc6f6f2bc818adceb21a733b9e3f43a848198ed13",
+      "wall_seconds": 17.57855772972107
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/bank-marketing/seed_0",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "d07138fb3958bd699f2e5eda9e304a1363c9e389f1e6c36aa23c75ab59f9d38f",
+      "model": "controlled_mlp",
+      "model_seed": 0,
+      "predictions_sha256": "7e29b23751bf66896337fe9881761df8730dd77e7932bf4bae88f73cb62b812d",
+      "wall_seconds": 16.074320316314697
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/bank-marketing/seed_1",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "80c9f0faf50a2c9ec2fe98edccf2803588b99a35e9a03542dfe39e9f0bedc47a",
+      "model": "controlled_mlp",
+      "model_seed": 1,
+      "predictions_sha256": "c82c5ebe2cf99f64c86e953fa7b2899c629597550db04ea12142551f0a12af6a",
+      "wall_seconds": 15.361425638198853
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/bank-marketing/seed_2",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "6452557007b9351b4706a851e847f725be749d848becfdf164feb3093f7a512a",
+      "model": "controlled_mlp",
+      "model_seed": 2,
+      "predictions_sha256": "bfcae3dc4126a996fd8b616e1e7ae5447750bda209effccb049a41d031d0fc55",
+      "wall_seconds": 15.761864423751831
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/bike-sharing/seed_0",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "0455bbd58b0a332f63c5a62efc63f0f00ac9b4fdedfeb5e1531aebdd6f7d5ef5",
+      "model": "controlled_mlp",
+      "model_seed": 0,
+      "predictions_sha256": "85598738bbedd2ea8f67836d4be8b4455145c9489b777e7497f2beef63da9dc1",
+      "wall_seconds": 34.535966873168945
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/bike-sharing/seed_1",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "ec48f04e632594e198432489730aedaf533c4e45f342515a4f4eb0ae6fde02f1",
+      "model": "controlled_mlp",
+      "model_seed": 1,
+      "predictions_sha256": "fd8a880d7e99fcd2e926b948054b5bdeda09d29dec7ea978a43bd25c2ee3cbc3",
+      "wall_seconds": 36.702569007873535
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/bike-sharing/seed_2",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "cf8cfd7b3f7d9f803910f87e1b659b0acc77dccd85a6ac474d3525e6c2063970",
+      "model": "controlled_mlp",
+      "model_seed": 2,
+      "predictions_sha256": "4cd39298363e40ad4efd6b8e05e47828bbf7c2ac97193588e20f3f9b58c7a4f9",
+      "wall_seconds": 59.01466464996338
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/california_housing/seed_0",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "90bb5e48d02a08ba4ac8c4c1d7f6418625b73ae0ea1c78bc0cac73f6193392a5",
+      "model": "controlled_mlp",
+      "model_seed": 0,
+      "predictions_sha256": "d784d08f7500d470dfec6970133e48e52aaa2355f45f5aba6ce081a88eba92ae",
+      "wall_seconds": 39.32023763656616
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/california_housing/seed_1",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "7331d63f6eb11c57e8282c711923f8cd8143e3d84c59a2d74cb3e3891e11d251",
+      "model": "controlled_mlp",
+      "model_seed": 1,
+      "predictions_sha256": "69ab2ac29b219581b542a241e423b9e3f66d95051799472e355030e59397389d",
+      "wall_seconds": 45.85110831260681
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/california_housing/seed_2",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "82ac749d1b2c0914178bca0b518fbe29f3b1a478492322da248c33eb1986e939",
+      "model": "controlled_mlp",
+      "model_seed": 2,
+      "predictions_sha256": "3bc828f96b806d9e4ca2dfd090b4866b453e43f1c97fa04dd5b7d2426fdee5d2",
+      "wall_seconds": 42.45938277244568
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/cpu_small/seed_0",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "7ec0b8d783f946db76801782d026780d22a31dd273e59ee97e8d9d99b5bb4eea",
+      "model": "controlled_mlp",
+      "model_seed": 0,
+      "predictions_sha256": "6177b956a8e3c07d5bfe46d953caed4d27e59113b082ad1c248cd36f9aca89c5",
+      "wall_seconds": 44.33668351173401
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/cpu_small/seed_1",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "f4cce93bce2199620b89a32be39cded96d015ffd90d2cf25efaddded71976d16",
+      "model": "controlled_mlp",
+      "model_seed": 1,
+      "predictions_sha256": "14ae2ba5f934c2485f038182513e06eb8f3e547a25d1b860b990fafe4c48d8a6",
+      "wall_seconds": 35.044692277908325
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/cpu_small/seed_2",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "5fd94d86353bd600e05792bc544ca172aeada601be3cbe1ec54134190951d4f1",
+      "model": "controlled_mlp",
+      "model_seed": 2,
+      "predictions_sha256": "9edf57733e8cf0a6478b456c287e882eb96b99d50dd55a8f72a67b3efc75b31d",
+      "wall_seconds": 35.944916009902954
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/credit-g/seed_0",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "93b245b47c37bbd05c536e4097071b179a9746508a5f19f152758cea451fb364",
+      "model": "controlled_mlp",
+      "model_seed": 0,
+      "predictions_sha256": "26f39ca058772b6e7323167b57634142adbb2122363fc5eb49c21e286fb5bb8b",
+      "wall_seconds": 16.19789171218872
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/credit-g/seed_1",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "9b4d78e43f00526f41b99962b3d7f8dc42e7657ea65bac96ce332046cc611544",
+      "model": "controlled_mlp",
+      "model_seed": 1,
+      "predictions_sha256": "47183dfb35f8ee7c32d56ec8a1e79495c18e1200ee49f57f3a051a78a7d206cc",
+      "wall_seconds": 15.409350156784058
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/credit-g/seed_2",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "c23d3ac265f9c460e4276bc4f1e6b5c89973b0df8bba3b5254647d8668539b5b",
+      "model": "controlled_mlp",
+      "model_seed": 2,
+      "predictions_sha256": "981419cd6e3255c80e47cd2f7b4cea2cef0bd696b63307ac61f207dff8212d46",
+      "wall_seconds": 17.534224033355713
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/diamonds/seed_0",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "5373def5f4019876975892fac779c7ae83669d5e0666e14c140d9848c861a9d6",
+      "model": "controlled_mlp",
+      "model_seed": 0,
+      "predictions_sha256": "8f37ad0162952b023aba4a4ff48cdb4249d325844282781f1e3875a6b8e170a7",
+      "wall_seconds": 35.96751570701599
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/diamonds/seed_1",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "b1dbfeb61cc36011199821093464eecf6c0d6c7ec67518aba4142cda7a4bc1b0",
+      "model": "controlled_mlp",
+      "model_seed": 1,
+      "predictions_sha256": "5256ba2febae28356d2cb670d926480f64f0e603e7ec57a11731e445117c59a3",
+      "wall_seconds": 31.47257161140442
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/diamonds/seed_2",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "769165216fcfa929582dfd4458269ee3d8f21f89e8acdccc329ac26af9a32362",
+      "model": "controlled_mlp",
+      "model_seed": 2,
+      "predictions_sha256": "3814050e46463be43ac93545a6a119a38de3193a57075121796c523d5e003d00",
+      "wall_seconds": 25.31969451904297
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/house_16H/seed_0",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "3fea35268dddcbadfb33b8844025d581cf3042a4ce64a0d8c3b222752f65d87e",
+      "model": "controlled_mlp",
+      "model_seed": 0,
+      "predictions_sha256": "7d8292cd2d4ff20bc4e8b5eb2a00e8f7d78591d714694bc71fbea8aa09d3e13a",
+      "wall_seconds": 24.448479652404785
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/house_16H/seed_1",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "39558e49692fe186d21f8bee767cf96a0cc584867d3386c3b4ffdcb9e3d7e259",
+      "model": "controlled_mlp",
+      "model_seed": 1,
+      "predictions_sha256": "07838d1a124a433a63c86ce50421a302b19117707e06d99acc538a67a53b1c06",
+      "wall_seconds": 17.56959056854248
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/house_16H/seed_2",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "2022ccec9a6b6216559122f90f52948ecc7ec7b075bbd1cf873f1c963a3eb50e",
+      "model": "controlled_mlp",
+      "model_seed": 2,
+      "predictions_sha256": "dcf784e6f0096a102d599fbd463aef2b3b9b077a28932c5cdac6c681da0293ec",
+      "wall_seconds": 18.347644090652466
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/pendigits/seed_0",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "64b5a7fc1efeb12b51d2218f3c9f06e4b3a0833e8cf53ef29b9587833441484d",
+      "model": "controlled_mlp",
+      "model_seed": 0,
+      "predictions_sha256": "f80338965c2b89d76ec4407bfbaa5b4c85659f5a091a62c90b240d65d808f4f4",
+      "wall_seconds": 21.97443675994873
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/pendigits/seed_1",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "3b64525c946c452a4100f6435f9a4199f703fe0d15b4d9fee273e092fd2d9039",
+      "model": "controlled_mlp",
+      "model_seed": 1,
+      "predictions_sha256": "27d28029ec2367b4b59c2b8510e6430c9168ba7f2fb0ac3e8a36a18068bb253d",
+      "wall_seconds": 18.157138347625732
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/pendigits/seed_2",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "1e5212ba3a61cd63afa2513825bd1da8a79a5342a843263bf6232a3515f93c34",
+      "model": "controlled_mlp",
+      "model_seed": 2,
+      "predictions_sha256": "bab8a248bcad377b7e7ebe0e9127831b6c5659977d4a1c4799c5116b8ae1eb61",
+      "wall_seconds": 19.58657741546631
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/phoneme/seed_0",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "a05c0fa235ff51f0a6f85d26f662c3a681d1e961051850df0894812ae1f654ef",
+      "model": "controlled_mlp",
+      "model_seed": 0,
+      "predictions_sha256": "c45d49fba331a63a337b8569e05cf45718cb0970533c1e5d7bf5bf4373080e4d",
+      "wall_seconds": 25.44828200340271
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/phoneme/seed_1",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "42cac69819b013e770213d81a93ef662770f6bcdcbfc4c3f24b2c867f35d5c5d",
+      "model": "controlled_mlp",
+      "model_seed": 1,
+      "predictions_sha256": "a29a817ed80379bc43b38898bcf64796516e6d6f07fb51ea33d5707394f7706f",
+      "wall_seconds": 22.755412340164185
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/phoneme/seed_2",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "66328f56b8f9e769ecc7cff843fc7918aa73840f1f1ebe8677e8d6bd9ba5fa2f",
+      "model": "controlled_mlp",
+      "model_seed": 2,
+      "predictions_sha256": "ee7081eb3741926c8a51c8299e6ba516099f9ac133e07e5e262b3f1bb9b87f32",
+      "wall_seconds": 12.204394340515137
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/wine-quality-red/seed_0",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "eb62d965a238231c1990ea2803dcce1126bfa946a53155c502f6da5af55577c2",
+      "model": "controlled_mlp",
+      "model_seed": 0,
+      "predictions_sha256": "2bf06026a7ac8a08ecafbf9cbb41b6f848994574db6baa0f51e273e3a5f40e4e",
+      "wall_seconds": 6.605442762374878
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/wine-quality-red/seed_1",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "f2f5dfbf9ae0bff64de91f0707a74d4019a53873b306a98a8ec2fed1bd6f0b9e",
+      "model": "controlled_mlp",
+      "model_seed": 1,
+      "predictions_sha256": "a1f975dfa6e2bb61b108efa41b7e1f80bee0f192056f65a671d1b1208229769d",
+      "wall_seconds": 6.79911470413208
+    },
+    {
+      "bundle": "results/raw/development/replication/controlled_mlp/wine-quality-red/seed_2",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "b3129ec4453126c347c1841eb94e182e8a08839be8fe740c7c826cf70f850367",
+      "model": "controlled_mlp",
+      "model_seed": 2,
+      "predictions_sha256": "f5a09425ab77a13a622784a38ffdb2f87dae476401a85eaba297991d75c6a37f",
+      "wall_seconds": 7.266941547393799
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/adult/seed_0",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "72ac02ce4c9ffda9a286d228f4af9088ab7e0337fb4f0349eee15f31a04174fb",
+      "model": "tabicl_v2",
+      "model_seed": 0,
+      "predictions_sha256": "76d07b76a36a3202e0af69bcef878a2c313f1da2fbe33b6b702d33d2ce268f37",
+      "wall_seconds": 14.896183967590332
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/adult/seed_1",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "7243dba5df028666d28b3948cfcc233860ec4af61c1bff73d6fb308f6fa73d9c",
+      "model": "tabicl_v2",
+      "model_seed": 1,
+      "predictions_sha256": "baa26a8f2068aeeb59751005c45d5af51a3c6ebf2bb7276031744b87340e2822",
+      "wall_seconds": 12.433044910430908
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/adult/seed_2",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "d7eccd238ae8b8088ee8d56e17bddfce5f228d4a15f70c618917c24fd93ad099",
+      "model": "tabicl_v2",
+      "model_seed": 2,
+      "predictions_sha256": "df0b846de8ac8238e6d18de202823ec271ee85141d79298d6ff6febe0948fe24",
+      "wall_seconds": 12.439134120941162
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/bank-marketing/seed_0",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "edda3559b1fde3dada2ead9c125c703db3687d6e7c4289ea9f93dc63e06a490f",
+      "model": "tabicl_v2",
+      "model_seed": 0,
+      "predictions_sha256": "a753b73891fc3233c4ab504ec220e6783334200afaf6b228d975e36ff273a6f8",
+      "wall_seconds": 12.032372951507568
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/bank-marketing/seed_1",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "2c5e9b4503f3d683c70ca7ad832aa242e1926131c8ca0c2dcec889838464fa64",
+      "model": "tabicl_v2",
+      "model_seed": 1,
+      "predictions_sha256": "42bfbdeafcb2dc8470737a868ef0755a74425d8ad605589f9f607aa177522d3f",
+      "wall_seconds": 11.802794218063354
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/bank-marketing/seed_2",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "bbc836916effd1f7189c907e39410215bfb0c8559340d8bb413333615bf6aa43",
+      "model": "tabicl_v2",
+      "model_seed": 2,
+      "predictions_sha256": "6fe023940197d673db4a3d5a0f760339833e946769ba5bc7f418775409649367",
+      "wall_seconds": 11.955848693847656
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/bike-sharing/seed_0",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "cb27ada08484af3b12c360635e68a8f5f62b5ce14544100326eb4e9ba8703fd4",
+      "model": "tabicl_v2",
+      "model_seed": 0,
+      "predictions_sha256": "160eb7721c8390587daee81fecceeb3df80854663372a8d66afda49fd6fcfe06",
+      "wall_seconds": 11.894161701202393
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/bike-sharing/seed_1",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "d8b4fb5126c347ab18eba1b03749fb05090024c48ea079badd26794cd070cc6f",
+      "model": "tabicl_v2",
+      "model_seed": 1,
+      "predictions_sha256": "5c07184e31e0579fa5a14eb01bdca23850031de2c4b4c7a5a9ef661228eb5c18",
+      "wall_seconds": 12.508814811706543
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/bike-sharing/seed_2",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "f762da1b488db97506880156c9e4600083eca03e654bf4e3abfaf2a5ac98195b",
+      "model": "tabicl_v2",
+      "model_seed": 2,
+      "predictions_sha256": "00c77cab7efb793ded3dcfdee67dc58d06d707bbba8d4ff3319e91e03d6933d1",
+      "wall_seconds": 11.957402229309082
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/california_housing/seed_0",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "9ce5122b43dd01d9e8a3ff007f53130d489b244902bf171be6d49b0fc2423c9e",
+      "model": "tabicl_v2",
+      "model_seed": 0,
+      "predictions_sha256": "d2b7ae2a21f01cba7427c68abad3da3fbb1b64727b88eb4a7b0f3345db5d567d",
+      "wall_seconds": 12.022292375564575
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/california_housing/seed_1",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "fcccac7334999342149bf11e39ec826f9fb5c3f0fdde1ff034e1fff607eb5198",
+      "model": "tabicl_v2",
+      "model_seed": 1,
+      "predictions_sha256": "4970464d4307e20528a706e0eab9b2bccb7fc75184d90315ebc85937de1b3863",
+      "wall_seconds": 11.93811845779419
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/california_housing/seed_2",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "77470ad81f41fd59b1d9efa409cd4761e1bee5a47c9fc3bc23d4ce0f11642310",
+      "model": "tabicl_v2",
+      "model_seed": 2,
+      "predictions_sha256": "83c49861528e0495f1604a0295758b1f719d9faed9215fa23907058fb7c471cc",
+      "wall_seconds": 12.052317380905151
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/cpu_small/seed_0",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "4cab6bdc6ed14d7380b359720265826e625f187a2f16d638de1d30cba2b79590",
+      "model": "tabicl_v2",
+      "model_seed": 0,
+      "predictions_sha256": "73e65ddf39c46ecf8ec48954876ae1190f0226c680d07ba0b0205eb1d9019492",
+      "wall_seconds": 12.928465604782104
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/cpu_small/seed_1",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "b709cfe8a159251c4df2b7bf235198327e01b49cfbbcdc7e3a54d8233a3bb17a",
+      "model": "tabicl_v2",
+      "model_seed": 1,
+      "predictions_sha256": "f3cbc7de450eb30f8d3a1afa67964e34a97309ea9393a24e540ac51ffb6705a8",
+      "wall_seconds": 36.21478819847107
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/cpu_small/seed_2",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "3727f8e0b01b96dbd5fc3862213964b6792fcaecc3f10d34e61e95d8459e1ba6",
+      "model": "tabicl_v2",
+      "model_seed": 2,
+      "predictions_sha256": "b503b7c1582a69b65569cd1a87f99763debbad8c844baa226e714c01b4906ce6",
+      "wall_seconds": 43.08751082420349
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/credit-g/seed_0",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "3394d8e33d79a483b65f06f3b7c7a09849eb07ec424854ee4bf9725cca686c54",
+      "model": "tabicl_v2",
+      "model_seed": 0,
+      "predictions_sha256": "61a3e3126e1229a55193f0cfb17e87a17929c55b29317896c9ccc3a525c22c8b",
+      "wall_seconds": 47.73503494262695
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/credit-g/seed_1",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "98a20e7c2997654093c1c113ff5c6c5e0377fa340b819af1bc518962ad877309",
+      "model": "tabicl_v2",
+      "model_seed": 1,
+      "predictions_sha256": "69f991b39ebeeaf364b6e9614bda97287511dd9da2c8473248c1e7768fb7f7ce",
+      "wall_seconds": 34.08944034576416
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/credit-g/seed_2",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "3ed4beeda17a0f5edb5602a06445183a6b89dfc33c76ca0bd7b7970e9da4b4dc",
+      "model": "tabicl_v2",
+      "model_seed": 2,
+      "predictions_sha256": "3ebe1198b3dce08d2dc66dd87dd1e59671e847e9a0231de337519f1ca7eb6b5e",
+      "wall_seconds": 39.23743176460266
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/diamonds/seed_0",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "1ad4d06d3d23cbc4b6675631e7750c43941e1f419cc3d6a1c8e178ac8d0d8f5b",
+      "model": "tabicl_v2",
+      "model_seed": 0,
+      "predictions_sha256": "51f693ac999c7f90d1c64e329a79d076c397e595467e4491cc98eaa031f8c821",
+      "wall_seconds": 39.93106651306152
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/diamonds/seed_1",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "b5c0dbf788590e01126816c694fc10ac2b648c76d8fb9c94c46ecf04c5a258d8",
+      "model": "tabicl_v2",
+      "model_seed": 1,
+      "predictions_sha256": "d9a4086cc4b7eb8a1dca8e122e0553ca46680bbf92673c5ca7f97959df718059",
+      "wall_seconds": 40.85289430618286
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/diamonds/seed_2",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "945d0bb249bd2de7a6bbe8a48dabbb9b719387cb675f26611924d09ca5902114",
+      "model": "tabicl_v2",
+      "model_seed": 2,
+      "predictions_sha256": "724d8097ec58743edb849013283577b4dea9021610588180f0543cbe714b855d",
+      "wall_seconds": 38.856361865997314
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/house_16H/seed_0",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "27a804324fce7610ba057c4a0506e5564b783c23953c26427fc8c434982ec632",
+      "model": "tabicl_v2",
+      "model_seed": 0,
+      "predictions_sha256": "a038e5acd425ff8056c51b4c57ebaad5c23f2d3c2840a5f2b918e80bd47a3ede",
+      "wall_seconds": 40.99518632888794
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/house_16H/seed_1",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "3f6c96f3841cc39cdbb0f340e1536ad9e9d7af5aebe8d053a569ed8f994ebb8b",
+      "model": "tabicl_v2",
+      "model_seed": 1,
+      "predictions_sha256": "44df1811e661ea6b49da680bef94fe1e2ee1f6436ae994da037eae7f7bfacc53",
+      "wall_seconds": 43.24614071846008
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/house_16H/seed_2",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "ace0b78bcce81e95ad54402fd851115dfb71e2b0d82af53c3330284e20cf6fea",
+      "model": "tabicl_v2",
+      "model_seed": 2,
+      "predictions_sha256": "f564ab4d260551df50a097d9a5403aea5efa9b2b76c03e2d31ff19765ba5395f",
+      "wall_seconds": 44.652679204940796
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/pendigits/seed_0",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "60125949c57bb1244b707a7d1c144ad6ff55902230f8b93f1dca18943beedaab",
+      "model": "tabicl_v2",
+      "model_seed": 0,
+      "predictions_sha256": "cc6dd536567c5965be225b299a52c2fda5ca2eca9f23ff780c8d150ca3dce814",
+      "wall_seconds": 43.871423959732056
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/pendigits/seed_1",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "3196cc6c2c6192c57f60c767100b2d2588a783532b48bc7a7ba2da5a5a2b1aed",
+      "model": "tabicl_v2",
+      "model_seed": 1,
+      "predictions_sha256": "c29544657f3d81b9ea52bbff36a4b73c2780d0ad194e913b85b95dca6c5c354b",
+      "wall_seconds": 42.616915464401245
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/pendigits/seed_2",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "b29bba3f5c3ab2c2fea06ccc71a884e3575a198e03ac4ef9e154380cc94a90d6",
+      "model": "tabicl_v2",
+      "model_seed": 2,
+      "predictions_sha256": "a1cdf182517fb3af7c6db389e7adff2319d6c19af6784f667f6df0385d299d0e",
+      "wall_seconds": 43.304611921310425
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/phoneme/seed_0",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "23ee266ddc3c73e606f75684008b801bddd7e5a6df31811d59f0113549d6133b",
+      "model": "tabicl_v2",
+      "model_seed": 0,
+      "predictions_sha256": "ca771b788f320e67bf95ef7c42615203e388d7af0a61bfa15a733db58baf3983",
+      "wall_seconds": 41.844926834106445
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/phoneme/seed_1",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "493c9010584a22c6bce25556f0b9778e3886f468bf319692cefb380cd02dcc3f",
+      "model": "tabicl_v2",
+      "model_seed": 1,
+      "predictions_sha256": "d992e5cdadb4283f275ba805b12a32e094f96111b8bfc587e54364a8d1f9a3b0",
+      "wall_seconds": 43.086514711380005
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/phoneme/seed_2",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "beb93c380803e1637d10009ec4b7ceda58589d207e9cba9fe0596aa602f6513d",
+      "model": "tabicl_v2",
+      "model_seed": 2,
+      "predictions_sha256": "5e24c984b0a7d62f0966096a967f3601432ae5cf0924b69ff379e3bd3d863465",
+      "wall_seconds": 42.93348741531372
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/wine-quality-red/seed_0",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "e6b4a64f2db326f91171eb6bbeb58d4e5bb3e4b1479ddb3ebed8f0caebc62e7d",
+      "model": "tabicl_v2",
+      "model_seed": 0,
+      "predictions_sha256": "4be949c3a79f2a2d883608467e7d96d3477de36237ed9f61d709d08561ded1ea",
+      "wall_seconds": 16.021371364593506
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/wine-quality-red/seed_1",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "53f78bd1a07366f8a0346aed071e49535f37b5f986b5e79aecb6b9ed6f020775",
+      "model": "tabicl_v2",
+      "model_seed": 1,
+      "predictions_sha256": "723f26cadbdf60109723fcb3fa6532adabb3bad95ab3943ced57c03eef4606fa",
+      "wall_seconds": 43.57283329963684
+    },
+    {
+      "bundle": "results/raw/development/replication/tabicl_v2/wine-quality-red/seed_2",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "969f85e7b8cf8939f3e092016788e38f715227036c66ad276f1c9091f14e3d27",
+      "model": "tabicl_v2",
+      "model_seed": 2,
+      "predictions_sha256": "d05ea3bba73e650f631b661b0c9eb2c2002c2d3b30745ef3a0bc570d40f28a73",
+      "wall_seconds": 42.3797607421875
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/adult/seed_0",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "e89d3b27b397916543582fc164d174fe7a1f13e424041fe818b83923aeee7d66",
+      "model": "tabm_d",
+      "model_seed": 0,
+      "predictions_sha256": "2ae213d69ba7de6627e155c0cd0fd4c415f7e02f7ec3602b3e5a3c137050b8b2",
+      "wall_seconds": 20.418797969818115
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/adult/seed_1",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "603b1d00d99b5214d838ef8f1c4d5b6bba8290b4e9f8901ce0ba20c2fc1bd9bf",
+      "model": "tabm_d",
+      "model_seed": 1,
+      "predictions_sha256": "52eaeed51cb8e99171b68f063480fb37db2ac3fe4a39965cbf711483dc007439",
+      "wall_seconds": 16.790916681289673
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/adult/seed_2",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "51cd7345581dd52519006ac1b1acc523231c2661421c79ec6ce9b8229c9a0e6a",
+      "model": "tabm_d",
+      "model_seed": 2,
+      "predictions_sha256": "efb792243f826f76761bb0966f1dddfcc327d6a5c740e26fff8fe87dc19a65fe",
+      "wall_seconds": 17.874465465545654
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/bank-marketing/seed_0",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "fc925a9592b2995fcb969f9a018e28e1f9bd939c696d0fee6d750af326737f75",
+      "model": "tabm_d",
+      "model_seed": 0,
+      "predictions_sha256": "530039051c1f8aff267b35676ca012e786e1da884ba5f7b2c2960194c3e3f8fd",
+      "wall_seconds": 12.694955348968506
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/bank-marketing/seed_1",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "e3c5de14893be7e4d11ba92e3ba9c032ee997ef682d5a37fcde2bcb4bab3168c",
+      "model": "tabm_d",
+      "model_seed": 1,
+      "predictions_sha256": "2009ebbb5758a507b48116331e521d442d008c18e6be59a249bb6854a64287c2",
+      "wall_seconds": 12.669445753097534
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/bank-marketing/seed_2",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "44127265f6fe027ba4c7a2145964a673025bd2c5f67b3813a02e3306003ac689",
+      "model": "tabm_d",
+      "model_seed": 2,
+      "predictions_sha256": "b9dd3ca9b0a369aa73faf35f52c21e9af6a86c306f093b315aa69795db6c8fad",
+      "wall_seconds": 12.428234815597534
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/bike-sharing/seed_0",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "07ab46b83d700f9c8844e25ae00c5da6814329b3dc85487adc7c4a99ee556c9b",
+      "model": "tabm_d",
+      "model_seed": 0,
+      "predictions_sha256": "e904a8ecfd391c331dedac3d664e62e8e020594284e49ab53dc7f1bb1374197a",
+      "wall_seconds": 17.022804975509644
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/bike-sharing/seed_1",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "cf6171f794f9daece43f7ed507d4528fd1792d53f7eb5c638897cad7acc00f48",
+      "model": "tabm_d",
+      "model_seed": 1,
+      "predictions_sha256": "c4e576470803abd250b8056f2290f51740645db9fb6c8a23f33f9e0833fc876e",
+      "wall_seconds": 17.13368558883667
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/bike-sharing/seed_2",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "6be186c2796c2ecb7fa2dedc4820cd9c7e328d7512f27ea53904c9f6db41eeac",
+      "model": "tabm_d",
+      "model_seed": 2,
+      "predictions_sha256": "e7de243e67ef8d2f018114e57677ed8685461a083762c5001ab95a4c534468c7",
+      "wall_seconds": 17.17238473892212
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/california_housing/seed_0",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "af047ae557979fd86170c714b2578023ba3ec5ecfac05d99cbb257e33c439e94",
+      "model": "tabm_d",
+      "model_seed": 0,
+      "predictions_sha256": "a68010323e87a6b855716ec29cf6c70daf4b3cd190244870ba45925568c475ea",
+      "wall_seconds": 17.184831857681274
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/california_housing/seed_1",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "842603747b80a8c4564270fff778ef90ee464f47d62432fc7babde7d68fc28fd",
+      "model": "tabm_d",
+      "model_seed": 1,
+      "predictions_sha256": "d1f0a70839ef2ad88d984f6bb76bb84e47104acd13b669f6de2d296e85778303",
+      "wall_seconds": 23.812496185302734
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/california_housing/seed_2",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "988b5b8a2a325ceb2f6610487c95fb57f6f406332fefe1807a70122f6aea14fa",
+      "model": "tabm_d",
+      "model_seed": 2,
+      "predictions_sha256": "10499135619a99ddcde8662a95136494113c35813ce8d1c1539f404bf01f4fef",
+      "wall_seconds": 23.40313220024109
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/cpu_small/seed_0",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "e5132ce8ea719c02a3c66c9c6a0913d3dcb7c5c7b8c23b3bcbcfe4364d010a54",
+      "model": "tabm_d",
+      "model_seed": 0,
+      "predictions_sha256": "0d3772ff75562014bacc25def90a37f8adf1f09d6a5570ef47379def10b61085",
+      "wall_seconds": 23.292619705200195
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/cpu_small/seed_1",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "d0bb5b0291065affd9608ef9e84c77e6b732915cb152c3a79eaaef3811197640",
+      "model": "tabm_d",
+      "model_seed": 1,
+      "predictions_sha256": "fa098cffc51866de847510c713896313815836dc77fec8c9aa13b1b5532da3ca",
+      "wall_seconds": 23.808489561080933
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/cpu_small/seed_2",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "f0567a582c4ee83f19b5703655d8ee99e01cd59587d7504dae11ee63f48380ad",
+      "model": "tabm_d",
+      "model_seed": 2,
+      "predictions_sha256": "4327032afc437aab89d909dc06660bd1996c6b34a851420e9a5c1bd6a59438b8",
+      "wall_seconds": 23.83407163619995
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/credit-g/seed_0",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "69281be3b6500d78ee87d4a07d6288cc8ba0d2afe7c4a30f9f340aecdff006fb",
+      "model": "tabm_d",
+      "model_seed": 0,
+      "predictions_sha256": "722695e7d410e0884e7bf402e8feaec024bb45a5db65ca0059c21a283ebf43d8",
+      "wall_seconds": 18.11002516746521
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/credit-g/seed_1",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "886ea11f462515d5b69a4e5ff44b6679ea6bd681bca0e07e558de35c76a5cf4a",
+      "model": "tabm_d",
+      "model_seed": 1,
+      "predictions_sha256": "5da64b948ede505efae32106124954114ad74360fbe979d47ee59e672f21a991",
+      "wall_seconds": 17.28109574317932
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/credit-g/seed_2",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "93e26240f285bc8f8384b603d9a3f99282678024a03c6fbf23f1616dbc4da825",
+      "model": "tabm_d",
+      "model_seed": 2,
+      "predictions_sha256": "a02d0ca2f5f57762ff80c24ea87debc7cb9bf1b51781350c0b70894fb1628627",
+      "wall_seconds": 16.80264902114868
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/diamonds/seed_0",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "720a918043dac301a0f139cb19cecf895132efbf2596221561b91f534b9fe428",
+      "model": "tabm_d",
+      "model_seed": 0,
+      "predictions_sha256": "89592494e98b0954fefff748ca1689a7523027f4f00dbe9d36527cf036532fe6",
+      "wall_seconds": 22.828930854797363
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/diamonds/seed_1",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "13358de5be855337a38e6065a5925875a998658af7bb4e4431b9c7389400c9f6",
+      "model": "tabm_d",
+      "model_seed": 1,
+      "predictions_sha256": "8a0544e385c35aa545f842e6e323b4efa11b6b7fb59c251469114cb2034ee588",
+      "wall_seconds": 22.692894220352173
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/diamonds/seed_2",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "2835aa135638fdd41e9a9c65705cdeee903e94a16e167a1ed6dd7f0893f21fc1",
+      "model": "tabm_d",
+      "model_seed": 2,
+      "predictions_sha256": "2412539a880a614276db435e801836b0b6131b7b6ed09f783c154a59ca639f4d",
+      "wall_seconds": 22.91757559776306
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/house_16H/seed_0",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "643dd4907c6f37b2466315bfd0ecf5dbd4fcfcccd6474fade0172442cee791b3",
+      "model": "tabm_d",
+      "model_seed": 0,
+      "predictions_sha256": "80f5787b7540c3ca3e84a64cd426cc86e51306c186b370cf5698cfb3dfcb7ce9",
+      "wall_seconds": 22.230737924575806
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/house_16H/seed_1",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "1b20b651f3516d6288bc1041a460ee0f051b349be5ea90eca959bdd1f35e29a6",
+      "model": "tabm_d",
+      "model_seed": 1,
+      "predictions_sha256": "c8517c7af969b387a4fc9ba6b192581e63d51342490354aadce5772bbe2e85f8",
+      "wall_seconds": 22.270496606826782
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/house_16H/seed_2",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "ac3f06e5ec14410178e65d3d3ae9a89494006868aae03699898493f385250eae",
+      "model": "tabm_d",
+      "model_seed": 2,
+      "predictions_sha256": "a9c96c69bab69c08ed9c6c4a28af42b75e7113e3525a807cebf2d60b6a86bc40",
+      "wall_seconds": 19.315364122390747
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/pendigits/seed_0",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "b5822df4f2086bdf2f00d1255ec2cd4789bb43e266c0d0c7c80218da5b54f94f",
+      "model": "tabm_d",
+      "model_seed": 0,
+      "predictions_sha256": "3029127fe3429822f8a5d992eee2f1d6dcf1780e843c0af7ac06878f64a67199",
+      "wall_seconds": 22.528246879577637
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/pendigits/seed_1",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "564d1a0435419fab786e5ea2d266f76e77f37552dcfae387ca26afcbad8873c5",
+      "model": "tabm_d",
+      "model_seed": 1,
+      "predictions_sha256": "4a2598f78dce12a0523b31fc0a5b7c1dffae9fc137e9d22d6275003481ee2939",
+      "wall_seconds": 22.196284770965576
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/pendigits/seed_2",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "4f65da828c66a113cb726ad7757d1bdef8b6854b94aa0fc5a2f40e70ab448565",
+      "model": "tabm_d",
+      "model_seed": 2,
+      "predictions_sha256": "1beb2c1890f4d2c78a4085713d082c566685515c9a1cfddc2fa0026d7171dce2",
+      "wall_seconds": 22.05896520614624
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/phoneme/seed_0",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "7d661e48b2ed254e1722a29cf9f835fd5edbd553a0aa7f92a68f20862c61fe63",
+      "model": "tabm_d",
+      "model_seed": 0,
+      "predictions_sha256": "29f0afac64fc6071b85cb19a01f5480149ea5fffcddc5f29f532455514ff4884",
+      "wall_seconds": 17.607686519622803
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/phoneme/seed_1",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "c240db55f2ff5c137252e40005efc3c25d9bd8f6b9ae8719a2d70a7db5048788",
+      "model": "tabm_d",
+      "model_seed": 1,
+      "predictions_sha256": "f80e798a278fe0b25d7f17dca20898f5f3baf725e8d41da2a3eaec7be60ade92",
+      "wall_seconds": 17.878478527069092
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/phoneme/seed_2",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "15ea02bfeb3f0172ffa97481db155f5dfdd13b27f64b271e613b03ec9234dc1b",
+      "model": "tabm_d",
+      "model_seed": 2,
+      "predictions_sha256": "5f749494563e9d9910607e3f20944f1e9970ccbe5f2832b120cbdff93c2af92b",
+      "wall_seconds": 16.73452663421631
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/wine-quality-red/seed_0",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "c2fde525abc1c3c53412e882acfd790661acec6c45131dc105f549cbbb9c64b7",
+      "model": "tabm_d",
+      "model_seed": 0,
+      "predictions_sha256": "86d1106de459bfe9851e3fb7221e9b5837c1733b3c54afd1930ebbf7f53a8106",
+      "wall_seconds": 14.947439908981323
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/wine-quality-red/seed_1",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "f1811606d45ff273ee1477ba3e677e0a9fd2407f0c018390e836857831c6fd77",
+      "model": "tabm_d",
+      "model_seed": 1,
+      "predictions_sha256": "f765cf8ced569787bbbbb3de806f1ac82b91c4d176fe88e223ad214d158b2427",
+      "wall_seconds": 14.764251470565796
+    },
+    {
+      "bundle": "results/raw/development/replication/tabm_d/wine-quality-red/seed_2",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "1",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "72fea79bd47e0f06416e74e4dd75a0fa7b0b32d92113c96a226b770ddf2db963",
+      "model": "tabm_d",
+      "model_seed": 2,
+      "predictions_sha256": "0ee3d7c6980f606991624d1c8fdbb914428a128b16d0f9eb6621aac09a134a3e",
+      "wall_seconds": 15.492960214614868
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/adult/seed_0",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "23aef1b711fb74cb10265d769c0c5ed9375d8ce0e716d9606d0742c7ed2c5807",
+      "model": "tabpfn_2_6",
+      "model_seed": 0,
+      "predictions_sha256": "ff4e5c5d36cd73fb5aee918ca90553206816b02f955b3bad978d3af55b2c4937",
+      "wall_seconds": 15.010944366455078
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/adult/seed_1",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "2271a96f91ea22890567240b32db59240dd2e63e2fececa391f0e677fd481c25",
+      "model": "tabpfn_2_6",
+      "model_seed": 1,
+      "predictions_sha256": "60d92e370d4a5719a5df2d36c7ff9dc775e4eb0d0ec6799e7f50c5fc06f23a68",
+      "wall_seconds": 12.535400390625
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/adult/seed_2",
+      "dataset": "adult",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "11e1051df613565453797659172e91003f593f9032a90007d92d4cd100d004c8",
+      "model": "tabpfn_2_6",
+      "model_seed": 2,
+      "predictions_sha256": "3385c39321ffdcc34c64f69bf55f6bae827af5c541d0e566cbaa5d2cd8044b05",
+      "wall_seconds": 12.602057456970215
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/bank-marketing/seed_0",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "7256586b150872d38f4240fbe61541eb3fda8698b1733ef00a91f87a3b6adff9",
+      "model": "tabpfn_2_6",
+      "model_seed": 0,
+      "predictions_sha256": "497b7860190a388529b25b01255b1aadc98ad4f4fe6c3af9dcc72ec5ef4678a4",
+      "wall_seconds": 11.248265027999878
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/bank-marketing/seed_1",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "aaf2fab8eb9f9663816699e91cbe7151fd39e43779dc3f9685228de844e055eb",
+      "model": "tabpfn_2_6",
+      "model_seed": 1,
+      "predictions_sha256": "35d41f0015cf85f887a07f8e00f23d4657f3878c19720b1b3695d0c8fcdbdf0f",
+      "wall_seconds": 11.064462423324585
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/bank-marketing/seed_2",
+      "dataset": "bank-marketing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "1bc81bd16cbd25606d658a9b7c4b2bfcb99d08f82a4cafb2174a5c94be88f9bf",
+      "model": "tabpfn_2_6",
+      "model_seed": 2,
+      "predictions_sha256": "016bbc1b4e37dfa9fb1be079d2e276876b7e2e65add476686ca988537cb550b8",
+      "wall_seconds": 11.187730550765991
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/bike-sharing/seed_0",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "a58c19664d1f60693cc075d3aab38808a9b9eb9a9ab3dce3c3a12ee91fb6a0a1",
+      "model": "tabpfn_2_6",
+      "model_seed": 0,
+      "predictions_sha256": "f85b7029e18ca248d6db00a5fcbe8d793621db3cf873fc38018a08f2735bb8bd",
+      "wall_seconds": 10.083739757537842
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/bike-sharing/seed_1",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "696acc22bc9775936b3ec632bbd3c745622a9178990058a4037ac9f02ea22c72",
+      "model": "tabpfn_2_6",
+      "model_seed": 1,
+      "predictions_sha256": "6686903f7cd192f9606fab27a200c260d9738729899257f0ef20855a677ebbdb",
+      "wall_seconds": 10.120399236679077
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/bike-sharing/seed_2",
+      "dataset": "bike-sharing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "a9c876c4c2413138770f95cebc44518fdb2118edb6079ba02299b2c57f03aba7",
+      "model": "tabpfn_2_6",
+      "model_seed": 2,
+      "predictions_sha256": "e9a1ed11e5f9b0cc4610d3ecd65b5108f4261ebdf2f9944ce0c9447243d5a31e",
+      "wall_seconds": 10.13183856010437
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/california_housing/seed_0",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "f9f31d4a23ed9837cc46c18077662e92f3378e77513cc453b98f67306ddd069b",
+      "model": "tabpfn_2_6",
+      "model_seed": 0,
+      "predictions_sha256": "8c0de0daf52fd72f35921026ec3c3a469930acb37bb6c2b5441d3b9c6e7d7760",
+      "wall_seconds": 9.488799333572388
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/california_housing/seed_1",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "190b89fdaf1e620bc8150825f4bf3c438c1cd9191c63d751756efea56c13997c",
+      "model": "tabpfn_2_6",
+      "model_seed": 1,
+      "predictions_sha256": "fd7c678ed2c4a27b0366330f6940cbc1e004e4bf4dd15bbf826491fa2ea0e681",
+      "wall_seconds": 9.55460810661316
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/california_housing/seed_2",
+      "dataset": "california_housing",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "b96442daacfb35cf02a8d08e4e7379daa4814103b497311158a077f3fa9cf72a",
+      "model": "tabpfn_2_6",
+      "model_seed": 2,
+      "predictions_sha256": "015e5e0eb50168ea841e8ae7bc6711e7f72e65ef119321ebe7a98cddc5447bf3",
+      "wall_seconds": 9.529378890991211
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/cpu_small/seed_0",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "c78ef9737e801ea959c64efaa056841201b6bc79208d24c5309854b4e199f45d",
+      "model": "tabpfn_2_6",
+      "model_seed": 0,
+      "predictions_sha256": "33ee120172cf5009f444ba00bd49127896d06553a8066994694dc38173cea25d",
+      "wall_seconds": 9.963613510131836
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/cpu_small/seed_1",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "96e8c48345bafee94f70c5c444bc0bb61cc0d16fc814d2d5b7db2af843f71a1f",
+      "model": "tabpfn_2_6",
+      "model_seed": 1,
+      "predictions_sha256": "74fa3c590c29d33d7b009b7f78ae2e1da07c29af72d8c404cda9affac25bf611",
+      "wall_seconds": 10.144380331039429
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/cpu_small/seed_2",
+      "dataset": "cpu_small",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "2a1182be08d2ca4786b0487c3bec44f44b2d386607ab12d3b12a5978da4f43d2",
+      "model": "tabpfn_2_6",
+      "model_seed": 2,
+      "predictions_sha256": "94af2d8b5ae72803f011c9c9d2612529097425fe1f8b96b129611cc6867843ec",
+      "wall_seconds": 10.069678544998169
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/credit-g/seed_0",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "0d2ec8daca5bcdfb501fa31173b0fc771404c9f290f8367dfd0999a1731ab349",
+      "model": "tabpfn_2_6",
+      "model_seed": 0,
+      "predictions_sha256": "d1e973cbaa3d4a2919851ba9c6109dadde95190591e5394ee41ad0cc1a188d90",
+      "wall_seconds": 46.11505317687988
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/credit-g/seed_1",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "dafbc4787a5f4ba9d2e3d8fedc6850926f7643075057905345ccd97b5a735d8e",
+      "model": "tabpfn_2_6",
+      "model_seed": 1,
+      "predictions_sha256": "80352c4f8dcc8fa47d5efef5eead03d7f6c1a2dbd959b65dde30d2a74daa3f18",
+      "wall_seconds": 62.87560272216797
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/credit-g/seed_2",
+      "dataset": "credit-g",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "0bd6ec6fe2219cf12551d103b0e0de40710ad8402f090ced2ffca382725d438f",
+      "model": "tabpfn_2_6",
+      "model_seed": 2,
+      "predictions_sha256": "0d98afd6e4ff20e3bf9593f227df4e35ec1a22d586bb06a93c5c986c1f8195ac",
+      "wall_seconds": 37.32052683830261
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/diamonds/seed_0",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "d08aa6e93e7b4180a2747582c834ccdaf087740e5a5ed19009a0566a90e5a5c9",
+      "model": "tabpfn_2_6",
+      "model_seed": 0,
+      "predictions_sha256": "5d70562cb16c3456e55ce1cabc467defe7060fc0e162a8d388336f86f6374c6a",
+      "wall_seconds": 41.07214307785034
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/diamonds/seed_1",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "1dea572aa3587190e2ff4de11b9586c20f5b02196401567ef070da20aeee56ba",
+      "model": "tabpfn_2_6",
+      "model_seed": 1,
+      "predictions_sha256": "e7a490663acd2032037412d7c691cbf650452622435cab8da390c6687ae5e134",
+      "wall_seconds": 42.77654719352722
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/diamonds/seed_2",
+      "dataset": "diamonds",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "eaf520ea9cd18cfdaab3d86c06806ad4e925a3b3b33db5a39394c2165c294f70",
+      "model": "tabpfn_2_6",
+      "model_seed": 2,
+      "predictions_sha256": "62b0b7dcf0a412834bd1c24444bc3ef23fcddd9506d4bd410694ae3265c0e3d5",
+      "wall_seconds": 46.380741357803345
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/house_16H/seed_0",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "7ecfb9f4b611023add34a0ebb0324157604ce2231b8d8c97d0768ede22d401d9",
+      "model": "tabpfn_2_6",
+      "model_seed": 0,
+      "predictions_sha256": "776ea802e1fd5c63b84855c789c08106438d18627dee18eb1ec3d20639bcee4c",
+      "wall_seconds": 40.128904819488525
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/house_16H/seed_1",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "ff4f173ef1996fc9b56415e0c5c9357d9ec14dfafdf5a3fe04cab535484a6b55",
+      "model": "tabpfn_2_6",
+      "model_seed": 1,
+      "predictions_sha256": "e3fb9d2a45b03bba75e24f5814f368cf47e1fc738b1f14d0e397e5aab54168f4",
+      "wall_seconds": 44.22683119773865
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/house_16H/seed_2",
+      "dataset": "house_16H",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "dbf6cf370d6a9a594b624d288ca0353ce33679c0fa05419f32533ebc6b7ea552",
+      "model": "tabpfn_2_6",
+      "model_seed": 2,
+      "predictions_sha256": "341c523803ea992acaadb99c8995db636801e0cb10ba4a79739c2583b71d87c9",
+      "wall_seconds": 57.98229193687439
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/pendigits/seed_0",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "2b609510049aa3654c3a3d6966ae8461acf445c5375e2a14ee0b3a446c9d220f",
+      "model": "tabpfn_2_6",
+      "model_seed": 0,
+      "predictions_sha256": "e3d4d9072e70c24b48a5409f7e9d77b27811fd43cc3fa056ff9098d2055454fe",
+      "wall_seconds": 60.979785680770874
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/pendigits/seed_1",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "6c560ba606e2b91ca37309dd19e2922164c51fff5d0263cc80475f8900d9f736",
+      "model": "tabpfn_2_6",
+      "model_seed": 1,
+      "predictions_sha256": "88c12c1cbaab96c46c33f71fcd94502d081dcf3b1b97ed8fb1b2fd53c719a467",
+      "wall_seconds": 44.05814552307129
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/pendigits/seed_2",
+      "dataset": "pendigits",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "c9d103bfd0b6dabda6898d943ca9631e0bce62aa45bb923530dfa51ea0af0375",
+      "model": "tabpfn_2_6",
+      "model_seed": 2,
+      "predictions_sha256": "b6bd946d8059801e08e3660623dcfb0ca42cbf384611333129ac56278e844ca0",
+      "wall_seconds": 52.965903759002686
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/phoneme/seed_0",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "317cc5713c81e1c44f594b955c293b93d1d0c9b26fa65728bc67059cce6eb143",
+      "model": "tabpfn_2_6",
+      "model_seed": 0,
+      "predictions_sha256": "155f55bc9cce70ea68a3c859d65ed2897c0e6e17dcd935bdcd97b3f271283fb2",
+      "wall_seconds": 52.959359884262085
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/phoneme/seed_1",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "a07002299f9a14ae4f8ee12812a39b9c9c50d37da456edcf4a2fd7caf3017f4a",
+      "model": "tabpfn_2_6",
+      "model_seed": 1,
+      "predictions_sha256": "1624e9809f00db85f8505e8f9b548c976fb750542d4973cf9d0b5cec4f7e2152",
+      "wall_seconds": 42.48429036140442
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/phoneme/seed_2",
+      "dataset": "phoneme",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "9457059ba2dfe54cbcb5071b91af340b5ab7152da23138de80796b71d110cfd6",
+      "model": "tabpfn_2_6",
+      "model_seed": 2,
+      "predictions_sha256": "46f2a5bc9d85c2fde13633d4075911526d18cede0fceacc7b36dc9524a842381",
+      "wall_seconds": 52.79086685180664
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/wine-quality-red/seed_0",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "4f6d63b64c6c9f1569cd3acd36dcaf4a9515f6eef033fd7ade836baf388df7a0",
+      "model": "tabpfn_2_6",
+      "model_seed": 0,
+      "predictions_sha256": "9efb8c784e473f12098ecd4ed32c3b4f5689044d86fe58f75b787339640b4397",
+      "wall_seconds": 13.053339719772339
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/wine-quality-red/seed_1",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "cb9de1b9bf243b598eb81ae4e7a1d19cb990c57add5711ada3e3f170055b40b7",
+      "model": "tabpfn_2_6",
+      "model_seed": 1,
+      "predictions_sha256": "31f2259cb541017a15cead887b2ef0ef7258f820d207d29f2531873fd1243ec8",
+      "wall_seconds": 51.25147867202759
+    },
+    {
+      "bundle": "results/raw/development/replication/tabpfn_2_6/wine-quality-red/seed_2",
+      "dataset": "wine-quality-red",
+      "environment": {
+        "cuda_visible_devices": "0",
+        "gpu": "NVIDIA H100 NVL",
+        "packages": {
+          "catboost": "1.2.10",
+          "numpy": "1.26.4",
+          "pandas": "2.3.3",
+          "pytabkit": "1.7.3",
+          "scikit-learn": "1.4.2",
+          "scipy": "1.11.4",
+          "tabicl": "2.0.3",
+          "tabpfn": "8.5.0",
+          "torch": "2.7.0"
+        },
+        "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+        "python": "3.10.16",
+        "torch_cuda": "12.6"
+      },
+      "metrics_sha256": "25df10a6e7eb6a394bec55ed65720c6723e992647e5853006c9b04d4f80b1649",
+      "model": "tabpfn_2_6",
+      "model_seed": 2,
+      "predictions_sha256": "569e3dac81699f65194c24667887e00ed7ad062cf2930621bb9bdcd8bd6884f2",
+      "wall_seconds": 44.51309609413147
+    }
+  ],
+  "complete_bundles": 165,
+  "coverage_complete": true
+}

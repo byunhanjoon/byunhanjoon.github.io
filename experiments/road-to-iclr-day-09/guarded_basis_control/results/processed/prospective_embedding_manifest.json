@@ -1,0 +1,12 @@
+{
+  "cells": 864,
+  "datasets": 12,
+  "embedding": "RBF",
+  "finalist_sha256": "6c01ba331417454a3907707d19abf937d593b6e96fa9de909de2cf01bab144dc",
+  "k": 16,
+  "models": 3,
+  "prospective_outcomes_accessed": true,
+  "seeds": 3,
+  "status": "COMPLETE",
+  "units": 144
+}

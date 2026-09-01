@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "hypothesis": "H3_FULLSCALE_CLOSURE",
+  "dataset": "credit_card_default",
+  "task": "classification",
+  "model": "resnet",
+  "seed": 8101,
+  "rows": {
+    "train": 18000,
+    "validation": 6000,
+    "test": 6000
+  },
+  "paths": 8,
+  "path_wall_seconds": [
+    52.86474472982809,
+    53.2673788908869,
+    54.894015649100766,
+    55.11293363198638,
+    54.213634251151234,
+    50.25760928215459,
+    53.00393719901331,
+    53.51392532605678
+  ],
+  "total_fit_seconds": 427.12817896017805,
+  "invocation_wall_seconds": 429.0012635248713,
+  "config_sha256": "67be6a0a6fe111b75c01fbc49b083dd804479caf2010447317cfdcf73398766d",
+  "protocol_sha256": "c4f0cc5d7b0961abe268a67760053c0fd36302faa25432d8afa930d7cc402802",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0"
+}

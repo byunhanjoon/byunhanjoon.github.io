@@ -1,0 +1,156 @@
+{
+  "status": "complete",
+  "panels": {
+    "confirmation": {
+      "score_rmse": {
+        "mean_difference": -1.5641268461442358e-05,
+        "favorable_candidates": 12,
+        "candidates": 55,
+        "favorable_sources": 3,
+        "sources": 11,
+        "source_bootstrap_95_interval": [
+          -3.542238067682931e-05,
+          0.0
+        ],
+        "interval_excludes_zero_favorably": false
+      },
+      "prediction_residual": {
+        "mean_difference": -2.908787724145145e-06,
+        "favorable_candidates": 12,
+        "candidates": 55,
+        "favorable_sources": 3,
+        "sources": 11,
+        "source_bootstrap_95_interval": [
+          -6.509195133968626e-06,
+          0.0
+        ],
+        "interval_excludes_zero_favorably": false
+      }
+    },
+    "menu_repeat": {
+      "score_rmse": {
+        "mean_difference": -1.6861800875969644e-05,
+        "favorable_candidates": 7,
+        "candidates": 30,
+        "favorable_sources": 2,
+        "sources": 6,
+        "source_bootstrap_95_interval": [
+          -4.428508048026692e-05,
+          0.0
+        ],
+        "interval_excludes_zero_favorably": false
+      },
+      "prediction_residual": {
+        "mean_difference": -3.4351003662360924e-06,
+        "favorable_candidates": 7,
+        "candidates": 30,
+        "favorable_sources": 2,
+        "sources": 6,
+        "source_bootstrap_95_interval": [
+          -9.224023066860042e-06,
+          0.0
+        ],
+        "interval_excludes_zero_favorably": false
+      }
+    },
+    "openml_external": {
+      "score_rmse": {
+        "mean_difference": -8.194220649106537e-05,
+        "favorable_candidates": 2,
+        "candidates": 32,
+        "favorable_sources": 1,
+        "sources": 8,
+        "source_bootstrap_95_interval": [
+          -0.00024582661947319614,
+          0.0
+        ],
+        "interval_excludes_zero_favorably": false
+      },
+      "prediction_residual": {
+        "mean_difference": -1.8013223658648047e-06,
+        "favorable_candidates": 2,
+        "candidates": 32,
+        "favorable_sources": 1,
+        "sources": 8,
+        "source_bootstrap_95_interval": [
+          -5.403967097594414e-06,
+          0.0
+        ],
+        "interval_excludes_zero_favorably": false
+      }
+    },
+    "openml_taskbalanced": {
+      "score_rmse": {
+        "mean_difference": -4.238812388608335e-05,
+        "favorable_candidates": 5,
+        "candidates": 24,
+        "favorable_sources": 2,
+        "sources": 8,
+        "source_bootstrap_95_interval": [
+          -0.00010073422780610897,
+          0.0
+        ],
+        "interval_excludes_zero_favorably": false
+      },
+      "prediction_residual": {
+        "mean_difference": -6.884332844547774e-06,
+        "favorable_candidates": 5,
+        "candidates": 24,
+        "favorable_sources": 2,
+        "sources": 8,
+        "source_bootstrap_95_interval": [
+          -1.706399129988614e-05,
+          0.0
+        ],
+        "interval_excludes_zero_favorably": false
+      }
+    },
+    "subsample_repeat": {
+      "score_rmse": {
+        "mean_difference": -3.1497760337701424e-05,
+        "favorable_candidates": 7,
+        "candidates": 30,
+        "favorable_sources": 2,
+        "sources": 6,
+        "source_bootstrap_95_interval": [
+          -8.819224017316716e-05,
+          0.0
+        ],
+        "interval_excludes_zero_favorably": false
+      },
+      "prediction_residual": {
+        "mean_difference": -4.716330259097335e-06,
+        "favorable_candidates": 7,
+        "candidates": 30,
+        "favorable_sources": 2,
+        "sources": 6,
+        "source_bootstrap_95_interval": [
+          -1.2992597532168222e-05,
+          0.0
+        ],
+        "interval_excludes_zero_favorably": false
+      }
+    }
+  },
+  "full_128_cell_subset": {
+    "score_rmse": {
+      "candidate_cells": 23,
+      "four_pack_mean": 0.00014070319049354108,
+      "two_pair_mean": 0.00017983856377581104,
+      "ratio": 0.7823860886085778,
+      "favorable_candidates": 23
+    },
+    "prediction_residual": {
+      "candidate_cells": 23,
+      "four_pack_mean": 1.6024793078063085e-05,
+      "two_pair_mean": 2.463777010479688e-05,
+      "ratio": 0.6504157239028349,
+      "favorable_candidates": 23
+    }
+  },
+  "panels_with_favorable_intervals": {
+    "score_rmse": 0,
+    "prediction_residual": 0
+  },
+  "frozen_addendum_passed": false
+}

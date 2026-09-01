@@ -1,0 +1,10 @@
+dataset,model,fp32_mse,iea64_mse,mean_relative_reduction,fp32_maximum_amplification,maximum_abs_iea64_path_test_loss_change,seeds,win
+bank_marketing_subscription,ft_transformer,0.004095524112881709,0.0,1.0,6539211912011.349,0.0,8,True
+bank_marketing_subscription,mlp,4.49633126318447e-16,0.0,0.9999999999999978,6.397744750976562,0.0,8,True
+bank_marketing_subscription,resnet,3.006405883423915e-14,0.0,1.0,67.62395977047679,0.0,8,True
+credit_card_default,ft_transformer,0.0009600053756538429,0.0,1.0,2407987957225.8135,0.0,8,True
+credit_card_default,mlp,7.275207217929828e-16,0.0,0.9999999999999986,4.818522298280724,0.0,8,True
+credit_card_default,resnet,4.8164064386013654e-14,0.0,0.9999999999999999,187.1441320217788,0.0,8,True
+fremtpl_claim_count,ft_transformer,0.07836816683481526,0.0,1.0,36340103420841.766,0.0,8,True
+fremtpl_claim_count,mlp,4.399817706236292e-16,0.0,0.9999999999999977,21.196449026345935,0.0,8,True
+fremtpl_claim_count,resnet,8.968876301103136e-13,0.0,1.0,347.70754820181,0.0,8,True

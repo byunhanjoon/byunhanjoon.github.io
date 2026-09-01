@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-colic-25",
+  "model": "catboost_native",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 220,
+    "validation": 74,
+    "test": 74
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "timing": {
+    "setup_seconds": 0.03282613097690046,
+    "fit_loop_seconds": 26.51396068208851,
+    "end_to_end_seconds": 26.550638790009543,
+    "fits_per_fit_loop_second": 4.827645387830357
+  }
+}

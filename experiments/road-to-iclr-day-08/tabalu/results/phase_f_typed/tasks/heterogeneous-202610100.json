@@ -1,0 +1,20 @@
+{
+  "task_id": "heterogeneous-202610100",
+  "seed": 202610100,
+  "active_feature_names": [
+    "x0+x1",
+    "[cat==2]*(x0*x1)",
+    "bounded_rank_diff",
+    "cos(hour)",
+    "sin(weekday)",
+    "sin(year)"
+  ],
+  "coefficients": [
+    -1.4261184259861,
+    -0.997234179795389,
+    -1.7815069865748763,
+    1.5970090030029993,
+    1.2446883535908988,
+    1.2018007984226027
+  ]
+}

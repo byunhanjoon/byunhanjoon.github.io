@@ -1,0 +1,190 @@
+{
+  "status": "complete",
+  "dataset": "openml-pol-201",
+  "task": "regression",
+  "model": "tabm",
+  "split_seed": 2026082801,
+  "mode": "broad",
+  "actions": 16,
+  "represented_fits": 16,
+  "rows": {
+    "train": 2048,
+    "validation": 512,
+    "test": 512
+  },
+  "features": {
+    "numerical": 48,
+    "categorical": 0,
+    "dense": 48
+  },
+  "cardinalities": [],
+  "device": "cuda:0",
+  "wall_seconds": 4.933378941845149,
+  "maximum_peak_device_bytes": 74871808,
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "package_versions": {
+    "torch": "2.7.0+cu126"
+  },
+  "telemetry": [
+    {
+      "action": 0,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.4097550509031862,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 1,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.2466637878678739,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 2,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.24845549301244318,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 3,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.24584650294855237,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 4,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.245685308938846,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 5,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.24611827195622027,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 6,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.29399467492476106,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 7,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3526148749515414,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 8,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.3457511819433421,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 9,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3455637281294912,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 10,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.3429006340447813,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 11,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.3220286329742521,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 12,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.32003672514110804,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 13,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.3229334361385554,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 14,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.322058194084093,
+      "peak_device_bytes": 74871808
+    },
+    {
+      "action": 15,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.32297244388610125,
+      "peak_device_bytes": 74871808
+    }
+  ]
+}

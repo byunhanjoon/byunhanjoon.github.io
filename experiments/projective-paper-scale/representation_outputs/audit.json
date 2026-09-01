@@ -1,0 +1,90 @@
+{
+  "advancement_crps": 0.20007287,
+  "advancing_configurations": [],
+  "any_advance": false,
+  "configurations": {
+    "attention_k4": {
+      "advances": false,
+      "capacity_relative_gap": 0.015273100014643432,
+      "coverage_error": 0.018318684895833343,
+      "gates": {
+        "capacity": true,
+        "coverage": true,
+        "finite": true,
+        "half_gap": false,
+        "paired_wins": false,
+        "speed": true
+      },
+      "latency_ms_per_context": 0.008068843120175492,
+      "mean_crps": 0.21674896776676178,
+      "paired_wins_vs_mlp_k4": 0,
+      "parameters": 134494,
+      "speedup_vs_tactis": 622.0186032704685
+    },
+    "attention_k8": {
+      "advances": false,
+      "capacity_relative_gap": 0.005974520427588227,
+      "coverage_error": 0.014941406250000011,
+      "gates": {
+        "capacity": true,
+        "coverage": true,
+        "finite": true,
+        "half_gap": false,
+        "paired_wins": false,
+        "speed": true
+      },
+      "latency_ms_per_context": 0.007859361100296761,
+      "mean_crps": 0.21978199978669485,
+      "paired_wins_vs_mlp_k4": 1,
+      "parameters": 137396,
+      "speedup_vs_tactis": 638.5977770420267
+    },
+    "mlp_k4": {
+      "advances": false,
+      "capacity_relative_gap": 0.0,
+      "coverage_error": 0.014257812500000003,
+      "gates": {
+        "capacity": true,
+        "coverage": true,
+        "finite": true,
+        "half_gap": false,
+        "paired_wins": false,
+        "speed": true
+      },
+      "latency_ms_per_context": 0.006880184552452799,
+      "mean_crps": 0.21311931312084198,
+      "paired_wins_vs_mlp_k4": 0,
+      "parameters": 136580,
+      "speedup_vs_tactis": 729.4819621998099
+    },
+    "mlp_k8": {
+      "advances": false,
+      "capacity_relative_gap": 0.0006223458778737736,
+      "coverage_error": 0.017024739583333337,
+      "gates": {
+        "capacity": true,
+        "coverage": true,
+        "finite": true,
+        "half_gap": false,
+        "paired_wins": false,
+        "speed": true
+      },
+      "latency_ms_per_context": 0.004397049224280636,
+      "mean_crps": 0.2183314561843872,
+      "paired_wins_vs_mlp_k4": 0,
+      "parameters": 136495,
+      "speedup_vs_tactis": 1141.4406051915873
+    }
+  },
+  "factor_effects_crps": {
+    "attention_minus_mlp_k4": 0.0036296546459198,
+    "attention_minus_mlp_k8": 0.0014505436023076468,
+    "k8_minus_k4_attention": 0.003033032019933074,
+    "k8_minus_k4_mlp": 0.005212143063545227
+  },
+  "protocol_sha256": "e37bf77277385647f228c64c0525e0b9a080e5787245851717cfb17351dc9cd5",
+  "status": "complete",
+  "tactis_coverage_error": 0.040584309895833295,
+  "tactis_crps": 0.187026431163152,
+  "wall_seconds": 217.65700172493234
+}

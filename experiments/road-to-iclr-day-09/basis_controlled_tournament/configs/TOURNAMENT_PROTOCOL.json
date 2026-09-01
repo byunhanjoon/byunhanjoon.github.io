@@ -1,0 +1,98 @@
+{
+  "protocol_version": 1,
+  "status": "FROZEN_BEFORE_STAGE1",
+  "frozen_at_utc": "2026-09-01T05:25:32Z",
+  "authoritative_spec_sha256": "fac73cbfd3bdb5978856d96b68357e3f8ee3ee7904100924165afde49e6adc07",
+  "repository_commit": "0c456660ae9a87aab7932b569e1954b0ee1d25fe",
+  "split_seed": 20260901,
+  "model_seeds": [0, 1, 2],
+  "orbit_members": 8,
+  "max_train_rows": 1024,
+  "max_validation_rows": 256,
+  "max_test_rows": 512,
+  "minimum_continuous_unique_values": 16,
+  "basis_dimension": 8,
+  "development_datasets": [
+    "california_housing",
+    "house_16H",
+    "bike-sharing",
+    "phoneme",
+    "credit-g",
+    "wine-quality-red"
+  ],
+  "stage1_datasets": [
+    "california_housing",
+    "phoneme",
+    "wine-quality-red"
+  ],
+  "stage1_seeds": [0],
+  "models": {
+    "controlled_mlp": {
+      "hidden_layers": 3,
+      "width": 256,
+      "activation": "GELU",
+      "dropout": 0.0,
+      "learning_rate": 0.001,
+      "weight_decay": 0.0001,
+      "batch_size": 256,
+      "max_epochs": 100,
+      "patience": 15
+    },
+    "tabm_d": {
+      "arch_type": "tabm",
+      "k": 16,
+      "d_block": 256,
+      "n_blocks": 3,
+      "dropout": 0.1,
+      "learning_rate": 0.002,
+      "weight_decay": 0.0,
+      "batch_size": 256,
+      "max_epochs": 30,
+      "patience": 5,
+      "share_training_batches": true,
+      "coordinate_preprocessing": "none"
+    },
+    "tabicl_v2": {"n_estimators": 1},
+    "tabpfn_2_6": {"n_estimators": 1},
+    "catboost": {"iterations": 200, "depth": 7, "learning_rate": 0.05}
+  },
+  "optimizer_methods": {
+    "adamw": {"beta1": 0.9, "beta2": 0.999, "epsilon": 1e-8},
+    "block_scalar_adam": {"beta1": 0.9, "beta2": 0.999, "epsilon": 1e-8},
+    "block_adam": {"beta1": 0.9, "beta2": 0.999, "epsilon": 1e-8},
+    "matrix_adam": {"beta1": 0.9, "beta2": 0.999, "epsilon": 1e-8, "eigenvalue_floor": 1e-8},
+    "soft_block_adam": {"alphas": [0.0, 0.1, 0.25, 0.5]},
+    "sgd_control": {"learning_rate": 0.01, "momentum": 0.9}
+  },
+  "optimizer_equal_hpo": {"learning_rate_multipliers": [0.5, 1.0, 2.0]},
+  "representations": {
+    "gram_anchor": {"anchor_counts": [8, 16, 32], "selection": ["random_index", "gram_pivot"], "normalize": true},
+    "gram_distance": {"anchor_counts": [8, 16, 32], "kernels": ["squared", "rbf"]},
+    "nystrom_gram": {"anchors": 16, "selection": "gram_pivot", "spectral_energy": 0.99, "max_rank": 8, "lambda_floor_fraction": 1e-6},
+    "pca": {"source": "prior frozen implementation"},
+    "hybrid_spectral": {"relative_gap_thresholds": [0.01, 0.05, 0.1], "degenerate_interface": "nystrom_gram"},
+    "mahalanobis_gram": {"ridge_values": [1e-6, 0.0001, 0.01], "scope": "finalists_condition_le_3_exploratory"}
+  },
+  "hybrids": {
+    "prediction_mixture_alphas": [0.25, 0.5, 0.75, 1.0],
+    "raw_branch_initial_alpha": 0.1,
+    "raw_branch_alpha_penalties": [0.001, 0.01]
+  },
+  "matched_audit_epochs": [0, 1, 2, 5, 10, 20, 30],
+  "success_thresholds": {
+    "primary_disagreement_reduction": 0.7,
+    "primary_task_cost": 0.01,
+    "strong_disagreement_reduction": 0.9,
+    "strong_task_cost": 0.005
+  },
+  "stage1_survival": {
+    "invariance_route": {"median_reduction": 0.5, "max_task_cost": 0.03},
+    "performance_route": {"task_improves": true, "max_disagreement_increase": 0.2}
+  },
+  "hardware": {
+    "gpus": ["NVIDIA H100 NVL", "NVIDIA H100 NVL"],
+    "gpu_memory_mib_each": 95830,
+    "driver": "575.57.08"
+  },
+  "prospective_access_policy": "Refuse execution unless FINALIST_CONFIGS.json and FINALIST_CONFIGS.sha256 exist and match, with at most three finalists."
+}

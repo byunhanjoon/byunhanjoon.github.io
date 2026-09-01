@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "principal_manifests_scanned": 177,
+  "manifests_with_timing_telemetry": 0,
+  "timing_fields_found": [],
+  "median_cold_cover_graph_seconds": 0.3237930298782885,
+  "median_1024_pack_actions_seconds": 0.03636615816503763,
+  "microseconds_per_pack_action": 35.51382633304456,
+  "median_mixed_resolution_seconds": 0.0005526500754058361,
+  "end_to_end_wallclock_claim_supported": false,
+  "frozen_interpretation": "fit_budget_only"
+}

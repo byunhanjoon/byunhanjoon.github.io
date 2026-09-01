@@ -1,0 +1,39 @@
+{
+  "gates": {
+    "at_least_two_source_splits_and_sources": false,
+    "fewer_harms_than_mean": true,
+    "integrity": true,
+    "no_more_harms_than_per_backbone_lcb": true,
+    "no_practical_harm": true,
+    "positive_mean_gain": true
+  },
+  "integrity": true,
+  "passes": false,
+  "rules": {
+    "backbone_worst": {
+      "harmful_cells": 0,
+      "mean_test_gain": 0.004000534843700672,
+      "practically_harmful_cells": 0,
+      "selected_backbone_cells": 8,
+      "selected_source_splits": 2,
+      "selected_sources": 1
+    },
+    "mean": {
+      "harmful_cells": 3,
+      "mean_test_gain": 0.016166889956323583,
+      "practically_harmful_cells": 2,
+      "selected_backbone_cells": 28,
+      "selected_source_splits": 8,
+      "selected_sources": 4
+    },
+    "per_backbone_lcb": {
+      "harmful_cells": 0,
+      "mean_test_gain": 0.004891975940282734,
+      "practically_harmful_cells": 0,
+      "selected_backbone_cells": 9,
+      "selected_source_splits": 3,
+      "selected_sources": 2
+    }
+  },
+  "status": "complete_development_replay"
+}

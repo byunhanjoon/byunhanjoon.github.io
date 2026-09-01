@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-hepatitis-55",
+  "model": "catboost_native",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 93,
+    "validation": 31,
+    "test": 31
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026082911,
+  "timing": {
+    "setup_seconds": 0.020657749148085713,
+    "fit_loop_seconds": 11.915723921032622,
+    "end_to_end_seconds": 11.938464152161032,
+    "fits_per_fit_loop_second": 10.742108565814057
+  }
+}

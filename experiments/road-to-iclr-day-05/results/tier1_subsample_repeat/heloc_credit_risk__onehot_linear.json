@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "dataset": "heloc_credit_risk",
+  "model": "onehot_linear",
+  "task": "binclass",
+  "factor_names": [
+    "feature",
+    "category",
+    "class"
+  ],
+  "factor_shape": [
+    4,
+    1,
+    2
+  ],
+  "seeds": [
+    101,
+    202,
+    303,
+    404
+  ],
+  "rows": {
+    "train": 7166,
+    "validation": 1417,
+    "test": 1417
+  },
+  "features": {
+    "numerical": 22,
+    "categorical": 0
+  },
+  "histgb_high_cardinality_policy": "ordinal_fallback_above_255",
+  "source_hashes": {
+    "N_train.npy": "22c96141670cd48f1432d670da5eafc944687fa1afe4d62c799ac1c5cdc0bbad",
+    "N_val.npy": "fa3827c34f76c22c75f7531d6c00e0265e066412a96418e708e2708a2bc18260",
+    "N_test.npy": "c90ca6d91feaa85cdab02ec45dd153fdd718e83e336c0c5465073f4b512c8f74",
+    "y_train.npy": "e513847e775b213f537745273856a9a720239ff6c189ed3ea906e7f933f5995b",
+    "y_val.npy": "e0c76da4b237128afd0f2d24eea8536e6232226cd58267b3d19cbbb4aae54202",
+    "y_test.npy": "4397c9260322d738685080a87a08e7120516add808a712bfb7efcb7087de5a88"
+  }
+}

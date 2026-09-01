@@ -1,0 +1,52 @@
+{
+  "status": "complete",
+  "dataset": "lendingclub_loan_default",
+  "family": "ordinal_forest",
+  "task": "binclass",
+  "factor_names": [
+    "feature",
+    "category",
+    "class"
+  ],
+  "factor_shape": [
+    4,
+    4,
+    2
+  ],
+  "candidate_count": 4,
+  "candidates": [
+    {
+      "min_samples_leaf": 1,
+      "max_features": "sqrt"
+    },
+    {
+      "min_samples_leaf": 3,
+      "max_features": "sqrt"
+    },
+    {
+      "min_samples_leaf": 10,
+      "max_features": "sqrt"
+    },
+    {
+      "min_samples_leaf": 3,
+      "max_features": 1.0
+    }
+  ],
+  "seeds": [
+    511,
+    733
+  ],
+  "rows": {
+    "train": 6704,
+    "validation": 1437,
+    "test": 1437
+  },
+  "source_hashes": {
+    "N_train.npy": "bb5d7bcf2730675dde2c63e006ae75912e26564590864dd06b7fb723a3435e73",
+    "N_val.npy": "46c9a7d2cb01627b97a4dee17b729071603827820d024b79705548b17aaa9ce8",
+    "N_test.npy": "4080740660737c382a8114155606d7bafdf3fc609539f264874923c630476257",
+    "y_train.npy": "657a9f944db8d0a5f633e5cfa0c34a461954a8ccb93da3695ceb61b4dd914543",
+    "y_val.npy": "996d638a2c93815acae79fb44a7cffecd6783ed6fe453e0d0dfc23504ab70518",
+    "y_test.npy": "fcfd7fb700576b35fcc15d431b848a8843a716c7175b72dd82422802a86af1e7"
+  }
+}

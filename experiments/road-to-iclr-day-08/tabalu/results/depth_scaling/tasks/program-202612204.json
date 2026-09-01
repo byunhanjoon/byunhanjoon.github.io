@@ -1,0 +1,26 @@
+{
+  "task_id": "program-202612204",
+  "seed": 202612204,
+  "program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "subtract",
+        "left": 1,
+        "right": 0
+      },
+      {
+        "operator": "multiply",
+        "left": 1,
+        "right": 4
+      }
+    ],
+    "output": 5,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "n_irrelevant": 0,
+  "generation_attempt": 0,
+  "expression": "multiply(x1, subtract(x1, x0))"
+}

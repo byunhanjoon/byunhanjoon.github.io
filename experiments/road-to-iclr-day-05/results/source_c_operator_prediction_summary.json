@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "evidence_status": "post_outcome_mechanism_diagnostic",
+  "candidate_cells": 20,
+  "nondegenerate_cells": 13,
+  "predicted_ratio_range": [
+    0.837113402061857,
+    0.855819475322768
+  ],
+  "mean_absolute_observed_minus_predicted_ratio": 0.011571091629473614,
+  "maximum_absolute_observed_minus_predicted_ratio": 0.02886970060576266,
+  "spearman_triple_share_vs_observed_reduction": 0.06710955988741986,
+  "spearman_two_sided_p": 0.8275615891519967,
+  "exact_graph_coefficients": {
+    "triple_packed_to_independent_pair_range": [
+      0.8371134020618571,
+      0.8453608247422667
+    ],
+    "four_way_packed_to_independent_pair": 0.9525773195876327
+  },
+  "interpretation": "fresh tensors follow the pre-existing graph/fANOVA residual law; correlation is diagnostic, not a frozen hypothesis test"
+}

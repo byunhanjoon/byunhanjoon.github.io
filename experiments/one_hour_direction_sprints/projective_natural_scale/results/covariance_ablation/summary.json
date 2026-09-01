@@ -1,0 +1,28 @@
+{
+  "gates": {
+    "dataset_nll_wins_over_independent_at_least_7": true,
+    "mean_crps_improves_over_independent": true,
+    "mean_nll_improves_over_independent": true,
+    "mean_nll_improves_over_shuffled": true
+  },
+  "integrity": {
+    "expected_rows": 2160,
+    "maximum_diagonal_error": 0.0,
+    "maximum_symmetry_error": 0.0,
+    "minimum_eigenvalue": 0.047399976066007224,
+    "observed_rows": 2160,
+    "pass": true,
+    "primary_reproduction_max_abs": 4.440892098500626e-16
+  },
+  "mechanism_positive": true,
+  "metrics": {
+    "cell_nll_win_rate_over_independent": 0.6024305555555556,
+    "dataset_nll_wins_over_independent": 11,
+    "mean_crps_advantage_over_independent": 0.0017588256848833214,
+    "mean_nll_advantage_over_independent": 0.004000419406973099,
+    "mean_nll_advantage_over_shuffled": 0.0028830882640633916
+  },
+  "protocol_sha256": "d0f7355fab61df726fa55facc43110b6eeb50a56c66986d53656f27a691864ed",
+  "status": "complete_covariance_ablation",
+  "total_wall_seconds": 10.153616699157283
+}

@@ -1,0 +1,128 @@
+{
+  "task_id": "regime-scale-202613801-r8",
+  "seed": 202613801,
+  "programs": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 2,
+          "right": 3
+        }
+      ],
+      "output": 4,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 2,
+          "right": 3
+        }
+      ],
+      "output": 4,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "abs",
+          "left": 1,
+          "right": null
+        },
+        {
+          "operator": "abs",
+          "left": 4,
+          "right": null
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "abs",
+          "left": 1,
+          "right": null
+        }
+      ],
+      "output": 4,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 2,
+          "right": 3
+        }
+      ],
+      "output": 4,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "subtract",
+          "left": 2,
+          "right": 1
+        }
+      ],
+      "output": 4,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 2,
+          "right": 3
+        }
+      ],
+      "output": 4,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 2,
+          "right": 3
+        },
+        {
+          "operator": "square",
+          "left": 4,
+          "right": null
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    }
+  ]
+}

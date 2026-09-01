@@ -1,0 +1,329 @@
+{
+  "dataset": "otto",
+  "train_size": 39601,
+  "test_size": 12376,
+  "factor_shape": [
+    4,
+    1,
+    1
+  ],
+  "models": {
+    "lightgbm_native": {
+      "reference_brier": 0.25057033118378014,
+      "mean_member_brier": 0.25032965453701816,
+      "best_member_brier": 0.2498002800590091,
+      "worst_member_brier": 0.25057033118378014,
+      "member_brier_std": 0.0003081541871895389,
+      "orbit_mean_brier": 0.24917840166462923,
+      "brier_reduction_by_averaging": 0.0011512528723889304,
+      "risk_identity_absolute_error": 4.7704895589362195e-18,
+      "instance_audit": {
+        "hard_label_flip_fraction": 0.05114738202973497,
+        "mean_nonmodal_vote_fraction": 0.01723093083387201,
+        "row_schema_risk_median": 0.0001510634531389094,
+        "row_schema_risk_p95": 0.0055118635749735094,
+        "row_schema_risk_max": 0.045890044325008233,
+        "max_class_probability_range_mean": 0.039262824714596446,
+        "max_class_probability_range_p95": 0.1344341396309922,
+        "max_class_probability_range_max": 0.37695462050717915
+      },
+      "anova": {
+        "total": 0.0011512528723889351,
+        "feature": 0.0011512528723889351,
+        "category": 0.0,
+        "class": 0.0,
+        "feature:category": 0.0,
+        "feature:class": 0.0,
+        "category:class": 0.0,
+        "feature:category:class": 0.0,
+        "component_sum_error": 0.0,
+        "prediction_reconstruction_max_error": 2.7755575615628914e-17
+      },
+      "log_loss_orbit": {
+        "label_free_gap": 0.002475877547209033,
+        "mean_log_normalizer_gap": 0.002475877547209033,
+        "mean_member_log_loss": 0.47256256572991023,
+        "centroid_log_loss": 0.4700866881827011,
+        "risk_identity_absolute_error": 9.367506770274758e-17
+      },
+      "symmetrization_frontier": [
+        {
+          "factors": [],
+          "full_orbit_cost": 1,
+          "removed_risk": 0.0,
+          "residual_risk": 0.0011512528723889351,
+          "removed_fraction": 0.0
+        },
+        {
+          "factors": [
+            "feature"
+          ],
+          "full_orbit_cost": 4,
+          "removed_risk": 0.0011512528723889351,
+          "residual_risk": 0.0,
+          "removed_fraction": 1.0
+        },
+        {
+          "factors": [
+            "category"
+          ],
+          "full_orbit_cost": 1,
+          "removed_risk": 0.0,
+          "residual_risk": 0.0011512528723889351,
+          "removed_fraction": 0.0
+        },
+        {
+          "factors": [
+            "class"
+          ],
+          "full_orbit_cost": 1,
+          "removed_risk": 0.0,
+          "residual_risk": 0.0011512528723889351,
+          "removed_fraction": 0.0
+        },
+        {
+          "factors": [
+            "feature",
+            "category"
+          ],
+          "full_orbit_cost": 4,
+          "removed_risk": 0.0011512528723889351,
+          "residual_risk": 0.0,
+          "removed_fraction": 1.0
+        },
+        {
+          "factors": [
+            "feature",
+            "class"
+          ],
+          "full_orbit_cost": 4,
+          "removed_risk": 0.0011512528723889351,
+          "residual_risk": 0.0,
+          "removed_fraction": 1.0
+        },
+        {
+          "factors": [
+            "category",
+            "class"
+          ],
+          "full_orbit_cost": 1,
+          "removed_risk": 0.0,
+          "residual_risk": 0.0011512528723889351,
+          "removed_fraction": 0.0
+        },
+        {
+          "factors": [
+            "feature",
+            "category",
+            "class"
+          ],
+          "full_orbit_cost": 4,
+          "removed_risk": 0.0011512528723889351,
+          "residual_risk": 0.0,
+          "removed_fraction": 1.0
+        }
+      ],
+      "reference_seed_orbit": {
+        "reference_brier": 0.25057033118378014,
+        "mean_member_brier": 0.25057033118378014,
+        "best_member_brier": 0.25057033118378014,
+        "worst_member_brier": 0.25057033118378014,
+        "member_brier_std": 0.0,
+        "orbit_mean_brier": 0.25057033118378014,
+        "brier_reduction_by_averaging": 0.0,
+        "risk_identity_absolute_error": 0.0,
+        "instance_audit": {
+          "hard_label_flip_fraction": 0.0,
+          "mean_nonmodal_vote_fraction": 0.0,
+          "row_schema_risk_median": 0.0,
+          "row_schema_risk_p95": 0.0,
+          "row_schema_risk_max": 0.0,
+          "max_class_probability_range_mean": 0.0,
+          "max_class_probability_range_p95": 0.0,
+          "max_class_probability_range_max": 0.0
+        },
+        "anova": {
+          "total": 0.0,
+          "seed": 0.0,
+          "component_sum_error": 0.0,
+          "prediction_reconstruction_max_error": 0.0
+        }
+      }
+    },
+    "xgboost_native": {
+      "reference_brier": 0.26669247579915756,
+      "mean_member_brier": 0.26655670084379507,
+      "best_member_brier": 0.26619545938933153,
+      "worst_member_brier": 0.26681509407021675,
+      "member_brier_std": 0.000232798977531729,
+      "orbit_mean_brier": 0.26617390287309717,
+      "brier_reduction_by_averaging": 0.0003827979706979012,
+      "risk_identity_absolute_error": 3.230922474006803e-17,
+      "instance_audit": {
+        "hard_label_flip_fraction": 0.0333710407239819,
+        "mean_nonmodal_vote_fraction": 0.010888009049773755,
+        "row_schema_risk_median": 8.903568546451426e-05,
+        "row_schema_risk_p95": 0.0017771938548067372,
+        "row_schema_risk_max": 0.013029056850653227,
+        "max_class_probability_range_mean": 0.026105979085477814,
+        "max_class_probability_range_p95": 0.08113434165716171,
+        "max_class_probability_range_max": 0.2067422866821289
+      },
+      "anova": {
+        "total": 0.00038279797069793353,
+        "feature": 0.00038279797069793353,
+        "category": 0.0,
+        "class": 0.0,
+        "feature:category": 0.0,
+        "feature:class": 0.0,
+        "category:class": 0.0,
+        "feature:category:class": 0.0,
+        "component_sum_error": 0.0,
+        "prediction_reconstruction_max_error": 0.0
+      },
+      "log_loss_orbit": {
+        "label_free_gap": 0.0008567947525526564,
+        "mean_log_normalizer_gap": 0.0008567947525526567,
+        "mean_member_log_loss": 0.5159880650356388,
+        "centroid_log_loss": 0.5151312702830861,
+        "risk_identity_absolute_error": 3.1008182133085427e-17
+      },
+      "symmetrization_frontier": [
+        {
+          "factors": [],
+          "full_orbit_cost": 1,
+          "removed_risk": 0.0,
+          "residual_risk": 0.0003827979671768844,
+          "removed_fraction": 0.0
+        },
+        {
+          "factors": [
+            "feature"
+          ],
+          "full_orbit_cost": 4,
+          "removed_risk": 0.0003827979671768844,
+          "residual_risk": 0.0,
+          "removed_fraction": 1.0
+        },
+        {
+          "factors": [
+            "category"
+          ],
+          "full_orbit_cost": 1,
+          "removed_risk": 0.0,
+          "residual_risk": 0.0003827979671768844,
+          "removed_fraction": 0.0
+        },
+        {
+          "factors": [
+            "class"
+          ],
+          "full_orbit_cost": 1,
+          "removed_risk": 0.0,
+          "residual_risk": 0.0003827979671768844,
+          "removed_fraction": 0.0
+        },
+        {
+          "factors": [
+            "feature",
+            "category"
+          ],
+          "full_orbit_cost": 4,
+          "removed_risk": 0.0003827979671768844,
+          "residual_risk": 0.0,
+          "removed_fraction": 1.0
+        },
+        {
+          "factors": [
+            "feature",
+            "class"
+          ],
+          "full_orbit_cost": 4,
+          "removed_risk": 0.0003827979671768844,
+          "residual_risk": 0.0,
+          "removed_fraction": 1.0
+        },
+        {
+          "factors": [
+            "category",
+            "class"
+          ],
+          "full_orbit_cost": 1,
+          "removed_risk": 0.0,
+          "residual_risk": 0.0003827979671768844,
+          "removed_fraction": 0.0
+        },
+        {
+          "factors": [
+            "feature",
+            "category",
+            "class"
+          ],
+          "full_orbit_cost": 4,
+          "removed_risk": 0.0003827979671768844,
+          "residual_risk": 0.0,
+          "removed_fraction": 1.0
+        }
+      ],
+      "reference_seed_orbit": {
+        "reference_brier": 0.26669247579915756,
+        "mean_member_brier": 0.26669247579915756,
+        "best_member_brier": 0.26669247579915756,
+        "worst_member_brier": 0.26669247579915756,
+        "member_brier_std": 0.0,
+        "orbit_mean_brier": 0.26669247579915756,
+        "brier_reduction_by_averaging": 0.0,
+        "risk_identity_absolute_error": 0.0,
+        "instance_audit": {
+          "hard_label_flip_fraction": 0.0,
+          "mean_nonmodal_vote_fraction": 0.0,
+          "row_schema_risk_median": 0.0,
+          "row_schema_risk_p95": 0.0,
+          "row_schema_risk_max": 0.0,
+          "max_class_probability_range_mean": 0.0,
+          "max_class_probability_range_p95": 0.0,
+          "max_class_probability_range_max": 0.0
+        },
+        "anova": {
+          "total": 0.0,
+          "seed": 0.0,
+          "component_sum_error": 0.0,
+          "prediction_reconstruction_max_error": 0.0
+        }
+      }
+    }
+  },
+  "ranking_audit": {
+    "best_model_counts": {
+      "lightgbm_native": 4,
+      "xgboost_native": 0
+    },
+    "rank_ranges": {
+      "lightgbm_native": [
+        1,
+        1
+      ],
+      "xgboost_native": [
+        2,
+        2
+      ]
+    },
+    "pairwise": {
+      "lightgbm_native:xgboost_native": {
+        "left_better": 4,
+        "right_better": 0,
+        "ties": 0,
+        "minimum_left_minus_right": -0.016395179330322446,
+        "maximum_left_minus_right": -0.016049448807928413,
+        "minimum_gap_paired_95ci": [
+          -0.018744128373210163,
+          -0.01404623028743468
+        ],
+        "maximum_gap_paired_95ci": [
+          -0.018411850895751636,
+          -0.013687046720105293
+        ]
+      }
+    }
+  }
+}

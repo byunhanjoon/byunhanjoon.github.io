@@ -1,0 +1,240 @@
+{
+  "protocol": "REGRESSION_CONFIRMATION_PROTOCOL.md",
+  "metadata": {
+    "config": "configs/regression_confirmation.yaml",
+    "config_sha256": "1e4911698d591cfe37e698f24b42f7be62bb30a0e1ba01ad2f9690ed75c9fd88",
+    "dataset_audit": {
+      "abalone": {
+        "dataset_id": 44956,
+        "dataset_md5": "81f6d8b4dce14710077ab88389254d83",
+        "numeric_features_available": 7,
+        "outer_train_rows": 3759,
+        "selected_features": [
+          "length",
+          "diameter",
+          "height",
+          "whole_weight",
+          "shucked_weight",
+          "cisvera_weight",
+          "shell_weight"
+        ],
+        "split_sha256": "5042ff7defbe1d5ae7f274572d4f65dd8de243fffa1deb1751a256ae0c11c8c0",
+        "task_id": 361234,
+        "test_rows": 418
+      },
+      "auction_verification": {
+        "dataset_id": 44958,
+        "dataset_md5": "fee9a1bd5d59943c9a83508a401821c8",
+        "numeric_features_available": 5,
+        "outer_train_rows": 1838,
+        "selected_features": [
+          "process.b1.capacity",
+          "process.b2.capacity",
+          "process.b3.capacity",
+          "process.b4.capacity",
+          "property.price"
+        ],
+        "split_sha256": "6e96a9f76b008daea2e45dddc58d68f6c54a8582d510bdbd5988e6296b088b96",
+        "task_id": 361236,
+        "test_rows": 205
+      },
+      "geographical_origin_of_music": {
+        "dataset_id": 44965,
+        "dataset_md5": "a5a6222b5b79a8a0bb441667766d41b0",
+        "numeric_features_available": 116,
+        "outer_train_rows": 953,
+        "selected_features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "V29",
+          "V30",
+          "V31",
+          "V32"
+        ],
+        "split_sha256": "90aee4726454a1a26d18951888cafe1c2c6f8c54ea836630f2ec82c911c86679",
+        "task_id": 361243,
+        "test_rows": 106
+      },
+      "naval_propulsion_plant": {
+        "dataset_id": 44969,
+        "dataset_md5": "27484a3481ad60205656f6b6b191996b",
+        "numeric_features_available": 14,
+        "outer_train_rows": 10740,
+        "selected_features": [
+          "lever_position",
+          "ship_speed",
+          "gas_turbine_shaft_torque",
+          "gas_turbine_rate_of_revolutions",
+          "gas_generator_rate_of_revolutions",
+          "starboard_propeller_torque",
+          "port_propeller_torque",
+          "hp_turbine_exit_temperature",
+          "gt_compressor_outlet_air_temperature",
+          "hp_turbine_exit_pressure",
+          "gt_compressor_outlet_air_pressure",
+          "gas_turbine_exhaust_gas_pressure",
+          "turbine_injecton_control",
+          "fuel_flow"
+        ],
+        "split_sha256": "907eb0fc1295994919957eab6e0b398771d41e1c3bbbddf621e72f3f11c10ba9",
+        "task_id": 361247,
+        "test_rows": 1194
+      },
+      "solar_flare": {
+        "dataset_id": 44966,
+        "dataset_md5": "f8b0a7c961d3329e1bcea52c724bd724",
+        "numeric_features_available": 2,
+        "outer_train_rows": 959,
+        "selected_features": [
+          "evolution",
+          "area_largest"
+        ],
+        "split_sha256": "edf230bc4a235e305ef72badf7a10c12d8968caf7d45bb08e36d7429d9548e99",
+        "task_id": 361244,
+        "test_rows": 107
+      }
+    },
+    "episodes": 300,
+    "experiment": "regression_confirmation",
+    "expert_fits": 7200,
+    "git_commit": "0c456660ae9a87aab7932b569e1954b0ee1d25fe",
+    "package_versions": {
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "python": "3.10.16",
+      "scipy": "1.11.4",
+      "sklearn": "1.4.2",
+      "tabicl": "unknown",
+      "tabpfn": "6.3.0",
+      "torch": "2.7.0+cu126",
+      "yaml": "6.0.2"
+    },
+    "processed_summary": "results/processed/regression_confirmation_1e4911698d_cells.csv",
+    "protocol": "REGRESSION_CONFIRMATION_PROTOCOL.md",
+    "raw_bundle": "results/raw/regression_confirmation_1e4911698d.npz",
+    "run_key": "regression_confirmation_1e4911698d",
+    "synthetic_tuning": {
+      "classification": {
+        "competence_development_loss": 0.6176222306004462,
+        "fixed_weights": [
+          0.3555912141705992,
+          0.0350789103939648,
+          0.2547526224942264,
+          0.12038024397964069,
+          0.11549960984350724,
+          0.11869739911806165
+        ],
+        "temperature": 0.05,
+        "uniform_shrinkage": 0.0
+      },
+      "regression": {
+        "competence_development_loss": 0.21243490749892507,
+        "fixed_weights": [
+          0.16269244506046177,
+          0.06957482992823108,
+          0.05896293322370081,
+          0.21690125013624803,
+          0.24853765920022589,
+          0.24333088245113244
+        ],
+        "temperature": 0.1,
+        "uniform_shrinkage": 0.0
+      }
+    },
+    "wall_clock_seconds": 42.86262494698167
+  },
+  "comparisons": {
+    "competence_vs_fixed": {
+      "gain": 0.10045056578200162,
+      "ci_low": 0.0017306387334063845,
+      "ci_high": 0.25055213191476317
+    },
+    "competence_vs_uniform": {
+      "gain": 0.06776320257517446,
+      "ci_low": -0.0017519321366568643,
+      "ci_high": 0.17628046479047485
+    },
+    "competence_vs_hard": {
+      "gain": 0.014346249660678665,
+      "ci_low": -0.0012524567390431454,
+      "ci_high": 0.03139198733012982
+    },
+    "fixed_to_best_individual": {
+      "gain": 0.1256063237592036,
+      "ci_low": 0.022173364771446602,
+      "ci_high": 0.2712266595375649
+    }
+  },
+  "per_dataset_competence_vs_fixed": {
+    "abalone": {
+      "gain": 0.019705007514171265,
+      "ci": [
+        0.0099088568348597,
+        0.028970754541244446
+      ]
+    },
+    "auction_verification": {
+      "gain": -0.006628764568940027,
+      "ci": [
+        -0.011583614578552883,
+        -0.00181454629982407
+      ]
+    },
+    "geographical_origin_of_music": {
+      "gain": 0.3942869388936101,
+      "ci": [
+        0.33457352154294184,
+        0.4550783144864857
+      ]
+    },
+    "naval_propulsion_plant": {
+      "gain": 0.09449142781978778,
+      "ci": [
+        0.0834625572433388,
+        0.10537569558092291
+      ]
+    },
+    "solar_flare": {
+      "gain": 0.00039821925137897656,
+      "ci": [
+        9.479075454235541e-05,
+        0.0007126801873200451
+      ]
+    }
+  },
+  "mean_losses": {
+    "best_individual_oracle": 0.9701784937362142,
+    "competence": 0.9953342517134163,
+    "fixed": 1.095784817495418,
+    "hard_cv": 1.009680501374095,
+    "uniform": 1.0630974542885907
+  },
+  "positive_dataset_count": 4,
+  "confirmation_pass": true
+}

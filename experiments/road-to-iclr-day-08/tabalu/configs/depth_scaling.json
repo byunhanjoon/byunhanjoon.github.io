@@ -1,0 +1,23 @@
+{
+  "experiment": "program_depth_scaling",
+  "output_dir": "tabalu/results/depth_scaling",
+  "depths": [2, 4, 6, 8],
+  "tasks_per_depth": 6,
+  "task_seed_start": 202612000,
+  "seeds": [0, 1, 2, 3, 4],
+  "operators": ["add", "subtract", "multiply", "abs"],
+  "beam_width": 128,
+  "train_rows": 512,
+  "validation_rows": 256,
+  "test_rows": 512,
+  "target_noise_relative_std": 0.01,
+  "ood_multiplier": 4.0,
+  "neural_epochs": 500,
+  "device": "cuda:0",
+  "gate": {
+    "oracle_ood_nrmse_max": 1e-6,
+    "beam_depth2_ood_nrmse_max": 0.1,
+    "beam_depth8_ood_nrmse_max": 0.25,
+    "beam_depth8_functional_recovery_min": 0.5
+  }
+}

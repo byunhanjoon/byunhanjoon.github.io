@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-colic-25",
+  "model": "native_histgb",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 220,
+    "validation": 74,
+    "test": 74
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026082901,
+  "timing": {
+    "setup_seconds": 0.03196823503822088,
+    "fit_loop_seconds": 7.098755840910599,
+    "end_to_end_seconds": 7.131864777998999,
+    "fits_per_fit_loop_second": 18.031328710071637
+  }
+}

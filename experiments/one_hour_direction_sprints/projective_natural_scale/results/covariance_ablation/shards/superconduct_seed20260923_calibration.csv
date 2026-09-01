@@ -1,0 +1,4 @@
+dataset,split_seed,model,variance_temperature,validation_nll
+superconduct,20260923,projective_full,1.0623151965183024,1.4383616214193802
+superconduct,20260923,projective_independent,1.0965494697900862,1.4461407375375324
+superconduct,20260923,projective_shuffled,1.061404625706631,1.4373807615739254

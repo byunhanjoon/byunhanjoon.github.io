@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-abalone-183",
+  "model": "onehot_adam_mlp",
+  "task": "regression",
+  "shape": [
+    4,
+    4,
+    1,
+    4
+  ],
+  "fits": 64,
+  "rows": {
+    "train": 2505,
+    "validation": 836,
+    "test": 836
+  },
+  "full_product_verified": true
+}

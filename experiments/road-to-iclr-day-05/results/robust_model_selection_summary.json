@@ -1,0 +1,399 @@
+{
+  "status": "complete",
+  "draws_per_dataset": 1024,
+  "panels": {
+    "confirmation": {
+      "datasets": 11,
+      "mean_metrics_by_method": {
+        "four_seed_blocks": {
+          "selected_realized_test_loss": 0.21934862288409843,
+          "selected_quotient_test_loss": 0.21931022731667957,
+          "validation_quotient_regret": 1.5288772078228563e-05,
+          "test_quotient_regret": 0.00028496490823914006,
+          "selection_agreement": 0.9221413352272727,
+          "selection_entropy_bits": 0.22804560879741792
+        },
+        "four_strength1": {
+          "selected_realized_test_loss": 0.2193798421206492,
+          "selected_quotient_test_loss": 0.21932768236608882,
+          "validation_quotient_regret": 1.1386683098769402e-05,
+          "test_quotient_regret": 0.00030241995764841294,
+          "selection_agreement": 0.9240944602272727,
+          "selection_entropy_bits": 0.20323657798680445
+        },
+        "iid16": {
+          "selected_realized_test_loss": 0.21943856201661974,
+          "selected_quotient_test_loss": 0.21936234208406252,
+          "validation_quotient_regret": 1.682647125302091e-05,
+          "test_quotient_regret": 0.00033707967562209706,
+          "selection_agreement": 0.9109552556818182,
+          "selection_entropy_bits": 0.23464363053250803
+        },
+        "lhs16": {
+          "selected_realized_test_loss": 0.21937220967654872,
+          "selected_quotient_test_loss": 0.2193281482928552,
+          "validation_quotient_regret": 1.1473880737028056e-05,
+          "test_quotient_regret": 0.00030288588441479023,
+          "selection_agreement": 0.9284446022727273,
+          "selection_entropy_bits": 0.20184605446345658
+        },
+        "sobol16": {
+          "selected_realized_test_loss": 0.21940582412120294,
+          "selected_quotient_test_loss": 0.2193793543631453,
+          "validation_quotient_regret": 1.0200023590914045e-05,
+          "test_quotient_regret": 0.0003540919547048865,
+          "selection_agreement": 0.9185014204545454,
+          "selection_entropy_bits": 0.20019978314982553
+        },
+        "srswor16": {
+          "selected_realized_test_loss": 0.2194108412068087,
+          "selected_quotient_test_loss": 0.2193600242361828,
+          "validation_quotient_regret": 1.3745798214970444e-05,
+          "test_quotient_regret": 0.0003347618277423944,
+          "selection_agreement": 0.9139737215909091,
+          "selection_entropy_bits": 0.220938170320738
+        },
+        "strength2": {
+          "selected_realized_test_loss": 0.21922863864734976,
+          "selected_quotient_test_loss": 0.2192113209520399,
+          "validation_quotient_regret": 9.220651635784667e-06,
+          "test_quotient_regret": 0.00018605854359948968,
+          "selection_agreement": 0.9556995738636364,
+          "selection_entropy_bits": 0.10129156772547274
+        }
+      },
+      "strength2_comparisons": {
+        "iid16": {
+          "mean_strength2_minus_control_test_loss": -0.00020992336926999573,
+          "datasets_strength2_lower": 10,
+          "datasets": 11,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.00052167380207003,
+            -3.504171883681488e-05
+          ]
+        },
+        "srswor16": {
+          "mean_strength2_minus_control_test_loss": -0.00018220255945897623,
+          "datasets_strength2_lower": 11,
+          "datasets": 11,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.00047596271503561743,
+            -1.8783346950511472e-05
+          ]
+        },
+        "four_strength1": {
+          "mean_strength2_minus_control_test_loss": -0.00015120347329947143,
+          "datasets_strength2_lower": 8,
+          "datasets": 11,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.0003763513117434215,
+            -2.1480001517591307e-05
+          ]
+        },
+        "four_seed_blocks": {
+          "mean_strength2_minus_control_test_loss": -0.00011998423674870416,
+          "datasets_strength2_lower": 10,
+          "datasets": 11,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.0002674035282871615,
+            -3.467591262392644e-05
+          ]
+        },
+        "sobol16": {
+          "mean_strength2_minus_control_test_loss": -0.00017718547385319863,
+          "datasets_strength2_lower": 8,
+          "datasets": 11,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.0004394233183618168,
+            -2.1884595814697878e-05
+          ]
+        },
+        "lhs16": {
+          "mean_strength2_minus_control_test_loss": -0.00014357102919896223,
+          "datasets_strength2_lower": 9,
+          "datasets": 11,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.0003547811192554787,
+            -1.851595662387463e-05
+          ]
+        }
+      },
+      "task_stratified_strength2_vs_iid16": {
+        "binclass": {
+          "datasets": 10,
+          "mean_strength2_minus_iid16_test_loss": -5.9813714462793715e-05,
+          "datasets_strength2_lower": 9
+        },
+        "regression": {
+          "datasets": 1,
+          "mean_strength2_minus_iid16_test_loss": -0.001711019917342016,
+          "datasets_strength2_lower": 1
+        }
+      },
+      "frozen_panel_gate_passed": true,
+      "frozen_qmc_selection_addendum_passed": true
+    },
+    "menu_repeat": {
+      "datasets": 6,
+      "mean_metrics_by_method": {
+        "four_seed_blocks": {
+          "selected_realized_test_loss": 0.289455459043422,
+          "selected_quotient_test_loss": 0.28940552679756093,
+          "validation_quotient_regret": 6.498245362183947e-06,
+          "test_quotient_regret": 0.0011559347658081317,
+          "selection_agreement": 0.9812825520833334,
+          "selection_entropy_bits": 0.08447144856916561
+        },
+        "four_strength1": {
+          "selected_realized_test_loss": 0.2893871793420827,
+          "selected_quotient_test_loss": 0.2893494139214647,
+          "validation_quotient_regret": 6.617008189553373e-07,
+          "test_quotient_regret": 0.0010998218897118836,
+          "selection_agreement": 0.99853515625,
+          "selection_entropy_bits": 0.013231665817752309
+        },
+        "iid16": {
+          "selected_realized_test_loss": 0.2894347940867841,
+          "selected_quotient_test_loss": 0.2893480391138718,
+          "validation_quotient_regret": 9.641354134321739e-06,
+          "test_quotient_regret": 0.0010984470821190642,
+          "selection_agreement": 0.98193359375,
+          "selection_entropy_bits": 0.10072898245990276
+        },
+        "lhs16": {
+          "selected_realized_test_loss": 0.28938257831214925,
+          "selected_quotient_test_loss": 0.289348901580152,
+          "validation_quotient_regret": 1.6951944423088556e-07,
+          "test_quotient_regret": 0.0010993095483992055,
+          "selection_agreement": 0.99951171875,
+          "selection_entropy_bits": 0.004812313061784051
+        },
+        "sobol16": {
+          "selected_realized_test_loss": 0.2893870629795387,
+          "selected_quotient_test_loss": 0.2893473848332571,
+          "validation_quotient_regret": 0.0,
+          "test_quotient_regret": 0.0010977928015043236,
+          "selection_agreement": 1.0,
+          "selection_entropy_bits": 0.0
+        },
+        "srswor16": {
+          "selected_realized_test_loss": 0.2893998686479906,
+          "selected_quotient_test_loss": 0.2893406372008956,
+          "validation_quotient_regret": 4.247423774073815e-06,
+          "test_quotient_regret": 0.0010910451691427702,
+          "selection_agreement": 0.9928385416666666,
+          "selection_entropy_bits": 0.04988764904841927
+        },
+        "strength2": {
+          "selected_realized_test_loss": 0.28936406722925057,
+          "selected_quotient_test_loss": 0.2893473848332571,
+          "validation_quotient_regret": 0.0,
+          "test_quotient_regret": 0.0010977928015043236,
+          "selection_agreement": 1.0,
+          "selection_entropy_bits": 0.0
+        }
+      },
+      "strength2_comparisons": {
+        "iid16": {
+          "mean_strength2_minus_control_test_loss": -7.072685753352181e-05,
+          "datasets_strength2_lower": 6,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.00013564886619170033,
+            -2.231677728644161e-05
+          ]
+        },
+        "srswor16": {
+          "mean_strength2_minus_control_test_loss": -3.5801418740051116e-05,
+          "datasets_strength2_lower": 5,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -5.49322854458747e-05,
+            -1.7955396163066815e-05
+          ]
+        },
+        "four_strength1": {
+          "mean_strength2_minus_control_test_loss": -2.3112112832151366e-05,
+          "datasets_strength2_lower": 5,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -4.777468018483481e-05,
+            -3.409006546336614e-06
+          ]
+        },
+        "four_seed_blocks": {
+          "mean_strength2_minus_control_test_loss": -9.139181417146967e-05,
+          "datasets_strength2_lower": 5,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.000224568477532619,
+            -8.63864594450959e-06
+          ]
+        },
+        "sobol16": {
+          "mean_strength2_minus_control_test_loss": -2.2995750288135053e-05,
+          "datasets_strength2_lower": 3,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -6.123199366275811e-05,
+            -4.332251668515141e-09
+          ]
+        },
+        "lhs16": {
+          "mean_strength2_minus_control_test_loss": -1.8511082898730187e-05,
+          "datasets_strength2_lower": 5,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -3.521034859257921e-05,
+            -4.722135259078216e-06
+          ]
+        }
+      },
+      "task_stratified_strength2_vs_iid16": {
+        "binclass": {
+          "datasets": 5,
+          "mean_strength2_minus_iid16_test_loss": -8.011894495786676e-05,
+          "datasets_strength2_lower": 5
+        },
+        "regression": {
+          "datasets": 1,
+          "mean_strength2_minus_iid16_test_loss": -2.3766420411797107e-05,
+          "datasets_strength2_lower": 1
+        }
+      },
+      "frozen_panel_gate_passed": true,
+      "frozen_qmc_selection_addendum_passed": false
+    },
+    "subsample_repeat": {
+      "datasets": 6,
+      "mean_metrics_by_method": {
+        "four_seed_blocks": {
+          "selected_realized_test_loss": 0.2944776962169969,
+          "selected_quotient_test_loss": 0.29438460486238877,
+          "validation_quotient_regret": 2.463994123575324e-05,
+          "test_quotient_regret": 0.0003206469113806227,
+          "selection_agreement": 0.9401041666666666,
+          "selection_entropy_bits": 0.252063900057324
+        },
+        "four_strength1": {
+          "selected_realized_test_loss": 0.29442375949663985,
+          "selected_quotient_test_loss": 0.2943481056377331,
+          "validation_quotient_regret": 1.1643410987231291e-05,
+          "test_quotient_regret": 0.0002841476867249644,
+          "selection_agreement": 0.9637044270833334,
+          "selection_entropy_bits": 0.159540854533096
+        },
+        "iid16": {
+          "selected_realized_test_loss": 0.29446747522333633,
+          "selected_quotient_test_loss": 0.29437842949907,
+          "validation_quotient_regret": 1.940503308650195e-05,
+          "test_quotient_regret": 0.00031447154806187304,
+          "selection_agreement": 0.943359375,
+          "selection_entropy_bits": 0.22152473130589792
+        },
+        "lhs16": {
+          "selected_realized_test_loss": 0.2944044799938262,
+          "selected_quotient_test_loss": 0.2943391069534919,
+          "validation_quotient_regret": 1.1338528302903329e-05,
+          "test_quotient_regret": 0.00027514900248377266,
+          "selection_agreement": 0.9690755208333334,
+          "selection_entropy_bits": 0.14638824967309214
+        },
+        "sobol16": {
+          "selected_realized_test_loss": 0.2943659192652768,
+          "selected_quotient_test_loss": 0.29429753400911923,
+          "validation_quotient_regret": 1.9910838612489067e-06,
+          "test_quotient_regret": 0.0002335760581111368,
+          "selection_agreement": 0.9973958333333334,
+          "selection_entropy_bits": 0.019352512550794954
+        },
+        "srswor16": {
+          "selected_realized_test_loss": 0.29441606275113313,
+          "selected_quotient_test_loss": 0.294349317239832,
+          "validation_quotient_regret": 1.3363668466472944e-05,
+          "test_quotient_regret": 0.00028535928882383627,
+          "selection_agreement": 0.9622395833333334,
+          "selection_entropy_bits": 0.16637836652648297
+        },
+        "strength2": {
+          "selected_realized_test_loss": 0.29433002492747673,
+          "selected_quotient_test_loss": 0.29429771925538817,
+          "validation_quotient_regret": 2.1155266025769633e-06,
+          "test_quotient_regret": 0.00023376130438003363,
+          "selection_agreement": 0.9972330729166666,
+          "selection_entropy_bits": 0.02031807094985548
+        }
+      },
+      "strength2_comparisons": {
+        "iid16": {
+          "mean_strength2_minus_control_test_loss": -0.00013745029585963343,
+          "datasets_strength2_lower": 6,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.000264796805814384,
+            -4.6931667338727445e-05
+          ]
+        },
+        "srswor16": {
+          "mean_strength2_minus_control_test_loss": -8.603782365636877e-05,
+          "datasets_strength2_lower": 5,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.0001703499105709013,
+            -2.7830884200333203e-05
+          ]
+        },
+        "four_strength1": {
+          "mean_strength2_minus_control_test_loss": -9.373456916313015e-05,
+          "datasets_strength2_lower": 5,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.00018633509586490904,
+            -2.434600335390645e-05
+          ]
+        },
+        "four_seed_blocks": {
+          "mean_strength2_minus_control_test_loss": -0.0001476712895201467,
+          "datasets_strength2_lower": 6,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.00024434992718726695,
+            -6.574913558860885e-05
+          ]
+        },
+        "sobol16": {
+          "mean_strength2_minus_control_test_loss": -3.589433780006476e-05,
+          "datasets_strength2_lower": 4,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -7.356815352676123e-05,
+            -3.1040369215064455e-06
+          ]
+        },
+        "lhs16": {
+          "mean_strength2_minus_control_test_loss": -7.445506634946386e-05,
+          "datasets_strength2_lower": 5,
+          "datasets": 6,
+          "dataset_cluster_bootstrap_95_interval": [
+            -0.00014484389189018768,
+            -1.7862316390707757e-05
+          ]
+        }
+      },
+      "task_stratified_strength2_vs_iid16": {
+        "binclass": {
+          "datasets": 5,
+          "mean_strength2_minus_iid16_test_loss": -0.0001396108617653916,
+          "datasets_strength2_lower": 5
+        },
+        "regression": {
+          "datasets": 1,
+          "mean_strength2_minus_iid16_test_loss": -0.00012664746633084256,
+          "datasets_strength2_lower": 1
+        }
+      },
+      "frozen_panel_gate_passed": true,
+      "frozen_qmc_selection_addendum_passed": true
+    }
+  }
+}

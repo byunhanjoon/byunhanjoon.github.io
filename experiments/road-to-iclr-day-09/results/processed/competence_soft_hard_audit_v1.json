@@ -1,0 +1,109 @@
+{
+  "protocol": "COMPETENCE_SOFT_HARD_PROTOCOL.md",
+  "parent_run": "fallback_loss_router_2e46ddf857_test",
+  "parent_max_abs_loss_error": 2.220446049250313e-16,
+  "tasks": {
+    "classification": {
+      "soft_vs_hard": {
+        "gain": 0.02379710746685316,
+        "ci_low": 0.022615234970091512,
+        "ci_high": 0.024992674406155376
+      },
+      "hard_vs_fixed": {
+        "gain": -0.018332601106692388,
+        "ci_low": -0.019878131965667158,
+        "ci_high": -0.01679604267023668
+      },
+      "mean_losses": {
+        "best_individual_oracle": 0.6074446892705183,
+        "fixed": 0.6259642252855738,
+        "hard_cv": 0.6442968263922662,
+        "soft_cv": 0.620499718925413
+      },
+      "hard_cv_matches_query_best_rate": 0.42020833333333335,
+      "mean_cv_query_spearman": 0.547904761904762,
+      "mean_effective_experts": 3.830196855133091,
+      "mean_max_soft_weight": 0.46953870058501573,
+      "soft_vs_hard_by_cv_margin_quintile": [
+        {
+          "margin_quintile": 0,
+          "mean": 0.03115643562003244,
+          "count": 960
+        },
+        {
+          "margin_quintile": 1,
+          "mean": 0.03020996444662925,
+          "count": 960
+        },
+        {
+          "margin_quintile": 2,
+          "mean": 0.021449334128262006,
+          "count": 960
+        },
+        {
+          "margin_quintile": 3,
+          "mean": 0.021445371127262518,
+          "count": 960
+        },
+        {
+          "margin_quintile": 4,
+          "mean": 0.014724432012079616,
+          "count": 960
+        }
+      ],
+      "soft_vs_hard_when_hard_correct": -0.005585067666583658,
+      "soft_vs_hard_when_hard_wrong": 0.045092057967802524
+    },
+    "regression": {
+      "soft_vs_hard": {
+        "gain": 0.024655085858065296,
+        "ci_low": 0.022748356994004064,
+        "ci_high": 0.026603515223344268
+      },
+      "hard_vs_fixed": {
+        "gain": 0.22952961510606187,
+        "ci_low": 0.2210910146669076,
+        "ci_high": 0.23780492151152108
+      },
+      "mean_losses": {
+        "best_individual_oracle": 0.2059880278304104,
+        "fixed": 0.46103424367551243,
+        "hard_cv": 0.2315046285694506,
+        "soft_cv": 0.2068495427113853
+      },
+      "hard_cv_matches_query_best_rate": 0.8308333333333333,
+      "mean_cv_query_spearman": 0.8642619047619047,
+      "mean_effective_experts": 2.1789893877798434,
+      "mean_max_soft_weight": 0.734961630016258,
+      "soft_vs_hard_by_cv_margin_quintile": [
+        {
+          "margin_quintile": 0,
+          "mean": 0.05701020060329071,
+          "count": 960
+        },
+        {
+          "margin_quintile": 1,
+          "mean": 0.03093068948589687,
+          "count": 960
+        },
+        {
+          "margin_quintile": 2,
+          "mean": 0.029252144465614284,
+          "count": 960
+        },
+        {
+          "margin_quintile": 3,
+          "mean": 0.006159259603886386,
+          "count": 960
+        },
+        {
+          "margin_quintile": 4,
+          "mean": -7.686486836175613e-05,
+          "count": 960
+        }
+      ],
+      "soft_vs_hard_when_hard_correct": 0.0045523105144754505,
+      "soft_vs_hard_when_hard_wrong": 0.12338645047658293
+    }
+  }
+}

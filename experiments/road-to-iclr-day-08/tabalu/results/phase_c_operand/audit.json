@@ -1,0 +1,32 @@
+{
+  "git_commit": "c000f06e0b8c6989d62ece8a769bbf269910a9b8",
+  "git_dirty": true,
+  "expected_records": 2400,
+  "observed_records": 2400,
+  "all_prediction_metrics_finite": true,
+  "confidence_interval_unit": "task (training seeds averaged within task)",
+  "gate": {
+    "passed": false,
+    "checks": {
+      "improves_over_raw": false,
+      "competitive_with_unrestricted": true,
+      "preserves_clean": false,
+      "correction_is_bounded": true
+    },
+    "observed": {
+      "best_conservative_variant": "confidence_gated",
+      "conservative_vs_raw_ratio": 0.9303630505909043,
+      "conservative_vs_unrestricted_ratio": 0.980102547888886,
+      "clean_conservative_nrmse": 0.1125758382442415,
+      "normalized_correction_rms": 0.0665507105179131
+    },
+    "thresholds": {
+      "evaluation_noise": 0.2,
+      "conservative_vs_raw_ratio_max": 0.85,
+      "conservative_vs_unrestricted_ratio_max": 1.25,
+      "clean_conservative_nrmse_max": 0.05,
+      "normalized_correction_rms_max": 0.3
+    }
+  },
+  "audit_passed": false
+}

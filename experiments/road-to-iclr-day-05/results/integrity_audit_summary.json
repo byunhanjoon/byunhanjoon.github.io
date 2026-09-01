@@ -1,0 +1,270 @@
+{
+  "status": "complete",
+  "audit_passed": true,
+  "issues": [],
+  "panels": {
+    "confirmation": {
+      "configured_tensors": 55,
+      "verified_tensors": 55,
+      "represented_fits": 2880
+    },
+    "menu_repeat": {
+      "configured_tensors": 30,
+      "verified_tensors": 30,
+      "represented_fits": 1600
+    },
+    "subsample_repeat": {
+      "configured_tensors": 30,
+      "verified_tensors": 30,
+      "represented_fits": 1600
+    },
+    "openml_external": {
+      "configured_tensors": 32,
+      "verified_tensors": 32,
+      "represented_fits": 1152
+    },
+    "openml_taskbalanced": {
+      "configured_tensors": 24,
+      "verified_tensors": 24,
+      "represented_fits": 1008
+    },
+    "openml_multiclass": {
+      "configured_tensors": 6,
+      "verified_tensors": 6,
+      "represented_fits": 384
+    },
+    "openml_late_source": {
+      "configured_tensors": 12,
+      "verified_tensors": 12,
+      "represented_fits": 1536
+    },
+    "openml_late_source_b": {
+      "configured_tensors": 12,
+      "verified_tensors": 12,
+      "represented_fits": 1536
+    },
+    "openml_modern_model": {
+      "configured_tensors": 16,
+      "verified_tensors": 16,
+      "represented_fits": 2048
+    },
+    "openml_modern_split_2901": {
+      "configured_tensors": 16,
+      "verified_tensors": 16,
+      "represented_fits": 2048
+    },
+    "openml_modern_split_2911": {
+      "configured_tensors": 16,
+      "verified_tensors": 16,
+      "represented_fits": 2048
+    },
+    "openml_modern_split_2921": {
+      "configured_tensors": 16,
+      "verified_tensors": 16,
+      "represented_fits": 2048
+    },
+    "openml_late_source_c": {
+      "configured_tensors": 20,
+      "verified_tensors": 20,
+      "represented_fits": 2560
+    },
+    "openml_late_source_c_split": {
+      "configured_tensors": 20,
+      "verified_tensors": 20,
+      "represented_fits": 2560
+    },
+    "matched_function": {
+      "configured_tensors": 4,
+      "verified_tensors": 4,
+      "represented_fits": 128
+    },
+    "day5_completion": {
+      "verified_tensors": 278,
+      "represented_fits_or_calls": 19584,
+      "subpanels": {
+        "neural_broad": {
+          "configured_tensors": 144,
+          "verified_tensors": 144,
+          "represented_fits": 9792
+        },
+        "neural_exact": {
+          "configured_tensors": 16,
+          "verified_tensors": 16,
+          "represented_fits": 1536
+        },
+        "neural_matched": {
+          "configured_tensors": 16,
+          "verified_tensors": 16,
+          "represented_fits": 768
+        },
+        "classical": {
+          "configured_tensors": 60,
+          "verified_tensors": 60,
+          "represented_fits_or_calls": 4080
+        },
+        "tabpfn": {
+          "configured_tensors": 18,
+          "verified_tensors": 18,
+          "represented_fits_or_calls": 1296
+        },
+        "menu_size": {
+          "configured_tensors": 8,
+          "verified_tensors": 8,
+          "represented_fits_or_calls": 2048
+        },
+        "row_order": {
+          "configured_tensors": 16,
+          "verified_tensors": 16,
+          "represented_fits_or_calls": 64
+        }
+      },
+      "exact_broad_reproducibility_mismatches": 0
+    }
+  },
+  "verified_tensors": 587,
+  "represented_complete_product_fits": 44720,
+  "maximum_class_probability_sum_error": 1.341104507446289e-07,
+  "minimum_class_probability": 0.0,
+  "maximum_class_probability": 1.0,
+  "validation_only_screen_audit": {
+    "strength2_confirmation": {
+      "headline_test_cells": 25,
+      "validation_material_mismatches": 0
+    },
+    "strength2_openml_external": {
+      "headline_test_cells": 12,
+      "validation_material_mismatches": 0
+    },
+    "strength2_openml_taskbalanced": {
+      "headline_test_cells": 16,
+      "validation_material_mismatches": 0
+    },
+    "strength2_openml_multiclass": {
+      "headline_test_cells": 4,
+      "validation_material_mismatches": 0
+    }
+  },
+  "top_level_summary_files_parsed": 156,
+  "noncomplete_summary_files": [],
+  "sha256": {
+    "THEORY_FOUNDATIONS.md": "9655f96218d1b27e7fd4bdda1de802aa073ceb73006132e22421ef4a038f3cfe",
+    "PAPER_BLUEPRINT.md": "58eec4cd2c6644797fda58971a7ab1dea3c1a74e2ea4278e1e440d767322806b",
+    "RECENT_LITERATURE_AUDIT.md": "7b08d39bfd2b54dc46538279cb58bff8758422e23dc2913b3ed3737ee7ddf5a2",
+    "tier1_confirmation_config.json": "1d3efc5256c873a3f27e123fa5a1ab0bcbec76fd815d2a706217902c39189a3f",
+    "openml_external_cover_config.json": "0b1d50603837cd3641eaf7adf0c85071565ef6a8bc79dc9d4467d2dcb85e723f",
+    "openml_taskbalanced_cover_config.json": "289ac7e81941a50fb8f64ec18aaf33c59d5d35bf00f3e887f49e8a9b29b291b1",
+    "openml_multiclass_cover_config.json": "6789a52bf42eb03eb6071e6ae65d8de29f4d13134d98385b50d55b4533fa625c",
+    "openml_late_source_cover_config.json": "dd931600dd4a840e3116c2094cf1e508f7296d2b4004eb5d84198b9b87966721",
+    "openml_external_cover.py": "f49cd4f84df38d6f7bc77924cf24cd50a16bf0ecbd3713e756e8e43e746dd64b",
+    "openml_late_source_b_cover_config.json": "842fd6e103a86586dcc403c55fc9ba541e35c8ecec0c553a26766b235a626270",
+    "MODERN_MODEL_EXTENSION_PROTOCOL.md": "e6986c261bfceae35977c1681b926f741bb1fb4232fd69c5287773b3ef687083",
+    "openml_modern_model_cover_config.json": "02bedde0965a6bc7a26e0d9fc58930535cceef869979a447cfbbc827f16afd68",
+    "EXPANDED_MODEL_SOURCE_PROTOCOL.md": "7b942d67caf3ee70804e3ded182dc4713ff76464d81ecd2da6733fe91d539013",
+    "REPEATED_SPLIT_MODERN_PROTOCOL.md": "ed0b90f713b710d6dbfcb2a3dad587c2f00f39f8cf39bd1b06e9b640f32dd263",
+    "REPEATED_SPLIT_METRIC_SCOPE.md": "344b7eed980f8f29deec0c5223e8ce77ec2d9dfd3cbce0779fc1bd4408bc2daf",
+    "PARTITION_NUISANCE_SCALE_PROTOCOL.md": "aa8881d89c5560cd6fdf4511990108bb990c2f4e921a896dca927c8d09646f34",
+    "ANTITHETIC_OPERATOR_BOUNDARY_PROTOCOL.md": "77abad955cbd6fa3cedf7ed02ca2d7d47a7ee79cf374ea3fe1bf36a4c1b08f88",
+    "ANTITHETIC_CV_COMPARISON.md": "9e970039d5bbf1037c210e2ceefef2dff8a3fe79053172791fe414b3755cdf48",
+    "LATE_SOURCE_C_PROTOCOL.md": "1d1d4a5e940bb02d25a36d2e9af7862a926f0c2c8f1f0c3718d92a650561cbfb",
+    "openml_late_source_c_cover_config.json": "770a62707634c04eff8f9f189199a000cf1fc8fd04a3b584d5b37a171fc0e650",
+    "LATE_SOURCE_C_SPLIT_REPEAT_PROTOCOL.md": "caff0b14c755c3ba853120372557c245e18d64d7044842e6aa534d9c98711bc7",
+    "openml_late_source_c_split_cover_config.json": "bcca20c7f9ee1822cc5f1f0c252b761e7efb1baae9fb05137cb6adea15c05916",
+    "REVIEWER_ATTACK_AUDIT.md": "50b87a47b85e27ab890253ab10ed064298447e2bdb637b3e143cdcd79e313ebb",
+    "MATCHED_FUNCTION_PROTOCOL.md": "ae0e64f36cf1bd729ed98208759cd80e952ad391b8efcb5adc11b24034f66fa5",
+    "matched_function_config.json": "73754959bd0ed93898375f99c6f87760ed7a21e253bf2769b33c1ca68bb5f1d6",
+    "matched_function_control.py": "601811e438d1a9753306db407f92ad93ce3cf942b404e31c2be112576b221a5b",
+    "analyze_strength2_cover.py": "c33ef0ce3692749c33b12158c8992d005dbdf5b3769ff0a4bcf071a9ca74acf6",
+    "analyze_cross_quotient_selection.py": "17c9b5b285de664afe23dc5973d894f325bcd5a495c1f86511243ea77fcf7ee4",
+    "analyze_cross_score_budget_frontier.py": "cac5b701411c2328f32d4d6db23cf0c28ee94ac17c23e48bae3a31a3e3eddf82",
+    "analyze_disjoint_pair_cross.py": "2375002dbe6674c4ceecd492b62970faef8a38b5433350641cbff56b639b82be",
+    "analyze_disjoint_pack64.py": "fa641b6bf5c1036d2e92fb4111e952253fa4f60de1fa634c868df03a4f7dcd98",
+    "analyze_disjoint_pack_cross128.py": "8b7bd689893adce07e4a1c530954ce4784c9346e5e10f4b320b6808bd6fea6cc",
+    "analyze_mixed_resolvable_packing.py": "255fd1b5c0595a12d1f6184a5791b14c5446749d29d5332e5aed05e3301f7b33",
+    "analyze_exhaustive128_control.py": "f643f745e3b7d3e62802b17ef2f82b4f717eb566f5471f35e1e35653b11cc845",
+    "analyze_log_loss_support.py": "9d939cf6c0753bc8c8a8bf3b9a2a1701610d9f33f65bab327e86148d92321f63",
+    "analyze_smoothed_log_packing.py": "bced84648b3bc572d73b689f1e7e394f4cc6dc93af2c83a5a5b5c617a4002044",
+    "analyze_smoothed_log_taylor.py": "21258f4622aa0108cc6fd777dba0ea6318b8ce1f32483c63effd03e97d2127e6",
+    "analyze_late_source_extension.py": "fbe03a3823e6d4d77a14f3cade2c557bdcdb2758311725b5431f7de69767a7f2",
+    "analyze_combined_packing_sources.py": "4b62112241b63f7fd134ce7e0ade1bc5e87bd30463077d892142307022202a9f",
+    "SOURCE_SENSITIVITY_AUDIT.md": "add776375a99b3464c88c953f3f7ce50daff0de2501df26b532ce9c1ebe08d2b",
+    "analyze_source_sensitivity.py": "882745164046d9d0436e7b0d7c5fe84cabbb07cb9c0bc88cc7bcf610b89beb88",
+    "analyze_late_source_metric_scope.py": "2b711f02cb333213bc6570b588e33eaaba297e92279d913649d24ce151278195",
+    "analyze_timed_refit.py": "e823393721d682d0f5d572a3ab27697f9f8190480cba97593eb2f8fde67ee061",
+    "analyze_late_strength_failure.py": "3e017b818a7cdb5d9626d608ab899bf42ea3411bae127492c33858704456f159",
+    "analyze_combined_late_metric_sources.py": "bba518a6ff045b71017d8a0a36979cb920401bda9c4e3a38b798341dd1dd030c",
+    "analyze_modern_model_extension.py": "d537b649bcc7697fa9c1154df3f0cf376aee0d1e83d639d2afc75343e871dbcc",
+    "analyze_expanded_model_sources.py": "f9b54aaed59bf5410e4480153041db2231c0e7d839ca02b54b9ddde7eca8d2a9",
+    "analyze_repeated_split_modern.py": "1374a45cf910eafe4118e4731c6cf3327e156eede2755034acd7cf78d072400a",
+    "analyze_repeated_split_metric_scope.py": "39aa7eefb0d9da502933fd71af74e12a925bf13a74b4f9eb4dc637771d02f274",
+    "analyze_partition_nuisance_scale.py": "738c2871129b3dcd5ec8b9b8fd54e1fa2b89a62d8be0ed1dd7b65be7e32b7b17",
+    "analyze_antithetic_operator_boundary.py": "a7a1df3179b3917971aa321aae2b2b3b5a404d12d65988a5a90505a6a0da81e0",
+    "analyze_late_source_c_audit.py": "b0b75c0a8d997e5272099726bb2f80fe2a96d19ef8916d98efd67eed63f1d460",
+    "analyze_final_combined_sources.py": "65e168e5878fb92a9a86a29a2b4bb0c66e05f57678e46f1a9d122b56521711ff",
+    "analyze_source_c_operator_prediction.py": "1ba771c5b29bd5959f60c1832f91867478f42af6eda55343c4eafe01a628c777",
+    "analyze_source_c_two_split.py": "61e6f3fcaa874d454ec28640b69c2cf978f0e2b8f4632a258b0c98a438a6890e",
+    "results/exact_panel_meta_summary.json": "c20e2dcef725858747582315da37796a171f44c6d3a7e64b7b25281c654d1208",
+    "results/cross_quotient_selection_summary.json": "ac8e5e129995fbce370e7327cc2f6c68cf27a4a8aaf13fc65337073f04e5ba97",
+    "results/cross_score_budget_frontier_summary.json": "b030807c7f28b78fe42108bee2ed5268b4c7083858cd02e0f8b716ea70b66673",
+    "results/disjoint_pair_cross_summary.json": "eb8dcb8d34ce07df6d26605930a7bdf67e05915ffdc8330f4dbaaf7c3e4710cd",
+    "results/disjoint_pack64_summary.json": "78eb7909013d17c5d91418c3484ec6e30ea8c7e03448340e467e6e2bd27789ce",
+    "results/disjoint_pack_cross128_summary.json": "9e2f7ec4d5413cf5704c2ab7afc18e76e3e73cdfc7993895990b1cf2de099123",
+    "results/mixed_resolvable_summary.json": "3fcd388a842a7888fd5fb48a7d28c558fc786c9b55fee153a55700f8e8fbda28",
+    "results/exhaustive128_control_summary.json": "0776a403fceb7615a4a5f833ad25e2d187c06a8a5d5afd138673f9506943a6df",
+    "results/log_loss_support_summary.json": "7bbf80b4e2448551494619519484fd8ab4afb6f259a986e320ce1a6f2a30e2b0",
+    "results/smoothed_log_packing_summary.json": "5e30f1ff33d9710a808331ee9227461597f3b63669e4ea5840ee237ca684a872",
+    "results/smoothed_log_taylor_summary.json": "1d73fb47227ec6753e16f3356c56ff9773ed8feee57ce28fb3a8b46a838ba40c",
+    "results/late_source_extension_summary.json": "e60d41ae6bacc7533678e02d5711102f9a79cbe1d66b4673ab4655e43f37198f",
+    "results/late_source_b_extension_summary.json": "03999fd2be8f187e987bd0c95fd5b7e65a9f2dce247b27bd04a98a370e9ba35d",
+    "results/combined_packing_source_summary.json": "b8fbec00277c5273b8a43769ac3958c245048ae1436b7da16807c7acc88fc21e",
+    "results/combined_packing_source_sensitivity_summary.json": "baac2f09d1e93222a0d243ef6b4a0d72cd8dd7f7e50fb43df90b3223ea48a0e1",
+    "results/late_source_metric_scope_summary.json": "534e00e9abff6f99e51842aeb06c8db1c402a678d632dcda78482f30c5fc38de",
+    "results/late_source_b_metric_scope_summary.json": "d7d016221c010a70bf7e268552a025bf47d3c6708709b69f6b855e98ba5af5e6",
+    "results/timed_refit_summary.json": "e77a6714708590088989245d725b0ee5be2b3382511f85267e87bb8a6e67ee45",
+    "results/late_strength_failure_summary.json": "1e8fff3d753aca9bf009016801f459ba192f355db047cad649d7cf885958000a",
+    "results/combined_late_metric_source_summary.json": "3e6d2bb60eb6cec2a3b55ed25640133de8cb1dd7ef2fe6c6fdc7932043270b1d",
+    "results/modern_model_strength2_summary.json": "942ba32fcead8f4286abc8f75f5247448a6b97bbb4ed4172e19d610cd403869b",
+    "results/modern_model_extension_summary.json": "40a79f1da2e91fcd158330fc4c6cf62e327d1145add0153f177fb226049f91b4",
+    "results/modern_model_metric_scope_summary.json": "591b1555fb100050097a365781eafcc8ddc682d951864ac34d8cbd7ed5e0be30",
+    "results/modern_model_extension_audit_summary.json": "e9c471d0bb14d1f5ca939d4af1b7dfb0c2484e813b983fa89135f0b06e482cee",
+    "results/expanded_model_source_summary.json": "570493aefa0094a3d34619165a2e676c0ca60e860cf37c13b4fca95e327e6376",
+    "results/repeated_split_modern_summary.json": "16b1a8cbe7a1f5c9577e21df5b48cf172e7a7c0b4620b9d3f77a61fd5a8e50e5",
+    "results/repeated_split_metric_scope_summary.json": "e1a2a5f8d9943e93ad649c496bf0413335c94ac2b9c83b9606f814121d9a9f4e",
+    "results/partition_nuisance_scale_summary.json": "58440e6b959449f91dbd5650a7ad6707c1e296f296d4d9e6fb1cdf7628bd3ad6",
+    "results/antithetic_operator_boundary_summary.json": "0120d594736b3a44650e517bb257c6b095afe989c4aacf9d6ef117c06a1f34fb",
+    "results/late_source_c_strength2_summary.json": "254a4bdc9779d2f29909f23ebe1302cd95ca60238e132862b7173face115df8a",
+    "results/late_source_c_extension_summary.json": "51e3169ba364b016a52cd1a8d29df2198fa70098027b181d6be3ce0068c33582",
+    "results/late_source_c_audit_summary.json": "1558aa847c7b9a09577b139caa8570ad2d49dee54a52e7e7cbfec78f6f667d15",
+    "results/late_source_c_metric_scope_summary.json": "7d217185e7d8856212d07a550002a9819d2286c591bf7544c6d60b0dc3bfd076",
+    "results/final_combined_source_summary.json": "eafa42c15f4f7c09b100c2ca715b66e04944dea5163315e0604b6bdf7a73ff38",
+    "results/source_c_operator_prediction_summary.json": "767a3f3cf1c74b25a371070d106a57db1a3647d414345f03f6167e99dc6d01b4",
+    "results/late_source_c_split_strength2_summary.json": "02d94c295b406a3372f7a1dbd6afa69d8a417e72db72a5a454a53ec0c547a34b",
+    "results/late_source_c_split_extension_summary.json": "4f41e8a9b35c26dd8c639ea3cc866501a17955122a36a54c729318f687b01c2e",
+    "results/late_source_c_split_audit_summary.json": "70d8c8310f89820952b85a8674e3d012248f2c400d592a01140e30ddab553cfd",
+    "results/source_c_two_split_summary.json": "036a199719fb9049b5a927f07acbadcac2a6a03132a4e5955ab43c3bb8b4bcb2",
+    "results/matched_function_summary.json": "366edee85f76d2370b7bc5d5a4a6a9d69c03d53c9eb64784a50006d032944175",
+    "FINAL_COMPLETION_PROTOCOL.md": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+    "completion_config.json": "1e8a099dafb2ac7de9e03f7363f3405a2edad3bf67374fc7d251c28da78c11e9",
+    "completion_environment.json": "4e15a1d0f88b75361d33331d87a851093c06505b6a1a3f4eee41277e034a5ff1",
+    "TABPFN_COMPLETION_NOTES.md": "897b489d64c8198f330f26ed265ea91e6359030849e9f9ae1128142e1ef01313",
+    "COMPLETION_PROTOCOL_DEVIATIONS.md": "77942e71886b4e89f7dfb3030d35bb54f526dd40c33e01ea23ab1ba645fab5c7",
+    "PROGRAM_COMPLETION_MATRIX.md": "336c2be42e5fecd57e782679e636ea4abfae61c76e01cb38ffb0ffad3ce6fe41",
+    "EXPERIMENT_LEDGER.md": "f13d91614c99f90b2d9789badb761e98efc41442b534e5eae88e72263047154a",
+    "results.md": "66319c91efa0f3a1645036e4efc5427e07557c2830a8225f5638d1d049c6089f",
+    "DAY5_FINAL_REPORT.md": "917d50baf0433ffb6a3da0da2dbe8886c9da604a2cad0e9510eff9cb51aef42d",
+    "README.md": "252acf0247ccfb8b1dee6961ac8087c7a318bebd2107b662670fc201bf831d1f",
+    "completion_neural_panel.py": "11620f0bd13b3aa522fa1e3885c05ebf7cac1d5b90a5ddbd9dcb0b67e94e561a",
+    "completion_classical_config.json": "534209058ef5b4a3b6f2fd2c845822f9fcc9a42be0453e003f53d72d2690d112",
+    "completion_classical_panel.py": "bf5a33aafb524e67296420f892362317dad9a471de15f6e82320b5bdef49811d",
+    "completion_tabpfn.py": "5123a88c9d61b44a9f2a1e433cda3ebd2559adb5e159f8cc2359431d8c6efbbf",
+    "completion_menu_size.py": "95bfed6f8e0c9f151ff1dbe7fc5dcf4bb225b92471726a1002fcd1c76ed9c3cf",
+    "completion_row_order.py": "e415b1928cbd223d4c6c610b06ed2111a530ea467243c92c8a997581b9630e97",
+    "analyze_completion_panel.py": "c9fa2aacee743c62a0554fe8206e4bc401d417c4827865e04780cbe17d847446",
+    "analyze_completion_tabpfn.py": "08ca2cffa5e587aaefa02715c6e99d3f900a80502abef9a3ed95c3ce1273a581",
+    "make_completion_outputs.py": "351ea4c5f69e9aedf8868ca6cc67586ff3736dc14c7262588c8bbcde0b17f8d1",
+    "results/completion_panel_summary.json": "e7630da5aba3cd70e1b8aa41fcaa5f2a53400fbec90161d97ce0f8b993d96ca6",
+    "results/completion_tabpfn_summary.json": "29cbdeeebc7f883a6b8fdec17b3ac9f8def5a00b43c7b630d70ff9825c1ae72f",
+    "results/completion_menu_size_summary.json": "d134f34e900720d0e3ddc86fddebeec0c1edfa094d88e052e918ab8e1b67a89a",
+    "results/completion_row_order_summary.json": "c4573572bf3564fece5046efb32cbb3b6edd051134f61c38c0bd067901ee9d28",
+    "results/completion_outputs_manifest.json": "1ce3170b8b3d64247d880939586acfacf570d1a63c54a584e3a771d28b6573e5"
+  }
+}

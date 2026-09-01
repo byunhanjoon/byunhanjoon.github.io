@@ -1,0 +1,21 @@
+{
+  "experiment": "representative_general_numeric_pilot",
+  "output_dir": "tabalu/results/general_pilot",
+  "datasets": [
+    "diabetes",
+    "breast_cancer",
+    "wine_binary"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "gate": {
+    "competitive_dataset_count_min": 2,
+    "competitive_error_ratio_max": 1.25,
+    "catastrophic_error_ratio_max": 2.0
+  }
+}

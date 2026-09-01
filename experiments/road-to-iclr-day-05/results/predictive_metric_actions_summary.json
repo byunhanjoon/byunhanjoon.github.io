@@ -1,0 +1,94 @@
+{
+  "status": "complete",
+  "draws_per_cell": 128,
+  "tasks": {
+    "binclass": {
+      "cells": 23,
+      "metrics": {
+        "brier": {
+          "mean_by_method": {
+            "strength2": 0.1587522692826549,
+            "iid16": 0.15872466027882173,
+            "four_strength1": 0.15884719117802654,
+            "four_seed_blocks": 0.1587145398068757
+          },
+          "strength2_better_cell_counts": {
+            "iid16": 19,
+            "four_strength1": 17,
+            "four_seed_blocks": 17
+          }
+        },
+        "logloss": {
+          "mean_by_method": {
+            "strength2": 0.26091956997972915,
+            "iid16": 0.26079313540149796,
+            "four_strength1": 0.26100603888430246,
+            "four_seed_blocks": 0.2607524796597409
+          },
+          "strength2_better_cell_counts": {
+            "iid16": 19,
+            "four_strength1": 18,
+            "four_seed_blocks": 19
+          }
+        },
+        "accuracy": {
+          "mean_by_method": {
+            "strength2": 0.8825403391574401,
+            "iid16": 0.8824580287221252,
+            "four_strength1": 0.8824252056137161,
+            "four_seed_blocks": 0.8824818934994691
+          },
+          "strength2_better_cell_counts": {
+            "iid16": 12,
+            "four_strength1": 12,
+            "four_seed_blocks": 11
+          }
+        },
+        "roc_auc": {
+          "mean_by_method": {
+            "strength2": 0.7632244029163678,
+            "iid16": 0.7632326677298952,
+            "four_strength1": 0.7631184903598719,
+            "four_seed_blocks": 0.7631171190737523
+          },
+          "strength2_better_cell_counts": {
+            "iid16": 20,
+            "four_strength1": 19,
+            "four_seed_blocks": 18
+          }
+        }
+      }
+    },
+    "regression": {
+      "cells": 2,
+      "metrics": {
+        "mse": {
+          "mean_by_method": {
+            "strength2": 0.5636659163347877,
+            "iid16": 0.5639196879017703,
+            "four_strength1": 0.5641107531922336,
+            "four_seed_blocks": 0.5640949227231393
+          },
+          "strength2_better_cell_counts": {
+            "iid16": 2,
+            "four_strength1": 2,
+            "four_seed_blocks": 2
+          }
+        },
+        "r2": {
+          "mean_by_method": {
+            "strength2": -0.023625690771940946,
+            "iid16": -0.024086543713413545,
+            "four_strength1": -0.024433521123728954,
+            "four_seed_blocks": -0.024404772756314766
+          },
+          "strength2_better_cell_counts": {
+            "iid16": 2,
+            "four_strength1": 2,
+            "four_seed_blocks": 2
+          }
+        }
+      }
+    }
+  }
+}

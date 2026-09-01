@@ -1,0 +1,29 @@
+{
+  "status": "frozen_before_mechanism_or_hpo_runs",
+  "frozen_date": "2026-09-01",
+  "source": {
+    "model": "controlled_mlp",
+    "completed_bundles": 33,
+    "metrics_manifest_sha256": "f4cce952f52e3136c67e35beb6d342dcbdaa51cef4837719a5bc02d9c0735de9",
+    "representation": "orthogonal_all",
+    "split": "development_test",
+    "aggregation": "mean disagreement over 8 orbit members, then mean over seeds 0/1/2"
+  },
+  "mechanism_selection_rule": {
+    "strong_regressions": "two largest controlled-MLP all-block effects among regression datasets",
+    "classification": "largest controlled-MLP all-block effect among classification datasets",
+    "moderate": "remaining dataset closest to the median controlled-MLP all-block effect"
+  },
+  "mechanism_datasets": [
+    {"dataset": "house_16H", "role": "strong_regression_1", "mean_disagreement": 0.195071},
+    {"dataset": "bike-sharing", "role": "strong_regression_2", "mean_disagreement": 0.152429},
+    {"dataset": "credit-g", "role": "classification", "mean_disagreement": 0.053212},
+    {"dataset": "phoneme", "role": "moderate_effect", "mean_disagreement": 0.047622}
+  ],
+  "equal_hpo_datasets": ["house_16H", "credit-g", "phoneme"],
+  "equal_hpo_rationale": "one strongest regression, the strongest classification, and the frozen moderate-effect dataset",
+  "mechanism_orbit_members": [0, 1, 2, 3],
+  "model_seeds": [0, 1, 2],
+  "equal_hpo_representation": "fixed orthogonal_all member 0",
+  "equal_hpo_trials_per_representation": 9
+}

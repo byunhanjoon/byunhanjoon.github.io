@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "files": {
+    "ridge_screen.csv": {
+      "rows": 2688,
+      "sha256": "ec69e30469de0bfae0ffcf674d78b80e01a67b57d3f841df82360b3dd2fae821"
+    },
+    "basis_controls.csv": {
+      "rows": 1152,
+      "sha256": "9b6e76fcc9ba172c96746013b5258b9260e20670211138fa71f3ab6de9ab6ab6"
+    },
+    "neural_confirmation.csv": {
+      "rows": 144,
+      "sha256": "e7da6ab5dca2b6f3c95033b0602fe53e546cb944109f2d84093e33b854de01c6"
+    },
+    "bike_confirmation.csv": {
+      "rows": 36,
+      "sha256": "b87072833cd03160e68dc9a434373e546d138f152c329a9ce27acc258210d92b"
+    },
+    "ridge_summary.json": {
+      "sha256": "1349a78b0173256a2fd4cee836400c4259791c0634569699079c29b9cd68fc71"
+    },
+    "basis_control_summary.json": {
+      "sha256": "656d434dc920838708a03876a132a2b7a9c783de597c433f50dad83147422d6e"
+    },
+    "neural_summary.json": {
+      "sha256": "15b7351d60d98b398946267dcb825db4b5d6140e53bd8ec268af5d8e0118c66f"
+    },
+    "bike_summary.json": {
+      "sha256": "180177f6228040a8994ae6d63ebf6a217f5b733f983324979d32508c5f8ffbd2"
+    }
+  },
+  "tests": "7 passed"
+}

@@ -1,0 +1,25 @@
+{
+  "task_id": "regime-scale-202613102-r1",
+  "seed": 202613102,
+  "programs": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 1,
+          "right": 2
+        },
+        {
+          "operator": "abs",
+          "left": 4,
+          "right": null
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+dataset,pair,reason
+ozone-level-8hr,one_hot_to_helmert,no categorical block with at least three levels
+ozone-level-8hr,fourier_origin_shift,no frozen cyclic metadata with an eight-coordinate block
+wall-robot-navigation,one_hot_to_helmert,no categorical block with at least three levels
+wall-robot-navigation,fourier_origin_shift,no frozen cyclic metadata with an eight-coordinate block
+quake,one_hot_to_helmert,no categorical block with at least three levels
+quake,fourier_origin_shift,no frozen cyclic metadata with an eight-coordinate block
+visualizing_soil,one_hot_to_helmert,no categorical block with at least three levels
+visualizing_soil,fourier_origin_shift,no frozen cyclic metadata with an eight-coordinate block
+CPMP-2015-regression,fourier_origin_shift,no frozen cyclic metadata with an eight-coordinate block

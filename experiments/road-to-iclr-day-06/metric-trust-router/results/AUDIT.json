@@ -1,0 +1,78 @@
+{
+  "checks": [
+    {
+      "detail": "626c536c8dd637b6bbaafeb420ec382023faf2a999a318c0acbb30cade0aa4d8",
+      "name": "protocol hash",
+      "passed": true
+    },
+    {
+      "detail": "45/45",
+      "name": "router completeness",
+      "passed": true
+    },
+    {
+      "detail": "45 unique",
+      "name": "unique router cells",
+      "passed": true
+    },
+    {
+      "detail": "protocol/status/test seal",
+      "name": "artifact seals",
+      "passed": true
+    },
+    {
+      "detail": "45 cells",
+      "name": "declared task menu",
+      "passed": true
+    },
+    {
+      "detail": "all stored folds reproduce",
+      "name": "five-fold state partition",
+      "passed": true
+    },
+    {
+      "detail": "all landmark sets checked",
+      "name": "fold-train-only landmarks",
+      "passed": true
+    },
+    {
+      "detail": "45 x 5 folds",
+      "name": "fixed representations and alpha grid",
+      "passed": true
+    },
+    {
+      "detail": "all 45 decisions recomputed",
+      "name": "zero-threshold decisions",
+      "passed": true
+    },
+    {
+      "detail": "none",
+      "name": "no partial writes",
+      "passed": true
+    },
+    {
+      "detail": "runner cannot load outer result folders",
+      "name": "router/outer-join code isolation",
+      "passed": true
+    },
+    {
+      "detail": "status=complete cells=45/45",
+      "name": "analysis regeneration",
+      "passed": true
+    },
+    {
+      "detail": "{'broad_ridge_source_balanced_no_worse': True, 'neural_source_balanced_improvement_at_least_5_percent': True, 'no_broad_ridge_source_degradation_above_2_percent': True, 'no_neural_source_degradation_above_1_percent': True, 'rejects_raw_in_both_medical_neural_partitions': True}",
+      "name": "frozen feasibility gate",
+      "passed": true
+    },
+    {
+      "detail": "2 passed in 1.49s",
+      "name": "unit tests",
+      "passed": true
+    }
+  ],
+  "passed": 14,
+  "protocol_sha256": "626c536c8dd637b6bbaafeb420ec382023faf2a999a318c0acbb30cade0aa4d8",
+  "status": "PASS",
+  "total": 14
+}

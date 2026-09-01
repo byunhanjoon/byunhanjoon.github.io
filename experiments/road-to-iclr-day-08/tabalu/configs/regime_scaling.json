@@ -1,0 +1,22 @@
+{
+  "experiment": "regime_count_scaling",
+  "output_dir": "tabalu/results/regime_scaling",
+  "regime_counts": [1, 2, 4, 8],
+  "tasks_per_count": 4,
+  "task_seed_start": 202613000,
+  "seeds": [0, 1, 2, 3, 4],
+  "train_rows": 512,
+  "validation_rows": 256,
+  "test_rows": 1024,
+  "target_noise_relative_std": 0.02,
+  "ood_multiplier": 4.0,
+  "neural_epochs": 500,
+  "device": "cuda:0",
+  "gate": {
+    "hard_router_r8_ood_nrmse_max": 0.1,
+    "hard_vs_neural_r8_ratio_max": 0.5,
+    "hard_vs_single_r8_ratio_max": 0.5,
+    "hard_r8_operator_accuracy_min": 0.7,
+    "hard_r8_functional_recovery_min": 0.7
+  }
+}

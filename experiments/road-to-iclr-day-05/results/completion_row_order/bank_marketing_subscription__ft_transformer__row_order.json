@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "dataset": "bank_marketing_subscription",
+  "task": "classification",
+  "model": "ft_transformer",
+  "row_orders": 4,
+  "represented_fits": 4,
+  "initialization_seed_held_fixed": 101,
+  "minibatch_order_seed_held_fixed": 3101,
+  "mean_squared_prediction_movement_by_order": [
+    0.0,
+    0.055089931935071945,
+    0.03987196832895279,
+    0.052864719182252884
+  ],
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "device": "cuda:0",
+  "wall_seconds": 3.7572536778170615,
+  "maximum_peak_device_bytes": 91528192,
+  "telemetry": [
+    {
+      "row_order": 0,
+      "wall_seconds": 1.0637892850209028,
+      "peak_device_bytes": 91528192
+    },
+    {
+      "row_order": 1,
+      "wall_seconds": 0.878346960991621,
+      "peak_device_bytes": 91528192
+    },
+    {
+      "row_order": 2,
+      "wall_seconds": 0.903432996943593,
+      "peak_device_bytes": 91528192
+    },
+    {
+      "row_order": 3,
+      "wall_seconds": 0.9116844348609447,
+      "peak_device_bytes": 91528192
+    }
+  ]
+}

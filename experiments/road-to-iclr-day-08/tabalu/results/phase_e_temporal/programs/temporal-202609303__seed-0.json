@@ -1,0 +1,132 @@
+{
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 2,
+        "right": 3
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 3
+      },
+      {
+        "operator": "multiply",
+        "left": 3,
+        "right": 5
+      }
+    ],
+    "output": 6,
+    "output_scale": 0.7411578842553975,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "global": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "subtract",
+        "left": 3,
+        "right": 2
+      },
+      {
+        "operator": "add",
+        "left": 2,
+        "right": 4
+      },
+      {
+        "operator": "multiply",
+        "left": 2,
+        "right": 5
+      }
+    ],
+    "output": 6,
+    "output_scale": 0.7171091335282965,
+    "output_bias": 0.22101475509278593,
+    "epsilon": 0.25
+  },
+  "independent": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 2,
+          "right": 2
+        },
+        {
+          "operator": "add",
+          "left": 2,
+          "right": 4
+        },
+        {
+          "operator": "multiply",
+          "left": 3,
+          "right": 5
+        }
+      ],
+      "output": 6,
+      "output_scale": 0.22439714340392478,
+      "output_bias": 0.2642845692564439,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 1,
+          "right": 2
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 1
+        },
+        {
+          "operator": "multiply",
+          "left": 3,
+          "right": 5
+        }
+      ],
+      "output": 6,
+      "output_scale": 1.1294598735686983,
+      "output_bias": -0.13837161273196194,
+      "epsilon": 0.25
+    }
+  ],
+  "shared": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "subtract",
+        "left": 2,
+        "right": 3
+      },
+      {
+        "operator": "add",
+        "left": 3,
+        "right": 4
+      },
+      {
+        "operator": "multiply",
+        "left": 3,
+        "right": 5
+      }
+    ],
+    "output": 6,
+    "output_scale": 0.730782630122119,
+    "output_bias": -0.0013396417161559092,
+    "epsilon": 0.25
+  },
+  "shared_scales": [
+    0.9211924400367858,
+    1.5455482916080896
+  ],
+  "shared_biases": [
+    0.26551864149388876,
+    -0.13630110569839035
+  ]
+}

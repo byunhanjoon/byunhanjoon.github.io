@@ -1,0 +1,14 @@
+{
+  "status": "RUN",
+  "source": "divvy_trip_duration",
+  "rows": 195945,
+  "states": 80,
+  "ordinary_covariates": [
+    "hour",
+    "day_of_week",
+    "member_type",
+    "ride_type",
+    "end_station"
+  ],
+  "family": "CHICAGO_DIVVY"
+}

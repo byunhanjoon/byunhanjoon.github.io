@@ -1,0 +1,18 @@
+{
+  "categorical_fields": [],
+  "numeric_fields": [
+    "V1",
+    "V2",
+    "V3",
+    "V4"
+  ],
+  "openml_data_id": 1464,
+  "openml_name": "blood-transfusion-service-center",
+  "rows": 748,
+  "split_sizes": {
+    "test": 150,
+    "train": 448,
+    "val": 150
+  },
+  "task": "classification"
+}

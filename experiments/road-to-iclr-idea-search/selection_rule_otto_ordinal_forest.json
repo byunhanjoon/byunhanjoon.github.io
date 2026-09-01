@@ -1,0 +1,167 @@
+{
+  "status": "exploratory_estimand_falsification_pilot",
+  "dataset": "otto",
+  "family": "ordinal_forest",
+  "fit_size": 2250,
+  "validation_size": 750,
+  "test_size": 1000,
+  "factor_shape": [
+    4,
+    1,
+    4
+  ],
+  "candidate_specs": [
+    {
+      "min_samples_leaf": 1,
+      "max_features": "sqrt"
+    },
+    {
+      "min_samples_leaf": 3,
+      "max_features": "sqrt"
+    },
+    {
+      "min_samples_leaf": 10,
+      "max_features": "sqrt"
+    },
+    {
+      "min_samples_leaf": 3,
+      "max_features": 1.0
+    }
+  ],
+  "selection_protocol": {
+    "split_before_rendering": true,
+    "validation_labels_used": true,
+    "test_labels_used_for_selection": false,
+    "same_candidates_and_random_seed_in_every_representation": true,
+    "canonical_identity_selected_config": 3
+  },
+  "selected_config_grid": [
+    [
+      [
+        3,
+        3,
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        3,
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        3,
+        3,
+        3
+      ]
+    ],
+    [
+      [
+        3,
+        3,
+        3,
+        3
+      ]
+    ]
+  ],
+  "selection_counts": {
+    "3": 16
+  },
+  "selection_entropy_bits": -0.0,
+  "fraction_different_from_identity_config": 0.0,
+  "mean_validation_brier_by_config": [
+    0.39347810185185184,
+    0.4124961815181453,
+    0.45346660760255275,
+    0.3848001933606048
+  ],
+  "frozen_identity_selection_orbit": {
+    "reference_brier": 0.37456535998833423,
+    "mean_member_brier": 0.37444400381861703,
+    "best_member_brier": 0.37415741696166743,
+    "worst_member_brier": 0.37474179242315153,
+    "member_brier_std": 0.0002253380798571173,
+    "orbit_mean_brier": 0.3743130110877492,
+    "brier_reduction_by_averaging": 0.00013099273086780716,
+    "risk_identity_absolute_error": 4.2392304944183223e-17,
+    "instance_audit": {
+      "hard_label_flip_fraction": 0.018,
+      "mean_nonmodal_vote_fraction": 0.0065,
+      "row_schema_risk_median": 0.00010918937467674456,
+      "row_schema_risk_p95": 0.00034311821537707176,
+      "row_schema_risk_max": 0.0010330675309604281,
+      "max_class_probability_range_mean": 0.017136355218855228,
+      "max_class_probability_range_p95": 0.033487103174603176,
+      "max_class_probability_range_max": 0.06322089947089948
+    },
+    "anova": {
+      "total": 0.00013099273086784955,
+      "feature": 0.00013099273086784958,
+      "category": 0.0,
+      "class": 1.7938264798241005e-32,
+      "feature:category": 0.0,
+      "feature:class": 1.8232492115706626e-32,
+      "category:class": 0.0,
+      "feature:category:class": 0.0,
+      "component_sum_error": 2.710505431213761e-20,
+      "prediction_reconstruction_max_error": 1.1102230246251565e-16
+    }
+  },
+  "representation_wise_selection_orbit": {
+    "reference_brier": 0.37456535998833423,
+    "mean_member_brier": 0.37444400381861703,
+    "best_member_brier": 0.37415741696166743,
+    "worst_member_brier": 0.37474179242315153,
+    "member_brier_std": 0.00022533807985711542,
+    "orbit_mean_brier": 0.3743130110877492,
+    "brier_reduction_by_averaging": 0.00013099273086780716,
+    "risk_identity_absolute_error": 4.241940999849536e-17,
+    "instance_audit": {
+      "hard_label_flip_fraction": 0.018,
+      "mean_nonmodal_vote_fraction": 0.0065,
+      "row_schema_risk_median": 0.0001091893746767445,
+      "row_schema_risk_p95": 0.0003431182153770717,
+      "row_schema_risk_max": 0.001033067530960428,
+      "max_class_probability_range_mean": 0.017136355218855228,
+      "max_class_probability_range_p95": 0.033487103174603176,
+      "max_class_probability_range_max": 0.06322089947089946
+    },
+    "anova": {
+      "total": 0.00013099273086784958,
+      "feature": 0.00013099273086784958,
+      "category": 0.0,
+      "class": 1.7626428528380293e-32,
+      "feature:category": 0.0,
+      "feature:class": 1.8028207607434852e-32,
+      "category:class": 0.0,
+      "feature:category:class": 0.0,
+      "component_sum_error": 0.0,
+      "prediction_reconstruction_max_error": 1.1102230246251565e-16
+    }
+  },
+  "selection_to_frozen_schema_risk_ratio": 1.0000000000000002,
+  "selection_minus_frozen_schema_risk": 2.710505431213761e-20,
+  "selection_minus_frozen_orbit_mean_brier": 0.0,
+  "paired_row_bootstrap": {
+    "resampling_unit": "test_query_row",
+    "conditional_on_fitted_models": true,
+    "draws": 5000,
+    "schema_risk_difference_ci95": [
+      0.0,
+      5.421010862427522e-20
+    ],
+    "schema_risk_ratio_ci95": [
+      1.0,
+      1.0000000000000004
+    ],
+    "orbit_mean_brier_difference_ci95": [
+      -6.5164333627279485e-19,
+      2.7978312775867436e-18
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "context_replicates": 4,
+  "context_size": 16,
+  "datasets": [
+    {"name": "fremtpl_claim_count", "source": "local"},
+    {"name": "kdd17_stock_return", "source": "local"},
+    {"name": "abalone", "openml_id": 183, "source": "openml"},
+    {"name": "kin8nm", "openml_id": 189, "source": "openml"},
+    {"name": "pol", "openml_id": 201, "source": "openml"},
+    {"name": "puma32h", "openml_id": 308, "source": "openml"},
+    {"name": "cpu_act", "openml_id": 573, "source": "openml"},
+    {"name": "elevators", "openml_id": 216, "source": "openml"},
+    {"name": "bike_sharing", "openml_id": 42712, "source": "openml"},
+    {"name": "sulfur", "openml_id": 23515, "source": "openml"},
+    {"name": "superconduct", "openml_id": 43174, "source": "openml"},
+    {"name": "wine_quality", "openml_id": 287, "source": "openml"}
+  ],
+  "evaluation_groups": 32,
+  "models": [
+    "neural_projective",
+    "neural_direct",
+    "bayes_linear",
+    "gp_rbf",
+    "tabpfn_independent",
+    "tabpfn_projective",
+    "tabicl_independent"
+  ],
+  "query_families": ["point", "subset", "difference", "dense", "scaled_dense"],
+  "query_size": 12,
+  "rho_grid": [0.0, 0.25, 0.5, 0.75, 1.0],
+  "split_seeds": [20260921, 20260922, 20260923],
+  "split_sizes": {"test": 512, "train": 2048, "validation": 512},
+  "tabicl_estimators": 8,
+  "tabpfn_estimators": 8
+}

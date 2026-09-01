@@ -1,0 +1,142 @@
+{
+  "status": "FROZEN_BEFORE_GUARDED_PROSPECTIVE_DATA_ACCESS",
+  "frozen_at_utc": "2026-09-01T11:16:38Z",
+  "protocol_sha256": "92fbb3c79fb9be7e5fe3dfb964791d39645871f4b2496089ed61995844c45f77",
+  "prospective_panel_sha256": "4d4487c93fa689674083768014a2a64bcbd81e0019331eee4f2c032327c1c522",
+  "prior_blacklist_sha256": "00a7afd9b56d6c2b22423eecb9903b8dc7de66d2b2af135e8d380f2264c6abb1",
+  "prospective_outcomes_accessed": false,
+  "finalist_count": 4,
+  "selection_scope": "development outcomes only: eight general datasets plus frozen embedding development confirmation",
+  "automatic_final_paper_winner": false,
+  "general_models": [
+    "controlled_mlp",
+    "tabm_d",
+    "catboost",
+    "tabicl_v2",
+    "tabpfn_2_6"
+  ],
+  "embedding_models": [
+    "controlled_mlp",
+    "tabm_d",
+    "resnet_tabular"
+  ],
+  "development_evidence_sha256": {
+    "blockguard_full_summary.csv": "efcbdd4d6690b8164f1abacc51d13f32746c5a5b4fffd22f80c1602eb84f8c2c",
+    "dualview_stage1_summary.csv": "b2b9c78397a86a19b082fa78906d340fead0112633947395062421afe8caacf2",
+    "embedding_blockguard_summary.csv": "372d33b33112795474daba2b48b2152d8cbe16774132fb3b2c482be455f1d212",
+    "embedding_full_method_units.csv": "570e7fc88aa0e5e6753ad74a866ae3c798864cd40c90e5a19a4e4cf308fc6591",
+    "guardedgram_full_summary.csv": "a19318acb3f5e70438157b85121e61adf031bc3fd4c97e53f2a38de0ca64c5db",
+    "natural_basis_reuse_manifest.json": "b1194d77a059ef6e1e4420fcda9f4ef4f3daab9979b0a815f403931e6da30116"
+  },
+  "shared_training_settings": {
+    "optimizer": {
+      "controlled_mlp": "AdamW, weight_decay=0.0001, batch_size=256, maximum_epochs=100, patience=15",
+      "tabm_d": "pytabkit TabM-D frozen defaults, n_cv=1, n_refit=0, n_epochs=30, patience=5",
+      "catboost": "CatBoost native optimizer, iterations=200, depth=7, early stopping=30",
+      "tabicl_v2": "frozen prior implementation, n_estimators=1",
+      "tabpfn_2_6": "frozen prior implementation, n_estimators=1",
+      "resnet_tabular": "AdamW, weight_decay=0.0001, batch_size=256, maximum_epochs=100, patience=15"
+    },
+    "learning_rate": {
+      "controlled_mlp": 0.001,
+      "tabm_d": "frozen pytabkit default",
+      "catboost": 0.05,
+      "tabicl_v2": "not applicable to frozen estimator",
+      "tabpfn_2_6": "not applicable to frozen estimator",
+      "resnet_tabular": 0.001
+    },
+    "architecture": {
+      "controlled_mlp": "3 hidden layers x 256, GELU",
+      "tabm_d": "TabM-D",
+      "catboost": "depth 7, 200 iterations",
+      "tabicl_v2": "TabICLv2 frozen prior implementation, one estimator",
+      "tabpfn_2_6": "TabPFN 2.6 frozen prior implementation, one estimator",
+      "resnet_tabular": "3 x 256 residual blocks, LayerNorm, ReLU, dropout=0.1"
+    }
+  },
+  "required_nonfinalist_references": [
+    "Raw",
+    "Raw+Gram@0.5",
+    "PureGram",
+    "SafeGram-t01",
+    "SafeRankGram-t01"
+  ],
+  "finalists": [
+    {
+      "method": "Raw+Gram@0.75",
+      "family": "fixed_mixture_baseline",
+      "scope": "general",
+      "threshold": "none",
+      "confidence_level": "none",
+      "candidate_alphas": [
+        0.75
+      ],
+      "feature_grouping_rule": "none",
+      "embedding_setting": "general RBF feature blocks, k=8, frozen split and scaling",
+      "rank_anchor_setting": "GramAnchor anchors=16, selection=gram_pivot, normalize=true, coordinate_standardization=true",
+      "optimizer": "shared_training_settings.optimizer by model",
+      "learning_rate": "shared_training_settings.learning_rate by model",
+      "architecture": "shared_training_settings.architecture across five general model families",
+      "inference_rule": "fit Raw and Gram branches; average predictions with Gram weight 0.75",
+      "selection_rationale": "frozen positive-control baseline required by protocol"
+    },
+    {
+      "method": "GuardedGram-G2-g0p0-t01",
+      "family": "GuardedGram-G2",
+      "scope": "general",
+      "threshold": 0.01,
+      "confidence_level": "gamma=0.0 bootstrap-SE margin; 1000 paired row-bootstrap resamples",
+      "candidate_alphas": [
+        0.75,
+        0.5,
+        0.25,
+        0.0
+      ],
+      "feature_grouping_rule": "none; one global prediction-mixture alpha",
+      "embedding_setting": "general RBF feature blocks, k=8, frozen split and scaling",
+      "rank_anchor_setting": "GramAnchor anchors=16, selection=gram_pivot, normalize=true, coordinate_standardization=true",
+      "optimizer": "shared_training_settings.optimizer by model",
+      "learning_rate": "shared_training_settings.learning_rate by model",
+      "architecture": "shared_training_settings.architecture across five general model families",
+      "selection_rule": "largest descending alpha with validation C_hat <= 0.01",
+      "selection_rationale": "best full-development general adaptive candidate: control=0.75, median_C=-0.000107, p95_C=0.010655, max_C=0.028001"
+    },
+    {
+      "method": "BlockGuard-Greedy-t01",
+      "family": "BlockGuard-Greedy",
+      "scope": "general",
+      "threshold": 0.01,
+      "confidence_level": "none; exact validation normalized excess risk",
+      "candidate_alphas": [],
+      "feature_grouping_rule": "exact one-block interventions; stable descending benefit/max(cost+1e-8,1e-8); adjacent ordered blocks split into at most eight cumulative batches; stop before first cumulative validation C>0.01",
+      "embedding_setting": "general RBF feature blocks, k=8; selected blocks replaced by GramAnchor-16 coordinates",
+      "rank_anchor_setting": "per selected feature: anchors=16, selection=gram_pivot, normalize=true, coordinate_standardization=true",
+      "optimizer": "shared_training_settings.optimizer by model",
+      "learning_rate": "shared_training_settings.learning_rate by model",
+      "architecture": "shared_training_settings.architecture across five general model families; one selected representation and one model at inference",
+      "selection_rule": "validation-only Greedy tau=0.01 with maximum eight cumulative retraining stages",
+      "selection_rationale": "only Stage-1-surviving single-representation method; full development control=0.532966, median_C=0.000345, p95_C=0.033168, max_C=0.070161"
+    },
+    {
+      "method": "GuardedGram-G2-after-RBF-k16",
+      "family": "GuardedGram-G2-embedding",
+      "scope": "RBF-k16 embedding",
+      "threshold": 0.01,
+      "confidence_level": "gamma=0.0 bootstrap-SE margin; 1000 paired row-bootstrap resamples",
+      "candidate_alphas": [
+        0.75,
+        0.5,
+        0.25,
+        0.0
+      ],
+      "feature_grouping_rule": "none; one global prediction-mixture alpha after numerical embedding",
+      "embedding_setting": "RBF numerical embedding, k=16, Gram interface between numerical embedding and backbone",
+      "rank_anchor_setting": "Gram-after-embedding anchors=16, selection=gram_pivot, normalize=true, coordinate_standardization=true",
+      "optimizer": "shared_training_settings.optimizer for controlled_mlp, tabm_d, and resnet_tabular",
+      "learning_rate": "shared_training_settings.learning_rate for controlled_mlp, tabm_d, and resnet_tabular",
+      "architecture": "controlled MLP, TabM-D, and ResNet-style tabular backbone",
+      "selection_rule": "largest descending alpha with validation C_hat <= 0.01",
+      "selection_rationale": "strong embedding-specific development candidate: control=0.75, median_C=-0.037247, p95_C=-0.005456, max_C=0.001678 across three backbones"
+    }
+  ]
+}

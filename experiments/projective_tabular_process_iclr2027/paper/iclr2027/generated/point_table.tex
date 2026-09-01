@@ -1,0 +1,13 @@
+\begin{tabular}{lrrrr}
+\toprule Method & nRMSE & NLL & CRPS & Cov.90 \\
+\midrule
+TabICLv2 & 0.7200 & 24.680 & 0.3441 & 0.918 \\
+TabPFN-3 & \textbf{0.6883} & 3.29e+05 & 0.3476 & 0.903 \\
+TabPFN-2.5 & 0.7045 & 3.29e+05 & 0.3693 & 0.876 \\
+TabDPT-Turbo 1.2 & 0.7133 & -- & -- & -- \\
+GP Mat\'ern-$3/2$ & 0.7472 & 8.544 & 0.3615 & 0.884 \\
+GP RBF & 0.7579 & 10.169 & 0.3676 & 0.877 \\
+Bootstrap CatBoost & 0.7569 & 4.158 & 0.3787 & 0.923 \\
+Bayesian linear & 0.7723 & 1971.078 & 0.3894 & 0.872 \\
+\bottomrule
+\end{tabular}

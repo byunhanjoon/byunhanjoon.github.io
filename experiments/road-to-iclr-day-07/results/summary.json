@@ -1,0 +1,59 @@
+{
+  "gates": {
+    "improves_over_full": false,
+    "no_more_harm_than_binary": false,
+    "nontrivial_median_trust": true,
+    "positive_source_balanced_gain": true
+  },
+  "recommend_confirmation": false,
+  "rules": {
+    "binary": {
+      "cells": 45,
+      "harmful_cells": 4,
+      "mean_outer_gain": 0.05215147690543856,
+      "median_lambda": 1.0,
+      "positive_sources": 5,
+      "source_balanced_outer_gain": 0.048232549535163184,
+      "sources": 5
+    },
+    "full": {
+      "cells": 45,
+      "harmful_cells": 4,
+      "mean_outer_gain": 0.05215147690543856,
+      "median_lambda": 1.0,
+      "positive_sources": 5,
+      "source_balanced_outer_gain": 0.048232549535163184,
+      "sources": 5
+    },
+    "oracle_full": {
+      "cells": 45,
+      "harmful_cells": 0,
+      "mean_outer_gain": 0.06297848950842633,
+      "median_lambda": 1.0,
+      "positive_sources": 5,
+      "source_balanced_outer_gain": 0.05798605482296852,
+      "sources": 5
+    },
+    "oracle_shrink": {
+      "cells": 45,
+      "harmful_cells": 0,
+      "mean_outer_gain": 0.06350248586766424,
+      "median_lambda": 1.0,
+      "positive_sources": 5,
+      "source_balanced_outer_gain": 0.058462988869416546,
+      "sources": 5
+    },
+    "shrink": {
+      "cells": 45,
+      "harmful_cells": 5,
+      "mean_gain_over_binary": -0.007082860303046718,
+      "mean_gain_over_full": -0.007082860303046718,
+      "mean_outer_gain": 0.04506861660239185,
+      "median_lambda": 0.9,
+      "positive_sources": 5,
+      "source_balanced_outer_gain": 0.041844749716562685,
+      "sources": 5
+    }
+  },
+  "status": "complete"
+}

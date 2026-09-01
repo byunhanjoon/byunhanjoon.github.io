@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "evidence_status": "post_outcome_combination_including_prospective_source_c",
+  "unique_sources": 15,
+  "bootstrap_resamples": 100000,
+  "comparisons": {
+    "pair32": {
+      "sources": 15,
+      "positive_sources": 15,
+      "equal_source_mean_percent_reduction": 7.712899897229784,
+      "bootstrap_95_interval": [
+        6.8554465923926085,
+        8.502878127928746
+      ],
+      "exact_two_sided_sign_p": 6.103515625e-05,
+      "all_sources_positive_and_interval_above_zero": true
+    },
+    "pack64": {
+      "sources": 15,
+      "positive_sources": 15,
+      "equal_source_mean_percent_reduction": 19.386258238961464,
+      "bootstrap_95_interval": [
+        18.433204097322953,
+        20.430388648263357
+      ],
+      "exact_two_sided_sign_p": 6.103515625e-05,
+      "all_sources_positive_and_interval_above_zero": true
+    },
+    "unbiased_pair_cross64": {
+      "sources": 15,
+      "positive_sources": 15,
+      "equal_source_mean_percent_reduction": 7.339628305943504,
+      "bootstrap_95_interval": [
+        6.249475040232198,
+        8.372242844858821
+      ],
+      "exact_two_sided_sign_p": 6.103515625e-05,
+      "all_sources_positive_and_interval_above_zero": true
+    }
+  },
+  "all_sources_positive": true
+}

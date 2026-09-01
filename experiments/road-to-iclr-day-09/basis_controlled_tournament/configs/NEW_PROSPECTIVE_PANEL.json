@@ -1,0 +1,100 @@
+{
+  "status": "LOCKED_BEFORE_DEVELOPMENT_OUTCOME_ACCESS",
+  "locked_at_utc": "2026-09-01T05:25:32Z",
+  "selection_rule": "Choose active OpenML datasets with 1000-30000 rows, at most 100 raw predictor columns, no text or image inputs, and zero exact-name hits in prior experiment artifacts outside the tournament specification. Prefer the specification's candidate pool when it remains unused; otherwise use metadata-only replacements.",
+  "selection_evidence": {
+    "outcomes_accessed_before_lock": false,
+    "metadata_source": "OpenML dataset metadata via the official API and sklearn fetch_openml",
+    "repository_search_scope": "experiments/** excluding AGENT specification files",
+    "repository_search_date": "2026-09-01",
+    "preferred_pool_exclusions": {
+      "abalone": "used in prior day-04/day-05/day-08/day-09 experiments",
+      "kin8nm": "used in prior day-04/day-05/day-07/day-09 experiments",
+      "spambase": "used in prior day-04/day-05/day-09 experiments",
+      "vehicle": "used in a prior day-05 experiment",
+      "mfeat-factors": "216 raw predictors exceeds the <=100-column requirement",
+      "superconductivity": "used in prior day-08/day-09 experiments",
+      "cpu_act": "used in a prior day-08 experiment"
+    }
+  },
+  "datasets": [
+    {
+      "key": "satimage",
+      "openml_id": 182,
+      "openml_version": 1,
+      "problem_type": "classification",
+      "panel": "new_prospective",
+      "rows": 6430,
+      "raw_columns": 36,
+      "target": "class",
+      "classes": 6
+    },
+    {
+      "key": "eeg-eye-state",
+      "openml_id": 1471,
+      "openml_version": 1,
+      "problem_type": "classification",
+      "panel": "new_prospective",
+      "rows": 14980,
+      "raw_columns": 14,
+      "target": "Class",
+      "classes": 2
+    },
+    {
+      "key": "steel-plates-fault",
+      "openml_id": 1504,
+      "openml_version": 1,
+      "problem_type": "classification",
+      "panel": "new_prospective",
+      "rows": 1941,
+      "raw_columns": 33,
+      "target": "Class",
+      "classes": 2
+    },
+    {
+      "key": "gesture-phase",
+      "openml_name": "GesturePhaseSegmentationProcessed",
+      "openml_id": 4538,
+      "openml_version": 1,
+      "problem_type": "classification",
+      "panel": "new_prospective",
+      "rows": 9873,
+      "raw_columns": 32,
+      "target": "Phase",
+      "classes": 5
+    },
+    {
+      "key": "wilt",
+      "openml_id": 40983,
+      "openml_version": 2,
+      "problem_type": "classification",
+      "panel": "new_prospective",
+      "rows": 4839,
+      "raw_columns": 5,
+      "target": "class",
+      "classes": 2
+    },
+    {
+      "key": "space-ga",
+      "openml_name": "space_ga",
+      "openml_id": 507,
+      "openml_version": 1,
+      "problem_type": "regression",
+      "panel": "new_prospective",
+      "rows": 3107,
+      "raw_columns": 6,
+      "target": "ln(VOTES/POP)"
+    },
+    {
+      "key": "pollen",
+      "openml_id": 529,
+      "openml_version": 1,
+      "problem_type": "regression",
+      "panel": "new_prospective",
+      "rows": 3848,
+      "raw_columns": 4,
+      "target": "DENSITY"
+    }
+  ],
+  "immutability": "No dataset may be added, removed, or replaced after development results are used to select finalists. Prospective labels may be loaded only by the locked prospective runner after FINALIST_CONFIGS.json exists and its SHA256 is recorded."
+}

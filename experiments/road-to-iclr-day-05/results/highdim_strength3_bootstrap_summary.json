@@ -1,0 +1,50 @@
+{
+  "status": "complete",
+  "bootstrap_draws": 50000,
+  "cells": 9,
+  "inference_scope": "conditional_on_fixed_model_dataset_panel_and_four_observed_repetitions",
+  "comparisons": {
+    "four_strength2_oa32": {
+      "pooled_risk_ratio_q025_median_q975": [
+        0.19081669220427383,
+        0.48087468067808764,
+        1.0091431911544515
+      ],
+      "bootstrap_probability_strength3_lower_pooled_risk": 0.97342,
+      "pooled_brier_difference_q025_median_q975": [
+        -0.00028216063757027093,
+        -5.5569149185141775e-05,
+        0.00017182945173924863
+      ],
+      "bootstrap_probability_strength3_lower_pooled_brier": 0.68314
+    },
+    "four_marginal32": {
+      "pooled_risk_ratio_q025_median_q975": [
+        0.34180307346344274,
+        0.8327747660226346,
+        1.6786409408410368
+      ],
+      "bootstrap_probability_strength3_lower_pooled_risk": 0.59782,
+      "pooled_brier_difference_q025_median_q975": [
+        -4.5030289945434396e-05,
+        8.943446220580076e-05,
+        0.00022690727741681298
+      ],
+      "bootstrap_probability_strength3_lower_pooled_brier": 0.09868
+    },
+    "iid128": {
+      "pooled_risk_ratio_q025_median_q975": [
+        0.22823401827785955,
+        0.5660398523807739,
+        1.1707067856762605
+      ],
+      "bootstrap_probability_strength3_lower_pooled_risk": 0.92206,
+      "pooled_brier_difference_q025_median_q975": [
+        -0.00022047114627659763,
+        -5.573270612066472e-05,
+        0.0001133718689673505
+      ],
+      "bootstrap_probability_strength3_lower_pooled_brier": 0.74088
+    }
+  }
+}

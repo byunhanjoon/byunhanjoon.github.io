@@ -1,0 +1,56 @@
+{
+  "bounded_followup": "T6 only on three strongest datasets",
+  "config": "configs/semantic_orbits_tabm_basis.yaml",
+  "config_sha256": "b1085da4254628514499503c380f101a0339c243f166e208a3079a03e1a27238",
+  "dataset_spec": {
+    "coerce_target_numeric": true,
+    "name": "wine-quality-red",
+    "openml_id": 40691,
+    "openml_version": 1,
+    "problem_type": "regression"
+  },
+  "device": "cuda:0",
+  "environment": {
+    "cuda_visible_devices": "1",
+    "gpu": "NVIDIA H100 NVL",
+    "packages": {
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "pytabkit": "1.7.3",
+      "scikit-learn": "1.4.2",
+      "torch": "2.7.0"
+    },
+    "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+    "python": "3.10.16",
+    "torch_cuda": "12.6"
+  },
+  "experiment": "semantic_orbits_tabm_basis_followup",
+  "files": {
+    "metrics.csv": {
+      "bytes": 42845,
+      "sha256": "7a0639c1e86bd0589d16b02248373bd2ac612a770e65386783ea8129adf0512d"
+    },
+    "predictions.csv.gz": {
+      "bytes": 104468,
+      "sha256": "60eab66863daa89f4c5b532b1c85c64b58451335c32e32df63bb525a3a2a53db"
+    }
+  },
+  "git": {
+    "commit": "0c456660ae9a87aab7932b569e1954b0ee1d25fe",
+    "day09_status": "?? experiments/road-to-iclr-day-09/"
+  },
+  "model": "tabm_d",
+  "model_seed": 2,
+  "parent_grid_unchanged": true,
+  "protocol_version": 1,
+  "representation_count": 25,
+  "split_audit": {
+    "target_sha256": "9eaf7abc1cbb52dfb12e108e5f96648fafc016832b0c5fc88a2ac2642bb4d039",
+    "test_row_order_sha256": "6fc7a71b741cf66ed621e3761cf06302ac8b74bf22f8e82c7e2aa9ec3ac13b2f",
+    "train_test_disjoint": true,
+    "train_validation_disjoint": true,
+    "validation_test_disjoint": true
+  },
+  "status": "complete",
+  "wall_seconds": 7.275816440582275
+}

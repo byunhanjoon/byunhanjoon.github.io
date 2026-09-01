@@ -1,0 +1,274 @@
+{
+  "status": "complete",
+  "dataset": "heloc_credit_risk",
+  "split_seed": 2026082811,
+  "actions": 8,
+  "settings": [
+    [
+      1,
+      "none"
+    ],
+    [
+      1,
+      "default"
+    ],
+    [
+      8,
+      "default"
+    ]
+  ],
+  "tabpfn_calls": 24,
+  "forward_ensemble_members": 80,
+  "checkpoint": "/home/byunhanjoon/.cache/tabpfn/tabpfn-v2.5-classifier-v2.5_default.ckpt",
+  "checkpoint_sha256": "5d7170e2d3af01f9c501bb09ec3bd12e9944f8604de18002c647873c6ec04a12",
+  "device": "cuda:0",
+  "rows": {
+    "train": 2048,
+    "validation": 512,
+    "test": 512
+  },
+  "wall_seconds": 8.45391332055442,
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "telemetry": [
+    {
+      "estimators": 1,
+      "policy": "none",
+      "action": 0,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.940641692141071,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "none",
+      "action": 1,
+      "feature": 0,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.1660830401815474,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "none",
+      "action": 2,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.15008488483726978,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "none",
+      "action": 3,
+      "feature": 1,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.15532062505371869,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "none",
+      "action": 4,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.15025900700129569,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "none",
+      "action": 5,
+      "feature": 2,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.15061665512621403,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "none",
+      "action": 6,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.14946509199216962,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "none",
+      "action": 7,
+      "feature": 3,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.14991671196185052,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "default",
+      "action": 0,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.15136783500202,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "default",
+      "action": 1,
+      "feature": 0,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.15089726680889726,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "default",
+      "action": 2,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.2921111420728266,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "default",
+      "action": 3,
+      "feature": 1,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.15053160698153079,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "default",
+      "action": 4,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.15045734494924545,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "default",
+      "action": 5,
+      "feature": 2,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.15073543298058212,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "default",
+      "action": 6,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.15069792699068785,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 1,
+      "policy": "default",
+      "action": 7,
+      "feature": 3,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.15047286893241107,
+      "forward_ensemble_members": 1
+    },
+    {
+      "estimators": 8,
+      "policy": "default",
+      "action": 0,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.6598431509919465,
+      "forward_ensemble_members": 8
+    },
+    {
+      "estimators": 8,
+      "policy": "default",
+      "action": 1,
+      "feature": 0,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.6370052238926291,
+      "forward_ensemble_members": 8
+    },
+    {
+      "estimators": 8,
+      "policy": "default",
+      "action": 2,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.6323087750934064,
+      "forward_ensemble_members": 8
+    },
+    {
+      "estimators": 8,
+      "policy": "default",
+      "action": 3,
+      "feature": 1,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.631742182886228,
+      "forward_ensemble_members": 8
+    },
+    {
+      "estimators": 8,
+      "policy": "default",
+      "action": 4,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.631194437853992,
+      "forward_ensemble_members": 8
+    },
+    {
+      "estimators": 8,
+      "policy": "default",
+      "action": 5,
+      "feature": 2,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.6293658257927746,
+      "forward_ensemble_members": 8
+    },
+    {
+      "estimators": 8,
+      "policy": "default",
+      "action": 6,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "wall_seconds": 0.6304838468786329,
+      "forward_ensemble_members": 8
+    },
+    {
+      "estimators": 8,
+      "policy": "default",
+      "action": 7,
+      "feature": 3,
+      "category": 0,
+      "class": 1,
+      "wall_seconds": 0.642310744151473,
+      "forward_ensemble_members": 8
+    }
+  ]
+}

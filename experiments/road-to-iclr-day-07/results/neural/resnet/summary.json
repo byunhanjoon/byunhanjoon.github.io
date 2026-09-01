@@ -1,0 +1,30 @@
+{
+  "aggregate_sign_accuracy": 0.5833333333333334,
+  "aggregate_spearman": 0.6718146718146719,
+  "backbone": "resnet",
+  "gates": {
+    "aggregate_sign_accuracy_at_least_0p75": false,
+    "aggregate_spearman_at_least_0p60": true,
+    "integrity": true,
+    "pessimistic_no_more_harm": true,
+    "pessimistic_no_source_below_minus_0p002": true,
+    "pessimistic_positive": true
+  },
+  "passes": false,
+  "selectors": {
+    "selected_mean": {
+      "cells": 8,
+      "harmful_cells": 2,
+      "min_source_gain": -0.0015786994079713,
+      "selected_cells": 8,
+      "source_balanced_gain": 0.01626170041412546
+    },
+    "selected_pessimistic": {
+      "cells": 8,
+      "harmful_cells": 2,
+      "min_source_gain": -0.0015786994079713,
+      "selected_cells": 5,
+      "source_balanced_gain": 0.006618436992565462
+    }
+  }
+}

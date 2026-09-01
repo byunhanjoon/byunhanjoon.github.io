@@ -1,0 +1,52 @@
+{
+  "status": "complete",
+  "taskbalanced": {
+    "validation_material_cells": 16,
+    "cells_beating_all": 16,
+    "source_groups": 8,
+    "source_groups_beating_each_control": {
+      "iid16_residual": 8,
+      "four_strength1_residual": 8,
+      "four_seed_blocks_residual": 8
+    },
+    "pooled_reductions_by_task": {
+      "binclass": {
+        "iid16_residual": 0.5704223837522719,
+        "four_strength1_residual": 0.42449266309226097,
+        "four_seed_blocks_residual": 0.5745218137947039
+      },
+      "regression": {
+        "iid16_residual": 0.9741651683310465,
+        "four_strength1_residual": 0.9674172845773776,
+        "four_seed_blocks_residual": 0.9651778455259866
+      }
+    },
+    "frozen_gate_passed": true
+  },
+  "multiclass": {
+    "validation_material_cells": 4,
+    "cells_beating_all": 3,
+    "pooled_reductions": {
+      "iid16_residual": 0.5221567101214093,
+      "four_strength1_residual": 0.36080044864554717,
+      "four_seed_blocks_residual": 0.2915401998978653
+    },
+    "initial_linear_forest_gate_cells": 2,
+    "initial_linear_forest_cells_beating_all": 2,
+    "frozen_gate_passed": true,
+    "postgate_mlp_addendum": {
+      "validation_material_cells": 2,
+      "cells_beating_all": 1,
+      "cells_beating_each_control": {
+        "iid16_residual": 2,
+        "four_strength1_residual": 2,
+        "four_seed_blocks_residual": 1
+      },
+      "pooled_reductions": {
+        "iid16_residual": 0.4882175097479753,
+        "four_strength1_residual": 0.3138472173713548,
+        "four_seed_blocks_residual": 0.23801434859026882
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-mushroom-24",
+  "model": "catboost_native",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 4874,
+    "validation": 1625,
+    "test": 1625
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": true,
+  "effective_split_seed": 2026082911,
+  "timing": {
+    "setup_seconds": 0.11582794203422964,
+    "fit_loop_seconds": 85.66034531290643,
+    "end_to_end_seconds": 85.85476061701775,
+    "fits_per_fit_loop_second": 1.494273686761735
+  }
+}

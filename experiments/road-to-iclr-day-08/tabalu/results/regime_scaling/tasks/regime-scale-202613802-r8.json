@@ -1,0 +1,148 @@
+{
+  "task_id": "regime-scale-202613802-r8",
+  "seed": 202613802,
+  "programs": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 1,
+          "right": 3
+        },
+        {
+          "operator": "abs",
+          "left": 4,
+          "right": null
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "abs",
+          "left": 1,
+          "right": null
+        },
+        {
+          "operator": "square",
+          "left": 4,
+          "right": null
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 3,
+          "right": 2
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 3
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "abs",
+          "left": 3,
+          "right": null
+        }
+      ],
+      "output": 4,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 1,
+          "right": 2
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 3
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 1,
+          "right": 2
+        }
+      ],
+      "output": 4,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 0,
+          "right": 3
+        },
+        {
+          "operator": "safe_divide",
+          "left": 4,
+          "right": 3
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "subtract",
+          "left": 2,
+          "right": 1
+        },
+        {
+          "operator": "multiply",
+          "left": 1,
+          "right": 4
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    }
+  ]
+}

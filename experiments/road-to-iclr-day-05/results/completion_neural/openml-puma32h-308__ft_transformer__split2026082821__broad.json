@@ -1,0 +1,190 @@
+{
+  "status": "complete",
+  "dataset": "openml-puma32h-308",
+  "task": "regression",
+  "model": "ft_transformer",
+  "split_seed": 2026082821,
+  "mode": "broad",
+  "actions": 16,
+  "represented_fits": 16,
+  "rows": {
+    "train": 2048,
+    "validation": 512,
+    "test": 512
+  },
+  "features": {
+    "numerical": 32,
+    "categorical": 0,
+    "dense": 32
+  },
+  "cardinalities": [],
+  "device": "cuda:0",
+  "wall_seconds": 15.381784457713366,
+  "maximum_peak_device_bytes": 91417088,
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "package_versions": {
+    "torch": "2.7.0+cu126"
+  },
+  "telemetry": [
+    {
+      "action": 0,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 1.1541488741058856,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 1,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 1.0422181128524244,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 2,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 1.0427284240722656,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 3,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 1.0136689022183418,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 4,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.9246657700277865,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 5,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.9095265169162303,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 6,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.9114113121759146,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 7,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.9043616419658065,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 8,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.9614446281921118,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 9,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.9781571598723531,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 10,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.9744509109295905,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 11,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.9373128258157521,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 12,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 0,
+      "wall_seconds": 0.909004770917818,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 13,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 0,
+      "order": 1,
+      "wall_seconds": 0.9045153118204325,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 14,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 0,
+      "wall_seconds": 0.9052015210036188,
+      "peak_device_bytes": 91417088
+    },
+    {
+      "action": 15,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "init": 1,
+      "order": 1,
+      "wall_seconds": 0.9089677748270333,
+      "peak_device_bytes": 91417088
+    }
+  ]
+}

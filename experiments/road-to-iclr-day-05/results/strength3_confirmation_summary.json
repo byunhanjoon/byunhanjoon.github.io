@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "cells": 55,
+  "validation_material_cells": 25,
+  "test_cells_strength3_beats_all": 21,
+  "test_cells_strength3_lower_or_numerically_tied_all": 25,
+  "exact_two_sided_cell_sign_p": 0.0009105205535888672,
+  "mean_residual_reductions": {
+    "iid64_residual": 0.9457787226674893,
+    "four_strength2_residual": 0.8257415099248896,
+    "sixteen_strength1_residual": 0.9287101126594995,
+    "sixteen_seed_blocks_residual": 0.9293642149777924
+  },
+  "mean_through_triple_fraction": 0.9885217196723127,
+  "source_groups": 6,
+  "source_groups_strength3_beats_all": 6,
+  "exact_two_sided_source_sign_p": 0.03125,
+  "maximum_component_reconstruction_error": 4.933119884809045e-18,
+  "maximum_ambiguity_error": 1.396769261410941e-16
+}

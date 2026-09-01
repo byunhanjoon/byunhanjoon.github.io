@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "dataset": "australian_credit_approval",
+  "task": "classification",
+  "model": "ft_transformer",
+  "schema_actions": 32,
+  "represented_fits": 64,
+  "maximum_matched_initial_gap": 1.7881393432617188e-07,
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b"
+}

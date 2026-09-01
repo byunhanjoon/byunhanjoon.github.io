@@ -1,0 +1,5 @@
+dataset,problem_type,model,seed,pair,method,split,reconstruction_error,coordinate_error,disagreement,disagreement_reduction,task_error,relative_task_change
+phoneme,classification,catboost,1,local_vs_spectral_hat,Raw,validation,1.9568997611320004e-16,0.0,0.06180784007751742,0.0,0.2665928936421174,0.0
+phoneme,classification,catboost,1,local_vs_spectral_hat,GramAnchor,validation,1.9568997611320004e-16,1.312377686351325e-16,0.0,1.0,0.2745094315825414,0.02969523242825583
+phoneme,classification,catboost,1,local_vs_spectral_hat,Raw,test,1.9568997611320004e-16,0.0,0.062224194723164074,0.0,0.3054450903104318,0.0
+phoneme,classification,catboost,1,local_vs_spectral_hat,GramAnchor,test,1.9568997611320004e-16,1.312377686351325e-16,0.0,1.0,0.29916414410952713,-0.020563258013154513

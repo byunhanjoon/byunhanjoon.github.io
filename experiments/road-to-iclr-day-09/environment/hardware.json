@@ -1,0 +1,11 @@
+{
+  "captured_at": "2026-08-31T23:00:00+09:00",
+  "cpu_architecture": "x86_64",
+  "gpus": [
+    {"index": 0, "name": "NVIDIA H100 NVL", "memory_mib": 95830},
+    {"index": 1, "name": "NVIDIA H100 NVL", "memory_mib": 95830}
+  ],
+  "nvidia_driver": "575.57.08",
+  "base_commit": "0c456660ae9a87aab7932b569e1954b0ee1d25fe"
+}
+

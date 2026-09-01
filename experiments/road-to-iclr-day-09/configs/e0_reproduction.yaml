@@ -1,0 +1,40 @@
+protocol_version: day9-e0-reproduction-v1
+phase: e0_reproduction
+frozen: true
+frozen_at: 2026-09-01T00:45:00+09:00
+selection_rule: first_regression_and_first_binary_tasks_in_day8_frozen_panel
+split_seed: 20260831
+precision: autocast_bfloat16
+openml_cache: /home/byunhanjoon/.cache/openml
+max_context: 512
+max_query: 256
+seeds: [20260901, 20260902, 20260903]
+datasets:
+  - dataset: wine_quality
+    source: openml
+    task_id: 363708
+    problem_type: regression
+    repeat: 0
+    fold: 0
+  - dataset: churn
+    source: openml
+    task_id: 363623
+    problem_type: binary
+    repeat: 0
+    fold: 0
+models:
+  - tabpfn3_default
+  - tabpfn3_ood
+  - tabicl_v2_single
+  - tabicl_v2_default
+  - mitra_default
+transforms:
+  - name: identity
+    values: [0.0]
+  - name: positive_affine
+    values: [1.0]
+  - name: random_monotone_pwl
+    values: [1.0]
+  - name: monotone_spline
+    values: [1.0]
+

@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-banknote-1462",
+  "model": "onehot_adam_mlp",
+  "task": "binclass",
+  "shape": [
+    4,
+    1,
+    2,
+    4
+  ],
+  "fits": 32,
+  "rows": {
+    "train": 822,
+    "validation": 275,
+    "test": 275
+  },
+  "full_product_verified": true
+}

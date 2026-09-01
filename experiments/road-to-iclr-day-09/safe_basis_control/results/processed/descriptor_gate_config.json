@@ -1,0 +1,71 @@
+{
+  "SafeGram_t01_summary": {
+    "max_C": 0.0076048343480971,
+    "median_C": 0.0,
+    "median_disagreement_reduction": 0.2500000001881521,
+    "p95_C": 0.0043518505826225,
+    "raw_fallback_rate": 0.475
+  },
+  "clearly_outperforms": false,
+  "coefficients": [
+    0.0,
+    -0.0954203718797835,
+    0.0,
+    0.20552544522664842,
+    0.19130291969672847,
+    -0.15325888705892135,
+    -0.019257109613901664,
+    -0.11682398660599327
+  ],
+  "descriptor_summary": {
+    "max_C": 0.6336289967048432,
+    "median_C": -0.004242059708643063,
+    "median_disagreement_reduction": 0.75,
+    "p95_C": 0.05050529551928672,
+    "raw_fallback_rate": 0.0
+  },
+  "feature_mean": [
+    6.932447891572508,
+    2.563819520365535,
+    8.0,
+    0.4429954692216425,
+    2.0080208378216917,
+    0.3868408203125,
+    0.01388888888888889,
+    0.10591361501493027
+  ],
+  "feature_scale": [
+    1.0,
+    0.6854272948138619,
+    1.0,
+    0.04770032426377093,
+    0.29726077401305645,
+    0.3506734627195382,
+    0.036746545987008196,
+    0.07377587327548357
+  ],
+  "features": [
+    "log_n_rows",
+    "log_n_raw_features",
+    "median_empirical_rank",
+    "mean_gram_spectrum_entropy",
+    "median_block_condition_log10",
+    "class_imbalance",
+    "categorical_fraction",
+    "raw_gram_validation_disagreement"
+  ],
+  "intercept": 0.6781250000000001,
+  "model": "Ridge(alpha=1.0)",
+  "prospective_outcomes_accessed": false,
+  "quantization": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "reason": "LODO descriptor gate did not improve control by >=10 points while satisfying p95<=0.05 and max<=0.20.",
+  "status": "DISCARDED_AFTER_DEVELOPMENT_CV",
+  "target": "largest alpha with development validation point-estimate C<=0.01",
+  "validation": "leave-one-dataset-out"
+}

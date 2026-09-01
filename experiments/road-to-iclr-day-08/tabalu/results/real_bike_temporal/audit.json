@@ -1,0 +1,44 @@
+{
+  "git_commit": "c000f06e0b8c6989d62ece8a769bbf269910a9b8",
+  "git_dirty": true,
+  "source_url": "https://archive.ics.uci.edu/static/public/275/bike+sharing+dataset.zip",
+  "source_doi": "10.24432/C5W894",
+  "source_license": "CC BY 4.0",
+  "source_sha256": "b70182d0d0508e9abbb79306ce5c0cec34869000f8220175ac83d11dbe845401",
+  "leakage_columns_excluded": [
+    "casual",
+    "registered",
+    "cnt",
+    "instant"
+  ],
+  "split_definition": "70/15/15 random train/validation/IID within 2011; all 2012 future",
+  "split_sizes_last_seed": {
+    "train": 6051,
+    "validation": 1296,
+    "iid": 1298,
+    "future": 8734
+  },
+  "expected_records": 60,
+  "observed_records": 60,
+  "all_finite": true,
+  "inference_unit": "one dataset; seed dispersion only, no dataset-level superiority inference",
+  "gate": {
+    "passed": false,
+    "checks": {
+      "router_beats_global": false,
+      "router_competes_with_best_tree": false,
+      "router_temporal_degradation_is_bounded": false
+    },
+    "observed": {
+      "router_vs_global_future_ratio": 5.639295042719979,
+      "router_vs_best_tree_future_ratio": 16.231600328572544,
+      "router_temporal_degradation_ratio": 16.57547689792169
+    },
+    "thresholds": {
+      "router_vs_global_future_ratio_max": 1.0,
+      "router_vs_best_tree_future_ratio_max": 1.5,
+      "router_temporal_degradation_ratio_max": 3.0
+    }
+  },
+  "audit_passed": false
+}

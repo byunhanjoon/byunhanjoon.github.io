@@ -1,0 +1,31 @@
+{
+  "status": "frozen_before_matched_function_outcomes",
+  "frozen_on": "2026-08-28",
+  "protocol": "MATCHED_FUNCTION_PROTOCOL.md",
+  "protocol_sha256": "ae0e64f36cf1bd729ed98208759cd80e952ad391b8efcb5adc11b24034f66fa5",
+  "data_root": "/data/tokenization_icaif_grouped_v2",
+  "datasets": [
+    "australian_credit_approval",
+    "bank_marketing_subscription",
+    "german_credit_risk",
+    "lendingclub_loan_default"
+  ],
+  "seeds": [101, 202, 303, 404],
+  "representatives": 4,
+  "view_seed": 2026082847,
+  "subsample": {
+    "max_train_rows": 3000,
+    "max_validation_rows": 1000,
+    "max_test_rows": 1000,
+    "seed": 2026082847
+  },
+  "training": {
+    "embedding_dim": 8,
+    "hidden_dim": 64,
+    "epochs": 40,
+    "learning_rate": 0.003,
+    "weight_decay": 0.0001
+  },
+  "initial_tolerance": 1e-10,
+  "probability_tolerance": 1e-10
+}

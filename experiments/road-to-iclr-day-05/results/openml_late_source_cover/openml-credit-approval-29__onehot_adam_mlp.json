@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-credit-approval-29",
+  "model": "onehot_adam_mlp",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 414,
+    "validation": 138,
+    "test": 138
+  },
+  "full_product_verified": true
+}

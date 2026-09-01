@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-adult-1590",
+  "model": "onehot_linear",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 29304,
+    "validation": 9769,
+    "test": 9769
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026083041,
+  "timing": {
+    "setup_seconds": 0.5322372089140117,
+    "fit_loop_seconds": 135.24180583516136,
+    "end_to_end_seconds": 136.47669122600928,
+    "fits_per_fit_loop_second": 0.9464529049250645
+  }
+}

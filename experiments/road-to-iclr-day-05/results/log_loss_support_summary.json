@@ -1,0 +1,94 @@
+{
+  "status": "complete",
+  "clip_epsilon": 1e-12,
+  "classification_candidates": 150,
+  "methods": {
+    "disjoint_pair32": {
+      "candidates": 150,
+      "candidates_touching_clip": 10,
+      "candidates_with_exact_zero": 5,
+      "minimum_probability": 0.0,
+      "total_at_or_below_clip": 13312,
+      "total_probabilities": 246033408,
+      "pooled_clip_fraction": 5.410647321521474e-05
+    },
+    "exact_quotient": {
+      "candidates": 150,
+      "candidates_touching_clip": 10,
+      "candidates_with_exact_zero": 5,
+      "minimum_probability": 0.0,
+      "total_at_or_below_clip": 13,
+      "total_probabilities": 240267,
+      "pooled_clip_fraction": 5.410647321521474e-05
+    },
+    "independent_pair32": {
+      "candidates": 150,
+      "candidates_touching_clip": 10,
+      "candidates_with_exact_zero": 6,
+      "minimum_probability": 0.0,
+      "total_at_or_below_clip": 13350,
+      "total_probabilities": 246033408,
+      "pooled_clip_fraction": 5.426092378478942e-05
+    },
+    "mutually_disjoint_pack64": {
+      "candidates": 150,
+      "candidates_touching_clip": 10,
+      "candidates_with_exact_zero": 5,
+      "minimum_probability": 0.0,
+      "total_at_or_below_clip": 13312,
+      "total_probabilities": 246033408,
+      "pooled_clip_fraction": 5.410647321521474e-05
+    },
+    "two_disjoint_pairs64": {
+      "candidates": 150,
+      "candidates_touching_clip": 10,
+      "candidates_with_exact_zero": 5,
+      "minimum_probability": 0.0,
+      "total_at_or_below_clip": 13312,
+      "total_probabilities": 246033408,
+      "pooled_clip_fraction": 5.410647321521474e-05
+    }
+  },
+  "panels": [
+    {
+      "panel": "confirmation",
+      "candidates": 50,
+      "candidates_touching_clip": 6,
+      "minimum_probability": 0.0
+    },
+    {
+      "panel": "menu_repeat",
+      "candidates": 25,
+      "candidates_touching_clip": 2,
+      "minimum_probability": 0.0
+    },
+    {
+      "panel": "openml_external",
+      "candidates": 32,
+      "candidates_touching_clip": 0,
+      "minimum_probability": 5.795228207716718e-05
+    },
+    {
+      "panel": "openml_multiclass",
+      "candidates": 6,
+      "candidates_touching_clip": 0,
+      "minimum_probability": 0.00010373149234510493
+    },
+    {
+      "panel": "openml_taskbalanced",
+      "candidates": 12,
+      "candidates_touching_clip": 0,
+      "minimum_probability": 4.624197060820734e-07
+    },
+    {
+      "panel": "subsample_repeat",
+      "candidates": 25,
+      "candidates_touching_clip": 2,
+      "minimum_probability": 0.0
+    }
+  ],
+  "interpretation": "clip_active_boundary",
+  "unclipped_smooth_log_assumption_holds_on_audited_population": false,
+  "clipped_log_global_lipschitz_constant": 1000000000000.0,
+  "distribution_wide_support_claimed": false
+}

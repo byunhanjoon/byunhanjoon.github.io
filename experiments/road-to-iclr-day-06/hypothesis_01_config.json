@@ -1,0 +1,35 @@
+{
+  "status": "frozen_before_h1_outcomes",
+  "frozen_on": "2026-08-28",
+  "split_seed": 2026082801,
+  "datasets": [
+    "bank_marketing_subscription",
+    "credit_card_default",
+    "fremtpl_claim_count"
+  ],
+  "models": ["mlp", "resnet", "ft_transformer"],
+  "pilot_seeds": [6101, 6202],
+  "confirmation_seeds": [6303, 6404, 6505, 6606, 6707, 6808],
+  "nonidentity_views": 3,
+  "checkpoints": [0, 1, 2, 5, 10, 20],
+  "training": {
+    "epochs": 20,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "mlp_resnet_width": 128,
+    "depth": 2,
+    "dropout": 0.1,
+    "ft_d_token": 32,
+    "ft_tokens": 8
+  },
+  "initial_match_tolerance": 1e-6,
+  "gates": {
+    "minimum_cell_wins": 7,
+    "cells": 9,
+    "minimum_geometric_mean_reduction": 0.9,
+    "maximum_relative_test_loss_change": 0.001,
+    "minimum_amplified_cells": 3,
+    "amplification_threshold": 10000.0
+  }
+}

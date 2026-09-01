@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "hypothesis": "H1_SAA",
+  "dataset": "bank_marketing_subscription",
+  "task": "classification",
+  "model": "resnet",
+  "seed": 6505,
+  "split_seed": 2026082801,
+  "paths": 8,
+  "epochs_per_path": 20,
+  "maximum_initial_gap": 1.7881393432617188e-07,
+  "path_wall_seconds": [
+    0.5483542771544307,
+    0.5115556640084833,
+    0.5091097129043192,
+    0.5067460120189935,
+    0.539330662926659,
+    0.5265475898049772,
+    0.5593660129234195,
+    0.6551626930013299
+  ],
+  "total_fit_seconds": 4.356172624742612,
+  "config_sha256": "e326c2dd186499ba84c75c13d15bc9e0837d9504ccbd67fd00741ed178106d7a",
+  "protocol_sha256": "e79abc3a2ecbf5201afa2b77b947d729b8c39a3871066daf623934fda17c2bae",
+  "day5_config_sha256": "1e8a099dafb2ac7de9e03f7363f3405a2edad3bf67374fc7d251c28da78c11e9",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0",
+  "tf32": false,
+  "deterministic_algorithms": true
+}

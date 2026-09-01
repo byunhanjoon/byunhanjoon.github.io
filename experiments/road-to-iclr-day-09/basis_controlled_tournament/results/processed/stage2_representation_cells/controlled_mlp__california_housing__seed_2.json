@@ -1,0 +1,31 @@
+{
+  "dataset": "california_housing",
+  "environment": {
+    "cuda_visible_devices": null,
+    "gpu": "NVIDIA H100 NVL",
+    "packages": {
+      "catboost": "1.2.10",
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "pytabkit": "1.7.3",
+      "scikit-learn": "1.4.2",
+      "scipy": "1.11.4",
+      "tabicl": "2.0.3",
+      "tabpfn": "8.5.0",
+      "torch": "2.7.0"
+    },
+    "pid": 1896801,
+    "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+    "protocol_hashes": {
+      "new_prospective_panel_sha256": "3eb3722c31832e81de74e709796c2765a198300be3251ec6acc05c867a2fad65",
+      "prior_dataset_panel_sha256": "954df189503c40f4425d5be0b48bf59e7caa365eada1202362386a690c4052ae",
+      "tournament_protocol_sha256": "57b80e2f3bd96277fb3ef7aff3507aca15e055f3fa2748bcddd703526ccba48b"
+    },
+    "python": "3.10.16",
+    "time_utc_epoch": 1788243065.0890756,
+    "torch_cuda": "12.6"
+  },
+  "model": "controlled_mlp",
+  "raw_source": "immutable prior confirmation replication bundle",
+  "seed": 2
+}

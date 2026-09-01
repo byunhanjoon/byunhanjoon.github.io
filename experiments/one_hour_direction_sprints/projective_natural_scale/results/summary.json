@@ -1,0 +1,59 @@
+{
+  "competitive_summary": [
+    {
+      "cell_win_rate": 0.4409722222222222,
+      "comparator": "bayes_linear",
+      "dataset_wins": 3,
+      "mean_aggregate_nll_advantage": -983.9141756410606
+    },
+    {
+      "cell_win_rate": 0.4375,
+      "comparator": "gp_rbf",
+      "dataset_wins": 3,
+      "mean_aggregate_nll_advantage": -1019.3251722083553
+    },
+    {
+      "cell_win_rate": 0.6267361111111112,
+      "comparator": "tabicl_independent",
+      "dataset_wins": 8,
+      "mean_aggregate_nll_advantage": -1017.5763668793687
+    }
+  ],
+  "integrity": {
+    "expected_rows": 5040,
+    "maximum_covariance_symmetry_error": 3.552713678800501e-15,
+    "maximum_neural_forward_error": 4.76837158203125e-07,
+    "maximum_tabpfn_marginal_error": 0.0,
+    "minimum_covariance_eigenvalue": -8.136326073035202e-13,
+    "observed_rows": 5040,
+    "pass": true
+  },
+  "original_network": {
+    "broadly_viable": true,
+    "dense_scaled_cell_win_rate": 0.8993055555555556,
+    "dense_scaled_mean_nll_advantage": 0.5275855179003162,
+    "gates": {
+      "dense_scaled_cell_win_rate_at_least_60pct": true,
+      "dense_scaled_mean_nll_advantage_positive": true,
+      "point_within_25pct_tabpfn_on_at_least_6_datasets": true
+    },
+    "point_datasets_within_25pct_tabpfn": 11
+  },
+  "protocol_sha256": "144c873f8d8922306a5b415b05825bf84d414d15cbbe4289204dc92cea3239f3",
+  "status": "complete_natural_scale_projectivity",
+  "strong_mean_projectivity": {
+    "aggregate_dataset_nll_wins": 6,
+    "aggregate_mean_crps_advantage": 0.19211344613448644,
+    "aggregate_mean_nll_advantage": 0.014224208966993501,
+    "gates": {
+      "aggregate_dataset_nll_wins_at_least_7": false,
+      "aggregate_mean_crps_improves": true,
+      "aggregate_mean_nll_improves": true,
+      "coverage_error_not_worse": true,
+      "uncalibrated_marginals_preserved": true
+    },
+    "mean_coverage_error_change": -0.0008680555555555617,
+    "positive": false
+  },
+  "total_wall_seconds": 219.2322564383503
+}

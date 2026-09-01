@@ -1,0 +1,70 @@
+{
+  "design": {
+    "dataset": "adult",
+    "charts": [
+      "local",
+      "cumulative",
+      "cumulative_standardized",
+      "path_spectral",
+      "whitened"
+    ],
+    "seed": 17,
+    "epochs": 30,
+    "optimizer": "SGD(momentum=0.9, lr=0.03, weight_decay=1e-4)",
+    "intervention": "within-field sample whitening and transported first-layer initialization"
+  },
+  "coordinate_diagnostics": {
+    "local": {
+      "orthogonality_error": 1.2878587085651816e-14,
+      "train_coordinate_residual": 1.1823875212257917e-13,
+      "test_coordinate_residual": 1.1823875212257917e-13
+    },
+    "cumulative": {
+      "orthogonality_error": 7.283063041541027e-14,
+      "train_coordinate_residual": 6.719499658913719e-07,
+      "test_coordinate_residual": 6.719499658913719e-07
+    },
+    "cumulative_standardized": {
+      "orthogonality_error": 1.3433698597964394e-13,
+      "train_coordinate_residual": 6.421921909804951e-07,
+      "test_coordinate_residual": 6.421921909804951e-07
+    },
+    "path_spectral": {
+      "orthogonality_error": 3.349629132624093e-14,
+      "train_coordinate_residual": 1.1093348462054564e-12,
+      "test_coordinate_residual": 1.1093348462054564e-12
+    },
+    "whitened": {
+      "orthogonality_error": 4.5182123711182995e-15,
+      "train_coordinate_residual": 1.4023099019766505e-06,
+      "test_coordinate_residual": 1.4023099019766505e-06
+    }
+  },
+  "max_training_curve_range": 5.272155323421401e-09,
+  "risk": {
+    "reference_brier": 0.2014166435992869,
+    "mean_member_brier": 0.20141664340092785,
+    "best_member_brier": 0.20141664293397815,
+    "worst_member_brier": 0.2014166437293927,
+    "member_brier_std": 3.07020564430426e-10,
+    "orbit_mean_brier": 0.2014166434009274,
+    "brier_reduction_by_averaging": 4.440892098500626e-16,
+    "risk_identity_absolute_error": 3.966531667570678e-17,
+    "instance_audit": {
+      "hard_label_flip_fraction": 0.0,
+      "mean_nonmodal_vote_fraction": 0.0,
+      "row_schema_risk_median": 1.4045951697278533e-16,
+      "row_schema_risk_p95": 2.03735951811901e-15,
+      "row_schema_risk_max": 4.1201789349336213e-14,
+      "max_class_probability_range_mean": 2.734096656514048e-08,
+      "max_class_probability_range_p95": 8.163009557193845e-08,
+      "max_class_probability_range_max": 3.8306172445157216e-07
+    },
+    "anova": {
+      "total": 4.837545265257694e-16,
+      "chart": 4.837545265257694e-16,
+      "component_sum_error": 0.0,
+      "prediction_reconstruction_max_error": 0.0
+    }
+  }
+}

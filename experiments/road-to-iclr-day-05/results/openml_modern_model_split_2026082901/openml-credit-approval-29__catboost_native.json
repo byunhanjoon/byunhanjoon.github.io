@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-credit-approval-29",
+  "model": "catboost_native",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 414,
+    "validation": 138,
+    "test": 138
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026082901,
+  "timing": {
+    "setup_seconds": 0.02207767404615879,
+    "fit_loop_seconds": 16.920418011955917,
+    "end_to_end_seconds": 16.94647921808064,
+    "fits_per_fit_loop_second": 7.564824929830668
+  }
+}

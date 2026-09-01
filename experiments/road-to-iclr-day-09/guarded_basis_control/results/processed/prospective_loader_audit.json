@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETE",
+  "panel_adapter": {
+    "action": "added runtime panel label required by the frozen shared loader",
+    "label": "guarded_new_untouched_prospective",
+    "panel_metadata_modified": false
+  },
+  "SoilKsatDB": {
+    "openml_id": 42332,
+    "openml_version": 1,
+    "target": "ksat_lab",
+    "raw_rows": 13072,
+    "observed_target_rows_retained": 8703,
+    "missing_target_rows_dropped": 4369,
+    "rule": "drop rows whose frozen OpenML target is missing before applying the frozen split/subsample protocol",
+    "development_or_test_selection_used": false
+  },
+  "2dplanes": {
+    "openml_id": 215,
+    "openml_version": 1,
+    "finding": "all ten numeric inputs have only 2--3 unique values, so the frozen global minimum-unique threshold would produce no transformable blocks",
+    "rule": "treat numeric columns with at least two unique values as low-rank RBF blocks for this locked dataset",
+    "basis_dimension": 8,
+    "target_values_used_for_adapter": false
+  },
+  "finalist_config_modified": false,
+  "prospective_panel_modified": false
+}

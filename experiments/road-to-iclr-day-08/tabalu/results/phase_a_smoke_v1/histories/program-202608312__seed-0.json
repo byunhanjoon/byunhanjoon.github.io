@@ -1,0 +1,83 @@
+[
+  {
+    "epoch": 0.0,
+    "temperature": 2.0,
+    "train_nrmse": 1.4848278760910034,
+    "validation_nrmse": 1.4974548816680908,
+    "operator_entropy": 1.9448928833007812,
+    "input_entropy": 1.5951411724090576,
+    "output_entropy": 1.9434938430786133
+  },
+  {
+    "epoch": 20.0,
+    "temperature": 1.7021977417382523,
+    "train_nrmse": 1.2686738967895508,
+    "validation_nrmse": 0.6635679006576538,
+    "operator_entropy": 1.9420779943466187,
+    "input_entropy": 1.589984655380249,
+    "output_entropy": 1.9253790378570557
+  },
+  {
+    "epoch": 40.0,
+    "temperature": 1.448738575989403,
+    "train_nrmse": 1.1120531558990479,
+    "validation_nrmse": 0.6988765597343445,
+    "operator_entropy": 1.9380935430526733,
+    "input_entropy": 1.5822422504425049,
+    "output_entropy": 1.8879257440567017
+  },
+  {
+    "epoch": 60.0,
+    "temperature": 1.2330197662091267,
+    "train_nrmse": 0.7564597725868225,
+    "validation_nrmse": 0.7775037288665771,
+    "operator_entropy": 1.9372419118881226,
+    "input_entropy": 1.5748003721237183,
+    "output_entropy": 1.8131837844848633
+  },
+  {
+    "epoch": 80.0,
+    "temperature": 1.0494217307799014,
+    "train_nrmse": 0.797846257686615,
+    "validation_nrmse": 0.8110061287879944,
+    "operator_entropy": 1.9347037076950073,
+    "input_entropy": 1.5704997777938843,
+    "output_entropy": 1.6915218830108643
+  },
+  {
+    "epoch": 100.0,
+    "temperature": 0.8931616501322983,
+    "train_nrmse": 0.8107383847236633,
+    "validation_nrmse": 0.8201348185539246,
+    "operator_entropy": 1.9336395263671875,
+    "input_entropy": 1.5670785903930664,
+    "output_entropy": 1.5451916456222534
+  },
+  {
+    "epoch": 120.0,
+    "temperature": 0.7601688719312046,
+    "train_nrmse": 1.2952302694320679,
+    "validation_nrmse": 0.7977968454360962,
+    "operator_entropy": 1.9363925457000732,
+    "input_entropy": 1.56416654586792,
+    "output_entropy": 1.3926725387573242
+  },
+  {
+    "epoch": 140.0,
+    "temperature": 0.6469788685705056,
+    "train_nrmse": 1.055757999420166,
+    "validation_nrmse": 0.7989056706428528,
+    "operator_entropy": 1.935655117034912,
+    "input_entropy": 1.5620708465576172,
+    "output_entropy": 1.1638132333755493
+  },
+  {
+    "epoch": 160.0,
+    "temperature": 0.550642984516542,
+    "train_nrmse": 0.7671151161193848,
+    "validation_nrmse": 0.7791037559509277,
+    "operator_entropy": 1.9355642795562744,
+    "input_entropy": 1.5613510608673096,
+    "output_entropy": 0.9761103987693787
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-titanic-40945",
+  "model": "onehot_linear",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 785,
+    "validation": 262,
+    "test": 262
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026083041,
+  "timing": {
+    "setup_seconds": 11.476379778934643,
+    "fit_loop_seconds": 4.949462522054091,
+    "end_to_end_seconds": 16.428321301937103,
+    "fits_per_fit_loop_second": 25.861393925027308
+  }
+}

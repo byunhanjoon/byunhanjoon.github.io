@@ -1,0 +1,19 @@
+{
+  "neural_test_seed_rows": 270,
+  "neural_valid_cells": 90,
+  "ridge_complete_cells": 72,
+  "ridge_expected_cells": 90,
+  "runnable_task_names": [
+    "acs_occupation",
+    "acs_industry",
+    "tlc_pickup_zone",
+    "tlc_dropoff_zone",
+    "citibike_start_station",
+    "airline_origin_airport",
+    "airline_destination_airport",
+    "employee_salaries",
+    "medical_charges"
+  ],
+  "runnable_tasks": 9,
+  "tree_complete_cells": 68
+}

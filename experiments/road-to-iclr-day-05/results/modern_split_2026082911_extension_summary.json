@@ -1,0 +1,156 @@
+{
+  "status": "complete",
+  "configured_sources": 8,
+  "complete_tensors": 16,
+  "represented_complete_product_fits": 2048,
+  "post_failure_schema_adapter_sources": 4,
+  "primary_strength2_gate": {
+    "numerical_strict_tolerance": 0.0,
+    "all_cell_wins_vs_iid_and_strength1": 14,
+    "required_all_cell_wins": 13,
+    "all_cells": 16,
+    "material_cell_wins_vs_all_controls": 12,
+    "material_cells": 14,
+    "source_mean_wins_vs_iid_and_strength1": 8,
+    "required_source_mean_wins": 7,
+    "sources": 8,
+    "passed": true
+  },
+  "packing_and_selection": {
+    "pair32": {
+      "action": "disjoint_pair_mean32",
+      "control": "independent_pair_mean32",
+      "candidate_rmse_wins": 8,
+      "candidates": 16,
+      "source_mean_rmse_wins": 8,
+      "sources": 8,
+      "mean_score_rmse": {
+        "disjoint_pair_mean32": 0.0002656879251763743,
+        "independent_pair_mean32": 0.0002954030657881199
+      },
+      "mean_selection_agreement": {
+        "disjoint_pair_mean32": 1.0,
+        "independent_pair_mean32": 1.0
+      },
+      "mean_validation_regret": {
+        "disjoint_pair_mean32": 0.0,
+        "independent_pair_mean32": 0.0
+      },
+      "mean_selected_quotient_test_loss": {
+        "disjoint_pair_mean32": 0.08007881027809391,
+        "independent_pair_mean32": 0.08007881027809391
+      }
+    },
+    "pack64": {
+      "action": "mutually_disjoint_pack64",
+      "control": "two_disjoint_pairs64",
+      "candidate_rmse_wins": 8,
+      "candidates": 16,
+      "source_mean_rmse_wins": 8,
+      "sources": 8,
+      "mean_score_rmse": {
+        "mutually_disjoint_pack64": 0.0001501370678407027,
+        "two_disjoint_pairs64": 0.00019003816732805518
+      },
+      "mean_selection_agreement": {
+        "mutually_disjoint_pack64": 1.0,
+        "two_disjoint_pairs64": 1.0
+      },
+      "mean_validation_regret": {
+        "mutually_disjoint_pack64": 0.0,
+        "two_disjoint_pairs64": 0.0
+      },
+      "mean_selected_quotient_test_loss": {
+        "mutually_disjoint_pack64": 0.08007881027809391,
+        "two_disjoint_pairs64": 0.08007881027809391
+      }
+    },
+    "unbiased_pair_cross64": {
+      "action": "disjoint_pair_cross64",
+      "control": "independent_block_u64",
+      "candidate_rmse_wins": 8,
+      "candidates": 16,
+      "source_mean_rmse_wins": 8,
+      "sources": 8,
+      "mean_score_rmse": {
+        "disjoint_pair_cross64": 0.0001869409863129733,
+        "independent_block_u64": 0.00020673836895984283
+      },
+      "mean_selection_agreement": {
+        "disjoint_pair_cross64": 1.0,
+        "independent_block_u64": 1.0
+      },
+      "mean_validation_regret": {
+        "disjoint_pair_cross64": 0.0,
+        "independent_block_u64": 0.0
+      },
+      "mean_selected_quotient_test_loss": {
+        "disjoint_pair_cross64": 0.08007881027809391,
+        "independent_block_u64": 0.08007881027809391
+      }
+    }
+  },
+  "exact_validation_to_test_transfer": {
+    "sources": [
+      {
+        "dataset": "openml-kr-vs-kp-3",
+        "validation_winner": "native_histgb",
+        "test_winner": "native_histgb",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      },
+      {
+        "dataset": "openml-credit-approval-29",
+        "validation_winner": "catboost_native",
+        "test_winner": "native_histgb",
+        "winner_agreement": false,
+        "test_regret_of_validation_winner": 0.013260292833623621
+      },
+      {
+        "dataset": "openml-sick-38",
+        "validation_winner": "catboost_native",
+        "test_winner": "native_histgb",
+        "winner_agreement": false,
+        "test_regret_of_validation_winner": 0.00088211403998739
+      },
+      {
+        "dataset": "openml-tic-tac-toe-50",
+        "validation_winner": "native_histgb",
+        "test_winner": "native_histgb",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      },
+      {
+        "dataset": "openml-mushroom-24",
+        "validation_winner": "native_histgb",
+        "test_winner": "native_histgb",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      },
+      {
+        "dataset": "openml-colic-25",
+        "validation_winner": "catboost_native",
+        "test_winner": "catboost_native",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      },
+      {
+        "dataset": "openml-hepatitis-55",
+        "validation_winner": "catboost_native",
+        "test_winner": "catboost_native",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      },
+      {
+        "dataset": "openml-vote-56",
+        "validation_winner": "catboost_native",
+        "test_winner": "catboost_native",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      }
+    ],
+    "winner_agreements": 6,
+    "mean_test_regret_of_validation_winner": 0.0017678008592013764
+  },
+  "interpretation": "late_source_primary_pass"
+}

@@ -1,0 +1,30 @@
+{
+  "categorical_fields": [
+    "A1",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A9",
+    "A10",
+    "A12",
+    "A13"
+  ],
+  "numeric_fields": [
+    "A2",
+    "A3",
+    "A8",
+    "A11",
+    "A14",
+    "A15"
+  ],
+  "openml_data_id": 29,
+  "openml_name": "credit-approval",
+  "rows": 690,
+  "split_sizes": {
+    "test": 138,
+    "train": 414,
+    "val": 138
+  },
+  "task": "classification"
+}

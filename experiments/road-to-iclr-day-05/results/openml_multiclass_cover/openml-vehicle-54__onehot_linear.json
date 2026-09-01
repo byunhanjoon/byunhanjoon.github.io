@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-vehicle-54",
+  "model": "onehot_linear",
+  "task": "multiclass",
+  "shape": [
+    4,
+    1,
+    4,
+    4
+  ],
+  "fits": 64,
+  "rows": {
+    "train": 507,
+    "validation": 169,
+    "test": 170
+  },
+  "full_product_verified": true
+}

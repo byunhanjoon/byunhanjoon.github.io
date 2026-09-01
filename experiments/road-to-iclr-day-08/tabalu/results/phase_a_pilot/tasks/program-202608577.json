@@ -1,0 +1,31 @@
+{
+  "task_id": "program-202608577",
+  "seed": 202608577,
+  "program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "abs",
+        "left": 1,
+        "right": null
+      },
+      {
+        "operator": "safe_divide",
+        "left": 4,
+        "right": 2
+      },
+      {
+        "operator": "square",
+        "left": 5,
+        "right": null
+      }
+    ],
+    "output": 6,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "n_irrelevant": 0,
+  "generation_attempt": 0,
+  "expression": "square(safe_divide(abs(x1), x2))"
+}

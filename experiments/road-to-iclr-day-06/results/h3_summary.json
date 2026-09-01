@@ -1,0 +1,69 @@
+{
+  "status": "complete",
+  "artifacts": 36,
+  "final_checkpoint": 200,
+  "gates": {
+    "exact_iea64_cells": {
+      "value": 0,
+      "required": 8,
+      "pass": false
+    },
+    "material_ft_fp32_datasets": {
+      "value": 3,
+      "required": 2,
+      "pass": true
+    },
+    "stable_mlp_resnet_cells": {
+      "value": 3,
+      "required": 5,
+      "pass": false
+    },
+    "timing_overhead": {
+      "models_pass": 3,
+      "required": 3,
+      "ratios_iea64_over_fp32": {
+        "ft_transformer": 1.021094787527575,
+        "mlp": 1.154085850256318,
+        "resnet": 1.0477763204749064
+      },
+      "pass": true
+    },
+    "canonical_test_loss_change": {
+      "value": 0.002815487659823561,
+      "required_interval": [
+        -0.01,
+        0.01
+      ],
+      "pass": true,
+      "dataset_means": {
+        "bank_marketing_subscription": 0.00955264397184062,
+        "credit_card_default": 0.006090880333948383,
+        "fremtpl_claim_count": -0.00719706132631832
+      }
+    }
+  },
+  "logical_reachability": {
+    "exact_iea64_cells": {
+      "failed_cells_observed": 9,
+      "maximum_possible_final_value": 0,
+      "required": 8,
+      "reachable": false
+    },
+    "stable_mlp_resnet_cells": {
+      "failed_cells_observed": 3,
+      "maximum_possible_final_value": 3,
+      "required": 5,
+      "reachable": false
+    },
+    "material_ft_fp32_datasets": {
+      "successful_datasets_observed": 3,
+      "maximum_possible_final_value": 3,
+      "required": 2,
+      "reachable": true
+    },
+    "hypothesis_already_falsified": true,
+    "note": "timing and equal-dataset loss gates are not monotone under partial bundles"
+  },
+  "hypothesis_supported": false,
+  "summed_fit_hours": 12.402144538131413
+}

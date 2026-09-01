@@ -1,0 +1,13 @@
+{
+  "activation": "gelu",
+  "best_epoch": 19,
+  "input_features": 386,
+  "members": "",
+  "model": "resnet",
+  "parameters": 1320193,
+  "selected_numeric": [],
+  "test_score": 0.8618021006080707,
+  "train_seconds": 9.393566163023934,
+  "val_score": 0.8595117457392907,
+  "width": 382
+}

@@ -1,0 +1,5 @@
+dataset,method,draw,selection_agreement,validation_quotient_regret,selected_quotient_test_loss,selected_realized_test_loss
+openml-segment-36,disjoint_pair_mean32,511.5,1.0,0.0,0.052478139105077364,0.052478139105077364
+openml-segment-36,independent_pair_mean32,511.5,1.0,0.0,0.052478139105077364,0.052478139105077364
+openml-vehicle-54,disjoint_pair_mean32,511.5,1.0,0.0,0.29486166177148304,0.29486166177148304
+openml-vehicle-54,independent_pair_mean32,511.5,1.0,0.0,0.29486166177148304,0.29486166177148304

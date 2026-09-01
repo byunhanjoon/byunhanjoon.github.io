@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-ilpd-1480",
+  "model": "onehot_adam_mlp",
+  "task": "binclass",
+  "shape": [
+    4,
+    2,
+    2,
+    4
+  ],
+  "fits": 64,
+  "rows": {
+    "train": 349,
+    "validation": 117,
+    "test": 117
+  },
+  "full_product_verified": true
+}

@@ -1,0 +1,7 @@
+dataset,method,draw,selection_agreement,validation_quotient_regret,selected_quotient_test_loss,selected_realized_test_loss
+openml-segment-36,independent_four64,511.5,1.0,0.0,0.052478139105077364,0.052478139105077364
+openml-segment-36,mutually_disjoint_pack64,511.5,1.0,0.0,0.052478139105077364,0.052478139105077364
+openml-segment-36,two_disjoint_pairs64,511.5,1.0,0.0,0.052478139105077364,0.052478139105077364
+openml-vehicle-54,independent_four64,511.5,1.0,0.0,0.29486166177148304,0.29486166177148304
+openml-vehicle-54,mutually_disjoint_pack64,511.5,1.0,0.0,0.29486166177148304,0.29486166177148304
+openml-vehicle-54,two_disjoint_pairs64,511.5,1.0,0.0,0.29486166177148304,0.29486166177148304

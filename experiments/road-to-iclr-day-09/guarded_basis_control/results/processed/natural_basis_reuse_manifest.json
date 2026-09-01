@@ -1,0 +1,28 @@
+{
+  "status": "COMPLETE_REUSED_FROZEN_PRIOR_EVIDENCE",
+  "source_root": "../safe_basis_control/results/processed",
+  "source_artifacts": {
+    "natural_basis_cells.csv": "3cd9466b73d856d2266ed9fa19d1c092de22743c086283673b09c1f3c3f9742c",
+    "natural_basis_manifest.json": "21d34ccdb86ee54926be50b91426c603684ee0ebec00388c3d1366aa23dcc283",
+    "natural_basis_summary.csv": "ff7ddcd9aac0b5a472a0087d597c4cfd5857ee82be19117cfc75fb8f36ede7fc"
+  },
+  "available_pairs": [
+    "local_hat_to_spectral_hat",
+    "one_hot_to_helmert"
+  ],
+  "fourier_origin_shift": "unavailable because no frozen cyclic metadata had an eight-coordinate block",
+  "datasets": [
+    "CPMP-2015-regression",
+    "ozone-level-8hr",
+    "quake",
+    "visualizing_soil",
+    "wall-robot-navigation"
+  ],
+  "cells": 216,
+  "maximum_natural_reconstruction_error": 2.846628229053474e-16,
+  "maximum_gram_coordinate_error": 1.610880473442707e-16,
+  "maximum_rank_coordinate_error": 1.7222811410591122e-16,
+  "exact_equivalence_threshold": 1e-6,
+  "passes_exact_equivalence_threshold": true,
+  "prospective_outcomes_accessed": false
+}

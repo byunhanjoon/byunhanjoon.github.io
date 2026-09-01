@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-churn-40701",
+  "model": "native_histgb",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 3000,
+    "validation": 1000,
+    "test": 1000
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026083051,
+  "timing": {
+    "setup_seconds": 0.042018207954242826,
+    "fit_loop_seconds": 31.922048724023625,
+    "end_to_end_seconds": 31.990141574991867,
+    "fits_per_fit_loop_second": 4.009767703401532
+  }
+}

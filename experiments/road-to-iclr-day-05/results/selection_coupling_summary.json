@@ -1,0 +1,361 @@
+{
+  "status": "complete",
+  "draws_per_dataset": 1024,
+  "panels": {
+    "confirmation": {
+      "independent": {
+        "datasets": 11,
+        "mean_strength2_minus_iid16": -0.0001995935931643623,
+        "datasets_strength2_lower_iid16": 10,
+        "mean_metrics_by_method": {
+          "four_seed_blocks": {
+            "selected_realized_test_loss": 0.21934083932795928,
+            "selected_quotient_test_loss": 0.21929867690057916,
+            "validation_quotient_regret": 1.414376368660033e-05,
+            "selection_agreement": 0.9220525568181818,
+            "selection_entropy_bits": 0.2153322660509022
+          },
+          "four_strength1": {
+            "selected_realized_test_loss": 0.2193710170351447,
+            "selected_quotient_test_loss": 0.21931737339796317,
+            "validation_quotient_regret": 1.1469765188264903e-05,
+            "selection_agreement": 0.9271129261363636,
+            "selection_entropy_bits": 0.2000067404233787
+          },
+          "iid16": {
+            "selected_realized_test_loss": 0.21943254839589582,
+            "selected_quotient_test_loss": 0.21934926005983305,
+            "validation_quotient_regret": 1.5950111673493337e-05,
+            "selection_agreement": 0.9142400568181818,
+            "selection_entropy_bits": 0.22651079016466913
+          },
+          "srswor16": {
+            "selected_realized_test_loss": 0.21942859692297734,
+            "selected_quotient_test_loss": 0.21936423630543167,
+            "validation_quotient_regret": 1.3218682217941247e-05,
+            "selection_agreement": 0.9184126420454546,
+            "selection_entropy_bits": 0.21418278371895266
+          },
+          "strength2": {
+            "selected_realized_test_loss": 0.21923295480273144,
+            "selected_quotient_test_loss": 0.21921526648198564,
+            "validation_quotient_regret": 1.0212111266964666e-05,
+            "selection_agreement": 0.9561434659090909,
+            "selection_entropy_bits": 0.10791295043226024
+          }
+        },
+        "independent_gate_passed": true
+      },
+      "shared": {
+        "datasets": 11,
+        "mean_strength2_minus_iid16": -0.00019831814427787468,
+        "datasets_strength2_lower_iid16": 11,
+        "mean_metrics_by_method": {
+          "four_seed_blocks": {
+            "selected_realized_test_loss": 0.21936151860937364,
+            "selected_quotient_test_loss": 0.21932357766112978,
+            "validation_quotient_regret": 1.726491302465631e-05,
+            "selection_agreement": 0.9175248579545454,
+            "selection_entropy_bits": 0.24408478492656072
+          },
+          "four_strength1": {
+            "selected_realized_test_loss": 0.21936332458935695,
+            "selected_quotient_test_loss": 0.2193150805249738,
+            "validation_quotient_regret": 1.3174025227143099e-05,
+            "selection_agreement": 0.9231178977272727,
+            "selection_entropy_bits": 0.20598194181396226
+          },
+          "iid16": {
+            "selected_realized_test_loss": 0.2194315777608866,
+            "selected_quotient_test_loss": 0.21935451658641938,
+            "validation_quotient_regret": 1.676566374803531e-05,
+            "selection_agreement": 0.9140625,
+            "selection_entropy_bits": 0.23137109953792157
+          },
+          "srswor16": {
+            "selected_realized_test_loss": 0.2194003377062205,
+            "selected_quotient_test_loss": 0.21934928422656313,
+            "validation_quotient_regret": 1.2467273653359768e-05,
+            "selection_agreement": 0.9176136363636364,
+            "selection_entropy_bits": 0.21119731996455438
+          },
+          "strength2": {
+            "selected_realized_test_loss": 0.2192332596166087,
+            "selected_quotient_test_loss": 0.2192152843880842,
+            "validation_quotient_regret": 9.722887141669219e-06,
+            "selection_agreement": 0.9571200284090909,
+            "selection_entropy_bits": 0.10442290498648815
+          }
+        },
+        "independent_gate_passed": false
+      }
+    },
+    "menu_repeat": {
+      "independent": {
+        "datasets": 6,
+        "mean_strength2_minus_iid16": -6.61617643767003e-05,
+        "datasets_strength2_lower_iid16": 4,
+        "mean_metrics_by_method": {
+          "four_seed_blocks": {
+            "selected_realized_test_loss": 0.2894681990716669,
+            "selected_quotient_test_loss": 0.28941766077271996,
+            "validation_quotient_regret": 7.85440091603103e-06,
+            "selection_agreement": 0.9773763020833334,
+            "selection_entropy_bits": 0.09549640545127995
+          },
+          "four_strength1": {
+            "selected_realized_test_loss": 0.2893878353361793,
+            "selected_quotient_test_loss": 0.2893504250860613,
+            "validation_quotient_regret": 7.747137817759277e-07,
+            "selection_agreement": 0.9982096354166666,
+            "selection_entropy_bits": 0.0155078569686106
+          },
+          "iid16": {
+            "selected_realized_test_loss": 0.2894272068996841,
+            "selected_quotient_test_loss": 0.2893533375894824,
+            "validation_quotient_regret": 9.581159849158604e-06,
+            "selection_agreement": 0.9814453125,
+            "selection_entropy_bits": 0.10219785516458833
+          },
+          "srswor16": {
+            "selected_realized_test_loss": 0.28940625512164925,
+            "selected_quotient_test_loss": 0.28933987544794093,
+            "validation_quotient_regret": 3.9448266053012945e-06,
+            "selection_agreement": 0.9934895833333334,
+            "selection_entropy_bits": 0.04621885583301738
+          },
+          "strength2": {
+            "selected_realized_test_loss": 0.2893610451353074,
+            "selected_quotient_test_loss": 0.2893473848332571,
+            "validation_quotient_regret": 0.0,
+            "selection_agreement": 1.0,
+            "selection_entropy_bits": 0.0
+          }
+        },
+        "independent_gate_passed": true
+      },
+      "shared": {
+        "datasets": 6,
+        "mean_strength2_minus_iid16": -8.507940623088926e-05,
+        "datasets_strength2_lower_iid16": 5,
+        "mean_metrics_by_method": {
+          "four_seed_blocks": {
+            "selected_realized_test_loss": 0.28945593327977476,
+            "selected_quotient_test_loss": 0.2894070435444558,
+            "validation_quotient_regret": 6.667764806414832e-06,
+            "selection_agreement": 0.9807942708333334,
+            "selection_entropy_bits": 0.08591754568577699
+          },
+          "four_strength1": {
+            "selected_realized_test_loss": 0.2893884165760276,
+            "selected_quotient_test_loss": 0.2893532024091947,
+            "validation_quotient_regret": 8.676619828754729e-07,
+            "selection_agreement": 0.9977213541666666,
+            "selection_entropy_bits": 0.018224569015421025
+          },
+          "iid16": {
+            "selected_realized_test_loss": 0.2894455450186075,
+            "selected_quotient_test_loss": 0.28935885844067727,
+            "validation_quotient_regret": 7.588681784786911e-06,
+            "selection_agreement": 0.9845377604166666,
+            "selection_entropy_bits": 0.088461878124109
+          },
+          "srswor16": {
+            "selected_realized_test_loss": 0.28941615309600277,
+            "selected_quotient_test_loss": 0.2893489488932527,
+            "validation_quotient_regret": 3.2192436974299815e-06,
+            "selection_agreement": 0.9938151041666666,
+            "selection_entropy_bits": 0.04409711474548342
+          },
+          "strength2": {
+            "selected_realized_test_loss": 0.28936046561237655,
+            "selected_quotient_test_loss": 0.2893473848332571,
+            "validation_quotient_regret": 0.0,
+            "selection_agreement": 1.0,
+            "selection_entropy_bits": 0.0
+          }
+        },
+        "independent_gate_passed": false
+      }
+    },
+    "openml_taskbalanced": {
+      "independent": {
+        "datasets": 8,
+        "mean_strength2_minus_iid16": -0.0011244228528259131,
+        "datasets_strength2_lower_iid16": 7,
+        "mean_metrics_by_method": {
+          "four_seed_blocks": {
+            "selected_realized_test_loss": 0.15170685382138857,
+            "selected_quotient_test_loss": 0.15095889710785906,
+            "validation_quotient_regret": 0.00019520254114926015,
+            "selection_agreement": 0.9395751953125,
+            "selection_entropy_bits": 0.23128275866003675
+          },
+          "four_strength1": {
+            "selected_realized_test_loss": 0.15154249760531768,
+            "selected_quotient_test_loss": 0.1509485789204285,
+            "validation_quotient_regret": 0.00014510769048460336,
+            "selection_agreement": 0.9384765625,
+            "selection_entropy_bits": 0.2041175368383737
+          },
+          "iid16": {
+            "selected_realized_test_loss": 0.1517569919625388,
+            "selected_quotient_test_loss": 0.15099668533605487,
+            "validation_quotient_regret": 0.00021008407661134019,
+            "selection_agreement": 0.9317626953125,
+            "selection_entropy_bits": 0.2401602475752585
+          },
+          "srswor16": {
+            "selected_realized_test_loss": 0.15071093088710413,
+            "selected_quotient_test_loss": 0.15089834920927753,
+            "validation_quotient_regret": 0.0001315685427298599,
+            "selection_agreement": 0.9483642578125,
+            "selection_entropy_bits": 0.19377583917762406
+          },
+          "strength2": {
+            "selected_realized_test_loss": 0.1506325691097129,
+            "selected_quotient_test_loss": 0.15070491314599688,
+            "validation_quotient_regret": 6.229684989270187e-05,
+            "selection_agreement": 0.9737548828125,
+            "selection_entropy_bits": 0.11610826438103258
+          }
+        },
+        "independent_gate_passed": true
+      },
+      "shared": {
+        "datasets": 8,
+        "mean_strength2_minus_iid16": -0.0012819620067615618,
+        "datasets_strength2_lower_iid16": 8,
+        "mean_metrics_by_method": {
+          "four_seed_blocks": {
+            "selected_realized_test_loss": 0.15154552557431694,
+            "selected_quotient_test_loss": 0.15095776719850376,
+            "validation_quotient_regret": 0.00019649263738688528,
+            "selection_agreement": 0.939697265625,
+            "selection_entropy_bits": 0.2310455817475342
+          },
+          "four_strength1": {
+            "selected_realized_test_loss": 0.15140813319250626,
+            "selected_quotient_test_loss": 0.150987841405809,
+            "validation_quotient_regret": 0.00016625822402184677,
+            "selection_agreement": 0.9320068359375,
+            "selection_entropy_bits": 0.21610360744468673
+          },
+          "iid16": {
+            "selected_realized_test_loss": 0.15192093739599238,
+            "selected_quotient_test_loss": 0.1510245754273872,
+            "validation_quotient_regret": 0.00019281756934968634,
+            "selection_agreement": 0.92724609375,
+            "selection_entropy_bits": 0.23841364361934736
+          },
+          "srswor16": {
+            "selected_realized_test_loss": 0.15071718969157455,
+            "selected_quotient_test_loss": 0.1508545782599491,
+            "validation_quotient_regret": 0.0001206735638130937,
+            "selection_agreement": 0.95068359375,
+            "selection_entropy_bits": 0.18754831221436508
+          },
+          "strength2": {
+            "selected_realized_test_loss": 0.15063897538923082,
+            "selected_quotient_test_loss": 0.15073435304410718,
+            "validation_quotient_regret": 6.866973702188374e-05,
+            "selection_agreement": 0.9713134765625,
+            "selection_entropy_bits": 0.12247938033242681
+          }
+        },
+        "independent_gate_passed": false
+      }
+    },
+    "subsample_repeat": {
+      "independent": {
+        "datasets": 6,
+        "mean_strength2_minus_iid16": -0.00013299894031944997,
+        "datasets_strength2_lower_iid16": 6,
+        "mean_metrics_by_method": {
+          "four_seed_blocks": {
+            "selected_realized_test_loss": 0.2944509446266515,
+            "selected_quotient_test_loss": 0.2943690313975207,
+            "validation_quotient_regret": 1.779695550213205e-05,
+            "selection_agreement": 0.9498697916666666,
+            "selection_entropy_bits": 0.21053936826421704
+          },
+          "four_strength1": {
+            "selected_realized_test_loss": 0.2944113295152568,
+            "selected_quotient_test_loss": 0.2943395867565784,
+            "validation_quotient_regret": 1.1811901994769023e-05,
+            "selection_agreement": 0.9685872395833334,
+            "selection_entropy_bits": 0.1483876937223254
+          },
+          "iid16": {
+            "selected_realized_test_loss": 0.2944686773944905,
+            "selected_quotient_test_loss": 0.2943795390949121,
+            "validation_quotient_regret": 2.0209533448988198e-05,
+            "selection_agreement": 0.94189453125,
+            "selection_entropy_bits": 0.22035444121174533
+          },
+          "srswor16": {
+            "selected_realized_test_loss": 0.2944114704015193,
+            "selected_quotient_test_loss": 0.29435014334669096,
+            "validation_quotient_regret": 1.3012281141839914e-05,
+            "selection_agreement": 0.9619140625,
+            "selection_entropy_bits": 0.16639150055915874
+          },
+          "strength2": {
+            "selected_realized_test_loss": 0.294335678454171,
+            "selected_quotient_test_loss": 0.2942988307330015,
+            "validation_quotient_regret": 2.8621830505453033e-06,
+            "selection_agreement": 0.9962565104166666,
+            "selection_entropy_bits": 0.025840590806617703
+          }
+        },
+        "independent_gate_passed": true
+      },
+      "shared": {
+        "datasets": 6,
+        "mean_strength2_minus_iid16": -0.00012973648660619886,
+        "datasets_strength2_lower_iid16": 6,
+        "mean_metrics_by_method": {
+          "four_seed_blocks": {
+            "selected_realized_test_loss": 0.2944701378473937,
+            "selected_quotient_test_loss": 0.2943848220022836,
+            "validation_quotient_regret": 2.382223499890569e-05,
+            "selection_agreement": 0.93994140625,
+            "selection_entropy_bits": 0.24949702237559698
+          },
+          "four_strength1": {
+            "selected_realized_test_loss": 0.294413002738866,
+            "selected_quotient_test_loss": 0.29434264500472734,
+            "validation_quotient_regret": 1.220471474400894e-05,
+            "selection_agreement": 0.9666341145833334,
+            "selection_entropy_bits": 0.15403424487781583
+          },
+          "iid16": {
+            "selected_realized_test_loss": 0.2944681518526173,
+            "selected_quotient_test_loss": 0.29437693686165306,
+            "validation_quotient_regret": 1.7891921322674526e-05,
+            "selection_agreement": 0.9444986979166666,
+            "selection_entropy_bits": 0.2121060307792194
+          },
+          "srswor16": {
+            "selected_realized_test_loss": 0.29441492198989067,
+            "selected_quotient_test_loss": 0.29435357790401656,
+            "validation_quotient_regret": 1.6225851517018248e-05,
+            "selection_agreement": 0.95849609375,
+            "selection_entropy_bits": 0.1791288146443473
+          },
+          "strength2": {
+            "selected_realized_test_loss": 0.29433841536601113,
+            "selected_quotient_test_loss": 0.29429753400911923,
+            "validation_quotient_regret": 1.9910838612489067e-06,
+            "selection_agreement": 0.9973958333333334,
+            "selection_entropy_bits": 0.019352512550794954
+          }
+        },
+        "independent_gate_passed": false
+      }
+    }
+  },
+  "independent_panels_passing": 3,
+  "frozen_independent_coupling_gate_passed": true,
+  "taskbalanced_postgate_addendum_passed": true
+}

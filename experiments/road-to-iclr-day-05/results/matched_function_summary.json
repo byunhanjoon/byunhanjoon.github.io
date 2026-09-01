@@ -1,0 +1,37 @@
+{
+  "status": "complete",
+  "protocol_sha256": "ae0e64f36cf1bd729ed98208759cd80e952ad391b8efcb5adc11b24034f66fa5",
+  "datasets": 4,
+  "seeds": 4,
+  "representatives": 4,
+  "model_fits": 128,
+  "mean_ordinary_schema_variance": 0.003050339754161421,
+  "mean_matched_function_schema_variance": 2.397777252672539e-33,
+  "pooled_fraction_removed": 1.0,
+  "maximum_matched_initial_gap": 2.220446049250313e-16,
+  "maximum_matched_post_training_gap": 3.3306690738754696e-16,
+  "dataset_means": {
+    "australian_credit_approval": {
+      "ordinary_schema_variance": 0.0037425744510313002,
+      "matched_function_schema_variance": 2.595137807300966e-33,
+      "fraction_removed": 1.0
+    },
+    "bank_marketing_subscription": {
+      "ordinary_schema_variance": 0.0016337782351698688,
+      "matched_function_schema_variance": 1.5533209927472025e-33,
+      "fraction_removed": 1.0
+    },
+    "german_credit_risk": {
+      "ordinary_schema_variance": 0.005650886368139206,
+      "matched_function_schema_variance": 3.6195073260618404e-33,
+      "fraction_removed": 1.0
+    },
+    "lendingclub_loan_default": {
+      "ordinary_schema_variance": 0.00117411996230531,
+      "matched_function_schema_variance": 1.823142884580148e-33,
+      "fraction_removed": 1.0
+    }
+  },
+  "gate_f_residual_supported": false,
+  "interpretation": "residual optimization-path support only if the matched variance is materially above numerical error"
+}

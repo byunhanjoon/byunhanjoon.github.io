@@ -1,0 +1,117 @@
+{
+  "actual_manifests": {
+    "experiment_a": 144,
+    "experiment_a_classical": 24,
+    "experiment_b": 360,
+    "experiment_d": 48,
+    "matched_convergence": 24
+  },
+  "closure_wall_clock_hours": 44.054842854075964,
+  "design_and_budget_audit": {
+    "a_equal_budget_groups": 720,
+    "b_full_product_conditions": 96,
+    "b_strength3_conditions": 264,
+    "d_equal_budget_rows": 384,
+    "matched_gap_conditions": 24
+  },
+  "expected_manifests": {
+    "experiment_a": 144,
+    "experiment_a_classical": 24,
+    "experiment_b": 360,
+    "experiment_d": 48,
+    "matched_convergence": 24
+  },
+  "outputs": {
+    "figure_concepts": 10,
+    "figure_files": 20,
+    "summary_artifacts": 19,
+    "table_files": 10,
+    "tables": 5
+  },
+  "prediction_arrays_verified": 1128,
+  "protocol_hashes": {
+    "FINAL_CLOSURE_PROTOCOL.md": "ff9d6a827d624f2463acd36b7f11528a7f77019680657d425e25bd251375a014",
+    "final_closure_config.json": "00dc41e9797fc4fd30e590fcee7264722d509ecc2860ea09d54d751a45518339"
+  },
+  "recorded_deviations": [
+    "## D1 \u2014 independent joint-pool cardinality correction",
+    "## D2 \u2014 checkpointed trajectory reuse and small/20 verification",
+    "## D3 \u2014 B=64 support for collapsed schema menus",
+    "## D4 \u2014 repeated rows in collapsed strength-3 trajectories",
+    "## D5 \u2014 preserve pre-cap training-index order for exact small-N reuse",
+    "## D6 \u2014 reject constrained MPS; validate unconstrained MPS exactly",
+    "## D7 \u2014 deterministic intra-cell path sharding",
+    "## D8 \u2014 Experiment-D matrix resharding",
+    "## D9 \u2014 targeted FT-Transformer path resharding",
+    "## D10 \u2014 telemetry-balanced B shard counts",
+    "## D11 \u2014 four-worker FT-Transformer tail for Experiment D",
+    "## D12 \u2014 adaptive FT canonical-barrier allocation"
+  ],
+  "regeneration": {
+    "completed_at_utc": "2026-08-28T14:08:34.950963+00:00",
+    "derived_artifact_count": 50,
+    "derived_artifact_digest": "443e55f314107b835c388606028dbb0ef290d4cd8ad7466db33c258e8b8e671d",
+    "pipeline": [
+      "analyze_experiment_a.py",
+      "analyze_experiment_a_classical.py",
+      "analyze_experiment_b.py",
+      "analyze_experiment_c.py",
+      "analyze_experiment_d.py",
+      "make_final_claims.py"
+    ],
+    "raw_manifest_count": 600,
+    "raw_manifest_digest": "022aa79bafe531fa3db77f5a4f6820b836023087c3645bd76123385b12ee70ff",
+    "status": "complete"
+  },
+  "registry": {
+    "by_experiment": {
+      "A": {
+        "fits": 51264,
+        "maximum_peak_device_bytes": 91601408,
+        "wall_seconds": 28152.465528158704
+      },
+      "A-secondary": {
+        "fits": 6144,
+        "maximum_peak_device_bytes": 0,
+        "wall_seconds": 732.2665036357939
+      },
+      "B": {
+        "fits": 68208,
+        "maximum_peak_device_bytes": 93244928,
+        "wall_seconds": 791558.1017828009
+      },
+      "B-matched": {
+        "fits": 1152,
+        "maximum_peak_device_bytes": 93316608,
+        "wall_seconds": 6223.634665391175
+      },
+      "D": {
+        "fits": 13824,
+        "maximum_peak_device_bytes": 91601408,
+        "wall_seconds": 8551.215018378105
+      }
+    },
+    "complete_fit_keys": 140592,
+    "summed_cpu_fit_hours": 0.20340736212105387,
+    "summed_fit_hours": 232.00491208287906,
+    "summed_gpu_fit_hours": 231.801504720758
+  },
+  "represented_fits_by_experiment": {
+    "experiment_a": 51264,
+    "experiment_a_classical": 6144,
+    "experiment_b": 68208,
+    "experiment_d": 13824,
+    "matched_convergence": 1152
+  },
+  "represented_fits_from_manifests": 140592,
+  "seed_audit": {
+    "independent_pools": 528,
+    "unique_seed_records": 125616
+  },
+  "status": "pass",
+  "tests": {
+    "output": "116 passed in 19.84s",
+    "passed": 116,
+    "total": 116
+  }
+}

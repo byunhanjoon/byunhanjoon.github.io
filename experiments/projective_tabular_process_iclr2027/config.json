@@ -1,0 +1,79 @@
+{
+  "protocol_version": "1.0-prospective",
+  "frozen_at": "2026-08-31T00:00:00+09:00",
+  "openml_suite_id": 353,
+  "evaluation_tasks": [
+    361234, 361235, 361236, 361237, 361241, 361242, 361243,
+    361244, 361247, 361249, 361250, 361251, 361252, 361253,
+    361254, 361255, 361256, 361257, 361258, 361259, 361260,
+    361261, 361264, 361266, 361267, 361268, 361269, 361272,
+    361616, 361617, 361618, 361619, 361621, 361622, 361623
+  ],
+  "development_datasets": [
+    {"name": "pol", "openml_id": 201},
+    {"name": "elevators", "openml_id": 216},
+    {"name": "sulfur", "openml_id": 23515},
+    {"name": "ailerons", "openml_id": 296},
+    {"name": "house_16h", "openml_id": 574},
+    {"name": "fried", "openml_id": 564}
+  ],
+  "application_datasets": [
+    {"name": "fremtpl_claim_count", "source": "local"},
+    {"name": "kdd17_stock_return", "source": "local"},
+    {"name": "bike_sharing", "source": "openml", "openml_id": 42712}
+  ],
+  "context_sizes": [16, 64, 256],
+  "evaluation_folds": [0, 1, 2],
+  "context_replicates": 2,
+  "development_splits": [20270101, 20270102, 20270103],
+  "development_context_replicates": 3,
+  "query_size": 8,
+  "query_groups": 6,
+  "query_families": [
+    "point", "subset_mean", "subset_total_l2", "pair_difference",
+    "group_contrast", "dense_signed", "dense_positive", "scaled_dense"
+  ],
+  "primary_aggregate_families": [
+    "subset_mean", "subset_total_l2", "pair_difference",
+    "group_contrast", "dense_signed", "dense_positive"
+  ],
+  "tabicl": {
+    "checkpoint": "tabicl-regressor-v2-20260212.ckpt",
+    "n_estimators": 8,
+    "quantile_grid_size": 199
+  },
+  "tabpfn": {
+    "version": "2.5",
+    "n_estimators": 8
+  },
+  "head_hpo": {
+    "ranks": [8, 16, 32],
+    "hidden_dims": [0, 64],
+    "weight_decays": [0.0, 0.0001, 0.001],
+    "learning_rates": [0.001],
+    "max_epochs": 400,
+    "patience": 40,
+    "seeds": [20270111, 20270112, 20270113]
+  },
+  "marginal_temperature_grid": [0.25, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 4.0, 6.0, 8.0],
+  "gp": {
+    "kernels": ["rbf", "matern32"],
+    "length_scale_multipliers": [0.5, 1.0, 2.0]
+  },
+  "catboost": {
+    "ensemble_size": 8,
+    "iterations": [200, 500],
+    "depth": [4, 6],
+    "learning_rate": [0.03, 0.1]
+  },
+  "bootstrap_repetitions": 20000,
+  "primary_gates": {
+    "mean_nll_advantage_over_diagonal": 0.0,
+    "dataset_nll_win_rate": 0.60,
+    "mean_crps_advantage_over_diagonal": 0.0,
+    "paired_randomization_p": 0.05,
+    "mean_and_diagonal_max_abs": 1e-10,
+    "projectivity_max_abs": 1e-5
+  },
+  "cache_root": "/data/byunhanjoon/projective_tabular_process_iclr2027"
+}

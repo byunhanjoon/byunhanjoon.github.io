@@ -1,0 +1,3 @@
+task,cells,wins,mean_relative_test_gain_pct
+classification,36,23,2.5017776666351907
+regression,36,33,2.3096734059134154

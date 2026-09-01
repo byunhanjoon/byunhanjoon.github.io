@@ -1,0 +1,186 @@
+{
+  "protocol": "REAL_CONTEXT_SCALING_PROTOCOL.md",
+  "metadata": {
+    "config": "configs/real_context_scaling.yaml",
+    "config_sha256": "2c1e1c2dd3e928066f6e9c9fd8ea806e61921d210016f09e1cd1f23e74b2a3c0",
+    "dataset_audit": {
+      "abalone": {
+        "dataset_id": 44956,
+        "dataset_md5": "81f6d8b4dce14710077ab88389254d83",
+        "numeric_features_available": 7,
+        "outer_train_rows": 3759,
+        "selected_features": [
+          "length",
+          "diameter",
+          "height",
+          "whole_weight",
+          "shucked_weight",
+          "cisvera_weight",
+          "shell_weight"
+        ],
+        "split_sha256": "5042ff7defbe1d5ae7f274572d4f65dd8de243fffa1deb1751a256ae0c11c8c0",
+        "task_id": 361234,
+        "test_rows": 418
+      },
+      "auction_verification": {
+        "dataset_id": 44958,
+        "dataset_md5": "fee9a1bd5d59943c9a83508a401821c8",
+        "numeric_features_available": 5,
+        "outer_train_rows": 1838,
+        "selected_features": [
+          "process.b1.capacity",
+          "process.b2.capacity",
+          "process.b3.capacity",
+          "process.b4.capacity",
+          "property.price"
+        ],
+        "split_sha256": "6e96a9f76b008daea2e45dddc58d68f6c54a8582d510bdbd5988e6296b088b96",
+        "task_id": 361236,
+        "test_rows": 205
+      },
+      "geographical_origin_of_music": {
+        "dataset_id": 44965,
+        "dataset_md5": "a5a6222b5b79a8a0bb441667766d41b0",
+        "numeric_features_available": 116,
+        "outer_train_rows": 953,
+        "selected_features": [
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6",
+          "V7",
+          "V8",
+          "V9",
+          "V10",
+          "V11",
+          "V12",
+          "V13",
+          "V14",
+          "V15",
+          "V16",
+          "V17",
+          "V18",
+          "V19",
+          "V20",
+          "V21",
+          "V22",
+          "V23",
+          "V24",
+          "V25",
+          "V26",
+          "V27",
+          "V28",
+          "V29",
+          "V30",
+          "V31",
+          "V32"
+        ],
+        "split_sha256": "90aee4726454a1a26d18951888cafe1c2c6f8c54ea836630f2ec82c911c86679",
+        "task_id": 361243,
+        "test_rows": 106
+      },
+      "naval_propulsion_plant": {
+        "dataset_id": 44969,
+        "dataset_md5": "27484a3481ad60205656f6b6b191996b",
+        "numeric_features_available": 14,
+        "outer_train_rows": 10740,
+        "selected_features": [
+          "lever_position",
+          "ship_speed",
+          "gas_turbine_shaft_torque",
+          "gas_turbine_rate_of_revolutions",
+          "gas_generator_rate_of_revolutions",
+          "starboard_propeller_torque",
+          "port_propeller_torque",
+          "hp_turbine_exit_temperature",
+          "gt_compressor_outlet_air_temperature",
+          "hp_turbine_exit_pressure",
+          "gt_compressor_outlet_air_pressure",
+          "gas_turbine_exhaust_gas_pressure",
+          "turbine_injecton_control",
+          "fuel_flow"
+        ],
+        "split_sha256": "907eb0fc1295994919957eab6e0b398771d41e1c3bbbddf621e72f3f11c10ba9",
+        "task_id": 361247,
+        "test_rows": 1194
+      },
+      "solar_flare": {
+        "dataset_id": 44966,
+        "dataset_md5": "f8b0a7c961d3329e1bcea52c724bd724",
+        "numeric_features_available": 2,
+        "outer_train_rows": 959,
+        "selected_features": [
+          "evolution",
+          "area_largest"
+        ],
+        "split_sha256": "edf230bc4a235e305ef72badf7a10c12d8968caf7d45bb08e36d7429d9548e99",
+        "task_id": 361244,
+        "test_rows": 107
+      }
+    },
+    "episodes": 600,
+    "experiment": "real_context_scaling",
+    "expert_fits": 14400,
+    "git_commit": "0c456660ae9a87aab7932b569e1954b0ee1d25fe",
+    "package_versions": {
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "python": "3.10.16",
+      "scipy": "1.11.4",
+      "sklearn": "1.4.2",
+      "tabicl": "unknown",
+      "tabpfn": "6.3.0",
+      "torch": "2.7.0+cu126",
+      "yaml": "6.0.2"
+    },
+    "processed_summary": "results/processed/real_context_scaling_2c1e1c2dd3_cells.csv",
+    "protocol": "REAL_CONTEXT_SCALING_PROTOCOL.md",
+    "raw_bundle": "results/raw/real_context_scaling_2c1e1c2dd3.npz",
+    "run_key": "real_context_scaling_2c1e1c2dd3",
+    "synthetic_tuning": {
+      "competence_development_loss": 0.21243490749892507,
+      "fixed_weights": [
+        0.16269244506046177,
+        0.06957482992823108,
+        0.05896293322370081,
+        0.21690125013624803,
+        0.24853765920022589,
+        0.24333088245113244
+      ],
+      "temperature": 0.1,
+      "uniform_shrinkage": 0.0
+    },
+    "wall_clock_seconds": 69.22683819988742
+  },
+  "gain_by_context": {
+    "32": {
+      "value": 0.08257372697714606,
+      "ci_low": 0.008909996613389716,
+      "ci_high": 0.21010903697824262
+    },
+    "64": {
+      "value": 0.07662914202850094,
+      "ci_low": -0.0016650582974457027,
+      "ci_high": 0.21534549469080427
+    },
+    "96": {
+      "value": 0.08448496515596907,
+      "ci_low": 0.0024840843713502497,
+      "ci_high": 0.21408555002604698
+    },
+    "192": {
+      "value": 0.09886967520139568,
+      "ci_low": 0.002350149174080951,
+      "ci_high": 0.20078761146809246
+    }
+  },
+  "log2_context_gain_slope": {
+    "value": 0.006651247898457127,
+    "ci_low": -0.02455658041739884,
+    "ci_high": 0.04618121322134795
+  },
+  "positive_slope_pass": false,
+  "earliest_positive_context": 32
+}

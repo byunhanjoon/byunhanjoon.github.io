@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-tic-tac-toe-50",
+  "model": "catboost_native",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 574,
+    "validation": 192,
+    "test": 192
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": true,
+  "timing": {
+    "setup_seconds": 0.022014909889549017,
+    "fit_loop_seconds": 12.76481642597355,
+    "end_to_end_seconds": 12.793229885865003,
+    "fits_per_fit_loop_second": 10.02756292989444
+  }
+}

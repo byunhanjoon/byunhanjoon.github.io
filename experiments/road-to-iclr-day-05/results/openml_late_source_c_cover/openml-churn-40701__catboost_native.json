@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-churn-40701",
+  "model": "catboost_native",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 3000,
+    "validation": 1000,
+    "test": 1000
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026083041,
+  "timing": {
+    "setup_seconds": 0.041822809958830476,
+    "fit_loop_seconds": 52.016117059858516,
+    "end_to_end_seconds": 52.139616172993556,
+    "fits_per_fit_loop_second": 2.4607757601879743
+  }
+}

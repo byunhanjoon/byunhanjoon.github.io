@@ -1,0 +1,22 @@
+schema_version: 1
+frozen: true
+frozen_at: 2026-09-01T01:05:00+09:00
+purpose: small_current_tfm_phase_diagram
+generator_version: prior_dial_v1_1
+generator_seed: 93001
+classification_logit_scale: 2.5
+task_types: [classification, regression]
+rhos: [0.0, 0.1, 0.25, 0.5, 0.75, 0.9, 1.0]
+tasks_per_cell: 6
+context_size: 64
+query_size: 64
+feature_count: 8
+informative_fraction: 0.75
+correlation: 0.0
+label_noise: 0.05
+models: [tabpfn3_default, tabpfn3_ood, tabicl_v2_single, tabicl_v2_default, mitra_default]
+nuisance_transform: random_monotone_pwl
+nuisance_slope_sigma: 0.7
+identity_refit: true
+note: exploratory_small_phase_diagram_one_task_per_mechanism_per_rho
+

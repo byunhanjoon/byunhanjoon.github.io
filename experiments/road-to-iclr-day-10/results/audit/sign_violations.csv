@@ -1,0 +1,1 @@
+scope,dataset,model,method,seed,problem_type,L_raw,L_method,L_trivial,numerator,raw_headroom,denominator_used,denominator_clipped,C_recomputed,C_stored,C_difference,C_matches_tolerance,C_stable,delta_L,delta_sigma,delta_logloss

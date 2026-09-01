@@ -1,0 +1,6 @@
+{
+  "atom_effect_assessment": "directionally positive but practically negligible on Adult",
+  "atom_specific_gate_passed": true,
+  "broader_transfer_gate_passed": true,
+  "interpretation": "identity survives tuned T-PLE and merits a frozen transfer test"
+}

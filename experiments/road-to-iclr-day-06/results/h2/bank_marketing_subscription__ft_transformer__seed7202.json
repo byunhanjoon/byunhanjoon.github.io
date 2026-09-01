@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "hypothesis": "H2_PRECISION_DELAY",
+  "dataset": "bank_marketing_subscription",
+  "task": "classification",
+  "model": "ft_transformer",
+  "seed": 7202,
+  "paths": 12,
+  "total_fit_seconds": 23.967516195960343,
+  "path_wall_seconds": [
+    2.0630954450462013,
+    1.574952398892492,
+    1.936666073044762,
+    2.5398287479765713,
+    2.511828717077151,
+    1.9100693329237401,
+    1.5291241582017392,
+    1.675364563940093,
+    1.524517836049199,
+    1.718039819970727,
+    2.494853971991688,
+    2.489175130845979
+  ],
+  "config_sha256": "ee8c1b920488014c07f677d532edea1da91c24eae7c63c87415f1606768c3ffc",
+  "protocol_sha256": "83478c18069d5e4fb490c90b8fccd8ae538364ddc8e0e38595630d9f37703f8e",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0"
+}

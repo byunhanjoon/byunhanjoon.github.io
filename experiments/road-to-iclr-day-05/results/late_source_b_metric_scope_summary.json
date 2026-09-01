@@ -1,0 +1,74 @@
+{
+  "status": "complete",
+  "sources": 4,
+  "candidates": 12,
+  "comparisons": {
+    "pair32": {
+      "metrics": {
+        "brier": {
+          "candidate_strict_wins": 10,
+          "candidates": 12,
+          "source_mean_nohigher": 4,
+          "sources": 4,
+          "mean_rmse_ratio": 0.9127035794795818
+        },
+        "log_loss": {
+          "candidate_strict_wins": 8,
+          "candidates": 12,
+          "source_mean_nohigher": 4,
+          "sources": 4,
+          "mean_rmse_ratio": 0.9097080493777991
+        },
+        "roc_auc": {
+          "candidate_strict_wins": 5,
+          "candidates": 12,
+          "source_mean_nohigher": 4,
+          "sources": 4,
+          "mean_rmse_ratio": 0.9117672258394948
+        },
+        "accuracy": {
+          "candidate_strict_wins": 3,
+          "candidates": 12,
+          "source_mean_nohigher": 4,
+          "sources": 4,
+          "mean_rmse_ratio": 0.8906821670935463
+        }
+      },
+      "probabilistic_ranking_scope_passed": false
+    },
+    "pack64": {
+      "metrics": {
+        "brier": {
+          "candidate_strict_wins": 10,
+          "candidates": 12,
+          "source_mean_nohigher": 4,
+          "sources": 4,
+          "mean_rmse_ratio": 0.7875586842356668
+        },
+        "log_loss": {
+          "candidate_strict_wins": 8,
+          "candidates": 12,
+          "source_mean_nohigher": 4,
+          "sources": 4,
+          "mean_rmse_ratio": 0.7860149232262738
+        },
+        "roc_auc": {
+          "candidate_strict_wins": 6,
+          "candidates": 12,
+          "source_mean_nohigher": 4,
+          "sources": 4,
+          "mean_rmse_ratio": 0.9424324693693485
+        },
+        "accuracy": {
+          "candidate_strict_wins": 3,
+          "candidates": 12,
+          "source_mean_nohigher": 4,
+          "sources": 4,
+          "mean_rmse_ratio": 0.8287342012847424
+        }
+      },
+      "probabilistic_ranking_scope_passed": false
+    }
+  },
+  "all_probabilistic_ranking_gates_passed": false
+}

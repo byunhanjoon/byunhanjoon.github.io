@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "dataset": "australian_credit_approval",
+  "task": "classification",
+  "model": "mlp",
+  "row_orders": 4,
+  "represented_fits": 4,
+  "initialization_seed_held_fixed": 101,
+  "minibatch_order_seed_held_fixed": 3101,
+  "mean_squared_prediction_movement_by_order": [
+    0.0,
+    4.1286602936452255e-05,
+    0.00014316165470518172,
+    8.964884182205424e-05
+  ],
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "device": "cuda:0",
+  "wall_seconds": 0.3052963702939451,
+  "maximum_peak_device_bytes": 69081600,
+  "telemetry": [
+    {
+      "row_order": 0,
+      "wall_seconds": 0.1704815321136266,
+      "peak_device_bytes": 69081600
+    },
+    {
+      "row_order": 1,
+      "wall_seconds": 0.04486940614879131,
+      "peak_device_bytes": 69081600
+    },
+    {
+      "row_order": 2,
+      "wall_seconds": 0.04284232389181852,
+      "peak_device_bytes": 69081600
+    },
+    {
+      "row_order": 3,
+      "wall_seconds": 0.04710310813970864,
+      "peak_device_bytes": 69081600
+    }
+  ]
+}

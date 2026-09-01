@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-vote-56",
+  "model": "onehot_linear",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 261,
+    "validation": 87,
+    "test": 87
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": true,
+  "timing": {
+    "setup_seconds": 7.460942691890523,
+    "fit_loop_seconds": 0.6924573311116546,
+    "end_to_end_seconds": 8.154464107006788,
+    "fits_per_fit_loop_second": 184.8489347271576
+  }
+}

@@ -1,0 +1,4 @@
+dataset,eligible_pairs,win_fraction,median_final_ratio,rescue_fraction,twofold_worsening_fraction,exact_final_fraction
+bank_marketing_subscription,15,1.0,4.237691177114049e-29,0.7333333333333333,0.0,0.7333333333333333
+credit_card_default,15,1.0,4.146145412647145e-29,0.6,0.0,0.6
+fremtpl_claim_count,21,1.0,6.194670336164812e-30,0.7619047619047619,0.0,0.6666666666666666

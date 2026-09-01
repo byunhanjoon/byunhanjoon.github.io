@@ -1,0 +1,13 @@
+{
+  "dataset": "diamonds",
+  "candidate_pool": 128,
+  "contexts": 1024,
+  "tested_stronger_l2": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "tested_query_conditioning": true,
+  "tested_pairwise_plus_three_way_correction": true,
+  "final_test_labels_used_for_fitting_or_selection": false
+}

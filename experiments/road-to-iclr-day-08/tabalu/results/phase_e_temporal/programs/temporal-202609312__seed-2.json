@@ -1,0 +1,112 @@
+{
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "operator": "safe_divide",
+        "left": 4,
+        "right": 1
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.44488422870313554,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "global": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 1,
+        "right": 1
+      },
+      {
+        "operator": "add",
+        "left": 0,
+        "right": 4
+      },
+      {
+        "operator": "safe_divide",
+        "left": 5,
+        "right": 1
+      }
+    ],
+    "output": 6,
+    "output_scale": 0.39751223022019433,
+    "output_bias": -0.46256673686727784,
+    "epsilon": 0.25
+  },
+  "independent": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 0,
+          "right": 1
+        },
+        {
+          "operator": "safe_divide",
+          "left": 4,
+          "right": 1
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.3090716504861281,
+      "output_bias": -0.1742220120103312,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 0,
+          "right": 1
+        },
+        {
+          "operator": "safe_divide",
+          "left": 4,
+          "right": 1
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.9192645841205718,
+      "output_bias": 0.5402483773419613,
+      "epsilon": 0.25
+    }
+  ],
+  "shared": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 0,
+        "right": 1
+      },
+      {
+        "operator": "safe_divide",
+        "left": 4,
+        "right": 1
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.4609693531166872,
+    "output_bias": -0.5071359483801378,
+    "epsilon": 0.25
+  },
+  "shared_scales": [
+    0.6704819837893449,
+    1.9941989132851448
+  ],
+  "shared_biases": [
+    0.16580348871605496,
+    1.5515782632225883
+  ]
+}

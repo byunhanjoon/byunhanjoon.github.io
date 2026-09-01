@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-sick-38",
+  "model": "ordinal_forest",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 2262,
+    "validation": 755,
+    "test": 755
+  },
+  "full_product_verified": true
+}

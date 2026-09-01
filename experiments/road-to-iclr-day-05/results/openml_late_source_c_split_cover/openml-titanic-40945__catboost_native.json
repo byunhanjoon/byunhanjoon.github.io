@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-titanic-40945",
+  "model": "catboost_native",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 785,
+    "validation": 262,
+    "test": 262
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026083051,
+  "timing": {
+    "setup_seconds": 0.02944101905450225,
+    "fit_loop_seconds": 14.902206524042413,
+    "end_to_end_seconds": 14.939051118213683,
+    "fits_per_fit_loop_second": 8.589332042438933
+  }
+}

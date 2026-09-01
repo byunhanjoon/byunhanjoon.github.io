@@ -1,0 +1,165 @@
+{
+  "integrity": {
+    "control_rows": 1152,
+    "expected": 1152
+  },
+  "comparisons": {
+    "interval": {
+      "ple": {
+        "control_mean_mse": 0.06139134560119133,
+        "mpe_mean_mse": 0.0559650611091477,
+        "mpe_mean_gain_pct": 8.517391353277139,
+        "mpe_wins": 10,
+        "cells": 12
+      },
+      "ple_local": {
+        "control_mean_mse": 0.06133563078084273,
+        "mpe_mean_mse": 0.0559650611091477,
+        "mpe_mean_gain_pct": 8.40740559822103,
+        "mpe_wins": 10,
+        "cells": 12
+      },
+      "ple_whitened": {
+        "control_mean_mse": 0.061271237876267294,
+        "mpe_mean_mse": 0.0559650611091477,
+        "mpe_mean_gain_pct": 8.321893726115913,
+        "mpe_wins": 10,
+        "cells": 12
+      },
+      "u_ple": {
+        "control_mean_mse": 0.09759317382465475,
+        "mpe_mean_mse": 0.0559650611091477,
+        "mpe_mean_gain_pct": 42.69787771453173,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "mpe_corrupt": {
+        "control_mean_mse": 0.9162162513823947,
+        "mpe_mean_mse": 0.0559650611091477,
+        "mpe_mean_gain_pct": 93.88873327576313,
+        "mpe_wins": 12,
+        "cells": 12
+      }
+    },
+    "cycle": {
+      "ple": {
+        "control_mean_mse": 1.4942110933264239,
+        "mpe_mean_mse": 0.016747794862266966,
+        "mpe_mean_gain_pct": 98.86829216644924,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "ple_local": {
+        "control_mean_mse": 1.496754352446536,
+        "mpe_mean_mse": 0.016747794862266966,
+        "mpe_mean_gain_pct": 98.87023491581716,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "ple_whitened": {
+        "control_mean_mse": 1.489846219440083,
+        "mpe_mean_mse": 0.016747794862266966,
+        "mpe_mean_gain_pct": 98.86499377065923,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "u_ple": {
+        "control_mean_mse": 20.017759050057176,
+        "mpe_mean_mse": 0.016747794862266966,
+        "mpe_mean_gain_pct": 99.73175602690866,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "mpe_corrupt": {
+        "control_mean_mse": 2.9787432482352965,
+        "mpe_mean_mse": 0.016747794862266966,
+        "mpe_mean_gain_pct": 99.37913911095876,
+        "mpe_wins": 12,
+        "cells": 12
+      }
+    },
+    "tree": {
+      "ple": {
+        "control_mean_mse": 2.1018326971383794,
+        "mpe_mean_mse": 0.955914859687366,
+        "mpe_mean_gain_pct": 53.65807918887585,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "ple_local": {
+        "control_mean_mse": 2.0966661542523184,
+        "mpe_mean_mse": 0.955914859687366,
+        "mpe_mean_gain_pct": 53.533247472865376,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "ple_whitened": {
+        "control_mean_mse": 2.0948343759675154,
+        "mpe_mean_mse": 0.955914859687366,
+        "mpe_mean_gain_pct": 53.491381412838045,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "u_ple": {
+        "control_mean_mse": 62.030897823786376,
+        "mpe_mean_mse": 0.955914859687366,
+        "mpe_mean_gain_pct": 85.55859606752567,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "mpe_corrupt": {
+        "control_mean_mse": 9.021553636144201,
+        "mpe_mean_mse": 0.955914859687366,
+        "mpe_mean_gain_pct": 76.49342625574717,
+        "mpe_wins": 12,
+        "cells": 12
+      }
+    },
+    "nominal": {
+      "ple": {
+        "control_mean_mse": 0.09669818245907637,
+        "mpe_mean_mse": 0.01671621617483929,
+        "mpe_mean_gain_pct": 77.6405754783716,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "ple_local": {
+        "control_mean_mse": 0.09661999004185486,
+        "mpe_mean_mse": 0.01671621617483929,
+        "mpe_mean_gain_pct": 77.60066821661842,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "ple_whitened": {
+        "control_mean_mse": 0.09665534414770112,
+        "mpe_mean_mse": 0.01671621617483929,
+        "mpe_mean_gain_pct": 77.6006664551681,
+        "mpe_wins": 12,
+        "cells": 12
+      },
+      "u_ple": {
+        "control_mean_mse": 0.016738425765379063,
+        "mpe_mean_mse": 0.01671621617483929,
+        "mpe_mean_gain_pct": 0.09377526597686216,
+        "mpe_wins": 8,
+        "cells": 12
+      },
+      "mpe_corrupt": {
+        "control_mean_mse": 0.01671621617483929,
+        "mpe_mean_mse": 0.01671621617483929,
+        "mpe_mean_gain_pct": 0.0,
+        "mpe_wins": 0,
+        "cells": 12
+      }
+    }
+  },
+  "gates": {
+    "nominal_tie_with_uniform_ple": true,
+    "semantic_evidence_vs_uniform_ple": true,
+    "semantic_evidence_by_domain": {
+      "cycle": true,
+      "tree": true
+    }
+  },
+  "decision": "The nominal gain is discrete-resolution, not geometry. Single-scale native MPE retains structured unseen-state evidence against Q-PLE, local/whitened Q-PLE, U-PLE, and corrupted metric; promote only MPE to neural confirmation."
+}

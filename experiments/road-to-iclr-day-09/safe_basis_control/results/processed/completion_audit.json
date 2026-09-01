@@ -1,0 +1,313 @@
+{
+  "check_groups": 26,
+  "checks": [
+    {
+      "evidence": {
+        "actual": "026a5059b05e633fdf8ab7def65c044fdd857ed2634bd7c4e2d73f58fc455a2e",
+        "expected": "026a5059b05e633fdf8ab7def65c044fdd857ed2634bd7c4e2d73f58fc455a2e"
+      },
+      "name": "hash:SAFE_BASIS_PROTOCOL.json",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "actual": "526f9462c80a6469fa861185fbca2f8766d04c7303e50061f0672f6c31a5e90f",
+        "expected": "526f9462c80a6469fa861185fbca2f8766d04c7303e50061f0672f6c31a5e90f"
+      },
+      "name": "hash:NEW_TAIL_PROSPECTIVE_PANEL.json",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "actual": "b7b075362f5c7295fdb55f6d6140e5cf27499fcc1dbac0363f16e7aca9c14d29",
+        "expected": "b7b075362f5c7295fdb55f6d6140e5cf27499fcc1dbac0363f16e7aca9c14d29"
+      },
+      "name": "hash:TAIL_FINALISTS.json",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "datasets": [
+          "ozone-level-8hr",
+          "wall-robot-navigation",
+          "cardiotocography",
+          "first-order-theorem-proving",
+          "sylvine",
+          "delta_elevators",
+          "quake",
+          "visualizing_soil",
+          "debutanizer",
+          "CPMP-2015-regression"
+        ],
+        "selection_evidence": {
+          "metadata_only": true,
+          "metadata_retrieved_at_utc": "2026-09-01T07:53:00Z",
+          "metadata_source": "Official OpenML REST dataset-list and dataset-description endpoints",
+          "outcomes_accessed_before_lock": false,
+          "panel_balance": "five classification and five regression datasets",
+          "repository_search_result": "zero exact dataset-name hits for all ten selected datasets",
+          "repository_search_scope": "experiments/** excluding AGENT.md specification files"
+        }
+      },
+      "name": "new prospective panel protocol",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "count": 4,
+        "status": "FROZEN_BEFORE_PROSPECTIVE_DATA_ACCESS"
+      },
+      "name": "finalist cap and status",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "earliest_prospective_mtime": 1788251065.4692771,
+        "finalist_mtime": 1788251029.2448196,
+        "prospective_bundles": 768
+      },
+      "name": "freeze predates prospective outcomes",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "evidence_rows": 400,
+        "gate_rows": 2240
+      },
+      "name": "SafeGram development coverage",
+      "passed": true
+    },
+    {
+      "evidence": "all development gate manifests deny test-outcome selection",
+      "name": "validation-only alpha selection",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "full_rows": 192,
+        "screen_rows": 128
+      },
+      "name": "rank screen/full coverage",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "max_coordinate_error": 2.155635217627653e-15,
+        "selected_max_reconstruction": 8.257791514494117e-05
+      },
+      "name": "rank coordinate and reconstruction audit",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "cells": 5,
+        "rescue": {
+          "reason": "No Type B failure was diagnosed.",
+          "status": "NOT_TRIGGERED"
+        },
+        "types": {
+          "Type C \u2014 altered generalization/inductive bias": 5
+        }
+      },
+      "name": "five-cell failure diagnosis and conditional rescue",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "reason": "LODO descriptor gate did not improve control by >=10 points while satisfying p95<=0.05 and max<=0.20.",
+        "status": "DISCARDED_AFTER_DEVELOPMENT_CV"
+      },
+      "name": "conditional descriptor gate adjudicated",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "method_rows": 360,
+        "models": [
+          "controlled_mlp",
+          "resnet_tabular",
+          "tabm_d"
+        ],
+        "rotation_rows": 648
+      },
+      "name": "embedding integration coverage",
+      "passed": true
+    },
+    {
+      "evidence": 1.0592053414180684e-14,
+      "name": "embedding invariant coordinate checks",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "datasets": [
+          "california_housing",
+          "phoneme",
+          "steel-plates-fault"
+        ],
+        "k": [
+          4,
+          8,
+          16,
+          32
+        ]
+      },
+      "name": "embedding dimension ablation",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "datasets": 10,
+        "methods": [
+          "GramAnchor-m16",
+          "PCA-canonicalization",
+          "RankAdaptiveGram",
+          "Raw",
+          "Raw+GramAnchor@0.5",
+          "Raw+GramAnchor@0.75",
+          "SafeGram-t01",
+          "SafeRankGram-t01"
+        ],
+        "models": 3,
+        "rows": 960,
+        "seeds": 2
+      },
+      "name": "prospective primary coverage and baselines",
+      "passed": true
+    },
+    {
+      "evidence": 2.63775849734184e-14,
+      "name": "prospective invariant coordinate equivalence",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "bundles": 768,
+        "hash_mismatches": [],
+        "missing_sidecars": [],
+        "nonfinite": []
+      },
+      "name": "prospective raw bundle integrity",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "aggregate_methods": 8,
+        "rankings": [
+          "ranking_A_safety_first.csv",
+          "ranking_B_invariance.csv",
+          "ranking_C_predictive.csv",
+          "ranking_D_tail_robustness.csv",
+          "ranking_E_paper_candidate.csv"
+        ]
+      },
+      "name": "statistical reporting and five rankings",
+      "passed": true
+    },
+    {
+      "evidence": [
+        {
+          "alpha_025_fraction": 0.1333333333333333,
+          "alpha_05_fraction": 0.0833333333333333,
+          "alpha_075_fraction": 0.0666666666666666,
+          "alpha_0_fraction": 0.35,
+          "alpha_1_fraction": 0.3666666666666666,
+          "method": "SafeGram-t01"
+        },
+        {
+          "alpha_025_fraction": 0.2,
+          "alpha_05_fraction": 0.1166666666666666,
+          "alpha_075_fraction": 0.0833333333333333,
+          "alpha_0_fraction": 0.2666666666666666,
+          "alpha_1_fraction": 0.3333333333333333,
+          "method": "SafeRankGram-t01"
+        }
+      ],
+      "name": "SafeGram alpha distribution",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "max_equivalence": 2.846628229053474e-16,
+        "pairs": [
+          "local_hat_to_spectral_hat",
+          "one_hot_to_helmert"
+        ],
+        "rows": 216
+      },
+      "name": "natural basis validation",
+      "passed": true
+    },
+    {
+      "evidence": [],
+      "name": "processed numeric outputs finite",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "pdf": 8,
+        "png": 8,
+        "sizes": {
+          "figure_1_reduction_vs_normalized_excess_risk.png": [
+            1508,
+            1109
+          ],
+          "figure_2_tail_cdf.png": [
+            1508,
+            1109
+          ],
+          "figure_3_selected_alpha_histogram.png": [
+            1522,
+            971
+          ],
+          "figure_4_steel_plates_failure_diagnosis.png": [
+            1662,
+            1075
+          ],
+          "figure_5_rank_anchor_count_vs_performance.png": [
+            1537,
+            1109
+          ],
+          "figure_6_embedding_basis_sensitivity.png": [
+            1946,
+            984
+          ],
+          "figure_7_embedding_dimension_vs_disagreement.png": [
+            1941,
+            964
+          ],
+          "figure_8_development_vs_prospective_safety.png": [
+            1425,
+            1113
+          ]
+        }
+      },
+      "name": "eight dual-format figures",
+      "passed": true
+    },
+    {
+      "evidence": {
+        "bytes": 54721,
+        "missing": []
+      },
+      "name": "exact report outline",
+      "passed": true
+    },
+    {
+      "evidence": ".........                                                                [100%]\n",
+      "name": "code tests",
+      "passed": true
+    },
+    {
+      "evidence": [
+        "/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-09/safe_basis_control/results/raw",
+        "/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-09/safe_basis_control/results/processed",
+        "/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-09/safe_basis_control/figures",
+        "/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-09/safe_basis_control/configs"
+      ],
+      "name": "required output contract",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

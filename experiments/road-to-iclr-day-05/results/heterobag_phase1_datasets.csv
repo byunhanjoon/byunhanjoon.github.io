@@ -1,0 +1,9 @@
+dataset,task,architecture_cells,test_wins,mean_relative_test_gain_pct,median_relative_test_gain_pct
+openml-abalone-183,regression,3,2,0.3248367896714554,0.5409369745036982
+openml-banknote-1462,classification,3,2,15.262887431844147,14.19535016429035
+openml-credit-g-31,classification,3,3,0.1989012291869805,0.1989922885412026
+openml-kin8nm-189,regression,3,3,2.849139932461556,2.9892466502602537
+openml-pol-201,regression,3,3,6.405120851965772,7.175376469438308
+openml-puma32h-308,regression,3,3,1.0561822150277738,1.267488623780854
+openml-qsar-biodeg-1494,classification,3,2,1.2903207299815824,0.8854511020056888
+openml-spambase-44,classification,3,1,0.7633015846810943,-0.3488725819618807

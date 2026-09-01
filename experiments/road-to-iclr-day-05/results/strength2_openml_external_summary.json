@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "cells": 32,
+  "material_cells": 12,
+  "material_cells_strength2_beats_all": 11,
+  "exact_two_sided_sign_p": 0.00634765625,
+  "mean_strength2_vs_iid16_reduction": 0.7664145186025837,
+  "mean_strength2_vs_four_strength1_reduction": 0.7379635368708839,
+  "mean_strength2_vs_seed_blocks_reduction": 0.6748006909789737,
+  "adaptive_gate_passed": true,
+  "mean_main_plus_pair_fraction": 0.891227243375897,
+  "maximum_ambiguity_error": 9.475926987523309e-17,
+  "maximum_component_risk_reconstruction_error": 3.469446951953614e-18,
+  "source_group_confirmation": {
+    "source_groups": 8,
+    "source_groups_with_material_cells": 8,
+    "source_groups_strength2_beats_all": 7,
+    "exact_two_sided_source_group_sign_p": 0.0703125,
+    "source_group_gate_passed": true
+  }
+}

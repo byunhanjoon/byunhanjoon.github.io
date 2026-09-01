@@ -1,0 +1,100 @@
+{
+  "status": "complete",
+  "sources": 8,
+  "bootstrap_resamples": 100000,
+  "comparisons": {
+    "pair32": {
+      "brier": {
+        "sources": 8,
+        "strictly_positive_sources": 8,
+        "equal_source_mean_percent_reduction": 7.132214665855418,
+        "bootstrap_95_interval": [
+          5.204468829580458,
+          8.886344863074083
+        ],
+        "exact_two_sided_sign_p": 0.0078125,
+        "source_scope_passed": true
+      },
+      "log_loss": {
+        "sources": 8,
+        "strictly_positive_sources": 8,
+        "equal_source_mean_percent_reduction": 6.9437685453195845,
+        "bootstrap_95_interval": [
+          5.030279420878163,
+          8.759778419986063
+        ],
+        "exact_two_sided_sign_p": 0.0078125,
+        "source_scope_passed": true
+      },
+      "roc_auc": {
+        "sources": 8,
+        "strictly_positive_sources": 7,
+        "equal_source_mean_percent_reduction": 6.952172283944137,
+        "bootstrap_95_interval": [
+          4.033202120700106,
+          9.786464160146537
+        ],
+        "exact_two_sided_sign_p": 0.0703125,
+        "source_scope_passed": null
+      },
+      "accuracy": {
+        "sources": 8,
+        "strictly_positive_sources": 7,
+        "equal_source_mean_percent_reduction": 6.262580868805131,
+        "bootstrap_95_interval": [
+          2.0681319319956453,
+          12.835093458651224
+        ],
+        "exact_two_sided_sign_p": 0.0703125,
+        "source_scope_passed": null
+      }
+    },
+    "pack64": {
+      "brier": {
+        "sources": 8,
+        "strictly_positive_sources": 8,
+        "equal_source_mean_percent_reduction": 19.239956626909212,
+        "bootstrap_95_interval": [
+          17.822743384995285,
+          20.687505933583438
+        ],
+        "exact_two_sided_sign_p": 0.0078125,
+        "source_scope_passed": true
+      },
+      "log_loss": {
+        "sources": 8,
+        "strictly_positive_sources": 8,
+        "equal_source_mean_percent_reduction": 19.02875714012081,
+        "bootstrap_95_interval": [
+          17.524432590997158,
+          20.609214422889966
+        ],
+        "exact_two_sided_sign_p": 0.0078125,
+        "source_scope_passed": true
+      },
+      "roc_auc": {
+        "sources": 8,
+        "strictly_positive_sources": 7,
+        "equal_source_mean_percent_reduction": 13.952857542316941,
+        "bootstrap_95_interval": [
+          8.104754759664532,
+          18.965844922022214
+        ],
+        "exact_two_sided_sign_p": 0.0703125,
+        "source_scope_passed": null
+      },
+      "accuracy": {
+        "sources": 8,
+        "strictly_positive_sources": 7,
+        "equal_source_mean_percent_reduction": 23.121592774601982,
+        "bootstrap_95_interval": [
+          8.32372356575497,
+          46.378473345656786
+        ],
+        "exact_two_sided_sign_p": 0.0703125,
+        "source_scope_passed": null
+      }
+    }
+  },
+  "brier_log_source_scope_passed": true
+}

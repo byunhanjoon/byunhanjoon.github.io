@@ -1,0 +1,42 @@
+experiment: semantic_orbit_training_ablations
+protocol_version: 1
+parent_config: semantic_orbits.yaml
+split_seed: 20260901
+model_seeds: [0, 1, 2]
+orbit_members: 8
+max_train_rows: 2048
+max_validation_rows: 512
+max_test_rows: 512
+datasets:
+  - name: california_housing
+    openml_id: 43939
+    openml_version: 1
+    problem_type: regression
+  - name: wine-quality-red
+    openml_id: 40691
+    openml_version: 1
+    problem_type: regression
+    coerce_target_numeric: true
+pipeline: numeric_code
+family: T6
+variant: orthogonal
+model:
+  architecture: MLP
+  hidden_width: 256
+  hidden_layers: 3
+  dropout: 0.1
+  batch_size: 256
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  max_epochs: 150
+  patience: 20
+  generic_noise_std: 0.1
+methods:
+  - raw
+  - generic_noise
+  - orbit_augmentation
+  - consistency_0.1
+  - consistency_1.0
+  - canonical_only
+  - dual_view
+

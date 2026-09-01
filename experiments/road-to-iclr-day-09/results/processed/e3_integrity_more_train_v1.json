@@ -1,0 +1,40 @@
+{
+  "all_numeric_arrays_finite": true,
+  "episodes": 21000,
+  "expert_fits": 84000,
+  "raw_csv_alignment": true,
+  "run_key": "e3_method_kill_47ca16486a",
+  "sampled_primary_losses_recomputed": 200,
+  "selections": {
+    "classification": {
+      "development_risk_by_shrinkage": {
+        "0.0": 0.6508689155564209,
+        "0.25": 0.6508391240965141,
+        "0.5": 0.6508202713775625,
+        "0.75": 0.6508122691641562,
+        "1.0": 0.6508150491764707
+      },
+      "fixed_alpha": 0.34,
+      "fixed_development_risk": 0.6508689155564209,
+      "gate_development_episodes": 1680,
+      "gate_train_episodes": 5880,
+      "selected_gate_shrinkage": 0.75
+    },
+    "regression": {
+      "development_risk_by_shrinkage": {
+        "0.0": 0.696279412082127,
+        "0.25": 0.6960440520056076,
+        "0.5": 0.6960283993510472,
+        "0.75": 0.6962324541184456,
+        "1.0": 0.6966562163078027
+      },
+      "fixed_alpha": 0.07,
+      "fixed_development_risk": 0.696279412082127,
+      "gate_development_episodes": 1680,
+      "gate_train_episodes": 5880,
+      "selected_gate_shrinkage": 0.5
+    }
+  },
+  "test_episodes": 5880,
+  "wall_clock_seconds": 205.71419743378647
+}

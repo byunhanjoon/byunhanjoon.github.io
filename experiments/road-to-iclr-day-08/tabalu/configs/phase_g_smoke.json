@@ -1,0 +1,25 @@
+{
+  "experiment": "phase_g_penalized_residual_smoke",
+  "output_dir": "tabalu/results/phase_g_smoke",
+  "n_tasks": 1,
+  "task_seed_start": 202611000,
+  "seeds": [0],
+  "alphas": [0.0, 0.1, 0.25, 0.5, 1.0],
+  "train_rows": 128,
+  "validation_rows": 64,
+  "test_rows": 128,
+  "ood_multiplier": 4.0,
+  "target_noise_relative_std": 0.02,
+  "neural_epochs": 5,
+  "residual_penalty": 0.02,
+  "gate_penalty": 0.005,
+  "device": "cuda:0",
+  "gate": {
+    "alpha_zero_residual_usage_max": 10.0,
+    "alpha_one_residual_usage_min": 0.0,
+    "usage_alpha_correlation_min": -1.0,
+    "penalized_vs_program_alpha_one_ratio_max": 10.0,
+    "adaptive_vs_scalar_alpha_one_ratio_max": 10.0,
+    "alpha_zero_nrmse_max": 10.0
+  }
+}

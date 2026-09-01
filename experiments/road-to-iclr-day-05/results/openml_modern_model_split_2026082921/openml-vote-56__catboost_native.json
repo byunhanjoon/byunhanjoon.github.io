@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-vote-56",
+  "model": "catboost_native",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 261,
+    "validation": 87,
+    "test": 87
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": true,
+  "effective_split_seed": 2026082921,
+  "timing": {
+    "setup_seconds": 0.032163450960069895,
+    "fit_loop_seconds": 17.24810849293135,
+    "end_to_end_seconds": 17.28257097187452,
+    "fits_per_fit_loop_second": 7.421103598255842
+  }
+}

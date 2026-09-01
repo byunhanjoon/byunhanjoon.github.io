@@ -1,0 +1,22 @@
+{
+  "experiment": "phase_f_heterogeneous_types_smoke",
+  "output_dir": "tabalu/results/phase_f_smoke",
+  "n_tasks": 1,
+  "task_seed_start": 202610100,
+  "seeds": [
+    0
+  ],
+  "train_rows": 128,
+  "validation_rows": 64,
+  "test_rows": 128,
+  "future_magnitude_multiplier": 4.0,
+  "target_noise_relative_std": 0.01,
+  "neural_epochs": 5,
+  "device": "cuda:0",
+  "gate": {
+    "typed_future_nrmse_max": 10.0,
+    "typed_vs_embedding_future_ratio_max": 10.0,
+    "typed_vs_manual_future_ratio_max": 10.0,
+    "minimum_family_ablation_degradation": 0.0
+  }
+}

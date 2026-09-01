@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "datasets": 4,
+  "settings": 4,
+  "datasets_where_default8_reduces_schema_risk": 4,
+  "mean_default8_schema_risk_reduction": 0.6352363857109337,
+  "mean_default8_relative_reference_brier_change": 0.018231377604236595,
+  "maximum_identity_error": 7.573152174811248e-17,
+  "default8_exactly_closed_below_1e_12": 0
+}

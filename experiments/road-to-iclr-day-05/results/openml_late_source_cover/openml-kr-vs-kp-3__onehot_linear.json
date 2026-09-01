@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "dataset": "openml-kr-vs-kp-3",
+  "model": "onehot_linear",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 1917,
+    "validation": 639,
+    "test": 640
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": true
+}

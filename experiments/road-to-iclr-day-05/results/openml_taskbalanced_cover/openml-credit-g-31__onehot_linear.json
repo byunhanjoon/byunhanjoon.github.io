@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-credit-g-31",
+  "model": "onehot_linear",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 600,
+    "validation": 200,
+    "test": 200
+  },
+  "full_product_verified": true
+}

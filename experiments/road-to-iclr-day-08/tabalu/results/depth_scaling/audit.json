@@ -1,0 +1,30 @@
+{
+  "git_commit": "c000f06e0b8c6989d62ece8a769bbf269910a9b8",
+  "git_dirty": true,
+  "expected_records": 720,
+  "observed_records": 720,
+  "all_finite": true,
+  "confidence_interval_unit": "task (training seeds averaged within task)",
+  "gate": {
+    "passed": false,
+    "checks": {
+      "oracle_execution_scales": true,
+      "beam_recovers_depth2": true,
+      "beam_predicts_depth8": false,
+      "beam_recovers_depth8": false
+    },
+    "observed": {
+      "oracle_ood_nrmse_max": 0.0,
+      "beam_depth2_ood_nrmse": 0.00044414342127315013,
+      "beam_depth8_ood_nrmse": 1.0269116965995304,
+      "beam_depth8_functional_recovery": 0.06666666666666667
+    },
+    "thresholds": {
+      "oracle_ood_nrmse_max": 1e-06,
+      "beam_depth2_ood_nrmse_max": 0.1,
+      "beam_depth8_ood_nrmse_max": 0.25,
+      "beam_depth8_functional_recovery_min": 0.5
+    }
+  },
+  "audit_passed": false
+}

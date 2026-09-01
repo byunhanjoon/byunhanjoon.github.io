@@ -1,0 +1,62 @@
+{
+  "dataset": "sulfur",
+  "encoded_features": 6,
+  "episode_audits": [
+    {
+      "context_index_sha256": "82ecd6ab9c07ac7f050245ada388d518284dcb8801f7a587e9eb989e1fa23fff",
+      "covariance_min_eigenvalue": -4.976799393897925e-08,
+      "covariance_symmetry_max_abs": 1.734723475976807e-17,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 1.1920928955078125e-07,
+      "replicate": 0,
+      "tabpfn_marginal_max_abs": 1.2724601861080487e-07,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "e4dd6bb2a748834f2c8560b90fe8290009d48053988611a08aca3dc63953c231",
+      "covariance_min_eigenvalue": -9.716158798372717e-06,
+      "covariance_symmetry_max_abs": 1.942890293094024e-16,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 2.384185791015625e-07,
+      "replicate": 1,
+      "tabpfn_marginal_max_abs": 0.00013556303156292415,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "2d3174f89c2a4ae2446be4388169805aaf5a898ff9b405e9d192cdc2b2f1011e",
+      "covariance_min_eigenvalue": -3.62510052570765e-08,
+      "covariance_symmetry_max_abs": 2.7755575615628914e-17,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 1.1920928955078125e-07,
+      "replicate": 2,
+      "tabpfn_marginal_max_abs": 6.594099599688263e-08,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "2c0d24536cf4213d9d3e9cdde411bf9130847c7b3faaf270693d25f023eac8ad",
+      "covariance_min_eigenvalue": -9.821631418162555e-08,
+      "covariance_symmetry_max_abs": 3.469446951953614e-17,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 1.1920928955078125e-07,
+      "replicate": 3,
+      "tabpfn_marginal_max_abs": 2.272491435029167e-07,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    }
+  ],
+  "protocol_sha256": "144c873f8d8922306a5b415b05825bf84d414d15cbbe4289204dc92cea3239f3",
+  "raw_features": 6,
+  "raw_rows": 10081,
+  "split_disjoint": true,
+  "split_seed": 20260921,
+  "test_index_sha256": "6291b93d23faf9e3751e39f981a4b3c1855ae05bd430333c05464e8f6f2e5950",
+  "test_rows": 512,
+  "train_index_sha256": "ecc61cdbdd7f83423596bd06322f4fb1e881ab4056414070f35659eaafdc33ee",
+  "train_rows": 2048,
+  "validation_index_sha256": "fca62d80ca5db407e57f25f35a19a85acc8ca2e242da479f6f8a6987b42af9d3",
+  "validation_rows": 512,
+  "wall_seconds": 14.307873454177752
+}

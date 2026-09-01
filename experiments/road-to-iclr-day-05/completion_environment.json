@@ -1,0 +1,30 @@
+{
+  "captured_on": "2026-08-28",
+  "python_environment": "/home/byunhanjoon/adaptive_embedding/exploratory/.venv-tabm",
+  "platform": "Linux 5.4.0-216-generic x86_64 GNU/Linux",
+  "gpus": [
+    {"name": "NVIDIA H100 NVL", "memory_mib": 95830, "driver": "575.57.08"},
+    {"name": "NVIDIA H100 NVL", "memory_mib": 95830, "driver": "575.57.08"}
+  ],
+  "packages": {
+    "torch": "2.7.0",
+    "tabm": "0.0.3",
+    "tabpfn": "6.3.0",
+    "rtdl_revisiting_models": "0.0.2",
+    "catboost": "1.2.10",
+    "xgboost": "2.1.4",
+    "lightgbm": "4.7.0",
+    "scikit-learn": "1.4.2",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.11.4",
+    "openml": "0.15.1"
+  },
+  "optional_model_availability": {
+    "TabR": false,
+    "SAINT": false,
+    "pytorch_tabular": false,
+    "AutoGluon": false
+  },
+  "availability_note": "TabR and SAINT were strongly preferred but optional in the Day-5 program; no maintained local callable implementation was present, so neither was installed after the primary panel was frozen."
+}

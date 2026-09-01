@@ -1,0 +1,77 @@
+{
+  "extra_arrays": [
+    "coordinates"
+  ],
+  "input_files": [
+    {
+      "bytes": 27573265,
+      "path": "/data/mpe_iclr_data/downloads/bts_on_time_2024_01.zip",
+      "sha256": "fe089b45523f9d4ac0ccd0e176a543d274e914ee5ae5bd384dbaafc7dc06ebfd"
+    },
+    {
+      "bytes": 28540589,
+      "path": "/data/mpe_iclr_data/downloads/bts_on_time_2024_04.zip",
+      "sha256": "d8b1e88626a7375d351962917fe5ec132660c1636dc8b91f778627c769e0e15a"
+    },
+    {
+      "bytes": 34427174,
+      "path": "/data/mpe_iclr_data/downloads/bts_on_time_2024_07.zip",
+      "sha256": "4d992fee134137b3fa43094d7e8cf4a8e6feaa6a422cffb4063f1ed6c7f3f731"
+    },
+    {
+      "bytes": 29418453,
+      "path": "/data/mpe_iclr_data/downloads/bts_on_time_2024_10.zip",
+      "sha256": "a417136d6c1663736437dfeeacefa5b93b82e9db322c863c2f57b19bdd3f04fb"
+    },
+    {
+      "bytes": 7527657,
+      "path": "/data/mpe_iclr_data/downloads/faa_aviation_facilities.csv",
+      "sha256": "b67be68e050ab13600781aa8f16146e64677f714246b8b0130a9771b6f995e1d"
+    }
+  ],
+  "max_state_rows": 13890,
+  "metric": "haversine distance between official FAA airport coordinates",
+  "metric_audit": {
+    "diagonal_error": 0.0,
+    "max_triangle_violation": 0.0,
+    "passed": true,
+    "states": 212,
+    "symmetry_error": 0.0,
+    "triangle_entries_checked": 9528128
+  },
+  "metric_inputs": [
+    "Origin/Dest airport code",
+    "FAA LAT_DECIMAL/LONG_DECIMAL"
+  ],
+  "metric_target_independent": true,
+  "min_state_rows": 54,
+  "minimum_rows_per_state": 50,
+  "ordinary_covariates": [
+    "month",
+    "day_of_week",
+    "reporting_airline",
+    "flight_number",
+    "crs_dep_time",
+    "crs_arr_time",
+    "crs_elapsed_time",
+    "distance",
+    "other_endpoint_airport"
+  ],
+  "route_metric_rule": "unweighted scheduled route graph from training rows only; built per split",
+  "row_table_sha256": "d8384106c7f99c38bb5a34adb4643e9de5faf932444d57750bb8b91c8ebe1e77",
+  "rows": 293637,
+  "secondary_target_column_raw": "arr_del15",
+  "source_unit": "BTS",
+  "split_seeds": [
+    20261001,
+    20261002,
+    20261003,
+    20261004,
+    20261005
+  ],
+  "states": 212,
+  "status": "RUN",
+  "target_column": "target",
+  "target_used_for_sampling_or_geometry": false,
+  "task": "airline_destination_airport"
+}

@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "cells": 55,
+  "material_cells": 27,
+  "orthogonal_cover_designs_classification": 3456,
+  "material_cells_cover_beats_iid": 27,
+  "material_cells_cover_beats_seed_only": 20,
+  "material_cells_cover_beats_both": 20,
+  "exact_two_sided_sign_p_cover_beats_both": 0.0191572904586792,
+  "mean_cover_vs_iid_residual_reduction_material": 0.26761998873128023,
+  "mean_cover_vs_seed_residual_reduction_material": 0.009346080446073102,
+  "adaptive_orthogonal_cover_gate_passed": true,
+  "mean_joint_main_effect_fraction_material": 0.40816595847667536,
+  "maximum_ambiguity_identity_error": 1.396769261410941e-16,
+  "maximum_anova_component_sum_error": 6.938893903907228e-18,
+  "source_group_confirmation": {
+    "source_groups": 6,
+    "source_groups_with_material_cells": 6,
+    "source_groups_cover_beats_both": 4,
+    "source_group_gate_passed": true
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 3
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.5683533980469383,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "global": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 3
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.5022723796812151,
+    "output_bias": 0.01932821349469932,
+    "epsilon": 0.25
+  },
+  "independent": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 0,
+          "right": 2
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 3
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.4259698272892106,
+      "output_bias": 0.0717308928712957,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 0,
+          "right": 2
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 3
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.034177743243363,
+      "output_bias": -0.4010447578567178,
+      "epsilon": 0.25
+    }
+  ],
+  "shared": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 3
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.5515068023930869,
+    "output_bias": -0.008711420174890972,
+    "epsilon": 0.25
+  },
+  "shared_scales": [
+    0.772374542926325,
+    1.87518579077669
+  ],
+  "shared_biases": [
+    0.07845937134829056,
+    -0.3847092284642381
+  ]
+}

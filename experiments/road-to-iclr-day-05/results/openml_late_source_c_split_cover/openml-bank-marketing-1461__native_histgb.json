@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-bank-marketing-1461",
+  "model": "native_histgb",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 27126,
+    "validation": 9042,
+    "test": 9043
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026083051,
+  "timing": {
+    "setup_seconds": 0.5060261550825089,
+    "fit_loop_seconds": 85.4544678858947,
+    "end_to_end_seconds": 86.72543408209458,
+    "fits_per_fit_loop_second": 1.4978737000728308
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "status": "complete",
+  "artifacts": 324,
+  "expected_artifacts": 324,
+  "gates": {
+    "ft_dataset_correlations": {
+      "value": 0,
+      "required": 2,
+      "pass": false,
+      "rho_by_dataset": {
+        "bank_marketing_subscription": 0.3636363636363637,
+        "credit_card_default": 0.44055944055944063,
+        "fremtpl_claim_count": 0.3216783216783217
+      }
+    },
+    "equal_dataset_pooled_spearman": {
+      "value": 0.3752913752913753,
+      "required": 0.6,
+      "pass": false
+    },
+    "early_over_initial_improvement": {
+      "value": 0.3752913752913753,
+      "required": 0.2,
+      "epoch2_spearman": 0.3752913752913753,
+      "epoch0_spearman": 0.0,
+      "pass": true
+    },
+    "top_quartile_auroc": {
+      "value": 0.7037037037037038,
+      "required": 0.8,
+      "pass": false,
+      "by_dataset": {
+        "bank_marketing_subscription": 0.7407407407407408,
+        "credit_card_default": 0.7037037037037037,
+        "fremtpl_claim_count": 0.6666666666666667
+      }
+    },
+    "complete_and_matched": {
+      "artifacts": 324,
+      "required_artifacts": 324,
+      "maximum_initial_gap": 4.76837158203125e-07,
+      "pass": true
+    }
+  },
+  "hypothesis_supported": false
+}

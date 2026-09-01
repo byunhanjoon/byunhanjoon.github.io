@@ -1,0 +1,262 @@
+{
+  "status": "complete",
+  "post_outcome_diagnostic": true,
+  "maximum_reconstruction_error": 0.0,
+  "panels": {
+    "confirmation": {
+      "four_seed_blocks": {
+        "mean_total_test_quotient_regret": 0.00028496490823913664,
+        "mean_target_shift_floor": 0.0002581909195609545,
+        "mean_nuisance_selection_term": 2.677398867818212e-05,
+        "mean_validation_quotient_regret": 1.5288772078227194e-05,
+        "mean_validation_winner_agreement": 0.9221413352272727
+      },
+      "four_strength1": {
+        "mean_total_test_quotient_regret": 0.0003024199576484095,
+        "mean_target_shift_floor": 0.0002581909195609545,
+        "mean_nuisance_selection_term": 4.422903808745497e-05,
+        "mean_validation_quotient_regret": 1.138668309876821e-05,
+        "mean_validation_winner_agreement": 0.9240944602272727
+      },
+      "iid16": {
+        "mean_total_test_quotient_regret": 0.00033707967562209316,
+        "mean_target_shift_floor": 0.0002581909195609545,
+        "mean_nuisance_selection_term": 7.888875606113863e-05,
+        "mean_validation_quotient_regret": 1.682647125301953e-05,
+        "mean_validation_winner_agreement": 0.9109552556818182
+      },
+      "lhs16": {
+        "mean_total_test_quotient_regret": 0.0003028858844147868,
+        "mean_target_shift_floor": 0.0002581909195609545,
+        "mean_nuisance_selection_term": 4.469496485383229e-05,
+        "mean_validation_quotient_regret": 1.1473880737026917e-05,
+        "mean_validation_winner_agreement": 0.9284446022727273
+      },
+      "sobol16": {
+        "mean_total_test_quotient_regret": 0.00035409195470488265,
+        "mean_target_shift_floor": 0.0002581909195609545,
+        "mean_nuisance_selection_term": 9.590103514392811e-05,
+        "mean_validation_quotient_regret": 1.0200023590913063e-05,
+        "mean_validation_winner_agreement": 0.9185014204545454
+      },
+      "srswor16": {
+        "mean_total_test_quotient_regret": 0.00033476182774239057,
+        "mean_target_shift_floor": 0.0002581909195609545,
+        "mean_nuisance_selection_term": 7.657090818143607e-05,
+        "mean_validation_quotient_regret": 1.3745798214969197e-05,
+        "mean_validation_winner_agreement": 0.9139737215909091
+      },
+      "strength2": {
+        "mean_total_test_quotient_regret": 0.00018605854359948746,
+        "mean_target_shift_floor": 0.0002581909195609545,
+        "mean_nuisance_selection_term": -7.213237596146708e-05,
+        "mean_validation_quotient_regret": 9.220651635783407e-06,
+        "mean_validation_winner_agreement": 0.9556995738636364
+      }
+    },
+    "menu_repeat": {
+      "four_seed_blocks": {
+        "mean_total_test_quotient_regret": 0.0011559347658081076,
+        "mean_target_shift_floor": 0.0010977922247919,
+        "mean_nuisance_selection_term": 5.814254101620759e-05,
+        "mean_validation_quotient_regret": 6.498245362182942e-06,
+        "mean_validation_winner_agreement": 0.9812825520833334
+      },
+      "four_strength1": {
+        "mean_total_test_quotient_regret": 0.00109982188971186,
+        "mean_target_shift_floor": 0.0010977922247919,
+        "mean_nuisance_selection_term": 2.029664919959996e-06,
+        "mean_validation_quotient_regret": 6.617008189552734e-07,
+        "mean_validation_winner_agreement": 0.99853515625
+      },
+      "iid16": {
+        "mean_total_test_quotient_regret": 0.0010984470821190403,
+        "mean_target_shift_floor": 0.0010977922247919,
+        "mean_nuisance_selection_term": 6.548573271403937e-07,
+        "mean_validation_quotient_regret": 9.641354134321094e-06,
+        "mean_validation_winner_agreement": 0.98193359375
+      },
+      "lhs16": {
+        "mean_total_test_quotient_regret": 0.0010993095483991819,
+        "mean_target_shift_floor": 0.0010977922247919,
+        "mean_nuisance_selection_term": 1.5173236072820635e-06,
+        "mean_validation_quotient_regret": 1.6951944423085938e-07,
+        "mean_validation_winner_agreement": 0.99951171875
+      },
+      "sobol16": {
+        "mean_total_test_quotient_regret": 0.0010977928015043,
+        "mean_target_shift_floor": 0.0010977922247919,
+        "mean_nuisance_selection_term": 5.767124001300241e-10,
+        "mean_validation_quotient_regret": 0.0,
+        "mean_validation_winner_agreement": 1.0
+      },
+      "srswor16": {
+        "mean_total_test_quotient_regret": 0.0010910451691427466,
+        "mean_target_shift_floor": 0.0010977922247919,
+        "mean_nuisance_selection_term": -6.74705564915345e-06,
+        "mean_validation_quotient_regret": 4.247423774073601e-06,
+        "mean_validation_winner_agreement": 0.9928385416666666
+      },
+      "strength2": {
+        "mean_total_test_quotient_regret": 0.0010977928015043,
+        "mean_target_shift_floor": 0.0010977922247919,
+        "mean_nuisance_selection_term": 5.767124001300241e-10,
+        "mean_validation_quotient_regret": 0.0,
+        "mean_validation_winner_agreement": 1.0
+      }
+    },
+    "openml_external": {
+      "four_seed_blocks": {
+        "mean_total_test_quotient_regret": 0.036263911724673664,
+        "mean_target_shift_floor": 0.04703265523618762,
+        "mean_nuisance_selection_term": -0.010768743511513947,
+        "mean_validation_quotient_regret": 6.752720113130991e-05,
+        "mean_validation_winner_agreement": 0.919189453125
+      },
+      "four_strength1": {
+        "mean_total_test_quotient_regret": 0.035303702226838485,
+        "mean_target_shift_floor": 0.04703265523618762,
+        "mean_nuisance_selection_term": -0.011728953009349131,
+        "mean_validation_quotient_regret": 5.925086764105684e-05,
+        "mean_validation_winner_agreement": 0.9161376953125
+      },
+      "iid16": {
+        "mean_total_test_quotient_regret": 0.03557896208909755,
+        "mean_target_shift_floor": 0.04703265523618762,
+        "mean_nuisance_selection_term": -0.011453693147090067,
+        "mean_validation_quotient_regret": 7.916577433542254e-05,
+        "mean_validation_winner_agreement": 0.905029296875
+      },
+      "lhs16": {
+        "mean_total_test_quotient_regret": 0.03484820447856658,
+        "mean_target_shift_floor": 0.04703265523618762,
+        "mean_nuisance_selection_term": -0.012184450757621028,
+        "mean_validation_quotient_regret": 5.044863748012272e-05,
+        "mean_validation_winner_agreement": 0.9210205078125
+      },
+      "sobol16": {
+        "mean_total_test_quotient_regret": 0.0356709307436851,
+        "mean_target_shift_floor": 0.04703265523618762,
+        "mean_nuisance_selection_term": -0.011361724492502515,
+        "mean_validation_quotient_regret": 5.11605253693268e-05,
+        "mean_validation_winner_agreement": 0.9150390625
+      },
+      "srswor16": {
+        "mean_total_test_quotient_regret": 0.03528782062231602,
+        "mean_target_shift_floor": 0.04703265523618762,
+        "mean_nuisance_selection_term": -0.01174483461387159,
+        "mean_validation_quotient_regret": 5.6111888963133376e-05,
+        "mean_validation_winner_agreement": 0.920166015625
+      },
+      "strength2": {
+        "mean_total_test_quotient_regret": 0.03849706285807293,
+        "mean_target_shift_floor": 0.04703265523618762,
+        "mean_nuisance_selection_term": -0.008535592378114685,
+        "mean_validation_quotient_regret": 2.4492345609518162e-05,
+        "mean_validation_winner_agreement": 0.9580078125
+      }
+    },
+    "openml_taskbalanced": {
+      "four_seed_blocks": {
+        "mean_total_test_quotient_regret": 0.0004919546296003085,
+        "mean_target_shift_floor": 0.0,
+        "mean_nuisance_selection_term": 0.0004919546296003085,
+        "mean_validation_quotient_regret": 0.0001952198247952169,
+        "mean_validation_winner_agreement": 0.9398193359375
+      },
+      "four_strength1": {
+        "mean_total_test_quotient_regret": 0.0005482225055446342,
+        "mean_target_shift_floor": 0.0,
+        "mean_nuisance_selection_term": 0.0005482225055446342,
+        "mean_validation_quotient_regret": 0.0001650277796780833,
+        "mean_validation_winner_agreement": 0.931884765625
+      },
+      "iid16": {
+        "mean_total_test_quotient_regret": 0.0005954508491127391,
+        "mean_target_shift_floor": 0.0,
+        "mean_nuisance_selection_term": 0.0005954508491127391,
+        "mean_validation_quotient_regret": 0.00021151892593438814,
+        "mean_validation_winner_agreement": 0.927490234375
+      },
+      "lhs16": {
+        "mean_total_test_quotient_regret": 0.0004770583550834734,
+        "mean_target_shift_floor": 0.0,
+        "mean_nuisance_selection_term": 0.0004770583550834734,
+        "mean_validation_quotient_regret": 0.00013813467256178414,
+        "mean_validation_winner_agreement": 0.9410400390625
+      },
+      "sobol16": {
+        "mean_total_test_quotient_regret": 0.00044391639212023617,
+        "mean_target_shift_floor": 0.0,
+        "mean_nuisance_selection_term": 0.00044391639212023617,
+        "mean_validation_quotient_regret": 0.00013911505023286728,
+        "mean_validation_winner_agreement": 0.93994140625
+      },
+      "srswor16": {
+        "mean_total_test_quotient_regret": 0.0004343732187273541,
+        "mean_target_shift_floor": 0.0,
+        "mean_nuisance_selection_term": 0.0004343732187273541,
+        "mean_validation_quotient_regret": 0.00013166991160057048,
+        "mean_validation_winner_agreement": 0.9486083984375
+      },
+      "strength2": {
+        "mean_total_test_quotient_regret": 0.00025790907036295723,
+        "mean_target_shift_floor": 0.0,
+        "mean_nuisance_selection_term": 0.00025790907036295723,
+        "mean_validation_quotient_regret": 6.440425079064192e-05,
+        "mean_validation_winner_agreement": 0.972900390625
+      }
+    },
+    "subsample_repeat": {
+      "four_seed_blocks": {
+        "mean_total_test_quotient_regret": 0.0003206469113805996,
+        "mean_target_shift_floor": 0.00023061221311275002,
+        "mean_nuisance_selection_term": 9.003469826784955e-05,
+        "mean_validation_quotient_regret": 2.463994123574847e-05,
+        "mean_validation_winner_agreement": 0.9401041666666666
+      },
+      "four_strength1": {
+        "mean_total_test_quotient_regret": 0.00028414768672494216,
+        "mean_target_shift_floor": 0.00023061221311275002,
+        "mean_nuisance_selection_term": 5.353547361219217e-05,
+        "mean_validation_quotient_regret": 1.164341098722793e-05,
+        "mean_validation_winner_agreement": 0.9637044270833334
+      },
+      "iid16": {
+        "mean_total_test_quotient_regret": 0.0003144715480618501,
+        "mean_target_shift_floor": 0.00023061221311275002,
+        "mean_nuisance_selection_term": 8.385933494910011e-05,
+        "mean_validation_quotient_regret": 1.9405033086496875e-05,
+        "mean_validation_winner_agreement": 0.943359375
+      },
+      "lhs16": {
+        "mean_total_test_quotient_regret": 0.00027514900248375054,
+        "mean_target_shift_floor": 0.00023061221311275002,
+        "mean_nuisance_selection_term": 4.453678937100053e-05,
+        "mean_validation_quotient_regret": 1.1338528302900505e-05,
+        "mean_validation_winner_agreement": 0.9690755208333334
+      },
+      "sobol16": {
+        "mean_total_test_quotient_regret": 0.00023357605811111562,
+        "mean_target_shift_floor": 0.00023061221311275002,
+        "mean_nuisance_selection_term": 2.9638449983656343e-06,
+        "mean_validation_quotient_regret": 1.991083861248698e-06,
+        "mean_validation_winner_agreement": 0.9973958333333334
+      },
+      "srswor16": {
+        "mean_total_test_quotient_regret": 0.000285359288823814,
+        "mean_target_shift_floor": 0.00023061221311275002,
+        "mean_nuisance_selection_term": 5.474707571106397e-05,
+        "mean_validation_quotient_regret": 1.3363668466469483e-05,
+        "mean_validation_winner_agreement": 0.9622395833333334
+      },
+      "strength2": {
+        "mean_total_test_quotient_regret": 0.00023376130438001246,
+        "mean_target_shift_floor": 0.00023061221311275002,
+        "mean_nuisance_selection_term": 3.149091267262444e-06,
+        "mean_validation_quotient_regret": 2.115526602576742e-06,
+        "mean_validation_winner_agreement": 0.9972330729166666
+      }
+    }
+  }
+}

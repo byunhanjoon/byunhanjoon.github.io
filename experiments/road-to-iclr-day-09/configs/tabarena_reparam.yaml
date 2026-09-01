@@ -1,0 +1,13 @@
+schema_version: 1
+frozen: false
+benchmark: TabArena-v0.1
+selection_rule: all_tasks_with_metadata_confirmed_numeric_feature
+leave_categorical_untouched: true
+moderate_bank: [identity, positive_affine, mild_signed_power, mild_asinh, mild_pwl, held_out_mild_spline]
+stress_bank: [strong_signed_power, strong_pwl, strong_spline, composition, ordered_spacing, subset_columns, irrelevant_columns]
+orientation_extension: [negative_affine]
+transform_seeds: [301, 302, 303, 304, 305]
+fit_on_train_only: true
+bootstrap_draws: 10000
+method_freeze_required: true
+

@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "datasets": 4,
+    "family": "DualView-D1",
+    "global_alpha": 0.75,
+    "max_C": 0.2033640168169962,
+    "max_peak_gpu_memory_bytes": 312541184.0,
+    "mean_predictive_rank": 1.0,
+    "median_C": 0.0423497398220566,
+    "median_disagreement_reduction": 0.3821168296999873,
+    "median_fit_seconds": 1.1216123087797314,
+    "median_inference_seconds": 0.002390915373689495,
+    "median_parameter_count": 468597.5,
+    "method": "DualViewGram-D1-a75",
+    "model_families": 3,
+    "p90_C": 0.1506811622972866,
+    "p95_C": 0.17820213208814134,
+    "units": 12
+  },
+  "prospective_outcomes_accessed": false,
+  "selected": "DualViewGram-D1-a75",
+  "selection_scope": "four frozen stage-1 development datasets",
+  "selection_split": "development_only",
+  "status": "DEVELOPMENT_SELECTED",
+  "survived": false
+}

@@ -1,0 +1,112 @@
+{
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "safe_divide",
+        "left": 2,
+        "right": 3
+      },
+      {
+        "operator": "safe_divide",
+        "left": 4,
+        "right": 3
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.1328659645575792,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "global": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "safe_divide",
+        "left": 2,
+        "right": 3
+      },
+      {
+        "operator": "add",
+        "left": 3,
+        "right": 4
+      },
+      {
+        "operator": "safe_divide",
+        "left": 5,
+        "right": 3
+      }
+    ],
+    "output": 6,
+    "output_scale": 0.13342157633621435,
+    "output_bias": 0.11438452310040406,
+    "epsilon": 0.25
+  },
+  "independent": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 2,
+          "right": 3
+        },
+        {
+          "operator": "safe_divide",
+          "left": 4,
+          "right": 3
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.11378340877262158,
+      "output_bias": 0.19592415120085996,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 2,
+          "right": 3
+        },
+        {
+          "operator": "safe_divide",
+          "left": 4,
+          "right": 3
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.28480124970686616,
+      "output_bias": 0.5351522212618333,
+      "epsilon": 0.25
+    }
+  ],
+  "shared": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "safe_divide",
+        "left": 2,
+        "right": 3
+      },
+      {
+        "operator": "safe_divide",
+        "left": 4,
+        "right": 3
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.13584380006050556,
+    "output_bias": -0.015105326695193946,
+    "epsilon": 0.25
+  },
+  "shared_scales": [
+    0.8376047306837427,
+    2.096534787328115
+  ],
+  "shared_biases": [
+    0.20857644059485964,
+    0.5668210582814746
+  ]
+}

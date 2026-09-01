@@ -1,0 +1,69 @@
+{
+  "status": "complete",
+  "datasets": 8,
+  "draws_per_dataset": 1024,
+  "comparisons": {
+    "iid16": {
+      "mean_strength2_minus_control_test_brier": 0.0029309649420585556,
+      "datasets_strength2_lower": 3,
+      "dataset_bootstrap_95_interval": [
+        -0.0015594599820389753,
+        0.010044320175082298
+      ]
+    },
+    "srswor16": {
+      "mean_strength2_minus_control_test_brier": 0.0032656639306559952,
+      "datasets_strength2_lower": 3,
+      "dataset_bootstrap_95_interval": [
+        -0.0013059144896439522,
+        0.011012935487320073
+      ]
+    },
+    "four_strength1": {
+      "mean_strength2_minus_control_test_brier": 0.0031763367183850815,
+      "datasets_strength2_lower": 2,
+      "dataset_bootstrap_95_interval": [
+        -0.0005654505886406149,
+        0.009890236803189803
+      ]
+    },
+    "four_seed_blocks": {
+      "mean_strength2_minus_control_test_brier": 0.0021530860887132497,
+      "datasets_strength2_lower": 3,
+      "dataset_bootstrap_95_interval": [
+        -0.0020702093134436156,
+        0.008426622648224155
+      ]
+    },
+    "sobol16": {
+      "mean_strength2_minus_control_test_brier": 0.002733892409742586,
+      "datasets_strength2_lower": 2,
+      "dataset_bootstrap_95_interval": [
+        -6.52041650978756e-05,
+        0.00764900715975413
+      ]
+    },
+    "lhs16": {
+      "mean_strength2_minus_control_test_brier": 0.0036366398940133595,
+      "datasets_strength2_lower": 3,
+      "dataset_bootstrap_95_interval": [
+        -0.00029759153187525547,
+        0.01104514383121873
+      ]
+    }
+  },
+  "mean_selection_agreement": {
+    "strength2": 0.9580078125,
+    "iid16": 0.905029296875,
+    "srswor16": 0.920166015625,
+    "four_strength1": 0.9161376953125,
+    "four_seed_blocks": 0.919189453125,
+    "sobol16": 0.9150390625,
+    "lhs16": 0.9210205078125
+  },
+  "frozen_external_selection_gate_passed": false,
+  "post_failure_qmc_controls_strength2_lower_mean": {
+    "sobol16": false,
+    "lhs16": false
+  }
+}

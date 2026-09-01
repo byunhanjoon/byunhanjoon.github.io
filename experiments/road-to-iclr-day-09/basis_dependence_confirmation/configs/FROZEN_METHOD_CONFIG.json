@@ -1,0 +1,85 @@
+{
+  "status": "frozen_before_prospective_access",
+  "frozen_at_utc": "2026-09-01T02:12:15Z",
+  "primary_method": "pca_canonical",
+  "primary_scope": "orthogonal_all_feature_blocks",
+  "method_definition": {
+    "fit_partition": "training_only",
+    "target_use": false,
+    "application": "independently_within_each_rbf_feature_block; categorical_blocks_unchanged",
+    "centering": "subtract_training_block_column_mean_on_all_splits",
+    "factorization": "thin_svd_of_centered_training_block",
+    "component_order": "descending_singular_value_order_from_numpy_svd",
+    "coordinates": "centered_block_right_multiply_by_right_singular_vectors",
+    "sign_rule": "for_each_component_force_the_training_score_with_largest_absolute_value_positive",
+    "degeneracy_flag": "adjacent_singular_value_ratio_greater_than_0.99",
+    "basis_dimension": 8,
+    "float_precision": "float64_representation_construction"
+  },
+  "prospective_models": [
+    "tabicl_v2",
+    "tabpfn_2_6",
+    "tabm_d",
+    "catboost"
+  ],
+  "model_seeds": [0, 1, 2],
+  "orbit_members": 8,
+  "prospective_comparison": [
+    "raw",
+    "standardization",
+    "whitening",
+    "pca_canonical",
+    "ORACLE INVERSE — NOT A METHOD"
+  ],
+  "development_datasets": [
+    "california_housing",
+    "house_16H",
+    "pendigits",
+    "credit-g",
+    "adult",
+    "bike-sharing",
+    "bank-marketing",
+    "cpu_small",
+    "phoneme",
+    "wine-quality-red",
+    "diamonds"
+  ],
+  "prospective_datasets": [
+    "jannis",
+    "elevators",
+    "houses",
+    "MagicTelescope",
+    "pol",
+    "optdigits",
+    "segment"
+  ],
+  "development_evidence": {
+    "development_repair_units": 55,
+    "pca_median_disagreement": 0.0,
+    "pca_median_disagreement_reduction": 1.0,
+    "pca_median_relative_task_change": 0.028997,
+    "pca_useful_threshold_rate": 0.363636,
+    "repairs_summary_sha256": "3477192d1b0a337de11bb3a6e18595797f4068cee5db603eec582ea7b844acad",
+    "natural_summary_sha256": "69e5ccaf35ea29c34612c7344748e571ec0915d4fdc74a8b417d393cc4138608",
+    "mechanism_summary_sha256": "9c503258197b3af3f8d90fc763a462300f199f2e14ae4c12efb3ec38e1bda0d6",
+    "equal_hpo_summary_sha256": "11dc3a7b98e8e1c6c3bb6164dd7b96451030dabcfe19a128ea0bc294bf2095f6",
+    "followup_selection_sha256": "2f2b6f9ab9321a1c2fdfb466cb7af0f77e7b295460f254ae5d4cf14724faee57",
+    "development_integrity_audit_sha256": "e07fc4b491fb5900e0b0fe43877437e025333a5a5b5d6e06ca4f5e392c9ecfd4",
+    "development_audited_bundle_count": 786
+  },
+  "selection_rationale": "PCA canonicalization was the only target-free non-oracle candidate with complete median orthogonal disagreement removal across 55 development dataset-model units. It was selected despite a 2.90 percent median task-error increase because standardization, whitening, and orbit consistency did not reduce disagreement and AnchorCanonical failed its rank audit. The prospective test therefore evaluates both whether PCA reduction transfers and whether its task cost remains acceptable.",
+  "rejected_or_deferred_candidates": {
+    "standardization": "median_disagreement_reduction_minus_0.031",
+    "whitening": "median_disagreement_reduction_minus_0.178",
+    "anchor_canonical": "excluded_due_to_rank_deficient_rbf_blocks",
+    "orbit_consistency_lambda_1": "median_disagreement_reduction_minus_3.430_and_task_cost_plus_0.028",
+    "dual_view": "dropped_before_prospective_access_under_frozen_compute_priority_rule"
+  },
+  "protocol_hashes": {
+    "authoritative_spec_sha256": "778e1f149fdb0b9fb792a878802b81ff858fa452fcb2ca28f2d9c8f4579064cc",
+    "frozen_protocol_sha256": "83012c1da412ee3eeb85e22a2adebf418442a44e5798be38be5f1c93f516350a",
+    "development_protocol_sha256": "c99409485ed29d1238c77fc9ad5d709ddfff388c08c2d4a9ddf6f65f43390198",
+    "dataset_panel_sha256": "954df189503c40f4425d5be0b48bf59e7caa365eada1202362386a690c4052ae"
+  },
+  "immutability": "No method, hyperparameter, dataset, seed, comparison, or analysis choice may change after prospective outcome access. Only documented implementation-error repair is allowed."
+}

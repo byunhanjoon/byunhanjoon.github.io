@@ -1,0 +1,49 @@
+{
+  "bootstrap_replicates": 50000,
+  "bootstrap_seed": 175001,
+  "dataset_identities_disjoint": true,
+  "protocol": "REAL_DATA_SYNTHESIS_PROTOCOL.md",
+  "source_files": {
+    "breadth_panel": "results/processed/openml_breadth_competence_48170161d0_cells.csv",
+    "regression_confirmation": "results/processed/regression_confirmation_1e4911698d_cells.csv",
+    "small_panel": "results/processed/real_panel_competence_55553b7ffd_cells.csv"
+  },
+  "status": "retrospective_synthesis",
+  "tasks": {
+    "classification": {
+      "ci_high": 0.0031672452909268923,
+      "ci_low": -0.0029761576782527193,
+      "datasets": 9,
+      "loo_mean_max": 0.000619763583623624,
+      "loo_mean_min": -0.0017379680453521887,
+      "mean_gain": -0.00026635001149561755,
+      "median_gain": -0.0011955167701676068,
+      "panel_means": {
+        "breadth_panel": -0.0021301367728194477,
+        "small_panel": 0.0034612235111520424
+      },
+      "positive_datasets": 3,
+      "robustness_gate_pass": false,
+      "trimmed_each_tail": 0,
+      "trimmed_mean_gain": -0.00026635001149561744
+    },
+    "regression": {
+      "ci_high": 0.459987730058233,
+      "ci_low": 0.04168215306604927,
+      "datasets": 16,
+      "loo_mean_max": 0.23349519249610345,
+      "loo_mean_min": 0.12465193939113742,
+      "mean_gain": 0.21796486056575076,
+      "median_gain": 0.023385554667901615,
+      "panel_means": {
+        "breadth_panel": 0.29102795987847113,
+        "regression_confirmation": 0.1004505657820016,
+        "small_panel": 0.23699730524817647
+      },
+      "positive_datasets": 14,
+      "robustness_gate_pass": true,
+      "trimmed_each_tail": 1,
+      "trimmed_mean_gain": 0.13462637208975722
+    }
+  }
+}

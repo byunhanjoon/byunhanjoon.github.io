@@ -1,0 +1,4 @@
+dataset,split_seed,model,variance_temperature,validation_nll
+kdd17_stock_return,20260923,projective_full,1.7054632676222983,1.4432681121814857
+kdd17_stock_return,20260923,projective_independent,1.7651875135735504,1.449441730592384
+kdd17_stock_return,20260923,projective_shuffled,1.7001519364857676,1.4409269415326595

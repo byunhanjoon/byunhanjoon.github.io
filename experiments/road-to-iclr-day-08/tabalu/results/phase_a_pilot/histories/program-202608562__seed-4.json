@@ -1,0 +1,38 @@
+[
+  {
+    "epoch": 0.0,
+    "temperature": 2.0,
+    "train_nrmse": 0.0,
+    "validation_nrmse": 2.399546303877287e-07,
+    "operator_entropy": 1.1518624887685291e-05,
+    "input_entropy": 7.679084774281364e-06,
+    "output_entropy": 1.1518624887685291e-05
+  },
+  {
+    "epoch": 20.0,
+    "temperature": 1.3709557963765577,
+    "train_nrmse": 0.005898907780647278,
+    "validation_nrmse": 0.00400375435128808,
+    "operator_entropy": 1.2150030670454726e-05,
+    "input_entropy": 7.506273504986893e-06,
+    "output_entropy": 1.20724535008776e-05
+  },
+  {
+    "epoch": 40.0,
+    "temperature": 0.9397598978092409,
+    "train_nrmse": 0.0021968684159219265,
+    "validation_nrmse": 0.001858587609604001,
+    "operator_entropy": 1.229967710969504e-05,
+    "input_entropy": 7.510846444347408e-06,
+    "output_entropy": 1.1819620340247639e-05
+  },
+  {
+    "epoch": 60.0,
+    "temperature": 0.6441846395519103,
+    "train_nrmse": 0.000713528017513454,
+    "validation_nrmse": 0.0007250318303704262,
+    "operator_entropy": 1.2318744666117709e-05,
+    "input_entropy": 7.510523573728278e-06,
+    "output_entropy": 1.1782100045820698e-05
+  }
+]

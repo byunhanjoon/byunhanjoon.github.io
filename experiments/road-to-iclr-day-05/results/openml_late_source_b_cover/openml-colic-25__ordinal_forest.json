@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-colic-25",
+  "model": "ordinal_forest",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 220,
+    "validation": 74,
+    "test": 74
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "timing": {
+    "setup_seconds": 0.032230507116764784,
+    "fit_loop_seconds": 11.236916557885706,
+    "end_to_end_seconds": 11.272150042001158,
+    "fits_per_fit_loop_second": 11.391025228373145
+  }
+}

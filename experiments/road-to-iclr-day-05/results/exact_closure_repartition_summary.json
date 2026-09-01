@@ -1,0 +1,76 @@
+{
+  "status": "complete",
+  "draws_per_dataset": 1024,
+  "eligible_sources": 15,
+  "panels": {
+    "openml_external": {
+      "eligible_sources": 8,
+      "method_means": [
+        {
+          "method": "exact_packed_closure128",
+          "draw": 511.5,
+          "validation_agreement": 1.0,
+          "test_agreement": 0.6011962890625,
+          "validation_quotient_regret": 0.0,
+          "test_quotient_regret": 0.007639775023951583,
+          "selected_test_quotient_loss": 0.1878090243220514,
+          "validation_test_winner_agreement": 0.6011962890625
+        },
+        {
+          "method": "independent_cover_u128",
+          "draw": 511.5,
+          "validation_agreement": 0.996826171875,
+          "test_agreement": 0.600830078125,
+          "validation_quotient_regret": 2.4307837096444953e-06,
+          "test_quotient_regret": 0.007628542335781161,
+          "selected_test_quotient_loss": 0.187797791633881,
+          "validation_test_winner_agreement": 0.6011962890625
+        }
+      ],
+      "validation_regret_strictly_lower": true,
+      "mean_test_regret_difference": 1.1232688170421706e-05,
+      "sources_with_lower_exact_test_regret": 1,
+      "test_regret_source_bootstrap_95_interval": [
+        -2.647192343041896e-05,
+        5.87760581486895e-05
+      ],
+      "transfer_clause": false
+    },
+    "openml_taskbalanced": {
+      "eligible_sources": 7,
+      "method_means": [
+        {
+          "method": "exact_packed_closure128",
+          "draw": 511.5,
+          "validation_agreement": 1.0,
+          "test_agreement": 0.7922712053571429,
+          "validation_quotient_regret": 0.0,
+          "test_quotient_regret": 0.0018286238522843099,
+          "selected_test_quotient_loss": 0.13145329980906892,
+          "validation_test_winner_agreement": 0.7922712053571429
+        },
+        {
+          "method": "independent_cover_u128",
+          "draw": 511.5,
+          "validation_agreement": 0.994140625,
+          "test_agreement": 0.7924107142857143,
+          "validation_quotient_regret": 3.26152495599063e-06,
+          "test_quotient_regret": 0.0018182203023851293,
+          "selected_test_quotient_loss": 0.13144289625916974,
+          "validation_test_winner_agreement": 0.7922712053571429
+        }
+      ],
+      "validation_regret_strictly_lower": true,
+      "mean_test_regret_difference": 1.0403549899180543e-05,
+      "sources_with_lower_exact_test_regret": 1,
+      "test_regret_source_bootstrap_95_interval": [
+        -4.0588464115609915e-07,
+        3.161653433869773e-05
+      ],
+      "transfer_clause": false
+    }
+  },
+  "method_gate_passed": true,
+  "transfer_gate_passed": false,
+  "frozen_interpretation": "validation_only_pass"
+}

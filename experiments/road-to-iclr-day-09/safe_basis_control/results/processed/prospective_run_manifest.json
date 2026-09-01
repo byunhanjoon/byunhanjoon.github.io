@@ -1,0 +1,11 @@
+{
+  "cells": 960,
+  "coordinate_audits": 1440,
+  "datasets": 10,
+  "finalist_hash": "b7b075362f5c7295fdb55f6d6140e5cf27499fcc1dbac0363f16e7aca9c14d29",
+  "methods": 8,
+  "models": 3,
+  "prospective_access_after_freeze": true,
+  "seeds": 2,
+  "status": "COMPLETE"
+}

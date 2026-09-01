@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-segment-36",
+  "model": "ordinal_forest",
+  "task": "multiclass",
+  "shape": [
+    4,
+    1,
+    4,
+    4
+  ],
+  "fits": 64,
+  "rows": {
+    "train": 1386,
+    "validation": 462,
+    "test": 462
+  },
+  "full_product_verified": true
+}

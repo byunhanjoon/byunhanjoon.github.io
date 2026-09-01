@@ -1,0 +1,28 @@
+{
+  "best_method_by_mean_residual": "all_factors",
+  "cells": 48,
+  "estimator_draws": 512,
+  "mean_fanova_components": {
+    "fanova_reconstruction_error": 8.408213723077688e-19,
+    "initialization_main_mass": 0.0024577421733346845,
+    "initialization_order_mass": 0.0013060242899574513,
+    "joint_higher_mass": 0.011547500062404232,
+    "order_main_mass": 0.0019228330384528432,
+    "schema_initialization_mass": 0.013898517922556239,
+    "schema_only_mass": 0.004806357104904081,
+    "schema_order_mass": 0.0038519947027675985,
+    "split_seed": 2026082811.0,
+    "total_variance": 0.039790969294377136
+  },
+  "method_means": {
+    "all_factors": 0.0018648741721682082,
+    "initialization": 0.002612098100946597,
+    "initialization_order": 0.0023822986666971096,
+    "none": 0.0027758099551853464,
+    "order": 0.0026373920570225257,
+    "schema": 0.0024566204432552143,
+    "schema_initialization": 0.001988861991001338,
+    "schema_order": 0.0022851578176086122
+  },
+  "status": "complete"
+}

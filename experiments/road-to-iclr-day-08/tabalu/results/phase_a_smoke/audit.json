@@ -1,0 +1,81 @@
+{
+  "config": {
+    "experiment": "phase_a_smoke",
+    "output_dir": "tabalu/results/phase_a_smoke",
+    "n_tasks": 4,
+    "task_seed_start": 202608310,
+    "seeds": [
+      0,
+      1
+    ],
+    "n_features": 4,
+    "n_irrelevant": 0,
+    "depth_range": [
+      1,
+      3
+    ],
+    "generation_operators": [
+      "add",
+      "subtract",
+      "multiply",
+      "safe_divide",
+      "abs",
+      "square"
+    ],
+    "train_rows": 512,
+    "validation_rows": 256,
+    "test_rows": 512,
+    "multipliers": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "device": "cuda:0",
+    "baselines": [
+      "Linear",
+      "RandomForest",
+      "PolynomialSR",
+      "MLP",
+      "EQL"
+    ],
+    "program_search": {
+      "n_nodes": 3,
+      "operators": [
+        "identity",
+        "add",
+        "subtract",
+        "multiply",
+        "safe_divide",
+        "abs",
+        "square"
+      ],
+      "selector": "straight_through_gumbel",
+      "discrete_warm_start": true,
+      "epochs": 350,
+      "learning_rate": 0.025,
+      "entropy_weight": 0.0002,
+      "patience": 100
+    }
+  },
+  "git_commit": "c000f06e0b8c6989d62ece8a769bbf269910a9b8",
+  "git_dirty": true,
+  "record_count": 256,
+  "failure_count": 0,
+  "task_count": 4,
+  "seed_count": 2,
+  "gate": {
+    "passed": true,
+    "reason": "all preregistered pilot thresholds passed",
+    "operational_rule": {
+      "extreme_ood_compiled_vs_mlp_nrmse_ratio_max": 0.5,
+      "iid_soft_vs_mlp_nrmse_ratio_max": 1.25,
+      "extreme_compiled_vs_soft_nrmse_ratio_max": 1.25
+    },
+    "observed": {
+      "extreme_ood_compiled_vs_mlp_nrmse_ratio": 0.0,
+      "iid_soft_vs_mlp_nrmse_ratio": 0.0,
+      "extreme_compiled_vs_soft_nrmse_ratio": 0.0
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "status": "complete",
+  "artifacts": 324,
+  "expected_artifacts": 324,
+  "gates": {
+    "ft_dataset_correlations": {
+      "value": 0,
+      "required": 2,
+      "pass": false,
+      "spearman_by_dataset": {
+        "bank_marketing_subscription": 0.6503496503496504,
+        "credit_card_default": 0.4125874125874127,
+        "fremtpl_claim_count": 0.1188811188811189
+      }
+    },
+    "early_over_initial_improvement": {
+      "value": 0.3939393939393939,
+      "required": 0.2,
+      "epoch2_spearman": 0.3939393939393939,
+      "epoch0_spearman": 0.0,
+      "pass": true
+    },
+    "material_configuration_auroc": {
+      "value": 0.9161290322580645,
+      "required": 0.85,
+      "material": 31,
+      "total": 36,
+      "score": "within_dataset_epoch2_rank",
+      "pass": true
+    },
+    "stable_control_fraction": {
+      "value": 0.8611111111111112,
+      "required": 0.9,
+      "pass": false
+    },
+    "initial_match": {
+      "value": 4.76837158203125e-07,
+      "required_maximum": 1e-06,
+      "pass": true
+    }
+  },
+  "hypothesis_supported": false
+}

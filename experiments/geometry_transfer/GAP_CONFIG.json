@@ -1,0 +1,41 @@
+{
+  "frozen_at": "2026-08-30",
+  "source": {
+    "name": "census_cbp_naics",
+    "family": "official_industry_hierarchy",
+    "url": "https://www2.census.gov/programs-surveys/cbp/datasets/2023/cbp23st.zip",
+    "archive_member": "cbp23st.txt",
+    "semantic_state": "NAICS2017",
+    "required_lfo": "001",
+    "required_empszes": "001",
+    "minimum_geographies_per_state": 10,
+    "minimum_states": 8,
+    "minimum_rows": 500,
+    "target": "log1p(PAYANN)",
+    "ordinary_covariates": ["geo_state", "log1p_emp", "log1p_estab"],
+    "geometry": "naics_prefix_tree_path"
+  },
+  "outer_seeds": [8801, 8802, 8803],
+  "outer_train_fraction": 0.7,
+  "inner_state_folds": 3,
+  "row_oof_folds": 3,
+  "base_model": {
+    "type": "CatBoostRegressor",
+    "iterations": 100,
+    "depth": 7,
+    "learning_rate": 0.08,
+    "l2_leaf_reg": 5.0,
+    "random_strength": 0.25,
+    "max_fit_rows": 75000
+  },
+  "operators": ["knn_3", "rbf", "domain_specific"],
+  "domain_specific_operator": "kernel_ridge",
+  "criteria": {
+    "G1": "all seals and leakage checks pass",
+    "G2_split_cell_spearman_min": 0.5,
+    "G3_split_cell_sign_accuracy_min": 0.75,
+    "G4_correct_aggregate_signs_min": 2,
+    "G5_combined_aggregate_spearman_min": 0.6,
+    "G5_combined_aggregate_sign_accuracy_min": 0.75
+  }
+}

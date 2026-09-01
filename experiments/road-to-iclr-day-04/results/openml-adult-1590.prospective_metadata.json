@@ -1,0 +1,29 @@
+{
+  "categorical_fields": [
+    "workclass",
+    "education",
+    "marital-status",
+    "occupation",
+    "relationship",
+    "race",
+    "sex",
+    "native-country"
+  ],
+  "numeric_fields": [
+    "age",
+    "fnlwgt",
+    "education-num",
+    "capital-gain",
+    "capital-loss",
+    "hours-per-week"
+  ],
+  "openml_data_id": 1590,
+  "openml_name": "adult",
+  "rows": 48842,
+  "split_sizes": {
+    "test": 9769,
+    "train": 29304,
+    "val": 9769
+  },
+  "task": "classification"
+}

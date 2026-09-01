@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "lendingclub_loan_default",
+  "arms": [
+    "ordinary",
+    "matched"
+  ],
+  "seeds": [
+    101,
+    202,
+    303,
+    404
+  ],
+  "representatives": 4,
+  "rows": {
+    "train": 3000,
+    "validation": 1000,
+    "test": 1000
+  },
+  "features": {
+    "numerical": 12,
+    "categorical": 1
+  },
+  "cardinalities": [
+    7
+  ]
+}

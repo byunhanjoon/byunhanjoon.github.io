@@ -1,0 +1,25 @@
+{
+  "categorical_fields": [
+    "V2"
+  ],
+  "numeric_fields": [
+    "V1",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10"
+  ],
+  "openml_data_id": 1480,
+  "openml_name": "ilpd",
+  "rows": 583,
+  "split_sizes": {
+    "test": 117,
+    "train": 349,
+    "val": 117
+  },
+  "task": "classification"
+}

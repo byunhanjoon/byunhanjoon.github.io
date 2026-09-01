@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-tic-tac-toe-50",
+  "model": "ordinal_forest",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 574,
+    "validation": 192,
+    "test": 192
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": true,
+  "timing": {
+    "setup_seconds": 0.02201804891228676,
+    "fit_loop_seconds": 11.461035281186923,
+    "end_to_end_seconds": 11.490324852988124,
+    "fits_per_fit_loop_second": 11.16827554052727
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "hypothesis": "H3_FULLSCALE_CLOSURE",
+  "dataset": "bank_marketing_subscription",
+  "task": "classification",
+  "model": "resnet",
+  "seed": 8303,
+  "rows": {
+    "train": 27126,
+    "validation": 9042,
+    "test": 9043
+  },
+  "paths": 8,
+  "path_wall_seconds": [
+    76.62048624991439,
+    82.22338950214908,
+    77.87704664003104,
+    77.69151970394887,
+    80.68445949302986,
+    80.86278819991276,
+    80.81189500703476,
+    81.01336292689666
+  ],
+  "total_fit_seconds": 637.7849477229174,
+  "invocation_wall_seconds": 639.91260202392,
+  "config_sha256": "67be6a0a6fe111b75c01fbc49b083dd804479caf2010447317cfdcf73398766d",
+  "protocol_sha256": "c4f0cc5d7b0961abe268a67760053c0fd36302faa25432d8afa930d7cc402802",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0"
+}

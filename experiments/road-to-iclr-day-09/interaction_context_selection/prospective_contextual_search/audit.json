@@ -1,0 +1,48 @@
+{
+  "confirmation_trajectories": 18,
+  "contextual_beats_row_test_fraction": 0.2777777777777778,
+  "contextual_minus_random_bootstrap_95": [
+    -0.038342480338754883,
+    0.0029176757024665374
+  ],
+  "contextual_minus_random_mean_test_improvement": -0.016461741131564147,
+  "contextual_minus_row_bootstrap_95": [
+    -0.02407497524534645,
+    0.0038753025321496388
+  ],
+  "contextual_minus_row_mean_selector_improvement": 0.005827816756428905,
+  "contextual_minus_row_mean_test_improvement": -0.010532576096030866,
+  "contextual_minus_row_selector_bootstrap_95": [
+    -0.0026712846635722856,
+    0.013792793477934008
+  ],
+  "contextual_positive_test_fraction": 1.0,
+  "datasets_complete": [
+    "adult",
+    "bank-marketing",
+    "california_housing",
+    "churn",
+    "credit-g",
+    "diamonds",
+    "electricity",
+    "house_16H"
+  ],
+  "expected_datasets": [
+    "adult",
+    "bank-marketing",
+    "california_housing",
+    "churn",
+    "credit-g",
+    "diamonds",
+    "electricity",
+    "house_16H"
+  ],
+  "expected_rows": 144,
+  "gate_1_oracle_regret": "not_tested_in_end_to_end_run",
+  "gate_2_positive_test_at_least_70pct": true,
+  "gate_3_beats_row_at_least_70pct": false,
+  "gate_4_beats_random_positive_bootstrap_interval": false,
+  "rows": 144,
+  "test_labels_used_for_selection": false,
+  "vip_style_is_official_vip_cop": false
+}

@@ -1,0 +1,56 @@
+{
+  "task_id": "program-202612805",
+  "seed": 202612805,
+  "program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "subtract",
+        "left": 1,
+        "right": 2
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 1
+      },
+      {
+        "operator": "add",
+        "left": 1,
+        "right": 5
+      },
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 6
+      },
+      {
+        "operator": "add",
+        "left": 1,
+        "right": 7
+      },
+      {
+        "operator": "subtract",
+        "left": 8,
+        "right": 0
+      },
+      {
+        "operator": "abs",
+        "left": 9,
+        "right": null
+      },
+      {
+        "operator": "subtract",
+        "left": 10,
+        "right": 1
+      }
+    ],
+    "output": 11,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "n_irrelevant": 0,
+  "generation_attempt": 0,
+  "expression": "subtract(abs(subtract(add(x1, multiply(x0, add(x1, subtract(subtract(x1, x2), x1)))), x0)), x1)"
+}

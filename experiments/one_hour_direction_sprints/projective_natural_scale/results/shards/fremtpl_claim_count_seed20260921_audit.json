@@ -1,0 +1,62 @@
+{
+  "dataset": "fremtpl_claim_count",
+  "encoded_features": 6,
+  "episode_audits": [
+    {
+      "context_index_sha256": "6a0e87abf772e1de840e737c45c9972c746f05a1a2a26804308b81cd0f5fa26d",
+      "covariance_min_eigenvalue": -2.8141406067301708e-06,
+      "covariance_symmetry_max_abs": 1.1102230246251565e-16,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 1.1920928955078125e-07,
+      "replicate": 0,
+      "tabpfn_marginal_max_abs": 1.8124560305921023e-06,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "33ba565769ce5919977ee5e3aeacfcef8a9a509813e82e9f3855d5eadb6b1b00",
+      "covariance_min_eigenvalue": -2.423926932848938e-06,
+      "covariance_symmetry_max_abs": 2.7755575615628914e-17,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 1.1920928955078125e-07,
+      "replicate": 1,
+      "tabpfn_marginal_max_abs": 3.0678965146080373e-06,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "520e1cff8bb855f9aed0acc2efc9bebf86352e4ebf1ed099f1d7f2c796051f37",
+      "covariance_min_eigenvalue": 1e-08,
+      "covariance_symmetry_max_abs": 8.470329472543003e-22,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 1.1920928955078125e-07,
+      "replicate": 2,
+      "tabpfn_marginal_max_abs": 0.0,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "405f8bbd4bf4fcd8d129028f45c1b7a45c51b50dd58c5c506e7fc6def7b5fdcc",
+      "covariance_min_eigenvalue": -2.476099897369445e-06,
+      "covariance_symmetry_max_abs": 8.673617379884035e-19,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 1.1920928955078125e-07,
+      "replicate": 3,
+      "tabpfn_marginal_max_abs": 2.186689243899309e-06,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    }
+  ],
+  "protocol_sha256": "144c873f8d8922306a5b415b05825bf84d414d15cbbe4289204dc92cea3239f3",
+  "raw_features": 6,
+  "raw_rows": 120000,
+  "split_disjoint": true,
+  "split_seed": 20260921,
+  "test_index_sha256": "0a5607ed547d35f333ecc8e0dc33d44d910167084d6c152ebda2184a29ec2bfb",
+  "test_rows": 512,
+  "train_index_sha256": "14d68d7aa60c4827981932f5ddf612d5d44a6b12551a302116cf8a8183dac091",
+  "train_rows": 2048,
+  "validation_index_sha256": "23fca6be6b9521171ab4732d9d69e81a8445e3863b6e4d246a500a5ba4f7db30",
+  "validation_rows": 512,
+  "wall_seconds": 5.282626613974571
+}

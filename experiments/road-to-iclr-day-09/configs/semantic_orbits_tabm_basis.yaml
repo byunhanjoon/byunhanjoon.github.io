@@ -1,0 +1,39 @@
+experiment: semantic_orbits_tabm_basis_followup
+protocol_version: 1
+parent_config: semantic_orbits.yaml
+split_seed: 20260901
+model_seeds: [0, 1, 2]
+orbit_members: 8
+max_train_rows: 2048
+max_validation_rows: 512
+max_test_rows: 512
+datasets:
+  - name: bike-sharing
+    openml_id: 42712
+    openml_version: 2
+    problem_type: regression
+    cyclic_periods:
+      hour: 24
+      weekday: 7
+      month: 12
+  - name: california_housing
+    openml_id: 43939
+    openml_version: 1
+    problem_type: regression
+  - name: wine-quality-red
+    openml_id: 40691
+    openml_version: 1
+    problem_type: regression
+    coerce_target_numeric: true
+model:
+  name: tabm_d
+  implementation: pytabkit.models.sklearn.sklearn_interfaces.TabM_D_Regressor
+  n_cv: 1
+  n_refit: 0
+  n_epochs: 30
+  patience: 5
+  n_threads: 4
+pipeline: numeric_code
+family: T6
+variants: [orthogonal, cond_le_3, cond_le_10]
+

@@ -1,0 +1,20 @@
+{
+  "status": "frozen_before_highdim_field_outcomes",
+  "data_root": "/data/tokenization_icaif_grouped_v2",
+  "datasets": ["bank_marketing_subscription", "german_credit_risk", "compustat_kor_direction"],
+  "models": ["ordinal_forest", "catboost_native", "onehot_adam_mlp"],
+  "seeds": [101, 202, 303, 404],
+  "factor_levels": {"feature": 4, "category": 4, "class": 2},
+  "view_seeds": {"feature": 91773, "category": 821571},
+  "subsample": {
+    "max_train_rows": 10000, "max_validation_rows": 1000,
+    "max_test_rows": 1000, "seed": 20260827
+  },
+  "training": {
+    "forest_estimators": 120, "boosting_iterations": 120,
+    "mlp_max_epochs": 100, "threads_per_fit": 4
+  },
+  "repetitions": 8,
+  "design_seed": 2026082803
+}
+

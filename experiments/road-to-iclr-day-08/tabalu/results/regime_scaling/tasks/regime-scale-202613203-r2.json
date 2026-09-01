@@ -1,0 +1,39 @@
+{
+  "task_id": "regime-scale-202613203-r2",
+  "seed": 202613203,
+  "programs": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "subtract",
+          "left": 0,
+          "right": 3
+        },
+        {
+          "operator": "multiply",
+          "left": 1,
+          "right": 4
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "abs",
+          "left": 3,
+          "right": null
+        }
+      ],
+      "output": 4,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+numpy==1.26.4
+pandas==2.3.3
+torch==2.7.0
+scikit-learn==1.4.2
+scipy==1.11.4
+matplotlib==3.10.9
+catboost==1.2.10
+xgboost==2.1.4
+pytest==9.0.2

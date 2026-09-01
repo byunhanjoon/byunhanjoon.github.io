@@ -1,0 +1,3 @@
+status,features,median_empirical_rank,median_block_dimension,median_spectrum_entropy,median_condition_proxy,median_one_block_C,median_orbit_benefit
+Gram-selected,755,8.0,8.0,1.0239924103319529,126.04888976417168,-0.0001974460694428,0.0107370967429323
+raw-retained,375,8.0,8.0,1.008378039364714,141.6042013019342,0.0110344039622508,0.025177461355494

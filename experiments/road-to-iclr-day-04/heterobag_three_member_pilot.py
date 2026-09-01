@@ -47,11 +47,23 @@ def main() -> None:
     parser.add_argument("--config", type=Path, default=HERE / "heterobag_three_member_config.json")
     parser.add_argument("--output", type=Path, default=HERE / "results/heterobag_three_member.csv")
     parser.add_argument("--device", default="cuda:0")
+    parser.add_argument(
+        "--dataset",
+        action="append",
+        help="Run only the named frozen dataset (repeatable); useful for GPU shards.",
+    )
     args = parser.parse_args()
     config = json.loads(args.config.read_text())
+    if "base_config" in config:
+        base = json.loads((args.config.parent / config["base_config"]).read_text())
+        config = {**base, **{key: value for key, value in config.items() if key != "base_config"}}
+    selected_datasets = args.dataset or config["development_datasets"]
+    unknown = sorted(set(selected_datasets) - set(config["development_datasets"]))
+    if unknown:
+        raise ValueError(f"datasets are not in the frozen config: {unknown}")
     rows: list[dict[str, object]] = list(read(args.output))
     done = {(row["dataset"], row["model"]) for row in rows}
-    for dataset_name in config["development_datasets"]:
+    for dataset_name in selected_datasets:
         task = config["dataset_tasks"][dataset_name]
         data = load_openml(dataset_name, config)
         universal = prepare(data, config)

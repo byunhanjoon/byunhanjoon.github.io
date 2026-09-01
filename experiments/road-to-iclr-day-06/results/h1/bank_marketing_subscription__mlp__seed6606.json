@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "hypothesis": "H1_SAA",
+  "dataset": "bank_marketing_subscription",
+  "task": "classification",
+  "model": "mlp",
+  "seed": 6606,
+  "split_seed": 2026082801,
+  "paths": 8,
+  "epochs_per_path": 20,
+  "maximum_initial_gap": 1.1920928955078125e-07,
+  "path_wall_seconds": [
+    0.37710671802051365,
+    0.32793910009786487,
+    0.32630093884654343,
+    0.32885653292760253,
+    0.36882329592481256,
+    0.36991639505140483,
+    0.31033335300162435,
+    0.2682759847957641
+  ],
+  "total_fit_seconds": 2.6775523186661303,
+  "config_sha256": "e326c2dd186499ba84c75c13d15bc9e0837d9504ccbd67fd00741ed178106d7a",
+  "protocol_sha256": "e79abc3a2ecbf5201afa2b77b947d729b8c39a3871066daf623934fda17c2bae",
+  "day5_config_sha256": "1e8a099dafb2ac7de9e03f7363f3405a2edad3bf67374fc7d251c28da78c11e9",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0",
+  "tf32": false,
+  "deterministic_algorithms": true
+}

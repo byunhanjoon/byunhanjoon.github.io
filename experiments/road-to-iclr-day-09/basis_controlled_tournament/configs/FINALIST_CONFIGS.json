@@ -1,0 +1,148 @@
+{
+  "baselines": {
+    "catboost": {
+      "initialization": "default",
+      "optimizer": "native_frozen_default"
+    },
+    "controlled_mlp": {
+      "initialization": "default",
+      "learning_rate_multiplier": 2.0,
+      "optimizer": "adamw",
+      "optimizer_overrides": {
+        "learning_rate": 0.002
+      }
+    },
+    "tabicl_v2": {
+      "initialization": "default",
+      "optimizer": "native_frozen_default"
+    },
+    "tabm_d": {
+      "initialization": "default",
+      "learning_rate_multiplier": 2.0,
+      "optimizer": "adamw",
+      "optimizer_overrides": {
+        "learning_rate": 0.004
+      }
+    },
+    "tabpfn_2_6": {
+      "initialization": "default",
+      "optimizer": "native_frozen_default"
+    }
+  },
+  "development_artifact_hashes": {
+    "anchor_ablation_summary.csv": "c379016782dbeafb79a589255d4945560330ea35650c64c4bca71c8f66fce658",
+    "development_all_method_summary.csv": "fde0092c6a8e30e5bada6e3695f0528a1be7cf2a0c9739b08ca033ce87c44ed2",
+    "development_all_units.csv": "7405f7df58515d78182177bc2e0d45ebb8063b7cdf268be4ebbfa6866e3dc230",
+    "equal_hpo_lr_selection.csv": "98b477e09ab0e820ff67f44cbc745bca740ce404c5bbb3ad36677c67c7e96ca4",
+    "mechanism_equivariance_verdict.csv": "c04311a268bac82abb91b9e72363211b8040037f74b74f85dee7e589559529b5"
+  },
+  "finalists": [
+    {
+      "applicable_models": [
+        "controlled_mlp",
+        "tabm_d"
+      ],
+      "development_evidence": {
+        "failure_fraction": 0.0277777777777777,
+        "losses": 34,
+        "median_disagreement_reduction": 0.9987311693387624,
+        "median_relative_task_change": 0.0427250207239635,
+        "median_worst_orbit_gain": -0.0167627042520916,
+        "model_families": 2,
+        "paper_method_score": 0.7781616212745004,
+        "ties": 0,
+        "units": 36,
+        "wins": 2
+      },
+      "development_method": "BlockAdam+DataInit[equal-HPO]",
+      "method_id": "BlockAdam+DataInit[equal-HPO]",
+      "per_model": {
+        "controlled_mlp": {
+          "initialization": "data_equivariant",
+          "learning_rate_multiplier": 2.0,
+          "optimizer": "block_adam",
+          "optimizer_overrides": {
+            "learning_rate": 0.002
+          }
+        },
+        "tabm_d": {
+          "initialization": "data_equivariant",
+          "learning_rate_multiplier": 1.0,
+          "optimizer": "block_adam",
+          "optimizer_overrides": {
+            "learning_rate": 0.002
+          }
+        }
+      },
+      "type": "optimizer"
+    },
+    {
+      "applicable_models": [
+        "controlled_mlp",
+        "tabm_d",
+        "tabicl_v2",
+        "tabpfn_2_6",
+        "catboost"
+      ],
+      "development_evidence": {
+        "failure_fraction": 0.0,
+        "losses": 50,
+        "median_disagreement_reduction": 1.0,
+        "median_relative_task_change": 0.0035490298483863,
+        "median_worst_orbit_gain": 0.0337948230480742,
+        "model_families": 5,
+        "paper_method_score": 0.9822548507580684,
+        "ties": 0,
+        "units": 90,
+        "wins": 40
+      },
+      "development_method": "GramAnchor",
+      "interface": "gram_anchor",
+      "interface_parameters": {
+        "anchors": 16,
+        "normalize": true,
+        "selection": "gram_pivot"
+      },
+      "method_id": "GramAnchor",
+      "type": "interface"
+    },
+    {
+      "alpha": 0.75,
+      "applicable_models": [
+        "controlled_mlp",
+        "tabm_d",
+        "tabicl_v2",
+        "tabpfn_2_6",
+        "catboost"
+      ],
+      "development_method": "Raw+GramAnchor@0.75",
+      "development_validation_evidence": {
+        "median_disagreement_reduction": 0.7500000000000002,
+        "median_relative_task_change": -0.0034791743880177002,
+        "median_worst_orbit_gain": 0.0396105496792299,
+        "method": "Raw+GramAnchor@0.75",
+        "paper_method_score": 0.7500000000000002
+      },
+      "interface": "gram_anchor",
+      "interface_parameters": {
+        "anchors": 16,
+        "normalize": true,
+        "selection": "gram_pivot"
+      },
+      "method_id": "Raw+GramAnchor@0.75",
+      "selection_split": "development_validation_only",
+      "type": "hybrid_prediction_mixture"
+    }
+  ],
+  "frozen_at_utc": "2026-09-01T06:25:20.681169+00:00",
+  "frozen_at_utc_epoch": 1788243920.6811848,
+  "prospective_panel_sha256": "3eb3722c31832e81de74e709796c2765a198300be3251ec6acc05c867a2fad65",
+  "repository_commit": "0c456660ae9a87aab7932b569e1954b0ee1d25fe",
+  "selection_rule": {
+    "hybrid": "same selected interface; nontrivial alpha chosen on validation only",
+    "optimizer": "highest paper-method score after equal-HPO; <=3% pool preferred",
+    "representation": "highest paper-method score among <=1% cost pure interfaces"
+  },
+  "selection_scope": "six development datasets, three seeds; no prospective data loaded",
+  "status": "FROZEN_BEFORE_PROSPECTIVE_DATA_ACCESS"
+}

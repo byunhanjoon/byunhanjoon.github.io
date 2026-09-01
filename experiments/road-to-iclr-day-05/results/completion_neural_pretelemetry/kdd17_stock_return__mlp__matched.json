@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "dataset": "kdd17_stock_return",
+  "task": "regression",
+  "model": "mlp",
+  "schema_actions": 16,
+  "represented_fits": 32,
+  "maximum_matched_initial_gap": 9.685754776000977e-08,
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b"
+}

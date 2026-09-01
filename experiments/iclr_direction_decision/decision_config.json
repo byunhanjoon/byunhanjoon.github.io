@@ -1,0 +1,58 @@
+{
+  "status": "frozen",
+  "frozen_at": "2026-08-28T00:04:28+09:00",
+  "timezone": "Asia/Seoul",
+  "git_commit_at_freeze": "5f562b4eee372c0e052265e1bb530019a2f6ba0f",
+  "freeze_sha256": "508b9cb11925fc2f22d2021aabe8af73584a348efe1514abb015f429054e9d82",
+  "freeze_path": "experiments/iclr_direction_decision/DECISION_FREEZE.md",
+  "candidate_order": ["DAY3", "HETEROBAG", "FIELDRIESZ"],
+  "evidence_labels": [
+    "DEVELOPMENT",
+    "PROSPECTIVE_CONFIRMATORY",
+    "PROSPECTIVE_CONFIRMATORY_CONDITIONAL",
+    "ADAPTIVE_CONFIRMATORY",
+    "POST_GATE_EXPLORATORY"
+  ],
+  "score_weights": {
+    "novelty_vs_closest_prior_art": 0.25,
+    "prospective_replication": 0.20,
+    "breadth_across_datasets": 0.15,
+    "breadth_across_architectures": 0.10,
+    "mechanistic_clarity": 0.10,
+    "effect_size_practical_importance": 0.10,
+    "reviewer_defensible_controls": 0.05,
+    "simplicity_coherence": 0.05
+  },
+  "dataset_is_primary_replication_unit": true,
+  "heterobag_phase1": {
+    "config": "experiments/road-to-iclr-day-05/heterobag_phase1_config.json",
+    "config_sha256": "11e0486817f029d1cac2695a5960400d7001eb63fed0631759560732b0deab7a",
+    "protocol": "experiments/road-to-iclr-day-05/HETEROBAG_PHASE1_PROTOCOL.md",
+    "protocol_sha256": "81214044bd20499f1b469c384073e2a0aa23edf86f8e9fc978c667f4af576d59",
+    "runner": "experiments/road-to-iclr-day-04/heterobag_three_member_pilot.py",
+    "runner_sha256": "997dd4118482706208609a5157cfc0d400a87b26cdd35b5f70fa11eaba32fa59"
+  },
+  "heterobag_phase2_addendum": {
+    "protocol": "experiments/road-to-iclr-day-05/HETEROBAG_PHASE2_ADDENDUM.md",
+    "protocol_sha256": "a967e067b635aa807e8e80e0fb6a34cdb3c602a4631744e04dd0110f659f9795",
+    "triplet2_config_sha256": "1145ebbfe99cdf15c4cfe90749c5c416745335480e368553f23d2adbcce6d9b9",
+    "mechanism_config_sha256": "43aac0ab0455322f648d962ca354c94aba2e1da9e20b167501cf070ec489869b",
+    "mechanism_runner_sha256": "4ea2279636157c615b3ef4cf9b4e929c010c3e917cd7422b86d69703195ec426"
+  },
+  "prior_protocol_hashes": {
+    "day5_tier1_protocol": "ed9c5ea1dd9cc94e5c1566d9be466ff2e0bd8407668bb98f9ef69f0e9dbbf34d",
+    "tier1_config": "55e87438ab17db8cba389dffff52b6598162819b2956c4c596830cd0432a041f",
+    "hpo_quotient_protocol": "57c1dba8b20509d5da18c2aed73950b08ded1846d091489925331b742139950e",
+    "hpo_quotient_config": "38dac2361fbbe09a93f2a3a0ace28b528c3c17f4fa6c788634cc87f7b5b67120",
+    "joint_orthogonal_cover_protocol": "fc41da558ef7a6c3ab5e08a593af490055070a0694ad13a2ded4d237334bda93",
+    "joint_cover_confirmation_protocol": "e000dfbdf1cca1395d2a181af4021dd99180b1377bc5e7283fed0fb66f5842bb",
+    "tier1_confirmation_config": "1d3efc5256c873a3f27e123fa5a1ab0bcbec76fd815d2a706217902c39189a3f",
+    "strength2_cover_protocol": "9961da162c2e399fa9b3d5f1ba5b6188e23755f820df1d3c4ce903fd0205f94d",
+    "canonical_orbit_protocol": "bdabfa75b1ba4ea2516cdaf7ecb3cea43d6da55630c6d7f0468caeefaa9d8d97",
+    "tabpfn_protocol": "a5d4751afb1666e44829b0e534f1b5ef9155fdb3bca2a54f91ef767c1830d947",
+    "fieldriesz_day4_freeze": "576ec041c6d7b5fc84041905b70212ddca44cd7ecc19187be8a82723516a25e7",
+    "fieldriesz_theory": "d34e9f4b35b481d19f807971d8bff7ce862d17c4b120dcef6c8d3cd0113e8eb0",
+    "heterobag_original_config": "3c3ef9ad0e77b7b0e998ee9d889ef6514fb9509b1960a7ee76aed0182d4a690a",
+    "heterobag_original_decision": "bac35f887db0f5c47e74ba78f683a46458e8f75fb504f318e4ebafc00779fa09"
+  }
+}

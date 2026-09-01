@@ -1,0 +1,552 @@
+{
+  "estimand": "paired-seed MLP minus ResNet test ROC-AUC; positive favors MLP",
+  "selection_warning": "all four datasets were selected from the three-seed screen; seeds 3--15 are the only conditional confirmation",
+  "conditional_confirmation_aggregate": {
+    "dataset_count": 4,
+    "opposite_representative_mean_count": 0,
+    "mean_within_seed_chart_winner_change_fraction": 0.3076923076923077,
+    "quotient_sign_flip_p_below_0.05_count": 2
+  },
+  "datasets": [
+    {
+      "dataset": "churn",
+      "initial_3_seeds": {
+        "cumulative_helmert": {
+          "mean": 0.00268270324767513,
+          "bootstrap_95": [
+            -0.0013850522325096204,
+            0.006545837054311665
+          ],
+          "exact_two_sided_sign_flip_p": 0.5,
+          "positive_seed_fraction": 0.6666666666666666
+        },
+        "local_adjacent": {
+          "mean": -0.0011159078955688868,
+          "bootstrap_95": [
+            -0.004327902632987213,
+            0.005040479616750804
+          ],
+          "exact_two_sided_sign_flip_p": 1.0,
+          "positive_seed_fraction": 0.3333333333333333
+        },
+        "quotient": {
+          "mean": 0.0007833976760531214,
+          "bootstrap_95": [
+            -0.0028564774327484166,
+            0.005793158335531234
+          ],
+          "exact_two_sided_sign_flip_p": 1.0,
+          "positive_seed_fraction": 0.3333333333333333
+        },
+        "chart_by_architecture": {
+          "mean": 0.0037986111432440164,
+          "bootstrap_95": [
+            0.0015053574375608614,
+            0.006947625591693596
+          ],
+          "exact_two_sided_sign_flip_p": 0.25,
+          "positive_seed_fraction": 1.0
+        },
+        "representative_mean_range": [
+          -0.0011159078955688868,
+          0.00268270324767513
+        ],
+        "representative_means_have_opposite_sign": true,
+        "within_seed_chart_winner_change_fraction": 0.3333333333333333
+      },
+      "new_13_seed_confirmation": {
+        "cumulative_helmert": {
+          "mean": -0.0010935434664248818,
+          "bootstrap_95": [
+            -0.0035164980080234593,
+            0.0013114928369164936
+          ],
+          "exact_two_sided_sign_flip_p": 0.411865234375,
+          "positive_seed_fraction": 0.46153846153846156
+        },
+        "local_adjacent": {
+          "mean": -0.0014494760257471873,
+          "bootstrap_95": [
+            -0.003118565406700959,
+            0.0004902644733153082
+          ],
+          "exact_two_sided_sign_flip_p": 0.155517578125,
+          "positive_seed_fraction": 0.23076923076923078
+        },
+        "quotient": {
+          "mean": -0.0012715097460860346,
+          "bootstrap_95": [
+            -0.003030773157891822,
+            0.0005385897335050025
+          ],
+          "exact_two_sided_sign_flip_p": 0.2080078125,
+          "positive_seed_fraction": 0.3076923076923077
+        },
+        "chart_by_architecture": {
+          "mean": 0.00035593255932230537,
+          "bootstrap_95": [
+            -0.0021217139861208724,
+            0.0025385139791918457
+          ],
+          "exact_two_sided_sign_flip_p": 0.778564453125,
+          "positive_seed_fraction": 0.6153846153846154
+        },
+        "representative_mean_range": [
+          -0.0014494760257471873,
+          -0.0010935434664248818
+        ],
+        "representative_means_have_opposite_sign": false,
+        "within_seed_chart_winner_change_fraction": 0.38461538461538464
+      },
+      "combined_16_seed_descriptive": {
+        "cumulative_helmert": {
+          "mean": -0.0003854972075311297,
+          "bootstrap_95": [
+            -0.0025911914418270876,
+            0.0017796108897803623
+          ],
+          "exact_two_sided_sign_flip_p": 0.744415283203125,
+          "positive_seed_fraction": 0.5
+        },
+        "local_adjacent": {
+          "mean": -0.001386932001338756,
+          "bootstrap_95": [
+            -0.003017614590707763,
+            0.00044738739124334907
+          ],
+          "exact_two_sided_sign_flip_p": 0.149566650390625,
+          "positive_seed_fraction": 0.25
+        },
+        "quotient": {
+          "mean": -0.0008862146044349428,
+          "bootstrap_95": [
+            -0.0025556366989100427,
+            0.0008195316126990315
+          ],
+          "exact_two_sided_sign_flip_p": 0.33538818359375,
+          "positive_seed_fraction": 0.3125
+        },
+        "chart_by_architecture": {
+          "mean": 0.0010014347938076262,
+          "bootstrap_95": [
+            -0.0011766509383034866,
+            0.0029339359583004207
+          ],
+          "exact_two_sided_sign_flip_p": 0.370391845703125,
+          "positive_seed_fraction": 0.6875
+        },
+        "representative_mean_range": [
+          -0.001386932001338756,
+          -0.0003854972075311297
+        ],
+        "representative_means_have_opposite_sign": false,
+        "within_seed_chart_winner_change_fraction": 0.375
+      }
+    },
+    {
+      "dataset": "compustat_kor_direction",
+      "initial_3_seeds": {
+        "cumulative_helmert": {
+          "mean": 0.00492781134364545,
+          "bootstrap_95": [
+            0.0008947763243013496,
+            0.01273706876003039
+          ],
+          "exact_two_sided_sign_flip_p": 0.25,
+          "positive_seed_fraction": 1.0
+        },
+        "local_adjacent": {
+          "mean": -0.0020295484453051924,
+          "bootstrap_95": [
+            -0.0034145276607188135,
+            -9.978993209203146e-06
+          ],
+          "exact_two_sided_sign_flip_p": 0.25,
+          "positive_seed_fraction": 0.0
+        },
+        "quotient": {
+          "mean": 0.0014491314491701286,
+          "bootstrap_95": [
+            -0.0011314693570571022,
+            0.005036465039021415
+          ],
+          "exact_two_sided_sign_flip_p": 0.75,
+          "positive_seed_fraction": 0.6666666666666666
+        },
+        "chart_by_architecture": {
+          "mean": 0.0069573597889506416,
+          "bootstrap_95": [
+            0.0009047553175105527,
+            0.01540120744201795
+          ],
+          "exact_two_sided_sign_flip_p": 0.25,
+          "positive_seed_fraction": 1.0
+        },
+        "representative_mean_range": [
+          -0.0020295484453051924,
+          0.00492781134364545
+        ],
+        "representative_means_have_opposite_sign": true,
+        "within_seed_chart_winner_change_fraction": 1.0
+      },
+      "new_13_seed_confirmation": {
+        "cumulative_helmert": {
+          "mean": 3.5136249524780894e-05,
+          "bootstrap_95": [
+            -0.001795562595157054,
+            0.0020806841523934943
+          ],
+          "exact_two_sided_sign_flip_p": 0.97216796875,
+          "positive_seed_fraction": 0.38461538461538464
+        },
+        "local_adjacent": {
+          "mean": 0.0026539522463002985,
+          "bootstrap_95": [
+            0.000718652969752109,
+            0.004641293402000976
+          ],
+          "exact_two_sided_sign_flip_p": 0.027099609375,
+          "positive_seed_fraction": 0.7692307692307693
+        },
+        "quotient": {
+          "mean": 0.0013445442479125397,
+          "bootstrap_95": [
+            -0.00012520479195353448,
+            0.0029550852453707932
+          ],
+          "exact_two_sided_sign_flip_p": 0.127197265625,
+          "positive_seed_fraction": 0.6923076923076923
+        },
+        "chart_by_architecture": {
+          "mean": -0.0026188159967755176,
+          "bootstrap_95": [
+            -0.0049142870523063795,
+            -0.00020957995126471483
+          ],
+          "exact_two_sided_sign_flip_p": 0.06396484375,
+          "positive_seed_fraction": 0.3076923076923077
+        },
+        "representative_mean_range": [
+          3.5136249524780894e-05,
+          0.0026539522463002985
+        ],
+        "representative_means_have_opposite_sign": false,
+        "within_seed_chart_winner_change_fraction": 0.6923076923076923
+      },
+      "combined_16_seed_descriptive": {
+        "cumulative_helmert": {
+          "mean": 0.0009525128296724063,
+          "bootstrap_95": [
+            -0.00106516640238831,
+            0.003273325293455623
+          ],
+          "exact_two_sided_sign_flip_p": 0.438720703125,
+          "positive_seed_fraction": 0.5
+        },
+        "local_adjacent": {
+          "mean": 0.001775795866624269,
+          "bootstrap_95": [
+            -2.793696731062276e-05,
+            0.003671625542529497
+          ],
+          "exact_two_sided_sign_flip_p": 0.0902099609375,
+          "positive_seed_fraction": 0.625
+        },
+        "quotient": {
+          "mean": 0.0013641543481483377,
+          "bootstrap_95": [
+            4.420845731366619e-05,
+            0.002794380072419212
+          ],
+          "exact_two_sided_sign_flip_p": 0.07818603515625,
+          "positive_seed_fraction": 0.6875
+        },
+        "chart_by_architecture": {
+          "mean": -0.0008232830369518628,
+          "bootstrap_95": [
+            -0.003586462366446633,
+            0.0023064898735843295
+          ],
+          "exact_two_sided_sign_flip_p": 0.613189697265625,
+          "positive_seed_fraction": 0.4375
+        },
+        "representative_mean_range": [
+          0.0009525128296724063,
+          0.001775795866624269
+        ],
+        "representative_means_have_opposite_sign": false,
+        "within_seed_chart_winner_change_fraction": 0.75
+      }
+    },
+    {
+      "dataset": "heloc_credit_risk",
+      "initial_3_seeds": {
+        "cumulative_helmert": {
+          "mean": 0.00276247129619663,
+          "bootstrap_95": [
+            0.00048608869923449927,
+            0.004324994123107939
+          ],
+          "exact_two_sided_sign_flip_p": 0.25,
+          "positive_seed_fraction": 1.0
+        },
+        "local_adjacent": {
+          "mean": -0.0010757700720765613,
+          "bootstrap_95": [
+            -0.006404816262456148,
+            0.0030041875346139557
+          ],
+          "exact_two_sided_sign_flip_p": 1.0,
+          "positive_seed_fraction": 0.6666666666666666
+        },
+        "quotient": {
+          "mean": 0.0008433506120600343,
+          "bootstrap_95": [
+            -0.0010399110696741043,
+            0.0032402593004307034
+          ],
+          "exact_two_sided_sign_flip_p": 0.75,
+          "positive_seed_fraction": 0.6666666666666666
+        },
+        "chart_by_architecture": {
+          "mean": 0.003838241368273191,
+          "bootstrap_95": [
+            0.00031277018762199127,
+            0.010729810385564087
+          ],
+          "exact_two_sided_sign_flip_p": 0.25,
+          "positive_seed_fraction": 1.0
+        },
+        "representative_mean_range": [
+          -0.0010757700720765613,
+          0.00276247129619663
+        ],
+        "representative_means_have_opposite_sign": true,
+        "within_seed_chart_winner_change_fraction": 0.3333333333333333
+      },
+      "new_13_seed_confirmation": {
+        "cumulative_helmert": {
+          "mean": 0.005460682442788847,
+          "bootstrap_95": [
+            0.0033659841809696995,
+            0.007706777719238775
+          ],
+          "exact_two_sided_sign_flip_p": 0.000244140625,
+          "positive_seed_fraction": 1.0
+        },
+        "local_adjacent": {
+          "mean": 0.0047992830651417085,
+          "bootstrap_95": [
+            0.0034922684006486455,
+            0.006153803245638139
+          ],
+          "exact_two_sided_sign_flip_p": 0.000244140625,
+          "positive_seed_fraction": 1.0
+        },
+        "quotient": {
+          "mean": 0.005129982753965278,
+          "bootstrap_95": [
+            0.003625511795313175,
+            0.006620736494871429
+          ],
+          "exact_two_sided_sign_flip_p": 0.000244140625,
+          "positive_seed_fraction": 1.0
+        },
+        "chart_by_architecture": {
+          "mean": 0.0006613993776471385,
+          "bootstrap_95": [
+            -0.0011536178208820973,
+            0.0028343974568917608
+          ],
+          "exact_two_sided_sign_flip_p": 0.56689453125,
+          "positive_seed_fraction": 0.38461538461538464
+        },
+        "representative_mean_range": [
+          0.0047992830651417085,
+          0.005460682442788847
+        ],
+        "representative_means_have_opposite_sign": false,
+        "within_seed_chart_winner_change_fraction": 0.0
+      },
+      "combined_16_seed_descriptive": {
+        "cumulative_helmert": {
+          "mean": 0.004954767852802806,
+          "bootstrap_95": [
+            0.00318522257981615,
+            0.006909463240538203
+          ],
+          "exact_two_sided_sign_flip_p": 3.0517578125e-05,
+          "positive_seed_fraction": 1.0
+        },
+        "local_adjacent": {
+          "mean": 0.003697710601913283,
+          "bootstrap_95": [
+            0.0018278037008483063,
+            0.005366159635313932
+          ],
+          "exact_two_sided_sign_flip_p": 0.00213623046875,
+          "positive_seed_fraction": 0.9375
+        },
+        "quotient": {
+          "mean": 0.004326239227358045,
+          "bootstrap_95": [
+            0.0028126873881896496,
+            0.005844152044162371
+          ],
+          "exact_two_sided_sign_flip_p": 9.1552734375e-05,
+          "positive_seed_fraction": 0.9375
+        },
+        "chart_by_architecture": {
+          "mean": 0.0012570572508895234,
+          "bootstrap_95": [
+            -0.0005945372794172942,
+            0.0034071032699425703
+          ],
+          "exact_two_sided_sign_flip_p": 0.26922607421875,
+          "positive_seed_fraction": 0.5
+        },
+        "representative_mean_range": [
+          0.003697710601913283,
+          0.004954767852802806
+        ],
+        "representative_means_have_opposite_sign": false,
+        "within_seed_chart_winner_change_fraction": 0.0625
+      }
+    },
+    {
+      "dataset": "polish_bankruptcy_2year",
+      "initial_3_seeds": {
+        "cumulative_helmert": {
+          "mean": -0.0120484213721919,
+          "bootstrap_95": [
+            -0.02805100182149367,
+            0.002709471766848881
+          ],
+          "exact_two_sided_sign_flip_p": 0.5,
+          "positive_seed_fraction": 0.3333333333333333
+        },
+        "local_adjacent": {
+          "mean": 0.004648603521554273,
+          "bootstrap_95": [
+            -0.005270947176684859,
+            0.013137522768670196
+          ],
+          "exact_two_sided_sign_flip_p": 0.5,
+          "positive_seed_fraction": 0.6666666666666666
+        },
+        "quotient": {
+          "mean": -0.003699908925318814,
+          "bootstrap_95": [
+            -0.008037340619307887,
+            0.004394353369763182
+          ],
+          "exact_two_sided_sign_flip_p": 0.5,
+          "positive_seed_fraction": 0.3333333333333333
+        },
+        "chart_by_architecture": {
+          "mean": -0.016697024893746176,
+          "bootstrap_95": [
+            -0.041188524590163866,
+            -0.003369763205828602
+          ],
+          "exact_two_sided_sign_flip_p": 0.25,
+          "positive_seed_fraction": 0.0
+        },
+        "representative_mean_range": [
+          -0.0120484213721919,
+          0.004648603521554273
+        ],
+        "representative_means_have_opposite_sign": true,
+        "within_seed_chart_winner_change_fraction": 0.3333333333333333
+      },
+      "new_13_seed_confirmation": {
+        "cumulative_helmert": {
+          "mean": -0.07071160851898561,
+          "bootstrap_95": [
+            -0.08698251628835649,
+            -0.053834769510999095
+          ],
+          "exact_two_sided_sign_flip_p": 0.000244140625,
+          "positive_seed_fraction": 0.0
+        },
+        "local_adjacent": {
+          "mean": -0.06837781981224605,
+          "bootstrap_95": [
+            -0.09193905877819813,
+            -0.04266310249404518
+          ],
+          "exact_two_sided_sign_flip_p": 0.0009765625,
+          "positive_seed_fraction": 0.15384615384615385
+        },
+        "quotient": {
+          "mean": -0.06954471416561585,
+          "bootstrap_95": [
+            -0.08435443157138858,
+            -0.05403650211923785
+          ],
+          "exact_two_sided_sign_flip_p": 0.000244140625,
+          "positive_seed_fraction": 0.0
+        },
+        "chart_by_architecture": {
+          "mean": -0.0023337887067395547,
+          "bootstrap_95": [
+            -0.03118613825837191,
+            0.027441545817570346
+          ],
+          "exact_two_sided_sign_flip_p": 0.8828125,
+          "positive_seed_fraction": 0.46153846153846156
+        },
+        "representative_mean_range": [
+          -0.07071160851898561,
+          -0.06837781981224605
+        ],
+        "representative_means_have_opposite_sign": false,
+        "within_seed_chart_winner_change_fraction": 0.15384615384615385
+      },
+      "combined_16_seed_descriptive": {
+        "cumulative_helmert": {
+          "mean": -0.05971226092896179,
+          "bootstrap_95": [
+            -0.07734380336407108,
+            -0.04183102800546454
+          ],
+          "exact_two_sided_sign_flip_p": 6.103515625e-05,
+          "positive_seed_fraction": 0.0625
+        },
+        "local_adjacent": {
+          "mean": -0.0546853654371585,
+          "bootstrap_95": [
+            -0.07889776511270498,
+            -0.030099452840391647
+          ],
+          "exact_two_sided_sign_flip_p": 0.001251220703125,
+          "positive_seed_fraction": 0.25
+        },
+        "quotient": {
+          "mean": -0.057198813183060145,
+          "bootstrap_95": [
+            -0.07451550759904375,
+            -0.039414685080828814
+          ],
+          "exact_two_sided_sign_flip_p": 6.103515625e-05,
+          "positive_seed_fraction": 0.0625
+        },
+        "chart_by_architecture": {
+          "mean": -0.005026895491803296,
+          "bootstrap_95": [
+            -0.02860815829918035,
+            0.019786757172131124
+          ],
+          "exact_two_sided_sign_flip_p": 0.697845458984375,
+          "positive_seed_fraction": 0.375
+        },
+        "representative_mean_range": [
+          -0.05971226092896179,
+          -0.0546853654371585
+        ],
+        "representative_means_have_opposite_sign": false,
+        "within_seed_chart_winner_change_fraction": 0.1875
+      }
+    }
+  ]
+}

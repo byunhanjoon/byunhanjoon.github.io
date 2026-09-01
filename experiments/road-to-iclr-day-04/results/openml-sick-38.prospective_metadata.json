@@ -1,0 +1,44 @@
+{
+  "categorical_fields": [
+    "sex",
+    "on_thyroxine",
+    "query_on_thyroxine",
+    "on_antithyroid_medication",
+    "sick",
+    "pregnant",
+    "thyroid_surgery",
+    "I131_treatment",
+    "query_hypothyroid",
+    "query_hyperthyroid",
+    "lithium",
+    "goitre",
+    "tumor",
+    "hypopituitary",
+    "psych",
+    "TSH_measured",
+    "T3_measured",
+    "TT4_measured",
+    "T4U_measured",
+    "FTI_measured",
+    "TBG_measured",
+    "referral_source"
+  ],
+  "numeric_fields": [
+    "age",
+    "TSH",
+    "T3",
+    "TT4",
+    "T4U",
+    "FTI",
+    "TBG"
+  ],
+  "openml_data_id": 38,
+  "openml_name": "sick",
+  "rows": 3772,
+  "split_sizes": {
+    "test": 755,
+    "train": 2262,
+    "val": 755
+  },
+  "task": "classification"
+}

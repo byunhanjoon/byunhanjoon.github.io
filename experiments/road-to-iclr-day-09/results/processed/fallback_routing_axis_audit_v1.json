@@ -1,0 +1,40 @@
+{
+  "scope": "post-hoc factorial axis diagnostic; independent seeds per cell",
+  "positive_gain_means": "shape-informed routing lowers loss",
+  "contrasts": {
+    "classification": {
+      "context_effect_at_d8": [
+        -0.00104044904634579,
+        -0.005457523997907425,
+        0.0033511056372439274
+      ],
+      "feature_effect_at_n64": [
+        -0.005322053625793551,
+        -0.00937422749811999,
+        -0.001290536181312434
+      ],
+      "corner_interaction": [
+        -0.0050081669781595695,
+        -0.010895321177526956,
+        0.0008503903640076895
+      ]
+    },
+    "regression": {
+      "context_effect_at_d8": [
+        -0.030972502895274284,
+        -0.06862014406156573,
+        0.007174626243186264
+      ],
+      "feature_effect_at_n64": [
+        0.01479029550318162,
+        -0.02799995045619574,
+        0.05661418814847704
+      ],
+      "corner_interaction": [
+        0.05436419455555281,
+        0.0004976704407964803,
+        0.10913520460111155
+      ]
+    }
+  }
+}

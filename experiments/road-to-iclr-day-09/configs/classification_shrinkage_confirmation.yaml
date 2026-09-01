@@ -1,0 +1,19 @@
+experiment: classification_shrinkage_confirmation
+artifact_prefix: classification_shrinkage_confirmation
+protocol: CLASSIFICATION_SHRINKAGE_CONFIRMATION_PROTOCOL.md
+openml_cache: /home/byunhanjoon/.cache/openml
+episode_seed: 225001
+repeats_per_dataset: 80
+context_size: 96
+query_size: 64
+cv_folds: 3
+max_numeric_features: 32
+bootstrap_draws: 20000
+candidate_lambda: 0.1
+datasets:
+  classification:
+    - {name: breast-w, task_id: 15}
+    - {name: credit-approval, task_id: 29}
+    - {name: credit-g, task_id: 31}
+    - {name: spambase, task_id: 43}
+    - {name: electricity, task_id: 219}

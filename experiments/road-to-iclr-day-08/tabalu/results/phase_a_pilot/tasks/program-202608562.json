@@ -1,0 +1,31 @@
+{
+  "task_id": "program-202608562",
+  "seed": 202608562,
+  "program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "safe_divide",
+        "left": 2,
+        "right": 3
+      },
+      {
+        "operator": "safe_divide",
+        "left": 4,
+        "right": 3
+      },
+      {
+        "operator": "add",
+        "left": 3,
+        "right": 5
+      }
+    ],
+    "output": 6,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "n_irrelevant": 0,
+  "generation_attempt": 0,
+  "expression": "add(x3, safe_divide(safe_divide(x2, x3), x3))"
+}

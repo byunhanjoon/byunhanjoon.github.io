@@ -1,0 +1,31 @@
+{
+  "canonical_gate_datasets": 0,
+  "cells": 252,
+  "gates": {
+    "Electricity": {
+      "canonical_rmse_degradation": 1.9418489628804894,
+      "heldout_mean_rmse_reduction": 0.0320681186434002,
+      "heldout_oracle_gap": 3.532616871396119,
+      "seen_worst_rmse_reduction": 0.023293116641657563
+    },
+    "JenaWeather": {
+      "canonical_rmse_degradation": 0.6999034748409947,
+      "heldout_mean_rmse_reduction": 0.04272613171765527,
+      "heldout_oracle_gap": 1.379576412412205,
+      "seen_worst_rmse_reduction": 0.09638270441024632
+    },
+    "Traffic": {
+      "canonical_rmse_degradation": 0.24998023527923596,
+      "heldout_mean_rmse_reduction": 0.03338654249598483,
+      "heldout_oracle_gap": 1.311555900358572,
+      "seen_worst_rmse_reduction": 0.022631776131666337
+    }
+  },
+  "heldout_gate_datasets": 0,
+  "maximum_roundtrip_error": 2.86102294921875e-06,
+  "passed": false,
+  "protocol_sha256": "831ca4517303c86bde13d4211b6b2dc33f1a59e6e60933805713b078e9c299ee",
+  "seen_gate_datasets": 0,
+  "status": "complete",
+  "wall_seconds": 195.03886665892787
+}

@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "hypothesis": "H1_SAA",
+  "dataset": "credit_card_default",
+  "task": "classification",
+  "model": "mlp",
+  "seed": 6404,
+  "split_seed": 2026082801,
+  "paths": 8,
+  "epochs_per_path": 20,
+  "maximum_initial_gap": 1.1920928955078125e-07,
+  "path_wall_seconds": [
+    0.43798148282803595,
+    0.303308195900172,
+    0.3072064889129251,
+    0.31640720390714705,
+    0.3478048399556428,
+    0.33809199184179306,
+    0.3470265851356089,
+    0.3437141850590706
+  ],
+  "total_fit_seconds": 2.7415409735403955,
+  "config_sha256": "e326c2dd186499ba84c75c13d15bc9e0837d9504ccbd67fd00741ed178106d7a",
+  "protocol_sha256": "e79abc3a2ecbf5201afa2b77b947d729b8c39a3871066daf623934fda17c2bae",
+  "day5_config_sha256": "1e8a099dafb2ac7de9e03f7363f3405a2edad3bf67374fc7d251c28da78c11e9",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0",
+  "tf32": false,
+  "deterministic_algorithms": true
+}

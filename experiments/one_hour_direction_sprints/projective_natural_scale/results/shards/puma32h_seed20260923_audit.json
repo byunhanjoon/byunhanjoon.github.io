@@ -1,0 +1,62 @@
+{
+  "dataset": "puma32h",
+  "encoded_features": 32,
+  "episode_audits": [
+    {
+      "context_index_sha256": "8a9aabab00ab09e235fd589c5571adb1128237ea25bb5a9acdae243665e26ce4",
+      "covariance_min_eigenvalue": -2.2709354073591893e-07,
+      "covariance_symmetry_max_abs": 6.938893903907228e-18,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 1.7881393432617188e-07,
+      "replicate": 0,
+      "tabpfn_marginal_max_abs": 1.4768202505344163e-07,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "9d988d3e2e580a09e510c9c724b7dc6a8a55b55caffcd4798fd6c53a55c1e885",
+      "covariance_min_eigenvalue": -1.8158464953131393e-07,
+      "covariance_symmetry_max_abs": 4.85722573273506e-17,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 1.1920928955078125e-07,
+      "replicate": 1,
+      "tabpfn_marginal_max_abs": 1.9604405010476e-07,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "25f46c2e9ea5e59e4f59aa82d996e7adbc5b0ab2f3f6688b7d0f12fdc6c6df41",
+      "covariance_min_eigenvalue": -2.8442042779333155e-07,
+      "covariance_symmetry_max_abs": 7.589415207398531e-19,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 1.1920928955078125e-07,
+      "replicate": 2,
+      "tabpfn_marginal_max_abs": 1.941751581746587e-07,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "5cb5c9c1038675ab7fc8f8acf5d0798be0b2ccf6c43707538787ce6f83594df0",
+      "covariance_min_eigenvalue": -8.885115688526272e-07,
+      "covariance_symmetry_max_abs": 3.0357660829594124e-18,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 1.1920928955078125e-07,
+      "replicate": 3,
+      "tabpfn_marginal_max_abs": 1.350368378894018e-06,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    }
+  ],
+  "protocol_sha256": "144c873f8d8922306a5b415b05825bf84d414d15cbbe4289204dc92cea3239f3",
+  "raw_features": 32,
+  "raw_rows": 8192,
+  "split_disjoint": true,
+  "split_seed": 20260923,
+  "test_index_sha256": "e897f02d6f483eafcaa979f4d1690cc0f800b9522920dcd32cf78c2ee6ba5c44",
+  "test_rows": 512,
+  "train_index_sha256": "b5bcc0555995134c2d8e24b94c4f1dd05bde1c0a54bb414ce1f2d9013b5a4ee5",
+  "train_rows": 2048,
+  "validation_index_sha256": "a2495ed6ab9dcd2745d2aab1ad33be1a5d232784e4725d54eabb938245661492",
+  "validation_rows": 512,
+  "wall_seconds": 5.810083678923547
+}

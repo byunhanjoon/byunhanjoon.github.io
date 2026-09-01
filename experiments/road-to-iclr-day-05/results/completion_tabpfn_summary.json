@@ -1,0 +1,32 @@
+{
+  "status": "complete",
+  "datasets": 6,
+  "splits": 3,
+  "cells": 18,
+  "mean_internal_default8_schema_risk_reduction": 0.7132826529274356,
+  "settings": {
+    "1:default": {
+      "iid16": 0.00013832095869495073,
+      "srswor16": 6.113508455400523e-05,
+      "strength1_16": 6.096541007115175e-05,
+      "strength2_16": 1.0681626734480021e-05
+    },
+    "1:none": {
+      "iid16": 0.00013503299597638827,
+      "srswor16": 5.816248742452117e-05,
+      "strength1_16": 6.263547553269392e-05,
+      "strength2_16": 1.1651494434434248e-05
+    },
+    "8:default": {
+      "iid16": 3.907133459877529e-05,
+      "srswor16": 1.8694084279068144e-05,
+      "strength1_16": 8.199476943332815e-06,
+      "strength2_16": 1.376025071374587e-06
+    }
+  },
+  "strength2_vs_iid_wins_default8": 18,
+  "total_tabpfn_calls": 1296,
+  "total_forward_ensemble_members": 4320,
+  "wall_seconds": 291.86472476040944,
+  "compute_note": "calls and internal forward members are reported separately; neither is called a fitted model"
+}

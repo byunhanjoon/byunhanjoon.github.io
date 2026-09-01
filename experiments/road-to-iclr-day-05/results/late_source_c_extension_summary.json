@@ -1,0 +1,128 @@
+{
+  "status": "complete",
+  "configured_sources": 4,
+  "complete_tensors": 20,
+  "represented_complete_product_fits": 2560,
+  "post_failure_schema_adapter_sources": 0,
+  "primary_strength2_gate": {
+    "numerical_strict_tolerance": 0.0,
+    "all_cell_wins_vs_iid_and_strength1": 19,
+    "required_all_cell_wins": 16,
+    "all_cells": 20,
+    "material_cell_wins_vs_all_controls": 13,
+    "material_cells": 13,
+    "source_mean_wins_vs_iid_and_strength1": 4,
+    "required_source_mean_wins": 4,
+    "sources": 4,
+    "passed": true
+  },
+  "packing_and_selection": {
+    "pair32": {
+      "action": "disjoint_pair_mean32",
+      "control": "independent_pair_mean32",
+      "candidate_rmse_wins": 18,
+      "candidates": 20,
+      "source_mean_rmse_wins": 4,
+      "sources": 4,
+      "mean_score_rmse": {
+        "disjoint_pair_mean32": 0.00020248778214406238,
+        "independent_pair_mean32": 0.0002184648384376904
+      },
+      "mean_selection_agreement": {
+        "disjoint_pair_mean32": 1.0,
+        "independent_pair_mean32": 1.0
+      },
+      "mean_validation_regret": {
+        "disjoint_pair_mean32": 0.0,
+        "independent_pair_mean32": 0.0
+      },
+      "mean_selected_quotient_test_loss": {
+        "disjoint_pair_mean32": 0.10275662276590525,
+        "independent_pair_mean32": 0.10275662276590525
+      }
+    },
+    "pack64": {
+      "action": "mutually_disjoint_pack64",
+      "control": "two_disjoint_pairs64",
+      "candidate_rmse_wins": 18,
+      "candidates": 20,
+      "source_mean_rmse_wins": 4,
+      "sources": 4,
+      "mean_score_rmse": {
+        "mutually_disjoint_pack64": 0.00011533566878742818,
+        "two_disjoint_pairs64": 0.00013967209284758563
+      },
+      "mean_selection_agreement": {
+        "mutually_disjoint_pack64": 1.0,
+        "two_disjoint_pairs64": 1.0
+      },
+      "mean_validation_regret": {
+        "mutually_disjoint_pack64": 0.0,
+        "two_disjoint_pairs64": 0.0
+      },
+      "mean_selected_quotient_test_loss": {
+        "mutually_disjoint_pack64": 0.10275662276590525,
+        "two_disjoint_pairs64": 0.10275662276590525
+      }
+    },
+    "unbiased_pair_cross64": {
+      "action": "disjoint_pair_cross64",
+      "control": "independent_block_u64",
+      "candidate_rmse_wins": 18,
+      "candidates": 20,
+      "source_mean_rmse_wins": 4,
+      "sources": 4,
+      "mean_score_rmse": {
+        "disjoint_pair_cross64": 0.00014076969871345329,
+        "independent_block_u64": 0.00015399434952449086
+      },
+      "mean_selection_agreement": {
+        "disjoint_pair_cross64": 1.0,
+        "independent_block_u64": 1.0
+      },
+      "mean_validation_regret": {
+        "disjoint_pair_cross64": 0.0,
+        "independent_block_u64": 0.0
+      },
+      "mean_selected_quotient_test_loss": {
+        "disjoint_pair_cross64": 0.10275662276590525,
+        "independent_block_u64": 0.10275662276590525
+      }
+    }
+  },
+  "exact_validation_to_test_transfer": {
+    "sources": [
+      {
+        "dataset": "openml-adult-1590",
+        "validation_winner": "native_histgb",
+        "test_winner": "native_histgb",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      },
+      {
+        "dataset": "openml-bank-marketing-1461",
+        "validation_winner": "native_histgb",
+        "test_winner": "native_histgb",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      },
+      {
+        "dataset": "openml-titanic-40945",
+        "validation_winner": "catboost_native",
+        "test_winner": "catboost_native",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      },
+      {
+        "dataset": "openml-churn-40701",
+        "validation_winner": "catboost_native",
+        "test_winner": "catboost_native",
+        "winner_agreement": true,
+        "test_regret_of_validation_winner": 0.0
+      }
+    ],
+    "winner_agreements": 4,
+    "mean_test_regret_of_validation_winner": 0.0
+  },
+  "interpretation": "late_source_primary_pass"
+}

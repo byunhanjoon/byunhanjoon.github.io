@@ -1,0 +1,78 @@
+{
+  "status": "complete",
+  "datasets": 2,
+  "draws_per_dataset": 1024,
+  "winner_alignment": {
+    "openml-vehicle-54": {
+      "validation_winner": "onehot_linear",
+      "test_winner": "onehot_linear",
+      "aligned": true
+    },
+    "openml-segment-36": {
+      "validation_winner": "ordinal_forest",
+      "test_winner": "ordinal_forest",
+      "aligned": true
+    }
+  },
+  "means": [
+    {
+      "method": "four_seed_blocks",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_realized_test_loss": 0.17368667835030202,
+      "selected_quotient_test_loss": 0.1736699004382802
+    },
+    {
+      "method": "four_strength1",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_realized_test_loss": 0.17368921343545474,
+      "selected_quotient_test_loss": 0.1736699004382802
+    },
+    {
+      "method": "iid16",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_realized_test_loss": 0.1736875042556984,
+      "selected_quotient_test_loss": 0.1736699004382802
+    },
+    {
+      "method": "lhs16",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_realized_test_loss": 0.17368528086782856,
+      "selected_quotient_test_loss": 0.1736699004382802
+    },
+    {
+      "method": "sobol16",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_realized_test_loss": 0.1736898488179415,
+      "selected_quotient_test_loss": 0.1736699004382802
+    },
+    {
+      "method": "srswor16",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_realized_test_loss": 0.17368652217326297,
+      "selected_quotient_test_loss": 0.1736699004382802
+    },
+    {
+      "method": "strength2",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_realized_test_loss": 0.1736699004382802,
+      "selected_quotient_test_loss": 0.1736699004382802
+    }
+  ],
+  "strength2_minus_iid_test_loss_by_dataset": {
+    "openml-segment-36": -3.520750247770765e-05,
+    "openml-vehicle-54": -1.3235867957206437e-10
+  },
+  "clauses": {
+    "agreement_above_iid": false,
+    "validation_regret_below_iid": false,
+    "realized_test_loss_lower_on_at_least_one": true
+  },
+  "scope_addendum_passed": false
+}

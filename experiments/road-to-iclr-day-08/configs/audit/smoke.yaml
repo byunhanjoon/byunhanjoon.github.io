@@ -1,0 +1,26 @@
+protocol_version: reparam-audit-v1
+phase: tier0_smoke
+split_seed: 20260831
+precision: autocast_bfloat16
+openml_cache: /home/byunhanjoon/.cache/openml
+max_context: 384
+max_query: 160
+seeds: [20260831]
+datasets:
+  - dataset: breast_cancer
+    source: sklearn
+    problem_type: binary
+  - dataset: diabetes
+    source: sklearn
+    problem_type: regression
+models:
+  - tabpfn_v25_single
+  - xgboost
+transforms:
+  - name: identity
+    values: [0.0]
+  - name: positive_affine
+    values: [1.0]
+  - name: random_monotone_pwl
+    values: [1.0]
+

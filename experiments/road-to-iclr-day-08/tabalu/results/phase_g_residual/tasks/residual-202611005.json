@@ -1,0 +1,27 @@
+{
+  "task_id": "residual-202611005",
+  "symbolic": {
+    "task_id": "program-202611005",
+    "seed": 202611005,
+    "program": {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 0,
+          "right": 3
+        }
+      ],
+      "output": 4,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    "n_irrelevant": 0,
+    "generation_attempt": 0,
+    "expression": "safe_divide(x0, x3)"
+  },
+  "residual_mean": 0.2586125135421753,
+  "residual_scale": 0.7652418613433838,
+  "symbolic_scale": 2.252084732055664
+}

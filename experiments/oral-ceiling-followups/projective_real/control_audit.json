@@ -1,0 +1,15 @@
+{
+  "broad_mean_coverage_error": 0.04778645833333334,
+  "coverage_error_difference": 0.007337782118055518,
+  "parameter_counts": {
+    "jointdiag": 148032,
+    "querynet_broad": 140290
+  },
+  "projective_mean_coverage_error": 0.055124240451388855,
+  "projective_vs_broad_nll_wins": 9,
+  "projective_vs_jointdiag_nll_wins": 5,
+  "status": "complete",
+  "supports_full_covariance_advantage": false,
+  "survives_broad_query_control": true,
+  "wall_seconds": 201.87999746087007
+}

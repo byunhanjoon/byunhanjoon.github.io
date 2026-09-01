@@ -235,3 +235,46 @@ identity gain is therefore not an ordinary ensembling artifact. Full predictions
 member-level metrics, and the frozen protocol are in
 `adult_identity_schema_matched/` and
 `configs/adult_identity_schema_matched.json`.
+
+## T-PLE and atom-mechanism falsification
+
+The stronger missing baseline was target-aware PLE (T-PLE). A frozen follow-up
+tuned nine tree-bin settings by mean validation log loss across seeds 0 and 1,
+then compared the selected setting on seeds 0--3. It follows the official
+[`compute_bins`](https://github.com/yandex-research/rtdl-num-embeddings/blob/main/package/rtdl_num_embeddings.py)
+construction: one supervised one-dimensional decision tree per numerical
+feature, with its split thresholds used as PLE bin edges. Every neural network
+is matched to the original 1.319M-parameter ResNet budget.
+
+| Four-seed ensemble | Test accuracy | Test AUC | Test log loss |
+| --- | ---: | ---: | ---: |
+| Q-PLE | 0.8607 | 0.9155 | 0.2981 |
+| T-PLE | 0.8659 | 0.9195 | 0.2905 |
+| T-PLE + full selected identity | **0.8737** | **0.9278** | **0.2748** |
+| Q-PLE + atom-only indicators | 0.8613 | 0.9156 | 0.2976 |
+| Atom-bracketed Q-PLE | 0.8638 | 0.9157 | 0.2973 |
+
+Full identity improves T-PLE on validation and test for every seed. The ensemble
+gain over T-PLE is +0.7801 accuracy points and +0.8308 AUC points; a paired
+test-row bootstrap gives an AUC interval of [+0.6781, +0.9829] points. Thus the
+Day 1 representation effect survives a tuned target-aware PLE baseline.
+
+The narrower atom explanation does not. Nineteen indicators for values occurring
+at least `ceil(n_train / 128)` times add only +0.0117 ensemble AUC points over
+Q-PLE, with a bootstrap interval of [-0.0461, +0.0718]. Adding continuous PLE
+brackets around the same atoms is similarly negligible. The supported hypothesis
+is therefore **discrete-support/value identity beyond target-aware interval
+bases**, not “large atoms are missing from PLE.” Adult remains a development
+dataset because its test labels were already inspected on Day 1; the result
+licenses a separately frozen architecture-and-dataset transfer experiment rather
+than establishing generalization by itself.
+
+Reproduce or inspect this experiment with:
+
+```bash
+python adult_tple_atomic_falsification.py --stage all
+```
+
+The full report, predictions, grid ranking, uncertainty estimates, and decision
+are in `adult_tple_atomic_falsification/`; the preregistered choices are in
+`configs/adult_tple_atomic_falsification.json`.

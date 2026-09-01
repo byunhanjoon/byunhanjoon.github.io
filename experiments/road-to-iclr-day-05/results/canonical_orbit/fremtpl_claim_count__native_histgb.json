@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "dataset": "fremtpl_claim_count",
+  "model": "native_histgb",
+  "task": "regression",
+  "seeds": [
+    101,
+    202,
+    303,
+    404
+  ],
+  "checked_orbit_views": 16,
+  "unique_canonical_input_digests": 1,
+  "canonical_input_digest": "45100543895ff9cb88d068959e4e2b5c520fdf8174ab32be5be208a20d6055a0",
+  "rows": {
+    "train": 20000,
+    "validation": 3000,
+    "test": 3000
+  }
+}

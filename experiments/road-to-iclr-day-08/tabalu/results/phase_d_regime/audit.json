@@ -1,0 +1,33 @@
+{
+  "git_commit": "c000f06e0b8c6989d62ece8a769bbf269910a9b8",
+  "git_dirty": true,
+  "expected_records": 720,
+  "observed_records": 720,
+  "all_finite": true,
+  "confidence_interval_unit": "task (training seeds averaged within task)",
+  "gate": {
+    "passed": true,
+    "checks": {
+      "beats_neural_moe_ood": true,
+      "beats_single_program_ood": true,
+      "competitive_neural_moe_iid": true,
+      "recovers_regimes": true,
+      "recovers_operators": true
+    },
+    "observed": {
+      "program_moe_vs_neural_moe_ood_ratio": 4.205477654689878e-12,
+      "program_moe_vs_single_program_ood_ratio": 2.3607640545503178e-12,
+      "program_moe_vs_neural_moe_iid_ratio": 2.875832153241596e-09,
+      "program_moe_regime_accuracy": 1.0,
+      "program_moe_operator_accuracy": 0.9333333333333332
+    },
+    "thresholds": {
+      "program_moe_vs_neural_moe_ood_ratio_max": 0.5,
+      "program_moe_vs_single_program_ood_ratio_max": 0.5,
+      "program_moe_vs_neural_moe_iid_ratio_max": 1.25,
+      "program_moe_regime_accuracy_min": 0.95,
+      "program_moe_operator_accuracy_min": 0.7
+    }
+  },
+  "audit_passed": true
+}

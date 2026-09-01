@@ -1,0 +1,40 @@
+{
+  "status": "complete",
+  "dataset": "polish_bankruptcy_4year",
+  "model": "native_histgb",
+  "task": "binclass",
+  "factor_names": [
+    "feature",
+    "category",
+    "class"
+  ],
+  "factor_shape": [
+    4,
+    1,
+    2
+  ],
+  "seeds": [
+    101,
+    202,
+    303,
+    404
+  ],
+  "rows": {
+    "train": 6853,
+    "validation": 1463,
+    "test": 1476
+  },
+  "features": {
+    "numerical": 64,
+    "categorical": 0
+  },
+  "histgb_high_cardinality_policy": "ordinal_fallback_above_255",
+  "source_hashes": {
+    "N_train.npy": "2fc19211b321b2fae57265e01ff59a19bdefad270c9108f9ff1755106dc7fcea",
+    "N_val.npy": "8c51d516dc2cdd84ef9b45cd4b61e7b3a88ef0d270dd8ebad0f707d78d0e5097",
+    "N_test.npy": "055fce28c3268c382ed85afbbc51e1841e59209eac11f905d063844b4928cb2d",
+    "y_train.npy": "9bbef61d8f001ec8c6e676d0fce5aa30dced5a75c47986d23a2cbdf24556cdae",
+    "y_val.npy": "fb67ba33c214b68a31761adadfcd7a95aa5c22e1302fce430616bed977363dc1",
+    "y_test.npy": "60ae7ae524beb6bc4a3a1af1501c13a6674d0fbc3d7481ce5884a9302110a8e7"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "experiment": "phase_d_categorical_regime_pilot",
+  "output_dir": "tabalu/results/phase_d_regime",
+  "n_tasks": 12,
+  "task_seed_start": 202609200,
+  "seeds": [0, 1, 2, 3, 4],
+  "n_features": 4,
+  "train_rows": 1024,
+  "validation_rows": 512,
+  "test_rows": 1024,
+  "ood_multiplier": 8,
+  "train_regime_one_probability": 0.5,
+  "ood_regime_one_probability": 0.8,
+  "operators": ["add", "subtract", "multiply", "safe_divide", "abs", "square"],
+  "models": ["SingleProgram", "ProgramMoE-hard", "ProgramMoE-soft", "MLP", "NeuralMoE", "RandomForest"],
+  "device": "cuda:0",
+  "gate": {
+    "program_moe_vs_neural_moe_ood_ratio_max": 0.5,
+    "program_moe_vs_single_program_ood_ratio_max": 0.5,
+    "program_moe_vs_neural_moe_iid_ratio_max": 1.25,
+    "program_moe_regime_accuracy_min": 0.95,
+    "program_moe_operator_accuracy_min": 0.70
+  }
+}

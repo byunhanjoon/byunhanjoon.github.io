@@ -1,0 +1,250 @@
+{
+  "4x4x2x4": {
+    "strength_1": {
+      "design_count": 3456,
+      "coefficients": {
+        "feature": 8.673617379884035e-18,
+        "category": 7.632783294297951e-17,
+        "class": -4.0766001685454967e-17,
+        "seed": 7.401486830834377e-17,
+        "feature:category": 0.33333333333333326,
+        "feature:class": 0.3333333333333331,
+        "feature:seed": 0.33333333333333326,
+        "category:class": 0.3333333333333331,
+        "category:seed": 0.33333333333333326,
+        "class:seed": 0.3333333333333331,
+        "feature:category:class": 0.22222222222222182,
+        "feature:category:seed": 0.22222222222222227,
+        "feature:class:seed": 0.22222222222222182,
+        "category:class:seed": 0.22222222222222185,
+        "feature:category:class:seed": 0.25925925925925897
+      }
+    },
+    "strength_2": {
+      "design_count": 27648,
+      "coefficients": {
+        "feature": 2.7466455036299444e-18,
+        "category": 2.0961242001386418e-18,
+        "class": 9.974659986866641e-18,
+        "seed": -1.6028122116577375e-17,
+        "feature:category": 2.3852447794681098e-18,
+        "feature:class": 1.1095002231768328e-17,
+        "feature:seed": 4.318738653733926e-18,
+        "category:class": 5.7010964236529444e-18,
+        "category:seed": 9.053088140253962e-18,
+        "class:seed": 1.4736114527698813e-17,
+        "feature:category:class": 0.1111111111111111,
+        "feature:category:seed": 0.11111111111111113,
+        "feature:class:seed": 0.1111111111111111,
+        "category:class:seed": 0.11111111111111109,
+        "feature:category:class:seed": 0.0370370370370369
+      }
+    },
+    "strength_3": {
+      "design_count": 27648,
+      "coefficients": {
+        "feature": 3.706616177184818e-18,
+        "category": 3.8398826942194946e-18,
+        "class": 2.4340338772299575e-17,
+        "seed": 4.007030529144344e-18,
+        "feature:category": -3.362532571055738e-18,
+        "feature:class": 3.674993613820658e-18,
+        "feature:seed": -3.751791267705047e-18,
+        "category:class": 3.8060013763293226e-18,
+        "category:seed": -3.72468621339291e-18,
+        "class:seed": 1.1040792123144053e-17,
+        "feature:category:class": -3.371567589159784e-18,
+        "feature:category:seed": 3.094744673360823e-18,
+        "feature:class:seed": -4.120721173620254e-18,
+        "category:class:seed": -3.4084605797513046e-18,
+        "feature:category:class:seed": 0.037037037037037014
+      }
+    }
+  },
+  "4x1x2x4": {
+    "strength_1": {
+      "design_count": 144,
+      "coefficients": {
+        "feature": 9.25185853854297e-18,
+        "category": 0.0,
+        "class": 3.9898639947466563e-17,
+        "seed": -4.915049848600953e-17,
+        "feature:category": 0.0,
+        "feature:class": 0.3333333333333333,
+        "feature:seed": 0.3333333333333332,
+        "category:class": 0.0,
+        "category:seed": 0.0,
+        "class:seed": 0.3333333333333333,
+        "feature:category:class": 0.0,
+        "feature:category:seed": 0.0,
+        "feature:class:seed": 0.2222222222222222,
+        "category:class:seed": 0.0,
+        "feature:category:class:seed": 0.0
+      }
+    },
+    "strength_2": {
+      "design_count": 1152,
+      "coefficients": {
+        "feature": -5.421010862427522e-18,
+        "category": 0.0,
+        "class": 3.491130995403324e-17,
+        "seed": -3.903127820947816e-18,
+        "feature:category": 0.0,
+        "feature:class": -6.179952383167375e-18,
+        "feature:seed": 4.2042950910826784e-18,
+        "category:class": 0.0,
+        "category:seed": 0.0,
+        "class:seed": 1.0625181290357943e-17,
+        "feature:category:class": 0.0,
+        "feature:category:seed": 0.0,
+        "feature:class:seed": 0.1111111111111111,
+        "category:class:seed": 0.0,
+        "feature:category:class:seed": 0.0
+      }
+    },
+    "strength_3": {
+      "design_count": 1152,
+      "coefficients": {
+        "feature": 0.0,
+        "category": 0.0,
+        "class": 0.0,
+        "seed": 0.0,
+        "feature:category": 0.0,
+        "feature:class": 0.0,
+        "feature:seed": 0.0,
+        "category:class": 0.0,
+        "category:seed": 0.0,
+        "class:seed": 0.0,
+        "feature:category:class": 0.0,
+        "feature:category:seed": 0.0,
+        "feature:class:seed": 0.0,
+        "category:class:seed": 0.0,
+        "feature:category:class:seed": 0.0
+      }
+    }
+  },
+  "4x4x1x4": {
+    "strength_1": {
+      "design_count": 576,
+      "coefficients": {
+        "feature": 8.673617379884035e-18,
+        "category": -7.574959178432057e-17,
+        "class": 0.0,
+        "seed": -6.938893903907228e-17,
+        "feature:category": 0.3333333333333332,
+        "feature:class": 0.0,
+        "feature:seed": 0.3333333333333332,
+        "category:class": 0.0,
+        "category:seed": 0.3333333333333332,
+        "class:seed": 0.0,
+        "feature:category:class": 0.0,
+        "feature:category:seed": 0.22222222222222227,
+        "feature:class:seed": 0.0,
+        "category:class:seed": 0.0,
+        "feature:category:class:seed": 0.0
+      }
+    },
+    "strength_2": {
+      "design_count": 13824,
+      "coefficients": {
+        "feature": 2.638225286381394e-18,
+        "category": 2.0961242001386418e-18,
+        "class": 0.0,
+        "seed": 5.945041912462183e-18,
+        "feature:category": 2.5960618685625132e-18,
+        "feature:class": 0.0,
+        "feature:seed": 1.4456028966473392e-19,
+        "category:class": 0.0,
+        "category:seed": -5.806504968200146e-18,
+        "class:seed": 0.0,
+        "feature:category:class": 0.0,
+        "feature:category:seed": 0.11111111111111113,
+        "feature:class:seed": 0.0,
+        "category:class:seed": 0.0,
+        "feature:category:class:seed": 0.0
+      }
+    },
+    "strength_3": {
+      "design_count": 13824,
+      "coefficients": {
+        "feature": 0.0,
+        "category": 0.0,
+        "class": 0.0,
+        "seed": 0.0,
+        "feature:category": 0.0,
+        "feature:class": 0.0,
+        "feature:seed": 0.0,
+        "category:class": 0.0,
+        "category:seed": 0.0,
+        "class:seed": 0.0,
+        "feature:category:class": 0.0,
+        "feature:category:seed": 0.0,
+        "feature:class:seed": 0.0,
+        "category:class:seed": 0.0,
+        "feature:category:class:seed": 0.0
+      }
+    }
+  },
+  "4x1x1x4": {
+    "strength_1": {
+      "design_count": 24,
+      "coefficients": {
+        "feature": 9.25185853854297e-18,
+        "category": 0.0,
+        "class": 0.0,
+        "seed": 1.9081958235744878e-17,
+        "feature:category": 0.0,
+        "feature:class": 0.0,
+        "feature:seed": 0.3333333333333334,
+        "category:class": 0.0,
+        "category:seed": 0.0,
+        "class:seed": 0.0,
+        "feature:category:class": 0.0,
+        "feature:category:seed": 0.0,
+        "feature:class:seed": 0.0,
+        "category:class:seed": 0.0,
+        "feature:category:class:seed": 0.0
+      }
+    },
+    "strength_2": {
+      "design_count": 576,
+      "coefficients": {
+        "feature": 0.0,
+        "category": 0.0,
+        "class": 0.0,
+        "seed": 0.0,
+        "feature:category": 0.0,
+        "feature:class": 0.0,
+        "feature:seed": 0.0,
+        "category:class": 0.0,
+        "category:seed": 0.0,
+        "class:seed": 0.0,
+        "feature:category:class": 0.0,
+        "feature:category:seed": 0.0,
+        "feature:class:seed": 0.0,
+        "category:class:seed": 0.0,
+        "feature:category:class:seed": 0.0
+      }
+    },
+    "strength_3": {
+      "design_count": 576,
+      "coefficients": {
+        "feature": 0.0,
+        "category": 0.0,
+        "class": 0.0,
+        "seed": 0.0,
+        "feature:category": 0.0,
+        "feature:class": 0.0,
+        "feature:seed": 0.0,
+        "category:class": 0.0,
+        "category:seed": 0.0,
+        "class:seed": 0.0,
+        "feature:category:class": 0.0,
+        "feature:category:seed": 0.0,
+        "feature:class:seed": 0.0,
+        "category:class:seed": 0.0,
+        "feature:category:class:seed": 0.0
+      }
+    }
+  }
+}

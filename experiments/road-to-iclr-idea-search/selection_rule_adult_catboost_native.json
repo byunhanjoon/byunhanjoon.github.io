@@ -1,0 +1,228 @@
+{
+  "status": "exploratory_estimand_falsification_pilot",
+  "dataset": "adult",
+  "family": "catboost_native",
+  "fit_size": 2250,
+  "validation_size": 750,
+  "test_size": 1000,
+  "factor_shape": [
+    4,
+    4,
+    2
+  ],
+  "candidate_specs": [
+    {
+      "depth": 4,
+      "l2_leaf_reg": 1.0
+    },
+    {
+      "depth": 6,
+      "l2_leaf_reg": 3.0
+    },
+    {
+      "depth": 8,
+      "l2_leaf_reg": 3.0
+    },
+    {
+      "depth": 6,
+      "l2_leaf_reg": 10.0
+    }
+  ],
+  "selection_protocol": {
+    "split_before_rendering": true,
+    "validation_labels_used": true,
+    "test_labels_used_for_selection": false,
+    "same_candidates_and_random_seed_in_every_representation": true,
+    "canonical_identity_selected_config": 1
+  },
+  "selected_config_grid": [
+    [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ]
+  ],
+  "selection_counts": {
+    "1": 20,
+    "2": 12
+  },
+  "selection_entropy_bits": 0.9544340029249649,
+  "fraction_different_from_identity_config": 0.375,
+  "selection_decision_anova": {
+    "total": 0.46875,
+    "feature": 0.09375,
+    "category": 0.0,
+    "class": 0.28125,
+    "feature:category": 0.0,
+    "feature:class": 0.09375,
+    "category:class": 0.0,
+    "feature:category:class": 0.0,
+    "component_sum_error": 0.0,
+    "prediction_reconstruction_max_error": 0.0
+  },
+  "mean_validation_brier_by_config": [
+    0.19348464602483403,
+    0.19225364563415884,
+    0.1924225632437548,
+    0.19443369021468254
+  ],
+  "frozen_identity_selection_orbit": {
+    "reference_brier": 0.19235385835681235,
+    "mean_member_brier": 0.1919845335464032,
+    "best_member_brier": 0.1904600279050456,
+    "worst_member_brier": 0.19325447124824843,
+    "member_brier_std": 0.0008660768919285759,
+    "orbit_mean_brier": 0.19153715083128633,
+    "brier_reduction_by_averaging": 0.00044738271511687855,
+    "risk_identity_absolute_error": 1.2197274440461925e-17,
+    "instance_audit": {
+      "hard_label_flip_fraction": 0.04,
+      "mean_nonmodal_vote_fraction": 0.010375,
+      "row_schema_risk_median": 0.00012913284275966399,
+      "row_schema_risk_p95": 0.0018229637097133527,
+      "row_schema_risk_max": 0.02010161072136525,
+      "max_class_probability_range_mean": 0.033358999174158244,
+      "max_class_probability_range_p95": 0.09941308582589856,
+      "max_class_probability_range_max": 0.27644801359259064
+    },
+    "anova": {
+      "total": 0.00044738271511686635,
+      "feature": 0.00022147995385182244,
+      "category": 6.374030209164322e-32,
+      "class": 5.581336352337962e-05,
+      "feature:category": 7.244574053914369e-32,
+      "feature:class": 0.00017008939774166432,
+      "category:class": 9.802703969009998e-32,
+      "feature:category:class": 1.068382220358976e-31,
+      "component_sum_error": 0.0,
+      "prediction_reconstruction_max_error": 2.220446049250313e-16
+    }
+  },
+  "representation_wise_selection_orbit": {
+    "reference_brier": 0.19235385835681235,
+    "mean_member_brier": 0.19205139064215232,
+    "best_member_brier": 0.1904600279050456,
+    "worst_member_brier": 0.1930808496669031,
+    "member_brier_std": 0.0008480086615072946,
+    "orbit_mean_brier": 0.19148967499384353,
+    "brier_reduction_by_averaging": 0.000561715648308786,
+    "risk_identity_absolute_error": 1.8323016715005025e-17,
+    "instance_audit": {
+      "hard_label_flip_fraction": 0.04,
+      "mean_nonmodal_vote_fraction": 0.0095,
+      "row_schema_risk_median": 0.0001649982572865907,
+      "row_schema_risk_p95": 0.002283649320289456,
+      "row_schema_risk_max": 0.02726355901950542,
+      "max_class_probability_range_mean": 0.037473713581750036,
+      "max_class_probability_range_p95": 0.10785299512097445,
+      "max_class_probability_range_max": 0.3210327395660204
+    },
+    "anova": {
+      "total": 0.0005617156483088043,
+      "feature": 0.0002629697975608762,
+      "category": 6.388318653329076e-32,
+      "class": 9.468612573361605e-05,
+      "feature:category": 7.416055696433793e-32,
+      "feature:class": 0.00020405972501431202,
+      "category:class": 9.596274898248537e-32,
+      "feature:category:class": 1.0613607650258082e-31,
+      "component_sum_error": 0.0,
+      "prediction_reconstruction_max_error": 2.220446049250313e-16
+    }
+  },
+  "selection_to_frozen_schema_risk_ratio": 1.2555595675216724,
+  "selection_minus_frozen_schema_risk": 0.00011433293319193792,
+  "selection_minus_frozen_orbit_mean_brier": -4.747583744280082e-05,
+  "paired_row_bootstrap": {
+    "resampling_unit": "test_query_row",
+    "conditional_on_fitted_models": true,
+    "draws": 5000,
+    "schema_risk_difference_ci95": [
+      8.306231227037189e-05,
+      0.0001482958889520397
+    ],
+    "schema_risk_ratio_ci95": [
+      1.1882309014936536,
+      1.3255790656461406
+    ],
+    "orbit_mean_brier_difference_ci95": [
+      -0.0008045070365343855,
+      0.0007490601366115034
+    ]
+  },
+  "configuration_switch_decomposition": {
+    "frozen_schema_risk": 0.00044738271511686635,
+    "selected_schema_risk": 0.0005617156483088043,
+    "schema_risk_change": 0.00011433293319193792,
+    "switch_dispersion": 0.00039501375210330557,
+    "twice_frozen_switch_cross_covariance": -0.00028068081891136765,
+    "change_reconstruction_error": 0.0
+  }
+}

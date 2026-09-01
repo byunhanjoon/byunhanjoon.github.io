@@ -1,0 +1,23 @@
+{
+  "gates": {
+    "4": {
+      "causalpfn_rmse": 0.3835688332716624,
+      "environment_win_fraction": 0.2604166666666667,
+      "passed": false,
+      "reduction_vs_best_ridge": 0.08670710265985859,
+      "reduction_vs_obspfn": 0.44051407616761973
+    },
+    "8": {
+      "causalpfn_rmse": 0.3139691750208537,
+      "environment_win_fraction": 0.24869791666666666,
+      "passed": false,
+      "reduction_vs_best_ridge": -0.02458697099441043,
+      "reduction_vs_obspfn": 0.5279530338751187
+    }
+  },
+  "passed": false,
+  "protocol_sha256": "538f14851b6a1cf54737c3b9bc8df3cf3b227c1b33cf2ef53469f261317b3164",
+  "seeds": 3,
+  "status": "complete",
+  "wall_seconds": 271.98212662385777
+}

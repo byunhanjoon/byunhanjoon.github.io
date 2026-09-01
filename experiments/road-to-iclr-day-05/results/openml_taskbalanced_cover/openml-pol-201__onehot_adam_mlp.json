@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-pol-201",
+  "model": "onehot_adam_mlp",
+  "task": "regression",
+  "shape": [
+    4,
+    1,
+    1,
+    4
+  ],
+  "fits": 16,
+  "rows": {
+    "train": 9000,
+    "validation": 3000,
+    "test": 3000
+  },
+  "full_product_verified": true
+}

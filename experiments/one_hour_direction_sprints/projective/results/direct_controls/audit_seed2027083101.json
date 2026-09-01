@@ -1,0 +1,25 @@
+{
+  "protocol_sha256": "327ed633bb90c065b9ba39b38698f583edab5f18fac621ca8888afaeabba32cd",
+  "seed": 2027083101,
+  "training": {
+    "direct_broad": {
+      "final_nll": 1.372283389866352,
+      "parameters": 138850,
+      "train_seconds": 18.25361646898091,
+      "updates": 5000
+    },
+    "direct_long": {
+      "final_nll": 1.1428625214099883,
+      "parameters": 138850,
+      "train_seconds": 76.86334673920646,
+      "updates": 20000
+    },
+    "direct_moment": {
+      "final_nll": 1.1385131934285164,
+      "parameters": 196610,
+      "train_seconds": 22.758011365076527,
+      "updates": 5000
+    }
+  },
+  "wall_seconds": 120.70740739488974
+}

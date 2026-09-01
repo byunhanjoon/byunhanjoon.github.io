@@ -1,0 +1,23 @@
+{
+  "active_openml": {
+    "name": "open_payments",
+    "requested_data_id": 42738,
+    "url": "https://openml.org/data/v1/download/22044787/open_payments.arff",
+    "version": "3"
+  },
+  "active_openml_id_inspected": 42738,
+  "available_columns": [
+    "applicable_manufacturer_or_applicable_gpo_making_payment_name",
+    "dispute_status_for_publication",
+    "name_of_associated_covered_device_or_medical_supply1",
+    "name_of_associated_covered_drug_or_biological1",
+    "physician_specialty"
+  ],
+  "frozen_openml_id": 41442,
+  "reason": "Frozen and active OpenML snapshots omit Total Amount of Payment, which the prospective manifest declared mandatory.",
+  "required_amount_columns_found": [],
+  "rows": 73558,
+  "source_unit": "STRING_BENCHMARK",
+  "status": "NOT RUN",
+  "task": "open_payments"
+}

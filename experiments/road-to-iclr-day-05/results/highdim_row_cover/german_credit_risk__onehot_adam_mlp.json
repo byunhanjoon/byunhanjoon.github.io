@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "dataset": "german_credit_risk",
+  "model": "onehot_adam_mlp",
+  "methods": [
+    "oa32",
+    "marginal32",
+    "iid32"
+  ],
+  "repetitions": 8,
+  "binary_factors": 15,
+  "categorical_fields": 13,
+  "row_order_factor": true,
+  "full_joint_cell_count": 524288,
+  "ensemble_runs": 32,
+  "pairwise_balance_verified": true,
+  "rows": {
+    "train": 700,
+    "validation": 150,
+    "test": 150
+  }
+}

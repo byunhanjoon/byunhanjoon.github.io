@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "dataset": "fremtpl_claim_count",
+  "task": "regression",
+  "model": "ft_transformer",
+  "row_orders": 4,
+  "represented_fits": 4,
+  "initialization_seed_held_fixed": 101,
+  "minibatch_order_seed_held_fixed": 3101,
+  "mean_squared_prediction_movement_by_order": [
+    0.0,
+    0.18481884896755219,
+    0.20729118585586548,
+    0.22098027169704437
+  ],
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "device": "cuda:0",
+  "wall_seconds": 3.86485180282034,
+  "maximum_peak_device_bytes": 91494912,
+  "telemetry": [
+    {
+      "row_order": 0,
+      "wall_seconds": 1.1506048128940165,
+      "peak_device_bytes": 91494912
+    },
+    {
+      "row_order": 1,
+      "wall_seconds": 0.9135098340921104,
+      "peak_device_bytes": 91494912
+    },
+    {
+      "row_order": 2,
+      "wall_seconds": 0.9009920619428158,
+      "peak_device_bytes": 91494912
+    },
+    {
+      "row_order": 3,
+      "wall_seconds": 0.8997450938913971,
+      "peak_device_bytes": 91494912
+    }
+  ]
+}

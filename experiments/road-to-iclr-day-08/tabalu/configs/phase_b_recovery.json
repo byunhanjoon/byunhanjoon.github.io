@@ -1,0 +1,31 @@
+{
+  "experiment": "phase_b_structural_recovery",
+  "output_dir": "tabalu/results/phase_b_recovery",
+  "n_tasks": 20,
+  "task_seed_start": 202609000,
+  "seeds": [0, 1, 2, 3, 4],
+  "n_features": 4,
+  "depth_range": [1, 3],
+  "operators": ["add", "subtract", "multiply", "safe_divide", "abs", "square"],
+  "train_rows": 512,
+  "validation_rows": 256,
+  "test_rows": 512,
+  "test_multiplier": 8,
+  "conditions": {
+    "clean": {"seeds": [0]},
+    "target_noise": {"relative_std": 0.1},
+    "measurement_noise": {"relative_std": 0.1},
+    "irrelevant_features": {"count": 4},
+    "correlated_features": {"count": 4, "relative_std": 0.05}
+  },
+  "gate": {
+    "clean_nrmse_max": 1e-6,
+    "clean_feature_f1_min": 0.95,
+    "clean_exact_program_min": 0.70,
+    "target_noise_nrmse_max": 0.10,
+    "measurement_noise_nrmse_max": 0.25,
+    "irrelevant_features_nrmse_max": 0.05,
+    "irrelevant_features_feature_f1_min": 0.85,
+    "correlated_features_nrmse_max": 0.10
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "frozen_at": "2026-08-29T00:00:00+09:00",
+  "outer_seeds": [7601, 7602, 7603],
+  "outer_train_fraction": 0.7,
+  "inner_state_folds": 3,
+  "row_oof_folds": 3,
+  "base_model": {
+    "family": "CatBoostRegressor",
+    "iterations": 100,
+    "depth": 7,
+    "learning_rate": 0.08,
+    "l2_leaf_reg": 5.0,
+    "max_fit_rows": 75000
+  },
+  "operators": ["knn_3", "rbf", "domain_specific"],
+  "sigma": "diagonal finite-sample variance of row-OOF residual mean",
+  "weighting": "equal semantic-state weight",
+  "sources": {
+    "noaa_ghcn_tmax": {
+      "family": "NOAA_GHCN",
+      "target": "TMAX_2024",
+      "metric": "haversine station distance",
+      "metadata_url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt",
+      "inventory_url": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-inventory.txt",
+      "station_url_template": "https://www.ncei.noaa.gov/pub/data/ghcn/daily/all/{station}.dly",
+      "max_states": 30
+    },
+    "beijing_pm25": {
+      "family": "UCI_BEIJING_AIR",
+      "target": "PM2.5",
+      "metric": "haversine monitor distance",
+      "url": "https://archive.ics.uci.edu/static/public/501/beijing+multi+site+air+quality+data.zip"
+    },
+    "divvy_trip_duration": {
+      "family": "CHICAGO_DIVVY",
+      "target": "log1p_trip_seconds",
+      "metric": "haversine and trip-connectivity graph",
+      "url": "https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2020_Q1.zip"
+    },
+    "bls_oews_wage": {
+      "family": "BLS_OEWS",
+      "target": "log_annual_mean_wage",
+      "metric": "SOC prefix hierarchy shortest path",
+      "url": "https://www.bls.gov/oes/special.requests/oesm24st.zip"
+    }
+  },
+  "success": {
+    "P1_spearman": 0.6,
+    "P2_sign_accuracy": 0.75,
+    "P3_beat_metric_only_heuristics": true,
+    "P4_source_families": 3,
+    "P5_detect_observed_harm": true
+  }
+}

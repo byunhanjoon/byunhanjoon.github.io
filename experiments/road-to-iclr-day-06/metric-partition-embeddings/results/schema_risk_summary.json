@@ -1,0 +1,77 @@
+{
+  "correlations": {
+    "interval": {
+      "linear": {
+        "median_within_seed_spearman": 0.7380952380952382,
+        "mean_within_seed_spearman": 0.7103174603174605
+      },
+      "ple": {
+        "median_within_seed_spearman": 0.41666666666666674,
+        "mean_within_seed_spearman": 0.28571428571428575
+      },
+      "periodic": {
+        "median_within_seed_spearman": 0.7619047619047621,
+        "mean_within_seed_spearman": 0.7619047619047619
+      },
+      "code_rbf": {
+        "median_within_seed_spearman": 0.5714285714285715,
+        "mean_within_seed_spearman": 0.5753968253968255
+      }
+    },
+    "cycle": {
+      "linear": {
+        "median_within_seed_spearman": 0.011904761904761908,
+        "mean_within_seed_spearman": 0.013888888888888876
+      },
+      "ple": {
+        "median_within_seed_spearman": -0.16666666666666669,
+        "mean_within_seed_spearman": -0.13095238095238096
+      },
+      "periodic": {
+        "median_within_seed_spearman": -0.04761904761904763,
+        "mean_within_seed_spearman": -0.17658730158730163
+      },
+      "code_rbf": {
+        "median_within_seed_spearman": 0.059523809523809534,
+        "mean_within_seed_spearman": 0.08333333333333336
+      }
+    },
+    "tree": {
+      "linear": {
+        "median_within_seed_spearman": 0.19047619047619052,
+        "mean_within_seed_spearman": 0.04166666666666665
+      },
+      "ple": {
+        "median_within_seed_spearman": 0.035714285714285726,
+        "mean_within_seed_spearman": -0.06746031746031746
+      },
+      "periodic": {
+        "median_within_seed_spearman": 0.11904761904761905,
+        "mean_within_seed_spearman": 0.06547619047619048
+      },
+      "code_rbf": {
+        "median_within_seed_spearman": 0.22619047619047622,
+        "mean_within_seed_spearman": 0.1150793650793651
+      }
+    },
+    "nominal": {
+      "linear": {
+        "median_within_seed_spearman": 0.19047619047619052,
+        "mean_within_seed_spearman": 0.09920634920634923
+      },
+      "ple": {
+        "median_within_seed_spearman": 0.0,
+        "mean_within_seed_spearman": 0.03174603174603175
+      },
+      "periodic": {
+        "median_within_seed_spearman": 0.059523809523809534,
+        "mean_within_seed_spearman": 0.09325396825396827
+      },
+      "code_rbf": {
+        "median_within_seed_spearman": -0.1547619047619048,
+        "mean_within_seed_spearman": -0.03373015873015874
+      }
+    }
+  },
+  "decision": "The simple global pairwise-distance distortion is predictive for monotone interval charts but not for arbitrary cycle/tree codebooks. Exact MPE invariance survives; T4 as a scalar schema-risk predictor is rejected. A successor needs task-weighted local distortion."
+}

@@ -1,0 +1,26 @@
+{
+  "task_id": "program-202608594",
+  "seed": 202608594,
+  "program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "square",
+        "left": 2,
+        "right": null
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 0
+      }
+    ],
+    "output": 5,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "n_irrelevant": 0,
+  "generation_attempt": 1,
+  "expression": "subtract(square(x2), x0)"
+}

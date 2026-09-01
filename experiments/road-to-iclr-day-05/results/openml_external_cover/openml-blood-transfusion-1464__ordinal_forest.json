@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-blood-transfusion-1464",
+  "model": "ordinal_forest",
+  "task": "binclass",
+  "shape": [
+    4,
+    1,
+    2,
+    4
+  ],
+  "fits": 32,
+  "rows": {
+    "train": 448,
+    "validation": 150,
+    "test": 150
+  },
+  "full_product_verified": true
+}

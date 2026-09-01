@@ -1,0 +1,107 @@
+{
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "safe_divide",
+        "left": 2,
+        "right": 1
+      },
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 4
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.40802031587666693,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "global": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "safe_divide",
+        "left": 2,
+        "right": 1
+      },
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 4
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.3208891231609373,
+    "output_bias": -0.1516160999096929,
+    "epsilon": 0.25
+  },
+  "independent": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 2,
+          "right": 1
+        },
+        {
+          "operator": "multiply",
+          "left": 0,
+          "right": 4
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.2707598795099616,
+      "output_bias": -0.13515086418298464,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "safe_divide",
+          "left": 2,
+          "right": 1
+        },
+        {
+          "operator": "multiply",
+          "left": 0,
+          "right": 4
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.7803906109519758,
+      "output_bias": -0.17274722111176904,
+      "epsilon": 0.25
+    }
+  ],
+  "shared": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "safe_divide",
+        "left": 2,
+        "right": 1
+      },
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 4
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.36270332815952866,
+    "output_bias": -0.11651899675510728,
+    "epsilon": 0.25
+  },
+  "shared_scales": [
+    0.7465050932966625,
+    2.15159488230332
+  ],
+  "shared_biases": [
+    -0.04816884319654645,
+    0.07795444164663137
+  ]
+}

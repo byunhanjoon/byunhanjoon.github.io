@@ -1,0 +1,64 @@
+{
+  "bounded_followup": "T6 only on three strongest datasets",
+  "config": "configs/semantic_orbits_tabm_basis.yaml",
+  "config_sha256": "b1085da4254628514499503c380f101a0339c243f166e208a3079a03e1a27238",
+  "dataset_spec": {
+    "name": "california_housing",
+    "openml_id": 43939,
+    "openml_version": 1,
+    "problem_type": "regression"
+  },
+  "device": "cuda:0",
+  "environment": {
+    "cuda_visible_devices": "1",
+    "gpu": "NVIDIA H100 NVL",
+    "packages": {
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "pytabkit": "1.7.3",
+      "scikit-learn": "1.4.2",
+      "torch": "2.7.0"
+    },
+    "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+    "python": "3.10.16",
+    "torch_cuda": "12.6"
+  },
+  "experiment": "semantic_orbits_tabm_basis_followup",
+  "files": {
+    "metrics.csv": {
+      "bytes": 45024,
+      "sha256": "8b73abb8348488e885a88036b6133b0336afbef071db3da92b57e35b4b2bd9e0"
+    },
+    "predictions.csv.gz": {
+      "bytes": 156757,
+      "sha256": "c3c7188dbc06f362b4be12ac9a5caa3423765eaa47f5250ff577b2fa5b79b4c4"
+    }
+  },
+  "git": {
+    "commit": "0c456660ae9a87aab7932b569e1954b0ee1d25fe",
+    "day09_status": "?? experiments/road-to-iclr-day-09/"
+  },
+  "model": "tabm_d",
+  "model_seed": 2,
+  "parent_grid_unchanged": true,
+  "preprocessing": {
+    "continuous_missing": "training median before orbit construction",
+    "imputed_columns": {
+      "total_bedrooms": {
+        "count": 38,
+        "train_median": 434.0
+      }
+    }
+  },
+  "protocol_version": 1,
+  "representation_count": 25,
+  "split_audit": {
+    "target_sha256": "4f3bdbff6f6605904e70c304052d0b51d268f234300c6f12e79e911468d40bd6",
+    "test_row_order_sha256": "e19d50918fa6b6d9107767d7bf87ced281e7bfd4322b405fc377cbd360de2a61",
+    "train_test_disjoint": true,
+    "train_validation_disjoint": true,
+    "validation_test_disjoint": true
+  },
+  "status": "complete",
+  "wall_seconds": 15.429022789001465
+}

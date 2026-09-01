@@ -1,0 +1,60 @@
+{
+  "status": "complete",
+  "evidence_status": "prospective_sources_and_outcomes",
+  "complete_tensors": 20,
+  "represented_complete_product_fits": 2560,
+  "strength2": {
+    "numerical_strict_tolerance": 0.0,
+    "all_cell_wins_vs_iid_and_strength1": 19,
+    "required_all_cell_wins": 16,
+    "all_cells": 20,
+    "material_cell_wins_vs_all_controls": 13,
+    "material_cells": 13,
+    "source_mean_wins_vs_iid_and_strength1": 4,
+    "required_source_mean_wins": 4,
+    "sources": 4,
+    "passed": true,
+    "material_win_fraction": 1.0,
+    "complete_frozen_gate_passed": true
+  },
+  "packing": {
+    "pair32": {
+      "candidates": 20,
+      "nondegenerate_candidates": 17,
+      "nondegenerate_wins": 17,
+      "nondegenerate_losses": 0,
+      "nondegenerate_win_fraction": 1.0,
+      "mean_nondegenerate_relative_score_rmse_reduction": 0.08129089084214325,
+      "source_mean_wins": 4,
+      "sources": 4,
+      "frozen_gate_passed": true
+    },
+    "pack64": {
+      "candidates": 20,
+      "nondegenerate_candidates": 17,
+      "nondegenerate_wins": 17,
+      "nondegenerate_losses": 0,
+      "nondegenerate_win_fraction": 1.0,
+      "mean_nondegenerate_relative_score_rmse_reduction": 0.19471948771516878,
+      "source_mean_wins": 4,
+      "sources": 4,
+      "frozen_gate_passed": true
+    },
+    "unbiased_pair_cross64": {
+      "candidates": 20,
+      "nondegenerate_candidates": 17,
+      "nondegenerate_wins": 17,
+      "nondegenerate_losses": 0,
+      "nondegenerate_win_fraction": 1.0,
+      "mean_nondegenerate_relative_score_rmse_reduction": 0.0764541814195253,
+      "source_mean_wins": 4,
+      "sources": 4,
+      "frozen_gate_passed": true
+    }
+  },
+  "all_packing_frozen_gates_passed": true,
+  "validation_test_winner_agreements": 4,
+  "mean_validation_selected_test_regret": 0.0,
+  "median_end_to_end_seconds_per_128_fit_tensor": 77.56956969457678,
+  "all_frozen_gates_passed": true
+}

@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "dataset": "openml-breast-w-15",
+  "model": "onehot_adam_mlp",
+  "task": "binclass",
+  "shape": [
+    4,
+    1,
+    2,
+    4
+  ],
+  "fits": 32,
+  "rows": {
+    "train": 419,
+    "validation": 140,
+    "test": 140
+  },
+  "full_product_verified": true
+}

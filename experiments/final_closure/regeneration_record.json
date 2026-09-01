@@ -1,0 +1,16 @@
+{
+  "completed_at_utc": "2026-08-28T14:08:34.950963+00:00",
+  "derived_artifact_count": 50,
+  "derived_artifact_digest": "443e55f314107b835c388606028dbb0ef290d4cd8ad7466db33c258e8b8e671d",
+  "pipeline": [
+    "analyze_experiment_a.py",
+    "analyze_experiment_a_classical.py",
+    "analyze_experiment_b.py",
+    "analyze_experiment_c.py",
+    "analyze_experiment_d.py",
+    "make_final_claims.py"
+  ],
+  "raw_manifest_count": 600,
+  "raw_manifest_digest": "022aa79bafe531fa3db77f5a4f6820b836023087c3645bd76123385b12ee70ff",
+  "status": "complete"
+}

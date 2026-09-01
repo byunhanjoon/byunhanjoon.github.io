@@ -1,0 +1,13 @@
+\begin{tabular}{lrrrrrr}
+\toprule Method & NLL & CRPS & MSE & Cov.90 & NLL rank & CRPS rank \\
+\midrule
+\textsc{ProjTabICL} & 7.162 & 0.3495 & 0.5697 & 0.916 & \textbf{3.11} & 4.14 \\
+\textsc{TabICL-Diag} & 7.689 & \textbf{0.3488} & 0.5697 & 0.912 & 3.23 & \textbf{3.54} \\
+TabPFN-3 (Diag) & 2.33e+05 & 0.3517 & \textbf{0.5093} & 0.886 & 4.40 & 4.03 \\
+TabPFN-2.5 (Diag) & 2.33e+05 & 0.3759 & 0.5244 & 0.858 & 5.03 & 5.34 \\
+GP Mat\'ern-$3/2$ & 3.509 & 0.3552 & 0.5786 & 0.866 & 4.14 & 3.83 \\
+GP RBF & 3.544 & 0.3606 & 0.5902 & 0.860 & 5.00 & 4.91 \\
+Bootstrap CatBoost & \textbf{3.296} & 0.3701 & 0.5950 & 0.904 & 4.94 & 4.91 \\
+Bayesian linear & 1672.410 & 0.3766 & 0.6060 & 0.851 & 6.14 & 5.29 \\
+\bottomrule
+\end{tabular}

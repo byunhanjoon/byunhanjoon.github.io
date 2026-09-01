@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-adult-1590",
+  "model": "catboost_native",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 29304,
+    "validation": 9769,
+    "test": 9769
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026083051,
+  "timing": {
+    "setup_seconds": 0.553214862011373,
+    "fit_loop_seconds": 184.66768192895688,
+    "end_to_end_seconds": 185.9386789109558,
+    "fits_per_fit_loop_second": 0.6931369834882241
+  }
+}

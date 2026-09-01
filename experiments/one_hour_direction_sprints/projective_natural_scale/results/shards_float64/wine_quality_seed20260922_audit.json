@@ -1,0 +1,62 @@
+{
+  "dataset": "wine_quality",
+  "encoded_features": 11,
+  "episode_audits": [
+    {
+      "context_index_sha256": "76fd31a60720ba3aebcdb43864de98593dfc2bad0920a89804d3c78a840f1c28",
+      "covariance_min_eigenvalue": -7.206362042293185e-16,
+      "covariance_symmetry_max_abs": 8.326672684688674e-17,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 2.384185791015625e-07,
+      "replicate": 0,
+      "tabpfn_marginal_max_abs": 0.0,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "fcba342ca5d7c051d2f3a8e85ee63124967b88637818cfeeeff9bc46402c9de8",
+      "covariance_min_eigenvalue": -1.1835291087344639e-15,
+      "covariance_symmetry_max_abs": 5.551115123125783e-17,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 3.5762786865234375e-07,
+      "replicate": 1,
+      "tabpfn_marginal_max_abs": 0.0,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "7d1df687d4390418eebe1afb077b51bf672787e6d9e3bc243d6f4e49abed052a",
+      "covariance_min_eigenvalue": -1.9862299621799245e-16,
+      "covariance_symmetry_max_abs": 5.551115123125783e-17,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 2.384185791015625e-07,
+      "replicate": 2,
+      "tabpfn_marginal_max_abs": 0.0,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    },
+    {
+      "context_index_sha256": "aa248cb9e2967a212f79c664496e46bb0afdcdd34b3064d17bbffa9aaa9f4191",
+      "covariance_min_eigenvalue": -1.0421989555616706e-15,
+      "covariance_symmetry_max_abs": 2.7755575615628914e-16,
+      "gp_fallbacks": 0,
+      "neural_forward_max_abs": 2.384185791015625e-07,
+      "replicate": 3,
+      "tabpfn_marginal_max_abs": 0.0,
+      "test_query_unique": true,
+      "validation_query_unique": true
+    }
+  ],
+  "protocol_sha256": "144c873f8d8922306a5b415b05825bf84d414d15cbbe4289204dc92cea3239f3",
+  "raw_features": 11,
+  "raw_rows": 6497,
+  "split_disjoint": true,
+  "split_seed": 20260922,
+  "test_index_sha256": "1ccbdcba945274eb974e8b4387c5ba70120474242a82b2b96a3ea5b7582adb92",
+  "test_rows": 512,
+  "train_index_sha256": "582f3e001d98daa10c31cbdc8077eaac83023b43af0622431d3e203dc9706d97",
+  "train_rows": 2048,
+  "validation_index_sha256": "bb068aa9c228477e929532fc885c747726848f70928685562261ad2d8a9de707",
+  "validation_rows": 512,
+  "wall_seconds": 6.0665738340467215
+}

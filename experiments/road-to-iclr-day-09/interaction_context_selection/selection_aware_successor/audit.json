@@ -1,0 +1,72 @@
+{
+  "comparisons": {
+    "contextual_mean": {
+      "bootstrap_95": [
+        -0.03011585915852419,
+        0.013979434291889407
+      ],
+      "mean_difference": -0.008837526087062971,
+      "ties": 0,
+      "total": 24,
+      "win_fraction": 0.3333333333333333,
+      "wins": 8
+    },
+    "random_mean": {
+      "bootstrap_95": [
+        -0.025411554341802294,
+        0.013515268848468728
+      ],
+      "mean_difference": -0.006565657358035305,
+      "ties": 0,
+      "total": 24,
+      "win_fraction": 0.3333333333333333,
+      "wins": 8
+    },
+    "row_rotating": {
+      "bootstrap_95": [
+        -0.026513821683110353,
+        0.01889726146151395
+      ],
+      "mean_difference": -0.004616696923971071,
+      "ties": 0,
+      "total": 24,
+      "win_fraction": 0.3333333333333333,
+      "wins": 8
+    }
+  },
+  "contextual_rotating_positive_fraction": 0.9166666666666666,
+  "contextual_rotating_task_mean_test_improvement": {
+    "classification": 0.07029639685259419,
+    "regression": 0.18824023543085133
+  },
+  "datasets_complete": [
+    "blood-transfusion",
+    "breast-w",
+    "cpu-act",
+    "credit-approval",
+    "elevators",
+    "kin8nm",
+    "puma32h",
+    "sick"
+  ],
+  "expected_datasets": [
+    "blood-transfusion",
+    "breast-w",
+    "cpu-act",
+    "credit-approval",
+    "elevators",
+    "kin8nm",
+    "puma32h",
+    "sick"
+  ],
+  "expected_rows": 144,
+  "gate_1_positive_at_least_70pct": true,
+  "gate_2_beats_contextual_mean": false,
+  "gate_3_beats_row_rotating": false,
+  "gate_4_random_mean_noninferiority": false,
+  "gate_5_both_task_types_positive": true,
+  "rows": 144,
+  "selector_folds": 4,
+  "split_seed": 1729,
+  "test_labels_used_for_selection": false
+}

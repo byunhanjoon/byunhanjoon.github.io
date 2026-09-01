@@ -1,0 +1,15 @@
+experiment: real_panel_competence_transfer
+source_split_seed: 20260831
+episode_seed: 125001
+repeats_per_dataset: 120
+context_size: 96
+query_size: 256
+cv_folds: 3
+datasets:
+  classification: [adult, churn, higgs-small]
+  regression: [california, diamond, house, black-friday]
+numeric_only: true
+bootstrap_draws: 10000
+material_harm:
+  classification: 0.005
+  regression: 0.02

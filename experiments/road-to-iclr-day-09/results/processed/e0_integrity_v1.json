@@ -1,0 +1,14 @@
+{
+  "checksums_verified": 72,
+  "complete": 72,
+  "max_relative_inverse_error": 4.1370185499545187e-07,
+  "records": 120,
+  "row_alignment_verified": true,
+  "row_hashes_per_dataset": {
+    "churn": 1,
+    "wine_quality": 1
+  },
+  "shared_fit_pairing_verified": true,
+  "transform_audits_verified": true,
+  "unavailable": 48
+}

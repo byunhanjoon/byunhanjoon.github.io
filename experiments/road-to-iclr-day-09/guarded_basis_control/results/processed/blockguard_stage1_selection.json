@@ -1,0 +1,16 @@
+{
+  "prospective_outcomes_accessed": false,
+  "selected": {
+    "BlockGuard-Greedy": {
+      "method": "BlockGuard-Greedy-t01",
+      "tau": 0.01
+    },
+    "BlockGuard-Grouped": {
+      "method": "BlockGuard-Grouped-t01",
+      "tau": 0.01
+    }
+  },
+  "selection_scope": "four frozen stage-1 development datasets",
+  "selection_split": "development_only",
+  "status": "DEVELOPMENT_SELECTED"
+}

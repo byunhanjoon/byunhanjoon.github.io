@@ -1,0 +1,11 @@
+seed,control,accuracy,auroc
+3,real_assumptions,1.0,1.0
+3,shuffled_assumptions,0.5714285714285714,0.5271585648148148
+11,real_assumptions,1.0,0.9999999999999999
+11,shuffled_assumptions,0.5714285714285714,0.4802893518518519
+29,real_assumptions,1.0,1.0
+29,shuffled_assumptions,0.5714285714285714,0.44979166666666665
+47,real_assumptions,1.0,1.0
+47,shuffled_assumptions,0.5714285714285714,0.4861487268518519
+71,real_assumptions,1.0,1.0
+71,shuffled_assumptions,0.5714285714285714,0.4595341435185185

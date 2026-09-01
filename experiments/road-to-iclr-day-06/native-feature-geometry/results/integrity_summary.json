@@ -1,0 +1,10 @@
+{
+  "errors": [],
+  "h6_bundles": 12,
+  "h6_interventions": 600,
+  "h6_replayed_paths": 120,
+  "pilot_bundles": 24,
+  "pilot_paths": 720,
+  "status": "pass",
+  "summed_fit_seconds": 624.0303973343689
+}

@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "classification_candidates": 23,
+  "methods": 4,
+  "alphas": [
+    1e-06,
+    0.0001,
+    0.01
+  ],
+  "by_alpha": {
+    "1e-06": {
+      "candidate_method_cells": 92,
+      "nondegenerate_cells": 92,
+      "cells_correlation_above_0_99": 88,
+      "cells_second_relative_rmse_below_0_10": 92,
+      "cells_passing_both_local_clauses": 88,
+      "fraction_passing_both_local_clauses": 0.9565217391304348,
+      "median_first_relative_rmse": 0.08132629148709997,
+      "median_second_relative_rmse": 6.048021681273265e-05,
+      "median_actual_to_global_bound_ratio": 6.578408860077487e-16,
+      "maximum_actual_to_global_bound_ratio": 7.396186768982201e-15,
+      "global_bound_violations": 0
+    },
+    "0.0001": {
+      "candidate_method_cells": 92,
+      "nondegenerate_cells": 92,
+      "cells_correlation_above_0_99": 88,
+      "cells_second_relative_rmse_below_0_10": 92,
+      "cells_passing_both_local_clauses": 88,
+      "fraction_passing_both_local_clauses": 0.9565217391304348,
+      "median_first_relative_rmse": 0.08131762446143165,
+      "median_second_relative_rmse": 6.046656031396179e-05,
+      "median_actual_to_global_bound_ratio": 6.577185782945661e-12,
+      "maximum_actual_to_global_bound_ratio": 7.395190326425544e-11,
+      "global_bound_violations": 0
+    },
+    "0.01": {
+      "candidate_method_cells": 92,
+      "nondegenerate_cells": 92,
+      "cells_correlation_above_0_99": 88,
+      "cells_second_relative_rmse_below_0_10": 92,
+      "cells_passing_both_local_clauses": 88,
+      "fraction_passing_both_local_clauses": 0.9565217391304348,
+      "median_first_relative_rmse": 0.08045137206080742,
+      "median_second_relative_rmse": 5.911256512632642e-05,
+      "median_actual_to_global_bound_ratio": 6.527435404532537e-08,
+      "maximum_actual_to_global_bound_ratio": 7.299406749475529e-07,
+      "global_bound_violations": 0
+    }
+  },
+  "local_taylor_gate_passed": true,
+  "global_bound_audit_passed": true,
+  "interpretation": "quantitative_taylor_pass"
+}

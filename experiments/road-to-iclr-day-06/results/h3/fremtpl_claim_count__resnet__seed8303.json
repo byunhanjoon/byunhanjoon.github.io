@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "hypothesis": "H3_FULLSCALE_CLOSURE",
+  "dataset": "fremtpl_claim_count",
+  "task": "regression",
+  "model": "resnet",
+  "seed": 8303,
+  "rows": {
+    "train": 72000,
+    "validation": 24000,
+    "test": 24000
+  },
+  "paths": 8,
+  "path_wall_seconds": [
+    203.16705071786419,
+    206.3136082261335,
+    205.91572880302556,
+    205.84745737188496,
+    203.59289986197837,
+    214.09852403891273,
+    214.15659255790524,
+    214.28527159104124
+  ],
+  "total_fit_seconds": 1667.3771331687458,
+  "invocation_wall_seconds": 1669.5844995039515,
+  "config_sha256": "67be6a0a6fe111b75c01fbc49b083dd804479caf2010447317cfdcf73398766d",
+  "protocol_sha256": "c4f0cc5d7b0961abe268a67760053c0fd36302faa25432d8afa930d7cc402802",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0"
+}

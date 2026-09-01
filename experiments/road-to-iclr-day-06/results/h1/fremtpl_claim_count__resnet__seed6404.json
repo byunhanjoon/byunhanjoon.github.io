@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "hypothesis": "H1_SAA",
+  "dataset": "fremtpl_claim_count",
+  "task": "regression",
+  "model": "resnet",
+  "seed": 6404,
+  "split_seed": 2026082801,
+  "paths": 8,
+  "epochs_per_path": 20,
+  "maximum_initial_gap": 4.76837158203125e-07,
+  "path_wall_seconds": [
+    0.6713570340070873,
+    0.6009642800781876,
+    0.6106290428433567,
+    0.605947086121887,
+    0.6469749489333481,
+    0.6338163369800895,
+    0.6339507079683244,
+    0.615299120079726
+  ],
+  "total_fit_seconds": 5.018938557012007,
+  "config_sha256": "e326c2dd186499ba84c75c13d15bc9e0837d9504ccbd67fd00741ed178106d7a",
+  "protocol_sha256": "e79abc3a2ecbf5201afa2b77b947d729b8c39a3871066daf623934fda17c2bae",
+  "day5_config_sha256": "1e8a099dafb2ac7de9e03f7363f3405a2edad3bf67374fc7d251c28da78c11e9",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0",
+  "tf32": false,
+  "deterministic_algorithms": true
+}

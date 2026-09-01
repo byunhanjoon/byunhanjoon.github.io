@@ -1,0 +1,307 @@
+{
+  "status": "complete",
+  "draws_per_cell": 65536,
+  "amplitude": 0.1,
+  "margins": [
+    0.002,
+    0.005,
+    0.01,
+    0.02
+  ],
+  "clauses": {
+    "strength2_zero_inversions_orders_1_2": true,
+    "strength2_worse_at_least_3_of_4_triple_margins": true,
+    "strength2_better_at_least_3_of_4_fourway_margins": true
+  },
+  "frozen_gate_passed": true,
+  "cells": [
+    {
+      "interaction_order": 1,
+      "quotient_loss_margin": 0.002,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.0,
+      "mean_validation_regret": 0.0,
+      "inversions": 0
+    },
+    {
+      "interaction_order": 1,
+      "quotient_loss_margin": 0.002,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.4360198974609375,
+      "mean_validation_regret": 0.000872039794921875,
+      "inversions": 28575
+    },
+    {
+      "interaction_order": 1,
+      "quotient_loss_margin": 0.005,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.0,
+      "mean_validation_regret": 0.0,
+      "inversions": 0
+    },
+    {
+      "interaction_order": 1,
+      "quotient_loss_margin": 0.005,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.3064727783203125,
+      "mean_validation_regret": 0.0015323638916015625,
+      "inversions": 20085
+    },
+    {
+      "interaction_order": 1,
+      "quotient_loss_margin": 0.01,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.0,
+      "mean_validation_regret": 0.0,
+      "inversions": 0
+    },
+    {
+      "interaction_order": 1,
+      "quotient_loss_margin": 0.01,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.17169189453125,
+      "mean_validation_regret": 0.0017169189453125,
+      "inversions": 11252
+    },
+    {
+      "interaction_order": 1,
+      "quotient_loss_margin": 0.02,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.0,
+      "mean_validation_regret": 0.0,
+      "inversions": 0
+    },
+    {
+      "interaction_order": 1,
+      "quotient_loss_margin": 0.02,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.031951904296875,
+      "mean_validation_regret": 0.0006390380859375,
+      "inversions": 2094
+    },
+    {
+      "interaction_order": 2,
+      "quotient_loss_margin": 0.002,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.0,
+      "mean_validation_regret": 0.0,
+      "inversions": 0
+    },
+    {
+      "interaction_order": 2,
+      "quotient_loss_margin": 0.002,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.4225616455078125,
+      "mean_validation_regret": 0.000845123291015625,
+      "inversions": 27693
+    },
+    {
+      "interaction_order": 2,
+      "quotient_loss_margin": 0.005,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.0,
+      "mean_validation_regret": 0.0,
+      "inversions": 0
+    },
+    {
+      "interaction_order": 2,
+      "quotient_loss_margin": 0.005,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.315887451171875,
+      "mean_validation_regret": 0.001579437255859375,
+      "inversions": 20702
+    },
+    {
+      "interaction_order": 2,
+      "quotient_loss_margin": 0.01,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.0,
+      "mean_validation_regret": 0.0,
+      "inversions": 0
+    },
+    {
+      "interaction_order": 2,
+      "quotient_loss_margin": 0.01,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.1722869873046875,
+      "mean_validation_regret": 0.001722869873046875,
+      "inversions": 11291
+    },
+    {
+      "interaction_order": 2,
+      "quotient_loss_margin": 0.02,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.0,
+      "mean_validation_regret": 0.0,
+      "inversions": 0
+    },
+    {
+      "interaction_order": 2,
+      "quotient_loss_margin": 0.02,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.0347442626953125,
+      "mean_validation_regret": 0.00069488525390625,
+      "inversions": 2277
+    },
+    {
+      "interaction_order": 3,
+      "quotient_loss_margin": 0.002,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.41351318359375,
+      "mean_validation_regret": 0.0008270263671875,
+      "inversions": 27100
+    },
+    {
+      "interaction_order": 3,
+      "quotient_loss_margin": 0.002,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.426055908203125,
+      "mean_validation_regret": 0.00085211181640625,
+      "inversions": 27922
+    },
+    {
+      "interaction_order": 3,
+      "quotient_loss_margin": 0.005,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.3382568359375,
+      "mean_validation_regret": 0.0016912841796875,
+      "inversions": 22168
+    },
+    {
+      "interaction_order": 3,
+      "quotient_loss_margin": 0.005,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.31402587890625,
+      "mean_validation_regret": 0.00157012939453125,
+      "inversions": 20580
+    },
+    {
+      "interaction_order": 3,
+      "quotient_loss_margin": 0.01,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.2079010009765625,
+      "mean_validation_regret": 0.002079010009765625,
+      "inversions": 13625
+    },
+    {
+      "interaction_order": 3,
+      "quotient_loss_margin": 0.01,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.17437744140625,
+      "mean_validation_regret": 0.0017437744140625,
+      "inversions": 11428
+    },
+    {
+      "interaction_order": 3,
+      "quotient_loss_margin": 0.02,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.0797576904296875,
+      "mean_validation_regret": 0.00159515380859375,
+      "inversions": 5227
+    },
+    {
+      "interaction_order": 3,
+      "quotient_loss_margin": 0.02,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.037017822265625,
+      "mean_validation_regret": 0.0007403564453125,
+      "inversions": 2426
+    },
+    {
+      "interaction_order": 4,
+      "quotient_loss_margin": 0.002,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.3227081298828125,
+      "mean_validation_regret": 0.000645416259765625,
+      "inversions": 21149
+    },
+    {
+      "interaction_order": 4,
+      "quotient_loss_margin": 0.002,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.419708251953125,
+      "mean_validation_regret": 0.00083941650390625,
+      "inversions": 27506
+    },
+    {
+      "interaction_order": 4,
+      "quotient_loss_margin": 0.005,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.2155303955078125,
+      "mean_validation_regret": 0.0010776519775390625,
+      "inversions": 14125
+    },
+    {
+      "interaction_order": 4,
+      "quotient_loss_margin": 0.005,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.3115081787109375,
+      "mean_validation_regret": 0.0015575408935546875,
+      "inversions": 20415
+    },
+    {
+      "interaction_order": 4,
+      "quotient_loss_margin": 0.01,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.0951690673828125,
+      "mean_validation_regret": 0.0009516906738281251,
+      "inversions": 6237
+    },
+    {
+      "interaction_order": 4,
+      "quotient_loss_margin": 0.01,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.1707000732421875,
+      "mean_validation_regret": 0.001707000732421875,
+      "inversions": 11187
+    },
+    {
+      "interaction_order": 4,
+      "quotient_loss_margin": 0.02,
+      "method": "strength2_cross32",
+      "draws": 65536,
+      "inversion_rate": 0.0158843994140625,
+      "mean_validation_regret": 0.00031768798828125,
+      "inversions": 1041
+    },
+    {
+      "interaction_order": 4,
+      "quotient_loss_margin": 0.02,
+      "method": "iid_u32",
+      "draws": 65536,
+      "inversion_rate": 0.0358123779296875,
+      "mean_validation_regret": 0.00071624755859375,
+      "inversions": 2347
+    }
+  ]
+}

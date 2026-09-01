@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "cells": 9,
+  "cells_strength3_lower_all": 6,
+  "comparisons": {
+    "four_strength2_oa32": {
+      "cells_lower": 7,
+      "pooled_reduction": 0.49306794359070916,
+      "sign_p": 0.1796875
+    },
+    "four_marginal32": {
+      "cells_lower": 6,
+      "pooled_reduction": 0.09731278294095991,
+      "sign_p": 0.5078125
+    },
+    "iid128": {
+      "cells_lower": 8,
+      "pooled_reduction": 0.3935165985812552,
+      "sign_p": 0.0390625
+    }
+  },
+  "dataset_means_lower_all": {
+    "bank_marketing_subscription": true,
+    "german_credit_risk": false,
+    "compustat_kor_direction": true
+  },
+  "datasets_lower_all": 2,
+  "frozen_gate_passed": true,
+  "mean_brier_by_method": {
+    "strength3_oa128": 0.33228339526488715,
+    "four_strength2_oa32": 0.3323392281340389,
+    "four_marginal32": 0.33219329015415494,
+    "iid128": 0.33233860551531036
+  }
+}

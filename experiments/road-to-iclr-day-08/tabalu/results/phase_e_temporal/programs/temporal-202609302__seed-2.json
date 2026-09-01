@@ -1,0 +1,107 @@
+{
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 3
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.5683533980469383,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "global": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 3
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.5010188824616426,
+    "output_bias": -0.011908843618483437,
+    "epsilon": 0.25
+  },
+  "independent": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 0,
+          "right": 2
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 3
+        }
+      ],
+      "output": 5,
+      "output_scale": 0.4278342801507565,
+      "output_bias": 0.06766380865373581,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "multiply",
+          "left": 0,
+          "right": 2
+        },
+        {
+          "operator": "subtract",
+          "left": 4,
+          "right": 3
+        }
+      ],
+      "output": 5,
+      "output_scale": 1.0332928522498472,
+      "output_bias": -0.38726316449900666,
+      "epsilon": 0.25
+    }
+  ],
+  "shared": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 3
+      }
+    ],
+    "output": 5,
+    "output_scale": 0.5846783662519476,
+    "output_bias": -0.048340035764939206,
+    "epsilon": 0.25
+  },
+  "shared_scales": [
+    0.7317429800768653,
+    1.7672842574509722
+  ],
+  "shared_biases": [
+    0.10303629767363792,
+    -0.301832562970615
+  ]
+}

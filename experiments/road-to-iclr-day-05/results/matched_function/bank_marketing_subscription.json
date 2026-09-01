@@ -1,0 +1,35 @@
+{
+  "status": "complete",
+  "dataset": "bank_marketing_subscription",
+  "arms": [
+    "ordinary",
+    "matched"
+  ],
+  "seeds": [
+    101,
+    202,
+    303,
+    404
+  ],
+  "representatives": 4,
+  "rows": {
+    "train": 3000,
+    "validation": 1000,
+    "test": 1000
+  },
+  "features": {
+    "numerical": 6,
+    "categorical": 9
+  },
+  "cardinalities": [
+    12,
+    3,
+    4,
+    2,
+    2,
+    2,
+    3,
+    12,
+    4
+  ]
+}

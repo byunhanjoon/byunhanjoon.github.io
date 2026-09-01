@@ -1,0 +1,82 @@
+{
+  "status": "complete",
+  "candidates": 23,
+  "permutations": 100000,
+  "comparisons": {
+    "pair32": [
+      {
+        "margin_threshold": 0.001,
+        "spearman_correlation": -0.22167291354801447,
+        "permutation_two_sided_pvalue": 0.3047169528304717,
+        "strict_win_mean_near_tie_fraction": 0.005355555555555556,
+        "nonwin_mean_near_tie_fraction": 0.005875000000000001
+      },
+      {
+        "margin_threshold": 0.005,
+        "spearman_correlation": -0.24071560276333573,
+        "permutation_two_sided_pvalue": 0.26580734192658073,
+        "strict_win_mean_near_tie_fraction": 0.026555555555555558,
+        "nonwin_mean_near_tie_fraction": 0.028916666666666667
+      },
+      {
+        "margin_threshold": 0.01,
+        "spearman_correlation": -0.271215182443346,
+        "permutation_two_sided_pvalue": 0.20886791132088678,
+        "strict_win_mean_near_tie_fraction": 0.05373333333333334,
+        "nonwin_mean_near_tie_fraction": 0.05658333333333333
+      },
+      {
+        "margin_threshold": 0.02,
+        "spearman_correlation": -0.2787429170931058,
+        "permutation_two_sided_pvalue": 0.19432805671943282,
+        "strict_win_mean_near_tie_fraction": 0.10866666666666669,
+        "nonwin_mean_near_tie_fraction": 0.11175
+      },
+      {
+        "margin_threshold": 0.05,
+        "spearman_correlation": -0.2809868225079877,
+        "permutation_two_sided_pvalue": 0.1924480755192448,
+        "strict_win_mean_near_tie_fraction": 0.2749333333333333,
+        "nonwin_mean_near_tie_fraction": 0.2633333333333333
+      }
+    ],
+    "pack64": [
+      {
+        "margin_threshold": 0.001,
+        "spearman_correlation": 0.2511294493573227,
+        "permutation_two_sided_pvalue": 0.24752752472475276,
+        "strict_win_mean_near_tie_fraction": 0.005313725490196077,
+        "nonwin_mean_near_tie_fraction": 0.006166666666666667
+      },
+      {
+        "margin_threshold": 0.005,
+        "spearman_correlation": 0.34648080024691535,
+        "permutation_two_sided_pvalue": 0.1037689623103769,
+        "strict_win_mean_near_tie_fraction": 0.025137254901960785,
+        "nonwin_mean_near_tie_fraction": 0.03372222222222223
+      },
+      {
+        "margin_threshold": 0.01,
+        "spearman_correlation": 0.3640321538039023,
+        "permutation_two_sided_pvalue": 0.08588914110858892,
+        "strict_win_mean_near_tie_fraction": 0.05041176470588235,
+        "nonwin_mean_near_tie_fraction": 0.06694444444444445
+      },
+      {
+        "margin_threshold": 0.02,
+        "spearman_correlation": 0.36550725980187215,
+        "permutation_two_sided_pvalue": 0.08788912110878891,
+        "strict_win_mean_near_tie_fraction": 0.10129411764705883,
+        "nonwin_mean_near_tie_fraction": 0.13366666666666666
+      },
+      {
+        "margin_threshold": 0.05,
+        "spearman_correlation": 0.37672678687628164,
+        "permutation_two_sided_pvalue": 0.07827921720782792,
+        "strict_win_mean_near_tie_fraction": 0.2564901960784314,
+        "nonwin_mean_near_tie_fraction": 0.31172222222222223
+      }
+    ]
+  },
+  "interpretation": "diagnostic_no_gate"
+}

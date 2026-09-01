@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-sick-38",
+  "model": "onehot_linear",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 2262,
+    "validation": 755,
+    "test": 755
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "timing": {
+    "setup_seconds": 0.10426904680207372,
+    "fit_loop_seconds": 4.3995847220066935,
+    "end_to_end_seconds": 4.516495569841936,
+    "fits_per_fit_loop_second": 29.093654989695924
+  }
+}

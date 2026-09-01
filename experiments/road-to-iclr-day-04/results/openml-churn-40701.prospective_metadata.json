@@ -1,0 +1,35 @@
+{
+  "categorical_fields": [
+    "area_code",
+    "international_plan",
+    "voice_mail_plan",
+    "number_customer_service_calls"
+  ],
+  "numeric_fields": [
+    "state",
+    "account_length",
+    "phone_number",
+    "number_vmail_messages",
+    "total_day_minutes",
+    "total_day_calls",
+    "total_day_charge",
+    "total_eve_minutes",
+    "total_eve_calls",
+    "total_eve_charge",
+    "total_night_minutes",
+    "total_night_calls",
+    "total_night_charge",
+    "total_intl_minutes",
+    "total_intl_calls",
+    "total_intl_charge"
+  ],
+  "openml_data_id": 40701,
+  "openml_name": "churn",
+  "rows": 5000,
+  "split_sizes": {
+    "test": 1000,
+    "train": 3000,
+    "val": 1000
+  },
+  "task": "classification"
+}

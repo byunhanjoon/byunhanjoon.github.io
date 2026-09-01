@@ -1,0 +1,654 @@
+{
+  "status": "complete",
+  "dataset": "bank_marketing_subscription",
+  "task": "classification",
+  "model": "mlp",
+  "schema_actions": 32,
+  "represented_fits": 64,
+  "maximum_matched_initial_gap": 1.1920928955078125e-07,
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "wall_seconds": 11.321356605738401,
+  "maximum_peak_device_bytes": 69402112,
+  "telemetry": [
+    {
+      "action": 0,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.23458769312128425,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 0,
+      "feature": 0,
+      "category": 0,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.18370074685662985,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 0.0
+    },
+    {
+      "action": 1,
+      "feature": 0,
+      "category": 0,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17723794700577855,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 1,
+      "feature": 0,
+      "category": 0,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.17570476885885,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 0.0
+    },
+    {
+      "action": 2,
+      "feature": 0,
+      "category": 1,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.17927104816772044,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 2,
+      "feature": 0,
+      "category": 1,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.18148726387880743,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 0.0
+    },
+    {
+      "action": 3,
+      "feature": 0,
+      "category": 1,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.1795075531117618,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 3,
+      "feature": 0,
+      "category": 1,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.1762510808184743,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 0.0
+    },
+    {
+      "action": 4,
+      "feature": 0,
+      "category": 2,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.1809806611854583,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 4,
+      "feature": 0,
+      "category": 2,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.16891396488063037,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 0.0
+    },
+    {
+      "action": 5,
+      "feature": 0,
+      "category": 2,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17507960693910718,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 5,
+      "feature": 0,
+      "category": 2,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.17703886609524488,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 0.0
+    },
+    {
+      "action": 6,
+      "feature": 0,
+      "category": 3,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.17409448302350938,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 6,
+      "feature": 0,
+      "category": 3,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.1671518210787326,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 0.0
+    },
+    {
+      "action": 7,
+      "feature": 0,
+      "category": 3,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.1650080531835556,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 7,
+      "feature": 0,
+      "category": 3,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.17546365410089493,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 0.0
+    },
+    {
+      "action": 8,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.17715663299895823,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 8,
+      "feature": 1,
+      "category": 0,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.17772957612760365,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 9,
+      "feature": 1,
+      "category": 0,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.1710411950480193,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 9,
+      "feature": 1,
+      "category": 0,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.17534144106321037,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 10,
+      "feature": 1,
+      "category": 1,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.17954710288904607,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 10,
+      "feature": 1,
+      "category": 1,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.1760176580864936,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 11,
+      "feature": 1,
+      "category": 1,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17560675996355712,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 11,
+      "feature": 1,
+      "category": 1,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.17863706080242991,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 12,
+      "feature": 1,
+      "category": 2,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.1764836199581623,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 12,
+      "feature": 1,
+      "category": 2,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.16856163297779858,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 13,
+      "feature": 1,
+      "category": 2,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17534647602587938,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 13,
+      "feature": 1,
+      "category": 2,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.17171143391169608,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 14,
+      "feature": 1,
+      "category": 3,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.1737307149451226,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 14,
+      "feature": 1,
+      "category": 3,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.16593788308091462,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 15,
+      "feature": 1,
+      "category": 3,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17509965505450964,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 15,
+      "feature": 1,
+      "category": 3,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.17589756683446467,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 16,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.17248233407735825,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 16,
+      "feature": 2,
+      "category": 0,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.17773446184583008,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 5.960464477539063e-08
+    },
+    {
+      "action": 17,
+      "feature": 2,
+      "category": 0,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17319350596517324,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 17,
+      "feature": 2,
+      "category": 0,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.17295634793117642,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 5.960464477539063e-08
+    },
+    {
+      "action": 18,
+      "feature": 2,
+      "category": 1,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.17357078311033547,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 18,
+      "feature": 2,
+      "category": 1,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.17676026513800025,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 5.960464477539063e-08
+    },
+    {
+      "action": 19,
+      "feature": 2,
+      "category": 1,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17387909698300064,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 19,
+      "feature": 2,
+      "category": 1,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.1787621290422976,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 5.960464477539063e-08
+    },
+    {
+      "action": 20,
+      "feature": 2,
+      "category": 2,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.17035509087145329,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 20,
+      "feature": 2,
+      "category": 2,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.1777764349244535,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 5.960464477539063e-08
+    },
+    {
+      "action": 21,
+      "feature": 2,
+      "category": 2,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17834150604903698,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 21,
+      "feature": 2,
+      "category": 2,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.1734761199913919,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 5.960464477539063e-08
+    },
+    {
+      "action": 22,
+      "feature": 2,
+      "category": 3,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.18054025480523705,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 22,
+      "feature": 2,
+      "category": 3,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.1741697550751269,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 5.960464477539063e-08
+    },
+    {
+      "action": 23,
+      "feature": 2,
+      "category": 3,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.18368500005453825,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 23,
+      "feature": 2,
+      "category": 3,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.18438637582585216,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 5.960464477539063e-08
+    },
+    {
+      "action": 24,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.1830877410247922,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 24,
+      "feature": 3,
+      "category": 0,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.17394279199652374,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 25,
+      "feature": 3,
+      "category": 0,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17575607099570334,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 25,
+      "feature": 3,
+      "category": 0,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.16862695920281112,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 26,
+      "feature": 3,
+      "category": 1,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.17551090195775032,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 26,
+      "feature": 3,
+      "category": 1,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.18061465700156987,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 27,
+      "feature": 3,
+      "category": 1,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17252836213447154,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 27,
+      "feature": 3,
+      "category": 1,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.1687209098599851,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 28,
+      "feature": 3,
+      "category": 2,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.17996160290203989,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 28,
+      "feature": 3,
+      "category": 2,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.1752480969298631,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 29,
+      "feature": 3,
+      "category": 2,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17938595614396036,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 29,
+      "feature": 3,
+      "category": 2,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.18129293713718653,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 30,
+      "feature": 3,
+      "category": 3,
+      "class": 0,
+      "arm": "ordinary",
+      "wall_seconds": 0.185246649896726,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 30,
+      "feature": 3,
+      "category": 3,
+      "class": 0,
+      "arm": "matched",
+      "wall_seconds": 0.17882732511498034,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    },
+    {
+      "action": 31,
+      "feature": 3,
+      "category": 3,
+      "class": 1,
+      "arm": "ordinary",
+      "wall_seconds": 0.17523683980107307,
+      "peak_device_bytes": 69402112,
+      "initial_gap": NaN
+    },
+    {
+      "action": 31,
+      "feature": 3,
+      "category": 3,
+      "class": 1,
+      "arm": "matched",
+      "wall_seconds": 0.17997371987439692,
+      "peak_device_bytes": 69402112,
+      "initial_gap": 1.1920928955078125e-07
+    }
+  ]
+}

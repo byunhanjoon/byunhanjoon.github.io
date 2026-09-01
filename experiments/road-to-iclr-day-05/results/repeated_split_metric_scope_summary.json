@@ -1,0 +1,104 @@
+{
+  "status": "complete",
+  "evidence_status": "post_primary_diagnostic",
+  "split_seeds": [
+    2026082901,
+    2026082911,
+    2026082921
+  ],
+  "comparisons": {
+    "pair32": {
+      "brier": {
+        "nondegenerate_strict_wins": 24,
+        "nondegenerate_ties": 0,
+        "nondegenerate_losses": 0,
+        "loss_cells": [],
+        "nondegenerate_cells": 24,
+        "mean_nondegenerate_rmse_ratio": 0.9244766268155942,
+        "dataset_split_mean_nohigher": 24,
+        "dataset_split_means": 24
+      },
+      "log_loss": {
+        "nondegenerate_strict_wins": 24,
+        "nondegenerate_ties": 0,
+        "nondegenerate_losses": 1,
+        "loss_cells": [
+          {
+            "split_seed": 2026082901,
+            "dataset": "openml-mushroom-24",
+            "model": "native_histgb",
+            "rmse_difference_action_minus_control": 7.210487641626485e-13
+          }
+        ],
+        "nondegenerate_cells": 25,
+        "mean_nondegenerate_rmse_ratio": 0.9273567952063161,
+        "dataset_split_mean_nohigher": 24,
+        "dataset_split_means": 24
+      },
+      "roc_auc": {
+        "nondegenerate_strict_wins": 20,
+        "nondegenerate_ties": 0,
+        "nondegenerate_losses": 0,
+        "loss_cells": [],
+        "nondegenerate_cells": 20,
+        "mean_nondegenerate_rmse_ratio": 0.914157300953752,
+        "dataset_split_mean_nohigher": 24,
+        "dataset_split_means": 24
+      },
+      "accuracy": {
+        "nondegenerate_strict_wins": 10,
+        "nondegenerate_ties": 0,
+        "nondegenerate_losses": 0,
+        "loss_cells": [],
+        "nondegenerate_cells": 10,
+        "mean_nondegenerate_rmse_ratio": 0.9185354828289045,
+        "dataset_split_mean_nohigher": 24,
+        "dataset_split_means": 24
+      }
+    },
+    "pack64": {
+      "brier": {
+        "nondegenerate_strict_wins": 24,
+        "nondegenerate_ties": 0,
+        "nondegenerate_losses": 0,
+        "loss_cells": [],
+        "nondegenerate_cells": 24,
+        "mean_nondegenerate_rmse_ratio": 0.8044669211339791,
+        "dataset_split_mean_nohigher": 24,
+        "dataset_split_means": 24
+      },
+      "log_loss": {
+        "nondegenerate_strict_wins": 25,
+        "nondegenerate_ties": 0,
+        "nondegenerate_losses": 0,
+        "loss_cells": [],
+        "nondegenerate_cells": 25,
+        "mean_nondegenerate_rmse_ratio": 0.8055501852770923,
+        "dataset_split_mean_nohigher": 24,
+        "dataset_split_means": 24
+      },
+      "roc_auc": {
+        "nondegenerate_strict_wins": 20,
+        "nondegenerate_ties": 0,
+        "nondegenerate_losses": 0,
+        "loss_cells": [],
+        "nondegenerate_cells": 20,
+        "mean_nondegenerate_rmse_ratio": 0.8519056463230157,
+        "dataset_split_mean_nohigher": 24,
+        "dataset_split_means": 24
+      },
+      "accuracy": {
+        "nondegenerate_strict_wins": 9,
+        "nondegenerate_ties": 0,
+        "nondegenerate_losses": 0,
+        "loss_cells": [],
+        "nondegenerate_cells": 9,
+        "mean_nondegenerate_rmse_ratio": 0.8732037008079525,
+        "dataset_split_mean_nohigher": 24,
+        "dataset_split_means": 24
+      }
+    }
+  },
+  "interpretation": "brier_repeats; one_tiny_pair_log_loss; auc_accuracy_sparse_nonadverse",
+  "formal_gate_imposed": false
+}

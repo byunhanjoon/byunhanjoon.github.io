@@ -1,0 +1,235 @@
+{
+  "integrity": {
+    "expected_rows": 2688,
+    "actual_rows": 2688,
+    "dimension_matched": true
+  },
+  "domains": {
+    "interval": {
+      "code_rbf": {
+        "mean_test_mse": 0.07105337525691964,
+        "mean_gain_vs_ple_pct": -16.223593115314102,
+        "wins_vs_ple": 0
+      },
+      "linear": {
+        "mean_test_mse": 0.7391189959895521,
+        "mean_gain_vs_ple_pct": -1112.824179570172,
+        "wins_vs_ple": 0
+      },
+      "mmpe_native": {
+        "mean_test_mse": 0.05530901813029537,
+        "mean_gain_vs_ple_pct": 9.795723832467223,
+        "wins_vs_ple": 10,
+        "mean_gain_vs_code_rbf_pct": 22.408129088667433,
+        "wins_vs_code_rbf": 12,
+        "mean_gain_vs_mpe_corrupt_pct": 93.96587154789292,
+        "wins_vs_mpe_corrupt": 12,
+        "mean_gain_vs_mpe_native_pct": 1.5109416559422293,
+        "wins_vs_mpe_native": 9
+      },
+      "mpe_corrupt": {
+        "mean_test_mse": 0.9162162513823947,
+        "mean_gain_vs_ple_pct": -1405.313410528659,
+        "wins_vs_ple": 0
+      },
+      "mpe_native": {
+        "mean_test_mse": 0.0559650611091477,
+        "mean_gain_vs_ple_pct": 8.517391353277139,
+        "wins_vs_ple": 10
+      },
+      "periodic": {
+        "mean_test_mse": 0.0851534298075829,
+        "mean_gain_vs_ple_pct": -39.31763100659801,
+        "wins_vs_ple": 0
+      },
+      "ple": {
+        "mean_test_mse": 0.06139134560119133,
+        "mean_gain_vs_ple_pct": 0.0,
+        "wins_vs_ple": 0
+      },
+      "schema_cv_median": {
+        "code_rbf": 0.3079075911076921,
+        "linear": 0.07916509424946416,
+        "mmpe_native": 1.2473029740667857e-16,
+        "mpe_corrupt": 1.1583537598071128e-16,
+        "mpe_native": 0.0,
+        "periodic": 0.25657897579810085,
+        "ple": 0.014619466983513879
+      }
+    },
+    "cycle": {
+      "code_rbf": {
+        "mean_test_mse": 4.416941614426646,
+        "mean_gain_vs_ple_pct": -198.5384978502572,
+        "wins_vs_ple": 0
+      },
+      "linear": {
+        "mean_test_mse": 1.0368907755200494,
+        "mean_gain_vs_ple_pct": 29.91924782505249,
+        "wins_vs_ple": 12
+      },
+      "mmpe_native": {
+        "mean_test_mse": 0.016997820169612998,
+        "mean_gain_vs_ple_pct": 98.8514225630903,
+        "wins_vs_ple": 12,
+        "mean_gain_vs_code_rbf_pct": 99.55616940641674,
+        "wins_vs_code_rbf": 12,
+        "mean_gain_vs_mpe_corrupt_pct": 99.37015811484413,
+        "wins_vs_mpe_corrupt": 12,
+        "mean_gain_vs_mpe_native_pct": -1.4920791397141775,
+        "wins_vs_mpe_native": 0
+      },
+      "mpe_corrupt": {
+        "mean_test_mse": 2.9787432482352965,
+        "mean_gain_vs_ple_pct": -101.2755342228675,
+        "wins_vs_ple": 0
+      },
+      "mpe_native": {
+        "mean_test_mse": 0.016747794862266966,
+        "mean_gain_vs_ple_pct": 98.86829216644924,
+        "wins_vs_ple": 12
+      },
+      "periodic": {
+        "mean_test_mse": 5.7640771324535365,
+        "mean_gain_vs_ple_pct": -284.51159779696906,
+        "wins_vs_ple": 0
+      },
+      "ple": {
+        "mean_test_mse": 1.4942110933264239,
+        "mean_gain_vs_ple_pct": 0.0,
+        "wins_vs_ple": 0
+      },
+      "schema_cv_median": {
+        "code_rbf": 0.6801965962725199,
+        "linear": 0.13007090235704763,
+        "mmpe_native": 0.0,
+        "mpe_corrupt": 0.0,
+        "mpe_native": 0.0,
+        "periodic": 0.6769956576397199,
+        "ple": 0.3162446171703456
+      }
+    },
+    "tree": {
+      "code_rbf": {
+        "mean_test_mse": 31.883190319883393,
+        "mean_gain_vs_ple_pct": -2052.3234850554204,
+        "wins_vs_ple": 0
+      },
+      "linear": {
+        "mean_test_mse": 1.766156691449612,
+        "mean_gain_vs_ple_pct": 14.176907590796937,
+        "wins_vs_ple": 10
+      },
+      "mmpe_native": {
+        "mean_test_mse": 1.1280285950100633,
+        "mean_gain_vs_ple_pct": 45.48608032529105,
+        "wins_vs_ple": 12,
+        "mean_gain_vs_code_rbf_pct": 77.82560575108344,
+        "wins_vs_code_rbf": 12,
+        "mean_gain_vs_mpe_corrupt_pct": 72.43766936515597,
+        "wins_vs_mpe_corrupt": 12,
+        "mean_gain_vs_mpe_native_pct": -17.81704180538193,
+        "wins_vs_mpe_native": 0
+      },
+      "mpe_corrupt": {
+        "mean_test_mse": 9.021553636144201,
+        "mean_gain_vs_ple_pct": -324.8926689314897,
+        "wins_vs_ple": 2
+      },
+      "mpe_native": {
+        "mean_test_mse": 0.955914859687366,
+        "mean_gain_vs_ple_pct": 53.65807918887585,
+        "wins_vs_ple": 12
+      },
+      "periodic": {
+        "mean_test_mse": 8.922574174385172,
+        "mean_gain_vs_ple_pct": -320.38090976070856,
+        "wins_vs_ple": 0
+      },
+      "ple": {
+        "mean_test_mse": 2.1018326971383794,
+        "mean_gain_vs_ple_pct": 0.0,
+        "wins_vs_ple": 0
+      },
+      "schema_cv_median": {
+        "code_rbf": 0.8825263097424279,
+        "linear": 0.07729984996048014,
+        "mmpe_native": 5.714521680699887e-17,
+        "mpe_corrupt": 0.0,
+        "mpe_native": 0.0,
+        "periodic": 0.8682448341759705,
+        "ple": 0.30431035338314344
+      }
+    },
+    "nominal": {
+      "code_rbf": {
+        "mean_test_mse": 0.06386085519737143,
+        "mean_gain_vs_ple_pct": 24.66536976159766,
+        "wins_vs_ple": 10
+      },
+      "linear": {
+        "mean_test_mse": 0.9323788881868219,
+        "mean_gain_vs_ple_pct": -1188.0467857981328,
+        "wins_vs_ple": 0
+      },
+      "mmpe_native": {
+        "mean_test_mse": 0.01671621617483929,
+        "mean_gain_vs_ple_pct": 77.64057547837159,
+        "wins_vs_ple": 12,
+        "mean_gain_vs_code_rbf_pct": 65.09110835475464,
+        "wins_vs_code_rbf": 12,
+        "mean_gain_vs_mpe_corrupt_pct": -7.308130117157774e-14,
+        "wins_vs_mpe_corrupt": 2,
+        "mean_gain_vs_mpe_native_pct": -7.308130117157774e-14,
+        "wins_vs_mpe_native": 2
+      },
+      "mpe_corrupt": {
+        "mean_test_mse": 0.01671621617483929,
+        "mean_gain_vs_ple_pct": 77.6405754783716,
+        "wins_vs_ple": 12
+      },
+      "mpe_native": {
+        "mean_test_mse": 0.01671621617483929,
+        "mean_gain_vs_ple_pct": 77.6405754783716,
+        "wins_vs_ple": 12
+      },
+      "periodic": {
+        "mean_test_mse": 0.08117377937699333,
+        "mean_gain_vs_ple_pct": -21.111724693067355,
+        "wins_vs_ple": 7
+      },
+      "ple": {
+        "mean_test_mse": 0.09669818245907637,
+        "mean_gain_vs_ple_pct": 0.0,
+        "wins_vs_ple": 0
+      },
+      "schema_cv_median": {
+        "code_rbf": 0.8658820796369177,
+        "linear": 0.08129263523128248,
+        "mmpe_native": 1.503233638048565e-16,
+        "mpe_corrupt": 1.2887693966072657e-16,
+        "mpe_native": 1.2887693966072657e-16,
+        "periodic": 0.9151659879191312,
+        "ple": 1.0142262929049446
+      }
+    }
+  },
+  "gates": {
+    "H1_interval_safety": true,
+    "H2_topology_interpolation": true,
+    "H2_by_domain": {
+      "cycle": true,
+      "tree": true
+    },
+    "H3_schema_stability": true,
+    "H3_schema_cv_reduction": {
+      "cycle": 1.0,
+      "tree": 0.9999999999999998
+    },
+    "H4_nominal_negative_control": false,
+    "H4_nominal_gain_vs_ple_pct": 77.64057547837159,
+    "H4_native_corrupt_absolute_mse_gap": 3.3682547491883006e-17,
+    "H5_multiscale_residual": false
+  },
+  "decision": "Primary protocol does not pass because the nominal negative control and multiscale residual fail. Retain single-scale MPE for information-equivalent basis diagnostics; do not attribute all gains to geometry."
+}

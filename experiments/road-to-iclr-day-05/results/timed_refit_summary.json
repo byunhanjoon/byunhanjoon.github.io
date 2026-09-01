@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "timed_cells": 12,
+  "fits_per_cell": 128,
+  "total_timed_fits": 1536,
+  "concurrent_process_cap": 4,
+  "exact_artifact_matches": 12,
+  "mismatches": [],
+  "model_family_timing": [
+    {
+      "model": "onehot_adam_mlp",
+      "cells": 4,
+      "median_end_to_end_seconds": 23.1246699700132,
+      "median_fit_loop_seconds": 23.010611302568577,
+      "median_fits_per_second": 7.795291933175946,
+      "maximum_end_to_end_seconds": 38.42497341707349
+    },
+    {
+      "model": "onehot_linear",
+      "cells": 4,
+      "median_end_to_end_seconds": 2.8181853760033846,
+      "median_fit_loop_seconds": 2.749504094477743,
+      "median_fits_per_second": 72.7591559779009,
+      "maximum_end_to_end_seconds": 4.516495569841936
+    },
+    {
+      "model": "ordinal_forest",
+      "cells": 4,
+      "median_end_to_end_seconds": 13.979284262517467,
+      "median_fit_loop_seconds": 13.90636687062215,
+      "median_fits_per_second": 9.498104270828337,
+      "maximum_end_to_end_seconds": 23.124850563937798
+    }
+  ],
+  "median_end_to_end_seconds_all_cells": 11.108617179561406,
+  "maximum_end_to_end_seconds_all_cells": 38.42497341707349,
+  "portable_runtime_claimed": false
+}

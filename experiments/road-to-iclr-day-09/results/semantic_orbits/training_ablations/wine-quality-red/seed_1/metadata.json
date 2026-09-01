@@ -1,0 +1,109 @@
+{
+  "config": "configs/semantic_orbit_training.yaml",
+  "config_sha256": "bd5f06720f80e30fecd21676a456332a420f51d9e32becacad9361111800a1fe",
+  "dataset_spec": {
+    "coerce_target_numeric": true,
+    "name": "wine-quality-red",
+    "openml_id": 40691,
+    "openml_version": 1,
+    "problem_type": "regression"
+  },
+  "device": "cuda:0",
+  "environment": {
+    "cuda_visible_devices": "1",
+    "gpu": "NVIDIA H100 NVL",
+    "packages": {
+      "numpy": "1.26.4",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.4.2",
+      "torch": "2.7.0"
+    },
+    "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+    "python": "3.10.16"
+  },
+  "experiment": "semantic_orbit_training_ablations",
+  "files": {
+    "metrics.csv": {
+      "bytes": 15448,
+      "sha256": "faed808b0b4f491c75063513b0ca9c403491618e56efc3538071705b54f77e19"
+    },
+    "predictions.csv.gz": {
+      "bytes": 164104,
+      "sha256": "b96c6f89064208e1183583ed27537d3453ecbebbab6f8a21e460f9a10dcb259d"
+    }
+  },
+  "git": {
+    "commit": "0c456660ae9a87aab7932b569e1954b0ee1d25fe",
+    "day09_status": "?? experiments/road-to-iclr-day-09/"
+  },
+  "inverse_audit_max_delta": 7.411375513299845e-08,
+  "method_telemetry": {
+    "canonical_only": {
+      "best_epoch": 81,
+      "best_validation_mse_normalized": 0.649569034576416,
+      "fit_seconds": 0.687238299055025,
+      "lambda": 0.0
+    },
+    "consistency_0.1": {
+      "best_epoch": 48,
+      "best_validation_mse_normalized": 0.6683434711562263,
+      "fit_seconds": 1.0679795241449028,
+      "lambda": 0.1
+    },
+    "consistency_1.0": {
+      "best_epoch": 52,
+      "best_validation_mse_normalized": 0.644215378496382,
+      "fit_seconds": 1.1543247338850051,
+      "lambda": 1.0
+    },
+    "dual_view": {
+      "best_epoch": 14,
+      "best_validation_mse_normalized": 0.6778213447994657,
+      "fit_seconds": 0.4160149139352143,
+      "lambda": 0.0
+    },
+    "generic_noise": {
+      "best_epoch": 52,
+      "best_validation_mse_normalized": 0.6470906734466553,
+      "fit_seconds": 0.4823030298575759,
+      "lambda": 0.0
+    },
+    "orbit_augmentation": {
+      "best_epoch": 47,
+      "best_validation_mse_normalized": 0.6615867018699646,
+      "fit_seconds": 0.7552378959953785,
+      "lambda": 0.0
+    },
+    "raw": {
+      "best_epoch": 81,
+      "best_validation_mse_normalized": 0.649569034576416,
+      "fit_seconds": 0.6731731928884983,
+      "lambda": 0.0
+    }
+  },
+  "methods": [
+    "raw",
+    "generic_noise",
+    "orbit_augmentation",
+    "consistency_0.1",
+    "consistency_1.0",
+    "canonical_only",
+    "dual_view"
+  ],
+  "model_seed": 1,
+  "preprocessing": {
+    "continuous_missing": "training median before orbit construction",
+    "imputed_columns": {}
+  },
+  "protocol_version": 1,
+  "representation_count_per_method": 9,
+  "split_audit": {
+    "target_sha256": "9eaf7abc1cbb52dfb12e108e5f96648fafc016832b0c5fc88a2ac2642bb4d039",
+    "test_row_order_sha256": "6fc7a71b741cf66ed621e3761cf06302ac8b74bf22f8e82c7e2aa9ec3ac13b2f",
+    "train_test_disjoint": true,
+    "train_validation_disjoint": true,
+    "validation_test_disjoint": true
+  },
+  "status": "complete",
+  "wall_seconds": 5.451721668243408
+}

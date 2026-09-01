@@ -1,0 +1,28 @@
+{
+  "status": "complete",
+  "hypothesis": "H2_PRECISION_DELAY",
+  "dataset": "bank_marketing_subscription",
+  "task": "classification",
+  "model": "resnet",
+  "seed": 7101,
+  "paths": 12,
+  "total_fit_seconds": 11.86796160438098,
+  "path_wall_seconds": [
+    1.0370604211930186,
+    0.9922010311856866,
+    0.9938487410545349,
+    0.9908012261148542,
+    0.9982172609306872,
+    1.0065874559804797,
+    0.9588339738547802,
+    0.9492431450635195,
+    0.9603436859324574,
+    0.9918728480115533,
+    0.98700354504399,
+    1.0019482700154185
+  ],
+  "config_sha256": "ee8c1b920488014c07f677d532edea1da91c24eae7c63c87415f1606768c3ffc",
+  "protocol_sha256": "83478c18069d5e4fb490c90b8fccd8ae538364ddc8e0e38595630d9f37703f8e",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0"
+}

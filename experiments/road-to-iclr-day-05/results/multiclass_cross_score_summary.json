@@ -1,0 +1,61 @@
+{
+  "status": "complete",
+  "draws_per_dataset": 1024,
+  "classes": {
+    "openml-vehicle-54": 4,
+    "openml-segment-36": 7
+  },
+  "cover_lower_rmse_candidate_cells": 6,
+  "candidate_cells": 6,
+  "source_mean_rmse": [
+    {
+      "dataset": "openml-segment-36",
+      "iid_u32": 0.0006729310338623057,
+      "strength2_cross32": 0.0005472102100923403
+    },
+    {
+      "dataset": "openml-vehicle-54",
+      "iid_u32": 0.004402253896906907,
+      "strength2_cross32": 0.0027541417722518596
+    }
+  ],
+  "max_absolute_cover_standardized_bias": 0.42391390527093437,
+  "selection_means": [
+    {
+      "method": "iid_cross32",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_quotient_test_loss": 0.1736699004382802
+    },
+    {
+      "method": "iid_mean32",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_quotient_test_loss": 0.1736699004382802
+    },
+    {
+      "method": "iid_u32",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_quotient_test_loss": 0.1736699004382802
+    },
+    {
+      "method": "strength2_cross32",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_quotient_test_loss": 0.1736699004382802
+    },
+    {
+      "method": "strength2_mean32",
+      "selection_agreement": 1.0,
+      "validation_quotient_regret": 0.0,
+      "selected_quotient_test_loss": 0.1736699004382802
+    }
+  ],
+  "clauses": {
+    "cover_lower_rmse_candidate_cells_at_least_4_of_6": true,
+    "cover_lower_rmse_both_source_means": true,
+    "all_cover_standardized_bias_within_3": true
+  },
+  "frozen_gate_passed": true
+}

@@ -1,0 +1,27 @@
+{
+  "task_id": "residual-202611001",
+  "symbolic": {
+    "task_id": "program-202611001",
+    "seed": 202611001,
+    "program": {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "subtract",
+          "left": 2,
+          "right": 1
+        }
+      ],
+      "output": 4,
+      "output_scale": 1.0,
+      "output_bias": 0.0,
+      "epsilon": 0.25
+    },
+    "n_irrelevant": 0,
+    "generation_attempt": 0,
+    "expression": "subtract(x2, x1)"
+  },
+  "residual_mean": 0.27803948521614075,
+  "residual_scale": 0.7641381025314331,
+  "symbolic_scale": 1.6440502405166626
+}

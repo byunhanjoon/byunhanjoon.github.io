@@ -1,0 +1,5 @@
+method,track,median_disagreement,median_disagreement_reduction,median_relative_task_change,median_task_error,median_predictive_rank,mean_predictive_rank,median_worst_orbit_gain,failure_fraction,paper_method_score,wins,ties,losses,units,model_families,datasets,runtime_seconds,performance_preserving_eligible,pareto_frontier
+Raw+GramAnchor-m8@0.5,hybrid_prediction_mixture,0.06968785227585834,0.5000000000000002,-0.00981561813480295,26.34666141643273,11.5,14.033333333333333,0.0322312813122927,0.0,0.5000000000000002,65,0,25,90,5,6,0.0,True,True
+Raw+GramAnchor-m8@0.75,hybrid_prediction_mixture,0.034843926137929096,0.7500000000000002,-0.00486893336438625,26.07037555688367,18.0,17.244444444444444,0.03593743594310425,0.0,0.7500000000000002,53,0,37,90,5,6,0.0,True,True
+GramAnchor,representation,0.0,1.0,0.0035490298483863,26.88406845454818,25.5,23.844444444444445,0.033794823048074296,0.0,0.9822548507580685,40,0,50,90,5,6,56.98379283817485,True,True
+Raw+GramAnchor@1,hybrid_prediction_mixture,0.0,1.0,0.0035490298483863,26.88406845454818,25.5,23.844444444444445,0.033794823048074296,0.0,0.9822548507580685,40,0,50,90,5,6,0.0,True,True

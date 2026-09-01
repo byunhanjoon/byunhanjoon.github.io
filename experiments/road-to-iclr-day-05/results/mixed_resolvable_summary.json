@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "randomized_resolutions": 4096,
+  "cosets": 8,
+  "each_coset_strength2": true,
+  "cosets_partition_full_product": true,
+  "max_ratio_formula_error": 2.220446049250313e-16,
+  "real_full_product_candidates": 23,
+  "full_pack_max_risk": 0.0,
+  "ratios_by_covers": {
+    "1": 1.0,
+    "2": 0.8571428571428572,
+    "4": 0.5714285714285714,
+    "8": 0.0
+  },
+  "panel_graph_comparison": [
+    {
+      "panel": "confirmation",
+      "candidates": 10,
+      "resolvable_risk": 1.611483451803607e-05,
+      "graph_risk": 1.574443980441893e-05,
+      "candidate_wins": 0,
+      "resolvable_beats_graph": false
+    },
+    {
+      "panel": "menu_repeat",
+      "candidates": 5,
+      "resolvable_risk": 6.104121349003565e-06,
+      "graph_risk": 5.792839856336781e-06,
+      "candidate_wins": 1,
+      "resolvable_beats_graph": false
+    },
+    {
+      "panel": "openml_taskbalanced",
+      "candidates": 3,
+      "resolvable_risk": 5.291335159368754e-05,
+      "graph_risk": 5.067985756736994e-05,
+      "candidate_wins": 1,
+      "resolvable_beats_graph": false
+    },
+    {
+      "panel": "subsample_repeat",
+      "candidates": 5,
+      "resolvable_risk": 6.417388286777433e-06,
+      "graph_risk": 6.024414153493597e-06,
+      "candidate_wins": 0,
+      "resolvable_beats_graph": false
+    }
+  ],
+  "candidate_wins_vs_graph64": 2,
+  "component_comparison": [
+    {
+      "component": "feature:category:class",
+      "resolvable_pack64_coefficient": 0.015873015873015876,
+      "graph_pack64_coefficient": 0.0149657249450683,
+      "resolvable_minus_graph": 0.0009072909279475763,
+      "preferred_operator": "graph"
+    },
+    {
+      "component": "feature:category:seed",
+      "resolvable_pack64_coefficient": 0.015873015873015883,
+      "graph_pack64_coefficient": 0.0146508998870849,
+      "resolvable_minus_graph": 0.001222115985930982,
+      "preferred_operator": "graph"
+    },
+    {
+      "component": "feature:class:seed",
+      "resolvable_pack64_coefficient": 0.01587301587301588,
+      "graph_pack64_coefficient": 0.0149041175842285,
+      "resolvable_minus_graph": 0.0009688982887873787,
+      "preferred_operator": "graph"
+    },
+    {
+      "component": "category:class:seed",
+      "resolvable_pack64_coefficient": 0.015873015873015872,
+      "graph_pack64_coefficient": 0.014951057434082,
+      "resolvable_minus_graph": 0.0009219584389338724,
+      "preferred_operator": "graph"
+    },
+    {
+      "component": "feature:category:class:seed",
+      "resolvable_pack64_coefficient": 0.005291005291005291,
+      "graph_pack64_coefficient": 0.0073852462768554,
+      "resolvable_minus_graph": -0.0020942409858501097,
+      "preferred_operator": "resolvable"
+    }
+  ],
+  "components_preferring_graph": 4,
+  "components_preferring_resolution": 1,
+  "construction_gate_passed": true,
+  "stronger_empirical_gate_passed": false
+}

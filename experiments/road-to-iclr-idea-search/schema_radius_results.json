@@ -1,0 +1,656 @@
+{
+  "estimand": "supremum over all chart probability weights of aligned squared prediction variance",
+  "warning": "the radius removes dependence on chart weights but can emphasize a small set of extreme representatives; uniform product measures remain necessary for factor ANOVA",
+  "analyses": [
+    {
+      "name": "Adult MLP (32 seeds)",
+      "charts": [
+        "local",
+        "cumulative",
+        "cumulative_standardized",
+        "path_spectral",
+        "whitened"
+      ],
+      "persistent_mean_predictor": {
+        "uniform_schema_risk": 0.000248563105964994,
+        "worst_distribution_schema_radius_squared": 0.0002918987468857326,
+        "radius_over_uniform_ratio": 1.1743446226763907,
+        "max_pair_distance_squared": 0.001152677189052542,
+        "optimal_weights": [
+          0.0,
+          0.44856823996242834,
+          0.10352929811578378,
+          0.01613428329806208,
+          0.4317681786237258
+        ],
+        "active_weight_count": 4,
+        "minimum_enclosing_ball_max_distance_squared": 0.0002918988770571587,
+        "duality_absolute_error": 1.3017142610127416e-10,
+        "member_distance_squared_to_robust_center": [
+          0.00025443712389071815,
+          0.00029189877901349853,
+          0.0002918988593062372,
+          0.0002918988770571587,
+          0.00029189868168739703
+        ]
+      },
+      "split_half_persistent": [
+        {
+          "uniform_schema_risk": 0.0002846633149562461,
+          "worst_distribution_schema_radius_squared": 0.00034697903864922,
+          "radius_over_uniform_ratio": 1.2189102719560196,
+          "max_pair_distance_squared": 0.0013864702842846376,
+          "optimal_weights": [
+            0.0,
+            0.48908995187463766,
+            0.03321822801393664,
+            4.328884535936792e-19,
+            0.47769182011142575
+          ],
+          "active_weight_count": 3,
+          "minimum_enclosing_ball_max_distance_squared": 0.0003469793906321364,
+          "duality_absolute_error": 3.519829164461488e-10,
+          "member_distance_squared_to_robust_center": [
+            0.0003373222034605381,
+            0.000346978676022679,
+            0.00034697931613881394,
+            0.00031285886349473205,
+            0.0003469793906321364
+          ]
+        },
+        {
+          "uniform_schema_risk": 0.0002866932820385637,
+          "worst_distribution_schema_radius_squared": 0.0003280940730785442,
+          "radius_over_uniform_ratio": 1.1444079566343366,
+          "max_pair_distance_squared": 0.0012460138251459715,
+          "optimal_weights": [
+            2.163189225859883e-18,
+            0.32607696438034156,
+            0.16009359838834092,
+            0.12434121586457075,
+            0.3894882213667468
+          ],
+          "active_weight_count": 4,
+          "minimum_enclosing_ball_max_distance_squared": 0.00032809422010860194,
+          "duality_absolute_error": 1.4703005772522676e-10,
+          "member_distance_squared_to_robust_center": [
+            0.0002662077216065555,
+            0.0003280940022284266,
+            0.00032809422010860194,
+            0.00032809413744122373,
+            0.0003280940514118557
+          ]
+        }
+      ],
+      "same_seed_conditional": {
+        "uniform_schema_risk": {
+          "mean": 0.0012527417810449804,
+          "minimum": 0.0005452155273566461,
+          "maximum": 0.0018387458595779949
+        },
+        "worst_distribution_schema_radius_squared": {
+          "mean": 0.0014318344439565554,
+          "minimum": 0.0006237684115164566,
+          "maximum": 0.0020372830107324713
+        },
+        "radius_over_uniform_ratio": {
+          "mean": 1.1467902378167676,
+          "minimum": 1.02244315245082,
+          "maximum": 1.33135317672237
+        },
+        "active_weight_count": {
+          "mean": 4.0,
+          "minimum": 3.0,
+          "maximum": 5.0
+        },
+        "duality_absolute_error": {
+          "mean": 4.991612341834987e-10,
+          "minimum": 1.6263032587282567e-18,
+          "maximum": 4.197298057728727e-09
+        },
+        "optimal_weight_by_chart": {
+          "local": {
+            "mean": 0.09734421948757735,
+            "standard_deviation": 0.11212108761679906
+          },
+          "cumulative": {
+            "mean": 0.24539725323378392,
+            "standard_deviation": 0.14039330908490613
+          },
+          "cumulative_standardized": {
+            "mean": 0.2433010565689117,
+            "standard_deviation": 0.10359904799177994
+          },
+          "path_spectral": {
+            "mean": 0.08858165915635245,
+            "standard_deviation": 0.11921565017416669
+          },
+          "whitened": {
+            "mean": 0.3253758115533746,
+            "standard_deviation": 0.07744108674486867
+          }
+        }
+      }
+    },
+    {
+      "name": "Adult ResNet (16 seeds)",
+      "charts": [
+        "local",
+        "cumulative",
+        "cumulative_standardized",
+        "path_spectral",
+        "whitened"
+      ],
+      "persistent_mean_predictor": {
+        "uniform_schema_risk": 0.0003112338958751737,
+        "worst_distribution_schema_radius_squared": 0.0003336213056327475,
+        "radius_over_uniform_ratio": 1.0719311426367026,
+        "max_pair_distance_squared": 0.001067142508640416,
+        "optimal_weights": [
+          0.20515767626202544,
+          0.2508746032234727,
+          0.2496295513560535,
+          0.0,
+          0.29433816915844835
+        ],
+        "active_weight_count": 4,
+        "minimum_enclosing_ball_max_distance_squared": 0.0003336216404651663,
+        "duality_absolute_error": 3.348324187899855e-10,
+        "member_distance_squared_to_robust_center": [
+          0.00033362087063968363,
+          0.00033362114408252595,
+          0.0003336216404651663,
+          0.0003185334390751406,
+          0.0003336214625510201
+        ]
+      },
+      "split_half_persistent": [
+        {
+          "uniform_schema_risk": 0.000492026096121978,
+          "worst_distribution_schema_radius_squared": 0.0005195514414771951,
+          "radius_over_uniform_ratio": 1.0559428566333469,
+          "max_pair_distance_squared": 0.00161715069819352,
+          "optimal_weights": [
+            0.20852842612937125,
+            0.24899958249673418,
+            0.22600189940092852,
+            1.548278354992599e-18,
+            0.3164700919729661
+          ],
+          "active_weight_count": 4,
+          "minimum_enclosing_ball_max_distance_squared": 0.0005195514419347706,
+          "duality_absolute_error": 4.575754922533926e-13,
+          "member_distance_squared_to_robust_center": [
+            0.0005195514412733093,
+            0.0005195514419347706,
+            0.0005195514414216755,
+            0.0005135586360689575,
+            0.000519551441291705
+          ]
+        },
+        {
+          "uniform_schema_risk": 0.0003956351989650164,
+          "worst_distribution_schema_radius_squared": 0.0004127596625164154,
+          "radius_over_uniform_ratio": 1.0432834681954402,
+          "max_pair_distance_squared": 0.0013381900227130744,
+          "optimal_weights": [
+            0.1280238783059438,
+            0.23794523927213,
+            0.21052565750364155,
+            0.1215254049068797,
+            0.3019798200114049
+          ],
+          "active_weight_count": 5,
+          "minimum_enclosing_ball_max_distance_squared": 0.00041275966251837687,
+          "duality_absolute_error": 1.9614843603521503e-15,
+          "member_distance_squared_to_robust_center": [
+            0.00041275966251599834,
+            0.00041275966251837687,
+            0.0004127596625166571,
+            0.000412759662516516,
+            0.000412759662514762
+          ]
+        }
+      ],
+      "same_seed_conditional": {
+        "uniform_schema_risk": {
+          "mean": 0.0024176489765217607,
+          "minimum": 0.0016186949522480898,
+          "maximum": 0.003401930980180712
+        },
+        "worst_distribution_schema_radius_squared": {
+          "mean": 0.002677848271183579,
+          "minimum": 0.0017818404720132408,
+          "maximum": 0.003559910269607447
+        },
+        "radius_over_uniform_ratio": {
+          "mean": 1.1119818345153183,
+          "minimum": 1.026305483799249,
+          "maximum": 1.2521988463260496
+        },
+        "active_weight_count": {
+          "mean": 4.25,
+          "minimum": 3.0,
+          "maximum": 5.0
+        },
+        "duality_absolute_error": {
+          "mean": 8.420341133201633e-10,
+          "minimum": 8.239936510889834e-17,
+          "maximum": 2.6830639012626056e-09
+        },
+        "optimal_weight_by_chart": {
+          "local": {
+            "mean": 0.10439702865251481,
+            "standard_deviation": 0.14694892772876741
+          },
+          "cumulative": {
+            "mean": 0.18728309457196055,
+            "standard_deviation": 0.11994283848061398
+          },
+          "cumulative_standardized": {
+            "mean": 0.22844762945004563,
+            "standard_deviation": 0.10508967547413368
+          },
+          "path_spectral": {
+            "mean": 0.19333603890212783,
+            "standard_deviation": 0.11642329780520101
+          },
+          "whitened": {
+            "mean": 0.28653620842335126,
+            "standard_deviation": 0.08860346376144135
+          }
+        }
+      }
+    },
+    {
+      "name": "Diamond MLP (16 seeds)",
+      "charts": [
+        "local",
+        "cumulative",
+        "cumulative_standardized",
+        "path_spectral",
+        "whitened"
+      ],
+      "persistent_mean_predictor": {
+        "uniform_schema_risk": 0.00022144276089386405,
+        "worst_distribution_schema_radius_squared": 0.0002594052409041758,
+        "radius_over_uniform_ratio": 1.1714324724686165,
+        "max_pair_distance_squared": 0.0010356082059837946,
+        "optimal_weights": [
+          2.590329915113825e-18,
+          0.4710832814737561,
+          5.049347989737373e-19,
+          0.044233225715402044,
+          0.484683492810842
+        ],
+        "active_weight_count": 3,
+        "minimum_enclosing_ball_max_distance_squared": 0.00025940524729920524,
+        "duality_absolute_error": 6.395029417041037e-12,
+        "member_distance_squared_to_robust_center": [
+          0.00024826968328169817,
+          0.0002594052345072893,
+          0.0002554504549598605,
+          0.00025940523896001805,
+          0.00025940524729920524
+        ]
+      },
+      "split_half_persistent": [
+        {
+          "uniform_schema_risk": 0.0002649471379462254,
+          "worst_distribution_schema_radius_squared": 0.0002984635841236649,
+          "radius_over_uniform_ratio": 1.126502390013521,
+          "max_pair_distance_squared": 0.0011697578962888051,
+          "optimal_weights": [
+            0.123478326636641,
+            0.41355480506580816,
+            0.06260074525097845,
+            6.035863907106493e-19,
+            0.40036612304657243
+          ],
+          "active_weight_count": 4,
+          "minimum_enclosing_ball_max_distance_squared": 0.00029846358412389417,
+          "duality_absolute_error": 2.292545493720599e-16,
+          "member_distance_squared_to_robust_center": [
+            0.0002984635841238586,
+            0.00029846358412389417,
+            0.00029846358412296647,
+            0.00025608951421267313,
+            0.00029846358412292045
+          ]
+        },
+        {
+          "uniform_schema_risk": 0.0002510095808686552,
+          "worst_distribution_schema_radius_squared": 0.00028713658538437326,
+          "radius_over_uniform_ratio": 1.1439267951075625,
+          "max_pair_distance_squared": 0.0011155135909544968,
+          "optimal_weights": [
+            0.0,
+            0.38953618825780606,
+            0.007804202366933129,
+            0.15425020831834718,
+            0.44840940105691374
+          ],
+          "active_weight_count": 4,
+          "minimum_enclosing_ball_max_distance_squared": 0.0002871366719597714,
+          "duality_absolute_error": 8.657539816341389e-11,
+          "member_distance_squared_to_robust_center": [
+            0.0002706257561194561,
+            0.0002871365423972924,
+            0.00028713632864021645,
+            0.0002871364552532003,
+            0.0002871366719597714
+          ]
+        }
+      ],
+      "same_seed_conditional": {
+        "uniform_schema_risk": {
+          "mean": 0.0008487510258846503,
+          "minimum": 0.000561968148308778,
+          "maximum": 0.0011067431155977747
+        },
+        "worst_distribution_schema_radius_squared": {
+          "mean": 0.0009349016334204777,
+          "minimum": 0.0006484201211300888,
+          "maximum": 0.0012057979862440948
+        },
+        "radius_over_uniform_ratio": {
+          "mean": 1.107364217902414,
+          "minimum": 1.0094165504148658,
+          "maximum": 1.246930015611131
+        },
+        "active_weight_count": {
+          "mean": 4.5,
+          "minimum": 3.0,
+          "maximum": 5.0
+        },
+        "duality_absolute_error": {
+          "mean": 2.9477907162217716e-10,
+          "minimum": 5.106592232406726e-16,
+          "maximum": 2.127815790426736e-09
+        },
+        "optimal_weight_by_chart": {
+          "local": {
+            "mean": 0.09132781934584938,
+            "standard_deviation": 0.10435337178610668
+          },
+          "cumulative": {
+            "mean": 0.2705859201056259,
+            "standard_deviation": 0.12262172701288028
+          },
+          "cumulative_standardized": {
+            "mean": 0.21377604720838378,
+            "standard_deviation": 0.10091356900614955
+          },
+          "path_spectral": {
+            "mean": 0.12726842026300594,
+            "standard_deviation": 0.10118597142788856
+          },
+          "whitened": {
+            "mean": 0.297041793077135,
+            "standard_deviation": 0.09206144600419501
+          }
+        }
+      }
+    },
+    {
+      "name": "Diamond ResNet (16 seeds)",
+      "charts": [
+        "local",
+        "cumulative",
+        "cumulative_standardized",
+        "path_spectral",
+        "whitened"
+      ],
+      "persistent_mean_predictor": {
+        "uniform_schema_risk": 0.0002954654895992448,
+        "worst_distribution_schema_radius_squared": 0.0003578629432026137,
+        "radius_over_uniform_ratio": 1.2111835588244224,
+        "max_pair_distance_squared": 0.0013917010408185124,
+        "optimal_weights": [
+          0.004754745589328627,
+          0.4624825387809524,
+          0.16764513787370197,
+          0.0,
+          0.36511757775601705
+        ],
+        "active_weight_count": 4,
+        "minimum_enclosing_ball_max_distance_squared": 0.00035786348053926857,
+        "duality_absolute_error": 5.373366548802952e-10,
+        "member_distance_squared_to_robust_center": [
+          0.00035786149106680333,
+          0.00035786296548232893,
+          0.00035786348053926857,
+          0.0003524036354178474,
+          0.00035786268717230227
+        ]
+      },
+      "split_half_persistent": [
+        {
+          "uniform_schema_risk": 0.00038523892568087525,
+          "worst_distribution_schema_radius_squared": 0.0004352334099644306,
+          "radius_over_uniform_ratio": 1.1297752665964234,
+          "max_pair_distance_squared": 0.0015300477318561424,
+          "optimal_weights": [
+            0.15371356259232496,
+            0.3791708091093028,
+            0.1809555220106059,
+            0.0,
+            0.28616010628776645
+          ],
+          "active_weight_count": 4,
+          "minimum_enclosing_ball_max_distance_squared": 0.0004352334200162921,
+          "duality_absolute_error": 1.0051861469920209e-11,
+          "member_distance_squared_to_robust_center": [
+            0.0004352334167562428,
+            0.0004352333963473643,
+            0.0004352334200162921,
+            0.000385516159220295,
+            0.00043523341800252017
+          ]
+        },
+        {
+          "uniform_schema_risk": 0.000390182084600843,
+          "worst_distribution_schema_radius_squared": 0.00044977964273651416,
+          "radius_over_uniform_ratio": 1.1527429384581804,
+          "max_pair_distance_squared": 0.0016986032784492386,
+          "optimal_weights": [
+            0.0003057965056851345,
+            0.4426156275897621,
+            0.2125605712941263,
+            0.013731730533563156,
+            0.3307862740768633
+          ],
+          "active_weight_count": 5,
+          "minimum_enclosing_ball_max_distance_squared": 0.00044977968666880263,
+          "duality_absolute_error": 4.393228847116709e-11,
+          "member_distance_squared_to_robust_center": [
+            0.00044977960779436093,
+            0.0004497795975183454,
+            0.0004497796703607043,
+            0.00044977961507590035,
+            0.00044977968666880263
+          ]
+        }
+      ],
+      "same_seed_conditional": {
+        "uniform_schema_risk": {
+          "mean": 0.0018420893934596172,
+          "minimum": 0.001410101816190057,
+          "maximum": 0.002232651691552179
+        },
+        "worst_distribution_schema_radius_squared": {
+          "mean": 0.0019150330832640797,
+          "minimum": 0.0014318924206080386,
+          "maximum": 0.002333533711985636
+        },
+        "radius_over_uniform_ratio": {
+          "mean": 1.043263114053089,
+          "minimum": 1.004707961269256,
+          "maximum": 1.141799698612081
+        },
+        "active_weight_count": {
+          "mean": 4.8125,
+          "minimum": 4.0,
+          "maximum": 5.0
+        },
+        "duality_absolute_error": {
+          "mean": 7.825987895107665e-11,
+          "minimum": 4.2891037943526555e-16,
+          "maximum": 7.117724372136119e-10
+        },
+        "optimal_weight_by_chart": {
+          "local": {
+            "mean": 0.17678399698929265,
+            "standard_deviation": 0.06455165373980881
+          },
+          "cumulative": {
+            "mean": 0.23537167285705118,
+            "standard_deviation": 0.07421442575482667
+          },
+          "cumulative_standardized": {
+            "mean": 0.19971023921164535,
+            "standard_deviation": 0.0979221558344702
+          },
+          "path_spectral": {
+            "mean": 0.15134450522876922,
+            "standard_deviation": 0.09429923180569622
+          },
+          "whitened": {
+            "mean": 0.2367895857132416,
+            "standard_deviation": 0.07614823938012472
+          }
+        }
+      }
+    },
+    {
+      "name": "Black Friday MLP (16 seeds)",
+      "charts": [
+        "local",
+        "cumulative",
+        "cumulative_standardized",
+        "path_spectral",
+        "whitened"
+      ],
+      "persistent_mean_predictor": {
+        "uniform_schema_risk": 0.000737576407777496,
+        "worst_distribution_schema_radius_squared": 0.0008548537044077431,
+        "radius_over_uniform_ratio": 1.1590035898567217,
+        "max_pair_distance_squared": 0.0033210950333450815,
+        "optimal_weights": [
+          0.08383316476033659,
+          0.35424603815478,
+          4.280296340875548e-18,
+          0.10437614872890355,
+          0.45754464835597997
+        ],
+        "active_weight_count": 4,
+        "minimum_enclosing_ball_max_distance_squared": 0.0008548550212587584,
+        "duality_absolute_error": 1.316851015275948e-09,
+        "member_distance_squared_to_robust_center": [
+          0.0008548550212587584,
+          0.0008548534132291318,
+          0.0006746488754206426,
+          0.0008548539108531807,
+          0.0008548536414740453
+        ]
+      },
+      "split_half_persistent": [
+        {
+          "uniform_schema_risk": 0.0010928236002613056,
+          "worst_distribution_schema_radius_squared": 0.001179304662818459,
+          "radius_over_uniform_ratio": 1.079135427288059,
+          "max_pair_distance_squared": 0.004214954154113939,
+          "optimal_weights": [
+            0.1801071755747731,
+            0.2484067212058871,
+            0.0,
+            0.15329260670261097,
+            0.4181934965167287
+          ],
+          "active_weight_count": 4,
+          "minimum_enclosing_ball_max_distance_squared": 0.0011793046629197418,
+          "duality_absolute_error": 1.0128291434707837e-13,
+          "member_distance_squared_to_robust_center": [
+            0.0011793046629107432,
+            0.0011793046629197418,
+            0.001166247320410713,
+            0.001179304662919395,
+            0.001179304662681187
+          ]
+        },
+        {
+          "uniform_schema_risk": 0.0009293136978161254,
+          "worst_distribution_schema_radius_squared": 0.000986312291477276,
+          "radius_over_uniform_ratio": 1.0613340724397977,
+          "max_pair_distance_squared": 0.003674040796430643,
+          "optimal_weights": [
+            0.18363892793629372,
+            0.2896213110757138,
+            0.11646226742241055,
+            0.042236560039078865,
+            0.3680409335265031
+          ],
+          "active_weight_count": 5,
+          "minimum_enclosing_ball_max_distance_squared": 0.0009863122914773868,
+          "duality_absolute_error": 1.1080546202801855e-16,
+          "member_distance_squared_to_robust_center": [
+            0.000986312291477374,
+            0.0009863122914773868,
+            0.0009863122914772126,
+            0.000986312291477169,
+            0.0009863122914770578
+          ]
+        }
+      ],
+      "same_seed_conditional": {
+        "uniform_schema_risk": {
+          "mean": 0.004566960816311895,
+          "minimum": 0.0036943882203701595,
+          "maximum": 0.005553709422757569
+        },
+        "worst_distribution_schema_radius_squared": {
+          "mean": 0.004776915589915838,
+          "minimum": 0.004029465875398652,
+          "maximum": 0.005637078510868032
+        },
+        "radius_over_uniform_ratio": {
+          "mean": 1.0479093728593663,
+          "minimum": 1.0081220152964943,
+          "maximum": 1.1166391115771765
+        },
+        "active_weight_count": {
+          "mean": 4.875,
+          "minimum": 4.0,
+          "maximum": 5.0
+        },
+        "duality_absolute_error": {
+          "mean": 6.605735431309406e-10,
+          "minimum": 8.569533971325427e-16,
+          "maximum": 3.5164389811451202e-09
+        },
+        "optimal_weight_by_chart": {
+          "local": {
+            "mean": 0.16429659721311338,
+            "standard_deviation": 0.09880120026043707
+          },
+          "cumulative": {
+            "mean": 0.16672143272431222,
+            "standard_deviation": 0.07586195124901861
+          },
+          "cumulative_standardized": {
+            "mean": 0.22416261227226864,
+            "standard_deviation": 0.07229863402458313
+          },
+          "path_spectral": {
+            "mean": 0.16681414688418528,
+            "standard_deviation": 0.08192660301596975
+          },
+          "whitened": {
+            "mean": 0.2780052109061205,
+            "standard_deviation": 0.04641871320775358
+          }
+        }
+      }
+    }
+  ]
+}

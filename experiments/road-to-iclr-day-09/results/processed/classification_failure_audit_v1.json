@@ -1,0 +1,190 @@
+{
+  "bootstrap_replicates": 20000,
+  "comparisons": {
+    "auc": {
+      "ci_high": 0.004641568787005656,
+      "ci_low": -0.0033721400271147853,
+      "gain": 0.0002854536431805644,
+      "per_dataset_gain": {
+        "APSFailure": 0.0010912698412698485,
+        "adult": -0.005159730979403104,
+        "bank-marketing": 0.0011356932153392216,
+        "churn": 0.014175622171945708,
+        "credit_card_clients_default": -0.0007410714285714576,
+        "diabetes": -0.007275769745649285,
+        "heloc": 0.0022510398825544677,
+        "higgs-small": -1.7345168860323037e-05,
+        "seismic-bumps": -0.0028906249999999982
+      }
+    },
+    "brier": {
+      "ci_high": 0.001285406646418084,
+      "ci_low": -0.0013225485460812401,
+      "gain": -0.00010150202780239139,
+      "per_dataset_gain": {
+        "APSFailure": 0.00024319202670033366,
+        "adult": -0.000549308173247137,
+        "bank-marketing": -0.00025564783283660785,
+        "churn": 0.004379547278834854,
+        "credit_card_clients_default": -0.0007602238712813416,
+        "diabetes": -0.0034494166913449052,
+        "heloc": -0.00047788021819591476,
+        "higgs-small": 0.0001530308362159167,
+        "seismic-bumps": -0.00019681160506672003
+      }
+    },
+    "calibration_bias_abs": {
+      "ci_high": 0.0002464345160461209,
+      "ci_low": -0.0013159576912713323,
+      "gain": -0.0005251605596580697,
+      "per_dataset_gain": {
+        "APSFailure": -0.0004045595731041486,
+        "adult": -0.0013942241076941755,
+        "bank-marketing": 3.593261136572226e-05,
+        "churn": -0.0019707221161755265,
+        "credit_card_clients_default": 0.00017273139705941966,
+        "diabetes": 0.0005208826509577866,
+        "heloc": -0.002178041559303319,
+        "higgs-small": 0.0006887060043222208,
+        "seismic-bumps": -0.000197150344350607
+      }
+    },
+    "ece10": {
+      "ci_high": 0.004118558420402275,
+      "ci_low": -0.0004854973863925156,
+      "gain": 0.0017815144174069626,
+      "per_dataset_gain": {
+        "APSFailure": 8.96186973620656e-05,
+        "adult": -0.001051120650239785,
+        "bank-marketing": 0.003553087640978519,
+        "churn": 0.0038019684647449346,
+        "credit_card_clients_default": 0.0008310814953259658,
+        "diabetes": 0.005157884991596727,
+        "heloc": 0.00022619625123196946,
+        "higgs-small": 0.004667578253045176,
+        "seismic-bumps": -0.0012426653873829079
+      }
+    },
+    "log_loss": {
+      "ci_high": 0.003252032093178812,
+      "ci_low": -0.003075639297110129,
+      "gain": -0.0002663499600523572,
+      "per_dataset_gain": {
+        "APSFailure": 0.00020582262124963727,
+        "adult": -0.0013532701225471334,
+        "bank-marketing": -0.0011774743165956156,
+        "churn": 0.011506594298788034,
+        "credit_card_clients_default": -0.0017953860153758576,
+        "diabetes": -0.007355258839821073,
+        "heloc": -0.001195516462664728,
+        "higgs-small": 0.00023034649148134524,
+        "seismic-bumps": -0.0014630072949858256
+      }
+    },
+    "nll_bottom_90pct": {
+      "ci_high": 0.006788082452748598,
+      "ci_low": -0.0018437943397550589,
+      "gain": 0.002051728395413972,
+      "per_dataset_gain": {
+        "APSFailure": 0.0002730724944691047,
+        "adult": 0.005358796540545163,
+        "bank-marketing": 0.0007497489043767729,
+        "churn": 0.01826762946759991,
+        "credit_card_clients_default": 0.001387060185077065,
+        "diabetes": -0.0006498954535471613,
+        "heloc": 1.5536837628318813e-05,
+        "higgs-small": -0.007974757679934602,
+        "seismic-bumps": 0.0010383642625111768
+      }
+    },
+    "nll_over_2_rate": {
+      "ci_high": -0.0008825231481481481,
+      "ci_low": -0.0037724247685185183,
+      "gain": -0.0022750289351851855,
+      "per_dataset_gain": {
+        "APSFailure": 0.000390625,
+        "adult": -0.005240885416666666,
+        "bank-marketing": -0.001953125,
+        "churn": -0.005598958333333333,
+        "credit_card_clients_default": -0.0029296875,
+        "diabetes": -0.0033203125,
+        "heloc": -0.0005859375,
+        "higgs-small": -0.0006510416666666666,
+        "seismic-bumps": -0.0005859375
+      }
+    },
+    "nll_top_decile": {
+      "ci_high": 0.008614473758826109,
+      "ci_low": -0.0444218068252338,
+      "gain": -0.020772427719946862,
+      "per_dataset_gain": {
+        "APSFailure": -0.00038908010338411863,
+        "adult": -0.06072924444990204,
+        "bank-marketing": -0.018225987425197626,
+        "churn": -0.048302562963778516,
+        "credit_card_clients_default": -0.02994779471169039,
+        "diabetes": -0.06667193494916744,
+        "heloc": -0.011908680272949368,
+        "higgs-small": 0.07281396031554548,
+        "seismic-bumps": -0.02359052491899772
+      }
+    },
+    "sharpness": {
+      "ci_high": 0.005236498047051357,
+      "ci_low": -0.001554766379791574,
+      "gain": 0.002177125289335098,
+      "per_dataset_gain": {
+        "APSFailure": 0.0007483417660697628,
+        "adult": 0.007015085800529732,
+        "bank-marketing": 0.0006898416185481731,
+        "churn": 0.007472126208076783,
+        "credit_card_clients_default": 0.002344288912334666,
+        "diabetes": 0.00781125386218791,
+        "heloc": 0.0015646937812927523,
+        "higgs-small": -0.009261577255748221,
+        "seismic-bumps": 0.0012100729107243178
+      }
+    }
+  },
+  "dataset_count": 9,
+  "datasets": [
+    "APSFailure",
+    "adult",
+    "bank-marketing",
+    "churn",
+    "credit_card_clients_default",
+    "diabetes",
+    "heloc",
+    "higgs-small",
+    "seismic-bumps"
+  ],
+  "episodes": 600,
+  "gain_directions": {
+    "auc_and_sharpness": "competence_minus_fixed",
+    "loss_error_metrics": "fixed_minus_competence"
+  },
+  "parent_max_abs_log_loss_error": 5.952093595773533e-09,
+  "protocol": "CLASSIFICATION_FAILURE_PROTOCOL.md",
+  "unseen_breadth_tail_comparisons": {
+    "log_loss": {
+      "ci_high": -0.0002907910073022645,
+      "ci_low": -0.004659478593012679,
+      "gain": -0.002130136718032244
+    },
+    "nll_bottom_90pct": {
+      "ci_high": 0.0014967781957826748,
+      "ci_low": -0.0006199974035575943,
+      "gain": 0.0004689812050858795
+    },
+    "nll_over_2_rate": {
+      "ci_high": -0.0002278645833333333,
+      "ci_low": -0.0029296875,
+      "gain": -0.0014973958333333332
+    },
+    "nll_top_decile": {
+      "ci_high": -0.00850240871971438,
+      "ci_low": -0.045252449515255595,
+      "gain": -0.02512233373023111
+    }
+  }
+}

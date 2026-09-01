@@ -1,0 +1,122 @@
+{
+  "truth": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 1,
+        "right": 3
+      }
+    ],
+    "output": 4,
+    "output_scale": 0.6072498699878732,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "global": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "safe_divide",
+        "left": 3,
+        "right": 3
+      },
+      {
+        "operator": "multiply",
+        "left": 3,
+        "right": 4
+      },
+      {
+        "operator": "add",
+        "left": 1,
+        "right": 5
+      }
+    ],
+    "output": 6,
+    "output_scale": 0.6656866904065657,
+    "output_bias": -0.3235993401346105,
+    "epsilon": 0.25
+  },
+  "independent": [
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 1,
+          "right": 3
+        },
+        {
+          "operator": "add",
+          "left": 0,
+          "right": 4
+        },
+        {
+          "operator": "subtract",
+          "left": 5,
+          "right": 0
+        }
+      ],
+      "output": 6,
+      "output_scale": 0.5738020691571328,
+      "output_bias": -0.2812521173389835,
+      "epsilon": 0.25
+    },
+    {
+      "n_features": 4,
+      "nodes": [
+        {
+          "operator": "add",
+          "left": 0,
+          "right": 1
+        },
+        {
+          "operator": "add",
+          "left": 3,
+          "right": 4
+        },
+        {
+          "operator": "subtract",
+          "left": 5,
+          "right": 0
+        }
+      ],
+      "output": 6,
+      "output_scale": 1.2743172318380276,
+      "output_bias": -0.7590143770701121,
+      "epsilon": 0.25
+    }
+  ],
+  "shared": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "add",
+        "left": 1,
+        "right": 3
+      },
+      {
+        "operator": "add",
+        "left": 0,
+        "right": 4
+      },
+      {
+        "operator": "subtract",
+        "left": 5,
+        "right": 0
+      }
+    ],
+    "output": 6,
+    "output_scale": 0.614993119555338,
+    "output_bias": -0.005055705901315011,
+    "epsilon": 0.25
+  },
+  "shared_scales": [
+    0.9330219698769139,
+    2.0720838290422177
+  ],
+  "shared_biases": [
+    -0.2765350413434226,
+    -0.7485385626646441
+  ]
+}

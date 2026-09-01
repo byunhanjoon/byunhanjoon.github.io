@@ -1,0 +1,71 @@
+{
+  "A": {
+    "available_sources": 4,
+    "bootstrap_ci_excludes_zero_positive": false,
+    "passes": false,
+    "required_sources": 5,
+    "required_wins": 4,
+    "source_wins": 0
+  },
+  "B": {
+    "cells": 38,
+    "passes_fraction": true,
+    "required_fraction": 0.8,
+    "source_wins": 5,
+    "sources": 5,
+    "task_split_win_fraction": 0.9210526315789473,
+    "wins": 35
+  },
+  "C": {
+    "available": true,
+    "gain_ratio": 0.12892610409482436,
+    "majority_direction": true,
+    "passes": true,
+    "passes_materiality": true,
+    "seen_relative_gain_percent": -15.349370285114604,
+    "unseen_minus_seen_gain_points": 13.370435773945916,
+    "unseen_relative_gain_percent": -1.9789345111686891
+  },
+  "D": {
+    "available": true,
+    "passes": true,
+    "positive_sources": 4,
+    "required_positive_sources": 3,
+    "source_values": [
+      {
+        "source_unit": "ACS",
+        "spearman_support_advantage": 0.08310935690074839
+      },
+      {
+        "source_unit": "BTS",
+        "spearman_support_advantage": 0.11292660827544547
+      },
+      {
+        "source_unit": "CITI_BIKE",
+        "spearman_support_advantage": 0.02079061355093562
+      },
+      {
+        "source_unit": "NYC_TLC",
+        "spearman_support_advantage": -0.08110268030657239
+      },
+      {
+        "source_unit": "STRING_BENCHMARK",
+        "spearman_support_advantage": 0.0277173467804614
+      }
+    ],
+    "sources": 5
+  },
+  "E": {
+    "available": true,
+    "fields": 3,
+    "fields_favoring_mpe_over_2pct": 0,
+    "maximum_allowed": 1,
+    "passes": true
+  },
+  "F": {
+    "passes": false,
+    "required": 3,
+    "sources_over_2pct_vs_at_least_one": 1
+  },
+  "verdict": "NOT SUPPORTED"
+}

@@ -1,0 +1,4 @@
+dataset,split_seed,model,variance_temperature,validation_nll
+kin8nm,20260921,projective_full,1.1603780113679638,1.4203630279780683
+kin8nm,20260921,projective_independent,1.1872900516926075,1.4221815043377466
+kin8nm,20260921,projective_shuffled,1.16840372857496,1.4216188444784645

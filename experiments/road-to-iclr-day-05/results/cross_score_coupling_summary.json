@@ -1,0 +1,123 @@
+{
+  "status": "complete",
+  "panels": {
+    "confirmation": {
+      "agreement_above_iid": true,
+      "validation_regret_below_iid": true,
+      "method_means": [
+        {
+          "method": "iid_u32",
+          "selection_agreement": 0.9375,
+          "validation_quotient_regret": 7.4977307408961705e-06,
+          "selected_quotient_test_loss": 0.21935936290285787,
+          "selected_realized_test_loss": 0.2194087988493351
+        },
+        {
+          "method": "strength2_cross32",
+          "selection_agreement": 0.98046875,
+          "validation_quotient_regret": 3.549889756552087e-06,
+          "selected_quotient_test_loss": 0.21925048904359423,
+          "selected_realized_test_loss": 0.21926229771362699
+        }
+      ],
+      "strength2_minus_iid_realized_test_loss_mean": -0.00014650113570811114,
+      "sources_strength2_test_lower": 8,
+      "sources": 11
+    },
+    "menu_repeat": {
+      "agreement_above_iid": true,
+      "validation_regret_below_iid": true,
+      "method_means": [
+        {
+          "method": "iid_u32",
+          "selection_agreement": 0.9947916666666666,
+          "validation_quotient_regret": 2.4207773501801685e-06,
+          "selected_quotient_test_loss": 0.28935347885689416,
+          "selected_realized_test_loss": 0.2893996808137495
+        },
+        {
+          "method": "strength2_cross32",
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.2893473848332571,
+          "selected_realized_test_loss": 0.28935656218677713
+        }
+      ],
+      "strength2_minus_iid_realized_test_loss_mean": -4.311862697236362e-05,
+      "sources_strength2_test_lower": 5,
+      "sources": 6
+    },
+    "openml_external": {
+      "agreement_above_iid": true,
+      "validation_regret_below_iid": true,
+      "method_means": [
+        {
+          "method": "iid_u32",
+          "selection_agreement": 0.923828125,
+          "validation_quotient_regret": 5.216577388925078e-05,
+          "selected_quotient_test_loss": 0.21797920181251226,
+          "selected_realized_test_loss": 0.21788678186216176
+        },
+        {
+          "method": "strength2_cross32",
+          "selection_agreement": 0.9365234375,
+          "validation_quotient_regret": 3.702331313066811e-05,
+          "selected_quotient_test_loss": 0.21690603526288046,
+          "selected_realized_test_loss": 0.21682681742367796
+        }
+      ],
+      "strength2_minus_iid_realized_test_loss_mean": -0.0010599644384838057,
+      "sources_strength2_test_lower": 5,
+      "sources": 8
+    },
+    "openml_taskbalanced": {
+      "agreement_above_iid": true,
+      "validation_regret_below_iid": true,
+      "method_means": [
+        {
+          "method": "iid_u32",
+          "selection_agreement": 0.947998046875,
+          "validation_quotient_regret": 0.0001276904523451937,
+          "selected_quotient_test_loss": 0.1509303796997593,
+          "selected_realized_test_loss": 0.15128488104714202
+        },
+        {
+          "method": "strength2_cross32",
+          "selection_agreement": 0.988037109375,
+          "validation_quotient_regret": 2.9806690152004612e-05,
+          "selected_quotient_test_loss": 0.15059237735672307,
+          "selected_realized_test_loss": 0.15057255670975173
+        }
+      ],
+      "strength2_minus_iid_realized_test_loss_mean": -0.0007123243373902831,
+      "sources_strength2_test_lower": 8,
+      "sources": 8
+    },
+    "subsample_repeat": {
+      "agreement_above_iid": true,
+      "validation_regret_below_iid": true,
+      "method_means": [
+        {
+          "method": "iid_u32",
+          "selection_agreement": 0.9798177083333334,
+          "validation_quotient_regret": 4.425898457711399e-06,
+          "selected_quotient_test_loss": 0.29432589353538213,
+          "selected_realized_test_loss": 0.29437297372645105
+        },
+        {
+          "method": "strength2_cross32",
+          "selection_agreement": 0.9996744791666666,
+          "validation_quotient_regret": 2.4888548265611333e-07,
+          "selected_quotient_test_loss": 0.2942949405613547,
+          "selected_realized_test_loss": 0.2943131774463044
+        }
+      ],
+      "strength2_minus_iid_realized_test_loss_mean": -5.979628014660287e-05,
+      "sources_strength2_test_lower": 6,
+      "sources": 6
+    }
+  },
+  "panels_agreement_above_iid": 5,
+  "panels_regret_below_iid": 5,
+  "independent_candidate_gate_passed": true
+}

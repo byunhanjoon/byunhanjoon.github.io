@@ -1,0 +1,403 @@
+{
+  "status": "complete",
+  "panels": {
+    "confirmation": {
+      "means": [
+        {
+          "method": "lhs_cross32",
+          "selection_agreement": 0.9452237215909091,
+          "validation_quotient_regret": 5.92122364378668e-06,
+          "selected_quotient_test_loss": 0.219344609461206,
+          "selected_realized_test_loss": 0.21936945333300584
+        },
+        {
+          "method": "seed_cross32",
+          "selection_agreement": 0.94140625,
+          "validation_quotient_regret": 7.095114504302255e-06,
+          "selected_quotient_test_loss": 0.2193375583772023,
+          "selected_realized_test_loss": 0.21935554607952953
+        },
+        {
+          "method": "sobol_cross32",
+          "selection_agreement": 0.9518821022727273,
+          "validation_quotient_regret": 5.862190258058221e-06,
+          "selected_quotient_test_loss": 0.21931945036294584,
+          "selected_realized_test_loss": 0.219330860239069
+        },
+        {
+          "method": "srswor_cross32",
+          "selection_agreement": 0.9400745738636364,
+          "validation_quotient_regret": 6.690326318190253e-06,
+          "selected_quotient_test_loss": 0.2193541326421438,
+          "selected_realized_test_loss": 0.21938523657340772
+        },
+        {
+          "method": "strength1_cross32",
+          "selection_agreement": 0.9419389204545454,
+          "validation_quotient_regret": 6.240167177697523e-06,
+          "selected_quotient_test_loss": 0.2193564954711418,
+          "selected_realized_test_loss": 0.21938412909496058
+        },
+        {
+          "method": "strength2_cross32",
+          "selection_agreement": 0.9780717329545454,
+          "validation_quotient_regret": 3.9573157709744644e-06,
+          "selected_quotient_test_loss": 0.21924615576429202,
+          "selected_realized_test_loss": 0.2192564155146244
+        }
+      ],
+      "comparisons": {
+        "srswor_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -0.0001288210587832978,
+          "sources_strength2_test_lower": 9,
+          "sources": 11
+        },
+        "strength1_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -0.00012771358033616582,
+          "sources_strength2_test_lower": 10,
+          "sources": 11
+        },
+        "seed_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -9.913056490514707e-05,
+          "sources_strength2_test_lower": 10,
+          "sources": 11
+        },
+        "sobol_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -7.444472444456228e-05,
+          "sources_strength2_test_lower": 10,
+          "sources": 11
+        },
+        "lhs_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -0.00011303781838145002,
+          "sources_strength2_test_lower": 9,
+          "sources": 11
+        }
+      }
+    },
+    "menu_repeat": {
+      "means": [
+        {
+          "method": "lhs_cross32",
+          "selection_agreement": 0.9998372395833334,
+          "validation_quotient_regret": 5.6506481410295184e-08,
+          "selected_quotient_test_loss": 0.2893478904155554,
+          "selected_realized_test_loss": 0.2893648680898821
+        },
+        {
+          "method": "seed_cross32",
+          "selection_agreement": 0.9884440104166666,
+          "validation_quotient_regret": 4.011960180130958e-06,
+          "selected_quotient_test_loss": 0.28938328117643597,
+          "selected_realized_test_loss": 0.2894074913423308
+        },
+        {
+          "method": "sobol_cross32",
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.2893473848332571,
+          "selected_realized_test_loss": 0.2893663116920426
+        },
+        {
+          "method": "srswor_cross32",
+          "selection_agreement": 0.9990234375,
+          "validation_quotient_regret": 3.390388884617711e-07,
+          "selected_quotient_test_loss": 0.2893504183270469,
+          "selected_realized_test_loss": 0.2893766412084297
+        },
+        {
+          "method": "strength1_cross32",
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.2893473848332571,
+          "selected_realized_test_loss": 0.28936947316451306
+        },
+        {
+          "method": "strength2_cross32",
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.28934738483325706,
+          "selected_realized_test_loss": 0.2893542638913792
+        }
+      ],
+      "comparisons": {
+        "srswor_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -2.2377317050483092e-05,
+          "sources_strength2_test_lower": 6,
+          "sources": 6
+        },
+        "strength1_cross32": {
+          "validation_regret_lower": false,
+          "strength2_minus_control_realized_test_loss_mean": -1.5209273133890113e-05,
+          "sources_strength2_test_lower": 5,
+          "sources": 6
+        },
+        "seed_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -5.322745095161078e-05,
+          "sources_strength2_test_lower": 5,
+          "sources": 6
+        },
+        "sobol_cross32": {
+          "validation_regret_lower": false,
+          "strength2_minus_control_realized_test_loss_mean": -1.2047800663394437e-05,
+          "sources_strength2_test_lower": 4,
+          "sources": 6
+        },
+        "lhs_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -1.0604198502930958e-05,
+          "sources_strength2_test_lower": 5,
+          "sources": 6
+        }
+      }
+    },
+    "openml_external": {
+      "means": [
+        {
+          "method": "lhs_cross32",
+          "selection_agreement": 0.9295654296875,
+          "validation_quotient_regret": 4.181693084252579e-05,
+          "selected_quotient_test_loss": 0.21700772038092517,
+          "selected_realized_test_loss": 0.21694465157466575
+        },
+        {
+          "method": "seed_cross32",
+          "selection_agreement": 0.9354248046875,
+          "validation_quotient_regret": 4.157934918485596e-05,
+          "selected_quotient_test_loss": 0.21804797741613086,
+          "selected_realized_test_loss": 0.21801494399482435
+        },
+        {
+          "method": "sobol_cross32",
+          "selection_agreement": 0.93017578125,
+          "validation_quotient_regret": 4.108544326045732e-05,
+          "selected_quotient_test_loss": 0.21693915514316275,
+          "selected_realized_test_loss": 0.21691090576052507
+        },
+        {
+          "method": "srswor_cross32",
+          "selection_agreement": 0.9400634765625,
+          "validation_quotient_regret": 3.697005203433185e-05,
+          "selected_quotient_test_loss": 0.21878460791341453,
+          "selected_realized_test_loss": 0.21869931224111572
+        },
+        {
+          "method": "strength1_cross32",
+          "selection_agreement": 0.9293212890625,
+          "validation_quotient_regret": 4.2232917617069065e-05,
+          "selected_quotient_test_loss": 0.21707302684203514,
+          "selected_realized_test_loss": 0.21705546550577556
+        },
+        {
+          "method": "strength2_cross32",
+          "selection_agreement": 0.9395751953125,
+          "validation_quotient_regret": 3.5243346153225e-05,
+          "selected_quotient_test_loss": 0.2175263547223422,
+          "selected_realized_test_loss": 0.21746529769317371
+        }
+      ],
+      "comparisons": {
+        "srswor_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -0.0012340145479419963,
+          "sources_strength2_test_lower": 6,
+          "sources": 8
+        },
+        "strength1_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": 0.0004098321873981657,
+          "sources_strength2_test_lower": 5,
+          "sources": 8
+        },
+        "seed_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -0.0005496463016506389,
+          "sources_strength2_test_lower": 5,
+          "sources": 8
+        },
+        "sobol_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": 0.0005543919326486467,
+          "sources_strength2_test_lower": 4,
+          "sources": 8
+        },
+        "lhs_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": 0.0005206461185079561,
+          "sources_strength2_test_lower": 5,
+          "sources": 8
+        }
+      }
+    },
+    "openml_taskbalanced": {
+      "means": [
+        {
+          "method": "lhs_cross32",
+          "selection_agreement": 0.957763671875,
+          "validation_quotient_regret": 0.00010003362762463774,
+          "selected_quotient_test_loss": 0.150847664312961,
+          "selected_realized_test_loss": 0.1510364144240462
+        },
+        {
+          "method": "seed_cross32",
+          "selection_agreement": 0.959228515625,
+          "validation_quotient_regret": 0.00012331562259701608,
+          "selected_quotient_test_loss": 0.1508585885931832,
+          "selected_realized_test_loss": 0.15113822920562092
+        },
+        {
+          "method": "sobol_cross32",
+          "selection_agreement": 0.94140625,
+          "validation_quotient_regret": 0.00013935704029135174,
+          "selected_quotient_test_loss": 0.15099131318766967,
+          "selected_realized_test_loss": 0.15134448436603531
+        },
+        {
+          "method": "srswor_cross32",
+          "selection_agreement": 0.9639892578125,
+          "validation_quotient_regret": 8.87983480357435e-05,
+          "selected_quotient_test_loss": 0.15078865695176782,
+          "selected_realized_test_loss": 0.15067801767834704
+        },
+        {
+          "method": "strength1_cross32",
+          "selection_agreement": 0.9520263671875,
+          "validation_quotient_regret": 0.00011536944756042585,
+          "selected_quotient_test_loss": 0.15089261974727405,
+          "selected_realized_test_loss": 0.15107394896386828
+        },
+        {
+          "method": "strength2_cross32",
+          "selection_agreement": 0.9906005859375,
+          "validation_quotient_regret": 2.2845068978336595e-05,
+          "selected_quotient_test_loss": 0.15056516962960556,
+          "selected_realized_test_loss": 0.15053933786282855
+        }
+      ],
+      "comparisons": {
+        "srswor_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -0.00013867981551848928,
+          "sources_strength2_test_lower": 8,
+          "sources": 8
+        },
+        "strength1_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -0.0005346111010397192,
+          "sources_strength2_test_lower": 8,
+          "sources": 8
+        },
+        "seed_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -0.0005988913427923774,
+          "sources_strength2_test_lower": 8,
+          "sources": 8
+        },
+        "sobol_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -0.0008051465032067812,
+          "sources_strength2_test_lower": 8,
+          "sources": 8
+        },
+        "lhs_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -0.0004970765612176476,
+          "sources_strength2_test_lower": 7,
+          "sources": 8
+        }
+      }
+    },
+    "subsample_repeat": {
+      "means": [
+        {
+          "method": "lhs_cross32",
+          "selection_agreement": 0.9930013020833334,
+          "validation_quotient_regret": 1.649355565490053e-06,
+          "selected_quotient_test_loss": 0.2943053452800269,
+          "selected_realized_test_loss": 0.29433666599773656
+        },
+        {
+          "method": "seed_cross32",
+          "selection_agreement": 0.9825846354166666,
+          "validation_quotient_regret": 4.57950377719004e-06,
+          "selected_quotient_test_loss": 0.2943215913909396,
+          "selected_realized_test_loss": 0.29436592612413576
+        },
+        {
+          "method": "sobol_cross32",
+          "selection_agreement": 0.9998372395833334,
+          "validation_quotient_regret": 1.2444274132805667e-07,
+          "selected_quotient_test_loss": 0.2942947553150858,
+          "selected_realized_test_loss": 0.29432870567949626
+        },
+        {
+          "method": "srswor_cross32",
+          "selection_agreement": 0.9894205729166666,
+          "validation_quotient_regret": 3.186550260129013e-06,
+          "selected_quotient_test_loss": 0.294310331926585,
+          "selected_realized_test_loss": 0.2943493619325907
+        },
+        {
+          "method": "strength1_cross32",
+          "selection_agreement": 0.9879557291666666,
+          "validation_quotient_regret": 2.9058983817401886e-06,
+          "selected_quotient_test_loss": 0.2943130622430879,
+          "selected_realized_test_loss": 0.294348683430525
+        },
+        {
+          "method": "strength2_cross32",
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.2942945700688169,
+          "selected_realized_test_loss": 0.2943145466539459
+        }
+      ],
+      "comparisons": {
+        "srswor_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -3.481527864485057e-05,
+          "sources_strength2_test_lower": 6,
+          "sources": 6
+        },
+        "strength1_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -3.413677657911901e-05,
+          "sources_strength2_test_lower": 6,
+          "sources": 6
+        },
+        "seed_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -5.1379470189858596e-05,
+          "sources_strength2_test_lower": 6,
+          "sources": 6
+        },
+        "sobol_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -1.4159025550414275e-05,
+          "sources_strength2_test_lower": 6,
+          "sources": 6
+        },
+        "lhs_cross32": {
+          "validation_regret_lower": true,
+          "strength2_minus_control_realized_test_loss_mean": -2.2119343790699453e-05,
+          "sources_strength2_test_lower": 5,
+          "sources": 6
+        }
+      }
+    }
+  },
+  "panels_lower_validation_regret_by_control": {
+    "srswor_cross32": 5,
+    "strength1_cross32": 4,
+    "seed_cross32": 5,
+    "sobol_cross32": 4,
+    "lhs_cross32": 5
+  },
+  "postgate_control_addendum_passed": true
+}

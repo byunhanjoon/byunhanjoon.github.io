@@ -1,0 +1,13 @@
+{
+  "cells": 5,
+  "failure_type_counts": {
+    "Type C \u2014 altered generalization/inductive bias": 5
+  },
+  "methods": [
+    "Raw",
+    "GramAnchor",
+    "RankAdaptiveGram",
+    "SafeGram-t01"
+  ],
+  "status": "COMPLETE"
+}

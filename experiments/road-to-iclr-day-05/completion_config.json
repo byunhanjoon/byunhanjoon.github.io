@@ -1,0 +1,69 @@
+{
+  "status": "frozen_before_completion_panel_outcomes",
+  "frozen_on": "2026-08-28",
+  "protocol": "FINAL_COMPLETION_PROTOCOL.md",
+  "protocol_sha256": "e861d58586fc495d1a1ca2157447b4087ded64d036d4c2284ca5a89aabcb795b",
+  "data_root": "/data/tokenization_icaif_grouped_v2",
+  "datasets": [
+    "australian_credit_approval",
+    "bank_marketing_subscription",
+    "credit_card_default",
+    "german_credit_risk",
+    "heloc_credit_risk",
+    "lendingclub_loan_default",
+    "fremtpl_claim_count",
+    "kdd17_stock_return",
+    "openml-abalone-183",
+    "openml-kin8nm-189",
+    "openml-pol-201",
+    "openml-puma32h-308"
+  ],
+  "dataset_tasks": {
+    "australian_credit_approval": "classification",
+    "bank_marketing_subscription": "classification",
+    "credit_card_default": "classification",
+    "german_credit_risk": "classification",
+    "heloc_credit_risk": "classification",
+    "lendingclub_loan_default": "classification",
+    "fremtpl_claim_count": "regression",
+    "kdd17_stock_return": "regression",
+    "openml-abalone-183": "regression",
+    "openml-kin8nm-189": "regression",
+    "openml-pol-201": "regression",
+    "openml-puma32h-308": "regression"
+  },
+  "openml_ids": {
+    "openml-abalone-183": 183,
+    "openml-kin8nm-189": 189,
+    "openml-pol-201": 201,
+    "openml-puma32h-308": 308
+  },
+  "exact_datasets": [
+    "australian_credit_approval",
+    "bank_marketing_subscription",
+    "fremtpl_claim_count",
+    "kdd17_stock_return"
+  ],
+  "models": ["mlp", "resnet", "ft_transformer", "tabm"],
+  "split_seeds": [2026082801, 2026082811, 2026082821],
+  "init_seeds": [101, 202],
+  "order_seeds": [3101, 3202],
+  "view_seed": 2026082849,
+  "factor_levels": {"feature": 4, "category": 4, "class": 2},
+  "broad_reference_actions": 64,
+  "subsample": {"train": 2048, "validation": 512, "test": 512},
+  "training": {
+    "epochs": 20,
+    "batch_size": 256,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "mlp_resnet_width": 128,
+    "depth": 2,
+    "dropout": 0.1,
+    "ft_d_token": 32,
+    "ft_tokens": 8,
+    "tabm_latent": 64,
+    "tabm_members": 4
+  },
+  "initial_match_tolerance": 1e-6
+}

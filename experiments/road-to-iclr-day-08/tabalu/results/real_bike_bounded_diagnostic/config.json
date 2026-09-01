@@ -1,0 +1,14 @@
+{
+  "experiment": "uci_bike_bounded_time_posthoc_diagnostic",
+  "output_dir": "tabalu/results/real_bike_bounded_diagnostic",
+  "source_results_dir": "tabalu/results/real_bike_temporal",
+  "cache_dir": "tabalu/data/cache/bike_sharing",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "confirmatory": false
+}

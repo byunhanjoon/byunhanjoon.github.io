@@ -1,0 +1,26 @@
+{
+  "task_id": "program-202608574",
+  "seed": 202608574,
+  "program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "safe_divide",
+        "left": 2,
+        "right": 0
+      },
+      {
+        "operator": "subtract",
+        "left": 4,
+        "right": 1
+      }
+    ],
+    "output": 5,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "n_irrelevant": 0,
+  "generation_attempt": 0,
+  "expression": "subtract(safe_divide(x2, x0), x1)"
+}

@@ -1,0 +1,30 @@
+{
+  "aggregate_sign_accuracy": 0.7222222222222222,
+  "aggregate_spearman": 0.6393822393822395,
+  "backbone": "tabm",
+  "gates": {
+    "aggregate_sign_accuracy_at_least_0p75": false,
+    "aggregate_spearman_at_least_0p60": true,
+    "integrity": true,
+    "pessimistic_no_more_harm": true,
+    "pessimistic_no_source_below_minus_0p002": true,
+    "pessimistic_positive": true
+  },
+  "passes": false,
+  "selectors": {
+    "selected_mean": {
+      "cells": 8,
+      "harmful_cells": 1,
+      "min_source_gain": -0.00078239826973145,
+      "selected_cells": 8,
+      "source_balanced_gain": 0.018136559834229963
+    },
+    "selected_pessimistic": {
+      "cells": 8,
+      "harmful_cells": 0,
+      "min_source_gain": 0.0,
+      "selected_cells": 4,
+      "source_balanced_gain": 0.0114120464846878
+    }
+  }
+}

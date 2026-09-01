@@ -1,0 +1,5 @@
+dataset,problem_type,model,seed,pair,method,split,reconstruction_error,coordinate_error,disagreement,disagreement_reduction,task_error,relative_task_change
+phoneme,classification,tabicl_v2,2,local_vs_spectral_hat,Raw,validation,1.9568997611320004e-16,0.0,0.06069876681756566,0.0,0.26419886825992217,0.0
+phoneme,classification,tabicl_v2,2,local_vs_spectral_hat,GramAnchor,validation,1.9568997611320004e-16,1.312377686351325e-16,0.0,1.0,0.2793589268542523,0.05738123972361403
+phoneme,classification,tabicl_v2,2,local_vs_spectral_hat,Raw,test,1.9568997611320004e-16,0.0,0.06496527652129004,0.0,0.28693493728402975,0.0
+phoneme,classification,tabicl_v2,2,local_vs_spectral_hat,GramAnchor,test,1.9568997611320004e-16,1.312377686351325e-16,0.0,1.0,0.28245958329018117,-0.015597103776242252

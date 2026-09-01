@@ -1,0 +1,280 @@
+{
+  "conventional_summary": {
+    "cells": 17,
+    "material_cells": 12,
+    "datasets_with_material_cell": 3,
+    "relative_loss_tax_percent_median": 0.5300288451382968,
+    "relative_loss_tax_percent_range": [
+      0.21331181769112226,
+      1.1310711745194413
+    ],
+    "hard_flip_percent_range": [
+      2.3,
+      11.600000000000001
+    ]
+  },
+  "neural_summary": {
+    "cells": 5,
+    "same_seed_relative_loss_tax_percent_median": 1.2163328289451096,
+    "same_seed_relative_loss_tax_percent_range": [
+      0.6347947616106688,
+      8.19911447899525
+    ],
+    "schema_seed_interaction_fraction_joint_range": [
+      0.53796152046693,
+      0.6536548126579305
+    ]
+  },
+  "interpretation_warning": "relative tax is the exact proper-loss gain from quotient averaging versus the mean member, not excess risk versus Bayes and not an accuracy-loss estimate",
+  "conventional": [
+    {
+      "dataset": "adult",
+      "pipeline": "onehot_logistic",
+      "schema_risk": 2.1031097792574042e-22,
+      "root_schema_risk": 1.4502102534658222e-11,
+      "schema_risk_percent_mean_member_loss": 1.0735899925940249e-19,
+      "reference_seed_risk": 1.1448632911151613e-32,
+      "schema_to_seed_risk_ratio": null,
+      "hard_label_flip_percent": 0.0,
+      "material": false
+    },
+    {
+      "dataset": "adult",
+      "pipeline": "ordinal_forest",
+      "schema_risk": 0.0020338870310771928,
+      "root_schema_risk": 0.04509863668756732,
+      "schema_risk_percent_mean_member_loss": 1.0180860559921754,
+      "reference_seed_risk": 0.0006525655315428804,
+      "schema_to_seed_risk_ratio": 3.116755226510987,
+      "hard_label_flip_percent": 7.000000000000001,
+      "material": true
+    },
+    {
+      "dataset": "adult",
+      "pipeline": "native_histgb",
+      "schema_risk": 0.0015956761481239568,
+      "root_schema_risk": 0.03994591528709734,
+      "schema_risk_percent_mean_member_loss": 0.7213964216496477,
+      "reference_seed_risk": 1.1301621659236676e-32,
+      "schema_to_seed_risk_ratio": null,
+      "hard_label_flip_percent": 3.0,
+      "material": true
+    },
+    {
+      "dataset": "adult",
+      "pipeline": "lightgbm_native",
+      "schema_risk": 2.074812408753281e-31,
+      "root_schema_risk": 4.555010876774369e-16,
+      "schema_risk_percent_mean_member_loss": 9.215070349045937e-29,
+      "reference_seed_risk": 1.1712264624707955e-32,
+      "schema_to_seed_risk_ratio": null,
+      "hard_label_flip_percent": 0.0,
+      "material": false
+    },
+    {
+      "dataset": "adult",
+      "pipeline": "catboost_native",
+      "schema_risk": 0.0007205343238738143,
+      "root_schema_risk": 0.026842770420986994,
+      "schema_risk_percent_mean_member_loss": 0.3805884623989105,
+      "reference_seed_risk": 0.0011156113435633421,
+      "schema_to_seed_risk_ratio": 0.6458650031043753,
+      "hard_label_flip_percent": 4.3999999999999995,
+      "material": true
+    },
+    {
+      "dataset": "adult",
+      "pipeline": "xgboost_native",
+      "schema_risk": 0.0023430035905540264,
+      "root_schema_risk": 0.04840458233012683,
+      "schema_risk_percent_mean_member_loss": 1.1310711745194413,
+      "reference_seed_risk": 0.0,
+      "schema_to_seed_risk_ratio": null,
+      "hard_label_flip_percent": 7.000000000000001,
+      "material": true
+    },
+    {
+      "dataset": "churn",
+      "pipeline": "onehot_logistic",
+      "schema_risk": 1.5970148616200922e-31,
+      "root_schema_risk": 3.996266834959963e-16,
+      "schema_risk_percent_mean_member_loss": 5.79617777562376e-29,
+      "reference_seed_risk": 1.0749881920416705e-32,
+      "schema_to_seed_risk_ratio": null,
+      "hard_label_flip_percent": 0.0,
+      "material": false
+    },
+    {
+      "dataset": "churn",
+      "pipeline": "ordinal_forest",
+      "schema_risk": 0.001083242456831068,
+      "root_schema_risk": 0.03291264888809572,
+      "schema_risk_percent_mean_member_loss": 0.4718912424039355,
+      "reference_seed_risk": 0.0007405751146470261,
+      "schema_to_seed_risk_ratio": 1.462704370436974,
+      "hard_label_flip_percent": 5.1,
+      "material": true
+    },
+    {
+      "dataset": "churn",
+      "pipeline": "native_histgb",
+      "schema_risk": 0.0010264628108577094,
+      "root_schema_risk": 0.03203845830962703,
+      "schema_risk_percent_mean_member_loss": 0.42142913395328085,
+      "reference_seed_risk": 1.1131643905104506e-32,
+      "schema_to_seed_risk_ratio": null,
+      "hard_label_flip_percent": 2.3,
+      "material": true
+    },
+    {
+      "dataset": "churn",
+      "pipeline": "lightgbm_native",
+      "schema_risk": 2.037689277056642e-31,
+      "root_schema_risk": 4.5140771781801e-16,
+      "schema_risk_percent_mean_member_loss": 8.278894884719463e-29,
+      "reference_seed_risk": 1.2356054225039786e-32,
+      "schema_to_seed_risk_ratio": null,
+      "hard_label_flip_percent": 0.0,
+      "material": false
+    },
+    {
+      "dataset": "churn",
+      "pipeline": "catboost_native",
+      "schema_risk": 0.0005978535719475304,
+      "root_schema_risk": 0.02445104439379902,
+      "schema_risk_percent_mean_member_loss": 0.26672764336829374,
+      "reference_seed_risk": 0.0006392902376437698,
+      "schema_to_seed_risk_ratio": 0.9351833279216614,
+      "hard_label_flip_percent": 3.0,
+      "material": true
+    },
+    {
+      "dataset": "churn",
+      "pipeline": "xgboost_native",
+      "schema_risk": 8.88566550737106e-16,
+      "root_schema_risk": 2.980883343469023e-08,
+      "schema_risk_percent_mean_member_loss": 3.7135102125547006e-13,
+      "reference_seed_risk": 0.0,
+      "schema_to_seed_risk_ratio": null,
+      "hard_label_flip_percent": 0.0,
+      "material": false
+    },
+    {
+      "dataset": "otto",
+      "pipeline": "lightgbm_native",
+      "schema_risk": 0.002528713816851581,
+      "root_schema_risk": 0.05028631838633229,
+      "schema_risk_percent_mean_member_loss": 0.6531251210080035,
+      "reference_seed_risk": 4.682856295618578e-32,
+      "schema_to_seed_risk_ratio": null,
+      "hard_label_flip_percent": 8.0,
+      "material": true
+    },
+    {
+      "dataset": "otto",
+      "pipeline": "catboost_native",
+      "schema_risk": 0.0026860879910702426,
+      "root_schema_risk": 0.05182748297062324,
+      "schema_risk_percent_mean_member_loss": 0.6892504110883104,
+      "reference_seed_risk": 0.0035184159292344845,
+      "schema_to_seed_risk_ratio": 0.763436741162852,
+      "hard_label_flip_percent": 11.600000000000001,
+      "material": true
+    },
+    {
+      "dataset": "otto",
+      "pipeline": "ordinal_forest",
+      "schema_risk": 0.0013668350493023173,
+      "root_schema_risk": 0.03697073233386536,
+      "schema_risk_percent_mean_member_loss": 0.3167836895676397,
+      "reference_seed_risk": 0.0016834231157327286,
+      "schema_to_seed_risk_ratio": 0.811937911822832,
+      "hard_label_flip_percent": 9.2,
+      "material": true
+    },
+    {
+      "dataset": "otto",
+      "pipeline": "native_histgb",
+      "schema_risk": 0.00227187249489824,
+      "root_schema_risk": 0.04766416363368018,
+      "schema_risk_percent_mean_member_loss": 0.5881664478726583,
+      "reference_seed_risk": 4.833902117415898e-32,
+      "schema_to_seed_risk_ratio": null,
+      "hard_label_flip_percent": 7.7,
+      "material": true
+    },
+    {
+      "dataset": "otto",
+      "pipeline": "xgboost_native",
+      "schema_risk": 0.0008043736216741331,
+      "root_schema_risk": 0.0283614813025366,
+      "schema_risk_percent_mean_member_loss": 0.21331181769112226,
+      "reference_seed_risk": 0.0,
+      "schema_to_seed_risk_ratio": null,
+      "hard_label_flip_percent": 4.1000000000000005,
+      "material": true
+    }
+  ],
+  "neural": [
+    {
+      "dataset": "adult",
+      "pipeline": "mlp",
+      "joint_schema_seed_risk": 0.0018666366215349117,
+      "same_seed_schema_risk": 0.0012527417810450079,
+      "persistent_schema_risk": 0.00021617024547839598,
+      "root_same_seed_schema_risk": 0.03539409245968892,
+      "same_seed_schema_percent_mean_member_loss": 0.6347947616106688,
+      "joint_risk_percent_mean_member_loss": 0.9458702241036112,
+      "schema_seed_interaction_fraction_joint": 0.53796152046693,
+      "hard_flip_percent": 11.811313801363553
+    },
+    {
+      "dataset": "adult",
+      "pipeline": "resnet",
+      "joint_schema_seed_risk": 0.003574632346278278,
+      "same_seed_schema_risk": 0.0024176489765218158,
+      "persistent_schema_risk": null,
+      "root_same_seed_schema_risk": 0.04916959402437462,
+      "same_seed_schema_percent_mean_member_loss": 1.2163328289451096,
+      "joint_risk_percent_mean_member_loss": 1.798417684457477,
+      "schema_seed_interaction_fraction_joint": 0.5892676159661016,
+      "hard_flip_percent": 13.733800135126836
+    },
+    {
+      "dataset": "diamond",
+      "pipeline": "mlp",
+      "joint_schema_seed_risk": 0.0011504809031236407,
+      "same_seed_schema_risk": 0.000848751025885063,
+      "persistent_schema_risk": 0.00017962220989429373,
+      "root_same_seed_schema_risk": 0.029133331870643684,
+      "same_seed_schema_percent_mean_member_loss": 3.729251710656419,
+      "joint_risk_percent_mean_member_loss": 5.054995805839987,
+      "schema_seed_interaction_fraction_joint": 0.5452574339027789,
+      "hard_flip_percent": null
+    },
+    {
+      "dataset": "diamond",
+      "pipeline": "resnet",
+      "joint_schema_seed_risk": 0.0023661172134141657,
+      "same_seed_schema_risk": 0.0018420893934600999,
+      "persistent_schema_risk": 0.0001923572293417601,
+      "root_same_seed_schema_risk": 0.04291956888716498,
+      "same_seed_schema_percent_mean_member_loss": 8.19911447899525,
+      "joint_risk_percent_mean_member_loss": 10.531555076740194,
+      "schema_seed_interaction_fraction_joint": 0.6536548126579305,
+      "hard_flip_percent": null
+    },
+    {
+      "dataset": "black-friday",
+      "pipeline": "mlp",
+      "joint_schema_seed_risk": 0.0063199358779938986,
+      "same_seed_schema_risk": 0.004566960816312441,
+      "persistent_schema_risk": 0.00048228411387499947,
+      "root_same_seed_schema_risk": 0.06757929280713465,
+      "same_seed_schema_percent_mean_member_loss": 0.9182592934405461,
+      "joint_risk_percent_mean_member_loss": 1.2707224973745448,
+      "schema_seed_interaction_fraction_joint": 0.6059214021251457,
+      "hard_flip_percent": null
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-vote-56",
+  "model": "ordinal_forest",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 261,
+    "validation": 87,
+    "test": 87
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": true,
+  "timing": {
+    "setup_seconds": 5.462368462001905,
+    "fit_loop_seconds": 9.437620376935229,
+    "end_to_end_seconds": 14.903466640971601,
+    "fits_per_fit_loop_second": 13.56274091219239
+  }
+}

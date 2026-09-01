@@ -1,0 +1,20 @@
+{
+  "analysis_status": "exploratory_partial",
+  "gate_g2_eligible": false,
+  "models": [
+    "tabicl_v2_single",
+    "tabicl_v2_default",
+    "tabpfn_v25_single",
+    "tabpfn_v25_default",
+    "mitra_default"
+  ],
+  "phase2_input": "/home/byunhanjoon/byunhanjoon.github.io/experiments/road-to-iclr-day-08/results/analysis/phase2_partial/02882b44384093b9-n8338",
+  "transforms": [
+    "signed_power",
+    "random_monotone_pwl",
+    "monotone_spline",
+    "asinh",
+    "composition"
+  ],
+  "warning": "Descriptor results are screening evidence only because Phase II coverage is incomplete."
+}

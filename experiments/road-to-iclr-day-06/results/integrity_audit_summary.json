@@ -1,0 +1,26 @@
+{
+  "status": "pass",
+  "families": {
+    "h1": {
+      "bundles": 72,
+      "paths": 576,
+      "errors": 0
+    },
+    "h2": {
+      "bundles": 18,
+      "paths": 216,
+      "errors": 0
+    },
+    "h3": {
+      "bundles": 36,
+      "paths": 288,
+      "errors": 0
+    },
+    "h4": {
+      "bundles": 324,
+      "paths": 972,
+      "errors": 0
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,74 @@
+{
+  "status": "complete",
+  "sources": 8,
+  "candidates": 16,
+  "comparisons": {
+    "pair32": {
+      "metrics": {
+        "brier": {
+          "candidate_strict_wins": 8,
+          "candidates": 16,
+          "source_mean_nohigher": 8,
+          "sources": 8,
+          "mean_rmse_ratio": 0.922628594687367
+        },
+        "log_loss": {
+          "candidate_strict_wins": 8,
+          "candidates": 16,
+          "source_mean_nohigher": 8,
+          "sources": 8,
+          "mean_rmse_ratio": 0.9195808038092745
+        },
+        "roc_auc": {
+          "candidate_strict_wins": 7,
+          "candidates": 16,
+          "source_mean_nohigher": 8,
+          "sources": 8,
+          "mean_rmse_ratio": 0.9033434925719565
+        },
+        "accuracy": {
+          "candidate_strict_wins": 4,
+          "candidates": 16,
+          "source_mean_nohigher": 8,
+          "sources": 8,
+          "mean_rmse_ratio": 0.9022029973462662
+        }
+      },
+      "probabilistic_ranking_scope_passed": false
+    },
+    "pack64": {
+      "metrics": {
+        "brier": {
+          "candidate_strict_wins": 8,
+          "candidates": 16,
+          "source_mean_nohigher": 8,
+          "sources": 8,
+          "mean_rmse_ratio": 0.8012557452759717
+        },
+        "log_loss": {
+          "candidate_strict_wins": 8,
+          "candidates": 16,
+          "source_mean_nohigher": 8,
+          "sources": 8,
+          "mean_rmse_ratio": 0.8047717420229136
+        },
+        "roc_auc": {
+          "candidate_strict_wins": 7,
+          "candidates": 16,
+          "source_mean_nohigher": 8,
+          "sources": 8,
+          "mean_rmse_ratio": 0.8650865591087223
+        },
+        "accuracy": {
+          "candidate_strict_wins": 3,
+          "candidates": 16,
+          "source_mean_nohigher": 8,
+          "sources": 8,
+          "mean_rmse_ratio": 0.8048989104872047
+        }
+      },
+      "probabilistic_ranking_scope_passed": false
+    }
+  },
+  "all_probabilistic_ranking_gates_passed": false
+}

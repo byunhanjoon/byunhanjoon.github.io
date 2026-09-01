@@ -1,0 +1,12 @@
+{
+  "mismatches": [],
+  "output_count": 5,
+  "sha256": {
+    "results/h6_dose_cells.csv": "a1fe06b8dfddf77dbca83eeaa74f50f7ec016ab8092a30ac97ea78d71b8ca892",
+    "results/h6_summary.json": "f2b5c1e61686e32d7e97a75f4a4549eb73b1edf02e2389376b43bce9620f26f2",
+    "results/pilot_paths.csv": "3171d1b5811455fcf942a3f81abe0cb35eebf9e634ece03a5ae67462cfeee662",
+    "results/pilot_summary.json": "bb4b370e460a294a2086e734886199a4e29ce6549b35b2b6f0820242194e0d0d",
+    "results/posthoc_diagnostics.json": "d050f8bc21c1f387a3011f9993a069c09242b5a7dfd00e8b5a2c0fd1574c8ef9"
+  },
+  "status": "pass"
+}

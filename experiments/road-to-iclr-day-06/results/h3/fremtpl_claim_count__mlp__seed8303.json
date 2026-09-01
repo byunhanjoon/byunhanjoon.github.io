@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "hypothesis": "H3_FULLSCALE_CLOSURE",
+  "dataset": "fremtpl_claim_count",
+  "task": "regression",
+  "model": "mlp",
+  "seed": 8303,
+  "rows": {
+    "train": 72000,
+    "validation": 24000,
+    "test": 24000
+  },
+  "paths": 8,
+  "path_wall_seconds": [
+    87.80325056496076,
+    97.05478850705549,
+    97.06178383599035,
+    97.24489002581686,
+    111.96675564884208,
+    112.12360755214468,
+    112.24194328999147,
+    112.39513415307738
+  ],
+  "total_fit_seconds": 827.8921535778791,
+  "invocation_wall_seconds": 830.0525327890646,
+  "config_sha256": "67be6a0a6fe111b75c01fbc49b083dd804479caf2010447317cfdcf73398766d",
+  "protocol_sha256": "c4f0cc5d7b0961abe268a67760053c0fd36302faa25432d8afa930d7cc402802",
+  "torch": "2.7.0+cu126",
+  "device": "cuda:0"
+}

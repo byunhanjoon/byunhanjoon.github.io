@@ -1,0 +1,92 @@
+{
+  "status": "complete",
+  "evidence_status": "frozen_splits_after_original_split_outcomes",
+  "split_seeds": [
+    2026082901,
+    2026082911,
+    2026082921
+  ],
+  "complete_tensors": 48,
+  "represented_complete_product_fits": 6144,
+  "manifest_issues": [],
+  "strength2": {
+    "material_wins": 35,
+    "material_cells": 43,
+    "material_win_fraction": 0.813953488372093,
+    "required_material_win_fraction": 0.8,
+    "dataset_split_mean_wins": 24,
+    "dataset_split_means": 24,
+    "required_dataset_split_mean_wins": 22,
+    "frozen_transport_gate_passed": true,
+    "by_split": {
+      "2026082901": {
+        "material_wins": 12,
+        "material_cells": 14,
+        "source_mean_wins": 8,
+        "sources": 8
+      },
+      "2026082911": {
+        "material_wins": 12,
+        "material_cells": 14,
+        "source_mean_wins": 8,
+        "sources": 8
+      },
+      "2026082921": {
+        "material_wins": 11,
+        "material_cells": 15,
+        "source_mean_wins": 8,
+        "sources": 8
+      }
+    }
+  },
+  "packing": {
+    "pair32": {
+      "nondegenerate_candidate_wins": 24,
+      "nondegenerate_candidate_losses": 0,
+      "nondegenerate_candidates": 24,
+      "mean_nondegenerate_relative_rmse_reduction": 0.0855592956907107,
+      "dataset_split_mean_wins": 24,
+      "dataset_split_means": 24,
+      "required_dataset_split_mean_wins": 22,
+      "frozen_transport_gate_passed": true
+    },
+    "pack64": {
+      "nondegenerate_candidate_wins": 24,
+      "nondegenerate_candidate_losses": 0,
+      "nondegenerate_candidates": 24,
+      "mean_nondegenerate_relative_rmse_reduction": 0.20523349995521015,
+      "dataset_split_mean_wins": 24,
+      "dataset_split_means": 24,
+      "required_dataset_split_mean_wins": 22,
+      "frozen_transport_gate_passed": true
+    },
+    "unbiased_pair_cross64": {
+      "nondegenerate_candidate_wins": 24,
+      "nondegenerate_candidate_losses": 0,
+      "nondegenerate_candidates": 24,
+      "mean_nondegenerate_relative_rmse_reduction": 0.08991303878914796,
+      "dataset_split_mean_wins": 24,
+      "dataset_split_means": 24,
+      "required_dataset_split_mean_wins": 22,
+      "frozen_transport_gate_passed": true
+    }
+  },
+  "all_frozen_nuisance_transport_gates_passed": true,
+  "exact_validation_to_test_transfer": {
+    "winner_agreements": 21,
+    "dataset_split_pairs": 24,
+    "mean_test_regret_of_validation_winner": 0.001124149869605625,
+    "failures_by_dataset": {
+      "openml-credit-approval-29": 1,
+      "openml-sick-38": 1,
+      "openml-vote-56": 1
+    },
+    "four_split_sensitivity": {
+      "winner_agreements": 28,
+      "dataset_split_pairs": 32,
+      "mean_test_regret_of_validation_winner": 0.001478964775265334
+    },
+    "formal_gate_imposed": false
+  },
+  "interpretation": "nuisance-efficiency transports; exact selection remains partition-dependent"
+}

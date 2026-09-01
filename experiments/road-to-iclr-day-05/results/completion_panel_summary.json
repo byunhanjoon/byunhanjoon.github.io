@@ -1,0 +1,176 @@
+{
+  "status": "complete",
+  "neural_cells": 144,
+  "datasets": 12,
+  "splits": 3,
+  "models": 4,
+  "material_cells": 144,
+  "strength2_vs_iid16_wins": 144,
+  "strength2_vs_srswor16_wins": 101,
+  "mean_strength2_vs_iid16_reduction": 0.5256492482433086,
+  "mean_strength2_vs_srswor16_reduction": 0.28573151770573313,
+  "mean_main_pair_fraction": 0.7887383185323511,
+  "matched_pooled_fraction_removed": 0.9816119092429866,
+  "matched_cells_with_residual_above_1e_10": 7,
+  "packing_population128_cells": 48,
+  "disjoint_pair32_vs_independent_cover32_wins_population128": 48,
+  "disjoint_pack64_vs_independent_cover64_wins_population128": 48,
+  "selection_method_means": {
+    "iid16": {
+      "winner_agreement": 0.9668511284722222,
+      "pairwise_accuracy": 0.9741301359953705,
+      "spearman": 0.9676866319444445,
+      "validation_regret": 9.779836821643674e-05,
+      "selected_test_regret": 0.005028762685832544
+    },
+    "iid4": {
+      "winner_agreement": 0.90771484375,
+      "pairwise_accuracy": 0.9418583622685185,
+      "spearman": 0.9250000000000002,
+      "validation_regret": 0.0008895172490528408,
+      "selected_test_regret": 0.004806513302156932
+    },
+    "iid64": {
+      "winner_agreement": 0.99365234375,
+      "pairwise_accuracy": 0.9877839265046295,
+      "spearman": 0.9851671006944446,
+      "validation_regret": 1.1706939046326278e-05,
+      "selected_test_regret": 0.004926825365640545
+    },
+    "lhs16": {
+      "winner_agreement": 0.9810655381944444,
+      "pairwise_accuracy": 0.9803602430555556,
+      "spearman": 0.9762912326388888,
+      "validation_regret": 4.405991692708118e-05,
+      "selected_test_regret": 0.004957589967274018
+    },
+    "schema_only16": {
+      "winner_agreement": 0.9876302083333334,
+      "pairwise_accuracy": 0.9542371961805556,
+      "spearman": 0.9395073784722222,
+      "validation_regret": 1.3337163236907882e-05,
+      "selected_test_regret": 0.004920316419692442
+    },
+    "seed_only16": {
+      "winner_agreement": 0.9800889756944444,
+      "pairwise_accuracy": 0.9785608362268517,
+      "spearman": 0.9739691840277778,
+      "validation_regret": 7.603647187156014e-05,
+      "selected_test_regret": 0.005016960585793503
+    },
+    "sobol16": {
+      "winner_agreement": 0.9525282118055556,
+      "pairwise_accuracy": 0.9739402488425927,
+      "spearman": 0.9686306423611111,
+      "validation_regret": 4.0728094184115904e-05,
+      "selected_test_regret": 0.0048307195602711765
+    },
+    "srswor16": {
+      "winner_agreement": 0.98681640625,
+      "pairwise_accuracy": 0.9791847511574073,
+      "spearman": 0.9740234375000001,
+      "validation_regret": 4.7369423530556736e-05,
+      "selected_test_regret": 0.004977334684729842
+    },
+    "strength1_16": {
+      "winner_agreement": 0.9759657118055556,
+      "pairwise_accuracy": 0.9787235966435185,
+      "spearman": 0.9743055555555556,
+      "validation_regret": 6.245109588235912e-05,
+      "selected_test_regret": 0.0049765588154553515
+    },
+    "strength1_4": {
+      "winner_agreement": 0.9254014756944444,
+      "pairwise_accuracy": 0.9494176793981483,
+      "spearman": 0.9366319444444444,
+      "validation_regret": 0.0006361443534592537,
+      "selected_test_regret": 0.00484625848250846
+    },
+    "strength2_16": {
+      "winner_agreement": 0.9940863715277778,
+      "pairwise_accuracy": 0.9887514467592593,
+      "spearman": 0.9864257812499999,
+      "validation_regret": 1.2251357728075959e-05,
+      "selected_test_regret": 0.0049064163025266585
+    },
+    "strength3_64": {
+      "winner_agreement": 1.0,
+      "pairwise_accuracy": 0.9971336082175927,
+      "spearman": 0.996560329861111,
+      "validation_regret": 0.0,
+      "selected_test_regret": 0.004920522465769179
+    }
+  },
+  "cross_score_method_means": {
+    "iid_cross32": {
+      "bias": -8.42909805150122e-05,
+      "rmse": 0.0026661429984310794,
+      "ordinary_bias": 0.0006379551357569765
+    },
+    "strength2_cross32": {
+      "bias": 2.5541698534165135e-06,
+      "rmse": 0.001249763275359124,
+      "ordinary_bias": 0.0003443407178890128
+    }
+  },
+  "exact_validation_test_winner_agreement": 0.5277777777777778,
+  "classical_cells": 60,
+  "classical_strength2_vs_iid16_wins": 46,
+  "classical_strength2_vs_srswor16_wins": 34,
+  "represented_neural_fits": 9792,
+  "represented_matched_fits": 768,
+  "represented_classical_fits": 4080,
+  "monte_carlo_draws_per_method": 512,
+  "source_clustered_comparisons": {
+    "iid16": {
+      "sources": 12,
+      "source_wins": 12,
+      "equal_source_fractional_reduction": 0.5256492482433086,
+      "source_bootstrap_95_interval": [
+        0.365603459922994,
+        0.6915903544670388
+      ],
+      "two_sided_sign_test_p": 0.00048828125
+    },
+    "srswor16": {
+      "sources": 12,
+      "source_wins": 8,
+      "equal_source_fractional_reduction": 0.28573151770573313,
+      "source_bootstrap_95_interval": [
+        0.11220745759556049,
+        0.44994946055843754
+      ],
+      "two_sided_sign_test_p": 0.3876953125
+    },
+    "lhs16": {
+      "sources": 12,
+      "source_wins": 12,
+      "equal_source_fractional_reduction": 0.36083827453088513,
+      "source_bootstrap_95_interval": [
+        0.21301580867744782,
+        0.5345827922208757
+      ],
+      "two_sided_sign_test_p": 0.00048828125
+    },
+    "sobol16": {
+      "sources": 12,
+      "source_wins": 12,
+      "equal_source_fractional_reduction": 0.5705694995522421,
+      "source_bootstrap_95_interval": [
+        0.2707517255137085,
+        0.7756359338037406
+      ],
+      "two_sided_sign_test_p": 0.00048828125
+    },
+    "strength1_16": {
+      "sources": 12,
+      "source_wins": 12,
+      "equal_source_fractional_reduction": 0.4193056295087044,
+      "source_bootstrap_95_interval": [
+        0.27353505613232165,
+        0.5807959035351498
+      ],
+      "two_sided_sign_test_p": 0.00048828125
+    }
+  }
+}

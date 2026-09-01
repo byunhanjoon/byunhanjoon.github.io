@@ -1,0 +1,7 @@
+candidate,stage,features,family,selection_key,selected_blocks,selected_dimensions,invariant_feature_fraction,invariant_dimension_fraction,validation_C,validation_raw_loss,validation_method_loss,input_dimension,raw_input_dimension,fit_seconds,predict_seconds
+stage_0_raw,0,[],BlockGuard-Greedy,n0__4f53cda18c2baa0c,0,0,0.0,0.0,0.0,2871.2345745405405,2871.2345745405405,103,103,0.0,0.0
+stage_1,1,['hoa_(BRL)'],BlockGuard-Greedy,n1__fe0902a77aff26b3,1,8,0.2,0.2,-1.2117725261976993,2871.2345745405405,860.4684988014268,111,103,0.9556907389778644,0.001579553121700883
+stage_2,2,"['hoa_(BRL)', 'property_tax_(BRL)']",BlockGuard-Greedy,n2__fb19e2df99b9cdf0,2,16,0.4,0.4,-1.2209004987242673,2871.2345745405405,845.321912210383,119,103,1.1236248000059277,0.0008371230214834213
+stage_3,3,"['hoa_(BRL)', 'property_tax_(BRL)', 'rent_amount_(BRL)']",BlockGuard-Greedy,n3__ebb906ed9da934af,3,24,0.6,0.6,-1.2469223993150698,2871.2345745405405,802.1422280674988,127,103,1.1563366651535034,0.005045569967478514
+stage_4,4,"['hoa_(BRL)', 'property_tax_(BRL)', 'rent_amount_(BRL)', 'fire_insurance_(BRL)']",BlockGuard-Greedy,n4__73306e2e5fdc514d,4,32,0.8,0.8,-1.2820095610667863,2871.2345745405405,743.9200180247436,135,103,1.110965966945514,0.0016108490526676178
+stage_5,5,"['hoa_(BRL)', 'property_tax_(BRL)', 'rent_amount_(BRL)', 'fire_insurance_(BRL)', 'area']",BlockGuard-Greedy,n5__f77bb8b0d0eeeb3a,5,40,1.0,1.0,-1.1805793381179215,2871.2345745405405,912.2292072091152,169,103,0.0,0.0

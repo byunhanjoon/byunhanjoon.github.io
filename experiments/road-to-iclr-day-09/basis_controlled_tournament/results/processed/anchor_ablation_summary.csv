@@ -1,0 +1,8 @@
+variant,anchors,selection,normalize,median_empirical_rank,min_empirical_rank,min_anchor_rank,median_disagreement_reduction,median_relative_task_change,max_coordinate_error,units
+m8-gram_pivot-norm1,8,gram_pivot,True,8.0,2,2,1.0,0.0019648753094954913,2.1278152783755705e-15,18
+m16-gram_pivot-norm0,16,gram_pivot,False,8.0,2,2,1.0,0.00804270063656536,1.5768489346648995e-15,18
+m16-gram_pivot-norm1,16,gram_pivot,True,8.0,2,2,1.0,0.011265759235094801,1.5296717789644912e-15,18
+m32-random_index-norm1,32,random_index,True,8.0,2,1,1.0,0.012165869352615717,8.869595378895018e-16,18
+m32-gram_pivot-norm1,32,gram_pivot,True,8.0,2,2,1.0,0.01736185767469489,1.6842293155601485e-15,18
+m8-random_index-norm1,8,random_index,True,8.0,2,1,1.0,0.04417382602061418,1.6049546054510389e-15,18
+m16-random_index-norm1,16,random_index,True,8.0,2,1,1.0,0.045414818336114875,8.602769631144531e-16,18

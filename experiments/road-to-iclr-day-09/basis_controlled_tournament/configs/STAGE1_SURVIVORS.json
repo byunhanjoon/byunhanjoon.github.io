@@ -1,0 +1,160 @@
+{
+  "complete": true,
+  "input_cell_file_sha256": {
+    "results/processed/stage1_cells/controlled_mlp__california_housing__seed_0.csv": "83d82b056e58ea2359f13464633239eeb758ac2bcc9f73c477a51f4c85ad4f50",
+    "results/processed/stage1_cells/controlled_mlp__phoneme__seed_0.csv": "14d13c1febf0fbb203e371273584aa0acb3c57df5884e0679a6580c6fa61f2aa",
+    "results/processed/stage1_cells/controlled_mlp__wine-quality-red__seed_0.csv": "9068fa170d6ec4ec68dc4519d0bd472d656b9b17d13656bb74ecb095da1c5e19",
+    "results/processed/stage1_cells/tabm_d__california_housing__seed_0.csv": "83dfd10a3c6b3af8dd5018eb5b05e4023678944ecad017db1ff3d13d9c929689",
+    "results/processed/stage1_cells/tabm_d__phoneme__seed_0.csv": "49394134df26132dc5ad7c7cfb52ba0195bbea4a2181edefa4a40ffcda88a657",
+    "results/processed/stage1_cells/tabm_d__wine-quality-red__seed_0.csv": "e6f23a7c3c1a80da31deb215cb9e4a96fd82d6f0af65bdbe477ea7fa1a5b8a73"
+  },
+  "input_cell_files": [
+    "results/processed/stage1_cells/controlled_mlp__california_housing__seed_0.csv",
+    "results/processed/stage1_cells/controlled_mlp__phoneme__seed_0.csv",
+    "results/processed/stage1_cells/controlled_mlp__wine-quality-red__seed_0.csv",
+    "results/processed/stage1_cells/tabm_d__california_housing__seed_0.csv",
+    "results/processed/stage1_cells/tabm_d__phoneme__seed_0.csv",
+    "results/processed/stage1_cells/tabm_d__wine-quality-red__seed_0.csv"
+  ],
+  "killed": [
+    "BlockAdam",
+    "BlockScalarAdam",
+    "MatrixAdam"
+  ],
+  "protocol_hashes": {
+    "new_prospective_panel_sha256": "3eb3722c31832e81de74e709796c2765a198300be3251ec6acc05c867a2fad65",
+    "prior_dataset_panel_sha256": "954df189503c40f4425d5be0b48bf59e7caa365eada1202362386a690c4052ae",
+    "tournament_protocol_sha256": "57b80e2f3bd96277fb3ef7aff3507aca15e055f3fa2748bcddd703526ccba48b"
+  },
+  "rules": {
+    "invariance_route": {
+      "max_task_cost": 0.03,
+      "median_reduction": 0.5
+    },
+    "performance_route": {
+      "max_disagreement_increase": 0.2,
+      "task_improves": true
+    }
+  },
+  "status": "FROZEN_FROM_STAGE1_DEVELOPMENT_ONLY",
+  "summary": [
+    {
+      "invariance_route": true,
+      "max_gpu_memory_mb": 121.521484375,
+      "median_disagreement": 0.0,
+      "median_disagreement_reduction": 1.0,
+      "median_relative_task_change": -0.0008956049168459525,
+      "median_worst_orbit_task_error": 0.6883020265580859,
+      "method": "GramAnchor",
+      "performance_route": true,
+      "runtime_seconds": 10.831602916819975,
+      "track": "representation",
+      "units": 6,
+      "verdict": "SURVIVE"
+    },
+    {
+      "invariance_route": true,
+      "max_gpu_memory_mb": 121.521484375,
+      "median_disagreement": 0.0,
+      "median_disagreement_reduction": 1.0,
+      "median_relative_task_change": 0.02071735762369721,
+      "median_worst_orbit_task_error": 0.7204306127292346,
+      "method": "GramDistance",
+      "performance_route": false,
+      "runtime_seconds": 11.245525328675285,
+      "track": "representation",
+      "units": 6,
+      "verdict": "SURVIVE"
+    },
+    {
+      "invariance_route": true,
+      "max_gpu_memory_mb": 118.60498046875,
+      "median_disagreement": 0.0,
+      "median_disagreement_reduction": 1.0,
+      "median_relative_task_change": 0.0026441976149719952,
+      "median_worst_orbit_task_error": 0.6808167220929443,
+      "method": "NystromGram",
+      "performance_route": false,
+      "runtime_seconds": 11.886578961042687,
+      "track": "representation",
+      "units": 6,
+      "verdict": "SURVIVE"
+    },
+    {
+      "invariance_route": true,
+      "max_gpu_memory_mb": 119.25,
+      "median_disagreement": 0.0,
+      "median_disagreement_reduction": 1.0,
+      "median_relative_task_change": -8.548738764911867e-05,
+      "median_worst_orbit_task_error": 0.6977483546735088,
+      "method": "PCA",
+      "performance_route": true,
+      "runtime_seconds": 16.951985765248537,
+      "track": "representation",
+      "units": 6,
+      "verdict": "SURVIVE"
+    },
+    {
+      "invariance_route": false,
+      "max_gpu_memory_mb": 119.26611328125,
+      "median_disagreement": 0.06614322554706824,
+      "median_disagreement_reduction": 0.1606872310420001,
+      "median_relative_task_change": 0.00348158943793102,
+      "median_worst_orbit_task_error": 0.6962388148494763,
+      "method": "BlockAdam",
+      "performance_route": false,
+      "runtime_seconds": 26.274465531110764,
+      "track": "optimizer",
+      "units": 6,
+      "verdict": "KILL"
+    },
+    {
+      "invariance_route": false,
+      "max_gpu_memory_mb": 119.2607421875,
+      "median_disagreement": 0.06947301555335955,
+      "median_disagreement_reduction": 0.15169057488841053,
+      "median_relative_task_change": 0.0031641302127408274,
+      "median_worst_orbit_task_error": 0.6978050770445555,
+      "method": "BlockScalarAdam",
+      "performance_route": false,
+      "runtime_seconds": 27.65946209174581,
+      "track": "optimizer",
+      "units": 6,
+      "verdict": "KILL"
+    },
+    {
+      "invariance_route": false,
+      "max_gpu_memory_mb": 119.2607421875,
+      "median_disagreement": 0.07753593098640423,
+      "median_disagreement_reduction": 0.005819792031974802,
+      "median_relative_task_change": 0.005342477103077517,
+      "median_worst_orbit_task_error": 0.710772448591811,
+      "method": "MatrixAdam",
+      "performance_route": false,
+      "runtime_seconds": 44.26465471973643,
+      "track": "optimizer",
+      "units": 6,
+      "verdict": "KILL"
+    },
+    {
+      "invariance_route": false,
+      "max_gpu_memory_mb": 119.25,
+      "median_disagreement": 0.07794276768325194,
+      "median_disagreement_reduction": 0.0,
+      "median_relative_task_change": 0.0,
+      "median_worst_orbit_task_error": 0.6970262895913164,
+      "method": "AdamW",
+      "performance_route": false,
+      "runtime_seconds": 17.957038639113307,
+      "track": "optimizer",
+      "units": 6,
+      "verdict": "CONTROL"
+    }
+  ],
+  "survivors": [
+    "GramAnchor",
+    "GramDistance",
+    "NystromGram",
+    "PCA"
+  ]
+}

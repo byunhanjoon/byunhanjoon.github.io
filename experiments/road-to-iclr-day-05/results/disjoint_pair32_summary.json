@@ -1,0 +1,185 @@
+{
+  "status": "complete",
+  "draws_per_dataset": 1024,
+  "exact_partition_candidates": 126,
+  "exact_partition_max_absolute_error": 0.0,
+  "panels": {
+    "confirmation": {
+      "clauses": {
+        "score_rmse_lower": true,
+        "prediction_residual_lower": true,
+        "agreement_nolower": true,
+        "regret_nohigher": true
+      },
+      "score_rmse": {
+        "disjoint_pair_mean32": 6.179554007077555e-05,
+        "independent_pair_mean32": 0.00026365164775444253
+      },
+      "prediction_residual": {
+        "disjoint_pair_mean32": 1.1523920349084537e-05,
+        "independent_pair_mean32": 2.239300203572568e-05
+      },
+      "method_means": [
+        {
+          "method": "disjoint_pair_mean32",
+          "draw": 511.5,
+          "selection_agreement": 0.9736328125,
+          "validation_quotient_regret": 4.753801498236662e-06,
+          "selected_quotient_test_loss": 0.21923855888316926,
+          "selected_realized_test_loss": 0.2192467487042027
+        },
+        {
+          "method": "independent_pair_mean32",
+          "draw": 511.5,
+          "selection_agreement": 0.9691051136363636,
+          "validation_quotient_regret": 5.566216940044103e-06,
+          "selected_quotient_test_loss": 0.21923081006442402,
+          "selected_realized_test_loss": 0.21924100901968097
+        }
+      ]
+    },
+    "menu_repeat": {
+      "clauses": {
+        "score_rmse_lower": true,
+        "prediction_residual_lower": true,
+        "agreement_nolower": true,
+        "regret_nohigher": true
+      },
+      "score_rmse": {
+        "disjoint_pair_mean32": 4.114437604089984e-05,
+        "independent_pair_mean32": 7.591820613875406e-05
+      },
+      "prediction_residual": {
+        "disjoint_pair_mean32": 8.753441513682999e-06,
+        "independent_pair_mean32": 1.612496042544846e-05
+      },
+      "method_means": [
+        {
+          "method": "disjoint_pair_mean32",
+          "draw": 511.5,
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.2893473848332571,
+          "selected_realized_test_loss": 0.28935328697637136
+        },
+        {
+          "method": "independent_pair_mean32",
+          "draw": 511.5,
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.2893473848332571,
+          "selected_realized_test_loss": 0.2893564641276917
+        }
+      ]
+    },
+    "openml_external": {
+      "clauses": {
+        "score_rmse_lower": true,
+        "prediction_residual_lower": true,
+        "agreement_nolower": true,
+        "regret_nohigher": true
+      },
+      "score_rmse": {
+        "disjoint_pair_mean32": 0.00011660072035383047,
+        "independent_pair_mean32": 0.0007734182918498053
+      },
+      "prediction_residual": {
+        "disjoint_pair_mean32": 3.6542114391882994e-06,
+        "independent_pair_mean32": 3.7605430063557815e-05
+      },
+      "method_means": [
+        {
+          "method": "disjoint_pair_mean32",
+          "draw": 511.5,
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.22980868001968485,
+          "selected_realized_test_loss": 0.22980868001968485
+        },
+        {
+          "method": "independent_pair_mean32",
+          "draw": 511.5,
+          "selection_agreement": 0.9508056640625,
+          "validation_quotient_regret": 2.8693067676267786e-05,
+          "selected_quotient_test_loss": 0.21980913033316146,
+          "selected_realized_test_loss": 0.21975122703431013
+        }
+      ]
+    },
+    "openml_taskbalanced": {
+      "clauses": {
+        "score_rmse_lower": true,
+        "prediction_residual_lower": true,
+        "agreement_nolower": true,
+        "regret_nohigher": true
+      },
+      "score_rmse": {
+        "disjoint_pair_mean32": 0.00012062812222089977,
+        "independent_pair_mean32": 0.00042661522151691184
+      },
+      "prediction_residual": {
+        "disjoint_pair_mean32": 2.606489839421902e-05,
+        "independent_pair_mean32": 5.1426235786573804e-05
+      },
+      "method_means": [
+        {
+          "method": "disjoint_pair_mean32",
+          "draw": 511.5,
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.15045784003436774,
+          "selected_realized_test_loss": 0.1504621023272601
+        },
+        {
+          "method": "independent_pair_mean32",
+          "draw": 511.5,
+          "selection_agreement": 0.9896240234375,
+          "validation_quotient_regret": 2.510938104784079e-05,
+          "selected_quotient_test_loss": 0.15057246817494382,
+          "selected_realized_test_loss": 0.15054407271643228
+        }
+      ]
+    },
+    "subsample_repeat": {
+      "clauses": {
+        "score_rmse_lower": true,
+        "prediction_residual_lower": true,
+        "agreement_nolower": true,
+        "regret_nohigher": true
+      },
+      "score_rmse": {
+        "disjoint_pair_mean32": 6.267234446195417e-05,
+        "independent_pair_mean32": 0.00010755550115579809
+      },
+      "prediction_residual": {
+        "disjoint_pair_mean32": 1.1475281521344705e-05,
+        "independent_pair_mean32": 1.9475731871216797e-05
+      },
+      "method_means": [
+        {
+          "method": "disjoint_pair_mean32",
+          "draw": 511.5,
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.29429457006881693,
+          "selected_realized_test_loss": 0.2943093781462619
+        },
+        {
+          "method": "independent_pair_mean32",
+          "draw": 511.5,
+          "selection_agreement": 1.0,
+          "validation_quotient_regret": 0.0,
+          "selected_quotient_test_loss": 0.29429457006881693,
+          "selected_realized_test_loss": 0.2943142042928288
+        }
+      ]
+    }
+  },
+  "panels_passing_by_clause": {
+    "rmse": 5,
+    "residual": 5,
+    "agreement": 5,
+    "regret": 5
+  },
+  "frozen_gate_passed": true
+}

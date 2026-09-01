@@ -1,0 +1,14 @@
+{
+  "all_methods_retained_in_rankings": true,
+  "bootstrap_draws": 5000,
+  "bootstrap_unit": "dataset",
+  "cells": 960,
+  "datasets": 10,
+  "denominator_sensitive_units": 24,
+  "methods": 8,
+  "model_families": 3,
+  "primary_unit": "dataset x model",
+  "seed_aggregation": "median",
+  "status": "COMPLETE",
+  "units": 240
+}

@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "cells": 25,
+  "designs_per_qmc_family": 4096,
+  "comparisons": {
+    "sobol16": {
+      "cells_strength2_lower": 19,
+      "pooled_reduction": 0.28764396545806914,
+      "control_pairwise_balanced_design_fraction_by_shape": {
+        "4x4x2x4": 0.0,
+        "4x1x2x4": 0.0,
+        "4x4x1x4": 0.0
+      }
+    },
+    "lhs16": {
+      "cells_strength2_lower": 23,
+      "pooled_reduction": 0.3714359522601396,
+      "control_pairwise_balanced_design_fraction_by_shape": {
+        "4x4x2x4": 0.0,
+        "4x1x2x4": 0.0,
+        "4x4x1x4": 0.0
+      }
+    }
+  },
+  "frozen_qmc_gate_passed": false
+}

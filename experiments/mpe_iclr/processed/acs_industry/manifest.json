@@ -1,0 +1,71 @@
+{
+  "extra_arrays": [],
+  "field_source_column": "NAICSP",
+  "input_files": [
+    {
+      "bytes": 70114146,
+      "path": "/data/mpe_iclr_data/downloads/acs_ca_2024.zip",
+      "sha256": "fa3e473e13b09bb6d9f915c7f5c58b8405a8e48d22c43f30d43055a8a6c52882"
+    },
+    {
+      "bytes": 37187628,
+      "path": "/data/mpe_iclr_data/downloads/acs_ny_2024.zip",
+      "sha256": "89d73997653d2a1d1b535a4a6618987819390b57a6022a167ec76fb8c7bf6699"
+    },
+    {
+      "bytes": 52105719,
+      "path": "/data/mpe_iclr_data/downloads/acs_tx_2024.zip",
+      "sha256": "42ad7127988234d7dd30c23df8ada371b2135b5db912d2e634a6f901477afe63"
+    },
+    {
+      "bytes": 102789,
+      "path": "/data/mpe_iclr_data/downloads/census_2022_industry_crosswalk.xlsx",
+      "sha256": "c9d2e004b2735c3975f0768e7dac704df6d2e0b36b24d33f5dbc7109cab5628c"
+    }
+  ],
+  "max_state_rows": 22464,
+  "metric": "unweighted shortest path on frozen official-code prefix hierarchy",
+  "metric_audit": {
+    "diagonal_error": 0.0,
+    "max_triangle_violation": 0.0,
+    "passed": true,
+    "states": 234,
+    "symmetry_error": 0.0,
+    "triangle_entries_checked": 12812904
+  },
+  "metric_inputs": [
+    "NAICSP",
+    "official Census crosswalk"
+  ],
+  "metric_target_independent": true,
+  "min_state_rows": 52,
+  "minimum_rows_per_state": 50,
+  "ordinary_covariates": [
+    "AGEP",
+    "SCHL",
+    "WKHP",
+    "WKWN",
+    "ST",
+    "SEX",
+    "COW",
+    "ESR",
+    "MAR",
+    "RAC1P"
+  ],
+  "row_table_sha256": "75a7b686dd6cc69acaceca3cf96dedff56544f8e0799ba8e70f59716f19abdf0",
+  "rows": 299299,
+  "source_unit": "ACS",
+  "split_seeds": [
+    20261001,
+    20261002,
+    20261003,
+    20261004,
+    20261005
+  ],
+  "states": 234,
+  "status": "RUN",
+  "target_column": "target",
+  "target_transform": "log1p(WAGP)",
+  "target_used_for_sampling_or_geometry": false,
+  "task": "acs_industry"
+}

@@ -1,0 +1,1630 @@
+{
+  "status": "frozen_synthetic_semantic_metric_falsification",
+  "states": 24,
+  "trials_per_cell": 200,
+  "candidate_topology_strength": 4.0,
+  "true_topology_strengths": [
+    1.0,
+    4.0,
+    16.0
+  ],
+  "candidate_metrics": [
+    "isotropic",
+    "path",
+    "ring",
+    "permuted_path"
+  ],
+  "scenarios": {
+    "true1_n48_v96_noise0.5": {
+      "ordinal": {
+        "matched_metric": "path",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.16228996412236468,
+            "median_test_mse": 0.14495422145897296,
+            "win_rate": 0.43,
+            "median_selected_strength": 0.01
+          },
+          "path": {
+            "mean_test_mse": 0.1675715854168574,
+            "median_test_mse": 0.15167162070398016,
+            "win_rate": 0.25,
+            "median_selected_strength": 0.002154434690031882
+          },
+          "ring": {
+            "mean_test_mse": 0.16993136712591603,
+            "median_test_mse": 0.15277425762010655,
+            "win_rate": 0.18,
+            "median_selected_strength": 0.002154434690031882
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.19793048856088455,
+            "median_test_mse": 0.18057086041483753,
+            "win_rate": 0.14,
+            "median_selected_strength": 0.002154434690031882
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": 0.005281621294492731,
+            "mean_difference_ci95": [
+              -0.0005316249592531694,
+              0.011082336963060671
+            ],
+            "matched_win_fraction_excluding_ties": 0.44,
+            "two_sided_sign_test_p": 0.10363903843785738
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.0023597817090586053,
+            "mean_difference_ci95": [
+              -0.004398333022811062,
+              -0.0004605707412277101
+            ],
+            "matched_win_fraction_excluding_ties": 0.575,
+            "two_sided_sign_test_p": 0.04003719161339955
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.03035890314402713,
+            "mean_difference_ci95": [
+              -0.03969099459748965,
+              -0.02124427448233653
+            ],
+            "matched_win_fraction_excluding_ties": 0.695,
+            "two_sided_sign_test_p": 3.518157850375524e-08
+          }
+        }
+      },
+      "cyclic": {
+        "matched_metric": "ring",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.1652238633739727,
+            "median_test_mse": 0.15034924297412094,
+            "win_rate": 0.355,
+            "median_selected_strength": 0.01
+          },
+          "path": {
+            "mean_test_mse": 0.16140568993871995,
+            "median_test_mse": 0.14625249040194277,
+            "win_rate": 0.22,
+            "median_selected_strength": 0.002154434690031882
+          },
+          "ring": {
+            "mean_test_mse": 0.16105350061550325,
+            "median_test_mse": 0.14587204030294032,
+            "win_rate": 0.26,
+            "median_selected_strength": 0.002154434690031882
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.19180131185059182,
+            "median_test_mse": 0.17635401175407606,
+            "win_rate": 0.165,
+            "median_selected_strength": 0.002154434690031882
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.004170362758469472,
+            "mean_difference_ci95": [
+              -0.010885515605606298,
+              0.002515195477760945
+            ],
+            "matched_win_fraction_excluding_ties": 0.52,
+            "two_sided_sign_test_p": 0.6207289280968303
+          },
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.0003521893232167371,
+            "mean_difference_ci95": [
+              -0.0016124507229963755,
+              0.0009127395846640071
+            ],
+            "matched_win_fraction_excluding_ties": 0.56,
+            "two_sided_sign_test_p": 0.10363903843785738
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.03074781123508858,
+            "mean_difference_ci95": [
+              -0.040235318683166287,
+              -0.021383037610880076
+            ],
+            "matched_win_fraction_excluding_ties": 0.7,
+            "two_sided_sign_test_p": 1.507061557352626e-08
+          }
+        }
+      },
+      "nominal": {
+        "matched_metric": "isotropic",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.22386784542808916,
+            "median_test_mse": 0.2115124779383562,
+            "win_rate": 0.455,
+            "median_selected_strength": 0.0068129206905796075
+          },
+          "path": {
+            "mean_test_mse": 0.2594570613018889,
+            "median_test_mse": 0.23831948753800514,
+            "win_rate": 0.13,
+            "median_selected_strength": 0.0014677992676220691
+          },
+          "ring": {
+            "mean_test_mse": 0.25929066980066123,
+            "median_test_mse": 0.23862662056727202,
+            "win_rate": 0.135,
+            "median_selected_strength": 0.0014677992676220691
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.25989137498788434,
+            "median_test_mse": 0.23386866514613183,
+            "win_rate": 0.28,
+            "median_selected_strength": 0.0014677992676220691
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.035589215873799776,
+            "mean_difference_ci95": [
+              -0.047998249692814576,
+              -0.024195072593820994
+            ],
+            "matched_win_fraction_excluding_ties": 0.71,
+            "two_sided_sign_test_p": 2.579201364431024e-09
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.03542282437257215,
+            "mean_difference_ci95": [
+              -0.04696227936627013,
+              -0.023599903303320572
+            ],
+            "matched_win_fraction_excluding_ties": 0.7,
+            "two_sided_sign_test_p": 1.507061557352626e-08
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.036023529559795237,
+            "mean_difference_ci95": [
+              -0.0467299557101799,
+              -0.024959061487571675
+            ],
+            "matched_win_fraction_excluding_ties": 0.665,
+            "two_sided_sign_test_p": 3.547178174130631e-06
+          }
+        }
+      }
+    },
+    "true1_n96_v144_noise0.5": {
+      "ordinal": {
+        "matched_metric": "path",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.07619097852020426,
+            "median_test_mse": 0.0711512162486096,
+            "win_rate": 0.305,
+            "median_selected_strength": 0.004641588833612777
+          },
+          "path": {
+            "mean_test_mse": 0.0776589588661558,
+            "median_test_mse": 0.07181828255915856,
+            "win_rate": 0.24,
+            "median_selected_strength": 0.001
+          },
+          "ring": {
+            "mean_test_mse": 0.07687535669362093,
+            "median_test_mse": 0.07114714386034501,
+            "win_rate": 0.255,
+            "median_selected_strength": 0.001
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.08404643295094978,
+            "median_test_mse": 0.07563213498119585,
+            "win_rate": 0.2,
+            "median_selected_strength": 0.001
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": 0.00146798034595156,
+            "mean_difference_ci95": [
+              -0.0006580925628118997,
+              0.0036513746506434417
+            ],
+            "matched_win_fraction_excluding_ties": 0.51,
+            "two_sided_sign_test_p": 0.8320703744377604
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": 0.0007836021725348744,
+            "mean_difference_ci95": [
+              -7.683028092033372e-05,
+              0.0017559870991671876
+            ],
+            "matched_win_fraction_excluding_ties": 0.515,
+            "two_sided_sign_test_p": 0.7237710263128071
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.006387474084793958,
+            "mean_difference_ci95": [
+              -0.010499576211340076,
+              -0.002684642062424906
+            ],
+            "matched_win_fraction_excluding_ties": 0.62,
+            "two_sided_sign_test_p": 0.0008450699446919163
+          }
+        }
+      },
+      "cyclic": {
+        "matched_metric": "ring",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.07519467574731903,
+            "median_test_mse": 0.06778482541763711,
+            "win_rate": 0.3,
+            "median_selected_strength": 0.0068129206905796075
+          },
+          "path": {
+            "mean_test_mse": 0.07424429287042758,
+            "median_test_mse": 0.07020861187300707,
+            "win_rate": 0.18,
+            "median_selected_strength": 0.001
+          },
+          "ring": {
+            "mean_test_mse": 0.07367474365491838,
+            "median_test_mse": 0.06924203313585861,
+            "win_rate": 0.24,
+            "median_selected_strength": 0.001
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.08073227105247416,
+            "median_test_mse": 0.07381001852685876,
+            "win_rate": 0.28,
+            "median_selected_strength": 0.001
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.0015199320924006372,
+            "mean_difference_ci95": [
+              -0.004344215912628815,
+              0.0010364386155972294
+            ],
+            "matched_win_fraction_excluding_ties": 0.53,
+            "two_sided_sign_test_p": 0.4367534895513286
+          },
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.0005695492155091876,
+            "mean_difference_ci95": [
+              -0.00106760477095525,
+              -9.621815277446221e-05
+            ],
+            "matched_win_fraction_excluding_ties": 0.6,
+            "two_sided_sign_test_p": 0.005685155996750306
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.007057527397555763,
+            "mean_difference_ci95": [
+              -0.011554479210106912,
+              -0.003418167294413764
+            ],
+            "matched_win_fraction_excluding_ties": 0.57,
+            "two_sided_sign_test_p": 0.05596574049426471
+          }
+        }
+      },
+      "nominal": {
+        "matched_metric": "isotropic",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.0774257921579696,
+            "median_test_mse": 0.0699919363859028,
+            "win_rate": 0.37,
+            "median_selected_strength": 0.002154434690031882
+          },
+          "path": {
+            "mean_test_mse": 0.08310316807864217,
+            "median_test_mse": 0.07405802738051685,
+            "win_rate": 0.17,
+            "median_selected_strength": 0.00031622776601683794
+          },
+          "ring": {
+            "mean_test_mse": 0.08293627749473313,
+            "median_test_mse": 0.0737800582589946,
+            "win_rate": 0.185,
+            "median_selected_strength": 0.0003901933246890578
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.08550783148847298,
+            "median_test_mse": 0.0747914773162445,
+            "win_rate": 0.275,
+            "median_selected_strength": 0.00046415888336127773
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.005677375920672557,
+            "mean_difference_ci95": [
+              -0.010598164982827576,
+              -0.0014828695360460846
+            ],
+            "matched_win_fraction_excluding_ties": 0.53,
+            "two_sided_sign_test_p": 0.4367534895513286
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.005510485336763518,
+            "mean_difference_ci95": [
+              -0.010299268271089426,
+              -0.001368912355318443
+            ],
+            "matched_win_fraction_excluding_ties": 0.565,
+            "two_sided_sign_test_p": 0.07683763213126037
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.008082039330503363,
+            "mean_difference_ci95": [
+              -0.01280917684345713,
+              -0.003978138520806249
+            ],
+            "matched_win_fraction_excluding_ties": 0.655,
+            "two_sided_sign_test_p": 1.3857451572364535e-05
+          }
+        }
+      }
+    },
+    "true1_n96_v144_noise1": {
+      "ordinal": {
+        "matched_metric": "path",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.19482509895484923,
+            "median_test_mse": 0.18745057120912811,
+            "win_rate": 0.415,
+            "median_selected_strength": 0.021544346900318822
+          },
+          "path": {
+            "mean_test_mse": 0.19698318165308534,
+            "median_test_mse": 0.1819923882982831,
+            "win_rate": 0.265,
+            "median_selected_strength": 0.004641588833612777
+          },
+          "ring": {
+            "mean_test_mse": 0.19650513748518186,
+            "median_test_mse": 0.18433727995210433,
+            "win_rate": 0.19,
+            "median_selected_strength": 0.004641588833612777
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.21850637708622128,
+            "median_test_mse": 0.20915507460040378,
+            "win_rate": 0.13,
+            "median_selected_strength": 0.0031622776601683794
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": 0.0021580826982361407,
+            "mean_difference_ci95": [
+              -0.002991023351297014,
+              0.006924619592033718
+            ],
+            "matched_win_fraction_excluding_ties": 0.485,
+            "two_sided_sign_test_p": 0.7237710263128071
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": 0.00047804416790353375,
+            "mean_difference_ci95": [
+              -0.001483165644480695,
+              0.0027022126436911003
+            ],
+            "matched_win_fraction_excluding_ties": 0.545,
+            "two_sided_sign_test_p": 0.22924659725971622
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.021523195433135883,
+            "mean_difference_ci95": [
+              -0.028817649386450518,
+              -0.014373212466866932
+            ],
+            "matched_win_fraction_excluding_ties": 0.685,
+            "two_sided_sign_test_p": 1.7903211442481548e-07
+          }
+        }
+      },
+      "cyclic": {
+        "matched_metric": "ring",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.19191146318019814,
+            "median_test_mse": 0.1851816582550425,
+            "win_rate": 0.415,
+            "median_selected_strength": 0.021544346900318822
+          },
+          "path": {
+            "mean_test_mse": 0.19371747895717475,
+            "median_test_mse": 0.18786248245599987,
+            "win_rate": 0.24,
+            "median_selected_strength": 0.004641588833612777
+          },
+          "ring": {
+            "mean_test_mse": 0.19330223442895622,
+            "median_test_mse": 0.18731479450798272,
+            "win_rate": 0.225,
+            "median_selected_strength": 0.004641588833612777
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.22152863243519255,
+            "median_test_mse": 0.21275383833112588,
+            "win_rate": 0.12,
+            "median_selected_strength": 0.0031622776601683794
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": 0.0013907712487581212,
+            "mean_difference_ci95": [
+              -0.002991821968685886,
+              0.005716317656962761
+            ],
+            "matched_win_fraction_excluding_ties": 0.49,
+            "two_sided_sign_test_p": 0.8320703744377604
+          },
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.00041524452821849807,
+            "mean_difference_ci95": [
+              -0.0015917503692831,
+              0.0007894475369238088
+            ],
+            "matched_win_fraction_excluding_ties": 0.5,
+            "two_sided_sign_test_p": 1.0
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.02822639800623631,
+            "mean_difference_ci95": [
+              -0.03535173597614846,
+              -0.02122989627507445
+            ],
+            "matched_win_fraction_excluding_ties": 0.745,
+            "two_sided_sign_test_p": 2.5006948050908607e-12
+          }
+        }
+      },
+      "nominal": {
+        "matched_metric": "isotropic",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.2394886805273005,
+            "median_test_mse": 0.24060676468575032,
+            "win_rate": 0.495,
+            "median_selected_strength": 0.01
+          },
+          "path": {
+            "mean_test_mse": 0.2660560234102527,
+            "median_test_mse": 0.25058872110344527,
+            "win_rate": 0.125,
+            "median_selected_strength": 0.002154434690031882
+          },
+          "ring": {
+            "mean_test_mse": 0.26440962129473833,
+            "median_test_mse": 0.24819730327593786,
+            "win_rate": 0.145,
+            "median_selected_strength": 0.002154434690031882
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.2610640303668969,
+            "median_test_mse": 0.2526135834984733,
+            "win_rate": 0.235,
+            "median_selected_strength": 0.002154434690031882
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.026567342882952226,
+            "mean_difference_ci95": [
+              -0.03272779097619223,
+              -0.02034051351586663
+            ],
+            "matched_win_fraction_excluding_ties": 0.705,
+            "two_sided_sign_test_p": 6.307981725354877e-09
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.024920940767437873,
+            "mean_difference_ci95": [
+              -0.030675855591917742,
+              -0.019238284132794357
+            ],
+            "matched_win_fraction_excluding_ties": 0.72,
+            "two_sided_sign_test_p": 4.0153927932332665e-10
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.02157534983959644,
+            "mean_difference_ci95": [
+              -0.027536675500572833,
+              -0.01599111580061417
+            ],
+            "matched_win_fraction_excluding_ties": 0.74,
+            "two_sided_sign_test_p": 7.261223938014485e-12
+          }
+        }
+      }
+    },
+    "true4_n48_v96_noise0.5": {
+      "ordinal": {
+        "matched_metric": "path",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.12207796588403584,
+            "median_test_mse": 0.1150622704319684,
+            "win_rate": 0.21,
+            "median_selected_strength": 0.01467799267622069
+          },
+          "path": {
+            "mean_test_mse": 0.10635339200212054,
+            "median_test_mse": 0.10167973698963265,
+            "win_rate": 0.405,
+            "median_selected_strength": 0.004641588833612777
+          },
+          "ring": {
+            "mean_test_mse": 0.10844383576642543,
+            "median_test_mse": 0.1012221126565053,
+            "win_rate": 0.3,
+            "median_selected_strength": 0.004641588833612777
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.14668856460692553,
+            "median_test_mse": 0.1331873385953694,
+            "win_rate": 0.085,
+            "median_selected_strength": 0.0031622776601683794
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.01572457388191526,
+            "mean_difference_ci95": [
+              -0.019615756057176813,
+              -0.011955979215966734
+            ],
+            "matched_win_fraction_excluding_ties": 0.705,
+            "two_sided_sign_test_p": 6.307981725354877e-09
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.0020904437643048646,
+            "mean_difference_ci95": [
+              -0.003623097231192276,
+              -0.0007276289061269717
+            ],
+            "matched_win_fraction_excluding_ties": 0.55,
+            "two_sided_sign_test_p": 0.17896403953325155
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.04033517260480497,
+            "mean_difference_ci95": [
+              -0.046683862612646516,
+              -0.034431593227759114
+            ],
+            "matched_win_fraction_excluding_ties": 0.845,
+            "two_sided_sign_test_p": 3.413490545945216e-24
+          }
+        }
+      },
+      "cyclic": {
+        "matched_metric": "ring",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.11329843720901962,
+            "median_test_mse": 0.106572014600115,
+            "win_rate": 0.23,
+            "median_selected_strength": 0.01467799267622069
+          },
+          "path": {
+            "mean_test_mse": 0.1013066138156402,
+            "median_test_mse": 0.09579294496635155,
+            "win_rate": 0.275,
+            "median_selected_strength": 0.004641588833612777
+          },
+          "ring": {
+            "mean_test_mse": 0.10055085667478124,
+            "median_test_mse": 0.09614228761300626,
+            "win_rate": 0.4,
+            "median_selected_strength": 0.004641588833612777
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.13596309889703048,
+            "median_test_mse": 0.12781190657571628,
+            "win_rate": 0.095,
+            "median_selected_strength": 0.0031622776601683794
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.012747580534238363,
+            "mean_difference_ci95": [
+              -0.016197016202547387,
+              -0.00919630211903477
+            ],
+            "matched_win_fraction_excluding_ties": 0.705,
+            "two_sided_sign_test_p": 6.307981725354877e-09
+          },
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.0007557571408589428,
+            "mean_difference_ci95": [
+              -0.00152421502516514,
+              -4.537625347219163e-05
+            ],
+            "matched_win_fraction_excluding_ties": 0.575,
+            "two_sided_sign_test_p": 0.04003719161339955
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.035412242222249236,
+            "mean_difference_ci95": [
+              -0.04194450592642011,
+              -0.029306760649574888
+            ],
+            "matched_win_fraction_excluding_ties": 0.85,
+            "two_sided_sign_test_p": 6.17313535621387e-25
+          }
+        }
+      },
+      "nominal": {
+        "matched_metric": "isotropic",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.24055679146753742,
+            "median_test_mse": 0.20866927575657665,
+            "win_rate": 0.43,
+            "median_selected_strength": 0.004641588833612777
+          },
+          "path": {
+            "mean_test_mse": 0.28726005585289655,
+            "median_test_mse": 0.23950421261914004,
+            "win_rate": 0.135,
+            "median_selected_strength": 0.001
+          },
+          "ring": {
+            "mean_test_mse": 0.28453288707710156,
+            "median_test_mse": 0.23957552417867978,
+            "win_rate": 0.14,
+            "median_selected_strength": 0.001
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.279714332373809,
+            "median_test_mse": 0.2380225382733635,
+            "win_rate": 0.295,
+            "median_selected_strength": 0.001
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.04670326438535911,
+            "mean_difference_ci95": [
+              -0.060871397593570964,
+              -0.034057040513933594
+            ],
+            "matched_win_fraction_excluding_ties": 0.695,
+            "two_sided_sign_test_p": 3.518157850375524e-08
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.04397609560956409,
+            "mean_difference_ci95": [
+              -0.056471577818429715,
+              -0.031438894924585285
+            ],
+            "matched_win_fraction_excluding_ties": 0.68,
+            "two_sided_sign_test_p": 3.904467779916419e-07
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.0391575409062716,
+            "mean_difference_ci95": [
+              -0.051370403491016715,
+              -0.02771475135821164
+            ],
+            "matched_win_fraction_excluding_ties": 0.67,
+            "two_sided_sign_test_p": 1.737586927936315e-06
+          }
+        }
+      }
+    },
+    "true4_n96_v144_noise0.5": {
+      "ordinal": {
+        "matched_metric": "path",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.06231234755588291,
+            "median_test_mse": 0.05813322104656869,
+            "win_rate": 0.17,
+            "median_selected_strength": 0.01
+          },
+          "path": {
+            "mean_test_mse": 0.05549332104440339,
+            "median_test_mse": 0.05174020076790426,
+            "win_rate": 0.45,
+            "median_selected_strength": 0.0026583561751001307
+          },
+          "ring": {
+            "mean_test_mse": 0.056384506232579366,
+            "median_test_mse": 0.05305584977456125,
+            "win_rate": 0.295,
+            "median_selected_strength": 0.002154434690031882
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.06996128447752352,
+            "median_test_mse": 0.06521586746122067,
+            "win_rate": 0.085,
+            "median_selected_strength": 0.0014677992676220691
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.006819026511479526,
+            "mean_difference_ci95": [
+              -0.0087436977223976,
+              -0.004938587252404736
+            ],
+            "matched_win_fraction_excluding_ties": 0.745,
+            "two_sided_sign_test_p": 2.5006948050908607e-12
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.0008911851881759814,
+            "mean_difference_ci95": [
+              -0.0018132457153989725,
+              -1.2274655379211553e-05
+            ],
+            "matched_win_fraction_excluding_ties": 0.58,
+            "two_sided_sign_test_p": 0.028125407232926346
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.014467963433120122,
+            "mean_difference_ci95": [
+              -0.01706669396706682,
+              -0.011866926871749705
+            ],
+            "matched_win_fraction_excluding_ties": 0.835,
+            "two_sided_sign_test_p": 9.335983227292453e-23
+          }
+        }
+      },
+      "cyclic": {
+        "matched_metric": "ring",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.062407278585853564,
+            "median_test_mse": 0.058710752764437726,
+            "win_rate": 0.195,
+            "median_selected_strength": 0.01
+          },
+          "path": {
+            "mean_test_mse": 0.057472300606348184,
+            "median_test_mse": 0.05546677556030836,
+            "win_rate": 0.345,
+            "median_selected_strength": 0.0031622776601683794
+          },
+          "ring": {
+            "mean_test_mse": 0.05719433834660055,
+            "median_test_mse": 0.055481022880784395,
+            "win_rate": 0.33,
+            "median_selected_strength": 0.0031622776601683794
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.06797681966981717,
+            "median_test_mse": 0.06457382667852862,
+            "win_rate": 0.13,
+            "median_selected_strength": 0.0014677992676220691
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.005212940239253011,
+            "mean_difference_ci95": [
+              -0.006941611791461528,
+              -0.003511625979627329
+            ],
+            "matched_win_fraction_excluding_ties": 0.69,
+            "two_sided_sign_test_p": 8.026905991184951e-08
+          },
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.00027796225974763,
+            "mean_difference_ci95": [
+              -0.0005481049964250617,
+              -5.7538111565275525e-06
+            ],
+            "matched_win_fraction_excluding_ties": 0.535,
+            "two_sided_sign_test_p": 0.3580030906245022
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.010782481323216615,
+            "mean_difference_ci95": [
+              -0.013338050952428961,
+              -0.008323531977741168
+            ],
+            "matched_win_fraction_excluding_ties": 0.76,
+            "two_sided_sign_test_p": 8.738435036825214e-14
+          }
+        }
+      },
+      "nominal": {
+        "matched_metric": "isotropic",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.08096070799243606,
+            "median_test_mse": 0.07337344725452952,
+            "win_rate": 0.355,
+            "median_selected_strength": 0.0031622776601683794
+          },
+          "path": {
+            "mean_test_mse": 0.08621032653208893,
+            "median_test_mse": 0.07311597975683005,
+            "win_rate": 0.195,
+            "median_selected_strength": 0.00046415888336127773
+          },
+          "ring": {
+            "mean_test_mse": 0.08712533081232186,
+            "median_test_mse": 0.0737128752299962,
+            "win_rate": 0.155,
+            "median_selected_strength": 0.00046415888336127773
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.08760322769670648,
+            "median_test_mse": 0.07386141956701897,
+            "win_rate": 0.295,
+            "median_selected_strength": 0.00046415888336127773
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.005249618539652887,
+            "mean_difference_ci95": [
+              -0.008272926977509445,
+              -0.0023127704511889525
+            ],
+            "matched_win_fraction_excluding_ties": 0.58,
+            "two_sided_sign_test_p": 0.028125407232926346
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.00616462281988582,
+            "mean_difference_ci95": [
+              -0.009091097683955746,
+              -0.0034180768181622627
+            ],
+            "matched_win_fraction_excluding_ties": 0.61,
+            "two_sided_sign_test_p": 0.0022794385018057297
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.00664251970427042,
+            "mean_difference_ci95": [
+              -0.011026772808565337,
+              -0.0025462674193443345
+            ],
+            "matched_win_fraction_excluding_ties": 0.63,
+            "two_sided_sign_test_p": 0.00028927526378705657
+          }
+        }
+      }
+    },
+    "true4_n96_v144_noise1": {
+      "ordinal": {
+        "matched_metric": "path",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.14298920838813667,
+            "median_test_mse": 0.13741842705130142,
+            "win_rate": 0.235,
+            "median_selected_strength": 0.03162277660168379
+          },
+          "path": {
+            "mean_test_mse": 0.13186009510736668,
+            "median_test_mse": 0.12652821454547603,
+            "win_rate": 0.41,
+            "median_selected_strength": 0.01
+          },
+          "ring": {
+            "mean_test_mse": 0.13353467822048065,
+            "median_test_mse": 0.12698227432345227,
+            "win_rate": 0.305,
+            "median_selected_strength": 0.01
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.16534555211616414,
+            "median_test_mse": 0.15826615558440288,
+            "win_rate": 0.05,
+            "median_selected_strength": 0.0068129206905796075
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.011129113280770033,
+            "mean_difference_ci95": [
+              -0.014123683809219103,
+              -0.008111052476760758
+            ],
+            "matched_win_fraction_excluding_ties": 0.705,
+            "two_sided_sign_test_p": 6.307981725354877e-09
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.001674583113113985,
+            "mean_difference_ci95": [
+              -0.003024084262339996,
+              -0.00038538538442962314
+            ],
+            "matched_win_fraction_excluding_ties": 0.555,
+            "two_sided_sign_test_p": 0.13736665086863079
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.0334854570087975,
+            "mean_difference_ci95": [
+              -0.03837231545428707,
+              -0.02906952263748561
+            ],
+            "matched_win_fraction_excluding_ties": 0.875,
+            "two_sided_sign_test_p": 6.551477846194491e-29
+          }
+        }
+      },
+      "cyclic": {
+        "matched_metric": "ring",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.14646012439928724,
+            "median_test_mse": 0.13523799354127897,
+            "win_rate": 0.255,
+            "median_selected_strength": 0.03162277660168379
+          },
+          "path": {
+            "mean_test_mse": 0.1376244327271081,
+            "median_test_mse": 0.13274986402765354,
+            "win_rate": 0.265,
+            "median_selected_strength": 0.01
+          },
+          "ring": {
+            "mean_test_mse": 0.13679297294373527,
+            "median_test_mse": 0.13097038296349595,
+            "win_rate": 0.4,
+            "median_selected_strength": 0.01
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.16970870857404197,
+            "median_test_mse": 0.1621460109483889,
+            "win_rate": 0.08,
+            "median_selected_strength": 0.01
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.009667151455552012,
+            "mean_difference_ci95": [
+              -0.013281588769718189,
+              -0.006166200179643531
+            ],
+            "matched_win_fraction_excluding_ties": 0.68,
+            "two_sided_sign_test_p": 3.904467779916419e-07
+          },
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.0008314597833728245,
+            "mean_difference_ci95": [
+              -0.0017468044191239157,
+              0.00010452082448250033
+            ],
+            "matched_win_fraction_excluding_ties": 0.55,
+            "two_sided_sign_test_p": 0.17896403953325155
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.03291573563030674,
+            "mean_difference_ci95": [
+              -0.03801655227606181,
+              -0.02784145920416935
+            ],
+            "matched_win_fraction_excluding_ties": 0.81,
+            "two_sided_sign_test_p": 1.9843700887411167e-19
+          }
+        }
+      },
+      "nominal": {
+        "matched_metric": "isotropic",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.23913319802802163,
+            "median_test_mse": 0.22507235619916538,
+            "win_rate": 0.53,
+            "median_selected_strength": 0.01
+          },
+          "path": {
+            "mean_test_mse": 0.26654463500745335,
+            "median_test_mse": 0.24773713162797878,
+            "win_rate": 0.1,
+            "median_selected_strength": 0.0014677992676220691
+          },
+          "ring": {
+            "mean_test_mse": 0.26478999861966335,
+            "median_test_mse": 0.2463071556894057,
+            "win_rate": 0.135,
+            "median_selected_strength": 0.0014677992676220691
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.2641306883794383,
+            "median_test_mse": 0.23884792534898364,
+            "win_rate": 0.235,
+            "median_selected_strength": 0.0018111169788269756
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.027411436979431717,
+            "mean_difference_ci95": [
+              -0.03406700294811294,
+              -0.021053341945046995
+            ],
+            "matched_win_fraction_excluding_ties": 0.75,
+            "two_sided_sign_test_p": 8.393020875604775e-13
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.025656800591641736,
+            "mean_difference_ci95": [
+              -0.03194639775976303,
+              -0.019697733452894765
+            ],
+            "matched_win_fraction_excluding_ties": 0.755,
+            "two_sided_sign_test_p": 2.74428563600153e-13
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.02499749035141666,
+            "mean_difference_ci95": [
+              -0.031108466853039703,
+              -0.019139105342128603
+            ],
+            "matched_win_fraction_excluding_ties": 0.695,
+            "two_sided_sign_test_p": 3.518157850375524e-08
+          }
+        }
+      }
+    },
+    "true16_n48_v96_noise0.5": {
+      "ordinal": {
+        "matched_metric": "path",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.07857027833944757,
+            "median_test_mse": 0.07338865210325103,
+            "win_rate": 0.075,
+            "median_selected_strength": 0.03162277660168379
+          },
+          "path": {
+            "mean_test_mse": 0.0600590192921149,
+            "median_test_mse": 0.05528182446634117,
+            "win_rate": 0.585,
+            "median_selected_strength": 0.01
+          },
+          "ring": {
+            "mean_test_mse": 0.06215978785129018,
+            "median_test_mse": 0.05845451304702711,
+            "win_rate": 0.3,
+            "median_selected_strength": 0.01
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.09190022753506226,
+            "median_test_mse": 0.08578200530129962,
+            "win_rate": 0.04,
+            "median_selected_strength": 0.01
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.018511259047332675,
+            "mean_difference_ci95": [
+              -0.02108799018599724,
+              -0.015979181649109706
+            ],
+            "matched_win_fraction_excluding_ties": 0.89,
+            "two_sided_sign_test_p": 1.595273675439492e-31
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.0021007685591752667,
+            "mean_difference_ci95": [
+              -0.0031291750195802893,
+              -0.0011193227865236106
+            ],
+            "matched_win_fraction_excluding_ties": 0.65,
+            "two_sided_sign_test_p": 2.6528755595268727e-05
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.031841208242947346,
+            "mean_difference_ci95": [
+              -0.03560824471924534,
+              -0.028119809743859626
+            ],
+            "matched_win_fraction_excluding_ties": 0.925,
+            "two_sided_sign_test_p": 1.9794233967752223e-38
+          }
+        }
+      },
+      "cyclic": {
+        "matched_metric": "ring",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.0722578127149521,
+            "median_test_mse": 0.06292739483066746,
+            "win_rate": 0.095,
+            "median_selected_strength": 0.046415888336127774
+          },
+          "path": {
+            "mean_test_mse": 0.05765409141542884,
+            "median_test_mse": 0.05250489149485135,
+            "win_rate": 0.365,
+            "median_selected_strength": 0.01467799267622069
+          },
+          "ring": {
+            "mean_test_mse": 0.056977989227155856,
+            "median_test_mse": 0.05206213657427998,
+            "win_rate": 0.515,
+            "median_selected_strength": 0.01467799267622069
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.08640762042825866,
+            "median_test_mse": 0.07837044867294858,
+            "win_rate": 0.025,
+            "median_selected_strength": 0.01467799267622069
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.01527982348779625,
+            "mean_difference_ci95": [
+              -0.01743224338620307,
+              -0.01319951654713615
+            ],
+            "matched_win_fraction_excluding_ties": 0.875,
+            "two_sided_sign_test_p": 6.551477846194491e-29
+          },
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.0006761021882729839,
+            "mean_difference_ci95": [
+              -0.001093245950274051,
+              -0.00028318142896790956
+            ],
+            "matched_win_fraction_excluding_ties": 0.585,
+            "two_sided_sign_test_p": 0.019396944540338364
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.029429631201102806,
+            "mean_difference_ci95": [
+              -0.03270261881906245,
+              -0.02639062926925912
+            ],
+            "matched_win_fraction_excluding_ties": 0.965,
+            "two_sided_sign_test_p": 2.94834827995298e-48
+          }
+        }
+      },
+      "nominal": {
+        "matched_metric": "isotropic",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.21043294501728824,
+            "median_test_mse": 0.18338154631905834,
+            "win_rate": 0.56,
+            "median_selected_strength": 0.004641588833612777
+          },
+          "path": {
+            "mean_test_mse": 0.25072830384778955,
+            "median_test_mse": 0.21082679638481994,
+            "win_rate": 0.15,
+            "median_selected_strength": 0.001
+          },
+          "ring": {
+            "mean_test_mse": 0.25122965141552656,
+            "median_test_mse": 0.20886474758853796,
+            "win_rate": 0.105,
+            "median_selected_strength": 0.001
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.25758536682522293,
+            "median_test_mse": 0.21311300532469113,
+            "win_rate": 0.185,
+            "median_selected_strength": 0.001
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.04029535883050128,
+            "mean_difference_ci95": [
+              -0.05067432653565781,
+              -0.03060300556467979
+            ],
+            "matched_win_fraction_excluding_ties": 0.71,
+            "two_sided_sign_test_p": 2.579201364431024e-09
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.04079670639823835,
+            "mean_difference_ci95": [
+              -0.05080661221023376,
+              -0.031038830289609777
+            ],
+            "matched_win_fraction_excluding_ties": 0.71,
+            "two_sided_sign_test_p": 2.579201364431024e-09
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.047152421807934754,
+            "mean_difference_ci95": [
+              -0.060289885759316895,
+              -0.0349527656672295
+            ],
+            "matched_win_fraction_excluding_ties": 0.76,
+            "two_sided_sign_test_p": 8.738435036825214e-14
+          }
+        }
+      }
+    },
+    "true16_n96_v144_noise0.5": {
+      "ordinal": {
+        "matched_metric": "path",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.04741577089182476,
+            "median_test_mse": 0.04489093307086742,
+            "win_rate": 0.13,
+            "median_selected_strength": 0.021544346900318822
+          },
+          "path": {
+            "mean_test_mse": 0.03850490189360855,
+            "median_test_mse": 0.03581219413260263,
+            "win_rate": 0.53,
+            "median_selected_strength": 0.0068129206905796075
+          },
+          "ring": {
+            "mean_test_mse": 0.0396975279256536,
+            "median_test_mse": 0.03669554583089046,
+            "win_rate": 0.32,
+            "median_selected_strength": 0.0068129206905796075
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.05557589962495859,
+            "median_test_mse": 0.05072016424297522,
+            "win_rate": 0.02,
+            "median_selected_strength": 0.003901933246890578
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.00891086899821621,
+            "mean_difference_ci95": [
+              -0.01028335886563501,
+              -0.007644556758730801
+            ],
+            "matched_win_fraction_excluding_ties": 0.84,
+            "two_sided_sign_test_p": 1.818080038171794e-23
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.00119262603204505,
+            "mean_difference_ci95": [
+              -0.0017498775719111488,
+              -0.0006595592128615466
+            ],
+            "matched_win_fraction_excluding_ties": 0.61,
+            "two_sided_sign_test_p": 0.0022794385018057297
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.017070997731350044,
+            "mean_difference_ci95": [
+              -0.019073601392174698,
+              -0.01518090634644911
+            ],
+            "matched_win_fraction_excluding_ties": 0.935,
+            "two_sided_sign_test_p": 1.1804539068010893e-40
+          }
+        }
+      },
+      "cyclic": {
+        "matched_metric": "ring",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.048676385969166604,
+            "median_test_mse": 0.04629881761895159,
+            "win_rate": 0.115,
+            "median_selected_strength": 0.021544346900318822
+          },
+          "path": {
+            "mean_test_mse": 0.039374301795482236,
+            "median_test_mse": 0.037788859998578596,
+            "win_rate": 0.375,
+            "median_selected_strength": 0.0068129206905796075
+          },
+          "ring": {
+            "mean_test_mse": 0.0390035422353183,
+            "median_test_mse": 0.037847345806875286,
+            "win_rate": 0.485,
+            "median_selected_strength": 0.0068129206905796075
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.054962150886549314,
+            "median_test_mse": 0.05182549864785259,
+            "win_rate": 0.025,
+            "median_selected_strength": 0.004641588833612777
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.009672843733848307,
+            "mean_difference_ci95": [
+              -0.01134396932071402,
+              -0.00819146683740618
+            ],
+            "matched_win_fraction_excluding_ties": 0.865,
+            "two_sided_sign_test_p": 2.8853963271389072e-27
+          },
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.0003707595601639353,
+            "mean_difference_ci95": [
+              -0.0006088243399105201,
+              -0.00013184551086064777
+            ],
+            "matched_win_fraction_excluding_ties": 0.565,
+            "two_sided_sign_test_p": 0.07683763213126037
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.015958608651231016,
+            "mean_difference_ci95": [
+              -0.01792295153119595,
+              -0.014086175820164012
+            ],
+            "matched_win_fraction_excluding_ties": 0.945,
+            "two_sided_sign_test_p": 5.12121787597151e-43
+          }
+        }
+      },
+      "nominal": {
+        "matched_metric": "isotropic",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.09342224945968805,
+            "median_test_mse": 0.07296041977107313,
+            "win_rate": 0.365,
+            "median_selected_strength": 0.002154434690031882
+          },
+          "path": {
+            "mean_test_mse": 0.10148685346157169,
+            "median_test_mse": 0.07795182101817649,
+            "win_rate": 0.16,
+            "median_selected_strength": 0.00031622776601683794
+          },
+          "ring": {
+            "mean_test_mse": 0.10162175246697683,
+            "median_test_mse": 0.07751550848542527,
+            "win_rate": 0.17,
+            "median_selected_strength": 0.00031622776601683794
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.10203233203282441,
+            "median_test_mse": 0.0766845193063538,
+            "win_rate": 0.305,
+            "median_selected_strength": 0.00046415888336127773
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.00806460400188365,
+            "mean_difference_ci95": [
+              -0.013261334489579594,
+              -0.003360094087207356
+            ],
+            "matched_win_fraction_excluding_ties": 0.64,
+            "two_sided_sign_test_p": 9.12981558531868e-05
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.00819950300728878,
+            "mean_difference_ci95": [
+              -0.013550589918888144,
+              -0.003491357475261486
+            ],
+            "matched_win_fraction_excluding_ties": 0.645,
+            "two_sided_sign_test_p": 4.9729734792135474e-05
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.008610082573136368,
+            "mean_difference_ci95": [
+              -0.015112528822358891,
+              -0.0026435575369524174
+            ],
+            "matched_win_fraction_excluding_ties": 0.6,
+            "two_sided_sign_test_p": 0.005685155996750306
+          }
+        }
+      }
+    },
+    "true16_n96_v144_noise1": {
+      "ordinal": {
+        "matched_metric": "path",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.09892866923516064,
+            "median_test_mse": 0.09022484847632156,
+            "win_rate": 0.12,
+            "median_selected_strength": 0.06812920690579607
+          },
+          "path": {
+            "mean_test_mse": 0.07951316915556969,
+            "median_test_mse": 0.07360940499504136,
+            "win_rate": 0.545,
+            "median_selected_strength": 0.021544346900318822
+          },
+          "ring": {
+            "mean_test_mse": 0.08219718560239735,
+            "median_test_mse": 0.07404866872343419,
+            "win_rate": 0.31,
+            "median_selected_strength": 0.021544346900318822
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.11574620922820707,
+            "median_test_mse": 0.10757198076362731,
+            "win_rate": 0.025,
+            "median_selected_strength": 0.021544346900318822
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.019415500079590947,
+            "mean_difference_ci95": [
+              -0.0219882806268433,
+              -0.01694154466242603
+            ],
+            "matched_win_fraction_excluding_ties": 0.865,
+            "two_sided_sign_test_p": 2.8853963271389072e-27
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.002684016446827649,
+            "mean_difference_ci95": [
+              -0.0036940366923782007,
+              -0.0017484063517634939
+            ],
+            "matched_win_fraction_excluding_ties": 0.615,
+            "two_sided_sign_test_p": 0.0014016905787957936
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.03623304007263736,
+            "mean_difference_ci95": [
+              -0.040752192605329654,
+              -0.03201671486341128
+            ],
+            "matched_win_fraction_excluding_ties": 0.945,
+            "two_sided_sign_test_p": 5.12121787597151e-43
+          }
+        }
+      },
+      "cyclic": {
+        "matched_metric": "ring",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.0882296169940443,
+            "median_test_mse": 0.08098692766855183,
+            "win_rate": 0.14,
+            "median_selected_strength": 0.09999999999999999
+          },
+          "path": {
+            "mean_test_mse": 0.07579260982032872,
+            "median_test_mse": 0.06991724106087445,
+            "win_rate": 0.28,
+            "median_selected_strength": 0.03162277660168379
+          },
+          "ring": {
+            "mean_test_mse": 0.07485223280800048,
+            "median_test_mse": 0.06923026794992258,
+            "win_rate": 0.52,
+            "median_selected_strength": 0.03162277660168379
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.10214116651339294,
+            "median_test_mse": 0.09318779629720897,
+            "win_rate": 0.06,
+            "median_selected_strength": 0.03162277660168379
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_isotropic": {
+            "mean_test_mse_difference": -0.013377384186043829,
+            "mean_difference_ci95": [
+              -0.015685454222595447,
+              -0.011181276140921459
+            ],
+            "matched_win_fraction_excluding_ties": 0.78,
+            "two_sided_sign_test_p": 6.837911374316684e-16
+          },
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.0009403770123282498,
+            "mean_difference_ci95": [
+              -0.001477500975877892,
+              -0.0003995681857560108
+            ],
+            "matched_win_fraction_excluding_ties": 0.645,
+            "two_sided_sign_test_p": 4.9729734792135474e-05
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.027288933705392468,
+            "mean_difference_ci95": [
+              -0.030793309862643937,
+              -0.023876084397990355
+            ],
+            "matched_win_fraction_excluding_ties": 0.885,
+            "two_sided_sign_test_p": 1.2434522550868792e-30
+          }
+        }
+      },
+      "nominal": {
+        "matched_metric": "isotropic",
+        "trials": 200,
+        "metrics": {
+          "isotropic": {
+            "mean_test_mse": 0.2340375714344024,
+            "median_test_mse": 0.23227163236342624,
+            "win_rate": 0.51,
+            "median_selected_strength": 0.01467799267622069
+          },
+          "path": {
+            "mean_test_mse": 0.25958935004022177,
+            "median_test_mse": 0.24599081537558515,
+            "win_rate": 0.125,
+            "median_selected_strength": 0.002154434690031882
+          },
+          "ring": {
+            "mean_test_mse": 0.257863184888929,
+            "median_test_mse": 0.24547706708831185,
+            "win_rate": 0.135,
+            "median_selected_strength": 0.002154434690031882
+          },
+          "permuted_path": {
+            "mean_test_mse": 0.25894753650833857,
+            "median_test_mse": 0.24589301561793941,
+            "win_rate": 0.23,
+            "median_selected_strength": 0.002154434690031882
+          }
+        },
+        "paired_matched_contrasts": {
+          "matched_minus_path": {
+            "mean_test_mse_difference": -0.025551778605819385,
+            "mean_difference_ci95": [
+              -0.031889547351514023,
+              -0.019219337472503605
+            ],
+            "matched_win_fraction_excluding_ties": 0.725,
+            "two_sided_sign_test_p": 1.5280548809315418e-10
+          },
+          "matched_minus_ring": {
+            "mean_test_mse_difference": -0.023825613454526683,
+            "mean_difference_ci95": [
+              -0.030253814548646844,
+              -0.0179791868384605
+            ],
+            "matched_win_fraction_excluding_ties": 0.725,
+            "two_sided_sign_test_p": 1.5280548809315418e-10
+          },
+          "matched_minus_permuted_path": {
+            "mean_test_mse_difference": -0.024909965073936197,
+            "mean_difference_ci95": [
+              -0.031480905477597194,
+              -0.018528518849067546
+            ],
+            "matched_win_fraction_excluding_ties": 0.74,
+            "two_sided_sign_test_p": 7.261223938014485e-12
+          }
+        }
+      }
+    }
+  }
+}

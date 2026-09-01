@@ -1,0 +1,13 @@
+{
+  "status": "complete",
+  "cells": 20,
+  "all_orbits_canonicalized_to_one_digest": true,
+  "total_checked_views": 576,
+  "equal_compute_cells_canonical_better_than_identity_seed_ensemble": 6,
+  "equal_compute_cells_within_relative_loss_rope": 12,
+  "mean_equal_compute_relative_loss_change": 0.0030128387395809923,
+  "median_equal_compute_relative_loss_change": 0.0003840426603239518,
+  "canonical_cells_beating_full_32_schema_x_4_seed_quotient": 6,
+  "mean_relative_loss_vs_full_quotient": 0.0036282307644911168,
+  "maximum_raw_ambiguity_identity_error": 1.6609977282477928e-16
+}

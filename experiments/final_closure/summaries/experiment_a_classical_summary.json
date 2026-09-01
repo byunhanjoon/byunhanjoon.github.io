@@ -1,0 +1,20 @@
+{
+  "cells": 24,
+  "model_summary": {
+    "catboost_native": {
+      "canonical_residual": 0.00017220039099124357,
+      "cells": 12,
+      "oc2_cell_wins": 7,
+      "oc2_independent_residual": 0.00014426857327348076,
+      "oc2_relative_reduction": 0.16220530950584855
+    },
+    "xgboost": {
+      "canonical_residual": 1.093255650096441e-14,
+      "cells": 12,
+      "oc2_cell_wins": 12,
+      "oc2_independent_residual": 4.1942668861519886e-15,
+      "oc2_relative_reduction": 0.6163507697598458
+    }
+  },
+  "status": "complete"
+}

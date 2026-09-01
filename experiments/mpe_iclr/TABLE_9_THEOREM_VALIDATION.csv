@@ -1,0 +1,8 @@
+Result,Statement,Passed,Validation cells,Maximum violation/difference
+Theorem 1,exact chart/relabeling invariance,True,288,0.0
+Theorem 2,partition-of-unity interpolation bound,True,324,0.0
+Theorem 3,linear-head realizability,True,6,0.0
+Theorem 4,equality-metric impossibility,True,1,0.0
+Theorem 5,metric perturbation stability,True,27,0.02708767923480477
+Theorem 6,landmark coverage / metric complexity,True,567,0.0
+Proposition 7,interval triangular special case,True,1,2.9976021664879227e-15

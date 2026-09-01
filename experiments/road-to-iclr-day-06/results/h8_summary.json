@@ -1,0 +1,66 @@
+{
+  "status": "complete",
+  "artifacts": 29,
+  "expected_artifacts": 29,
+  "gates": {
+    "complete_and_integral": {
+      "value": 29,
+      "required": 29,
+      "integrity_errors": [],
+      "integrity_bundles": 36,
+      "excluded_development_stems": [
+        "bank_marketing_subscription__ft_transformer__seed8101",
+        "bank_marketing_subscription__mlp__seed8101",
+        "bank_marketing_subscription__resnet__seed8101",
+        "credit_card_default__ft_transformer__seed8101",
+        "credit_card_default__mlp__seed8101",
+        "credit_card_default__resnet__seed8101",
+        "fremtpl_claim_count__mlp__seed8101"
+      ],
+      "pass": true
+    },
+    "sensitivity_specificity": {
+      "sensitivity": 1.0,
+      "specificity": 0.8888888888888888,
+      "required_sensitivity": 0.75,
+      "required_specificity": 0.75,
+      "confusion": {
+        "tp": 20,
+        "fn": 0,
+        "tn": 8,
+        "fp": 1
+      },
+      "pass": true
+    },
+    "balanced_accuracy": {
+      "value": 0.9444444444444444,
+      "required": 0.8,
+      "pass": true
+    },
+    "dataset_accuracy": {
+      "value": 3,
+      "required": 2,
+      "minimum_accuracy": 0.75,
+      "by_dataset": {
+        "bank_marketing_subscription": 1.0,
+        "credit_card_default": 1.0,
+        "fremtpl_claim_count": 0.9090909090909091
+      },
+      "pass": true
+    },
+    "delayed_material_recall": {
+      "value": 1.0,
+      "required": 0.75,
+      "delayed_positives": 6,
+      "pass": true
+    },
+    "accuracy_improvement_over_h6": {
+      "value": 0.0,
+      "required": 0.1,
+      "h8_accuracy": 0.9655172413793104,
+      "h6_accuracy": 0.9655172413793104,
+      "pass": false
+    }
+  },
+  "hypothesis_supported": false
+}

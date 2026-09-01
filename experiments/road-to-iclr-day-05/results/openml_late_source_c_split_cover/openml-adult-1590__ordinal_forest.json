@@ -1,0 +1,27 @@
+{
+  "status": "complete",
+  "dataset": "openml-adult-1590",
+  "model": "ordinal_forest",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 29304,
+    "validation": 9769,
+    "test": 9769
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "effective_split_seed": 2026083051,
+  "timing": {
+    "setup_seconds": 0.5394365040119737,
+    "fit_loop_seconds": 343.3233133298345,
+    "end_to_end_seconds": 344.55054896487854,
+    "fits_per_fit_loop_second": 0.3728264147242136
+  }
+}

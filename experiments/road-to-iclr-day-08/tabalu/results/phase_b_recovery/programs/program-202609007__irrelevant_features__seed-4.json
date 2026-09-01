@@ -1,0 +1,65 @@
+{
+  "record": {
+    "git_commit": "c000f06e0b8c6989d62ece8a769bbf269910a9b8",
+    "git_dirty": true,
+    "task_id": "program-202609007",
+    "task_seed": 202609007,
+    "seed": 4,
+    "condition": "irrelevant_features",
+    "test_multiplier": 8,
+    "search_seconds": 1.0636634598486125,
+    "operation_count": 2,
+    "truth_expression": "multiply(x0, multiply(x0, x2))",
+    "recovered_expression": "multiply(x0, multiply(x0, x2))",
+    "mae": 0.0,
+    "rmse": 0.0,
+    "r2": 1.0,
+    "nrmse": 0.0,
+    "relative_error": 0.0,
+    "feature_precision": 1.0,
+    "feature_recall": 1.0,
+    "feature_f1": 1.0,
+    "operator_accuracy": 1.0,
+    "exact_program": 1,
+    "depth_error": 0.0,
+    "coefficient_error": 0.0
+  },
+  "truth": {
+    "n_features": 8,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 8
+      }
+    ],
+    "output": 9,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "recovered": {
+    "n_features": 8,
+    "nodes": [
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 2
+      },
+      {
+        "operator": "multiply",
+        "left": 0,
+        "right": 8
+      }
+    ],
+    "output": 9,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  }
+}

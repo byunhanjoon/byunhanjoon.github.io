@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dataset": "openml-credit-approval-29",
+  "model": "native_histgb",
+  "task": "binclass",
+  "shape": [
+    4,
+    4,
+    2,
+    4
+  ],
+  "fits": 128,
+  "rows": {
+    "train": 414,
+    "validation": 138,
+    "test": 138
+  },
+  "full_product_verified": true,
+  "post_failure_schema_adapter": false,
+  "timing": {
+    "setup_seconds": 0.022660045884549618,
+    "fit_loop_seconds": 9.7059294921346,
+    "end_to_end_seconds": 9.73036586586386,
+    "fits_per_fit_loop_second": 13.18781473775669
+  }
+}

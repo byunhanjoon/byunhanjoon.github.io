@@ -1,0 +1,21 @@
+{
+  "task_id": "program-202608532",
+  "seed": 202608532,
+  "program": {
+    "n_features": 4,
+    "nodes": [
+      {
+        "operator": "abs",
+        "left": 2,
+        "right": null
+      }
+    ],
+    "output": 4,
+    "output_scale": 1.0,
+    "output_bias": 0.0,
+    "epsilon": 0.25
+  },
+  "n_irrelevant": 0,
+  "generation_attempt": 0,
+  "expression": "abs(x2)"
+}
