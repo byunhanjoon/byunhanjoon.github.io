@@ -3,104 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>종이를 돌려도 답은 바뀌지 않아야 한다 — Road to ICLR 9일차</title>
-    <meta name="description" content="Road to ICLR 9일차: 좌표 모눈을 돌리는 것만으로 모델의 답이 바뀌는 이유와 익숙한 기준점으로 행을 설명해 예측을 더 믿을 만하게 만드는 방법을 살펴봅니다.">
+    <title>모델은 점뿐 아니라 모눈도 보았다 — Road to ICLR 9일차</title>
+    <meta name="description" content="Road to ICLR 9일차: 좌표 모눈을 돌리는 것만으로 모델의 답이 바뀌는 이유와 기준점에 기반한 설명으로 학습을 더 믿을 만하게 만드는 방법을 다룬 인터랙티브 시각 에세이입니다.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09-ko.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09-ko.html">
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="종이를 돌려도 답은 바뀌지 않아야 한다">
-    <meta property="og:description" content="점은 그대로 두고 모눈종이만 돌립니다. 사람에게는 같은 그림이지만 AI 모델의 답은 달라질 수 있습니다.">
+    <meta property="og:title" content="모델은 점뿐 아니라 모눈도 보았다">
+    <meta property="og:description" content="점은 그대로였습니다. 모눈만 돌렸습니다. 그런데 모델은 왜 생각을 바꿨을까요?">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09-ko.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260901-2">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260901-3">
     <script src="../language.js" defer></script>
+    <script src="road-to-iclr-day-09.js?v=20260901-1" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"종이를 돌려도 답은 바뀌지 않아야 한다","description":"좌표 모눈을 돌리는 것만으로 모델의 답이 바뀌는 이유와 익숙한 기준점으로 예측을 더 믿을 만하게 만드는 방법을 살펴봅니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","inLanguage":"ko","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09-ko.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"모델은 점뿐 아니라 모눈도 보았다","description":"좌표 모눈을 돌리는 것만으로 모델의 답이 바뀌는 이유와 기준점에 기반한 설명으로 학습을 더 믿을 만하게 만드는 방법을 다룬 인터랙티브 시각 에세이입니다.","datePublished":"2026-09-01","dateModified":"2026-09-01","inLanguage":"ko","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09-ko.html"}
     </script>
 </head>
 <body>
     <header><nav><div class="social-icons"><a href="../Han_Joon_Byun_CV.pdf" target="_blank" title="이력서" aria-label="이력서"><i class="fas fa-file-alt"></i></a><a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ" target="_blank" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a><a href="https://linkedin.com/in/byunhanjoon" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://github.com/byunhanjoon" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="mailto:byunhanjoon@snu.ac.kr" title="이메일" aria-label="이메일"><i class="fas fa-envelope"></i></a></div><div class="nav-links"><a href="../index.html">홈</a><a href="../blog.html">블로그</a></div></nav></header>
 
     <main class="essay"><article>
-        <div class="essay-header">
+        <div class="essay-header d9-essay-header">
             <p class="series-kicker">Road to ICLR · 9일차 / 30</p>
-            <h1>종이를 돌려도 답은 바뀌지 않아야 한다.</h1>
-            <p class="essay-deck">점은 그대로 두고 모눈종이만 돌립니다. 사람에게는 같은 그림입니다. 하지만 AI 모델의 답은 달라질 수 있습니다.</p>
+            <h1>모델은 점뿐 아니라 모눈도 보았다.</h1>
+            <p class="essay-deck">점은 그대로였습니다. 모눈만 돌렸습니다. 사람은 같은 패턴을 보았지만 모델은 생각을 바꿨습니다.</p>
             <div class="essay-meta"><span>2026년 9월 1일</span><span>변한준</span></div>
         </div>
 
-        <div class="essay-body">
-            <p>환자, 집, 회사를 점으로 표시한 산점도를 떠올려 봅시다. 이제 종이를 살짝 돌립니다. 점과 점 사이의 관계는 하나도 바뀌지 않습니다. 사람은 곧바로 같은 그림임을 압니다. 하지만 이런 무해한 바꿔 쓰기를 정형 데이터 AI 모델에 보여 주자 답이 자주 달라졌습니다.</p>
+        <div class="essay-body d9-visual-essay">
+            <p>표는 현실 그 자체가 아니라 현실을 <em>설명하는 방식</em>입니다. 의료 모델은 환자를 직접 만나지 않고 열을 봅니다. 대출 모델은 차주를 만나지 않고 숫자를 봅니다. 그래서 조용하지만 중요한 질문이 생깁니다.</p>
 
-            <div class="thesis"><strong>간단한 교훈.</strong> 믿을 만한 모델은 모눈종이가 어느 방향을 향하는지가 아니라 점들이 이루는 패턴을 배워야 합니다.</div>
+            <p class="d9-big-question">의미는 그대로 둔 채 같은 사실을 다시 쓰면, 답도 바뀌어야 할까요?</p>
 
-            <h2>종이를 돌리자 답이 바뀌었습니다</h2>
+            <p>믿을 만한 모델이라면 대개 그렇지 않아야 합니다. 9일차에는 모든 점과 거리를 그대로 두고, 그 아래 보이지 않는 모눈종이만 돌려 이 생각을 시험했습니다.</p>
 
-            <p>하나의 표도 여러 방식으로 똑같은 사실을 표현할 수 있습니다. 온도의 단위를 바꾸고, 범주 이름을 다시 붙이고, 두 열을 섞어 새로운 방향으로 나타낼 수 있습니다. 원래대로 되돌릴 수 있다면 사라진 정보는 없습니다. 지도를 돌려도 종이 위의 북쪽만 움직일 뿐 도로와 거리는 그대로인 것과 같습니다.</p>
+            <h2>하나의 현실, 여러 설명</h2>
+
+            <p>슬라이더를 움직여 보세요. 점들이 함께 회전하므로 패턴은 전혀 달라지지 않습니다. 점을 설명하는 방향만 바뀝니다.</p>
 
             <figure class="wide-figure">
-                <div class="d9-rotation" role="img" aria-label="모눈종이를 돌리기 전과 후에 같은 점들이 있습니다. 점들의 관계는 그대로지만 모델의 답은 달라질 수 있습니다.">
-                    <header><span>모눈종이를 돌립니다</span><strong>점은 움직이지 않습니다</strong></header>
-                    <div class="d9-rotation-grid">
-                        <section><span>돌리기 전</span><div class="d9-points raw"><i></i><i></i><i></i><i></i><b>위</b><em>옆</em></div><small>같은 패턴</small></section>
-                        <div class="d9-rotate-arrow"><b>↻</b><span>종이만 회전</span></div>
-                        <section><span>돌린 뒤</span><div class="d9-points rotated"><i></i><i></i><i></i><i></i><b>위</b><em>옆</em></div><small>같은 패턴</small></section>
+                <div class="d9-rotate-lab" data-d9-rotate data-rest="처음과 같은 관점" data-drift="흔들릴 수 있음">
+                    <header><span>직접 해보기 · 설명을 돌립니다</span><strong>그 아래 현실은 그대로입니다</strong></header>
+                    <div class="d9-rotate-stage">
+                        <div class="d9-paper-frame" aria-hidden="true">
+                            <div class="d9-lab-paper" data-d9-paper style="--angle:18deg">
+                                <i></i><i></i><i></i><i></i><i></i><i></i>
+                                <b>위</b><em>옆</em>
+                            </div>
+                        </div>
+                        <div class="d9-observers">
+                            <section><span>사람이 보는 것</span><b>같은 패턴</b><small>점 사이의 관계</small></section>
+                            <section class="sensitive"><span>민감한 모델이 보는 것</span><b data-d9-model-answer>흔들릴 수 있음</b><i><em data-d9-drift style="--drift:51%"></em></i><small>측정 점수가 아닌 개념적 예시</small></section>
+                        </div>
                     </div>
-                    <footer><span><b>=</b> 사람 · 사실 · 거리</span><span><b>≠</b> 모델의 답</span></footer>
+                    <label class="d9-range"><span>좌표 모눈 돌리기</span><input data-d9-angle type="range" min="-35" max="35" value="18" step="1" aria-label="좌표 모눈 돌리기"><output data-d9-angle-output>18°</output></label>
+                    <footer><span><b>그대로</b> 행 · 레이블 · 거리 · 사용할 수 있는 정보</span><span><b>변화</b> 열의 숫자</span></footer>
                 </div>
-                <figcaption><strong>그림 1.</strong> 그림은 바뀌지 않았습니다. 그림을 설명하는 방향만 달라졌습니다.</figcaption>
+                <figcaption><strong>그림 1.</strong> 개념을 보여 주는 그림입니다. 문제는 그대로 보존하면서 학습기에 전달되는 숫자만 바꿀 수 있습니다.</figcaption>
             </figure>
 
-            <p>한 모델이나 한 표에서만 생긴 우연이 아니었습니다. 서로 매우 다른 다섯 종류의 모델을 11개 실제 데이터셋에서 시험했습니다. 모델과 데이터셋을 짝지은 경우의 약 4분의 3에서 무시하기 어려울 만큼 답이 달라졌습니다. 인위적인 회전뿐 아니라 실제로 쓰이는 평범한 대안 표현에서도 같은 문제가 나타났습니다.</p>
+            <p>11개 실제 데이터셋과 서로 매우 다른 다섯 종류의 모델에서 이는 예외적인 현상이 아니었습니다. 모델과 데이터셋을 짝지은 경우의 약 4분의 3이 연구에서 미리 정한 기준을 넘을 만큼 달라졌습니다.</p>
 
-            <div class="d9-evidence" role="img" aria-label="다섯 종류의 모델에서 모델과 데이터셋을 짝지은 경우의 약 4분의 3이 좌표 모눈을 돌린 뒤 예측을 바꿨습니다.">
-                <header><span>한 모델만의 문제가 아닙니다</span><strong>11개 실제 데이터셋</strong></header>
-                <div class="d9-evidence-hero"><section><b>약 4분의 3</b><span>무시하기 어려울 만큼 변화</span></section><section><b>5종</b><span>서로 다른 최신 모델</span></section><section><b>같은 사실</b><span>추가되거나 사라진 것 없음</span></section></div>
-                <footer><i><b style="--w:72.7%"></b></i><strong>축의 방향이 답에 영향을 주고 있었습니다.</strong></footer>
+            <div class="d9-orbit-finding" role="img" aria-label="사실은 같았지만 모델과 데이터셋을 짝지은 경우의 약 4분의 3에서 의미 있는 변화가 나타났습니다.">
+                <div><span>같은 사실, 다른 모눈</span><b>약 4분의 3</b><p>무시하기 어려울 만큼 달라진 모델–데이터셋 쌍</p></div>
+                <div class="d9-orbit-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="quiet"></i><i class="quiet"></i><i class="quiet"></i></div>
+                <small>11개 데이터셋 · 다섯 모델군 · 추가되거나 사라진 정보 없음</small>
             </div>
 
-            <h2>모델은 왜 방향을 신경 쓸까요?</h2>
+            <aside class="d9-side-note"><span>통찰 01</span><p><strong>표현 방식도 모델의 일부입니다.</strong> 학습기는 “대상 그 자체”를 보지 못합니다. 우리가 고른 한 가지 설명을 볼 뿐입니다.</p></aside>
 
-            <p>모델 학습은 굽이진 지형에서 내리막길을 걷는 일과 비슷합니다. 어떤 학습 규칙은 나침반의 방향마다 보폭을 다르게 정합니다. 언덕은 그대로여도 나침반을 돌리면 걷는 길이 달라질 수 있습니다.</p>
+            <h2>모눈은 어떻게 답 속으로 들어갈까요?</h2>
 
-            <p>이 설명을 확인하기 위해 두 모델이 정확히 같은 예측에서 출발하도록 만들었습니다. 단순한 학습 규칙을 쓰자 모눈을 돌린 뒤에도 둘은 함께 움직였습니다. 널리 쓰이는 적응형 규칙을 쓰자 둘은 다시 멀어졌습니다. 정보가 사라져서가 아니라 학습 도중 차이가 생긴 것입니다.</p>
+            <p>학습은 거친 첫 추측에서 최종 규칙까지 가는 여정입니다. 많은 학습 알고리즘은 축의 방향마다 서로 다른 크기로 발걸음을 내딛습니다. 예측 문제는 그대로여도 축을 돌리면 여정이 휘어질 수 있습니다.</p>
 
-            <div class="d9-mechanism" role="img" aria-label="두 학습기는 같은 답에서 시작합니다. 단순한 학습 경로에서는 함께 움직이지만 축에 민감한 경로에서는 답이 서로 멀어집니다.">
-                <header><span>같은 출발, 다른 경로</span><strong>모눈이 학습 여정을 바꿉니다</strong></header>
-                <div><section><span>출발</span><b>같은 답</b><i><em style="--w:2%"></em></i><small>둘을 가르는 차이 없음</small></section><section class="d9-sgd"><span>꾸준한 경로</span><b>함께 움직임</b><i><em style="--w:2%"></em></i><small>돌린 모눈을 무시</small></section><section class="d9-adam"><span>축에 민감한 경로</span><b>서로 멀어짐</b><i><em style="--w:84.2%"></em></i><small>모눈이 학습을 유도</small></section></div>
+            <div class="d9-path-diagram" role="img" aria-label="두 학습기가 같은 답에서 출발합니다. 한 학습 경로는 돌린 모눈을 무시해 함께 움직이지만 축에 민감한 경로에서는 답이 갈라집니다.">
+                <header><span>같은 시작 답</span><strong>그 뒤 모눈이 학습을 통해 들어옵니다</strong></header>
+                <div class="d9-path-start"><i></i><b>같은 예측</b></div>
+                <div class="d9-path-fork" aria-hidden="true"><i></i><i></i></div>
+                <div class="d9-path-lanes">
+                    <section><span>꾸준한 발걸음</span><div><i></i><i></i></div><b>함께 움직임</b><small>돌린 모눈을 무시</small></section>
+                    <section class="split"><span>축에 민감한 발걸음</span><div><i></i><i></i></div><b>서로 멀어짐</b><small>모눈이 경로를 유도</small></section>
+                </div>
             </div>
 
-            <h2>나침반 방향보다 기준점을 봅니다</h2>
+            <p>두 학습기가 정확히 같은 예측에서 출발하도록 만들어 이 원인을 확인했습니다. 단순한 학습 규칙은 답을 함께 유지했습니다. 널리 쓰이는 적응형 규칙은 둘을 다시 갈라놓았습니다. 한 표에 사실이 더 많았던 것이 아니라, 차이가 <em>학습 도중 만들어진</em> 것입니다.</p>
 
-            <p>자연스러운 해결책은 임의의 축에서 한 행이 어디에 있는지 알려 주지 않는 것입니다. 대신 학습 데이터에서 익숙한 몇몇 사례와 얼마나 비슷한지 설명합니다. “동쪽”, “북쪽”보다 눈에 보이는 건물을 기준으로 길을 알려 주는 것과 같습니다. 지도를 돌려도 건물들의 관계는 그대로입니다.</p>
+            <aside class="d9-side-note coral"><span>통찰 02</span><p><strong>동등한 입력도 동등한 학습 경로를 만들지는 않습니다.</strong> 좌표 모눈은 어떤 해답에 쉽게 도달할지를 정하는 숨은 선호처럼 작동합니다.</p></aside>
 
-            <div class="d9-identity" role="img" aria-label="한 행을 익숙한 기준 사례들과의 관계로 설명하면 좌표 모눈을 돌려도 설명이 그대로 유지됩니다.">
-                <span>기준점으로 보는 관점</span><b>새로운 행 → 익숙한 행들과의 관계 → 안정적인 설명</b><small>지도를 돌려도 기준점 사이의 상대적인 위치는 그대로입니다</small>
+            <h2>방향이 아니라 관계로 설명합니다</h2>
+
+            <p>한 점의 위치를 말하는 다른 방법이 있습니다. “동쪽으로 세 칸, 북쪽으로 두 칸”이라 하지 않고 익숙한 기준점들과 어떤 관계인지 말합니다. 지도를 돌리면 종이 위의 동쪽은 달라지지만 기준점들의 상대적 위치는 그대로입니다.</p>
+
+            <figure class="wide-figure">
+                <div class="d9-view-lab" data-d9-view>
+                    <header><span>하나의 점을 설명하는 두 방법</span><div><button type="button" data-d9-view-button="axes" aria-pressed="true">축</button><button type="button" data-d9-view-button="landmarks" aria-pressed="false">기준점</button></div></header>
+                    <svg viewBox="0 0 520 285" role="img" aria-label="좌표축으로 점을 찾는 관점과 세 기준점과의 관계로 점을 찾는 관점을 전환합니다">
+                        <g class="d9-svg-grid"><path d="M70 35V245M130 35V245M190 35V245M250 35V245M310 35V245M370 35V245M430 35V245M55 65H465M55 115H465M55 165H465M55 215H465"/><path class="axis" d="M55 245H475M55 255V25"/><text x="445" y="238">옆</text><text x="66" y="48">위</text></g>
+                        <g class="d9-svg-links"><path d="M330 103L125 198M330 103L250 62M330 103L420 218"/><circle cx="125" cy="198" r="15"/><circle cx="250" cy="62" r="15"/><circle cx="420" cy="218" r="15"/><text x="119" y="203">A</text><text x="244" y="67">B</text><text x="414" y="223">C</text></g>
+                        <g class="d9-svg-points"><circle cx="125" cy="198" r="7"/><circle cx="250" cy="62" r="7"/><circle cx="420" cy="218" r="7"/><circle cx="185" cy="132" r="7"/><circle cx="380" cy="155" r="7"/><circle class="query" cx="330" cy="103" r="10"/><text class="query-label" x="345" y="96">새로운 행</text></g>
+                    </svg>
+                    <p data-d9-view-copy data-axis-copy="축은 점에 주소를 줍니다. 모눈을 돌리면 그 주소가 바뀝니다." data-landmark-copy="기준점은 점에 관계를 줍니다. 모눈을 돌려도 그 관계는 그대로입니다.">축은 점에 주소를 줍니다. 모눈을 돌리면 그 주소가 바뀝니다.</p>
+                </div>
+                <figcaption><strong>그림 2.</strong> 관점을 바꿔 보세요. 둘 다 같은 점을 설명하지만 한쪽만 축의 방향에 의존합니다.</figcaption>
+            </figure>
+
+            <p>기준점 설명은 이 회전에 대해 시험한 모델을 완벽하게 안정시켰습니다. 하지만 더 깊은 긴장도 드러냈습니다. 어떤 표에서는 정확도가 나빠졌습니다. 임의적으로 보이는 원래 축이 때로 학습에 유용한 지름길이 되었던 것입니다.</p>
+
+            <p>따라서 “모든 것을 변하지 않게 만들자”는 올바른 원칙이 아닙니다. 안정성은 예측에 도움이 되는 것을 보존하는 동안에만 가치가 있습니다.</p>
+
+            <aside class="d9-side-note gold"><span>통찰 03</span><p><strong>불변성은 미덕이 아니라 예산입니다.</strong> 무관한 변화는 없애되, 유용한 단서까지 지우기 시작하면 멈춰야 합니다.</p></aside>
+
+            <h2>스위치가 아니라 다이얼</h2>
+
+            <p>마지막 방법은 두 독자를 모두 남겼습니다. 하나는 원래 열을 보고 다른 하나는 안정적인 기준점 관계를 봅니다. 작은 연습용 데이터가 예측 품질이 안전한 동안에만 다이얼을 안정성 쪽으로 돌립니다.</p>
+
+            <div class="d9-blend-lab" data-d9-blend data-msg-raw="원래 관점만 사용: 유연하지만 모눈이 학습을 유도할 수 있습니다." data-msg-blend="두 관점이 함께 기여: 모눈 민감도는 줄이고 탈출구는 남깁니다." data-msg-stable="기준점만 사용: 여기서는 완벽하게 안정적이지만 유용한 지름길을 잃을 수 있습니다.">
+                <header><span>안정성 다이얼을 움직여 보세요</span><strong>두 독자, 하나의 예측</strong></header>
+                <div class="d9-reader-cards"><section><span>원래 표를 읽는 모델</span><b>방향을 봄</b><small>유용하지만 때로 불안정</small></section><section><span>기준점을 읽는 모델</span><b>관계를 봄</b><small>안정적이지만 때로 제한적</small></section></div>
+                <div class="d9-blend-bar" aria-hidden="true"><i data-d9-raw-bar style="width:25%">원래 관점</i><b data-d9-stable-bar style="width:75%">기준점</b></div>
+                <label class="d9-range"><span>기준점 관점의 비중</span><input data-d9-blend-input type="range" min="0" max="100" value="75" step="25" aria-label="기준점 관점의 비중"><output data-d9-blend-output>75%</output></label>
+                <div class="d9-blend-readout"><span>남은 모눈 민감도 <b data-d9-sensitivity>25%</b></span><p data-d9-blend-message>두 관점이 함께 기여: 모눈 민감도는 줄이고 탈출구는 남깁니다.</p></div>
             </div>
 
-            <p>기준점 관점은 모델을 완벽하게 안정시켰지만 때로는 정확도를 낮췄습니다. 이것이 중요합니다. 원래 방향은 임의적이어도 학습에 유용한 지름길이 될 수 있습니다. 언제나 원래 방향을 버리면 한 종류의 불안정을 다른 종류로 바꾸는 셈입니다.</p>
+            <p>중요한 아이디어는 다이얼입니다. “좌표를 믿기”와 “좌표를 무시하기”라는 거짓 양자택일을 거부합니다. 안정적인 관점이 도움이 되면 강하게 사용하고, 비용이 커지면 뒤로 물러납니다.</p>
 
-            <p>그래서 마지막 방법은 두 관점을 모두 남겼습니다. 한 모델은 원래 표를 읽고, 다른 모델은 기준점 관점으로 읽습니다. 작은 연습용 데이터가 안정적인 관점을 얼마나 믿을지 정하고, 변화가 위험해 보이면 원래 관점으로 돌아갑니다.</p>
-
-            <div class="d9-final" role="img" aria-label="12개 새로운 데이터셋에서 두 관점을 안전하게 섞은 방법은 좌표 민감도를 4분의 3 줄이고, 36개 비교 중 29개에서 예측 품질을 개선하며, 숨어 있는 큰 실패를 보이지 않았습니다.">
-                <header><span>더 안전한 절충안</span><strong>12개 새로운 데이터셋에서 시험</strong></header>
+            <div class="d9-final" role="img" aria-label="12개 새로운 데이터셋에서 안전하게 섞은 방법은 좌표 민감도를 4분의 3 줄이고, 36개 비교 중 29개에서 예측 품질을 개선하며, 숨어 있는 큰 실패를 보이지 않았습니다.">
+                <header><span>새로운 데이터에서 일어난 일</span><strong>전혀 보지 않은 12개 데이터셋</strong></header>
                 <div class="d9-final-hero"><section><b>¾ 감소</b><span>모눈 방향에 대한 민감도</span></section><section><b>29 / 36</b><span>더 나은 예측 결과</span></section><section><b>없음</b><span>관측된 큰 숨은 실패</span></section></div>
-                <footer>도움이 되면 안정적인 관점을 유지하고, 그렇지 않으면 원래 관점으로 돌아갑니다.</footer>
+                <footer>강하지만 완전하지 않은 기준점 관점이 양쪽 극단보다 안전했습니다.</footer>
             </div>
 
-            <p>보편적인 치료법은 아닙니다. 모델 두 개를 학습해야 하고 일부 비교에서는 여전히 졌습니다. 그래도 가장 중요한 상식적 시험은 통과했습니다. 보통의 답이 모눈 방향에 훨씬 덜 흔들렸고, 그 개선 뒤에 다른 곳의 큰 실패가 숨어 있지도 않았습니다.</p>
+            <h2>남겨 두고 싶은 세 가지 생각</h2>
 
-            <div class="d9-takeaways">
-                <section><span>01</span><strong>종이를 돌려 봅니다</strong><p>사실이 그대로라면 믿을 만한 모델의 답도 비슷하게 유지되어야 합니다.</p></section>
-                <section><span>02</span><strong>기준점을 활용합니다</strong><p>사례 사이의 관계는 임의의 축 방향보다 믿을 만한 경우가 많습니다.</p></section>
-                <section><span>03</span><strong>탈출구를 남깁니다</strong><p>안정성은 중요하지만 실제 예측을 나쁘게 만들면서까지 지킬 목표는 아닙니다.</p></section>
+            <div class="d9-takeaways d9-takeaways-v2">
+                <section><span>01</span><strong>무엇이 “같은 것”인지 정합니다</strong><p>견고함은 어떤 바꿔 쓰기에서 답이 보존되어야 하는지 약속하는 데서 시작합니다.</p></section>
+                <section><span>02</span><strong>설명 방식을 소프트웨어처럼 시험합니다</strong><p>모눈을 돌리고, 단위를 바꾸고, 상태 이름을 바꿉니다. 의미를 보존하는 바꿔 쓰기는 모델의 단위 테스트입니다.</p></section>
+                <section><span>03</span><strong>물러날 선택지를 보존합니다</strong><p>안정성이 실제 과제를 해치기 전에 원래 관점으로 돌아갈 수 있을 때 가장 안전합니다.</p></section>
             </div>
 
-            <div class="thesis"><strong>9일차 결론.</strong> 믿을 만한 AI는 표 속의 사람과 패턴을 보아야지, 보이지 않는 모눈종이의 방향을 보아서는 안 됩니다. 가장 좋은 답은 좌표를 완전히 무시하는 것이 아니었습니다. 안정적인 기준점으로 표를 읽되, 그 관점이 놓치는 것을 원래 표가 잡아낼 수 있도록 가까이 두는 것이었습니다.</div>
+            <div class="thesis"><strong>9일차 결론.</strong> 좌표계는 현실 그 자체가 아닙니다. 하지만 학습기는 조용히 좌표계를 증거처럼 다룰 수 있습니다. 가장 좋은 해결책은 좌표를 지우는 것이 아니라 안정적인 관계 관점을 옆에 두고, 관측된 성능이 각 관점을 얼마나 믿을지 정하도록 하는 것이었습니다.</div>
 
             <h2>참고문헌</h2>
             <ol class="reference-list">

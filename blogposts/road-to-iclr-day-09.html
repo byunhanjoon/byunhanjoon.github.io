@@ -3,104 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turning the Paper Shouldn't Change the Answer — Road to ICLR Day 9</title>
-    <meta name="description" content="Day 9 of Road to ICLR: why turning the coordinate grid can change a model's answer, and how describing rows through familiar landmarks makes predictions more dependable.">
+    <title>The Model Saw the Grid, Not Just the Dots — Road to ICLR Day 9</title>
+    <meta name="description" content="Day 9 of Road to ICLR: an interactive visual essay about why turning a coordinate grid can change a model's answer, and how landmark-based descriptions make learning more dependable.">
     <meta name="author" content="Han Joon Byun">
     <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09-ko.html">
     <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Turning the Paper Shouldn't Change the Answer">
-    <meta property="og:description" content="Turn the graph paper without moving the dots. A person sees the same pattern, but an AI model may give a different answer.">
+    <meta property="og:title" content="The Model Saw the Grid, Not Just the Dots">
+    <meta property="og:description" content="The dots stayed put. The grid turned. Why did the model change its mind?">
     <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="road-to-iclr.css?v=20260901-2">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260901-3">
     <script src="../language.js" defer></script>
+    <script src="road-to-iclr-day-09.js?v=20260901-1" defer></script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Turning the Paper Shouldn't Change the Answer","description":"Why turning the coordinate grid can change a model's answer, and how a landmark-based safety check makes predictions more dependable.","datePublished":"2026-09-01","dateModified":"2026-09-01","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html"}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"The Model Saw the Grid, Not Just the Dots","description":"An interactive visual essay about why turning a coordinate grid can change a model's answer, and how landmark-based descriptions make learning more dependable.","datePublished":"2026-09-01","dateModified":"2026-09-01","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-09.html"}
     </script>
 </head>
 <body>
     <header><nav><div class="social-icons"><a href="../Han_Joon_Byun_CV.pdf" target="_blank" title="CV" aria-label="Curriculum vitae"><i class="fas fa-file-alt"></i></a><a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ" target="_blank" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a><a href="https://linkedin.com/in/byunhanjoon" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://github.com/byunhanjoon" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="mailto:byunhanjoon@snu.ac.kr" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a></div><div class="nav-links"><a href="../index.html">Home</a><a href="../blog.html">Blog</a></div></nav></header>
 
     <main class="essay"><article>
-        <div class="essay-header">
+        <div class="essay-header d9-essay-header">
             <p class="series-kicker">Road to ICLR · Day 9 / 30</p>
-            <h1>Turning the paper shouldn't change the answer.</h1>
-            <p class="essay-deck">Turn the graph paper without moving the dots. A person sees the same pattern. An AI model may give a different answer.</p>
+            <h1>The model saw the grid, not just the dots.</h1>
+            <p class="essay-deck">The dots stayed put. The grid turned. A person saw the same pattern—but the model changed its mind.</p>
             <div class="essay-meta"><span>September 1, 2026</span><span>Han Joon Byun</span></div>
         </div>
 
-        <div class="essay-body">
-            <p>Imagine a scatterplot of patients, homes, or companies. Now turn the paper slightly. No dot moves relative to another. A person immediately knows it is the same picture. But when I gave this kind of harmless rewrite to AI models for tables, their answers often changed.</p>
+        <div class="essay-body d9-visual-essay">
+            <p>A table is a <em>description</em> of reality. A medical model never meets a patient; it sees columns. A lending model never meets a borrower; it sees numbers. This makes a quiet question surprisingly important:</p>
 
-            <div class="thesis"><strong>The simple lesson.</strong> A dependable model should learn the pattern of the dots, not which way the graph paper happens to face.</div>
+            <p class="d9-big-question">If we rewrite the same facts without changing their meaning, should the answer change?</p>
 
-            <h2>Turn the paper, change the answer</h2>
+            <p>For a dependable model, usually not. Day 9 tested that idea with the simplest rewrite I could think of: keep every point and every distance, but turn the invisible graph paper underneath them.</p>
 
-            <p>A table may describe the same facts in many ways. We can measure temperature in different units, rename categories, or combine two columns into new directions. If the change is reversible, no information has disappeared. It is like rotating a map: north moves on the page, but the roads and distances stay put.</p>
+            <h2>One reality, many descriptions</h2>
+
+            <p>Drag the slider. The points rotate together, so their pattern never changes. Only the directions used to describe them do.</p>
 
             <figure class="wide-figure">
-                <div class="d9-rotation" role="img" aria-label="The same dots appear before and after the graph paper is turned. Their relationships stay the same, while a model's answer can change.">
-                    <header><span>TURN THE GRAPH PAPER</span><strong>do not move the dots</strong></header>
-                    <div class="d9-rotation-grid">
-                        <section><span>BEFORE</span><div class="d9-points raw"><i></i><i></i><i></i><i></i><b>up</b><em>across</em></div><small>same pattern</small></section>
-                        <div class="d9-rotate-arrow"><b>↻</b><span>turn only</span></div>
-                        <section><span>AFTER</span><div class="d9-points rotated"><i></i><i></i><i></i><i></i><b>up</b><em>across</em></div><small>same pattern</small></section>
+                <div class="d9-rotate-lab" data-d9-rotate data-rest="at the starting view" data-drift="may drift">
+                    <header><span>TRY IT · TURN THE DESCRIPTION</span><strong>the reality underneath stays fixed</strong></header>
+                    <div class="d9-rotate-stage">
+                        <div class="d9-paper-frame" aria-hidden="true">
+                            <div class="d9-lab-paper" data-d9-paper style="--angle:18deg">
+                                <i></i><i></i><i></i><i></i><i></i><i></i>
+                                <b>up</b><em>across</em>
+                            </div>
+                        </div>
+                        <div class="d9-observers">
+                            <section><span>WHAT A PERSON SEES</span><b>the same pattern</b><small>relationships between points</small></section>
+                            <section class="sensitive"><span>WHAT A SENSITIVE MODEL SEES</span><b data-d9-model-answer>may drift</b><i><em data-d9-drift style="--drift:51%"></em></i><small>an illustrative response, not a measured score</small></section>
+                        </div>
                     </div>
-                    <footer><span><b>=</b> people · facts · distances</span><span><b>≠</b> the model's answer</span></footer>
+                    <label class="d9-range"><span>Turn the coordinate grid</span><input data-d9-angle type="range" min="-35" max="35" value="18" step="1" aria-label="Turn the coordinate grid"><output data-d9-angle-output>18°</output></label>
+                    <footer><span><b>UNCHANGED</b> rows · labels · distances · available information</span><span><b>CHANGED</b> column values</span></footer>
                 </div>
-                <figcaption><strong>Figure 1.</strong> The picture has not changed. Only the directions used to describe it have.</figcaption>
+                <figcaption><strong>Figure 1.</strong> This is a conceptual demonstration. A rewrite can preserve the problem while changing the numbers handed to the learner.</figcaption>
             </figure>
 
-            <p>This was not a quirk of one model or one table. I tried five very different kinds of models on 11 real datasets. Nearly three quarters of the model–dataset pairs changed enough to matter. Even ordinary alternative encodings—not only artificial rotations—produced the same problem.</p>
+            <p>Across 11 real datasets and five very different kinds of models, this was not a corner case. Nearly three quarters of the model–dataset pairs changed enough to cross the study's preset threshold.</p>
 
-            <div class="d9-evidence" role="img" aria-label="Nearly three in four model and dataset pairs changed their predictions after the coordinate grid was turned, across five kinds of models.">
-                <header><span>NOT A ONE-MODEL QUIRK</span><strong>11 real datasets</strong></header>
-                <div class="d9-evidence-hero"><section><b>Nearly 3 in 4</b><span>changed enough to matter</span></section><section><b>5 kinds</b><span>of modern models tested</span></section><section><b>same facts</b><span>nothing added or removed</span></section></div>
-                <footer><i><b style="--w:72.7%"></b></i><strong>The direction of the axes was influencing the answer.</strong></footer>
+            <div class="d9-orbit-finding" role="img" aria-label="Nearly three quarters of model and dataset pairs showed a meaningful change even though the facts stayed the same.">
+                <div><span>SAME FACTS, DIFFERENT GRID</span><b>nearly 3 in 4</b><p>model–dataset pairs changed enough to matter</p></div>
+                <div class="d9-orbit-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="quiet"></i><i class="quiet"></i><i class="quiet"></i></div>
+                <small>11 datasets · five model families · no information added or removed</small>
             </div>
 
-            <h2>Why would a model care?</h2>
+            <aside class="d9-side-note"><span>INSIGHT 01</span><p><strong>The representation is part of the model.</strong> A learner never sees “the thing itself.” It sees one chosen description of it.</p></aside>
 
-            <p>Training a model is like walking downhill through a landscape. Some training rules take different-sized steps in different compass directions. Turn the compass, and the route can change—even when the hill itself does not.</p>
+            <h2>How the grid enters the answer</h2>
 
-            <p>To check this explanation, I made two models begin with exactly the same predictions. A simple training rule kept them together after the grid turned. A widely used adaptive rule gradually pulled them apart again. The difference was being created during learning, not by missing information.</p>
+            <p>Learning is a journey from a rough first guess to a final rule. Many training algorithms take different-sized steps along different axes. Turn those axes, and the journey can bend—even when the prediction problem is unchanged.</p>
 
-            <div class="d9-mechanism" role="img" aria-label="Two learners start with the same answer. A simple training path keeps them together, while an axis-sensitive path makes their answers drift apart.">
-                <header><span>SAME START, DIFFERENT PATH</span><strong>the grid changes the journey</strong></header>
-                <div><section><span>START</span><b>same answer</b><i><em style="--w:2%"></em></i><small>nothing separates them</small></section><section class="d9-sgd"><span>STEADY PATH</span><b>stay together</b><i><em style="--w:2%"></em></i><small>the turned grid is ignored</small></section><section class="d9-adam"><span>AXIS-SENSITIVE PATH</span><b>drift apart</b><i><em style="--w:84.2%"></em></i><small>the grid steers learning</small></section></div>
+            <div class="d9-path-diagram" role="img" aria-label="Two learners begin with the same answer. One training path ignores the turned grid and stays together; an axis-sensitive path makes the answers split.">
+                <header><span>SAME STARTING ANSWER</span><strong>then the grid enters through training</strong></header>
+                <div class="d9-path-start"><i></i><b>same prediction</b></div>
+                <div class="d9-path-fork" aria-hidden="true"><i></i><i></i></div>
+                <div class="d9-path-lanes">
+                    <section><span>STEADY STEPS</span><div><i></i><i></i></div><b>stay together</b><small>the turned grid is ignored</small></section>
+                    <section class="split"><span>AXIS-SENSITIVE STEPS</span><div><i></i><i></i></div><b>drift apart</b><small>the grid steers the route</small></section>
+                </div>
             </div>
 
-            <h2>Navigate by landmarks, not compass directions</h2>
+            <p>I checked this mechanism by forcing two learners to begin with exactly the same predictions. A simple training rule kept the answers together. A widely used adaptive rule pulled them apart again. The difference was being <em>created during learning</em>; it was not evidence that one table contained more facts.</p>
 
-            <p>A natural fix is to stop telling the model where a row sits on arbitrary axes. Instead, describe how it relates to a few familiar examples from the training data—like giving directions from landmarks rather than from “east” and “north.” Turn the map and those relationships remain the same.</p>
+            <aside class="d9-side-note coral"><span>INSIGHT 02</span><p><strong>Equivalent inputs need not create equivalent learning paths.</strong> The coordinate grid acts like a hidden preference over which solutions are easy to reach.</p></aside>
 
-            <div class="d9-identity" role="img" aria-label="A row is described by its relationships to familiar landmark examples, which stay the same when the coordinate grid turns.">
-                <span>THE LANDMARK VIEW</span><b>new row → relationships to familiar rows → stable description</b><small>turn the map; the landmarks stay in the same places relative to one another</small>
+            <h2>Describe relationships, not directions</h2>
+
+            <p>There is another way to locate a point. Instead of saying “three units east and two units north,” say how it relates to familiar landmarks. Turn the map and east changes on the page; the landmarks do not move relative to one another.</p>
+
+            <figure class="wide-figure">
+                <div class="d9-view-lab" data-d9-view>
+                    <header><span>TWO WAYS TO DESCRIBE ONE POINT</span><div><button type="button" data-d9-view-button="axes" aria-pressed="true">axes</button><button type="button" data-d9-view-button="landmarks" aria-pressed="false">landmarks</button></div></header>
+                    <svg viewBox="0 0 520 285" role="img" aria-label="Switch between locating a point with coordinate axes and locating it by relationships to three landmarks">
+                        <g class="d9-svg-grid"><path d="M70 35V245M130 35V245M190 35V245M250 35V245M310 35V245M370 35V245M430 35V245M55 65H465M55 115H465M55 165H465M55 215H465"/><path class="axis" d="M55 245H475M55 255V25"/><text x="445" y="238">across</text><text x="66" y="48">up</text></g>
+                        <g class="d9-svg-links"><path d="M330 103L125 198M330 103L250 62M330 103L420 218"/><circle cx="125" cy="198" r="15"/><circle cx="250" cy="62" r="15"/><circle cx="420" cy="218" r="15"/><text x="119" y="203">A</text><text x="244" y="67">B</text><text x="414" y="223">C</text></g>
+                        <g class="d9-svg-points"><circle cx="125" cy="198" r="7"/><circle cx="250" cy="62" r="7"/><circle cx="420" cy="218" r="7"/><circle cx="185" cy="132" r="7"/><circle cx="380" cy="155" r="7"/><circle class="query" cx="330" cy="103" r="10"/><text class="query-label" x="345" y="96">new row</text></g>
+                    </svg>
+                    <p data-d9-view-copy data-axis-copy="Axes give the point an address. Turn the grid, and the address changes." data-landmark-copy="Landmarks give the point relationships. Turn the grid, and those relationships remain.">Axes give the point an address. Turn the grid, and the address changes.</p>
+                </div>
+                <figcaption><strong>Figure 2.</strong> Switch views. Both describe the same point, but only one depends on which way the axes face.</figcaption>
+            </figure>
+
+            <p>The landmark description made the tested models perfectly stable to these rotations. But it also exposed a deeper tension: on some tables, accuracy became worse. The arbitrary-looking original axes had sometimes become useful shortcuts.</p>
+
+            <p>So “make everything invariant” is not the right principle. Stability is valuable only while it preserves what helps prediction.</p>
+
+            <aside class="d9-side-note gold"><span>INSIGHT 03</span><p><strong>Invariance is a budget, not a virtue.</strong> Remove irrelevant variation—but stop when removing it begins to erase useful clues.</p></aside>
+
+            <h2>A dial, not a switch</h2>
+
+            <p>The final method kept both readers: one sees the original columns; the other sees stable landmark relationships. A small practice set turns the dial toward stability only while prediction quality remains safe.</p>
+
+            <div class="d9-blend-lab" data-d9-blend data-msg-raw="Only the original view: flexible, but the grid can steer it." data-msg-blend="Both views contribute: less grid sensitivity, with an escape route." data-msg-stable="Only landmarks: perfectly stable here, but useful shortcuts may be lost.">
+                <header><span>EXPLORE THE STABILITY DIAL</span><strong>two readers, one prediction</strong></header>
+                <div class="d9-reader-cards"><section><span>ORIGINAL READER</span><b>sees directions</b><small>useful, sometimes fragile</small></section><section><span>LANDMARK READER</span><b>sees relationships</b><small>stable, sometimes restrictive</small></section></div>
+                <div class="d9-blend-bar" aria-hidden="true"><i data-d9-raw-bar style="width:25%">original</i><b data-d9-stable-bar style="width:75%">landmarks</b></div>
+                <label class="d9-range"><span>Landmark share</span><input data-d9-blend-input type="range" min="0" max="100" value="75" step="25" aria-label="Landmark share"><output data-d9-blend-output>75%</output></label>
+                <div class="d9-blend-readout"><span>grid sensitivity left <b data-d9-sensitivity>25%</b></span><p data-d9-blend-message>Both views contribute: less grid sensitivity, with an escape route.</p></div>
             </div>
 
-            <p>The landmark view made the model perfectly stable—but sometimes less accurate. That matters. The original directions, although arbitrary, can act as useful shortcuts for learning. Throwing them away everywhere traded one kind of unreliability for another.</p>
-
-            <p>So the final method kept both views. One model reads the original table; another reads the landmark version. A small practice set decides how much to trust the stable view and returns to the original whenever the change looks risky.</p>
+            <p>The dial is the important idea. It refuses a false choice between “trust the coordinates” and “ignore them.” When the stable view helps, use it strongly. When it becomes costly, back away.</p>
 
             <div class="d9-final" role="img" aria-label="On twelve new datasets, the guarded blend removed three quarters of coordinate sensitivity, improved prediction quality in twenty-nine of thirty-six comparisons, and showed no large hidden failure.">
-                <header><span>THE SAFER COMPROMISE</span><strong>tested on 12 new datasets</strong></header>
+                <header><span>WHAT HAPPENED ON NEW DATA</span><strong>12 untouched datasets</strong></header>
                 <div class="d9-final-hero"><section><b>¾ less</b><span>sensitivity to how the grid faces</span></section><section><b>29 / 36</b><span>better prediction results</span></section><section><b>none</b><span>large hidden failures observed</span></section></div>
-                <footer>Keep the stable view when it helps. Step back toward the original when it does not.</footer>
+                <footer>A strong but incomplete landmark view was safer than either extreme.</footer>
             </div>
 
-            <p>This is not a universal cure. It needs two trained models and still lost some comparisons. But it passed the most important common-sense test: the typical answer became much less sensitive to the direction of the graph paper, without hiding a disastrous failure elsewhere.</p>
+            <h2>Three ideas I want to keep</h2>
 
-            <div class="d9-takeaways">
-                <section><span>01</span><strong>Turn the paper</strong><p>If the facts stay fixed, a dependable model's answer should stay close too.</p></section>
-                <section><span>02</span><strong>Use landmarks</strong><p>Relationships between examples are often more trustworthy than arbitrary axis directions.</p></section>
-                <section><span>03</span><strong>Keep an escape route</strong><p>Stability is valuable, but not when it makes the actual prediction worse.</p></section>
+            <div class="d9-takeaways d9-takeaways-v2">
+                <section><span>01</span><strong>Define what “the same” means</strong><p>Robustness begins with a promise: which rewrites should preserve the answer?</p></section>
+                <section><span>02</span><strong>Test descriptions like software</strong><p>Turn the grid, change the units, rename the states. Meaning-preserving rewrites are unit tests for models.</p></section>
+                <section><span>03</span><strong>Preserve the option to retreat</strong><p>A stable view is safest when the model can fall back before stability harms the task.</p></section>
             </div>
 
-            <div class="thesis"><strong>Day 9 conclusion.</strong> Reliable AI should care about the people and patterns in a table, not the direction of its invisible graph paper. The best answer was not to ignore coordinates completely. It was to read the table through stable landmarks while keeping the original view close enough to catch what the landmarks miss.</div>
+            <div class="thesis"><strong>Day 9 conclusion.</strong> The coordinate system is not the territory. Yet a learner can quietly treat it as evidence. The best remedy was not to erase coordinates, but to place a stable relational view beside them—and let observed performance decide how much trust each view receives.</div>
 
             <h2>References</h2>
             <ol class="reference-list">
