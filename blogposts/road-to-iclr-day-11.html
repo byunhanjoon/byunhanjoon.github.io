@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compatibility Is an Arrow, Not an Equals Sign — Road to ICLR Day 11</title>
+    <meta name="description" content="Day 11 of Road to ICLR: why representation compatibility has a direction, what a frozen model actually needs from a new encoder, and when a safe system should refuse an upgrade.">
+    <meta name="author" content="Han Joon Byun">
+    <link rel="canonical" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-11.html">
+    <link rel="alternate" hreflang="en" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-11.html">
+    <link rel="alternate" hreflang="ko" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-11-ko.html">
+    <link rel="alternate" hreflang="x-default" href="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-11.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Compatibility Is an Arrow, Not an Equals Sign">
+    <meta property="og:description" content="A richer encoder may serve an old model exactly even when the old representation cannot reconstruct the new one.">
+    <meta property="og:url" content="https://byunhanjoon.github.io/blogposts/road-to-iclr-day-11.html">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="road-to-iclr.css?v=20260903-1">
+    <script src="../language.js" defer></script>
+    <script src="road-to-iclr-day-11.js?v=20260903-1" defer></script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Compatibility Is an Arrow, Not an Equals Sign","description":"Why representation compatibility has a direction, what a frozen model actually needs from a new encoder, and when a safe system should refuse an upgrade.","datePublished":"2026-09-03","dateModified":"2026-09-03","inLanguage":"en","author":{"@type":"Person","name":"Han Joon Byun","url":"https://byunhanjoon.github.io/"},"mainEntityOfPage":"https://byunhanjoon.github.io/blogposts/road-to-iclr-day-11.html"}
+    </script>
+</head>
+<body>
+    <header><nav><div class="social-icons"><a href="../Han_Joon_Byun_CV.pdf" target="_blank" title="CV" aria-label="Curriculum vitae"><i class="fas fa-file-alt"></i></a><a href="https://scholar.google.com/citations?user=ff7ZPtcAAAAJ" target="_blank" title="Google Scholar" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a><a href="https://linkedin.com/in/byunhanjoon" target="_blank" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a><a href="https://github.com/byunhanjoon" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a><a href="mailto:byunhanjoon@snu.ac.kr" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a></div><div class="nav-links"><a href="../index.html">Home</a><a href="../blog.html">Blog</a></div></nav></header>
+
+    <main class="essay"><article>
+        <div class="essay-header d11-essay-header">
+            <p class="series-kicker">Road to ICLR · Day 11 / 30</p>
+            <h1>Compatibility is an arrow, not an equals sign.</h1>
+            <p class="essay-deck">A richer encoder can sometimes speak perfectly to an old model. That does not mean the old representation can speak back.</p>
+            <div class="essay-meta"><span>September 3, 2026</span><span>Han Joon Byun</span></div>
+        </div>
+
+        <div class="essay-body d11-visual-essay">
+            <p>I began Day 11 looking for another model improvement. A native-geometry search reached a locked <strong>KILL</strong>: its best method gained only <strong>0.240%</strong> at the median across 20 final cells. A second idea—bridging tabular foundation-model latents to language models—also stopped at its gates.</p>
+            <p>The result that survived was quieter and more useful. A deployed model should not have to be retrained every time its feature encoder is refitted, widened, or given a new vocabulary. But the replacement cannot merely output a tensor of the same shape. It must speak the old model's language.</p>
+            <p class="d11-big-question">An encoder upgrade is not just a new model. It is a change to an interface.</p>
+
+            <div class="d11-contract" role="img" aria-label="A raw feature enters a version-two encoder. A compatibility contract either translates its response for the frozen old model, keeps the version-one service, or sends the system to retraining.">
+                <header><span>THE DEPLOYED CONTRACT</span><strong>the consumer decides what compatibility means</strong></header>
+                <div class="d11-contract-flow">
+                    <section class="raw"><span>RAW FEATURE</span><b>x</b><small>age · price · category</small></section>
+                    <i>→</i>
+                    <section class="service"><span>NEW SERVICE</span><b>encoder v2</b><small>refit · wider · new states</small></section>
+                    <i>→</i>
+                    <section class="adapter"><span>CONTRACT</span><b>T</b><small>target-free response map</small></section>
+                    <i>→</i>
+                    <section class="consumer"><span>FROZEN CONSUMER</span><b>model v1</b><small>expects its old response</small></section>
+                </div>
+                <footer><span class="pass"><b>PASS</b> translate and compile</span><span class="hold"><b>ABSTAIN</b> keep v1</span><span class="stop"><b>INCOMPATIBLE</b> retrain</span></footer>
+            </div>
+            <aside class="d11-side-note"><span>INSIGHT 01</span><p><strong>Compatibility belongs to a request, not a pair.</strong> The question is not whether two encoders are “equivalent.” It is whether the new service can reproduce the response one particular frozen consumer needs.</p></aside>
+
+            <h2>The arrow only points one way</h2>
+            <p>Suppose version 2 keeps every old basis function and adds new ones. Going backward is easy: select the old coordinates and ignore the additions. Going forward is impossible in general: the smaller old representation cannot invent signals it never stored.</p>
+
+            <figure class="wide-figure">
+                <div class="d11-direction" data-d11-direction data-same="same span in both directions" data-missing="the old side cannot invent the additions">
+                    <header><span>TRY IT · WIDEN THE NEW ENCODER</span><strong>containment creates one-way compatibility</strong></header>
+                    <div class="d11-direction-stage">
+                        <section class="old-side"><span>ENCODER v1</span><div class="d11-slots old"><i></i><i></i><i></i><i></i></div><b>old response</b></section>
+                        <div class="d11-arrows"><p class="back"><b>←</b><span>v2 → v1</span><strong>exact</strong></p><p class="forward"><b>→</b><span>v1 → v2</span><strong data-d11-forward>information missing</strong></p></div>
+                        <section class="new-side"><span>ENCODER v2</span><div class="d11-slots new"><i></i><i></i><i></i><i></i><em data-extra-index="1"></em><em data-extra-index="2"></em><em data-extra-index="3"></em><em data-extra-index="4"></em></div><b><output data-d11-count>2</output> new signals</b></section>
+                    </div>
+                    <label class="d11-range"><span>Signals added in v2</span><input data-d11-extra type="range" min="0" max="4" value="2" step="1" aria-label="Number of signals added in encoder version two"><output data-d11-output>+2</output></label>
+                    <footer><span><b>MEASURED MEDIAN RESIDUAL</b></span><span>new richer → old <strong>0.000</strong></span><span>old → new richer <strong>4.303</strong></span></footer>
+                </div>
+                <figcaption><strong>Figure 1.</strong> Conceptual nested upgrade. The displayed residuals summarize the Day 11 directionality audit across five datasets and two migration families.</figcaption>
+            </figure>
+
+            <p>Linear algebra makes the rule precise. Put the new encoder's responses in one matrix and the old responses in another. An exact backward adapter exists precisely when every old response column lies inside the span of the new responses. The relationship is containment, not equality—and containment has a direction.</p>
+            <aside class="d11-side-note coral"><span>INSIGHT 02</span><p><strong>More expressive can still be backward-compatible.</strong> Version 2 does not need to equal version 1. It only needs to contain the old response language well enough to serve the old consumer.</p></aside>
+
+            <h2>Seven clean upgrades—and one important trap</h2>
+            <p>Seven structured migration families passed the exact backward tests: rotations, permutations, affine changes, nested RBF and PLE expansions, and categorical evolution. Across 120 numerical feature audits, including extrapolation and missingness, the largest coordinate residual was <strong>1.78 × 10<sup>−15</sup></strong>.</p>
+            <div class="d11-exact-grid" role="img" aria-label="Exact migration evidence distinguishes function-exact upgrades, old-support exact upgrades, and finite-response-only checks.">
+                <section><span>FUNCTION-EXACT</span><b>E1–E6</b><p>A separate structural argument covers the stated input domain.</p></section>
+                <section class="support"><span>OLD-SUPPORT EXACT</span><b>E7</b><p>Old categories are preserved; a genuinely new category triggers abstention.</p></section>
+                <section class="anchors"><span>RESPONSE-EXACT</span><b>finite A</b><p>Agreement on checked examples alone does not prove global agreement.</p></section>
+            </div>
+
+            <div class="d11-anchor-trap">
+                <header><span>THE FINITE-ANCHOR TRAP</span><strong>passing examples is not the same as matching functions</strong></header>
+                <div><section><b>φ<sub>old</sub>(x) = x</b><span>0 → 0</span><span>1 → 1</span><strong>2 → 2</strong></section><i>=<small>on anchors<br>{0, 1}</small></i><section><b>φ<sub>new</sub>(x) = x²</b><span>0 → 0</span><span>1 → 1</span><strong>2 → 4</strong></section></div>
+                <footer>The adapter passes both anchors and still fails away from them.</footer>
+            </div>
+            <p>This counterexample changed the language of the result. A finite response test can certify a finite response set. Function-level guarantees require additional structure; categorical guarantees may cover only the old support. “Exact” is incomplete unless it says <em>where</em>.</p>
+
+            <h2>Safety means being willing to keep the old system</h2>
+            <p>Real refits were not always exact. Without an adapter, those changes raised relative loss by a median <strong>5.78%</strong>. Approximate adapters often repaired much of the damage, but the specialized method did not clearly beat ordinary blockwise least squares. So the certificate had to answer a harder question: when is a hot-swap safe enough to attempt?</p>
+            <div class="d11-safety" role="img" aria-label="The approximate safety certificate accepted 13.3 percent of cases, observed zero unsafe acceptances, and otherwise retained version one or required retraining.">
+                <header><span>APPROXIMATE MIGRATIONS A1–A6</span><strong>a conservative gate, not a universal translator</strong></header>
+                <div class="d11-coverage"><section><b>13.3%</b><span>certificate coverage</span><i><em style="--w:13.3%"></em></i></section><section><b>0</b><span>observed unsafe acceptances</span><i class="zero"><em></em></i></section><section><b>256</b><span>paired unlabeled rows</span><small>median adapter fit: 0.034 s</small></section></div>
+                <footer>Rejected upgrade → keep encoder v1 or retrain · fallback is not counted as a successful v1 retirement</footer>
+            </div>
+            <p>Thirteen percent coverage is not a victory lap. It means the gate abstained most of the time. But that is the point of a deployment contract: uncertainty must become an explicit branch, not a silent prediction shift.</p>
+            <aside class="d11-side-note gold"><span>INSIGHT 03</span><p><strong>Abstention is part of correctness.</strong> A compatibility layer that cannot prove a safe translation should preserve the old service or request retraining—not manufacture a green checkmark.</p></aside>
+
+            <h2>What Day 11 kept</h2>
+            <div class="d11-final">
+                <header><span>THE RESULT, AFTER THE KILL TESTS</span><strong>less method · more contract</strong></header>
+                <div><section><b>→</b><strong>Direction</strong><p>Ask whether the new service can satisfy the old consumer, not whether two encoders look equal.</p></section><section><b>⊂</b><strong>Scope</strong><p>State whether a guarantee covers finite responses, a full domain, or only old states.</p></section><section><b>⊘</b><strong>Refusal</strong><p>When evidence is insufficient, keep v1 or retrain.</p></section></div>
+            </div>
+            <div class="thesis"><strong>Day 11 conclusion.</strong> A model pipeline needs a representation ABI. Tensor shape is only syntax; compatibility is the directional promise that a new producer can still deliver the responses an old consumer understands—and the promise must include when to refuse.</div>
+
+            <h2>References</h2>
+            <ol class="reference-list">
+                <li id="ref-1">Gorishniy et al. <a href="https://proceedings.neurips.cc/paper_files/paper/2022/hash/9e9f0ffc3d836836ca96cbf8fe14b105-Abstract-Conference.html">On Embeddings for Numerical Features in Tabular Deep Learning</a>. NeurIPS 2022.</li>
+                <li id="ref-2">Moschella et al. <a href="https://openreview.net/forum?id=SrC-nwieGJ">Relative Representations Enable Zero-Shot Latent Space Communication</a>. ICLR 2023.</li>
+                <li id="ref-3">Gorishniy et al. <a href="https://openreview.net/forum?id=Sd4wYYOhmY">TabM: Advancing Tabular Deep Learning with Parameter-Efficient Ensembling</a>. ICLR 2025.</li>
+            </ol>
+            <p class="next-post"><strong>Previous:</strong> <a href="road-to-iclr-day-10.html">Day 10 returns hidden coordinates to the encoder's native frame.</a></p>
+        </div>
+    </article></main>
+    <footer><p>&copy; 2026 Han Joon Byun. All rights reserved.</p></footer>
+</body>
+</html>
