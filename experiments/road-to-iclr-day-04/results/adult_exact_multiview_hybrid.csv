@@ -1,2 +1,0 @@
-dataset,model,anchor_seed,member_seed,anchor_parameters,q_member_parameters,t_member_parameters,tq_exact_val_log_loss,tq_exact_val_auc,tt_exact_val_log_loss,tt_exact_val_auc,relative_val_logloss_gain_pct,tq_exact_test_log_loss,tq_exact_test_auc,tt_exact_test_log_loss,tt_exact_test_auc,relative_test_logloss_gain_pct
-adult,hybrid,20260827,20260928,60246,60246,60246,0.2692698369038759,0.9330439683456802,0.27006009499798045,0.9327340541879038,0.2926230526988651,0.27177261778012346,0.9297665489249245,0.27252020835089885,0.9294831302701244,0.2743248199094245

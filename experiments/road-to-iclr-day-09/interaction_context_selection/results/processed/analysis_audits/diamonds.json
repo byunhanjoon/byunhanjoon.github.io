@@ -1,8 +1,0 @@
-{
-  "dataset": "diamonds",
-  "analysis_wall_seconds": 17.06040651490912,
-  "test_context_evaluations": 96,
-  "test_model_runtime_seconds": 3.4474557901266962,
-  "checkpoint": "/home/byunhanjoon/.cache/huggingface/hub/models--jingang--TabICL/snapshots/4dcd344ece2c00be9e831fdd35bed57b5ad83e19/tabicl-regressor-v2-20260212.ckpt",
-  "final_test_labels_used_for_selection": false
-}

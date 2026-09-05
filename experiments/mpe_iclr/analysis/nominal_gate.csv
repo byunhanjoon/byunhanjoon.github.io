@@ -1,4 +1,0 @@
-task,source_unit,mpe_equality,best_control,relative_gain_percent,favors_mpe_over_2pct
-acs_class_of_worker,ACS,1.551179185158999,1.5394577114543258,-0.761402773032335,False
-bts_reporting_airline,BTS,1.8933733295820006,1.8936404154739512,0.01410436161840327,False
-tlc_payment_type,NYC_TLC,1.153432825070507,1.1504039455559476,-0.2632883454772654,False

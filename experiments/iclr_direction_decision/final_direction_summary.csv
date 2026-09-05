@@ -1,4 +1,0 @@
-candidate,novelty_vs_closest_prior_art,prospective_replication,breadth_across_datasets,breadth_across_architectures,mechanistic_clarity,effect_size_practical_importance,reviewer_defensible_controls,simplicity_coherence,weighted_score,direction_status,key_gate
-DAY3,4.0,4.5,5.0,3.0,5.0,3.5,4.5,4.0,4.225,PRIMARY,"Strength-2 cover passed initial and six-source-group confirmation; Cartesian action and quotient-HPO gates failed"
-HETEROBAG,2.5,3.5,3.5,3.0,2.5,4.0,4.0,4.0,3.200,SECONDARY_DAY3_CONSEQUENCE,"56/72 wins and +2.406% pooled gain, but failed to beat coordinate-only transformed-T placebo"
-FIELDRIESZ,4.5,1.5,2.0,3.5,3.5,2.0,4.5,3.0,3.000,STOP_PERFORMANCE_METHOD,"Correct semantic geometry hierarchy did not replicate on King County or Bike"

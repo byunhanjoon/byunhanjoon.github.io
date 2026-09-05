@@ -1,4 +1,0 @@
-dataset,split_seed,model,variance_temperature,validation_nll
-abalone,20260921,projective_full,0.6554103203184292,1.3080959750491625
-abalone,20260921,projective_independent,0.669366044456427,1.3100883392371274
-abalone,20260921,projective_shuffled,0.6583058599797506,1.3107423282677664

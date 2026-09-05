@@ -1,4 +1,0 @@
-rank,component,primary_gate,capacity_control,decision
-1,Non-Gaussian projective mixture,pass,pass,continue
-2,Black-box projective reconciliation,fail,not applicable,stop
-3,Query support-size complexity law,fail,not applicable,reject hypothesis

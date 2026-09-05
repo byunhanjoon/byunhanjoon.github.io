@@ -1,4 +1,0 @@
-dataset,split_seed,model,variance_temperature,validation_nll
-sulfur,20260922,projective_full,1.8456860075487278,1.2011155056104665
-sulfur,20260922,projective_independent,1.898051894006373,1.2086404515375164
-sulfur,20260922,projective_shuffled,1.8708998661263885,1.2077238399317605

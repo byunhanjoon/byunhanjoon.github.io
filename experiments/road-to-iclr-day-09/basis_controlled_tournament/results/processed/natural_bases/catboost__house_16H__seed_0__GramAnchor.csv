@@ -1,5 +1,0 @@
-dataset,problem_type,model,seed,pair,method,split,reconstruction_error,coordinate_error,disagreement,disagreement_reduction,task_error,relative_task_change
-house_16H,regression,catboost,0,local_vs_spectral_hat,Raw,validation,2.0748109606082272e-16,0.0,0.1143577624812282,0.0,47788.095730455796,0.0
-house_16H,regression,catboost,0,local_vs_spectral_hat,GramAnchor,validation,2.0748109606082272e-16,9.499670588806313e-17,0.0,1.0,49584.73261660763,0.037595908744420245
-house_16H,regression,catboost,0,local_vs_spectral_hat,Raw,test,2.0748109606082272e-16,0.0,0.11683217371214806,0.0,35206.263435242705,0.0
-house_16H,regression,catboost,0,local_vs_spectral_hat,GramAnchor,test,2.0748109606082272e-16,9.499670588806313e-17,0.0,1.0,35608.02523452049,0.011411656906356355

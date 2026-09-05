@@ -1,8 +1,0 @@
-dataset,problem_type,model,seed,variant,anchors,selection,normalize,min_empirical_rank,median_empirical_rank,min_anchor_rank,max_coordinate_error,validation_task_error,test_task_error,fit_seconds
-bike-sharing,regression,controlled_mlp,0,m8-random_index-norm1,8,random_index,True,2,8.0,1,6.038022183925211e-16,72.5867026079386,74.71184520548704,0.621540165040642
-bike-sharing,regression,controlled_mlp,0,m8-gram_pivot-norm1,8,gram_pivot,True,2,8.0,2,1.1941715327912387e-15,71.62886309915261,76.27538530117926,0.7380543458275497
-bike-sharing,regression,controlled_mlp,0,m16-random_index-norm1,16,random_index,True,2,8.0,1,7.495490591956737e-16,67.52176633382983,69.57552365358329,0.36717175389640033
-bike-sharing,regression,controlled_mlp,0,m16-gram_pivot-norm1,16,gram_pivot,True,2,8.0,2,9.852357639501782e-16,69.04963572426955,74.175401629243,0.9200884990859777
-bike-sharing,regression,controlled_mlp,0,m32-random_index-norm1,32,random_index,True,2,8.0,2,8.869595378895017e-16,64.03668570180395,71.74035529735315,0.42548216320574284
-bike-sharing,regression,controlled_mlp,0,m32-gram_pivot-norm1,32,gram_pivot,True,2,8.0,2,8.458707763382118e-16,68.02851515821544,69.74871670330764,0.3708408400416374
-bike-sharing,regression,controlled_mlp,0,m16-gram_pivot-norm0,16,gram_pivot,False,2,8.0,2,1.2717386617228045e-15,69.04963572426955,74.175401629243,0.37009016890078783

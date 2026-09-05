@@ -1,6 +1,0 @@
-{
-  "crumb_importable": false,
-  "lucos_importable": false,
-  "vip_cop_importable": false,
-  "policy": "Use explicitly labeled lightweight -like implementations when official integration is not straightforward."
-}

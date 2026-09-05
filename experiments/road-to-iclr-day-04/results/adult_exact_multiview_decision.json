@@ -1,8 +1,0 @@
-{
-  "architectures": 3,
-  "gate_evaluable": true,
-  "gate_passed": true,
-  "mean_relative_validation_logloss_gain_pct": 0.42440705988236876,
-  "test_role": "descriptive_only",
-  "validation_wins": 2
-}

@@ -1,2 +1,0 @@
-method,units,median_disagreement_reduction,median_C,p90_C,p95_C,max_C,median_invariant_feature_fraction,fallback_rate,inference_multiplier
-BlockGuard-Greedy-t01-transferred,96,0.37979510872261046,0.0030662635449116536,0.07899640369902063,0.11479658015313769,0.18701919002687162,0.5,0.16666666666666666,1.0

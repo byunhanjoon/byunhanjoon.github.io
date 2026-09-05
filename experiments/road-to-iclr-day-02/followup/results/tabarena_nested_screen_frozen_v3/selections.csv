@@ -1,7 +1,0 @@
-dataset,fold,problem_type,train_rows,numerical_features,design_features,singletons,pairs,nonempty,nonnested_relative_gain,split_hash
-wine_quality,0,regression,3464,11,831,,,0,0.0,f6ba8889d9e18379
-miami_housing,0,regression,7347,14,1471,,11+13,1,0.013674362803446286,6c008552b71f04dd
-Food_Delivery_Time,0,regression,24240,6,1864,,,0,0.0,93cb4b4b5e2ad4ae
-seismic-bumps,0,binary,1377,12,616,,,0,0.0,de46737af75a0a27
-heloc,0,binary,5577,23,895,,,0,0.0,e3fd592ba292ce39
-credit_card_clients_default,0,binary,16000,20,1363,,,0,0.0,1206d40f44f648d5

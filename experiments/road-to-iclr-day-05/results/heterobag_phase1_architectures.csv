@@ -1,4 +1,0 @@
-model,cells,test_wins,mean_relative_test_gain_pct
-ft_transformer,8,5,1.4264120650545509
-mlp,8,7,3.568185787661263
-resnet,8,7,5.561911184091821

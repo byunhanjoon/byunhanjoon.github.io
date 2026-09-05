@@ -1,9 +1,0 @@
-dataset,task,repeated_cells,wins,mean_relative_test_gain_pct
-openml-abalone-183,regression,9,7,0.4302825437439601
-openml-banknote-1462,classification,9,7,7.78347943970521
-openml-credit-g-31,classification,9,7,0.17484450087161943
-openml-kin8nm-189,regression,9,8,2.051372304594523
-openml-pol-201,regression,9,9,5.595771318750855
-openml-puma32h-308,regression,9,9,1.1612674565643235
-openml-qsar-biodeg-1494,classification,9,2,-0.510165303117536
-openml-spambase-44,classification,9,7,2.5589520290814702

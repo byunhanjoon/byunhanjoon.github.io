@@ -1,6 +1,0 @@
-panel,dataset,exact_winner,selection_agreement,validation_quotient_regret
-confirmation,compustat_kor_direction,onehot_adam_mlp,1.0,0.0
-confirmation,kdd17_stock_direction,ordinal_forest,1.0,0.0
-menu_repeat,compustat_kor_direction,onehot_adam_mlp,1.0,0.0
-subsample_repeat,compustat_kor_direction,onehot_adam_mlp,1.0,0.0
-openml_taskbalanced,openml-credit-g-31,ordinal_forest,1.0,0.0

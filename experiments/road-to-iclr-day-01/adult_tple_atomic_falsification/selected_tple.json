@@ -1,9 +1,0 @@
-{
-  "key": "b32_leaf32_gain0",
-  "mean_val_auc": 0.9242054822434536,
-  "mean_val_log_loss": 0.2872615804820997,
-  "min_impurity_decrease": 0.0,
-  "min_samples_leaf": 32,
-  "n_bins": 32,
-  "total_tree_bins": 145
-}

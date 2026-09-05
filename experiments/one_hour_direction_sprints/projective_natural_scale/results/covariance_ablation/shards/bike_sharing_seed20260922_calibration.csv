@@ -1,4 +1,0 @@
-dataset,split_seed,model,variance_temperature,validation_nll
-bike_sharing,20260922,projective_full,1.4337882730194198,1.549278486028245
-bike_sharing,20260922,projective_independent,1.459586951772351,1.5494426519603073
-bike_sharing,20260922,projective_shuffled,1.4381415901440087,1.5505630309948681

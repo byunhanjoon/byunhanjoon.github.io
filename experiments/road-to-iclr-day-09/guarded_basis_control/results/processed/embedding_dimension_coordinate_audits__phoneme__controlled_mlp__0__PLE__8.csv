@@ -1,2 +1,0 @@
-stage,dataset,model,seed,embedding,k,maximum_coordinate_error,passes_1e_minus_6
-dimension,phoneme,controlled_mlp,0,PLE,8,3.2760839346736568e-15,True

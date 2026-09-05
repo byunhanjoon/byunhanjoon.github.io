@@ -1,7 +1,0 @@
-model,task_type,episodes,raw_values_finite,prediction_loss_recomputed,grid_complete,maximum_probability_row_sum_error,wall_clock_seconds,checkpoint
-mitra_default,classification,42,True,True,True,2.9802322387695312e-08,2162.1879606992006,hf://autogluon/mitra-classifier@c425e9fa0910a6be1c494321792e7ba2a1367b1a
-mitra_default,regression,42,True,True,True,,2248.0252650270704,hf://autogluon/mitra-regressor@5f277aa8f69042d39d6ac3612aed18bb9279bd95
-tabicl_v2_default,classification,42,True,True,True,5.960464477539063e-08,49.340926664182916,/home/byunhanjoon/.cache/huggingface/hub/models--jingang--TabICL/snapshots/4dcd344ece2c00be9e831fdd35bed57b5ad83e19/tabicl-classifier-v2-20260212.ckpt
-tabicl_v2_default,regression,42,True,True,True,,62.68033782788552,/home/byunhanjoon/.cache/huggingface/hub/models--jingang--TabICL/snapshots/4dcd344ece2c00be9e831fdd35bed57b5ad83e19/tabicl-regressor-v2-20260212.ckpt
-tabicl_v2_single,classification,42,True,True,True,5.960464477539063e-08,58.18423850694671,/home/byunhanjoon/.cache/huggingface/hub/models--jingang--TabICL/snapshots/4dcd344ece2c00be9e831fdd35bed57b5ad83e19/tabicl-classifier-v2-20260212.ckpt
-tabicl_v2_single,regression,42,True,True,True,,58.7207948518917,/home/byunhanjoon/.cache/huggingface/hub/models--jingang--TabICL/snapshots/4dcd344ece2c00be9e831fdd35bed57b5ad83e19/tabicl-regressor-v2-20260212.ckpt

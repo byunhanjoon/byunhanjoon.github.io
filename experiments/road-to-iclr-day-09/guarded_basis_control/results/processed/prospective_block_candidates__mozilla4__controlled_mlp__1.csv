@@ -1,6 +1,0 @@
-candidate,stage,features,family,selection_key,selected_blocks,selected_dimensions,invariant_feature_fraction,invariant_dimension_fraction,validation_C,validation_raw_loss,validation_method_loss,input_dimension,raw_input_dimension,fit_seconds,predict_seconds
-stage_0_raw,0,[],BlockGuard-Greedy,n0__4f53cda18c2baa0c,0,0,0.0,0.0,0.0,0.29443532994275223,0.29443532994275223,34,34,0.0,0.0
-stage_1,1,['start'],BlockGuard-Greedy,n1__db44f7fb88e027e9,1,8,0.25,0.25,-0.04211686859565128,0.29443532994275223,0.28018266569946804,42,34,0.3695639120414853,0.005111982114613056
-stage_2,2,"['start', 'id']",BlockGuard-Greedy,n2__4ab5ec24df4ea950,2,16,0.5,0.5,-0.06476906876286588,0.29443532994275223,0.27251699125309403,50,34,0.6040663849562407,0.00734077300876379
-stage_3,3,"['start', 'id', 'size']",BlockGuard-Greedy,n3__6740ce22793d2ebd,3,24,0.75,0.75,-0.02530867685312974,0.29443532994275223,0.2858706838601448,58,34,0.3885365661699325,0.005515639903023839
-stage_4,4,"['start', 'id', 'size', 'end']",BlockGuard-Greedy,n4__77fd583edbe9f119,4,32,1.0,1.0,0.03759911144287897,0.29443532994275223,0.3071591512787124,66,34,0.0,0.0

@@ -1,8 +1,0 @@
-schema_version: 1
-frozen: false
-benchmark: TabArena-v0.1
-selection_rule: all_tasks_supported_by_frozen_method
-official_splits: true
-method_freeze_required: true
-bootstrap_draws: 10000
-

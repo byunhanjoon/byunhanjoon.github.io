@@ -1,6 +1,0 @@
-dataset,problem_type,model,seed,relative_task_change,task_error,raw_task_error
-steel-plates-fault,classification,controlled_mlp,0,16622.29062633737,0.3807822918142949,2.29065532434954e-05
-steel-plates-fault,classification,controlled_mlp,1,309.73395795090033,0.4378203227961304,0.0014089876937921
-steel-plates-fault,classification,tabm_d,1,149.18520458020888,0.1219573087628881,0.0008120460940462
-steel-plates-fault,classification,tabm_d,0,90.49886032357148,0.0957834345616528,0.0010468265312041
-steel-plates-fault,classification,tabicl_v2,1,1.163197618572586,0.0005801749063004,0.0002682024523877

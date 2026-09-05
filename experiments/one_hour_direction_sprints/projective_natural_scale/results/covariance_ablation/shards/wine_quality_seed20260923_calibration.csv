@@ -1,4 +1,0 @@
-dataset,split_seed,model,variance_temperature,validation_nll
-wine_quality,20260923,projective_full,1.2130221731642528,1.5596958952742468
-wine_quality,20260923,projective_independent,1.2462228865497025,1.5650664768751286
-wine_quality,20260923,projective_shuffled,1.2266513556270862,1.5656965662537647

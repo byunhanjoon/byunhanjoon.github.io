@@ -1,3 +1,0 @@
-rank,direction,frozen_gate,adversarial_control,decision,supported_claim
-1,Projectively consistent temporal queries,pass,pass,scale narrowly,exact joint-to-query consistency improves compositional query generalization
-2,Learned consistency across lossless views,fail,oracle exposes identifiability gap,stop method,"view sensitivity is real, but generic invariance has a severe accuracy tradeoff"

@@ -1,4 +1,0 @@
-dataset,cells,validation_safe,validation_wins,mean_validation_gain_pct,test_wins,mean_test_gain_pct
-adult,9,9,9,0.31912476652350236,9,0.22654197427687292
-churn,9,9,9,1.1328159065948675,9,1.2754363860272138
-higgs-small,9,9,8,0.47775724529229,8,0.36996938617025743

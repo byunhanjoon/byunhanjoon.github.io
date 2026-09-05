@@ -1,8 +1,0 @@
-dataset,problem_type,model,seed,variant,anchors,selection,normalize,min_empirical_rank,median_empirical_rank,min_anchor_rank,max_coordinate_error,validation_task_error,test_task_error,fit_seconds
-phoneme,classification,controlled_mlp,1,m8-random_index-norm1,8,random_index,True,8,8.0,7,6.197587959735088e-16,0.30311252548077483,0.38429602417608666,0.32697602780535817
-phoneme,classification,controlled_mlp,1,m8-gram_pivot-norm1,8,gram_pivot,True,8,8.0,8,2.1278152783755705e-15,0.30201581910574227,0.3826390548688148,0.35926074301823974
-phoneme,classification,controlled_mlp,1,m16-random_index-norm1,16,random_index,True,8,8.0,8,5.472080103545632e-16,0.2933028620903548,0.3624955109427276,0.24486870900727808
-phoneme,classification,controlled_mlp,1,m16-gram_pivot-norm1,16,gram_pivot,True,8,8.0,8,1.5269589046311825e-15,0.2957856715849285,0.36293875419738764,0.27608478302136064
-phoneme,classification,controlled_mlp,1,m32-random_index-norm1,32,random_index,True,8,8.0,8,7.220410657348891e-16,0.2696661290390576,0.3570651033459,0.19122534804046154
-phoneme,classification,controlled_mlp,1,m32-gram_pivot-norm1,32,gram_pivot,True,8,8.0,8,1.1332815188976675e-15,0.2773010125324754,0.377823176394771,0.2618583010043949
-phoneme,classification,controlled_mlp,1,m16-gram_pivot-norm0,16,gram_pivot,False,8,8.0,8,1.057762222225365e-15,0.2957856715849285,0.36293875419738764,0.19008767395280302

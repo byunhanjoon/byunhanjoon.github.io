@@ -1,5 +1,0 @@
-method,catboost,controlled_mlp,tabicl_v2,tabm_d,tabpfn_2_6
-BlockAdam+DataInit[equal-HPO],,KEEP,,NICHE,
-GramAnchor,PROMISING,KEEP,KEEP,PROMISING,KEEP
-Raw,FAIL,FAIL,FAIL,FAIL,FAIL
-Raw+GramAnchor@0.75,PROMISING,KEEP,KEEP,KEEP,KEEP

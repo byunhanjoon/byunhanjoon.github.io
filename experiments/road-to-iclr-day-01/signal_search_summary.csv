@@ -1,5 +1,0 @@
-dataset,metric,screen_candidates,fixed_baseline_mean,fixed_baseline_std,tuned_backbone_mean,tuned_backbone_std,best_semantic_method,semantic_view_active,best_semantic_mean,best_semantic_std,semantic_vs_tuned_absolute,semantic_vs_tuned_relative_percent,semantic_paired_wins,hp_ensemble_mean,hp_ensemble_std,ensemble_vs_tuned_absolute,ensemble_vs_tuned_relative_percent
-adult,accuracy,78,0.856225,0.001025,0.859480,0.001695,diagnostic_residual,true,0.872588,0.001078,0.013107,1.525,5,0.872993,0.000724,0.013513,1.572
-diamond,rmse,78,0.140778,0.000762,0.135666,0.001233,numeric_identity,false,0.135254,0.000790,0.000412,0.303,3,0.132287,0.000427,0.003379,2.491
-black-friday,rmse,78,0.694355,0.000255,0.692672,0.000636,numeric_identity,true,0.691195,0.000509,0.001477,0.213,5,0.685146,0.000274,0.007525,1.086
-california,rmse,58,0.495010,0.004988,0.479259,0.005244,numeric_identity,false,0.478042,0.003985,0.001218,0.254,3,0.456182,0.001496,0.023078,4.815

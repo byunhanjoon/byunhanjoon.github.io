@@ -1,8 +1,0 @@
-dataset,problem_type,model,seed,variant,anchors,selection,normalize,min_empirical_rank,median_empirical_rank,min_anchor_rank,max_coordinate_error,validation_task_error,test_task_error,fit_seconds
-house_16H,regression,controlled_mlp,2,m8-random_index-norm1,8,random_index,True,5,8.0,4,1.6049546054510387e-15,41545.61894296159,36955.3124314984,0.33301730221137404
-house_16H,regression,controlled_mlp,2,m8-gram_pivot-norm1,8,gram_pivot,True,5,8.0,5,2.0014348499903082e-15,40277.49762225383,35309.190612217746,0.42330126999877393
-house_16H,regression,controlled_mlp,2,m16-random_index-norm1,16,random_index,True,5,8.0,4,8.602769631144531e-16,44290.30747553363,38988.428786942364,0.23071313695982099
-house_16H,regression,controlled_mlp,2,m16-gram_pivot-norm1,16,gram_pivot,True,5,8.0,5,1.5296717789644912e-15,40332.395978825305,35721.13693106463,0.24545420287176967
-house_16H,regression,controlled_mlp,2,m32-random_index-norm1,32,random_index,True,5,8.0,4,7.608227210496271e-16,39628.83417519235,35864.38756901887,0.5954873280134052
-house_16H,regression,controlled_mlp,2,m32-gram_pivot-norm1,32,gram_pivot,True,5,8.0,5,1.6842293155601485e-15,40946.581267634065,38188.08289834948,0.37076874217018485
-house_16H,regression,controlled_mlp,2,m16-gram_pivot-norm0,16,gram_pivot,False,5,8.0,5,1.5768489346648994e-15,40777.85123717476,35341.271323808905,0.19499434810131788

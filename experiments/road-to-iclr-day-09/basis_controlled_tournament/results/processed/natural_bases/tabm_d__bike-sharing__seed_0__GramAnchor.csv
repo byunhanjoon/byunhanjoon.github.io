@@ -1,9 +1,0 @@
-dataset,problem_type,model,seed,pair,method,split,reconstruction_error,coordinate_error,disagreement,disagreement_reduction,task_error,relative_task_change
-bike-sharing,regression,tabm_d,0,local_vs_spectral_hat,Raw,validation,2.1424358174305508e-16,0.0,0.03652767801153575,0.0,64.80773519975124,0.0
-bike-sharing,regression,tabm_d,0,local_vs_spectral_hat,GramAnchor,validation,2.1424358174305508e-16,1.9777041243197732e-16,0.0,1.0,64.79900159382397,-0.00013476178268447038
-bike-sharing,regression,tabm_d,0,local_vs_spectral_hat,Raw,test,2.1424358174305508e-16,0.0,0.03409944822744458,0.0,63.84597846216564,0.0
-bike-sharing,regression,tabm_d,0,local_vs_spectral_hat,GramAnchor,test,2.1424358174305508e-16,1.9777041243197732e-16,0.0,1.0,67.98047265639472,0.06475731586883168
-bike-sharing,regression,tabm_d,0,onehot_vs_helmert,Raw,validation,1.7916185122862606e-16,0.0,0.044378205793604686,0.0,62.19958550712453,0.0
-bike-sharing,regression,tabm_d,0,onehot_vs_helmert,GramAnchor,validation,1.7916185122862606e-16,7.579601521546418e-17,0.0,1.0,62.997730987641525,0.012832006419489261
-bike-sharing,regression,tabm_d,0,onehot_vs_helmert,Raw,test,1.7916185122862606e-16,0.0,0.04108998480414105,0.0,62.70433265327878,0.0
-bike-sharing,regression,tabm_d,0,onehot_vs_helmert,GramAnchor,test,1.7916185122862606e-16,7.579601521546418e-17,0.0,1.0,66.93828667304771,0.06752251145356124

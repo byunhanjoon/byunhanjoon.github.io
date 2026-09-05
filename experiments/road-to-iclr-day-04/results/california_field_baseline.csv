@@ -1,2 +1,0 @@
-dataset,task,model,seed,method,bins,spike_fraction,heat_strength,input_size,width,parameter_count,baseline_parameter_count,parameter_error_fraction,input_features,parameters,best_epoch,train_loss,val_loss,test_loss,val_metric,test_metric,first_gradient_norm,first_weight_norm,first_update_ratio,train_seconds
-california,regression,mlp,20260842,quantile_ple,32,0.35,1.0,254,128,49281,49281,0.0,254,49281,25,0.15969005227088928,0.18636032938957214,0.1820327788591385,0.5010206963253232,0.49516932680391434,0.3379145562648773,9.147332191467285,0.02770942449569702,15.294818856054917

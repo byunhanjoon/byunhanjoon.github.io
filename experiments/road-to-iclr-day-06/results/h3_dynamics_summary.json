@@ -1,9 +1,0 @@
-{
-  "status": "descriptive_complete",
-  "bundles": 36,
-  "threshold": 1e-05,
-  "fp32_material_bundles_epoch_20": 16,
-  "fp32_material_bundles_epoch_200": 24,
-  "fp32_delayed_bundles": 8,
-  "iea64_exact_bundles": 19
-}

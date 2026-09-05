@@ -1,5 +1,0 @@
-task,dataset,cells,validation_wins,mean_validation_gain_pct,test_wins,mean_test_gain_pct
-classification,openml-bank-marketing-1461,3,3,0.17469668424137708,3,0.6050048631608925
-classification,openml-electricity-151,3,3,3.171780777805735,3,3.2379193423866792
-regression,openml-cpu-act-197,3,3,3.6879685850368666,3,3.8398252326877835
-regression,openml-elevators-216,3,3,2.042928306513218,3,1.9739553766761235

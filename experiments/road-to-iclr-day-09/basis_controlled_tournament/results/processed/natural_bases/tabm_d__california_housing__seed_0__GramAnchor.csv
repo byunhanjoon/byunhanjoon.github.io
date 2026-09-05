@@ -1,9 +1,0 @@
-dataset,problem_type,model,seed,pair,method,split,reconstruction_error,coordinate_error,disagreement,disagreement_reduction,task_error,relative_task_change
-california_housing,regression,tabm_d,0,local_vs_spectral_hat,Raw,validation,2.0851388871316656e-16,0.0,0.05408584434178272,0.0,56437.68786297098,0.0
-california_housing,regression,tabm_d,0,local_vs_spectral_hat,GramAnchor,validation,2.0851388871316656e-16,1.206163813876603e-16,0.0,1.0,55238.7055062017,-0.021244356425096176
-california_housing,regression,tabm_d,0,local_vs_spectral_hat,Raw,test,2.0851388871316656e-16,0.0,0.04641274868954588,0.0,61330.91283739661,0.0
-california_housing,regression,tabm_d,0,local_vs_spectral_hat,GramAnchor,test,2.0851388871316656e-16,1.206163813876603e-16,0.0,1.0,59895.49966068298,-0.023404399352725477
-california_housing,regression,tabm_d,0,onehot_vs_helmert,Raw,validation,1.6019295092324714e-16,0.0,0.044821198394856016,0.0,56237.98631293107,0.0
-california_housing,regression,tabm_d,0,onehot_vs_helmert,GramAnchor,validation,1.6019295092324714e-16,9.378063810316416e-17,0.0,1.0,55305.22092444373,-0.016586038185952275
-california_housing,regression,tabm_d,0,onehot_vs_helmert,Raw,test,1.6019295092324714e-16,0.0,0.04556761324836893,0.0,61213.62526426933,0.0
-california_housing,regression,tabm_d,0,onehot_vs_helmert,GramAnchor,test,1.6019295092324714e-16,9.378063810316416e-17,0.0,1.0,59719.42700710045,-0.02440956977663352

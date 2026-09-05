@@ -1,5 +1,0 @@
-dataset,problem_type,model,seed,pair,method,split,reconstruction_error,coordinate_error,disagreement,disagreement_reduction,task_error,relative_task_change
-wine-quality-red,regression,controlled_mlp,2,local_vs_spectral_hat,Raw,validation,2.0028348924293498e-16,0.0,0.04082820742682341,0.0,0.6614354416723311,0.0
-wine-quality-red,regression,controlled_mlp,2,local_vs_spectral_hat,GramAnchor,validation,2.0028348924293498e-16,9.723333224939053e-17,0.0,1.0,0.6632800862692575,0.0027888505524627867
-wine-quality-red,regression,controlled_mlp,2,local_vs_spectral_hat,Raw,test,2.0028348924293498e-16,0.0,0.04498391524820924,0.0,0.7090878336663922,0.0
-wine-quality-red,regression,controlled_mlp,2,local_vs_spectral_hat,GramAnchor,test,2.0028348924293498e-16,9.723333224939053e-17,0.0,1.0,0.7291256035417705,0.028258515975054185

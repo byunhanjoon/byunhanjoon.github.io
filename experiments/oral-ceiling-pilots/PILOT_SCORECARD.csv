@@ -1,4 +1,0 @@
-rank,direction,decision,frozen_gate_passed,wall_seconds,headline
-1,Projectively consistent query distributions,continue,True,155.82281993399374,3/3 NLL wins; worst constrained identity violation 9.1e-8
-2,View-consistent longitudinal learning,continue,True,69.07292269612662,8/9 pairs qualify; rankings flip on 3/3 datasets
-3,Interventional temporal-table pretraining,reformulate,False,271.98212662385777,beats ObsPFN but not the simple per-environment ridge control

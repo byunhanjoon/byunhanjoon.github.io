@@ -1,4 +1,0 @@
-comparator,mean_aggregate_nll_advantage,cell_win_rate,dataset_wins
-bayes_linear,-983.9141756410606,0.4409722222222222,3
-gp_rbf,-1019.3251722083553,0.4375,3
-tabicl_independent,-1017.5763668793687,0.6267361111111112,8

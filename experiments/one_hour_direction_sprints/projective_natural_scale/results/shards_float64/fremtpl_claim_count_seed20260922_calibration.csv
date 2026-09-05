@@ -1,8 +1,0 @@
-dataset,split_seed,model,variance_temperature,rho,validation_nll
-fremtpl_claim_count,20260922,neural_projective,3.452527215820382,,1.7851465436112606
-fremtpl_claim_count,20260922,neural_direct,3.6192157358415287,,1.8508779124130705
-fremtpl_claim_count,20260922,bayes_linear,1000.0,,822.7570412455261
-fremtpl_claim_count,20260922,gp_rbf,1000.0,,4.889058701759138
-fremtpl_claim_count,20260922,tabpfn_independent,1000.0,0.0,24140.64588456187
-fremtpl_claim_count,20260922,tabpfn_projective,1000.0,1.0,24140.543434847285
-fremtpl_claim_count,20260922,tabicl_independent,1000.0,,35.93882719397287

@@ -1,9 +1,0 @@
-dataset,seed,truth_expression,compiled_expression,feature_precision,feature_recall,feature_f1,operator_accuracy,exact_program,depth_error,coefficient_error
-program-202608310,0,"add(x2, add(x2, x3))",(2.0102009 * x2 + -0.0041422224),1.0,0.5,0.6666666666666666,0.0,False,2.0,1.0143431106240746
-program-202608310,1,"add(x2, add(x2, x3))",(2.0102009 * x2 + -0.0041422224),1.0,0.5,0.6666666666666666,0.0,False,2.0,1.0143431106240746
-program-202608311,0,"safe_divide(add(x0, x2), x1)",(-0.010022227 * x3 + -0.002050597),0.0,0.0,0.0,0.0,False,2.0,1.0120728238436407
-program-202608311,1,"safe_divide(add(x0, x2), x1)",(0.037833664 * x0 + 0.00072817507),1.0,0.3333333333333333,0.5,0.0,False,2.0,0.9628945111182405
-program-202608312,0,"add(x3, abs(multiply(x0, x3)))",(1.0071424 * x3 + 0.95041089),1.0,0.5,0.6666666666666666,0.0,False,3.0,0.9575532960184134
-program-202608312,1,"add(x3, abs(multiply(x0, x3)))",(1.0071424 * x3 + 0.95041089),1.0,0.5,0.6666666666666666,0.0,False,3.0,0.9575532960184134
-program-202608313,0,"add(safe_divide(safe_divide(x3, x2), safe_divide(x3, x2)), safe_divide(safe_divide(x3, x2), safe_divide(x3, x2)))",(0.010321116 * x1 + 1.9007479),0.0,0.0,0.0,0.0,False,3.0,2.8904268192087
-program-202608313,1,"add(safe_divide(safe_divide(x3, x2), safe_divide(x3, x2)), safe_divide(safe_divide(x3, x2), safe_divide(x3, x2)))","(0.090461682 * multiply(x3, x3) + 1.7843873)",1.0,0.5,0.6666666666666666,0.0,False,2.0,2.6939256010257706

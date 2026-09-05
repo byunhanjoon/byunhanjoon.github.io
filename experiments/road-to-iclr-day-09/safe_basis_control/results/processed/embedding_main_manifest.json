@@ -1,7 +1,0 @@
-{
-  "coordinate_audits": 576,
-  "interface_location": "between_embedding_and_backbone",
-  "method_cells": 360,
-  "rotation_cells": 648,
-  "status": "COMPLETE"
-}

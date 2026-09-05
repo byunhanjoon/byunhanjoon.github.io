@@ -1,7 +1,0 @@
-{
-  "base_config": "heterobag_phase1_config.json",
-  "status": "frozen_after_phase1_before_triplet2_outcomes",
-  "evidence_label": "PROSPECTIVE_CONFIRMATORY_CONDITIONAL",
-  "frozen_at": "2026-08-28T00:13:00+09:00",
-  "seed": 20261234
-}

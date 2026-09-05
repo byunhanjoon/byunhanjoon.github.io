@@ -1,4 +1,0 @@
-model,pairs,correct_mean_test_loss,wins_vs_raple_raw,gain_vs_raple_raw_pct,wins_vs_anchor_only,gain_vs_anchor_only_pct,wins_vs_anchor_mass_representer,gain_vs_anchor_mass_representer_pct,wins_vs_anchor_wrong_representer,gain_vs_anchor_wrong_representer_pct,wins_vs_anchor_isospectral_representer,gain_vs_anchor_isospectral_representer_pct
-mlp,3,0.11511755983034762,0,-0.550577553315086,2,-0.7105554927123084,2,0.21765685912733937,2,0.13241667101258342,1,-0.32913745585872506
-resnet,3,0.11740245173374804,1,0.44418536194063546,2,1.0643379842379974,1,-1.537801193326369,1,-1.9741880569403794,3,0.7908987293743407
-tabm,3,0.11247779428958891,1,0.3233962392396177,2,-0.043227488616832545,1,-0.0019836195340396747,2,0.1324252897634262,2,0.17663612634935869

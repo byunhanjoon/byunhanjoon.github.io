@@ -1,6 +1,0 @@
-dataset,task,metric,method,bins,smoothing,seed,input_features,parameters,width,best_epoch,val_score,test_score,train_seconds,selected_numeric,members,model,activation
-adult,binclass,accuracy,diagnostic_identity,128,20.0,0,647,1320100,367,15,0.8704130201136189,0.8692954978195443,9.43575038202107,3;4;5,,resnet,gelu
-adult,binclass,accuracy,diagnostic_identity,128,20.0,1,647,1320100,367,12,0.8705665591893137,0.8704625023032984,8.879803091986105,3;4;5,,resnet,gelu
-adult,binclass,accuracy,diagnostic_identity,128,20.0,2,647,1320100,367,8,0.8679563949025026,0.8726122474049506,7.965722125023603,3;4;5,,resnet,gelu
-adult,binclass,accuracy,diagnostic_identity,128,20.0,3,647,1320100,367,12,0.8696453247351451,0.873042196425281,8.717569122090936,3;4;5,,resnet,gelu
-adult,binclass,accuracy,diagnostic_identity,128,20.0,4,647,1320100,367,14,0.8697988638108398,0.8717523493642897,9.567637920961715,3;4;5,,resnet,gelu

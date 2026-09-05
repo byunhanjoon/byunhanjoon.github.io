@@ -1,9 +1,0 @@
-{
-  "status": "complete",
-  "runs": 12,
-  "dataset_optimizer_cells": 4,
-  "cells_closed_below_1e_10": 2,
-  "cells_better_than_raw_adam_member_mse": 1,
-  "cells_better_than_raw_adam_quotient_mse": 0,
-  "maximum_identity_error": 9.172350379227368e-17
-}

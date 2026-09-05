@@ -1,2 +1,0 @@
-"""Basis-dependence confirmation experiment."""
-

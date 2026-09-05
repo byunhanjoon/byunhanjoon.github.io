@@ -1,8 +1,0 @@
-dataset,problem_type,model,seed,variant,anchors,selection,normalize,min_empirical_rank,median_empirical_rank,min_anchor_rank,max_coordinate_error,validation_task_error,test_task_error,fit_seconds
-wine-quality-red,regression,controlled_mlp,0,m8-random_index-norm1,8,random_index,True,8,8.0,6,9.111234439242719e-16,0.6835165332592092,0.731610275458779,0.21202879608608782
-wine-quality-red,regression,controlled_mlp,0,m8-gram_pivot-norm1,8,gram_pivot,True,8,8.0,8,1.5955606397584357e-15,0.6713050945828434,0.7337913773986262,0.24283883813768625
-wine-quality-red,regression,controlled_mlp,0,m16-random_index-norm1,16,random_index,True,8,8.0,7,8.020093766942637e-16,0.6877246828898884,0.7174458273950123,0.18062466708943248
-wine-quality-red,regression,controlled_mlp,0,m16-gram_pivot-norm1,16,gram_pivot,True,8,8.0,8,1.214375584754649e-15,0.6780009183636825,0.6903123753832792,0.2431232570670545
-wine-quality-red,regression,controlled_mlp,0,m32-random_index-norm1,32,random_index,True,8,8.0,7,8.580190041167358e-16,0.6874266543384209,0.7452185779332247,0.24050720618106425
-wine-quality-red,regression,controlled_mlp,0,m32-gram_pivot-norm1,32,gram_pivot,True,8,8.0,8,1.014718322244348e-15,0.6848336981981745,0.7241610500345501,0.264341700123623
-wine-quality-red,regression,controlled_mlp,0,m16-gram_pivot-norm0,16,gram_pivot,False,8,8.0,8,1.270527199357285e-15,0.6780009183636825,0.6903123753832792,0.18029491999186575

@@ -1,5 +1,0 @@
-task_type,contrast,paired_episodes,excess_disagreement_difference,difference_ci_low,difference_ci_high,tabicl_to_mitra_ratio,fraction_tabicl_larger
-classification,tabicl_v2_single_minus_mitra_default,42,0.0820291104113513,0.07449108428340148,0.08920972639430319,11.894419973864338,1.0
-classification,tabicl_v2_default_minus_mitra_default,42,0.06346855659310043,0.056795798167664314,0.07012155179819479,9.429362542063215,1.0
-regression,tabicl_v2_single_minus_mitra_default,42,0.1492832016827258,0.12856248167864406,0.17117101327146322,14.269391635374339,1.0
-regression,tabicl_v2_default_minus_mitra_default,42,0.12434261947695961,0.10815812153388038,0.14206477396598144,12.052488801216711,1.0

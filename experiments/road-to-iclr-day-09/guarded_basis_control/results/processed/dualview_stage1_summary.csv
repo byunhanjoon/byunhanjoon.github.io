@@ -1,2 +1,0 @@
-method,family,units,datasets,model_families,global_alpha,median_disagreement_reduction,median_C,p90_C,p95_C,max_C,median_fit_seconds,median_inference_seconds,median_parameter_count,max_peak_gpu_memory_bytes,mean_predictive_rank
-DualViewGram-D1-a75,DualView-D1,12,4,3,0.75,0.3821168296999873,0.0423497398220566,0.1506811622972866,0.17820213208814134,0.2033640168169962,1.1216123087797314,0.002390915373689495,468597.5,312541184.0,1.0

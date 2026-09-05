@@ -1,4 +1,0 @@
-dataset,pairs,eligible_fp32_material_paths,later_fraction,median_paired_delay,exact_early_fraction,final_win_fraction,iea64_material_failure_fraction
-bank_marketing_subscription,27,18,1.0,151.0,1.0,1.0,0.14814814814814814
-credit_card_default,30,21,0.8571428571428571,101.0,0.9,1.0,0.3333333333333333
-fremtpl_claim_count,36,24,1.0,181.0,1.0,1.0,0.1388888888888889

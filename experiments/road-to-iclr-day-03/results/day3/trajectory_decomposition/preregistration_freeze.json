@@ -1,9 +1,0 @@
-{
-  "status": "frozen_before_outcomes",
-  "frozen_at": "2026-08-25T20:00:00+09:00",
-  "config": "experiments/day3/configs/trajectory_decomposition_preregistered.json",
-  "config_sha256": "97a527005bbe97b6c36839edc55aacef377124ecc56164a246271f33e657b50d",
-  "protocol": "TRAJECTORY_DECOMPOSITION_PROTOCOL.md",
-  "protocol_sha256": "324f9aaeff62a15feb820f27266110584b58fbbe79ead80c2fa06502b79223b3",
-  "outcomes_present_when_frozen": false
-}

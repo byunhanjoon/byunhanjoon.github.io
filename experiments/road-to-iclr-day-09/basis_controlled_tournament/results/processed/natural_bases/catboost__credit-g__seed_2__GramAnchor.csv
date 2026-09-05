@@ -1,9 +1,0 @@
-dataset,problem_type,model,seed,pair,method,split,reconstruction_error,coordinate_error,disagreement,disagreement_reduction,task_error,relative_task_change
-credit-g,classification,catboost,2,local_vs_spectral_hat,Raw,validation,2.2040031984818126e-16,0.0,0.08656030072941209,0.0,0.4503922734086956,0.0
-credit-g,classification,catboost,2,local_vs_spectral_hat,GramAnchor,validation,2.2040031984818126e-16,1.1511609960611418e-16,0.0,1.0,0.4650270701372007,0.03249344536429284
-credit-g,classification,catboost,2,local_vs_spectral_hat,Raw,test,2.2040031984818126e-16,0.0,0.08040548501443295,0.0,0.4972935158739809,0.0
-credit-g,classification,catboost,2,local_vs_spectral_hat,GramAnchor,test,2.2040031984818126e-16,1.1511609960611418e-16,0.0,1.0,0.4865833734964216,-0.021536863111389033
-credit-g,classification,catboost,2,onehot_vs_helmert,Raw,validation,1.6264399465171795e-16,0.0,0.09042297449849418,0.0,0.4416928739076262,0.0
-credit-g,classification,catboost,2,onehot_vs_helmert,GramAnchor,validation,1.6264399465171795e-16,5.4075216734979365e-17,0.0,1.0,0.45121096750826695,0.02154912194175752
-credit-g,classification,catboost,2,onehot_vs_helmert,Raw,test,1.6264399465171795e-16,0.0,0.07765213740952137,0.0,0.4794926873386611,0.0
-credit-g,classification,catboost,2,onehot_vs_helmert,GramAnchor,test,1.6264399465171795e-16,5.4075216734979365e-17,0.0,1.0,0.47288248827678686,-0.013785818295922302

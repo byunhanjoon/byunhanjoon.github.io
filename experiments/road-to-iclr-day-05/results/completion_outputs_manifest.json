@@ -1,8 +1,0 @@
-{
-  "status": "complete",
-  "tables": 6,
-  "figures": 10,
-  "figure_files": 20,
-  "table_files": 12,
-  "note": "Strength-3 uses its mathematically valid 64-fit mixed-level design; all other Table-4 methods use 16 fits."
-}
