@@ -162,6 +162,18 @@
                 : item.original;
         });
 
+        document.querySelectorAll('a[href$="Han_Joon_Byun_CV.pdf"], a[href$="Han_Joon_Byun_CV_ko.pdf"]').forEach(function (link) {
+            const cvUrl = new URL(link.getAttribute("href"), document.baseURI);
+            cvUrl.pathname = cvUrl.pathname.replace(
+                /Han_Joon_Byun_CV(?:_ko)?\.pdf$/,
+                useKorean ? "Han_Joon_Byun_CV_ko.pdf" : "Han_Joon_Byun_CV.pdf"
+            );
+            link.href = cvUrl.href;
+            link.setAttribute("title", useKorean ? "이력서 (한국어)" : "CV (English)");
+            link.setAttribute("aria-label", useKorean ? "이력서 (한국어 PDF)" : "CV (English PDF)");
+            link.setAttribute("hreflang", useKorean ? "ko" : "en");
+        });
+
         document.documentElement.lang = useKorean ? "ko" : "en";
         document.title = useKorean && koreanTitles[originalTitle]
             ? koreanTitles[originalTitle]
