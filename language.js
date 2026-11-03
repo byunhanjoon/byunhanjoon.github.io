@@ -71,7 +71,7 @@
         "Why a richer encoder can serve an old model exactly even when the old representation cannot reconstruct the new one.": "더 풍부한 새 인코더가 과거 모델을 정확히 지원하면서도, 과거 표현은 새 표현을 복원할 수 없는 이유를 살펴봅니다.",
         "Read Day 11 →": "11일차 읽기 →",
         "Accepted Publications": "게재 승인 논문",
-        "Byun, Han Joon is a researcher at Seoul National University working on tabular data, time series, finance, machine learning, and optimization.": "변한준은 정형 데이터, 시계열, 금융, 머신러닝, 최적화를 연구하는 서울대학교 연구자입니다.",
+        "Han Joon Byun is a researcher at Seoul National University specializing in machine learning for tabular and time-series data.": "변한준은 정형 및 시계열 데이터를 위한 머신러닝을 전문으로 연구하는 서울대학교 연구자입니다.",
         "I am a researcher working on tabular data, time series, and finance.": "저는 테이블 데이터, 시계열, 금융을 연구하고 있습니다.",
         "PhD in Computer Science and Engineering": "컴퓨터공학 박사",
         "MS in Computer Science and Engineering": "컴퓨터공학 석사",
