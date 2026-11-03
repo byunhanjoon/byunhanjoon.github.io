@@ -85,8 +85,8 @@
         "ROKAF Interpretation Officer": "대한민국 공군 통역장교",
         "Data Structure": "자료구조",
         "Algorithm": "알고리즘",
-        "Corresponding author.": "교신저자.",
-        "Transactions on Machine Learning Research (TMLR) — Accepted": "Transactions on Machine Learning Research (TMLR) — 게재 승인",
+        "Transactions on Machine Learning Research (TMLR)": "Transactions on Machine Learning Research (TMLR)",
+        "Selected Publications": "주요 논문",
         "Proceedings of the Genetic and Evolutionary Computation Conference (GECCO '26)": "Genetic and Evolutionary Computation Conference (GECCO '26) 논문집",
         "Proceedings of the Genetic and Evolutionary Computation Conference Companion (GECCO '26 Companion)": "Genetic and Evolutionary Computation Conference Companion (GECCO '26 Companion) 논문집",
         "Proceedings of the Genetic and Evolutionary Computation Companion (GECCO '23 Companion)": "Genetic and Evolutionary Computation Companion (GECCO '23 Companion) 논문집",
@@ -98,7 +98,7 @@
         "As Head TA for Data Structure and Algorithm courses, I help prepare course materials and make sure that students have the support they need throughout the semester. I aim to be approachable and available whenever students need help working through a concept or assignment.": "자료구조와 알고리즘 과목의 수석 조교로서 강의 자료를 준비하고 학생들이 학기 동안 필요한 지원을 받을 수 있도록 돕고 있습니다. 학생들이 개념이나 과제를 이해하는 데 도움이 필요할 때 편하게 질문할 수 있는 조교가 되고자 합니다.",
         "My responsibilities include preparing relevant course content, answering student questions, coordinating with the teaching team, and grading assignments and exams. I enjoy helping students develop confidence in the core problem-solving skills that these subjects require.": "주요 업무는 강의 콘텐츠 준비, 학생 질문 응대, 조교진 협업, 과제 및 시험 채점입니다. 학생들이 과목에서 요구하는 핵심 문제 해결 능력에 자신감을 갖도록 돕는 일에 보람을 느낍니다.",
         "My research began with pruning and transfer learning for convolutional and artificial neural networks, which gave me a stronger practical understanding of how neural networks learn, adapt, and can be made more efficient.": "연구의 출발점은 합성곱 신경망과 인공 신경망의 가지치기 및 전이학습이었습니다. 이를 통해 신경망이 학습하고 적응하는 방식과 효율을 높이는 방법을 실질적으로 이해하게 되었습니다.",
-        "I then helped develop a bespoke Transformer for the Traveling Salesperson Problem, applying language-modeling ideas to combinatorial optimization. Building on those foundations, my recent work brings neural-network and optimization methods to financial and tabular domains, with an emphasis on improving performance, efficiency, and interpretability.": "이후 언어 모델링 개념을 조합 최적화에 적용해 외판원 문제를 위한 트랜스포머 개발에 참여했습니다. 최근에는 이러한 기반을 바탕으로 신경망과 최적화 기법을 금융 및 테이블 데이터 영역에 적용하며 성능, 효율성, 해석 가능성을 개선하는 데 집중하고 있습니다.",
+        "My recent work brings neural-network and optimization methods to financial and tabular domains, with an emphasis on improving performance, efficiency, and interpretability.": "최근에는 신경망과 최적화 기법을 금융 및 테이블 데이터 영역에 적용하며 성능, 효율성, 해석 가능성을 개선하는 데 집중하고 있습니다.",
         "© 2026 Han Joon Byun. All rights reserved.": "© 2026 Han Joon Byun. 모든 권리 보유."
     };
 
